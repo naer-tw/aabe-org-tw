@@ -1,0 +1,8 @@
+Contact: https://www.facebook.com/twedumove/
+Preferred-Languages: zh-TW, en
+Canonical: https://aabe.org.tw/.well-known/security.txt
+Expires: 2027-04-28T00:00:00.000Z
+Policy: https://aabe.org.tw/
+
+# 國教行動聯盟（AABE）安全通報
+# 若您發現本站任何安全問題（XSS、外洩、資料完整性等），請透過 Facebook 私訊聯繫。

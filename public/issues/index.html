@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>兒少與教育議題｜國教行動聯盟</title>
+  <meta name="description" content="國教行動聯盟六大政策主軸：校園安全、兒少保護、青少年身心健康、教育政策與改革、教師與校務、數位與性別安全。連結 27 篇政策深度分析與 113 篇新聞稿，是台灣兒少與教育政策的完整索引。">
+  <meta name="keywords" content="兒少議題,教育議題,校園安全,兒少保護,青少年身心健康,教育政策,教師與校務,數位安全,性別安全,國教行動聯盟">
+  <link rel="canonical" href="https://aabe.org.tw/issues/">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/wp-content/uploads/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/wp-content/uploads/apple-touch-icon.png">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <meta property="og:title" content="兒少與教育議題｜國教行動聯盟">
+  <meta property="og:description" content="六大政策主軸：校園安全、兒少保護、青少年身心健康、教育政策與改革、教師與校務、數位與性別安全。">
+  <meta property="og:image" content="https://aabe.org.tw/wp-content/uploads/og-cover.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aabe.org.tw/issues/">
+  <meta property="og:site_name" content="國教行動聯盟">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="兒少與教育議題｜國教行動聯盟">
+  <meta name="twitter:description" content="六大政策主軸完整索引。">
+  <meta name="twitter:image" content="https://aabe.org.tw/wp-content/uploads/og-cover.jpg">
+
+  <!-- Schema: CollectionPage + ItemList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "兒少與教育議題",
+    "description": "國教行動聯盟六大政策主軸：校園安全、兒少保護、青少年身心健康、教育政策與改革、教師與校務、數位與性別安全。",
+    "url": "https://aabe.org.tw/issues/",
+    "inLanguage": "zh-TW",
+    "isPartOf": { "@id": "https://aabe.org.tw/#website" },
+    "about": { "@id": "https://aabe.org.tw/#organization" },
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "六大政策主軸",
+      "numberOfItems": 6,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "校園安全", "description": "校園霸凌、少年司法、轉介教育、校園檢測", "url": "https://policy.aabe.org.tw/campus-safety/" },
+        { "@type": "ListItem", "position": 2, "name": "兒少保護", "description": "兒少權法、剴剴案、人工生殖、育兒支持", "url": "https://policy.aabe.org.tw/child-rights/" },
+        { "@type": "ListItem", "position": 3, "name": "青少年身心健康", "description": "自殺防治、心理健康、菸害防制、無菸品世代", "url": "https://policy.aabe.org.tw/youth-health/" },
+        { "@type": "ListItem", "position": 4, "name": "教育政策與改革", "description": "實驗教育、性平法、營養午餐、教育平權", "url": "https://policy.aabe.org.tw/education-reform/" },
+        { "@type": "ListItem", "position": 5, "name": "教師與校務", "description": "校事會議修法、教師申訴、校園民主", "url": "https://policy.aabe.org.tw/teacher-affairs/" },
+        { "@type": "ListItem", "position": 6, "name": "數位與性別安全", "description": "數位性暴力、性別教育、網路詐騙", "url": "https://policy.aabe.org.tw/child-rights/20251208-sexual-violence-prevention-education.html" }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://aabe.org.tw/" },
+      { "@type": "ListItem", "position": 2, "name": "兒少與教育議題", "item": "https://aabe.org.tw/issues/" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/aabe.css">
+
+  <style>
+    /* Issues-specific */
+    .topics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 32px 0; }
+    .topic-card {
+      display: flex; flex-direction: column; gap: 12px;
+      padding: 32px 28px; background: #fff;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--cat-color);
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .topic-card:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .topic-kicker { font-size: 0.72rem; letter-spacing: 0.25em; color: var(--cat-color); font-weight: 700; text-transform: uppercase; }
+    .topic-title { font-size: 1.4rem; font-weight: 800; color: var(--ink); }
+    .topic-desc { color: var(--ink-2); font-size: 0.95rem; line-height: 1.65; flex: 1; }
+    .topic-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--line); margin-top: auto; }
+    .topic-count { font-size: 0.82rem; color: var(--ink-3); letter-spacing: 0.05em; }
+    .topic-arrow { color: var(--cat-color); font-weight: 700; font-size: 1.15rem; }
+
+    .impact-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin: 32px 0; padding: 36px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .impact-stat { text-align: left; }
+    .impact-num { font-size: 2.4rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+    .impact-num .plus { color: var(--brand-orange); }
+    .impact-label { margin-top: 10px; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3); }
+
+    @media (max-width: 768px) {
+      .topics-grid { grid-template-columns: 1fr; }
+      .impact-stats { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .impact-num { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">跳至主內容</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="topbar-logo"><img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟"></a>
+    <nav class="topbar-nav" aria-label="Primary">
+      <a href="/about/">關於我們</a>
+      <a href="/issues/" class="active">兒少與教育議題</a>
+      <a href="/chronicle/">大事紀</a>
+      <a href="/events/">活動公告</a>
+      <a href="https://policy.aabe.org.tw/">政策知識庫</a>
+      <a href="https://advocacy.aabe.org.tw/">倡議成果</a>
+      <a href="/contact/">聯絡我們</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <header class="page-hero">
+    <span class="page-hero-kicker">Issues</span>
+    <h1>兒少與教育議題</h1>
+    <p class="lead">國教行動聯盟長期關注六大政策主軸，從家長端的真實聲音出發，把家庭擔憂轉化為國家層級的政策改變。本頁是 27 篇政策深度分析與 113 篇新聞稿的議題索引。</p>
+    <span class="mark"></span>
+  </header>
+
+  <!-- 6 Topic Cards -->
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">六大政策主軸</h2>
+      <span class="section-hint">Six Pillars</span>
+    </div>
+    <div class="topics-grid">
+
+      <a href="https://policy.aabe.org.tw/campus-safety/" class="topic-card" style="--cat-color: #8B2631;">
+        <span class="topic-kicker">Campus Safety</span>
+        <h3 class="topic-title">校園安全</h3>
+        <p class="topic-desc">校園霸凌、少年司法、轉介教育、校園檢測。從新北割頸案啟動的兩年倡議路，推動少事法修法、風險評估入法、觀護署設立。</p>
+        <div class="topic-meta">
+          <span class="topic-count">5 篇政策論述</span>
+          <span class="topic-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="https://policy.aabe.org.tw/child-rights/" class="topic-card" style="--cat-color: #D97706;">
+        <span class="topic-kicker">Child Rights &amp; Protection</span>
+        <h3 class="topic-title">兒少保護</h3>
+        <p class="topic-desc">兒少權法、剴剴案、人工生殖、育兒支持。2026 年衛福部預告草案 165 條的六大制度缺口分析，涵蓋社工注意義務與跨機關資訊共享。</p>
+        <div class="topic-meta">
+          <span class="topic-count">11 篇政策論述</span>
+          <span class="topic-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="https://policy.aabe.org.tw/youth-health/" class="topic-card" style="--cat-color: #0369A1;">
+        <span class="topic-kicker">Youth Mental &amp; Physical Health</span>
+        <h3 class="topic-title">青少年身心健康</h3>
+        <p class="topic-desc">自殺防治、心理健康、菸害防制、無菸品世代。2026 年聯合台灣拒菸聯盟推動 Tobacco-Free Generation，補上英國世代禁菸法的電子煙缺口。</p>
+        <div class="topic-meta">
+          <span class="topic-count">3 篇政策論述</span>
+          <span class="topic-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="https://policy.aabe.org.tw/education-reform/" class="topic-card" style="--cat-color: #1E40AF;">
+        <span class="topic-kicker">Education Policy &amp; Reform</span>
+        <h3 class="topic-title">教育政策與改革</h3>
+        <p class="topic-desc">實驗教育、性平法、營養午餐、教育平權。從偏鄉公校轉型到偽實驗辨識，從性平法再校準到國民教育平權的完整論述。</p>
+        <div class="topic-meta">
+          <span class="topic-count">7 篇政策論述</span>
+          <span class="topic-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="https://policy.aabe.org.tw/teacher-affairs/" class="topic-card" style="--cat-color: #4338CA;">
+        <span class="topic-kicker">Teacher Affairs</span>
+        <h3 class="topic-title">教師與校務</h3>
+        <p class="topic-desc">校事會議修法、教師申訴、校園民主。2026 年 1 月正式落實分流檢舉、提升受理層級、強化外部專業三大改革成果。</p>
+        <div class="topic-meta">
+          <span class="topic-count">1 篇政策論述</span>
+          <span class="topic-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="https://policy.aabe.org.tw/child-rights/20251208-sexual-violence-prevention-education.html" class="topic-card" style="--cat-color: #BE185D;">
+        <span class="topic-kicker">Digital &amp; Gender Safety</span>
+        <h3 class="topic-title">數位與性別安全</h3>
+        <p class="topic-desc">數位性暴力、性別教育、網路詐騙。從青少年性病低齡化到「精液豆漿」事件，推動性教育改革與兒少數位防護機制。</p>
+        <div class="topic-meta">
+          <span class="topic-count">議題深度文章</span>
+          <span class="topic-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Cumulative Impact -->
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">累計影響力</h2>
+      <span class="section-hint">Cumulative Impact</span>
+    </div>
+    <div class="impact-stats">
+      <div class="impact-stat">
+        <div class="impact-num">27</div>
+        <div class="impact-label">Policy Analyses</div>
+      </div>
+      <div class="impact-stat">
+        <div class="impact-num">113</div>
+        <div class="impact-label">Press Releases</div>
+      </div>
+      <div class="impact-stat">
+        <div class="impact-num">7,917<span class="plus">+</span></div>
+        <div class="impact-label">Media Mentions</div>
+      </div>
+      <div class="impact-stat">
+        <div class="impact-num">168<span class="plus">+</span></div>
+        <div class="impact-label">Partner Orgs</div>
+      </div>
+    </div>
+    <p style="font-size:0.95rem;color:var(--ink-2);max-width:720px;line-height:1.85;">
+      2023-2025 三年累計：113 篇新聞稿、286 場活動、7,917 則媒體聲量、168+ 跨領域合作組織。完整紀錄請參閱
+      <a href="https://advocacy.aabe.org.tw/" style="color:var(--brand-orange);font-weight:700;">倡議成果資料庫</a>。
+    </p>
+  </section>
+
+  <!-- Cross-link CTA -->
+  <section class="section">
+    <div class="callout">
+      <h3 style="font-size:1.2rem;margin-bottom:12px;">想看完整政策論述？</h3>
+      <p style="margin-bottom:16px;">27 篇深度分析，涵蓋議題背景、現行制度盲點、修法建議、國際比較。</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="https://policy.aabe.org.tw/" class="btn btn-primary">前往政策知識庫 →</a>
+        <a href="/chronicle/" class="btn btn-secondary">回顧 13 年大事紀</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>國教行動聯盟</h4>
+        <p style="color:#b8bcc3;font-size:0.92rem;line-height:1.7;">成立於 2012 年的台灣家長倡議組織，推動兒童及青少年權益保障。立案字號 1030182063。</p>
+      </div>
+      <div class="footer-col">
+        <h4>議題</h4>
+        <a href="/issues/">兒少與教育議題</a>
+        <a href="/chronicle/">大事紀</a>
+        <a href="/events/">活動公告</a>
+      </div>
+      <div class="footer-col">
+        <h4>知識資源</h4>
+        <a href="https://policy.aabe.org.tw/">政策知識庫</a>
+        <a href="https://advocacy.aabe.org.tw/">倡議資料庫</a>
+        <a href="/llms.txt">llms.txt（AI 索引）</a>
+      </div>
+      <div class="footer-col">
+        <h4>聯絡與追蹤</h4>
+        <a href="/contact/">聯絡我們</a>
+        <a href="mailto:Action.A.E0626@gmail.com">Action.A.E0626@gmail.com</a>
+        <a href="https://www.facebook.com/twedumove/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 國教行動聯盟｜統編 41142910</span>
+      <span style="letter-spacing:0.18em;text-transform:uppercase;font-size:0.72rem;opacity:0.7;">Action Alliance on Basic Education</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

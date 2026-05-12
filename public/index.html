@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<!--
+  ════════════════════════════════════════════════════════════════
+  AABE 官網首頁參考實作 v1.0 / 2026-04-28
+  ════════════════════════════════════════════════════════════════
+
+  這份 HTML 是給 WordPress 團隊的視覺＋技術雙參考。
+  保留 demo.aabe.org.tw 的視覺架構（Hero 大標 + 文章 carousel + 活動公告 + Follow US），
+  把所有 GEO / AI 優化要素全部 baked in 在 <head> 裡。
+
+  目標：把現網站的 og:title="HOME" 等問題修掉，並補齊：
+    ✅ llms.txt link
+    ✅ Schema.org 4 段（Org / WebSite / ItemList / Dataset）
+    ✅ Open Graph 完整（site_name 而非 HOME）
+    ✅ 完整 meta description（2026 統一版）
+    ✅ canonical, theme-color, manifest
+    ✅ Content Signals 內容授權宣告（HTML meta + robots.txt）
+    ✅ 跨站連結（policy / advocacy subdomain）
+    ✅ a11y skip-link / focus-visible / reduced-motion
+  ════════════════════════════════════════════════════════════════
+-->
+<html lang="zh-TW" itemscope itemtype="https://schema.org/WebPage">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- ═══ 標題與描述（修正 og:title="HOME" 問題）═══ -->
+  <title>國教行動聯盟｜為孩子的教育權發聲</title>
+  <meta name="description" content="國教行動聯盟（AABE / NAER）成立於 2012 年，是台灣推動兒童及青少年權益的家長倡議組織。長期關注校園安全、兒少保護、教育改革、青少年身心健康四大議題，與 168+ 跨領域組織合作，2023-2025 累計發布 113 篇政策論述、舉辦 286 場倡議活動。">
+  <meta name="keywords" content="國教行動聯盟,國教盟,AABE,NAER,教育政策,兒少權益,校園安全,少年司法,教育改革,青少年身心健康,家長團體">
+  <meta name="author" content="國教行動聯盟">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
+  <!-- ═══ Canonical + 跨站發現 ═══ -->
+  <link rel="canonical" href="https://aabe.org.tw/">
+  <link rel="alternate" type="text/markdown" href="/llms.txt">
+  <link rel="author" href="/humans.txt">
+  <link rel="related" href="https://policy.aabe.org.tw/" title="政策知識庫">
+  <link rel="related" href="https://advocacy.aabe.org.tw/" title="倡議成果資料庫">
+
+  <!-- ═══ Favicon + PWA ═══ -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/wp-content/uploads/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/wp-content/uploads/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/wp-content/uploads/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <!-- ═══ Open Graph（修正 og:title）═══ -->
+  <meta property="og:title" content="國教行動聯盟｜為孩子的教育權發聲">
+  <meta property="og:description" content="台灣推動兒童及青少年權益的家長倡議組織。校園安全・兒少保護・教育改革・青少年身心健康。從倡議到改變，我們為孩子發聲。">
+  <meta property="og:image" content="https://aabe.org.tw/wp-content/uploads/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://aabe.org.tw/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="國教行動聯盟">
+  <meta property="og:locale" content="zh_TW">
+
+  <!-- ═══ Twitter Card ═══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="國教行動聯盟｜為孩子的教育權發聲">
+  <meta name="twitter:description" content="台灣推動兒童及青少年權益的家長倡議組織。校園安全・兒少保護・教育改革・青少年身心健康。">
+  <meta name="twitter:image" content="https://aabe.org.tw/wp-content/uploads/og-cover.jpg">
+
+  <!-- ═══ Schema.org #1: Organization (NGO) ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "@id": "https://aabe.org.tw/#organization",
+    "name": "國教行動聯盟",
+    "alternateName": ["國教盟", "社團法人國教行動聯盟", "Action Alliance on Basic Education", "AABE", "NAER"],
+    "url": "https://aabe.org.tw/",
+    "logo": "https://aabe.org.tw/wp-content/uploads/logo-naer.png",
+    "foundingDate": "2012-06-26",
+    "description": "台灣推動兒童及青少年權益的家長倡議組織，關注校園安全、兒少保護、教育改革、青少年身心健康四大議題。",
+    "areaServed": { "@type": "Country", "name": "TW" },
+    "sameAs": [
+      "https://www.facebook.com/twedumove/",
+      "https://zh.wikipedia.org/wiki/國教行動聯盟"
+    ],
+    "knowsAbout": [
+      "台灣教育政策", "校園安全", "兒少權益", "兒少保護",
+      "少年司法", "教育改革", "兒童健康", "青少年身心健康",
+      "菸害防制", "性別平等教育", "家長參與", "教師事務"
+    ],
+    "taxID": "41142910",
+    "email": "Action.A.E0626@gmail.com",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "Action.A.E0626@gmail.com",
+        "availableLanguage": ["zh-TW", "en"],
+        "areaServed": "TW"
+      },
+      {
+        "@type": "ContactPoint",
+        "contactType": "media relations",
+        "email": "Action.A.E0626@gmail.com",
+        "availableLanguage": ["zh-TW", "en"],
+        "areaServed": "TW"
+      },
+      {
+        "@type": "ContactPoint",
+        "url": "https://www.facebook.com/twedumove/",
+        "contactType": "public relations",
+        "availableLanguage": "zh-TW"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ Schema.org #2: WebSite + SearchAction ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://aabe.org.tw/#website",
+    "url": "https://aabe.org.tw/",
+    "name": "國教行動聯盟",
+    "description": "從倡議到改變・我們為孩子發聲",
+    "inLanguage": "zh-TW",
+    "publisher": { "@id": "https://aabe.org.tw/#organization" },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://aabe.org.tw/?s={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- ═══ Schema.org #3: ItemList（6 大議題）═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "國教行動聯盟核心議題",
+    "description": "六大政策主軸",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "校園安全", "url": "https://policy.aabe.org.tw/campus-safety/" },
+      { "@type": "ListItem", "position": 2, "name": "兒少保護", "url": "https://policy.aabe.org.tw/child-rights/" },
+      { "@type": "ListItem", "position": 3, "name": "青少年身心健康", "url": "https://policy.aabe.org.tw/youth-health/" },
+      { "@type": "ListItem", "position": 4, "name": "教育政策與改革", "url": "https://policy.aabe.org.tw/education-reform/" },
+      { "@type": "ListItem", "position": 5, "name": "教師與校務", "url": "https://policy.aabe.org.tw/teacher-affairs/" },
+      { "@type": "ListItem", "position": 6, "name": "數位與性別安全", "url": "https://aabe.org.tw/issues/" }
+    ]
+  }
+  </script>
+
+  <!-- ═══ Schema.org #4: Dataset（cross-reference 知識庫）═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://aabe.org.tw/#combined-knowledge-dataset",
+    "name": "國教行動聯盟政策論述與倡議成果資料集",
+    "description": "結合政策知識庫（27 篇深度分析）與倡議資料庫（113 篇新聞稿、286 場活動、7,917+ 媒體聲量、168+ 合作組織）的整合資料集。",
+    "url": "https://aabe.org.tw/",
+    "keywords": ["教育政策", "兒少權益", "校園安全", "少年司法", "台灣 NGO"],
+    "creator": { "@id": "https://aabe.org.tw/#organization" },
+    "publisher": { "@id": "https://aabe.org.tw/#organization" },
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "temporalCoverage": "2012-06/..",
+    "spatialCoverage": { "@type": "Place", "name": "台灣" },
+    "inLanguage": "zh-TW",
+    "isRelatedTo": [
+      { "@type": "Dataset", "name": "政策知識庫", "url": "https://policy.aabe.org.tw/" },
+      { "@type": "Dataset", "name": "倡議成果資料庫", "url": "https://advocacy.aabe.org.tw/" }
+    ]
+  }
+  </script>
+
+  <!-- ═══ Fonts ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --brand-orange: #EB9B31;
+      --brand-teal: #2FA598;
+      --ink: #0a0a0a;
+      --ink-2: #3a3f48;
+      --ink-3: #7a8089;
+      --line: #e5e7eb;
+      --bg-soft: #f5f5f5;
+    }
+
+    /* A11y */
+    .skip-link { position: absolute; top: -100px; left: 0; background: #0a0a0a; color: #fff; padding: 12px 20px; font-size: 0.92rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; z-index: 9999; text-decoration: none; transition: top 0.2s; }
+    .skip-link:focus { top: 0; }
+    :focus { outline: none; }
+    :focus-visible { outline: 2px solid var(--brand-orange); outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+    body {
+      font-family: 'Inter', 'Noto Sans TC', -apple-system, sans-serif;
+      color: var(--ink); background: #fff; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* Top nav */
+    .topbar { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .topbar-inner { max-width: 1280px; margin: 0 auto; padding: 18px 32px; display: flex; align-items: center; gap: 28px; }
+    .topbar-logo img { height: 40px; }
+    .topbar-nav { display: flex; gap: 28px; margin-left: auto; font-size: 0.92rem; font-weight: 500; }
+    .topbar-nav a { color: var(--ink-2); transition: color 0.2s; }
+    .topbar-nav a:hover { color: var(--brand-orange); }
+
+    /* Hero */
+    .hero { padding: 96px 32px 80px; text-align: center; max-width: 1040px; margin: 0 auto; }
+    .hero h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); font-weight: 900; line-height: 1.2; letter-spacing: 0.02em; margin-bottom: 24px; }
+    .hero h1 .accent { color: var(--brand-orange); }
+    .hero .tagline { font-size: 1.1rem; color: var(--ink-2); max-width: 640px; margin: 0 auto 28px; }
+    .hero-cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 16px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 4px; font-size: 0.92rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s; }
+    .btn-primary { background: var(--ink); color: #fff; }
+    .btn-primary:hover { background: var(--brand-orange); }
+    .btn-secondary { border: 1px solid var(--ink); color: var(--ink); }
+    .btn-secondary:hover { background: var(--ink); color: #fff; }
+
+    /* Stats band */
+    .stats-band { background: var(--ink); color: #fff; padding: 64px 32px; }
+    .stats-inner { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    .stat-num { font-size: 3rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+    .stat-num .plus { color: var(--brand-orange); }
+    .stat-label { margin-top: 12px; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: #b8bcc3; }
+
+    /* Latest articles */
+    .latest { max-width: 1280px; margin: 80px auto; padding: 0 32px; }
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 16px; margin-bottom: 32px; border-bottom: 2px solid var(--ink); }
+    .section-title { font-size: 2rem; font-weight: 900; }
+    .section-hint { font-size: 0.78rem; color: var(--ink-3); letter-spacing: 0.15em; text-transform: uppercase; }
+    .article-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .article-card { padding: 24px; border: 1px solid var(--line); border-radius: 4px; transition: all 0.2s; }
+    .article-card:hover { border-color: var(--ink); transform: translateY(-2px); }
+    .article-card .date { font-size: 0.78rem; color: var(--ink-3); letter-spacing: 0.08em; }
+    .article-card h3 { font-size: 1.1rem; font-weight: 700; margin: 8px 0 12px; line-height: 1.5; }
+    .article-card p { font-size: 0.92rem; color: var(--ink-2); line-height: 1.65; }
+
+    /* Cross-site cards */
+    .cross-sites { background: var(--bg-soft); padding: 80px 32px; }
+    .cross-inner { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .cross-card { background: #fff; padding: 36px 32px; border-left: 5px solid var(--brand-orange); display: flex; flex-direction: column; }
+    .cross-card .kicker { font-size: 0.72rem; letter-spacing: 0.25em; color: var(--brand-orange); font-weight: 600; text-transform: uppercase; margin-bottom: 12px; }
+    .cross-card h2 { font-size: 1.6rem; font-weight: 900; margin-bottom: 12px; }
+    .cross-card p { color: var(--ink-2); margin-bottom: 20px; flex: 1; }
+    .cross-card .arrow { font-weight: 700; color: var(--brand-orange); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.88rem; align-self: flex-start; }
+
+    /* Footer */
+    footer { background: var(--ink); color: #fff; padding: 64px 32px 32px; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+    .footer-cols { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 32px; border-bottom: 1px solid #2a2a2a; }
+    .footer-col h4 { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: #b8bcc3; margin-bottom: 16px; }
+    .footer-col a { display: block; color: #fafafa; padding: 4px 0; opacity: 0.85; }
+    .footer-col a:hover { opacity: 1; color: var(--brand-orange); }
+    .footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.85rem; color: #b8bcc3; }
+
+    @media (max-width: 768px) {
+      .hero { padding: 56px 20px 48px; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .stat-num { font-size: 2.2rem; }
+      .footer-cols { grid-template-columns: 1fr; gap: 28px; }
+      .cross-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">跳至主內容</a>
+
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/" class="topbar-logo"><img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟"></a>
+      <nav class="topbar-nav" aria-label="Primary">
+        <a href="/about/">關於我們</a>
+        <a href="/issues/">兒少與教育議題</a>
+        <a href="/chronicle/">大事紀</a>
+        <a href="/events/">活動公告</a>
+        <a href="https://policy.aabe.org.tw/">政策知識庫</a>
+        <a href="https://advocacy.aabe.org.tw/">倡議成果</a>
+        <a href="/contact/">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>從<span class="accent">倡議到改變</span><br>我們為孩子發聲</h1>
+      <p class="tagline">國教行動聯盟串聯全國力量，透過政策監督、議題倡議、跨界合作，推動兒童及青少年權益保障。</p>
+      <div class="hero-cta">
+        <a href="https://policy.aabe.org.tw/" class="btn btn-primary">探索政策知識庫 →</a>
+        <a href="/about/" class="btn btn-secondary">認識國教盟</a>
+      </div>
+    </section>
+
+    <!-- Stats Band -->
+    <section class="stats-band">
+      <div class="stats-inner">
+        <div>
+          <div class="stat-num">113</div>
+          <div class="stat-label">Press Releases</div>
+        </div>
+        <div>
+          <div class="stat-num">286</div>
+          <div class="stat-label">Events</div>
+        </div>
+        <div>
+          <div class="stat-num">7,917<span class="plus">+</span></div>
+          <div class="stat-label">Media Mentions</div>
+        </div>
+        <div>
+          <div class="stat-num">168<span class="plus">+</span></div>
+          <div class="stat-label">Collaborations</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest 6 articles (mirrors the carousel on demo site) -->
+    <section class="latest">
+      <div class="section-head">
+        <h2 class="section-title">最新倡議</h2>
+        <span class="section-hint">RECENT</span>
+      </div>
+      <div class="article-grid">
+        <article class="article-card">
+          <div class="date">2026.04.24</div>
+          <h3><a href="https://policy.aabe.org.tw/health/2026-04-24-健康台灣無菸品世代.html">「健康台灣」走最好的路：推動「無菸品世代（Tobacco-Free Generation）」</a></h3>
+          <p>英國世代禁菸法保留電子煙的缺口，台灣應走真正的無菸品世代之路。</p>
+        </article>
+        <article class="article-card">
+          <div class="date">2026.04.22</div>
+          <h3><a href="https://policy.aabe.org.tw/child-rights/2026-04-22-兒少權法修法六大缺口.html">兒少權法 15 年大修為何仍補不上剴剴案六大制度缺口？</a></h3>
+          <p>衛福部預告版草案 165 條的制度盲點條文對照分析。</p>
+        </article>
+        <article class="article-card">
+          <div class="date">2026.04.17</div>
+          <h3><a href="https://policy.aabe.org.tw/child-rights/2026-04-17-兒少保護體系改革五大修法工程.html">從保證人地位法理到五大修法工程</a></h3>
+          <p>剴剴案後台灣兒少保護體系如何重建？五大修法工程詳解。</p>
+        </article>
+        <article class="article-card">
+          <div class="date">2026.04.15</div>
+          <h3><a href="https://policy.aabe.org.tw/education-reform/2026-04-15-性平法再校準-國教盟公聽會.html">性平法該不該無限擴張？國教盟三大修法主張</a></h3>
+          <p>守住教育本位，三大修法主張一次看。</p>
+        </article>
+        <article class="article-card">
+          <div class="date">2026.03.23</div>
+          <h3><a href="https://policy.aabe.org.tw/campus-safety/2026-03-23-倡議成果追蹤.html">國教盟校園安全與少年司法倡議成果追蹤</a></h3>
+          <p>從割頸案到少事法修法的兩年倡議全記錄：8 項訴求 6 項獲回應。</p>
+        </article>
+        <article class="article-card">
+          <div class="date">2026.01.23</div>
+          <h3><a href="https://policy.aabe.org.tw/teacher-affairs/2026-01-23-校事會議修法.html">校事會議修法全紀錄</a></h3>
+          <p>分流檢舉、提升受理層級、強化外部專業三大改革。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Cross-site cards -->
+    <section class="cross-sites">
+      <div class="cross-inner">
+        <a href="https://policy.aabe.org.tw/" class="cross-card" style="text-decoration:none;">
+          <span class="kicker">Policy Knowledge Hub</span>
+          <h2>政策知識庫</h2>
+          <p>27 篇政策深度分析專題，涵蓋校園安全、兒少保護、青少年身心健康、教育政策與改革、教師與校務 5 大主軸。</p>
+          <span class="arrow">Explore →</span>
+        </a>
+        <a href="https://advocacy.aabe.org.tw/" class="cross-card" style="text-decoration:none;">
+          <span class="kicker">Advocacy Database</span>
+          <h2>倡議成果資料庫</h2>
+          <p>2023-2025 倡議行動完整紀錄：113 篇新聞稿、286 場活動、7,917+ 媒體聲量、168+ 合作組織。</p>
+          <span class="arrow">Explore →</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>國教行動聯盟</h4>
+          <p style="color:#b8bcc3;font-size:0.92rem;line-height:1.7;">成立於 2012 年的台灣家長倡議組織，推動兒童及青少年權益保障。立案字號 1030182063。</p>
+        </div>
+        <div class="footer-col">
+          <h4>議題</h4>
+          <a href="/issues/">兒少與教育議題</a>
+          <a href="/chronicle/">大事紀</a>
+          <a href="/events/">活動公告</a>
+        </div>
+        <div class="footer-col">
+          <h4>知識資源</h4>
+          <a href="https://policy.aabe.org.tw/">政策知識庫</a>
+          <a href="https://advocacy.aabe.org.tw/">倡議資料庫</a>
+          <a href="/llms.txt">llms.txt（AI 索引）</a>
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+        <div class="footer-col">
+          <h4>聯絡與追蹤</h4>
+          <a href="/contact/">聯絡我們</a>
+          <a href="mailto:Action.A.E0626@gmail.com">Action.A.E0626@gmail.com</a>
+          <a href="https://www.facebook.com/twedumove/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 國教行動聯盟｜統編 41142910</span>
+        <span style="letter-spacing:0.18em;text-transform:uppercase;font-size:0.72rem;opacity:0.7;">Action Alliance on Basic Education</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

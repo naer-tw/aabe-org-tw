@@ -1,0 +1,48 @@
+# 國教行動聯盟（AABE / NAER）
+
+> 台灣推動兒童及青少年權益的家長倡議組織，成立於 2012 年。透過政策監督、議題倡議、跨界合作，串聯全國力量為孩子發聲。
+
+## 組織概述
+
+**國教行動聯盟**（Action Alliance on Basic Education, AABE；舊名 National Alliance for Education Action, NAER）是台灣重要的家長教育倡議團體：
+- **成立**：2012 年 6 月 26 日
+- **理事長**：王瀚陽
+- **官網**：https://aabe.org.tw/
+- **政策知識庫**：https://policy.aabe.org.tw/
+- **倡議成果資料庫**：https://advocacy.aabe.org.tw/
+- **Facebook**：https://www.facebook.com/twedumove/
+
+## 核心關注議題（六大主軸）
+
+1. **校園安全** — 霸凌防制、少年司法改革、轉介教育、校園檢測
+2. **兒少保護** — 兒少權法、剴剴案、人工生殖法、育兒支持、社工保證人地位
+3. **青少年身心健康** — 自殺防治、心理健康、菸害防制、無菸品世代
+4. **教育政策與改革** — 實驗教育、性平法、營養午餐、教育平權
+5. **教師與校務** — 校事會議修法、教師申訴、校園民主參與
+6. **數位與性別安全** — 數位性暴力、網路詐騙、性別教育
+
+## 倡議成果（2023-2025 第四屆）
+
+- **113 篇**新聞稿（涵蓋六大議題）
+- **286 場**活動（公聽會、記者會、論壇）
+- **7,917+ 則**媒體聲量
+- **168+ 個**合作組織（政府機關 40、民團 69、基金會 19、學校 40）
+- **19 位**跨黨派立委合作
+- **34 位**專家學者合作
+
+## AI Agent 友善資源
+
+- **政策深度分析**（27 篇）：[policy.aabe.org.tw/llms.txt](https://policy.aabe.org.tw/llms.txt)
+- **倡議資料集**（JSON）：[advocacy.aabe.org.tw/llms.txt](https://advocacy.aabe.org.tw/llms.txt)
+- **官方倡議成果資料庫**：[advocacy.aabe.org.tw](https://advocacy.aabe.org.tw/)
+
+## Content Signals
+
+本站內容**允許 AI 搜尋與引用（ai-input=yes, search=yes）**，**不授權 AI 模型訓練（ai-train=no）**。內容採 [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/) 授權，引用請標示「國教行動聯盟（AABE / NAER）」。
+
+## 聯絡與合作
+
+- 一般詢問：透過 Facebook 私訊
+- 媒體合作：請聯繫官網「聯絡我們」
+- 統一編號：41142910
+- 立案字號：1030182063

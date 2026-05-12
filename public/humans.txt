@@ -1,0 +1,25 @@
+/* TEAM */
+組織：國教行動聯盟（Action Alliance on Basic Education, AABE）
+舊名：National Alliance for Education Action (NAER)
+理事長：王瀚陽
+成立：2012-06-26
+立案字號：1030182063
+統一編號：41142910
+官網：https://aabe.org.tw/
+
+/* SISTER SITES */
+政策知識庫：https://policy.aabe.org.tw/（27 篇政策深度分析）
+倡議成果資料庫：https://advocacy.aabe.org.tw/（113 新聞稿、286 活動、7,917+ 媒體聲量）
+
+/* CONTRIBUTORS */
+理監事會、青年部、家長部、合作專家學者與家長代表共同撰寫。
+詳見倡議資料庫合作夥伴名錄。
+
+/* SOCIAL */
+Facebook: https://www.facebook.com/twedumove/
+
+/* SITE */
+Last update: 2026-04-28
+Standards: HTML5, CSS3, JSON-LD (Schema.org), llms.txt, AI-friendly meta
+CMS: WordPress
+License: Creative Commons BY 4.0

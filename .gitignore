@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Office lock files
+.~lock.*
+
+# Local zip / archive
+*.zip
+*.tar.gz
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node (in case we add tooling later)
+node_modules/
+package-lock.json
+
+# Build artifacts
+dist/
+.cache/

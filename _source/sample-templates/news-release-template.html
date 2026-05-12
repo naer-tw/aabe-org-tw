@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!--
+  ════════════════════════════════════════════════════════════════
+  AABE 新聞稿/政策分析 GEO 模板 v1.0 / 2026-04-28
+  ════════════════════════════════════════════════════════════════
+
+  使用方式：
+  1. 複製本檔，重新命名為 yyyy-mm-dd-slug.html
+  2. 把 {{...}} placeholder 全部替換為實際內容
+  3. 放到對應分類資料夾（campus-safety / child-protection / 等）
+  4. URL 規範：https://policy.aabe.org.tw/{category}/{filename}.html
+
+  必改項目（搜尋 {{ 找全部）：
+  - {{TITLE}} - 主標題（問句格式佳，30 字內）
+  - {{DESC}} - 描述（150 字內，含核心數據）
+  - {{DATE}} - YYYY-MM-DD
+  - {{CATEGORY_SLUG}} - 對應 URL 路徑
+  - {{CATEGORY_NAME}} - 中文分類名
+  - {{CATEGORY_COLOR}} - 分類色（campus-safety 8B2631 / child-rights D97706 / 等）
+  - {{KEYWORDS}} - 8-12 個關鍵字
+  - {{FAQ_*}} - FAQ 問答
+  - 正文 H2 / 段落
+  ════════════════════════════════════════════════════════════════
+-->
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{TITLE}}——國教行動聯盟政策分析</title>
+  <meta name="description" content="{{DESC}}">
+  <meta name="keywords" content="{{KEYWORDS}}">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://policy.aabe.org.tw/{{CATEGORY_SLUG}}/{{DATE}}-{{SLUG}}.html">
+
+  <!-- Favicon + Manifest + Theme -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://policy.aabe.org.tw/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://policy.aabe.org.tw/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://policy.aabe.org.tw/images/apple-touch-icon.png">
+  <link rel="manifest" href="https://policy.aabe.org.tw/manifest.json">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="alternate" type="text/markdown" href="{{DATE}}-{{SLUG}}.md">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="{{DESC}}">
+  <meta property="og:image" content="https://policy.aabe.org.tw/images/og-{{SLUG}}.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://policy.aabe.org.tw/{{CATEGORY_SLUG}}/{{DATE}}-{{SLUG}}.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="國教行動聯盟政策知識庫">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="article:published_time" content="{{DATE}}T09:00:00+08:00">
+  <meta property="article:modified_time" content="{{DATE}}T09:00:00+08:00">
+  <meta property="article:section" content="{{CATEGORY_NAME}}">
+  <meta property="article:tag" content="{{TAG_1}}">
+  <meta property="article:tag" content="{{TAG_2}}">
+  <meta property="article:tag" content="{{TAG_3}}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{TITLE}}">
+  <meta name="twitter:description" content="{{DESC_SHORT}}">
+  <meta name="twitter:image" content="https://policy.aabe.org.tw/images/og-{{SLUG}}.jpg">
+
+  <!-- Schema.org #1: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "@id": "https://aabe.org.tw/#organization",
+    "name": "國教行動聯盟",
+    "alternateName": ["國教盟", "AABE", "NAER", "Action Alliance on Basic Education"],
+    "url": "https://aabe.org.tw/",
+    "logo": "https://policy.aabe.org.tw/images/logo-naer.png",
+    "foundingDate": "2012-06-26",
+    "sameAs": [
+      "https://www.facebook.com/twedumove/",
+      "https://zh.wikipedia.org/wiki/國教行動聯盟"
+    ]
+  }
+  </script>
+
+  <!-- Schema.org #2: NewsArticle -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "@id": "https://policy.aabe.org.tw/{{CATEGORY_SLUG}}/{{DATE}}-{{SLUG}}.html",
+    "headline": "{{TITLE}}",
+    "description": "{{DESC}}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://policy.aabe.org.tw/images/og-{{SLUG}}.jpg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "@id": "https://aabe.org.tw/#organization",
+      "name": "國教行動聯盟"
+    },
+    "editor": {
+      "@type": "Person",
+      "name": "王瀚陽",
+      "jobTitle": "理事長",
+      "affiliation": { "@type": "Organization", "name": "國教行動聯盟" }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "國教行動聯盟",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://policy.aabe.org.tw/images/logo-naer.png",
+        "width": 600,
+        "height": 600
+      }
+    },
+    "datePublished": "{{DATE}}T09:00:00+08:00",
+    "dateModified": "{{DATE}}T09:00:00+08:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://policy.aabe.org.tw/{{CATEGORY_SLUG}}/{{DATE}}-{{SLUG}}.html"
+    },
+    "keywords": "{{KEYWORDS}}",
+    "articleSection": "{{CATEGORY_NAME}}",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://policy.aabe.org.tw/",
+      "name": "國教行動聯盟政策知識庫"
+    },
+    "inLanguage": "zh-TW",
+    "copyrightHolder": { "@type": "Organization", "name": "國教行動聯盟" },
+    "copyrightYear": 2026,
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  }
+  </script>
+
+  <!-- Schema.org #3: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "{{FAQ_Q1}}",
+        "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A1}}" }
+      },
+      {
+        "@type": "Question",
+        "name": "{{FAQ_Q2}}",
+        "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A2}}" }
+      },
+      {
+        "@type": "Question",
+        "name": "{{FAQ_Q3}}",
+        "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A3}}" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org #4: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://policy.aabe.org.tw/" },
+      { "@type": "ListItem", "position": 2, "name": "{{CATEGORY_NAME}}", "item": "https://policy.aabe.org.tw/{{CATEGORY_SLUG}}/" },
+      { "@type": "ListItem", "position": 3, "name": "{{TITLE_SHORT}}", "item": "https://policy.aabe.org.tw/{{CATEGORY_SLUG}}/{{DATE}}-{{SLUG}}.html" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* {{CATEGORY_COLOR}} 分類色 — 每篇文章替換為對應分類值 */
+    :root {
+      --primary: #{{CATEGORY_COLOR}};
+      --primary-light: #A73947; /* 替換 */
+      --accent: #D4A843;
+      --bg: #ffffff;
+      --text: #0a0a0a;
+      --text-light: #4a5058;
+      --border: #e5e7eb;
+    }
+
+    /* A11y */
+    .skip-link { position: absolute; top: -100px; left: 0; background: #0a0a0a; color: #fff; padding: 12px 20px; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; z-index: 9999; text-decoration: none; transition: top 0.2s; }
+    .skip-link:focus { top: 0; }
+    :focus { outline: none; }
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 2px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--primary); width: 0; z-index: 10000; transition: width 0.1s; }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', 'Noto Sans TC', -apple-system, sans-serif;
+      line-height: 1.7; color: var(--text); background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    main { max-width: 800px; margin: 0 auto; padding: 32px 24px 64px; }
+
+    .org-banner { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: #fff; padding: 14px 24px; font-size: 0.9rem; }
+    .breadcrumb { background: #fafafa; padding: 12px 24px; font-size: 0.88rem; border-bottom: 1px solid var(--border); }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+
+    h1 { font-size: 2rem; font-weight: 800; margin: 32px 0 20px; line-height: 1.3; }
+    h2 { font-size: 1.4rem; font-weight: 700; margin: 36px 0 16px; padding-left: 12px; border-left: 4px solid var(--primary); }
+    p { margin: 16px 0; line-height: 1.8; }
+    a { color: var(--primary); }
+
+    .meta-info { font-size: 0.88rem; color: var(--text-light); padding: 16px 0; margin-bottom: 24px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 20px; }
+
+    .executive-summary { background: #fef9e7; border: 2px solid var(--accent); border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+    .executive-summary h2 { border: none; padding: 0; margin: 0 0 12px; font-size: 1.1rem; color: var(--primary); }
+    .executive-summary li { margin-bottom: 10px; line-height: 1.65; }
+
+    .answer-capsule { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 18px 24px; margin: 24px 0; border-radius: 4px; font-size: 1.02rem; }
+
+    .stat { background: #fef3c7; color: #92400e; padding: 2px 6px; border-radius: 3px; font-weight: 600; }
+    .source-link a { font-size: 0.82em; vertical-align: super; color: var(--primary); border-bottom: 1px dotted var(--primary); }
+
+    blockquote { margin: 28px 0; padding: 20px 24px; border-left: 4px solid var(--primary); background: #f9fafb; font-style: italic; }
+    blockquote cite { display: block; margin-top: 10px; font-style: normal; font-weight: 700; color: var(--primary); }
+
+    .three-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+    .pillar-card { background: #fff; border: 1px solid var(--border); border-top: 4px solid var(--primary); border-radius: 8px; padding: 20px; }
+    .pillar-card h3 { font-size: 1.05rem; margin-bottom: 10px; }
+
+    .faq-section { margin: 40px 0; }
+    .faq-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .faq-item h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 8px; }
+
+    .related-links, .sources { background: #f9fafb; border-radius: 8px; padding: 24px; margin: 32px 0; }
+    .related-links h3, .sources h3 { color: var(--primary); margin-bottom: 12px; }
+
+    /* Print */
+    @media print { .org-banner, .breadcrumb, .reading-progress, .skip-link { display: none; } body { background: #fff; } }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">跳至主內容</a>
+<div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+<div class="org-banner">
+  國教行動聯盟｜政策知識庫｜{{CATEGORY_NAME}}
+</div>
+
+<nav class="breadcrumb" aria-label="breadcrumb">
+  <a href="https://policy.aabe.org.tw/">首頁</a> ›
+  <a href="https://policy.aabe.org.tw/{{CATEGORY_SLUG}}/">{{CATEGORY_NAME}}</a> ›
+  {{TITLE_SHORT}}
+</nav>
+
+<main id="main">
+
+  <h1>{{TITLE}}</h1>
+
+  <div class="meta-info">
+    <span>發布日期：{{DATE}}</span>
+    <span>作者：國教行動聯盟</span>
+    <span>審稿：王瀚陽（理事長）</span>
+    <span>分類：{{CATEGORY_NAME}}</span>
+  </div>
+
+  <section class="executive-summary">
+    <h2>30 秒掌握重點</h2>
+    <ul>
+      <li><strong>核心觀點：</strong>{{CORE_POINT}}</li>
+      <li><strong>關鍵數據：</strong>{{KEY_DATA}}</li>
+      <li><strong>行動呼籲：</strong>{{CALL_TO_ACTION}}</li>
+    </ul>
+  </section>
+
+  <div class="answer-capsule">
+    <strong>一句話回答：</strong>{{ANSWER_SUMMARY}}
+  </div>
+
+  <h2>{{H2_QUESTION_1}}</h2>
+  <p>{{PARAGRAPH_1}}<span class="source-link"><a href="#source-1">[1]</a></span></p>
+  <p>{{PARAGRAPH_2}}</p>
+
+  <h2>{{H2_QUESTION_2}}</h2>
+  <p>{{PARAGRAPH_3}}</p>
+
+  <blockquote>
+    {{QUOTE_TEXT}}
+    <cite>—— 王瀚陽，國教行動聯盟理事長</cite>
+  </blockquote>
+
+  <h2>{{H2_QUESTION_3}}</h2>
+
+  <div class="three-pillars">
+    <div class="pillar-card">
+      <h3>第一柱：{{PILLAR_1_TITLE}}</h3>
+      <p>{{PILLAR_1_DESC}}</p>
+    </div>
+    <div class="pillar-card">
+      <h3>第二柱：{{PILLAR_2_TITLE}}</h3>
+      <p>{{PILLAR_2_DESC}}</p>
+    </div>
+    <div class="pillar-card">
+      <h3>第三柱：{{PILLAR_3_TITLE}}</h3>
+      <p>{{PILLAR_3_DESC}}</p>
+    </div>
+  </div>
+
+  <section class="faq-section">
+    <h2>常見問答</h2>
+    <div class="faq-item">
+      <h3>{{FAQ_Q1}}</h3>
+      <p>{{FAQ_A1}}</p>
+    </div>
+    <div class="faq-item">
+      <h3>{{FAQ_Q2}}</h3>
+      <p>{{FAQ_A2}}</p>
+    </div>
+    <div class="faq-item">
+      <h3>{{FAQ_Q3}}</h3>
+      <p>{{FAQ_A3}}</p>
+    </div>
+  </section>
+
+  <section class="related-links">
+    <h3>相關議題延伸閱讀</h3>
+    <ul>
+      <li><a href="{{RELATED_URL_1}}">{{RELATED_TITLE_1}}</a></li>
+      <li><a href="{{RELATED_URL_2}}">{{RELATED_TITLE_2}}</a></li>
+    </ul>
+  </section>
+
+  <section class="sources">
+    <h3>參考文獻</h3>
+    <ol>
+      <li id="source-1">{{SOURCE_1}}</li>
+      <li id="source-2">{{SOURCE_2}}</li>
+    </ol>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  var bar=document.getElementById("reading-progress");
+  if(!bar) return;
+  function update(){
+    var h=document.documentElement;
+    var pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+    bar.style.width=Math.min(100,Math.max(0,pct))+"%";
+  }
+  window.addEventListener("scroll",update,{passive:true});
+  update();
+})();
+</script>
+
+</body>
+</html>
