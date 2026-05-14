@@ -1,0 +1,17 @@
+# Cloudflare Workers Static Assets 設定
+# 為什麼需要這個檔案：
+#   Workers Dashboard 沒有「Not Found Handling」UI，
+#   必須在 repo 根目錄放 wrangler.toml/jsonc 才能設定 404 fallback。
+#
+# 對應的 Dashboard 設定（已不可見）：
+#   - Build output directory: public
+#   - Not Found Handling: 404-page
+#
+# 注意：Pages 用 public/_redirects，Workers 用這份檔案 — 兩者不通用。
+
+name = "aabe-org-tw"
+compatibility_date = "2026-05-14"
+
+[assets]
+directory = "./public"
+not_found_handling = "404-page"
