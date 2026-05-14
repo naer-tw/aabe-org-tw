@@ -162,9 +162,125 @@
       margin: 24px 0; font-size: 0.95rem; color: var(--ink-2);
     }
 
+    /* LINE 公民監督社群 spotlight */
+    .line-spotlight {
+      background: linear-gradient(135deg, #06C755 0%, #04a445 100%);
+      color: #fff;
+      padding: 56px 48px;
+      border-radius: 8px;
+      margin: 0 auto;
+      max-width: 1040px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
+      align-items: center;
+      box-shadow: 0 12px 32px rgba(6,199,85,0.18);
+    }
+    .line-spotlight-text { color: #fff; }
+    .line-spotlight-kicker {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .line-spotlight-kicker::before {
+      content: ""; display: inline-block;
+      width: 22px; height: 22px;
+      background: #fff;
+      mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2C6.48 2 2 5.94 2 10.78c0 4.34 3.78 7.97 8.88 8.66.34.07.81.22.93.51.1.26.07.67.03.94l-.15.9c-.05.27-.21 1.04.91.57 1.12-.47 6.04-3.56 8.24-6.09 1.52-1.66 2.16-3.44 2.16-5.49C23 5.94 18.52 2 12 2z' fill='black'/></svg>") center/contain no-repeat;
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2C6.48 2 2 5.94 2 10.78c0 4.34 3.78 7.97 8.88 8.66.34.07.81.22.93.51.1.26.07.67.03.94l-.15.9c-.05.27-.21 1.04.91.57 1.12-.47 6.04-3.56 8.24-6.09 1.52-1.66 2.16-3.44 2.16-5.49C23 5.94 18.52 2 12 2z' fill='black'/></svg>") center/contain no-repeat;
+    }
+    .line-spotlight-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    .line-spotlight-desc {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 24px;
+    }
+    .line-spotlight-features {
+      list-style: none; padding: 0; margin: 0 0 28px;
+      font-size: 0.92rem; line-height: 1.85;
+      color: rgba(255,255,255,0.92);
+    }
+    .line-spotlight-features li {
+      padding-left: 22px; position: relative;
+    }
+    .line-spotlight-features li::before {
+      content: "✓"; position: absolute; left: 0;
+      color: #fff; font-weight: 900;
+    }
+    .line-spotlight-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 28px;
+      background: #fff;
+      color: #06C755;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .line-spotlight-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .line-spotlight-url {
+      display: block; margin-top: 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.05em;
+    }
+    .line-spotlight-url a { color: #fff; text-decoration: underline; }
+
+    .line-spotlight-qr {
+      background: #fff;
+      padding: 18px;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      justify-self: center;
+    }
+    .line-spotlight-qr img {
+      display: block;
+      width: 220px;
+      height: 220px;
+    }
+    .line-spotlight-qr-label {
+      text-align: center;
+      margin-top: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: #3a3f48;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
     @media (max-width: 768px) {
       .channels, .reasons { grid-template-columns: 1fr; }
       .channel-handle { font-size: 0.92rem; }
+      .line-spotlight {
+        grid-template-columns: 1fr;
+        padding: 40px 28px;
+        gap: 32px;
+        text-align: center;
+      }
+      .line-spotlight-kicker { justify-content: center; }
+      .line-spotlight-features { display: inline-block; text-align: left; }
+      .line-spotlight-title { font-size: 1.7rem; }
+      .line-spotlight-qr img { width: 180px; height: 180px; }
     }
   </style>
 </head>
@@ -203,6 +319,33 @@
     <p class="lead">媒體採訪邀約、政策議題合作、學術研究合作、團體聯署，歡迎來信或透過 Facebook 粉絲專頁與我們聯繫。我們會在 2-3 個工作日內回覆。</p>
     <span class="mark"></span>
   </header>
+
+  <!-- LINE 公民監督社群 Spotlight -->
+  <section class="section">
+    <div class="line-spotlight">
+      <div class="line-spotlight-text">
+        <div class="line-spotlight-kicker">Citizen Monitor · 公民監督社群</div>
+        <h2 class="line-spotlight-title">加入國教盟 LINE 好友</h2>
+        <p class="line-spotlight-desc">
+          財劃法後 22 個縣市免費營養午餐是否落實？需要每位公民一起守住。加入 LINE 好友隨時收到：
+        </p>
+        <ul class="line-spotlight-features">
+          <li>22 縣市免費營養午餐落實追蹤</li>
+          <li>重大政策即時動態</li>
+          <li>家長行動參與機會</li>
+          <li>公聽會與記者會資訊</li>
+        </ul>
+        <a href="https://lin.ee/97Nh9HT" class="line-spotlight-btn" target="_blank" rel="noopener">加入 LINE 好友 →</a>
+        <span class="line-spotlight-url">
+          或掃描右側 QR Code　·　連結：<a href="https://lin.ee/97Nh9HT" target="_blank" rel="noopener">lin.ee/97Nh9HT</a>
+        </span>
+      </div>
+      <div class="line-spotlight-qr">
+        <img src="/wp-content/uploads/line-qr-aabe.png" alt="掃描加入國教盟 LINE 好友">
+        <div class="line-spotlight-qr-label">Scan to Join</div>
+      </div>
+    </div>
+  </section>
 
   <!-- Main Channels -->
   <section class="section">
