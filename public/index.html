@@ -214,24 +214,53 @@
     .topbar-nav a { color: var(--ink-2); transition: color 0.2s; }
     .topbar-nav a:hover { color: var(--brand-orange); }
 
-    /* Hero */
-    .hero { padding: 96px 32px 80px; text-align: center; max-width: 1040px; margin: 0 auto; }
-    .hero h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); font-weight: 900; line-height: 1.2; letter-spacing: 0.02em; margin-bottom: 24px; }
+    /* Hero — 升級為大標 + 副標 + manifesto preview */
+    .hero { padding: 100px 32px 72px; text-align: center; max-width: 1080px; margin: 0 auto; }
+    .hero-kicker { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.32em; color: var(--brand-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 28px; }
+    .hero h1 { font-family: 'Noto Serif TC', 'Noto Sans TC', serif; font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; line-height: 1.1; letter-spacing: 0.02em; margin-bottom: 28px; }
     .hero h1 .accent { color: var(--brand-orange); }
-    .hero .tagline { font-size: 1.1rem; color: var(--ink-2); max-width: 640px; margin: 0 auto 28px; }
-    .hero-cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 16px; }
+    .hero .tagline { font-family: 'Noto Serif TC', serif; font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--ink-2); max-width: 680px; margin: 0 auto 36px; line-height: 1.85; }
+    .hero-cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 4px; font-size: 0.92rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s; }
     .btn-primary { background: var(--ink); color: #fff; }
     .btn-primary:hover { background: var(--brand-orange); }
     .btn-secondary { border: 1px solid var(--ink); color: var(--ink); }
     .btn-secondary:hover { background: var(--ink); color: #fff; }
 
+    /* Chapter break */
+    .chapter { display: flex; align-items: baseline; gap: 14px; max-width: 1040px; margin: 0 auto; padding: 56px 32px 0; }
+    .chapter-num { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.32em; color: var(--brand-orange); text-transform: uppercase; }
+    .chapter-line { flex: 1; height: 1.5px; background: var(--ink); }
+    .chapter-label { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.28em; color: var(--ink-3); text-transform: uppercase; }
+
+    /* Manifesto */
+    .manifesto { max-width: 880px; margin: 0 auto; padding: 36px 32px 72px; }
+    .manifesto-heading { font-family: 'Noto Serif TC', serif; font-size: 2.4rem; font-weight: 900; margin-bottom: 32px; letter-spacing: 0.04em; }
+    .manifesto ul { list-style: none; padding: 0; }
+    .manifesto li { font-family: 'Noto Serif TC', serif; font-size: 1.6rem; font-weight: 500; line-height: 1.55; color: var(--ink-2); padding: 18px 0 18px 56px; position: relative; border-bottom: 1px solid var(--line); }
+    .manifesto li:last-child { border-bottom: 0; }
+    .manifesto li::before { content: counter(item, decimal-leading-zero); counter-increment: item; position: absolute; left: 0; top: 22px; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--brand-orange); letter-spacing: 0.15em; }
+    .manifesto ul { counter-reset: item; }
+    .manifesto li b { color: var(--ink); font-weight: 900; }
+
+    /* Now Focus banner */
+    .now-focus { background: var(--warm, #fdf6e3); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 64px 32px; }
+    .now-focus-inner { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: center; }
+    .now-focus-label { font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.32em; color: var(--brand-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 16px; }
+    .now-focus-title { font-family: 'Noto Serif TC', serif; font-size: 2.4rem; font-weight: 900; line-height: 1.2; color: var(--ink); }
+    .now-focus-title .highlight { background: linear-gradient(transparent 60%, rgba(235,155,49,0.35) 60%); }
+    .now-focus-body { font-family: 'Noto Serif TC', serif; font-size: 1.05rem; line-height: 1.85; color: var(--ink-2); }
+    .now-focus-body b { color: var(--ink); }
+    .now-focus-body .cta { display: inline-block; margin-top: 18px; padding: 12px 24px; background: var(--ink); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 4px; transition: background 0.2s; }
+    .now-focus-body .cta:hover { background: var(--brand-orange); }
+
     /* Stats band */
-    .stats-band { background: var(--ink); color: #fff; padding: 64px 32px; }
-    .stats-inner { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
-    .stat-num { font-size: 3rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+    .stats-band { background: var(--ink); color: #fff; padding: 80px 32px; }
+    .stats-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    .stat-num { font-family: 'Inter', sans-serif; font-size: clamp(3rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
     .stat-num .plus { color: var(--brand-orange); }
-    .stat-label { margin-top: 12px; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: #b8bcc3; }
+    .stat-label { margin-top: 16px; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: #b8bcc3; }
+    .stats-note { max-width: 1080px; margin: 32px auto 0; font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 0.2em; color: #7a8089; text-transform: uppercase; }
 
     /* Latest articles */
     .latest { max-width: 1280px; margin: 80px auto; padding: 0 32px; }
@@ -247,12 +276,19 @@
 
     /* Cross-site cards */
     .cross-sites { background: var(--bg-soft); padding: 80px 32px; }
-    .cross-inner { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .cross-card { background: #fff; padding: 36px 32px; border-left: 5px solid var(--brand-orange); display: flex; flex-direction: column; }
+    .cross-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .cross-card { background: #fff; padding: 36px 32px; border-left: 5px solid var(--brand-orange); display: flex; flex-direction: column; transition: transform 0.2s; }
+    .cross-card:hover { transform: translateY(-3px); }
+    .cross-card.line-card { border-left-color: #06C755; }
+    .cross-card.line-card .kicker { color: #06C755; }
+    .cross-card.line-card .arrow { color: #06C755; }
     .cross-card .kicker { font-size: 0.72rem; letter-spacing: 0.25em; color: var(--brand-orange); font-weight: 600; text-transform: uppercase; margin-bottom: 12px; }
-    .cross-card h2 { font-size: 1.6rem; font-weight: 900; margin-bottom: 12px; }
-    .cross-card p { color: var(--ink-2); margin-bottom: 20px; flex: 1; }
-    .cross-card .arrow { font-weight: 700; color: var(--brand-orange); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.88rem; align-self: flex-start; }
+    .cross-card h2 { font-size: 1.4rem; font-weight: 900; margin-bottom: 12px; }
+    .cross-card p { color: var(--ink-2); margin-bottom: 20px; flex: 1; font-size: 0.95rem; line-height: 1.7; }
+    .cross-card .arrow { font-weight: 700; color: var(--brand-orange); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem; align-self: flex-start; }
+    @media (max-width: 1024px) {
+      .cross-inner { grid-template-columns: 1fr; max-width: 640px; }
+    }
 
     /* Footer */
     footer { background: var(--ink); color: #fff; padding: 64px 32px 32px; }
@@ -264,9 +300,23 @@
     .footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.85rem; color: #b8bcc3; }
 
     @media (max-width: 768px) {
-      .hero { padding: 56px 20px 48px; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-      .stat-num { font-size: 2.2rem; }
+      .hero { padding: 60px 20px 48px; }
+      .hero h1 { font-size: clamp(2.6rem, 11vw, 3.6rem); }
+      .hero .tagline { font-size: 1.05rem; }
+      .chapter { padding: 40px 20px 0; gap: 10px; }
+      .chapter-num, .chapter-label { font-size: 0.6rem; letter-spacing: 0.22em; }
+      .manifesto { padding: 24px 20px 56px; }
+      .manifesto-heading { font-size: 1.7rem; margin-bottom: 24px; }
+      .manifesto li { font-size: 1.15rem; padding: 14px 0 14px 44px; }
+      .manifesto li::before { top: 18px; font-size: 0.7rem; }
+      .now-focus { padding: 48px 20px; }
+      .now-focus-inner { grid-template-columns: 1fr; gap: 24px; }
+      .now-focus-title { font-size: 1.7rem; }
+      .now-focus-body { font-size: 0.98rem; }
+      .stats-band { padding: 56px 20px; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .stat-num { font-size: 2.6rem; }
+      .stats-note { margin-top: 24px; font-size: 0.68rem; }
       .footer-cols { grid-template-columns: 1fr; gap: 28px; }
       .cross-inner { grid-template-columns: 1fr; }
     }
@@ -279,7 +329,13 @@
   <!-- Top Navigation -->
   <header class="topbar">
     <div class="topbar-inner">
-      <a href="/" class="topbar-logo"><img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟"></a>
+      <a href="/" class="topbar-logo">
+        <img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟">
+        <div class="topbar-logo-text">
+          <span class="topbar-logo-cn">國教行動聯盟</span>
+          <span class="topbar-logo-en">Action Alliance · Est. 2012</span>
+        </div>
+      </a>
       <nav class="topbar-nav" aria-label="Primary">
         <a href="/about/">關於我們</a>
         <a href="/issues/">兒少與教育議題</a>
@@ -294,39 +350,94 @@
 
   <main id="main">
 
-    <!-- Hero -->
+    <!-- CH 01 — Hero -->
+    <div class="chapter">
+      <span class="chapter-num">Ch 01</span>
+      <span class="chapter-line"></span>
+      <span class="chapter-label">Opening</span>
+    </div>
     <section class="hero">
+      <span class="hero-kicker">Est. 2012 · A Parent-Driven Advocacy NGO</span>
       <h1>從<span class="accent">倡議到改變</span><br>我們為孩子發聲</h1>
-      <p class="tagline">國教行動聯盟串聯全國力量，透過政策監督、議題倡議、跨界合作，推動兒童及青少年權益保障。</p>
+      <p class="tagline">13 年來，串聯 168 個跨領域組織，把家庭擔憂轉化為國家層級的政策改變。</p>
       <div class="hero-cta">
-        <a href="https://policy.aabe.org.tw/" class="btn btn-primary">探索政策知識庫 →</a>
-        <a href="/about/" class="btn btn-secondary">認識國教盟</a>
+        <a href="/contact/" class="btn btn-primary">加入公民監督社群 →</a>
+        <a href="https://policy.aabe.org.tw/" class="btn btn-secondary">探索政策論述</a>
       </div>
     </section>
 
-    <!-- Stats Band -->
+    <!-- CH 02 — Manifesto -->
+    <div class="chapter">
+      <span class="chapter-num">Ch 02</span>
+      <span class="chapter-line"></span>
+      <span class="chapter-label">Manifesto</span>
+    </div>
+    <section class="manifesto">
+      <h2 class="manifesto-heading">我們堅持的事</h2>
+      <ul>
+        <li>我們堅持，<b>每個孩子都該被看見</b>。</li>
+        <li>我們堅持，<b>教育不是市場</b>。</li>
+        <li>我們堅持，<b>家長是政策的源頭</b>，不是政策的旁觀者。</li>
+        <li>我們堅持，<b>制度有缺口，就要修</b>。</li>
+        <li>我們堅持，<b>沉默不是中立</b>。</li>
+      </ul>
+    </section>
+
+    <!-- CH 03 — Now Focus -->
+    <div class="chapter">
+      <span class="chapter-num">Ch 03</span>
+      <span class="chapter-line"></span>
+      <span class="chapter-label">Current Focus</span>
+    </div>
+    <section class="now-focus">
+      <div class="now-focus-inner">
+        <div>
+          <div class="now-focus-label">現在最關鍵</div>
+          <h2 class="now-focus-title">財劃法後 ·<br><span class="highlight">22 個縣市</span>免費營養午餐監督</h2>
+        </div>
+        <div class="now-focus-body">
+          財劃法修法後，免費營養午餐改由<b>地方統籌</b>。<b>22 個縣市能否落實？</b><br>
+          我們爭取了 13 年的免費營養午餐，現在需要每一位公民一起守住。
+          <br>
+          <a href="/contact/" class="cta">加入監督社群 →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CH 04 — Numbers -->
+    <div class="chapter">
+      <span class="chapter-num">Ch 04</span>
+      <span class="chapter-line"></span>
+      <span class="chapter-label">Numbers That Matter</span>
+    </div>
     <section class="stats-band">
       <div class="stats-inner">
         <div>
+          <div class="stat-num">168<span class="plus">+</span></div>
+          <div class="stat-label">Partner Orgs · 合作組織</div>
+        </div>
+        <div>
           <div class="stat-num">113</div>
-          <div class="stat-label">Press Releases</div>
+          <div class="stat-label">Policy Articles · 政策論述</div>
         </div>
         <div>
           <div class="stat-num">286</div>
-          <div class="stat-label">Events</div>
+          <div class="stat-label">Advocacy Events · 倡議行動</div>
         </div>
         <div>
           <div class="stat-num">7,917<span class="plus">+</span></div>
-          <div class="stat-label">Media Mentions</div>
-        </div>
-        <div>
-          <div class="stat-num">168<span class="plus">+</span></div>
-          <div class="stat-label">Collaborations</div>
+          <div class="stat-label">Media Mentions · 媒體聲量</div>
         </div>
       </div>
+      <p class="stats-note">2023 — 2025 近三年累計</p>
     </section>
 
-    <!-- Latest 6 articles (mirrors the carousel on demo site) -->
+    <!-- CH 05 — Latest -->
+    <div class="chapter">
+      <span class="chapter-num">Ch 05</span>
+      <span class="chapter-line"></span>
+      <span class="chapter-label">Latest Voice</span>
+    </div>
     <section class="latest">
       <div class="section-head">
         <h2 class="section-title">最新倡議</h2>
@@ -366,7 +477,12 @@
       </div>
     </section>
 
-    <!-- Cross-site cards -->
+    <!-- CH 06 — Three Sites -->
+    <div class="chapter">
+      <span class="chapter-num">Ch 06</span>
+      <span class="chapter-line"></span>
+      <span class="chapter-label">Knowledge &amp; Action</span>
+    </div>
     <section class="cross-sites">
       <div class="cross-inner">
         <a href="https://policy.aabe.org.tw/" class="cross-card" style="text-decoration:none;">
@@ -378,8 +494,14 @@
         <a href="https://advocacy.aabe.org.tw/" class="cross-card" style="text-decoration:none;">
           <span class="kicker">Advocacy Database</span>
           <h2>倡議成果資料庫</h2>
-          <p>2023-2025 倡議行動完整紀錄：113 篇新聞稿、286 場活動、7,917+ 媒體聲量、168+ 合作組織。</p>
+          <p>113 篇新聞稿、286 場活動、7,917+ 媒體聲量、168+ 合作組織完整資料庫。</p>
           <span class="arrow">Explore →</span>
+        </a>
+        <a href="/contact/" class="cross-card line-card" style="text-decoration:none;">
+          <span class="kicker">Citizen Monitor · LINE</span>
+          <h2>公民監督社群</h2>
+          <p>每週收到 22 縣市免費營養午餐落實追蹤、重大政策即時動態、家長行動參與機會。</p>
+          <span class="arrow">Join LINE →</span>
         </a>
       </div>
     </section>
