@@ -554,13 +554,35 @@
             return heroVideos.find(function(v){ return v.offsetParent !== null; }) || heroVideos[0];
           }
 
+          // iOS Safari 對 modal 內 video 的 autoplay/seek 很嚴格，要分階段觸發
+          function playModal(){
+            // currentTime 同步：只在 video 可 seek 時做（避免 readyState=0 時 throw）
+            try {
+              var src = visibleHero();
+              if (src && src.readyState >= 2 && modalVideo.readyState >= 1 && src.currentTime > 0) {
+                modalVideo.currentTime = src.currentTime;
+              }
+            } catch(e){}
+            var p = modalVideo.play();
+            if (p && p.catch) p.catch(function(){
+              // 若 play() 被 reject（iOS 偶發），延遲再試一次
+              setTimeout(function(){ modalVideo.play().catch(function(){}); }, 100);
+            });
+          }
           function open(){
             modal.classList.add('open');
             modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
-            var src = visibleHero();
-            try { modalVideo.currentTime = src.currentTime; } catch(e){}
-            modalVideo.play().catch(function(){});
+            // 確保 playsinline 屬性（iOS Safari 必要）
+            modalVideo.playsInline = true;
+            modalVideo.muted = true;
+            // 若 metadata 還沒載，先觸發載入再播放
+            if (modalVideo.readyState === 0) {
+              modalVideo.load();
+              modalVideo.addEventListener('loadedmetadata', playModal, { once: true });
+              modalVideo.addEventListener('canplay', playModal, { once: true });
+            }
+            playModal();
           }
           function close(){
             modal.classList.remove('open');
