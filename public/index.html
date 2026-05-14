@@ -227,7 +227,46 @@
     .nav-toggle:checked ~ .nav-toggle-btn span::after { top: 0; transform: rotate(-45deg); }
 
     /* Hero — 升級為大標 + 副標 + manifesto preview */
-    .hero { padding: 100px 32px 72px; text-align: center; max-width: 1080px; margin: 0 auto; }
+    .hero { padding: 72px 32px 72px; text-align: center; max-width: 1080px; margin: 0 auto; }
+    .hero-video-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto 56px;
+      aspect-ratio: 16 / 9;
+      max-height: 420px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #0a0a0a;
+      box-shadow: 0 24px 60px -20px rgba(0,0,0,0.25), 0 8px 24px -8px rgba(0,0,0,0.12);
+    }
+    .hero-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .hero-video-badge {
+      position: absolute;
+      left: 16px; bottom: 16px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 12px;
+      background: rgba(10,10,10,0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 999px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.66rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: #fafafa;
+    }
+    .hero-video-badge::before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--brand-orange); flex: none;
+      box-shadow: 0 0 0 3px rgba(235,155,49,0.25);
+    }
     .hero-kicker { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.32em; color: var(--brand-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 28px; }
     .hero h1 { font-family: 'Noto Serif TC', 'Noto Sans TC', serif; font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; line-height: 1.1; letter-spacing: 0.02em; margin-bottom: 28px; }
     .hero h1 .accent { color: var(--brand-orange); }
@@ -319,7 +358,9 @@
       .nav-toggle:checked ~ .topbar-nav { display: flex; }
       .topbar-nav a { padding: 12px 4px; border-bottom: 1px solid #f4f5f7; font-size: 0.95rem; }
       .topbar-nav a:last-child { border-bottom: 0; }
-      .hero { padding: 60px 20px 48px; }
+      .hero { padding: 48px 20px 48px; }
+      .hero-video-wrap { margin-bottom: 36px; border-radius: 6px; }
+      .hero-video-badge { left: 10px; bottom: 10px; font-size: 0.6rem; padding: 5px 10px; letter-spacing: 0.18em; }
       .hero h1 { font-size: clamp(2.6rem, 11vw, 3.6rem); }
       .hero .tagline { font-size: 1.05rem; }
       .chapter { padding: 40px 20px 0; gap: 10px; }
@@ -377,6 +418,28 @@
       <span class="chapter-label">Opening</span>
     </div>
     <section class="hero">
+      <!-- Hero 動畫：2023-2025 三年倡議成果（無聲自動播放、循環） -->
+      <div class="hero-video-wrap" aria-hidden="true">
+        <video class="hero-video" id="heroVideo"
+               autoplay muted loop playsinline preload="auto"
+               poster="/wp-content/uploads/hero-poster.jpg">
+          <source src="/wp-content/uploads/hero-loop.webm" type="video/webm">
+          <source src="/wp-content/uploads/hero-loop.mp4" type="video/mp4">
+        </video>
+        <span class="hero-video-badge">2023 — 2025 · Impact Reel</span>
+      </div>
+      <script>
+        // 保險：autoplay 在某些瀏覽器需手動觸發 .play()（已 muted，符合 autoplay policy）
+        (function(){
+          var v = document.getElementById('heroVideo');
+          if (!v) return;
+          var tryPlay = function(){ v.play().catch(function(){}); };
+          v.addEventListener('loadedmetadata', tryPlay);
+          v.addEventListener('canplay', tryPlay);
+          tryPlay();
+        })();
+      </script>
+
       <span class="hero-kicker">Est. 2012 · A Parent-Driven Advocacy NGO</span>
       <h1>從<span class="accent">倡議到改變</span><br>我們為孩子發聲</h1>
       <p class="tagline">13 年來，串聯 168 個跨領域組織，把家庭擔憂轉化為國家層級的政策改變。</p>
