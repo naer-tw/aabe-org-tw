@@ -231,12 +231,12 @@
     .hero-video-wrap {
       position: relative;
       width: 100%;
-      max-width: 270px;
+      max-width: 960px;
       margin: 0 auto 56px;
-      aspect-ratio: 9 / 16;
-      max-height: 480px;
+      aspect-ratio: 16 / 9;
+      max-height: 420px;
       overflow: hidden;
-      border-radius: 12px;
+      border-radius: 10px;
       background: #1a1a1a;
       box-shadow: 0 24px 60px -20px rgba(0,0,0,0.3), 0 8px 24px -8px rgba(0,0,0,0.15);
       cursor: zoom-in;
@@ -254,6 +254,8 @@
       display: block;
       pointer-events: none;
     }
+    /* 桌面顯示 16:9 cinematic, 手機切換到 9:16 直式（在下方 @media 內處理） */
+    .hero-video-mobile { display: none; }
     .hero-video-expand {
       position: absolute; right: 10px; top: 10px;
       width: 34px; height: 34px;
@@ -419,7 +421,16 @@
       .topbar-nav a { padding: 12px 4px; border-bottom: 1px solid #f4f5f7; font-size: 0.95rem; }
       .topbar-nav a:last-child { border-bottom: 0; }
       .hero { padding: 48px 20px 48px; }
-      .hero-video-wrap { margin-bottom: 36px; border-radius: 10px; max-width: 240px; max-height: 427px; }
+      /* 手機切回直式 9:16（內容看得清） */
+      .hero-video-wrap {
+        margin-bottom: 36px;
+        border-radius: 10px;
+        aspect-ratio: 9 / 16;
+        max-width: 240px;
+        max-height: 427px;
+      }
+      .hero-video-desktop { display: none; }
+      .hero-video-mobile { display: block; }
       .hero-video-badge { left: 10px; bottom: 10px; font-size: 0.6rem; padding: 5px 10px; letter-spacing: 0.18em; }
       .hero-video-expand { width: 32px; height: 32px; right: 8px; top: 8px; }
       .hero-modal { padding: 16px; }
@@ -482,13 +493,20 @@
     </div>
     <section class="hero">
       <!-- Hero 動畫：2023-2025 三年倡議成果（無聲自動播放、循環） -->
+      <!-- 桌面 cinematic 16:9 / 手機直式 9:16，CSS 切換 -->
       <div class="hero-video-wrap" role="button" tabindex="0"
            aria-label="點擊放大影片：2023-2025 倡議成果 Impact Reel">
-        <video class="hero-video" id="heroVideo"
+        <video class="hero-video hero-video-desktop" id="heroVideo"
                autoplay muted loop playsinline preload="auto"
                poster="/wp-content/uploads/hero-poster.jpg">
           <source src="/wp-content/uploads/hero-loop.webm" type="video/webm">
           <source src="/wp-content/uploads/hero-loop.mp4" type="video/mp4">
+        </video>
+        <video class="hero-video hero-video-mobile" id="heroVideoMobile"
+               autoplay muted loop playsinline preload="auto"
+               poster="/wp-content/uploads/hero-modal-poster.jpg">
+          <source src="/wp-content/uploads/hero-modal.webm" type="video/webm">
+          <source src="/wp-content/uploads/hero-modal.mp4" type="video/mp4">
         </video>
         <span class="hero-video-badge">2023 — 2025 · Impact Reel</span>
         <button class="hero-video-expand" type="button" aria-label="放大影片">
@@ -503,21 +521,26 @@
         <button class="hero-modal-close" id="heroModalClose" type="button" aria-label="關閉影片">×</button>
         <video class="hero-modal-video" id="heroModalVideo"
                muted loop playsinline preload="metadata"
-               poster="/wp-content/uploads/hero-poster.jpg">
-          <source src="/wp-content/uploads/hero-loop.webm" type="video/webm">
-          <source src="/wp-content/uploads/hero-loop.mp4" type="video/mp4">
+               poster="/wp-content/uploads/hero-modal-poster.jpg">
+          <source src="/wp-content/uploads/hero-modal.webm" type="video/webm">
+          <source src="/wp-content/uploads/hero-modal.mp4" type="video/mp4">
         </video>
       </div>
 
       <script>
         (function(){
-          var v = document.getElementById('heroVideo');
-          if (!v) return;
+          var vDesktop = document.getElementById('heroVideo');
+          var vMobile = document.getElementById('heroVideoMobile');
+          var heroVideos = [vDesktop, vMobile].filter(Boolean);
+          if (!heroVideos.length) return;
+
           // 保險觸發 autoplay（muted 已符合所有瀏覽器 policy）
-          var tryPlay = function(){ v.play().catch(function(){}); };
-          v.addEventListener('loadedmetadata', tryPlay);
-          v.addEventListener('canplay', tryPlay);
-          tryPlay();
+          heroVideos.forEach(function(v){
+            var tryPlay = function(){ v.play().catch(function(){}); };
+            v.addEventListener('loadedmetadata', tryPlay);
+            v.addEventListener('canplay', tryPlay);
+            tryPlay();
+          });
 
           // Fullscreen modal
           var wrap = document.querySelector('.hero-video-wrap');
@@ -526,11 +549,17 @@
           var closeBtn = document.getElementById('heroModalClose');
           if (!wrap || !modal || !modalVideo) return;
 
+          // 找到「目前可見」的 hero video 來同步 currentTime
+          function visibleHero(){
+            return heroVideos.find(function(v){ return v.offsetParent !== null; }) || heroVideos[0];
+          }
+
           function open(){
             modal.classList.add('open');
             modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
-            try { modalVideo.currentTime = v.currentTime; } catch(e){}
+            var src = visibleHero();
+            try { modalVideo.currentTime = src.currentTime; } catch(e){}
             modalVideo.play().catch(function(){});
           }
           function close(){
@@ -546,7 +575,6 @@
           });
           closeBtn.addEventListener('click', close);
           modal.addEventListener('click', function(e){
-            // 點背景關閉，但點影片本身不關
             if (e.target === modal) close();
           });
           document.addEventListener('keydown', function(e){
