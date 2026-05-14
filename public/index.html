@@ -239,6 +239,12 @@
       border-radius: 12px;
       background: #1a1a1a;
       box-shadow: 0 24px 60px -20px rgba(0,0,0,0.3), 0 8px 24px -8px rgba(0,0,0,0.15);
+      cursor: zoom-in;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .hero-video-wrap:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 30px 70px -20px rgba(0,0,0,0.4), 0 12px 30px -10px rgba(0,0,0,0.2);
     }
     .hero-video {
       position: absolute; inset: 0;
@@ -246,7 +252,61 @@
       object-fit: cover;
       object-position: center;
       display: block;
+      pointer-events: none;
     }
+    .hero-video-expand {
+      position: absolute; right: 10px; top: 10px;
+      width: 34px; height: 34px;
+      background: rgba(10,10,10,0.55);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      padding: 0;
+    }
+    .hero-video-expand:hover { background: var(--brand-orange); transform: scale(1.06); }
+    .hero-video-expand svg { width: 16px; height: 16px; fill: #fff; display: block; }
+
+    /* Hero fullscreen modal */
+    .hero-modal {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.92);
+      display: none;
+      align-items: center; justify-content: center;
+      z-index: 9999;
+      padding: 32px;
+      animation: heroModalIn 0.18s ease-out;
+    }
+    .hero-modal.open { display: flex; }
+    @keyframes heroModalIn { from { opacity: 0; } to { opacity: 1; } }
+    .hero-modal-video {
+      max-width: 100%;
+      max-height: 90vh;
+      width: auto;
+      aspect-ratio: 9 / 16;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #1a1a1a;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    }
+    .hero-modal-close {
+      position: absolute;
+      top: 24px; right: 24px;
+      width: 44px; height: 44px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 50%;
+      font-size: 24px; font-weight: 300; line-height: 1;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+      padding: 0;
+    }
+    .hero-modal-close:hover { background: var(--brand-orange); border-color: var(--brand-orange); }
     .hero-video-badge {
       position: absolute;
       left: 16px; bottom: 16px;
@@ -361,6 +421,9 @@
       .hero { padding: 48px 20px 48px; }
       .hero-video-wrap { margin-bottom: 36px; border-radius: 10px; max-width: 240px; max-height: 427px; }
       .hero-video-badge { left: 10px; bottom: 10px; font-size: 0.6rem; padding: 5px 10px; letter-spacing: 0.18em; }
+      .hero-video-expand { width: 32px; height: 32px; right: 8px; top: 8px; }
+      .hero-modal { padding: 16px; }
+      .hero-modal-close { top: 16px; right: 16px; width: 40px; height: 40px; }
       .hero h1 { font-size: clamp(2.6rem, 11vw, 3.6rem); }
       .hero .tagline { font-size: 1.05rem; }
       .chapter { padding: 40px 20px 0; gap: 10px; }
@@ -419,7 +482,8 @@
     </div>
     <section class="hero">
       <!-- Hero 動畫：2023-2025 三年倡議成果（無聲自動播放、循環） -->
-      <div class="hero-video-wrap" aria-hidden="true">
+      <div class="hero-video-wrap" role="button" tabindex="0"
+           aria-label="點擊放大影片：2023-2025 倡議成果 Impact Reel">
         <video class="hero-video" id="heroVideo"
                autoplay muted loop playsinline preload="auto"
                poster="/wp-content/uploads/hero-poster.jpg">
@@ -427,16 +491,67 @@
           <source src="/wp-content/uploads/hero-loop.mp4" type="video/mp4">
         </video>
         <span class="hero-video-badge">2023 — 2025 · Impact Reel</span>
+        <button class="hero-video-expand" type="button" aria-label="放大影片">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 5h6V3H3v8h2V5zm14 0v6h2V3h-8v2h6zM5 19v-6H3v8h8v-2H5zm14-6v6h-6v2h8v-8h-2z"/>
+          </svg>
+        </button>
       </div>
+
+      <!-- Fullscreen modal for hero video -->
+      <div class="hero-modal" id="heroModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="2023-2025 倡議成果影片">
+        <button class="hero-modal-close" id="heroModalClose" type="button" aria-label="關閉影片">×</button>
+        <video class="hero-modal-video" id="heroModalVideo"
+               muted loop playsinline preload="metadata"
+               poster="/wp-content/uploads/hero-poster.jpg">
+          <source src="/wp-content/uploads/hero-loop.webm" type="video/webm">
+          <source src="/wp-content/uploads/hero-loop.mp4" type="video/mp4">
+        </video>
+      </div>
+
       <script>
-        // 保險：autoplay 在某些瀏覽器需手動觸發 .play()（已 muted，符合 autoplay policy）
         (function(){
           var v = document.getElementById('heroVideo');
           if (!v) return;
+          // 保險觸發 autoplay（muted 已符合所有瀏覽器 policy）
           var tryPlay = function(){ v.play().catch(function(){}); };
           v.addEventListener('loadedmetadata', tryPlay);
           v.addEventListener('canplay', tryPlay);
           tryPlay();
+
+          // Fullscreen modal
+          var wrap = document.querySelector('.hero-video-wrap');
+          var modal = document.getElementById('heroModal');
+          var modalVideo = document.getElementById('heroModalVideo');
+          var closeBtn = document.getElementById('heroModalClose');
+          if (!wrap || !modal || !modalVideo) return;
+
+          function open(){
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            try { modalVideo.currentTime = v.currentTime; } catch(e){}
+            modalVideo.play().catch(function(){});
+          }
+          function close(){
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            modalVideo.pause();
+          }
+
+          wrap.addEventListener('click', open);
+          wrap.addEventListener('keydown', function(e){
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+          });
+          closeBtn.addEventListener('click', close);
+          modal.addEventListener('click', function(e){
+            // 點背景關閉，但點影片本身不關
+            if (e.target === modal) close();
+          });
+          document.addEventListener('keydown', function(e){
+            if (e.key === 'Escape' && modal.classList.contains('open')) close();
+          });
         })();
       </script>
 
