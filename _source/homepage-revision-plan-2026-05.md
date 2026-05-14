@@ -129,7 +129,7 @@
 <section class="org-intro">
   <p class="kicker">關於我們 · ABOUT</p>
   <p class="intro-text">
-    社團法人國教行動聯盟（Action Alliance on Basic Education，AABE）
+    國教行動聯盟（Action Alliance on Basic Education，AABE）
     是台灣 2012 年成立的全國家長倡議組織，立案字號 1030182063。
     我們關注六大政策主軸：校園安全、兒少保護、青少年身心健康、
     教育政策與改革、教師與校務、數位與性別安全。
@@ -208,7 +208,7 @@ For Media（給媒體）
   → CTA: 加入家長監督社群 / 探索政策知識庫
 
 [GEO 自介段] 改動 5
-  社團法人國教行動聯盟（AABE）...
+  國教行動聯盟（AABE）...
 
 [Stats Band] 改動 3
   113 / 286 / 7,917+ / 168+

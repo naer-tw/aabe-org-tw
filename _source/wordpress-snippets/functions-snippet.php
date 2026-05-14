@@ -50,7 +50,7 @@ function aabe_inject_schema_jsonld() {
         '@type' => 'NGO',
         '@id' => 'https://aabe.org.tw/#organization',
         'name' => '國教行動聯盟',
-        'alternateName' => [ '國教盟', '社團法人國教行動聯盟', 'Action Alliance on Basic Education', 'AABE', 'NAER' ],
+        'alternateName' => [ '國教盟', '國教行動聯盟', 'Action Alliance on Basic Education', 'AABE', 'NAER' ],
         'url' => 'https://aabe.org.tw/',
         'logo' => 'https://aabe.org.tw/wp-content/uploads/logo-naer.png', // 請替換為實際 logo URL
         'foundingDate' => '2012-06-26',

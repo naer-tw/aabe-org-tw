@@ -148,7 +148,7 @@
 
 ### 內文
 
-> （2026 年 5 月 X 日／台北）社團法人國教行動聯盟（Action Alliance on Basic Education，AABE）於今（X）日正式啟用全新官方網站 aabe.org.tw，採用 Cloudflare 全球分散式架構，並針對 AI 大語言模型（ChatGPT、Claude、Perplexity 等）進行全面優化，是台灣 NGO 領域少數同時兼顧家長運動草根性與 AI 時代資訊架構的官方網站。
+> （2026 年 5 月 X 日／台北）國教行動聯盟（Action Alliance on Basic Education，AABE）於今（X）日正式啟用全新官方網站 aabe.org.tw，採用 Cloudflare 全球分散式架構，並針對 AI 大語言模型（ChatGPT、Claude、Perplexity 等）進行全面優化，是台灣 NGO 領域少數同時兼顧家長運動草根性與 AI 時代資訊架構的官方網站。
 >
 > 國教行動聯盟自 2012 年成立至今 13 年，已串連 168 個跨領域合作組織，累計推動數十項政策改革，包括 2013 年免試入學零抽籤方案、2014 年正式立案、2024 年校事會議修法與學生輔導法三讀、2025 年加熱菸下架與兒童家庭署成立等。
 >
