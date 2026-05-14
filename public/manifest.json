@@ -1,0 +1,53 @@
+{
+  "name": "國教行動聯盟",
+  "short_name": "國教盟",
+  "description": "國教行動聯盟（AABE）成立於 2012 年，是台灣推動兒童及青少年權益的家長倡議組織。",
+  "lang": "zh-TW",
+  "dir": "ltr",
+  "scope": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "/wp-content/uploads/favicon-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/wp-content/uploads/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/wp-content/uploads/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/wp-content/uploads/logo-naer.png",
+      "sizes": "1400x500",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education", "nonprofit", "advocacy"],
+  "shortcuts": [
+    {
+      "name": "兒少與教育議題",
+      "url": "/issues/",
+      "description": "六大政策主軸索引"
+    },
+    {
+      "name": "活動公告",
+      "url": "/events/"
+    },
+    {
+      "name": "聯絡我們",
+      "url": "/contact/"
+    }
+  ]
+}
