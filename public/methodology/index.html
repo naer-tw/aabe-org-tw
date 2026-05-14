@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-TW" itemscope itemtype="https://schema.org/WebPage">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>資料方法與來源｜國教行動聯盟 Methodology</title>
+  <meta name="description" content="國教行動聯盟（AABE）官網所有數字 — 168+ 合作組織、113 篇新聞稿、286 場行動、7,917+ 媒體聲量、29 篇政策深度分析 — 的計算方式、定義、資料來源與更新頻率。">
+  <meta name="keywords" content="國教行動聯盟,AABE,資料方法,Methodology,引用,資料來源">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+
+  <link rel="canonical" href="https://aabe.org.tw/methodology/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/wp-content/uploads/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/wp-content/uploads/apple-touch-icon.png">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <meta property="og:title" content="資料方法與來源｜國教行動聯盟">
+  <meta property="og:description" content="官網所有數字的計算方式、定義、資料來源、更新頻率。">
+  <meta property="og:image" content="https://aabe.org.tw/wp-content/uploads/og-about.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aabe.org.tw/methodology/">
+  <meta property="og:site_name" content="國教行動聯盟">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="資料方法與來源｜國教行動聯盟">
+  <meta name="twitter:description" content="官網所有數字的計算方式、定義、資料來源、更新頻率。">
+  <meta name="twitter:image" content="https://aabe.org.tw/wp-content/uploads/og-about.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "資料方法與來源｜國教行動聯盟",
+    "description": "AABE 官網數字的計算方式、定義、資料來源。",
+    "url": "https://aabe.org.tw/methodology/",
+    "inLanguage": "zh-TW",
+    "isPartOf": { "@type": "WebSite", "@id": "https://aabe.org.tw/#website" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://aabe.org.tw/" },
+      { "@type": "ListItem", "position": 2, "name": "資料方法與來源", "item": "https://aabe.org.tw/methodology/" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/aabe.css">
+
+  <style>
+    .page-hero { padding: 72px 32px 48px; max-width: 1080px; margin: 0 auto; }
+    .page-hero .kicker { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.32em; color: var(--brand-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'Noto Serif TC', serif; font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
+    .page-hero .lead { font-family: 'Noto Serif TC', serif; font-size: 1.1rem; line-height: 1.9; color: var(--ink-2); max-width: 720px; }
+
+    .section { max-width: 1080px; margin: 0 auto; padding: 32px; }
+    .section h2 { font-family: 'Noto Serif TC', serif; font-size: 1.8rem; font-weight: 900; margin-bottom: 8px; }
+    .section .section-hint { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 24px; display: block; }
+
+    /* Definition cards — 每個數字一個 card */
+    .definitions { margin: 24px 0; }
+    .def-card {
+      padding: 28px 32px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    .def-card .def-num {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--ink);
+      margin-right: 14px;
+      vertical-align: middle;
+    }
+    .def-card .def-num .plus { color: var(--brand-orange); }
+    .def-card .def-label {
+      display: inline-block;
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      vertical-align: middle;
+    }
+    .def-card .def-meta {
+      margin-top: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      color: var(--brand-orange);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .def-card .def-body {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .def-card .def-body h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .def-card .def-body p {
+      color: var(--ink-2);
+      line-height: 1.75;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 720px) { .def-card .def-body { grid-template-columns: 1fr; } }
+
+    /* Glossary */
+    .glossary { margin: 24px 0; }
+    .gl-item { border-bottom: 1px solid var(--line); padding: 16px 0; }
+    .gl-item dt { font-weight: 800; color: var(--ink); font-size: 1rem; margin-bottom: 6px; }
+    .gl-item dd { color: var(--ink-2); line-height: 1.75; font-size: 0.95rem; }
+    .gl-item dd strong { color: var(--ink); }
+
+    /* Update log */
+    .changelog { margin: 24px 0; }
+    .cl-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 24px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.95rem;
+    }
+    .cl-row time { font-family: 'Inter', sans-serif; font-weight: 700; color: var(--brand-orange); font-size: 0.85rem; letter-spacing: 0.05em; }
+    .cl-row .what { color: var(--ink-2); line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">跳至主內容</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="topbar-logo">
+      <picture>
+        <source media="(max-width: 768px)" srcset="/wp-content/uploads/logo-naer-icon-only.png">
+        <img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟｜Action Alliance on Basic Education">
+      </picture>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="切換選單">
+    <label for="nav-toggle" class="nav-toggle-btn" aria-label="開啟選單"><span></span></label>
+    <nav class="topbar-nav" aria-label="Primary">
+      <a href="/about/">關於我們</a>
+      <a href="/issues/">兒少與教育議題</a>
+      <a href="/chronicle/">大事紀</a>
+      <a href="/events/">活動公告</a>
+      <a href="/act/">參與行動</a>
+      <a href="/press/">媒體中心</a>
+      <a href="/contact/">聯絡我們</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <span class="kicker">Data · Methodology</span>
+    <h1>資料方法與來源</h1>
+    <p class="lead">國教盟官網所有數字 — 從「168+ 合作組織」到「7,917+ 媒體聲量」— 都來自可追溯的原始資料。本頁說明每個數字的定義、計算方式、資料來源、更新頻率，協助記者、研究者、立委辦公室準確引用。</p>
+    <p style="font-size:0.9rem;color:var(--ink-3);margin-top:16px;font-family:'Inter',sans-serif;">最後更新：2026-05-14</p>
+  </section>
+
+  <!-- ════════ 各項數字定義 ════════ -->
+  <section class="section">
+    <h2>主要數字 · 定義與來源</h2>
+    <span class="section-hint">5 + 1 項核心指標</span>
+
+    <div class="definitions">
+
+      <div class="def-card">
+        <div>
+          <span class="def-num">168<span class="plus">+</span></span>
+          <span class="def-label">合作組織</span>
+          <div class="def-meta">Partner Organizations · 三年累計</div>
+        </div>
+        <div class="def-body">
+          <div>
+            <h4>定義</h4>
+            <p>2023-2025 三年期間，與國教盟在任一倡議行動（記者會、聯署、論壇、聯合聲明）共同列名的<strong>跨領域組織總數</strong>。去除重複合作後，得到 168+ 唯一組織。</p>
+          </div>
+          <div>
+            <h4>資料來源</h4>
+            <p>內部行政紀錄 + 倡議成果資料庫 <a href="https://advocacy.aabe.org.tw/" style="border-bottom:1px solid var(--line);">advocacy.aabe.org.tw</a>。涵蓋 NGO、學者個人、家長團體、學校代表、教師會、法律專業團體等。</p>
+          </div>
+        </div>
+        <p style="margin-top:14px;font-size:0.88rem;color:var(--ink-3);line-height:1.65;">
+          ※「173+」是 2025 加熱菸下架案的<strong>單事件最大聯合規模</strong>，非累計，請勿混用。
+        </p>
+      </div>
+
+      <div class="def-card">
+        <div>
+          <span class="def-num">113</span>
+          <span class="def-label">新聞稿</span>
+          <div class="def-meta">Press Releases · 三年累計</div>
+        </div>
+        <div class="def-body">
+          <div>
+            <h4>定義</h4>
+            <p>2023-2025 由國教盟秘書處或理監事會正式發布的新聞稿總數。包含主動發布（記者會、議題回應）與被動回應（媒體查證、緊急事件）。</p>
+          </div>
+          <div>
+            <h4>資料來源</h4>
+            <p>倡議成果資料庫新聞稿欄位完整索引，每篇含發布日期、議題、媒體採用情況、影響評估。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="def-card">
+        <div>
+          <span class="def-num">286</span>
+          <span class="def-label">倡議行動</span>
+          <div class="def-meta">Advocacy Events · 三年累計</div>
+        </div>
+        <div class="def-body">
+          <div>
+            <h4>定義</h4>
+            <p>記者會、立法院公聽會、政策論壇、議題座談會、街頭行動、研究發表會、跨組織聯合會議。<strong>不含</strong>內部行政會議、單純社群直播。</p>
+          </div>
+          <div>
+            <h4>資料來源</h4>
+            <p>內部活動紀錄 + 行事曆。每場活動含時間、地點、議題、出席者、媒體出席、後續成果。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="def-card">
+        <div>
+          <span class="def-num">7,917<span class="plus">+</span></span>
+          <span class="def-label">媒體聲量</span>
+          <div class="def-meta">Media Mentions · 三年累計</div>
+        </div>
+        <div class="def-body">
+          <div>
+            <h4>定義</h4>
+            <p>2023-2025 提及「國教盟」「國教行動聯盟」「AABE」或具名理監事的<strong>媒體報導則數</strong>。涵蓋電視、廣播、報紙、網路新聞、雜誌、podcast。同一篇報導被多家媒體轉載算多則。</p>
+          </div>
+          <div>
+            <h4>資料來源</h4>
+            <p>媒體監測服務 + Google News + 內部 clipping 紀錄。逐年追蹤：2023 年 1,913 則、2024 年 2,722 則（+42%）、2025 年 3,282 則（+21%）。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="def-card">
+        <div>
+          <span class="def-num">29</span>
+          <span class="def-label">政策深度分析</span>
+          <div class="def-meta">Policy Briefs · 累計</div>
+        </div>
+        <div class="def-body">
+          <div>
+            <h4>定義</h4>
+            <p>由國教盟政策研究小組或外聘專家撰寫的<strong>議題深度分析文章</strong>。每篇含議題脈絡、現行制度分析、修法建議、國際比較、參考資料。長度通常 3,000-8,000 字。</p>
+          </div>
+          <div>
+            <h4>資料來源</h4>
+            <p>政策知識庫 <a href="https://policy.aabe.org.tw/" style="border-bottom:1px solid var(--line);">policy.aabe.org.tw</a> 完整收錄。每篇有獨立 URL、APA 引用格式、Schema.org Dataset 結構化資料。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="def-card">
+        <div>
+          <span class="def-num">19</span>
+          <span class="def-label">跨黨派合作立委</span>
+          <div class="def-meta">Cross-party Legislators · 三年累計</div>
+        </div>
+        <div class="def-body">
+          <div>
+            <h4>定義</h4>
+            <p>2023-2025 與國教盟在任一議題上有<strong>實質合作</strong>的立法委員：召開公聽會、提案修法、共同發布聲明、出席倡議活動。涵蓋國民黨、民進黨、民眾黨、無黨籍。</p>
+          </div>
+          <div>
+            <h4>資料來源</h4>
+            <p>內部國會聯絡紀錄、立法院公報、議題提案文件。國教盟採跨黨派合作策略，<strong>不選邊站</strong>。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════ 名詞辨析 ════════ -->
+  <section class="section">
+    <h2>名詞辨析</h2>
+    <span class="section-hint">引用時容易混淆的概念</span>
+
+    <dl class="glossary">
+      <div class="gl-item">
+        <dt>累計 vs 單事件最大</dt>
+        <dd>「<strong>168+ 合作組織</strong>」是三年累計唯一組織數；「<strong>173+ 加熱菸下架案</strong>」是 2025 年該單一行動聯合的最大團體數。後者「峰值」高於累計是正常的，因為單一行動可能短時間聚集累計外的臨時合作組織。</dd>
+      </div>
+      <div class="gl-item">
+        <dt>新聞稿 vs 政策深度分析</dt>
+        <dd>「<strong>113 篇新聞稿</strong>」是議題即時回應、媒體公告（短至中篇）；「<strong>29 篇政策深度分析</strong>」是長篇政策文件（每篇 3,000-8,000 字、含完整參考資料、政策建議、國際比較）。前者位於 advocacy 站，後者位於 policy 站。</dd>
+      </div>
+      <div class="gl-item">
+        <dt>倡議行動 vs 活動公告</dt>
+        <dd>「<strong>286 場倡議行動</strong>」是過去發生且有具體政策結果的活動；「<strong>活動公告</strong>」（首頁 events）是未來預定 + 開放報名的活動。</dd>
+      </div>
+      <div class="gl-item">
+        <dt>媒體聲量 vs 媒體影響力</dt>
+        <dd>「<strong>7,917+ 則</strong>」是被媒體報導的<strong>則數</strong>（含正面、中性、負面、單純引用）。不等同於影響力評估—影響力另有獨立指標（如政策回應、修法落實、社群擴散），於年度影響力報告呈現。</dd>
+      </div>
+      <div class="gl-item">
+        <dt>AABE vs NAER vs 社團法人</dt>
+        <dd>正式英文名稱：<strong>Action Alliance on Basic Education</strong>，縮寫 <strong>AABE</strong>。請勿使用「NAER」（舊內部簡稱已棄用）或「社團法人國教行動聯盟」（國教盟為內政部立案的<strong>人民團體</strong>，<strong>非</strong>社團法人）。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- ════════ 更新頻率 ════════ -->
+  <section class="section">
+    <h2>更新頻率</h2>
+    <span class="section-hint">資料什麼時候會變動</span>
+
+    <table class="compare-table" style="width:100%;border-collapse:collapse;margin:16px 0;">
+      <thead>
+        <tr style="border-bottom:2px solid var(--ink);">
+          <th style="text-align:left;padding:14px 12px;font-size:0.85rem;letter-spacing:0.05em;">指標</th>
+          <th style="text-align:left;padding:14px 12px;font-size:0.85rem;letter-spacing:0.05em;">更新頻率</th>
+          <th style="text-align:left;padding:14px 12px;font-size:0.85rem;letter-spacing:0.05em;">下次更新預計</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px;">新聞稿、倡議行動</td>
+          <td style="padding:12px;">即時同步</td>
+          <td style="padding:12px;">每篇發布當日</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px;">媒體聲量</td>
+          <td style="padding:12px;">每月</td>
+          <td style="padding:12px;">2026-06-01</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px;">合作組織數</td>
+          <td style="padding:12px;">每季</td>
+          <td style="padding:12px;">2026-07-01</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px;">政策深度分析</td>
+          <td style="padding:12px;">每月 1-2 篇</td>
+          <td style="padding:12px;">滾動更新</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--line);">
+          <td style="padding:12px;">年度影響力報告</td>
+          <td style="padding:12px;">每年</td>
+          <td style="padding:12px;">2027-01（2026 全年）</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ════════ 變更紀錄 ════════ -->
+  <section class="section">
+    <h2>變更紀錄 Changelog</h2>
+    <span class="section-hint">官網數字與口徑修訂歷史</span>
+
+    <div class="changelog">
+      <div class="cl-row">
+        <time>2026-05-14</time>
+        <div class="what">資料方法與來源頁建立。政策知識庫首頁「Partners 173+」修正為「168+」對齊累計值。大事紀「合作團體」欄改為「單事件最大聯合」並加註說明，避免與累計值混淆。</div>
+      </div>
+      <div class="cl-row">
+        <time>2026-05-14</time>
+        <div class="what">官網品牌名稱統一：「NAER」「National Alliance for Education Action」全數改為「AABE」「Action Alliance on Basic Education」。移除錯誤的「社團法人」稱呼。</div>
+      </div>
+      <div class="cl-row">
+        <time>2026-05-14</time>
+        <div class="what">2023-2025 三年數據定期更新：合作組織 168+ / 新聞稿 113 / 倡議行動 286 / 媒體聲量 7,917+。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 引用建議 ════════ -->
+  <section class="section">
+    <h2>引用建議</h2>
+    <span class="section-hint">學術 / 媒體 / 政策文件</span>
+    <p style="line-height:1.85;color:var(--ink-2);">完整引用範例請見 <a href="/press/" style="border-bottom:1px solid var(--brand-orange);color:var(--ink);font-weight:700;">媒體中心 Citation Guide</a>。原始資料查詢、報告索取、學術合作請來信 <a href="mailto:Action.A.E0626@gmail.com" style="border-bottom:1px solid var(--line);">Action.A.E0626@gmail.com</a>。</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>國教行動聯盟</h4>
+        <p style="color:#b8bcc3;font-size:0.92rem;line-height:1.7;">成立於 2012 年的台灣家長倡議組織，由內政部人民團體立案。</p>
+      </div>
+      <div class="footer-col">
+        <h4>議題</h4>
+        <a href="/issues/">兒少與教育議題</a>
+        <a href="/chronicle/">大事紀</a>
+        <a href="/events/">活動公告</a>
+      </div>
+      <div class="footer-col">
+        <h4>給專業用戶</h4>
+        <a href="/press/">媒體中心</a>
+        <a href="https://policy.aabe.org.tw/">政策知識庫</a>
+        <a href="https://advocacy.aabe.org.tw/">倡議成果資料庫</a>
+      </div>
+      <div class="footer-col">
+        <h4>聯絡</h4>
+        <a href="/contact/">聯絡我們</a>
+        <a href="mailto:Action.A.E0626@gmail.com">Action.A.E0626@gmail.com</a>
+        <a href="https://www.facebook.com/twedumove/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 國教行動聯盟｜統編 41142910｜立案字號 1030182063</span>
+      <span><a href="/methodology/" style="color:#b8bcc3;border-bottom:1px solid #2a2a2a;">資料方法</a> · <a href="/llms.txt" style="color:#b8bcc3;border-bottom:1px solid #2a2a2a;">llms.txt</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

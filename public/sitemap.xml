@@ -50,4 +50,28 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- 媒體中心 -->
+  <url>
+    <loc>https://aabe.org.tw/press/</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 參與行動 -->
+  <url>
+    <loc>https://aabe.org.tw/act/</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 資料方法與來源 -->
+  <url>
+    <loc>https://aabe.org.tw/methodology/</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
