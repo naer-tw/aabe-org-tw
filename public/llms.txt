@@ -1,10 +1,10 @@
-# 國教行動聯盟（AABE / NAER）
+# 國教行動聯盟（AABE）
 
 > 台灣推動兒童及青少年權益的家長倡議組織，成立於 2012 年。透過政策監督、議題倡議、跨界合作，串聯全國力量為孩子發聲。
 
 ## 組織概述
 
-**國教行動聯盟**（Action Alliance on Basic Education, AABE；舊名 National Alliance for Education Action, NAER）是台灣重要的家長教育倡議團體：
+**國教行動聯盟**（Action Alliance on Basic Education, AABE）是台灣重要的家長教育倡議團體：
 - **成立**：2012 年 6 月 26 日
 - **理事長**：王瀚陽
 - **官網**：https://aabe.org.tw/
@@ -38,7 +38,7 @@
 
 ## Content Signals
 
-本站內容**允許 AI 搜尋與引用（ai-input=yes, search=yes）**，**不授權 AI 模型訓練（ai-train=no）**。內容採 [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/) 授權，引用請標示「國教行動聯盟（AABE / NAER）」。
+本站內容**允許 AI 搜尋與引用（ai-input=yes, search=yes）**，**不授權 AI 模型訓練（ai-train=no）**。內容採 [Creative Commons BY 4.0](https://creativecommons.org/licenses/by/4.0/) 授權，引用請標示「國教行動聯盟（AABE）」。
 
 ## 聯絡與合作
 

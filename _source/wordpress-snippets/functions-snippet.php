@@ -32,7 +32,7 @@ add_filter( 'rank_math/frontend/title', 'aabe_fix_og_title', 9999 ); // Rank Mat
 // ─────────────────────────────────────────────────────────
 function aabe_fix_og_description() {
     if ( is_front_page() || is_home() ) {
-        $desc = '國教行動聯盟（AABE / NAER）成立於 2012 年，是台灣推動兒童及青少年權益的家長倡議組織。長期關注校園安全、兒少保護、教育改革、青少年身心健康四大議題，與 168+ 跨領域組織合作，2023-2025 累計發布 113 篇政策論述、舉辦 286 場倡議活動。';
+        $desc = '國教行動聯盟（AABE）成立於 2012 年，是台灣推動兒童及青少年權益的家長倡議組織。長期關注校園安全、兒少保護、教育改革、青少年身心健康四大議題，與 168+ 跨領域組織合作，2023-2025 累計發布 113 篇政策論述、舉辦 286 場倡議活動。';
         echo '<meta name="description" content="' . esc_attr( $desc ) . '">' . "\n";
     }
 }
@@ -50,7 +50,7 @@ function aabe_inject_schema_jsonld() {
         '@type' => 'NGO',
         '@id' => 'https://aabe.org.tw/#organization',
         'name' => '國教行動聯盟',
-        'alternateName' => [ '國教盟', '國教行動聯盟', 'Action Alliance on Basic Education', 'AABE', 'NAER' ],
+        'alternateName' => [ '國教盟', 'Action Alliance on Basic Education', 'AABE' ],
         'url' => 'https://aabe.org.tw/',
         'logo' => 'https://aabe.org.tw/wp-content/uploads/logo-naer.png', // 請替換為實際 logo URL
         'foundingDate' => '2012-06-26',
