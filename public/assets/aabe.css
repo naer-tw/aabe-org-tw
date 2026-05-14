@@ -1,17 +1,70 @@
-/* AABE 共用樣式表 v1.0 — 所有頁面引用 */
+/* AABE 共用樣式表 v2.0 — 國際級設計系統（OKLCH + Modular Scale）
+ * Benchmark: NYT Visual / FT Graphics / Anthropic / Apple
+ * Updated: 2026-05-14 */
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --brand-orange: #EB9B31;
-  --brand-teal: #2FA598;
-  --ink: #0a0a0a;
-  --ink-2: #3a3f48;
-  --ink-3: #7a8089;
-  --line: #e5e7eb;
-  --line-soft: #f4f5f7;
-  --bg-soft: #f5f5f5;
-  --warm: #fdf6e3;
+  /* ─────────────────────────────────────────────────
+   * 色彩系統 — OKLCH (with HEX fallback)
+   * 採 OKLCH 是因為感知均勻 + 對比可預測
+   * 舊瀏覽器 fallback 用 HEX
+   * ───────────────────────────────────────────────── */
+
+  /* 品牌主色 */
+  --brand-orange: #EB9B31;                       /* fallback */
+  --brand-orange: oklch(0.74 0.13 65);           /* L=74% 明亮溫暖 */
+  --brand-teal: #2FA598;                          /* fallback */
+  --brand-teal: oklch(0.63 0.08 185);            /* L=63% 平靜對比 */
+  --brand-gold: #C9A961;                          /* fallback */
+  --brand-gold: oklch(0.72 0.09 85);             /* 金色家徽用 */
+
+  /* 中性灰階（perceptual gradient）*/
+  --ink: #0a0a0a;                                 /* fallback */
+  --ink: oklch(0.15 0.005 60);                   /* 主文字 L=15% */
+  --ink-2: #3a3f48;                               /* fallback */
+  --ink-2: oklch(0.35 0.01 250);                 /* 次文字 L=35% */
+  --ink-3: #7a8089;                               /* fallback */
+  --ink-3: oklch(0.55 0.01 250);                 /* 提示 L=55% */
+
+  /* 分隔線 + 背景 */
+  --line: #e5e7eb;                                /* fallback */
+  --line: oklch(0.91 0.003 250);                 /* 分隔線 L=91% */
+  --line-soft: #f4f5f7;                           /* fallback */
+  --line-soft: oklch(0.96 0.003 250);            /* 軟分隔 L=96% */
+  --bg-soft: #f5f5f5;                             /* fallback */
+  --bg-soft: oklch(0.96 0.003 90);               /* 軟背景 L=96% */
+  --warm: #fdf6e3;                                /* fallback */
+  --warm: oklch(0.97 0.025 90);                  /* 暖米背景 L=97% */
+
+  /* ─────────────────────────────────────────────────
+   * 字級系統 — Perfect Fourth Modular Scale (1.333)
+   * base 16px → 21 → 28 → 37 → 50 → 66 → 88 → 117
+   * 這套字級保證視覺節奏，避免「亂挑字級」
+   * ───────────────────────────────────────────────── */
+  --t-xs:      0.75rem;   /* 12px  · 小標籤、kicker */
+  --t-sm:      0.875rem;  /* 14px  · 輔助文字 */
+  --t-base:    1rem;      /* 16px  · 基準 */
+  --t-md:      1.3125rem; /* 21px  · 引言、強調 */
+  --t-lg:      1.75rem;   /* 28px  · 引用 / blockquote */
+  --t-xl:      2.3125rem; /* 37px  · h3 */
+  --t-2xl:     3.125rem;  /* 50px  · h2 */
+  --t-3xl:     4.125rem;  /* 66px  · h1 */
+  --t-4xl:     5.5rem;    /* 88px  · hero */
+  --t-5xl:     7.3125rem; /* 117px · 超大數字 */
+
+  /* ─────────────────────────────────────────────────
+   * 間距系統 — 8px 倍數
+   * ───────────────────────────────────────────────── */
+  --s-1:  0.25rem; /* 4px */
+  --s-2:  0.5rem;  /* 8px */
+  --s-3:  0.75rem; /* 12px */
+  --s-4:  1rem;    /* 16px */
+  --s-6:  1.5rem;  /* 24px */
+  --s-8:  2rem;    /* 32px */
+  --s-12: 3rem;    /* 48px */
+  --s-16: 4rem;    /* 64px */
+  --s-20: 5rem;    /* 80px */
 }
 
 html { scroll-behavior: smooth; }
