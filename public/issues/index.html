@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>兒少與教育議題｜國教行動聯盟</title>
-  <meta name="description" content="國教行動聯盟六大政策主軸：校園安全、兒少保護、青少年身心健康、教育政策與改革、教師與校務、數位與性別安全。連結 27 篇政策深度分析與 113 篇新聞稿，是台灣兒少與教育政策的完整索引。">
+  <meta name="description" content="國教行動聯盟六大政策主軸：校園安全、兒少保護、青少年身心健康、教育政策與改革、教師與校務、數位與性別安全。連結 29 篇政策深度分析與 113 篇新聞稿，是台灣兒少與教育政策的完整索引。">
   <meta name="keywords" content="兒少議題,教育議題,校園安全,兒少保護,青少年身心健康,教育政策,教師與校務,數位安全,性別安全,國教行動聯盟">
   <link rel="canonical" href="https://aabe.org.tw/issues/">
 
@@ -87,10 +87,22 @@
     }
     .topic-kicker { font-size: 0.72rem; letter-spacing: 0.25em; color: var(--cat-color); font-weight: 700; text-transform: uppercase; }
     .topic-title { font-size: 1.4rem; font-weight: 800; color: var(--ink); }
-    .topic-desc { color: var(--ink-2); font-size: 0.95rem; line-height: 1.65; flex: 1; }
-    .topic-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--line); margin-top: auto; }
-    .topic-count { font-size: 0.82rem; color: var(--ink-3); letter-spacing: 0.05em; }
-    .topic-arrow { color: var(--cat-color); font-weight: 700; font-size: 1.15rem; }
+    .topic-title a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    .topic-title a:hover { color: var(--cat-color); }
+    .topic-desc { color: var(--ink-2); font-size: 0.9rem; line-height: 1.65; }
+
+    /* 最新 3 篇文章 sub-list */
+    .topic-recent { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
+    .topic-recent-label { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--ink-3); font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
+    .topic-recent ul { list-style: none; padding: 0; margin: 0; }
+    .topic-recent li { padding: 4px 0; font-size: 0.85rem; line-height: 1.55; }
+    .topic-recent li a { color: var(--ink-2); text-decoration: none; display: block; transition: color 0.2s; }
+    .topic-recent li a:hover { color: var(--cat-color); }
+    .topic-recent .recent-date { font-size: 0.72rem; color: var(--ink-3); letter-spacing: 0.05em; margin-right: 6px; font-variant-numeric: tabular-nums; }
+
+    .topic-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid var(--line); margin-top: 14px; }
+    .topic-count { font-size: 0.78rem; color: var(--ink-3); letter-spacing: 0.05em; }
+    .topic-cta { font-size: 0.82rem; font-weight: 700; color: var(--cat-color); letter-spacing: 0.05em; }
 
     .impact-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin: 32px 0; padding: 36px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .impact-stat { text-align: left; }
@@ -130,7 +142,7 @@
   <header class="page-hero">
     <span class="page-hero-kicker">Issues</span>
     <h1>兒少與教育議題</h1>
-    <p class="lead">國教行動聯盟長期關注六大政策主軸，從家長端的真實聲音出發，把家庭擔憂轉化為國家層級的政策改變。本頁是 27 篇政策深度分析與 113 篇新聞稿的議題索引。</p>
+    <p class="lead">國教行動聯盟長期關注六大政策主軸，從家長端的真實聲音出發，把家庭擔憂轉化為國家層級的政策改變。本頁是 29 篇政策深度分析與 113 篇新聞稿的議題索引。</p>
     <span class="mark"></span>
   </header>
 
@@ -142,65 +154,109 @@
     </div>
     <div class="topics-grid">
 
-      <a href="https://policy.aabe.org.tw/campus-safety/" class="topic-card" style="--cat-color: #8B2631;">
+      <div class="topic-card" style="--cat-color: #8B2631;">
         <span class="topic-kicker">Campus Safety</span>
-        <h3 class="topic-title">校園安全</h3>
-        <p class="topic-desc">校園霸凌、少年司法、轉介教育、校園檢測。從新北割頸案啟動的兩年倡議路，推動少事法修法、風險評估入法、觀護署設立。</p>
-        <div class="topic-meta">
-          <span class="topic-count">5 篇政策論述</span>
-          <span class="topic-arrow">→</span>
+        <h3 class="topic-title"><a href="https://policy.aabe.org.tw/campus-safety/">校園安全</a></h3>
+        <p class="topic-desc">校園霸凌、少年司法、轉介教育、校園檢測。從新北割頸案啟動的兩年倡議路。</p>
+        <div class="topic-recent">
+          <div class="topic-recent-label">Latest · 最新</div>
+          <ul>
+            <li><a href="https://policy.aabe.org.tw/campus-safety/2026-04-02-校園唾液快篩二層檢測機制.html"><span class="recent-date">2026.04.02</span>校園唾液快篩只做初篩夠嗎？為何需要二層檢測機制？</a></li>
+            <li><a href="https://policy.aabe.org.tw/campus-safety/2026-03-25-永和國中霸凌案.html"><span class="recent-date">2026.03.25</span>面對校園霸凌頻傳，國教盟青年部：強化校園保護機制三道防線</a></li>
+            <li><a href="https://policy.aabe.org.tw/campus-safety/2026-03-23-倡議成果追蹤.html"><span class="recent-date">2026.03.23</span>國教盟校園安全與少年司法倡議成果追蹤</a></li>
+          </ul>
         </div>
-      </a>
+        <div class="topic-meta">
+          <span class="topic-count">共 29 篇政策論述</span>
+          <a href="https://policy.aabe.org.tw/campus-safety/" class="topic-cta">看全部 →</a>
+        </div>
+      </div>
 
-      <a href="https://policy.aabe.org.tw/child-rights/" class="topic-card" style="--cat-color: #D97706;">
+      <div class="topic-card" style="--cat-color: #D97706;">
         <span class="topic-kicker">Child Rights &amp; Protection</span>
-        <h3 class="topic-title">兒少保護</h3>
-        <p class="topic-desc">兒少權法、剴剴案、人工生殖、育兒支持。2026 年衛福部預告草案 165 條的六大制度缺口分析，涵蓋社工注意義務與跨機關資訊共享。</p>
-        <div class="topic-meta">
-          <span class="topic-count">11 篇政策論述</span>
-          <span class="topic-arrow">→</span>
+        <h3 class="topic-title"><a href="https://policy.aabe.org.tw/child-rights/">兒少保護</a></h3>
+        <p class="topic-desc">兒少權法、剴剴案、兒童家庭部、人工生殖、育兒支持。涵蓋立法倡議與制度監督。</p>
+        <div class="topic-recent">
+          <div class="topic-recent-label">Latest · 最新</div>
+          <ul>
+            <li><a href="https://policy.aabe.org.tw/child-rights/20260512-children-families-ministry-how.html"><span class="recent-date">2026.05.12</span>兒童家庭部組織法該怎麼寫？16 條草案完整解析</a></li>
+            <li><a href="https://policy.aabe.org.tw/child-rights/20260512-children-families-ministry-why.html"><span class="recent-date">2026.05.12</span>為什麼台灣需要把兒少主管機關升格為「兒童家庭部」？</a></li>
+            <li><a href="https://policy.aabe.org.tw/child-rights/2026-04-22-兒少權法修法六大缺口.html"><span class="recent-date">2026.04.22</span>兒少權法 15 年大修為何仍補不上剴剴案六大制度缺口？</a></li>
+          </ul>
         </div>
-      </a>
+        <div class="topic-meta">
+          <span class="topic-count">共 29 篇政策論述</span>
+          <a href="https://policy.aabe.org.tw/child-rights/" class="topic-cta">看全部 →</a>
+        </div>
+      </div>
 
-      <a href="https://policy.aabe.org.tw/youth-health/" class="topic-card" style="--cat-color: #0369A1;">
+      <div class="topic-card" style="--cat-color: #0369A1;">
         <span class="topic-kicker">Youth Mental &amp; Physical Health</span>
-        <h3 class="topic-title">青少年身心健康</h3>
-        <p class="topic-desc">自殺防治、心理健康、菸害防制、無菸品世代。2026 年聯合台灣拒菸聯盟推動 Tobacco-Free Generation，補上英國世代禁菸法的電子煙缺口。</p>
-        <div class="topic-meta">
-          <span class="topic-count">3 篇政策論述</span>
-          <span class="topic-arrow">→</span>
+        <h3 class="topic-title"><a href="https://policy.aabe.org.tw/youth-health/">青少年身心健康</a></h3>
+        <p class="topic-desc">自殺防治、心理健康、菸害防制、無菸品世代。聯合拒菸聯盟推動 Tobacco-Free Generation。</p>
+        <div class="topic-recent">
+          <div class="topic-recent-label">Latest · 最新</div>
+          <ul>
+            <li><a href="https://policy.aabe.org.tw/health/2026-04-24-健康台灣無菸品世代.html"><span class="recent-date">2026.04.24</span>台灣為何應推動「無菸品世代」全面禁絕新型菸品？</a></li>
+            <li><a href="https://policy.aabe.org.tw/health/2026-01-13-無菸城市.html"><span class="recent-date">2026.01.13</span>「由內而外」打造無菸城市：室內禁菸、戶外定點</a></li>
+            <li><a href="https://policy.aabe.org.tw/youth-health/2025-12-05-青少年自殺通報.html"><span class="recent-date">2025.12.05</span>青少年自殺通報九年增加 3.3 倍、佔比倍增</a></li>
+          </ul>
         </div>
-      </a>
+        <div class="topic-meta">
+          <span class="topic-count">共 29 篇政策論述</span>
+          <a href="https://policy.aabe.org.tw/youth-health/" class="topic-cta">看全部 →</a>
+        </div>
+      </div>
 
-      <a href="https://policy.aabe.org.tw/education-reform/" class="topic-card" style="--cat-color: #1E40AF;">
+      <div class="topic-card" style="--cat-color: #1E40AF;">
         <span class="topic-kicker">Education Policy &amp; Reform</span>
-        <h3 class="topic-title">教育政策與改革</h3>
-        <p class="topic-desc">實驗教育、性平法、營養午餐、教育平權。從偏鄉公校轉型到偽實驗辨識，從性平法再校準到國民教育平權的完整論述。</p>
-        <div class="topic-meta">
-          <span class="topic-count">7 篇政策論述</span>
-          <span class="topic-arrow">→</span>
+        <h3 class="topic-title"><a href="https://policy.aabe.org.tw/education-reform/">教育政策與改革</a></h3>
+        <p class="topic-desc">實驗教育、性平法、營養午餐、教育平權。從偏鄉公校轉型到性平法再校準的完整論述。</p>
+        <div class="topic-recent">
+          <div class="topic-recent-label">Latest · 最新</div>
+          <ul>
+            <li><a href="https://policy.aabe.org.tw/education-reform/2026-04-15-性平法再校準-國教盟公聽會.html"><span class="recent-date">2026.04.15</span>性平法該不該無限擴張？國教盟三大修法主張守住教育本位</a></li>
+            <li><a href="https://policy.aabe.org.tw/education-reform/2026-04-15-家長立場-全長聯公聽會.html"><span class="recent-date">2026.04.15</span>家長支持性平卻不滿意現行制度？全長聯指出三大教育缺口</a></li>
+            <li><a href="https://policy.aabe.org.tw/school-lunch/2026-04-03-國民教育平權.html"><span class="recent-date">2026.04.03</span>台灣國民教育真的免費嗎？營養午餐與教科書補助的 22 縣市落差</a></li>
+          </ul>
         </div>
-      </a>
+        <div class="topic-meta">
+          <span class="topic-count">共 29 篇政策論述</span>
+          <a href="https://policy.aabe.org.tw/education-reform/" class="topic-cta">看全部 →</a>
+        </div>
+      </div>
 
-      <a href="https://policy.aabe.org.tw/teacher-affairs/" class="topic-card" style="--cat-color: #4338CA;">
+      <div class="topic-card" style="--cat-color: #4338CA;">
         <span class="topic-kicker">Teacher Affairs</span>
-        <h3 class="topic-title">教師與校務</h3>
-        <p class="topic-desc">校事會議修法、教師申訴、校園民主。2026 年 1 月正式落實分流檢舉、提升受理層級、強化外部專業三大改革成果。</p>
-        <div class="topic-meta">
-          <span class="topic-count">1 篇政策論述</span>
-          <span class="topic-arrow">→</span>
+        <h3 class="topic-title"><a href="https://policy.aabe.org.tw/teacher-affairs/">教師與校務</a></h3>
+        <p class="topic-desc">校事會議修法、教師申訴、校園民主。2026 年 1 月正式落實分流檢舉、提升受理層級、強化外部專業三大改革。</p>
+        <div class="topic-recent">
+          <div class="topic-recent-label">Latest · 最新</div>
+          <ul>
+            <li><a href="https://policy.aabe.org.tw/teacher-affairs/2026-01-23-校事會議修法.html"><span class="recent-date">2026.01.23</span>別讓「小案大辦」折磨老師——校事會議修法全紀錄</a></li>
+          </ul>
         </div>
-      </a>
+        <div class="topic-meta">
+          <span class="topic-count">共 29 篇政策論述</span>
+          <a href="https://policy.aabe.org.tw/teacher-affairs/" class="topic-cta">看全部 →</a>
+        </div>
+      </div>
 
-      <a href="https://policy.aabe.org.tw/child-rights/20251208-sexual-violence-prevention-education.html" class="topic-card" style="--cat-color: #BE185D;">
+      <div class="topic-card" style="--cat-color: #BE185D;">
         <span class="topic-kicker">Digital &amp; Gender Safety</span>
-        <h3 class="topic-title">數位與性別安全</h3>
-        <p class="topic-desc">數位性暴力、性別教育、網路詐騙。從青少年性病低齡化到「精液豆漿」事件，推動性教育改革與兒少數位防護機制。</p>
+        <h3 class="topic-title"><a href="https://policy.aabe.org.tw/child-rights/20251208-sexual-violence-prevention-education.html">數位與性別安全</a></h3>
+        <p class="topic-desc">數位性暴力、性別教育、網路詐騙。從青少年性病低齡化到性騷擾保護課，推動性教育改革與兒少數位防護。</p>
+        <div class="topic-recent">
+          <div class="topic-recent-label">Latest · 最新</div>
+          <ul>
+            <li><a href="https://policy.aabe.org.tw/child-rights/20251208-sexual-violence-prevention-education.html"><span class="recent-date">2025.12.08</span>8742 名青少年票選第三名：遇到性騷擾該怎麼辦？</a></li>
+          </ul>
+        </div>
         <div class="topic-meta">
           <span class="topic-count">議題深度文章</span>
-          <span class="topic-arrow">→</span>
+          <a href="https://policy.aabe.org.tw/child-rights/" class="topic-cta">看全部 →</a>
         </div>
-      </a>
+      </div>
 
     </div>
   </section>
@@ -239,7 +295,7 @@
   <section class="section">
     <div class="callout">
       <h3 style="font-size:1.2rem;margin-bottom:12px;">想看完整政策論述？</h3>
-      <p style="margin-bottom:16px;">27 篇深度分析，涵蓋議題背景、現行制度盲點、修法建議、國際比較。</p>
+      <p style="margin-bottom:16px;">29 篇深度分析，涵蓋議題背景、現行制度盲點、修法建議、國際比較。</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
         <a href="https://policy.aabe.org.tw/" class="btn btn-primary">前往政策知識庫 →</a>
         <a href="/chronicle/" class="btn btn-secondary">回顧 13 年大事紀</a>

@@ -32,7 +32,7 @@
 
 ## AI Agent 友善資源
 
-- **政策深度分析**（27 篇）：[policy.aabe.org.tw/llms.txt](https://policy.aabe.org.tw/llms.txt)
+- **政策深度分析**（29 篇）：[policy.aabe.org.tw/llms.txt](https://policy.aabe.org.tw/llms.txt)
 - **倡議資料集**（JSON）：[advocacy.aabe.org.tw/llms.txt](https://advocacy.aabe.org.tw/llms.txt)
 - **官方倡議成果資料庫**：[advocacy.aabe.org.tw](https://advocacy.aabe.org.tw/)
 
