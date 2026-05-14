@@ -125,7 +125,14 @@
 
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="/" class="topbar-logo"><img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟｜Action Alliance on Basic Education"></a>
+    <a href="/" class="topbar-logo">
+        <picture>
+          <source media="(max-width: 768px)" srcset="/wp-content/uploads/logo-naer-icon-only.png">
+          <img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟｜Action Alliance on Basic Education">
+        </picture>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="切換選單">
+      <label for="nav-toggle" class="nav-toggle-btn" aria-label="開啟選單"><span></span></label>
     <nav class="topbar-nav" aria-label="Primary">
       <a href="/about/" class="active">關於我們</a>
       <a href="/issues/">兒少與教育議題</a>

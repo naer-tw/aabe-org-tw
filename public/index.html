@@ -215,6 +215,17 @@
     .topbar-nav a { color: var(--ink-2); transition: color 0.2s; white-space: nowrap; }
     .topbar-nav a:hover { color: var(--brand-orange); }
 
+    /* Hamburger */
+    .nav-toggle { display: none; }
+    .nav-toggle-btn { display: none; cursor: pointer; width: 32px; height: 32px; align-items: center; justify-content: center; margin-left: auto; }
+    .nav-toggle-btn span { display: block; width: 22px; height: 2px; background: var(--ink); position: relative; transition: all 0.3s; }
+    .nav-toggle-btn span::before, .nav-toggle-btn span::after { content: ""; display: block; position: absolute; left: 0; width: 22px; height: 2px; background: var(--ink); transition: all 0.3s; }
+    .nav-toggle-btn span::before { top: -7px; }
+    .nav-toggle-btn span::after { top: 7px; }
+    .nav-toggle:checked ~ .nav-toggle-btn span { background: transparent; }
+    .nav-toggle:checked ~ .nav-toggle-btn span::before { top: 0; transform: rotate(45deg); }
+    .nav-toggle:checked ~ .nav-toggle-btn span::after { top: 0; transform: rotate(-45deg); }
+
     /* Hero — 升級為大標 + 副標 + manifesto preview */
     .hero { padding: 100px 32px 72px; text-align: center; max-width: 1080px; margin: 0 auto; }
     .hero-kicker { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.32em; color: var(--brand-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 28px; }
@@ -301,6 +312,13 @@
     .footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.85rem; color: #b8bcc3; }
 
     @media (max-width: 768px) {
+      .topbar-inner { padding: 10px 16px; gap: 12px; flex-wrap: wrap; }
+      .topbar-logo img { height: 38px; }
+      .nav-toggle-btn { display: flex; }
+      .topbar-nav { display: none; flex-direction: column; width: 100%; gap: 0; padding-top: 12px; border-top: 1px solid var(--line); margin-top: 4px; }
+      .nav-toggle:checked ~ .topbar-nav { display: flex; }
+      .topbar-nav a { padding: 12px 4px; border-bottom: 1px solid #f4f5f7; font-size: 0.95rem; }
+      .topbar-nav a:last-child { border-bottom: 0; }
       .hero { padding: 60px 20px 48px; }
       .hero h1 { font-size: clamp(2.6rem, 11vw, 3.6rem); }
       .hero .tagline { font-size: 1.05rem; }
@@ -330,7 +348,14 @@
   <!-- Top Navigation -->
   <header class="topbar">
     <div class="topbar-inner">
-      <a href="/" class="topbar-logo"><img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟｜Action Alliance on Basic Education"></a>
+      <a href="/" class="topbar-logo">
+        <picture>
+          <source media="(max-width: 768px)" srcset="/wp-content/uploads/logo-naer-icon-only.png">
+          <img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟｜Action Alliance on Basic Education">
+        </picture>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="切換選單">
+      <label for="nav-toggle" class="nav-toggle-btn" aria-label="開啟選單"><span></span></label>
       <nav class="topbar-nav" aria-label="Primary">
         <a href="/about/">關於我們</a>
         <a href="/issues/">兒少與教育議題</a>
