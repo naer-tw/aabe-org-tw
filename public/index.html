@@ -208,12 +208,9 @@
 
     /* Top nav */
     .topbar { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-    .topbar-inner { max-width: 1280px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; gap: 18px; }
-    .topbar-logo { display: flex; align-items: center; gap: 12px; }
-    .topbar-logo img { height: 44px; display: block; }
-    .topbar-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-    .topbar-logo-cn { font-size: 1.05rem; font-weight: 800; color: var(--ink); letter-spacing: 0.06em; }
-    .topbar-logo-en { font-size: 0.6rem; font-weight: 600; color: var(--ink-3); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 4px; }
+    .topbar-inner { max-width: 1280px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 18px; }
+    .topbar-logo { display: flex; align-items: center; }
+    .topbar-logo img { height: 52px; display: block; width: auto; }
     .topbar-nav { display: flex; gap: 22px; margin-left: auto; font-size: 0.92rem; font-weight: 500; }
     .topbar-nav a { color: var(--ink-2); transition: color 0.2s; white-space: nowrap; }
     .topbar-nav a:hover { color: var(--brand-orange); }
@@ -333,13 +330,7 @@
   <!-- Top Navigation -->
   <header class="topbar">
     <div class="topbar-inner">
-      <a href="/" class="topbar-logo">
-        <img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟">
-        <div class="topbar-logo-text">
-          <span class="topbar-logo-cn">國教行動聯盟</span>
-          <span class="topbar-logo-en">Action Alliance · Est. 2012</span>
-        </div>
-      </a>
+      <a href="/" class="topbar-logo"><img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟｜Action Alliance on Basic Education"></a>
       <nav class="topbar-nav" aria-label="Primary">
         <a href="/about/">關於我們</a>
         <a href="/issues/">兒少與教育議題</a>
