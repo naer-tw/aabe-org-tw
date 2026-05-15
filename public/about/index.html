@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>關於我們｜國教行動聯盟</title>
-  <meta name="description" content="國教行動聯盟（AABE）成立於 2012 年，是台灣推動兒童及青少年權益的家長倡議組織。本頁介紹組織願景、核心價值、工作方法、組織里程碑與三大部門（理監事、青年部、家長部）。">
+  <meta name="description" content="國教行動聯盟（AABE）成立於 2012 年，是台灣兒少與教育倡議組織，由家長部與青年部雙軸共構推動兒童及青少年權益。本頁介紹組織願景、核心價值、工作方法、組織里程碑與三大部門（理監事會、家長部、青年部）。">
   <meta name="keywords" content="國教行動聯盟,AABE,組織介紹,王瀚陽,理監事會,青年部,家長部,2012成立,家長團體">
   <link rel="canonical" href="https://aabe.org.tw/about/">
 
@@ -14,7 +14,7 @@
   <meta name="theme-color" content="#0a0a0a">
 
   <meta property="og:title" content="關於我們｜國教行動聯盟">
-  <meta property="og:description" content="2012 年成立的台灣家長教育倡議組織，13 年累積、168+ 合作組織、6 大主軸。">
+  <meta property="og:description" content="2012 年成立的台灣兒少與教育倡議組織，13 年累積、168+ 合作組織、6 大主軸。">
   <meta property="og:image" content="https://aabe.org.tw/wp-content/uploads/og-about.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aabe.org.tw/about/">
@@ -22,7 +22,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="關於國教行動聯盟">
-  <meta name="twitter:description" content="2012 年成立的台灣家長教育倡議組織。">
+  <meta name="twitter:description" content="2012 年成立的台灣兒少與教育倡議組織。">
   <meta name="twitter:image" content="https://aabe.org.tw/wp-content/uploads/og-about.jpg">
 
   <!-- Schema: AboutPage -->
@@ -31,7 +31,7 @@
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "關於國教行動聯盟",
-    "description": "2012 年成立的台灣家長教育倡議組織。",
+    "description": "2012 年成立的台灣兒少與教育倡議組織。",
     "url": "https://aabe.org.tw/about/",
     "inLanguage": "zh-TW",
     "mainEntity": {
@@ -109,6 +109,33 @@
     .dept-card { background: #fff; padding: 28px; border: 1px solid var(--line); border-top: 4px solid var(--brand-orange); border-radius: 4px; }
     .dept-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; }
     .dept-card p { font-size: 0.92rem; color: var(--ink-2); line-height: 1.65; }
+
+    /* Two Divisions Spotlight */
+    .div-spotlight { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+    .div-card { padding: 36px 32px; border-radius: 8px; background: #fff; border: 1px solid var(--line); position: relative; overflow: hidden; transition: transform 0.2s; }
+    .div-card:hover { transform: translateY(-3px); }
+    .div-card.div-parents { border-top: 6px solid var(--brand-orange); }
+    .div-card.div-parents .div-emblem { color: var(--brand-orange); }
+    .div-card.div-parents .div-tag { background: rgba(235,155,49,0.12); color: #B97A1F; }
+    .div-card.div-youth { border-top: 6px solid var(--brand-teal, #2FA598); }
+    .div-card.div-youth .div-emblem { color: var(--brand-teal, #2FA598); }
+    .div-card.div-youth .div-tag { background: rgba(47,165,152,0.12); color: #1E7C72; }
+    .div-emblem { width: 56px; height: 56px; margin-bottom: 16px; }
+    .div-emblem svg { width: 100%; height: 100%; display: block; }
+    .div-tag { display: inline-block; padding: 5px 12px; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 3px; margin-bottom: 12px; }
+    .div-card h3 { font-family: 'Noto Serif TC', serif; font-size: 1.8rem; font-weight: 900; margin-bottom: 18px; letter-spacing: 0.02em; }
+    .div-leader { background: var(--bg-soft); padding: 16px 20px; border-radius: 6px; margin-bottom: 18px; }
+    .div-leader .dl-role { display: block; font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 0.22em; color: var(--ink-3); text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+    .div-leader .dl-name { display: block; font-family: 'Noto Serif TC', serif; font-size: 1.4rem; font-weight: 900; color: var(--ink); }
+    .div-mission { color: var(--ink-2); line-height: 1.85; font-size: 1rem; margin-bottom: 20px; }
+    .div-mission strong { color: var(--ink); border-bottom: 2px solid var(--brand-orange); padding-bottom: 1px; }
+    .div-card.div-youth .div-mission strong { border-bottom-color: var(--brand-teal, #2FA598); }
+    .div-focus h4 { font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-3); font-weight: 700; margin-bottom: 10px; }
+    .div-focus ul { list-style: none; padding: 0; }
+    .div-focus li { padding: 6px 0 6px 18px; position: relative; font-size: 0.9rem; color: var(--ink-2); line-height: 1.65; }
+    .div-focus li::before { content: "▸"; position: absolute; left: 0; color: var(--brand-orange); font-weight: 700; }
+    .div-card.div-youth .div-focus li::before { color: var(--brand-teal, #2FA598); }
+    @media (max-width: 900px) { .div-spotlight { grid-template-columns: 1fr; } }
 
     /* Past Chairs 歷屆理事長 */
     .chairs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 32px 0; }
@@ -314,22 +341,94 @@
   <section class="section">
     <div class="section-head">
       <h2 class="section-title">組織架構</h2>
-      <span class="section-hint">Structure</span>
+      <span class="section-hint">Structure · 三大運作主體</span>
     </div>
+    <p style="color:var(--ink-2);line-height:1.85;margin-bottom:24px;">國教盟由<strong>理監事會、家長部、青年部</strong>三大主體共同運作。家長部承載 13 年累積的家庭一線經驗，青年部 2024 年成立後讓年輕世代視角進入政策討論，被王立昇創會理事長稱為國教盟「<strong>第三高峰</strong>」的關鍵組織變革。</p>
     <div class="departments">
       <div class="dept-card">
-        <h3>理監事會</h3>
-        <p>聯盟最高決策機構。現任理事長王瀚陽（第四、五屆連任，2021-2025），由跨領域專業人士組成，負責議題策略與政策方向。</p>
+        <h3>理監事會 · Board</h3>
+        <p>聯盟最高決策機構。現任理事長王瀚陽（第四、五屆連任，2021-2025），由跨領域專業人士組成，負責議題策略與政策方向。完整名單見下方。</p>
       </div>
       <div class="dept-card">
-        <h3>青年部</h3>
-        <p>關注青少年身心健康、校園議題第一線視角，由青年代表主導，透過調查、座談、媒體發聲，將年輕世代的聲音帶入政策討論。</p>
-      </div>
-      <div class="dept-card">
-        <h3>家長部</h3>
+        <h3>家長部 · Parents' Division</h3>
         <p>連結全國各級學校家長會、單親家庭、新住民家庭，匯集家長端真實經驗，作為政策論述的第一手素材。</p>
       </div>
+      <div class="dept-card">
+        <h3>青年部 · Youth Division</h3>
+        <p>2024 年成立。關注青少年身心健康、校園議題第一線視角，由青年代表主導，將年輕世代的聲音帶入政策討論。</p>
+      </div>
     </div>
+  </section>
+
+  <!-- ════════ 家長部 + 青年部 雙部門 Spotlight ════════ -->
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">家長部 × 青年部</h2>
+      <span class="section-hint">Two Voices · One Mission</span>
+    </div>
+    <p style="color:var(--ink-2);line-height:1.85;margin-bottom:24px;">
+      國教盟相信兒少政策需要<strong>兩種真實聲音</strong>同時在場：一線承擔養育責任的<strong>家長視角</strong>，與議題真實當事人的<strong>青年視角</strong>。家長部與青年部並非單純「上下游」，而是<strong>雙軌共構</strong>——共同把家庭與校園的擔憂，轉化成國家層級的政策改變。
+    </p>
+
+    <div class="div-spotlight">
+      <!-- 家長部 -->
+      <div class="div-card div-parents">
+        <div class="div-emblem">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M16 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm16 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM10 20h12v22h-4v-12h-4v12h-4V20zm16 0h12v22h-4v-12h-4v12h-4V20z" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="div-tag">Parents' Division</div>
+        <h3>家長部</h3>
+        <div class="div-leader">
+          <span class="dl-role">部長 · Director</span>
+          <span class="dl-name">鍾君偉</span>
+        </div>
+        <p class="div-mission">
+          連結全國各級學校家長會、單親家庭、新住民家庭，<strong>把家庭真實經驗轉化為政策論述的第一手素材</strong>。
+        </p>
+        <div class="div-focus">
+          <h4>核心工作</h4>
+          <ul>
+            <li>全國家長會體系串接 · 跨縣市家庭代表動員</li>
+            <li>單親家庭、新住民家庭、特殊兒少家庭議題回應</li>
+            <li>家庭端議題第一線快速回應與聯署</li>
+            <li>家長合作組織網絡維繫（168+ 合作組織核心力）</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 青年部 -->
+      <div class="div-card div-youth">
+        <div class="div-emblem">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 4l-2 14h4l-2-14zm-8 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm16 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM10 22h28v6H10v-6zm2 8h6v14h-2V36h-2v8h-2V30zm16 0h6v14h-2V36h-2v8h-2V30z" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="div-tag">Youth Division · Est. 2024</div>
+        <h3>青年部</h3>
+        <div class="div-leader">
+          <span class="dl-role">執行長 · Executive Director</span>
+          <span class="dl-name">李雨函</span>
+        </div>
+        <p class="div-mission">
+          由青少年代表主導，<strong>將年輕世代第一線視角帶入政策討論</strong>。創會理事長王立昇將青年部成立稱為國教盟<strong>第三高峰</strong>的關鍵變革。
+        </p>
+        <div class="div-focus">
+          <h4>核心工作</h4>
+          <ul>
+            <li>青少年自殺防治 · 心理健康政策倡議</li>
+            <li>校園霸凌、校事會議學生角度發聲</li>
+            <li>數位性暴力、性別教育議題青年觀點</li>
+            <li>菸害、毒品防制（喪屍煙彈、加熱菸下架）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:0.88rem;color:var(--ink-3);margin-top:20px;line-height:1.7;text-align:center;padding-top:16px;border-top:1px solid var(--line);">
+      若您是<strong>家長、教師、社工或其他關心兒少的公民</strong>，歡迎透過<a href="/act/" style="color:var(--ink);border-bottom:1px solid var(--brand-orange);">參與行動</a>連結兩部門；若您是<strong>青年</strong>，歡迎加入青年部，讓你的聲音直接進入政策現場。
+    </p>
   </section>
 
   <!-- ════════ 歷屆理事長 Past Chairs ════════ -->
@@ -488,7 +587,7 @@
     <div class="footer-cols">
       <div class="footer-col">
         <h4>國教行動聯盟</h4>
-        <p style="color:#b8bcc3;font-size:0.92rem;line-height:1.7;">成立於 2012 年的台灣家長倡議組織，推動兒童及青少年權益保障。立案字號 1030182063。</p>
+        <p style="color:#b8bcc3;font-size:0.92rem;line-height:1.7;">成立於 2012 年的台灣兒少與教育倡議組織（家長 × 青年共構），推動兒童及青少年權益保障。立案字號 1030182063。</p>
       </div>
       <div class="footer-col">
         <h4>議題</h4>
