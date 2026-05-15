@@ -359,6 +359,67 @@
     @media (max-width: 900px) { .now-happening-grid { grid-template-columns: 1fr; } }
 
     /* Stats band */
+    /* Navigate — 四扇門 Who / Now / Past / Join */
+    .navigate { padding: 56px 32px 48px; max-width: 1280px; margin: 0 auto; }
+    .navigate-head { text-align: center; margin-bottom: 36px; }
+    .navigate-head h2 { font-family: 'Noto Serif TC', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 900; margin-bottom: 8px; }
+    .navigate-head p { color: var(--ink-2); font-size: 1rem; line-height: 1.7; max-width: 580px; margin: 0 auto; }
+    .nav-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .nav-door {
+      padding: 32px 28px 28px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--brand-orange);
+      border-radius: 6px;
+      display: flex; flex-direction: column;
+      transition: all 0.22s;
+      position: relative;
+      overflow: hidden;
+    }
+    .nav-door:hover { transform: translateY(-4px); box-shadow: 0 18px 36px -14px rgba(0,0,0,0.16); border-color: var(--ink); }
+    .nav-door::before {
+      content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 0;
+      background: rgba(235,155,49,0.06); transition: height 0.22s;
+    }
+    .nav-door:hover::before { height: 4px; }
+    .nav-door-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.28em; color: var(--brand-orange);
+      font-weight: 700; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .nav-door h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.6rem; font-weight: 900; margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .nav-door .nav-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem; color: var(--ink-3);
+      letter-spacing: 0.08em; margin-bottom: 18px;
+    }
+    .nav-door .nav-body { font-size: 0.95rem; color: var(--ink-2); line-height: 1.7; flex: 1; margin-bottom: 18px; }
+    .nav-door .nav-body strong { color: var(--ink); }
+    .nav-door .nav-cta {
+      font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink);
+      border-bottom: 2px solid var(--brand-orange); padding-bottom: 2px;
+      align-self: flex-start;
+    }
+    .nav-door:hover .nav-cta { color: var(--brand-orange); }
+    /* 第二扇門特別標 "current" 紅標 */
+    .nav-door.live { border-top-color: #d63838; }
+    .nav-door.live .nav-door-num { color: #d63838; }
+    .nav-door.live .nav-cta { border-bottom-color: #d63838; }
+    .nav-door.live::after {
+      content: "LIVE";
+      position: absolute; top: 14px; right: 16px;
+      font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.18em; color: #d63838;
+      padding: 3px 8px; background: rgba(214,56,56,0.1); border-radius: 3px;
+    }
+    @media (max-width: 900px) { .nav-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .nav-grid { grid-template-columns: 1fr; } }
+
     .stats-band { background: var(--ink); color: #fff; padding: 80px 32px; }
     .stats-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
     .stat-num { font-family: 'Inter', sans-serif; font-size: clamp(3rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
@@ -656,9 +717,69 @@
       </div>
     </section>
 
-    <!-- CH 03 — Numbers -->
+    <!-- CH 03 — Navigate（四扇門） -->
     <div class="chapter">
       <span class="chapter-num">Ch 03</span>
+      <span class="chapter-line"></span>
+      <span class="chapter-label">Navigate</span>
+    </div>
+    <section class="navigate">
+      <div class="navigate-head">
+        <h2>四種看見國教盟的方式</h2>
+        <p>不論你是初次認識、想參與行動，還是想引用我們的資料——選擇你的入口。</p>
+      </div>
+      <div class="nav-grid">
+
+        <!-- 01 Who -->
+        <a href="/about/" class="nav-door">
+          <div class="nav-door-num">01 · Who</div>
+          <h3>我們是誰</h3>
+          <div class="nav-sub">Position & Identity</div>
+          <div class="nav-body">
+            <strong>2012 年成立</strong>的台灣兒少與教育倡議組織。家長部 × 青年部雙軸共構、13 年五屆理事長、跨黨派合作 19 位立委。
+          </div>
+          <span class="nav-cta">認識國教盟 →</span>
+        </a>
+
+        <!-- 02 Now (LIVE) -->
+        <a href="/act/" class="nav-door live">
+          <div class="nav-door-num">02 · Now</div>
+          <h3>現在在做</h3>
+          <div class="nav-sub">Current Action</div>
+          <div class="nav-body">
+            <strong>5/20-21 嘉義國際研討會</strong>（共同主辦、王瀚陽主持）、兒少權法 165 條大修、22 縣市營養午餐落實追蹤。
+          </div>
+          <span class="nav-cta">看當前行動 →</span>
+        </a>
+
+        <!-- 03 Past -->
+        <a href="/impact/" class="nav-door">
+          <div class="nav-door-num">03 · Past</div>
+          <h3>過去做了</h3>
+          <div class="nav-sub">Three-Year Impact</div>
+          <div class="nav-body">
+            <strong>2023-2025 三年</strong>累計：168+ 合作組織、113 篇新聞稿、286 場行動、7,917+ 媒體聲量、29 篇政策深度。
+          </div>
+          <span class="nav-cta">看完整成果 →</span>
+        </a>
+
+        <!-- 04 Join -->
+        <a href="/act/" class="nav-door">
+          <div class="nav-door-num">04 · Join</div>
+          <h3>加入我們</h3>
+          <div class="nav-sub">Take Action</div>
+          <div class="nav-body">
+            <strong>5 種身份 5 種行動</strong>。公民可加入 LINE 監督社群，學者可引用資料，NGO 可洽合作，記者可採訪。
+          </div>
+          <span class="nav-cta">找你的路徑 →</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- CH 04 — Numbers -->
+    <div class="chapter">
+      <span class="chapter-num">Ch 04</span>
       <span class="chapter-line"></span>
       <span class="chapter-label">Numbers That Matter</span>
     </div>
@@ -684,9 +805,9 @@
       <p class="stats-note">2023 — 2025 近三年累計</p>
     </section>
 
-    <!-- CH 04 — Latest -->
+    <!-- CH 05 — Latest -->
     <div class="chapter">
-      <span class="chapter-num">Ch 04</span>
+      <span class="chapter-num">Ch 05</span>
       <span class="chapter-line"></span>
       <span class="chapter-label">Latest Voice</span>
     </div>
@@ -729,9 +850,9 @@
       </div>
     </section>
 
-    <!-- CH 05 — Three Sites -->
+    <!-- CH 06 — Three Sites -->
     <div class="chapter">
-      <span class="chapter-num">Ch 05</span>
+      <span class="chapter-num">Ch 06</span>
       <span class="chapter-line"></span>
       <span class="chapter-label">Knowledge &amp; Action</span>
     </div>
