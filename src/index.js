@@ -74,6 +74,22 @@ export default {
       return Response.redirect(url.origin + redirectTo + url.search, 301);
     }
 
+    // 1.5) /robots.txt — 直接從 ASSETS 回傳純文字（覆寫 Cloudflare AI Audit 注入）
+    //      Cloudflare AI Audit 預設會 prepend Disallow 各 AI bot，跟我們的 Allow 衝突。
+    //      Worker 攔截後直接回我們的版本，並用 no-transform 阻止後續修改。
+    if (url.pathname === '/robots.txt') {
+      const robotsRes = await env.ASSETS.fetch(new Request(url.origin + '/robots.txt'));
+      const body = await robotsRes.text();
+      return new Response(body, {
+        status: 200,
+        headers: {
+          'Content-Type': 'text/plain; charset=utf-8',
+          'Cache-Control': 'public, max-age=3600, no-transform',
+          'X-Robots-Tag': 'noai-policy: see-content-signals-header',
+        },
+      });
+    }
+
     // 2) 從 ASSETS 取靜態資源
     const response = await env.ASSETS.fetch(request);
 
