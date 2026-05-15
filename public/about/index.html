@@ -45,7 +45,9 @@
         { "@type": "Person", "name": "創會理監事會" }
       ],
       "member": [
-        { "@type": "Person", "name": "王瀚陽", "jobTitle": "理事長（2023-2025）" }
+        { "@type": "Person", "name": "王瀚陽", "jobTitle": "第五屆理事長（2023-2025）" },
+        { "@type": "Person", "name": "王立昇", "jobTitle": "創會理事長（第一、二屆 2012-2018）、現任監事長" },
+        { "@type": "Person", "name": "陳鐵虎", "jobTitle": "第三屆理事長（2018-2021）" }
       ],
       "department": [
         { "@type": "Organization", "name": "理監事會" },
@@ -108,6 +110,34 @@
     .dept-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; }
     .dept-card p { font-size: 0.92rem; color: var(--ink-2); line-height: 1.65; }
 
+    /* Past Chairs 歷屆理事長 */
+    .chairs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
+    .chair-card { padding: 24px 20px; background: #fff; border: 1px solid var(--line); border-radius: 6px; text-align: center; transition: all 0.2s; }
+    .chair-card:hover { border-color: var(--ink); transform: translateY(-3px); }
+    .chair-card.current { border-top: 5px solid var(--brand-orange); }
+    .chair-portrait { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #e5e7eb, #c4c8ce); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-family: 'Noto Serif TC', serif; font-size: 2.2rem; color: #fff; font-weight: 900; overflow: hidden; }
+    .chair-portrait img { width: 100%; height: 100%; object-fit: cover; }
+    .chair-term { font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 0.22em; color: var(--brand-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+    .chair-period { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--ink-3); margin-bottom: 12px; }
+    .chair-name { font-family: 'Noto Serif TC', serif; font-size: 1.35rem; font-weight: 900; margin-bottom: 10px; }
+    .chair-achievements { font-size: 0.85rem; color: var(--ink-2); line-height: 1.65; }
+    .chair-card.placeholder { background: var(--bg-soft); border-style: dashed; }
+    .chair-card.placeholder .chair-name { color: var(--ink-3); font-style: italic; }
+    @media (max-width: 900px) { .chairs-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .chairs-grid { grid-template-columns: 1fr; } }
+
+    /* Board 本屆理監事 */
+    .board-section { background: var(--bg-soft); padding: 36px 32px; border-radius: 6px; margin: 16px 0; }
+    .board-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px; }
+    .board-col h3 { font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 0.22em; color: var(--brand-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 14px; }
+    .board-col .lead-name { font-family: 'Noto Serif TC', serif; font-size: 1.3rem; font-weight: 900; margin-bottom: 6px; }
+    .board-col .lead-role { font-size: 0.88rem; color: var(--ink-2); margin-bottom: 16px; }
+    .board-col ul { list-style: none; padding: 0; margin-top: 12px; }
+    .board-col li { padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; color: var(--ink-2); display: flex; justify-content: space-between; }
+    .board-col li:last-child { border-bottom: 0; }
+    .board-col li .role { color: var(--ink-3); font-size: 0.85rem; font-family: 'Inter', sans-serif; letter-spacing: 0.05em; }
+    @media (max-width: 720px) { .board-grid { grid-template-columns: 1fr; } }
+
     .registration-info { display: flex; gap: 32px; flex-wrap: wrap; padding: 24px 28px; background: var(--bg-soft); border-radius: 4px; margin-top: 24px; font-size: 0.9rem; }
     .registration-info span { color: var(--ink-2); }
     .registration-info strong { color: var(--ink); margin-right: 6px; }
@@ -137,11 +167,8 @@
       <a href="/about/" class="active">關於我們</a>
       <a href="/issues/">兒少與教育議題</a>
       <a href="/chronicle/">大事紀</a>
-      <a href="/events/">活動公告</a>
-      <a href="/act/">參與行動</a>
-      <a href="https://policy.aabe.org.tw/">政策知識庫</a>
-      <a href="https://advocacy.aabe.org.tw/">倡議成果</a>
-      <a href="/press/">媒體中心</a>
+      <a href="/act/">行動與參與</a>
+      <a href="/press/">媒體與資料</a>
       <a href="/contact/">聯絡我們</a>
     </nav>
   </div>
@@ -293,7 +320,7 @@
     <div class="departments">
       <div class="dept-card">
         <h3>理監事會</h3>
-        <p>聯盟最高決策機構。現任（2023-2025）理事長王瀚陽，由跨領域專業人士組成，負責議題策略與政策方向。</p>
+        <p>聯盟最高決策機構。現任（第五屆 2023-2025）理事長王瀚陽，由跨領域專業人士組成，負責議題策略與政策方向。</p>
       </div>
       <div class="dept-card">
         <h3>青年部</h3>
@@ -302,6 +329,105 @@
       <div class="dept-card">
         <h3>家長部</h3>
         <p>連結全國各級學校家長會、單親家庭、新住民家庭，匯集家長端真實經驗，作為政策論述的第一手素材。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 歷屆理事長 Past Chairs ════════ -->
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">歷屆理事長</h2>
+      <span class="section-hint">Past Chairs · 2012 — Present</span>
+    </div>
+    <p style="color:var(--ink-2);line-height:1.85;margin-bottom:20px;">國教盟自 2012 年成立，已歷經五屆理事長。每屆理事長帶領聯盟在不同階段的政策議題上深耕，從<strong>入學制度改革</strong>到<strong>少年司法、菸毒防制</strong>，再到<strong>跨黨派合作、青年部成立</strong>，形成「三高峰」式的階段性發展。</p>
+
+    <div class="chairs-grid">
+
+      <!-- 第一、二屆 王立昇 -->
+      <div class="chair-card">
+        <div class="chair-portrait">昇</div>
+        <div class="chair-term">Term I — II</div>
+        <div class="chair-period">2012 — 2018</div>
+        <div class="chair-name">王立昇</div>
+        <div class="chair-achievements">
+          <strong>創會理事長</strong>。台大應用力學教授。任內主導 12 年國教高中入學制度改革，停止抽籤制度。現任<strong>監事長</strong>。
+        </div>
+      </div>
+
+      <!-- 第三屆 陳鐵虎 -->
+      <div class="chair-card">
+        <div class="chair-portrait">陳</div>
+        <div class="chair-term">Term III</div>
+        <div class="chair-period">2018 — 2021</div>
+        <div class="chair-name">陳鐵虎</div>
+        <div class="chair-achievements">
+          全國家長會長聯盟<strong>創會理事長</strong>。深耕家長會體系與 108 課綱、考招制度倡議。現任教育志工。
+        </div>
+      </div>
+
+      <!-- 第四屆（待補） -->
+      <div class="chair-card placeholder">
+        <div class="chair-portrait">—</div>
+        <div class="chair-term">Term IV</div>
+        <div class="chair-period">2021 — 2023</div>
+        <div class="chair-name">待補資料</div>
+        <div class="chair-achievements">
+          第四屆理事長資料待補。本欄將於秘書處彙整後更新。
+        </div>
+      </div>
+
+      <!-- 第五屆 王瀚陽（現任） -->
+      <div class="chair-card current">
+        <div class="chair-portrait">瀚</div>
+        <div class="chair-term">Term V · 現任</div>
+        <div class="chair-period">2023 — 2025</div>
+        <div class="chair-name">王瀚陽</div>
+        <div class="chair-achievements">
+          啟動少年司法改革倡議。任內推動加熱菸下架、兒童家庭部成立、立法院 8 項訴求 6 項獲司法院正面回應。媒體聲量三年成長 +72%。
+        </div>
+      </div>
+
+    </div>
+
+    <p style="font-size:0.88rem;color:var(--ink-3);margin-top:16px;line-height:1.7;">
+      ※ 王立昇創會理事長：「<em>不怕走不出去，最怕走錯路</em>」——這句話成為國教盟 13 年來的倡議核心原則：<strong>專業、民意、共識</strong>。
+    </p>
+  </section>
+
+  <!-- ════════ 本屆理監事 Current Board ════════ -->
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">本屆理監事會</h2>
+      <span class="section-hint">Term V · 2023 — 2025</span>
+    </div>
+
+    <div class="board-section">
+      <p style="color:var(--ink-2);font-size:0.95rem;line-height:1.8;margin-bottom:8px;">
+        本屆（第五屆）理監事會延續國教盟「跨領域、跨黨派」傳統，由家長代表、學者、青年代表、實務工作者共同組成。
+      </p>
+
+      <div class="board-grid">
+        <div class="board-col">
+          <h3>領導團隊 / Leadership</h3>
+          <div class="lead-name">王瀚陽</div>
+          <div class="lead-role">理事長 · Chairperson</div>
+
+          <div class="lead-name" style="margin-top:18px;">王立昇</div>
+          <div class="lead-role">監事長 · Supervisor-General<br><span style="font-size:0.8rem;color:var(--ink-3);">創會理事長、台大應用力學研究所教授</span></div>
+        </div>
+
+        <div class="board-col">
+          <h3>理監事 / Board Members</h3>
+          <ul>
+            <li><span>常務理事</span><span class="role">待補</span></li>
+            <li><span>理事（多位）</span><span class="role">待補</span></li>
+            <li><span>常務監事</span><span class="role">待補</span></li>
+            <li><span>監事（多位）</span><span class="role">待補</span></li>
+            <li><span>青年部召集人</span><span class="role">待補</span></li>
+            <li><span>家長部召集人</span><span class="role">待補</span></li>
+          </ul>
+          <p style="font-size:0.85rem;color:var(--ink-3);margin-top:14px;line-height:1.65;">完整理監事名單將於秘書處彙整完畢後同步更新。如需採訪安排或合作邀請，請聯絡秘書處 <a href="mailto:Action.A.E0626@gmail.com" style="border-bottom:1px solid var(--line);">Action.A.E0626@gmail.com</a>。</p>
+        </div>
       </div>
     </div>
   </section>

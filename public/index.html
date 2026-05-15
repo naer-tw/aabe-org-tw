@@ -336,16 +336,27 @@
     .manifesto ul { counter-reset: item; }
     .manifesto li b { color: var(--ink); font-weight: 900; }
 
-    /* Now Focus banner */
-    .now-focus { background: var(--warm, #fdf6e3); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 64px 32px; }
-    .now-focus-inner { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: center; }
-    .now-focus-label { font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.32em; color: var(--brand-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 16px; }
-    .now-focus-title { font-family: 'Noto Serif TC', serif; font-size: 2.2rem; font-weight: 900; line-height: 1.35; color: var(--ink); }
-    .now-focus-title .highlight { background: linear-gradient(transparent 45%, rgba(235,155,49,0.45) 45%); padding: 0 4px; }
-    .now-focus-body { font-family: 'Noto Serif TC', serif; font-size: 1.05rem; line-height: 1.85; color: var(--ink-2); }
-    .now-focus-body b { color: var(--ink); }
-    .now-focus-body .cta { display: inline-block; margin-top: 18px; padding: 12px 24px; background: var(--ink); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 4px; transition: background 0.2s; }
-    .now-focus-body .cta:hover { background: var(--brand-orange); }
+    /* Now Happening — 3 卡 Current Actions */
+    .now-happening { background: var(--warm, #fdf6e3); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 64px 32px; }
+    .now-happening-inner { max-width: 1280px; margin: 0 auto; }
+    .now-happening-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 32px; flex-wrap: wrap; gap: 12px; }
+    .now-happening-head h2 { font-family: 'Noto Serif TC', serif; font-size: 2rem; font-weight: 900; }
+    .now-happening-head h2 .highlight { background: linear-gradient(transparent 45%, rgba(235,155,49,0.45) 45%); padding: 0 4px; }
+    .now-happening-head .nh-link { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); border-bottom: 2px solid var(--brand-orange); padding-bottom: 2px; }
+    .now-happening-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .nh-card { background: #fff; padding: 28px 26px; border-radius: 6px; border-left: 5px solid var(--brand-orange); display: flex; flex-direction: column; transition: all 0.2s; }
+    .nh-card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px -10px rgba(0,0,0,0.12); }
+    .nh-card.urgent { border-left-color: #d63838; }
+    .nh-card.urgent .nh-badge { background: #d63838; color: #fff; }
+    .nh-card.urgent .nh-when { color: #d63838; }
+    .nh-badge { display: inline-block; padding: 4px 10px; background: var(--brand-orange); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 2px; margin-bottom: 14px; align-self: flex-start; }
+    .nh-when { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; color: var(--brand-orange); margin-bottom: 10px; }
+    .nh-card h3 { font-family: 'Noto Serif TC', serif; font-size: 1.25rem; font-weight: 900; line-height: 1.45; margin-bottom: 12px; }
+    .nh-card .nh-body { color: var(--ink-2); line-height: 1.7; font-size: 0.92rem; flex: 1; margin-bottom: 14px; }
+    .nh-card .nh-body b { color: var(--ink); }
+    .nh-card .nh-cta { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); align-self: flex-start; border-bottom: 1px solid var(--ink); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+    .nh-card .nh-cta:hover { color: var(--brand-orange); border-color: var(--brand-orange); }
+    @media (max-width: 900px) { .now-happening-grid { grid-template-columns: 1fr; } }
 
     /* Stats band */
     .stats-band { background: var(--ink); color: #fff; padding: 80px 32px; }
@@ -423,7 +434,8 @@
       .manifesto-heading { font-size: 1.7rem; margin-bottom: 24px; }
       .manifesto li { font-size: 1.15rem; padding: 14px 0 14px 44px; }
       .manifesto li::before { top: 18px; font-size: 0.7rem; }
-      .now-focus { padding: 48px 20px; }
+      .now-happening { padding: 48px 20px; }
+      .now-happening-head h2 { font-size: 1.5rem; }
       .now-focus-inner { grid-template-columns: 1fr; gap: 24px; }
       .now-focus-title { font-size: 1.7rem; }
       .now-focus-body { font-size: 0.98rem; }
@@ -452,16 +464,13 @@
       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="切換選單">
       <label for="nav-toggle" class="nav-toggle-btn" aria-label="開啟選單"><span></span></label>
       <nav class="topbar-nav" aria-label="Primary">
-        <a href="/about/">關於我們</a>
-        <a href="/issues/">兒少與教育議題</a>
-        <a href="/chronicle/">大事紀</a>
-        <a href="/events/">活動公告</a>
-        <a href="/act/">參與行動</a>
-        <a href="https://policy.aabe.org.tw/">政策知識庫</a>
-        <a href="https://advocacy.aabe.org.tw/">倡議成果</a>
-        <a href="/press/">媒體中心</a>
-        <a href="/contact/">聯絡我們</a>
-      </nav>
+      <a href="/about/">關於我們</a>
+      <a href="/issues/">兒少與教育議題</a>
+      <a href="/chronicle/">大事紀</a>
+      <a href="/act/">行動與參與</a>
+      <a href="/press/">媒體與資料</a>
+      <a href="/contact/">聯絡我們</a>
+    </nav>
     </div>
   </header>
 
@@ -613,23 +622,53 @@
       </ul>
     </section>
 
-    <!-- CH 03 — Now Focus -->
+    <!-- CH 03 — Now Happening（3 卡 Current Actions） -->
     <div class="chapter">
       <span class="chapter-num">Ch 03</span>
       <span class="chapter-line"></span>
-      <span class="chapter-label">Current Focus</span>
+      <span class="chapter-label">Now Happening</span>
     </div>
-    <section class="now-focus">
-      <div class="now-focus-inner">
-        <div>
-          <div class="now-focus-label">現在最關鍵</div>
-          <h2 class="now-focus-title">財劃法後<br><span class="highlight">22 個縣市</span><br>免費營養午餐監督</h2>
+    <section class="now-happening">
+      <div class="now-happening-inner">
+        <div class="now-happening-head">
+          <h2><span class="highlight">正在發生</span>的事</h2>
+          <a href="/events/" class="nh-link">完整活動公告 →</a>
         </div>
-        <div class="now-focus-body">
-          財劃法修法後，免費營養午餐改由<b>地方統籌</b>。<b>22 個縣市能否落實？</b><br>
-          我們爭取了 13 年的免費營養午餐，現在需要每一位公民一起守住。
-          <br>
-          <a href="/contact/" class="cta">加入監督社群 →</a>
+        <div class="now-happening-grid">
+
+          <!-- 卡 1：5/20-21 國際研討會（最緊急，本週） -->
+          <a href="/events/" class="nh-card urgent">
+            <span class="nh-badge">本週</span>
+            <div class="nh-when">5/20 (三) — 5/21 (四) · 嘉義中正大學</div>
+            <h3>2026 青少年藥物濫用預防與犯罪防治<br>國際研討會</h3>
+            <div class="nh-body">
+              國教盟為<b>共同主辦單位</b>之一。理事長王瀚陽於 5/21 主持論文報告（四）「<b>從刑事嚇阻轉向全人復元</b>：少年詐欺犯罪成因」。指導單位：教育部；主辦：國立中正大學犯罪研究中心。
+            </div>
+            <span class="nh-cta">查看完整議程 →</span>
+          </a>
+
+          <!-- 卡 2：兒少權法 15 年大修 -->
+          <a href="https://policy.aabe.org.tw/child-rights/" class="nh-card">
+            <span class="nh-badge">進行中</span>
+            <div class="nh-when">2026 衛福部草案預告中</div>
+            <h3>兒少權法 15 年大修<br>165 條 · 六大缺口分析</h3>
+            <div class="nh-body">
+              衛福部 4/21 預告兒少權法草案 165 條，國教盟次日發表<b>六大制度缺口分析</b>。剴剴案後，社工保證人地位、跨部會整合、緊急安置、保護網銜接皆待補強。
+            </div>
+            <span class="nh-cta">深度分析 →</span>
+          </a>
+
+          <!-- 卡 3：22 縣市營養午餐監督 -->
+          <a href="/act/" class="nh-card">
+            <span class="nh-badge">長期追蹤</span>
+            <div class="nh-when">2026 上半年滾動更新</div>
+            <h3>22 個縣市<br>免費營養午餐落實監督</h3>
+            <div class="nh-body">
+              財劃法修法後，免費營養午餐改由<b>地方統籌</b>。22 縣市配套進度差距大——我們持續追蹤，需要每位公民一起守住政策落實。
+            </div>
+            <span class="nh-cta">加入監督社群 →</span>
+          </a>
+
         </div>
       </div>
     </section>
