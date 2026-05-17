@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>國教行動聯盟｜AABE 最新動態</title>
+    <link>https://aabe.org.tw/</link>
+    <atom:link href="https://aabe.org.tw/feed.xml" rel="self" type="application/rss+xml" />
+    <description>國教行動聯盟（AABE）官網最新動態：新議題、新活動、新政策深度分析、研討會、媒體中心、影響力報告。家長 × 青年共構的兒少與教育倡議組織。</description>
+    <language>zh-TW</language>
+    <copyright>CC-BY-4.0 國教行動聯盟</copyright>
+    <managingEditor>Action.A.E0626@gmail.com (國教行動聯盟祕書處)</managingEditor>
+    <webMaster>Action.A.E0626@gmail.com (國教行動聯盟祕書處)</webMaster>
+    <lastBuildDate>Sat, 17 May 2026 12:00:00 +0800</lastBuildDate>
+    <generator>AABE Custom Feed</generator>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    <ttl>60</ttl>
+    <image>
+      <url>https://aabe.org.tw/wp-content/uploads/logo-naer.png</url>
+      <title>國教行動聯盟</title>
+      <link>https://aabe.org.tw/</link>
+    </image>
+
+    <item>
+      <title>2026 青少年藥物濫用預防與犯罪防治國際研討會（5/20-21 嘉義中正大學）</title>
+      <link>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/</link>
+      <guid isPermaLink="true">https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/</guid>
+      <pubDate>Sat, 17 May 2026 10:00:00 +0800</pubDate>
+      <dc:creator>國教行動聯盟</dc:creator>
+      <category>活動</category>
+      <description>國教行動聯盟為 16 個共同主辦單位之一。理事長王瀚陽於 5/21 11:00-11:30 主持論文報告（四）「從刑事嚇阻轉向全人復元：少年詐欺犯罪成因」。指導：教育部；主辦：國立中正大學犯罪研究中心。含 5 位國際學者跨美、港、泰。</description>
+    </item>
+
+    <item>
+      <title>2023-2025 影響力報告：從沉默到改變</title>
+      <link>https://aabe.org.tw/impact/</link>
+      <guid isPermaLink="true">https://aabe.org.tw/impact/</guid>
+      <pubDate>Wed, 14 May 2026 10:00:00 +0800</pubDate>
+      <dc:creator>國教行動聯盟</dc:creator>
+      <category>影響力報告</category>
+      <description>三年完整影響力報告：168+ 合作組織、113 篇新聞稿、286 場行動、7,917+ 媒體聲量、19 位跨黨派立委合作。從新北割頸案、校事會議修法、加熱菸下架，到兒少權法 15 年大修。</description>
+    </item>
+
+    <item>
+      <title>媒體中心上線｜給記者、立委辦公室、研究者的一站式入口</title>
+      <link>https://aabe.org.tw/press/</link>
+      <guid isPermaLink="true">https://aabe.org.tw/press/</guid>
+      <pubDate>Wed, 14 May 2026 10:00:00 +0800</pubDate>
+      <dc:creator>國教行動聯盟</dc:creator>
+      <category>媒體中心</category>
+      <description>採訪聯絡、發言人、常用數據、新聞稿入口、引用建議、Logo 與媒體 Kit 下載。</description>
+    </item>
+
+    <item>
+      <title>資料方法與來源頁上線｜所有數字定義透明化</title>
+      <link>https://aabe.org.tw/methodology/</link>
+      <guid isPermaLink="true">https://aabe.org.tw/methodology/</guid>
+      <pubDate>Wed, 14 May 2026 10:00:00 +0800</pubDate>
+      <dc:creator>國教行動聯盟</dc:creator>
+      <category>資料方法</category>
+      <description>每個數字（168+、113、286、7,917+、29、19）的計算方式、定義、資料來源與更新頻率。協助記者、研究者準確引用。</description>
+    </item>
+
+    <item>
+      <title>參與行動頁上線｜5 種身份 5 種行動</title>
+      <link>https://aabe.org.tw/act/</link>
+      <guid isPermaLink="true">https://aabe.org.tw/act/</guid>
+      <pubDate>Wed, 14 May 2026 10:00:00 +0800</pubDate>
+      <dc:creator>國教行動聯盟</dc:creator>
+      <category>參與行動</category>
+      <description>公民、家長、學者、NGO/機構、立委辦公室、媒體都能找到適合自己的參與路徑。加入 LINE 公民監督社群 lin.ee/97Nh9HT 是最低門檻。</description>
+    </item>
+
+  </channel>
+</rss>

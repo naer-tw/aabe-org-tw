@@ -15,6 +15,7 @@
   <!-- ═══ Canonical + 跨站發現 ═══ -->
   <link rel="canonical" href="https://aabe.org.tw/">
   <link rel="alternate" type="text/markdown" href="/llms.txt">
+  <link rel="alternate" type="application/rss+xml" title="國教行動聯盟 RSS Feed" href="/feed.xml">
   <link rel="author" href="/humans.txt">
   <link rel="related" href="https://policy.aabe.org.tw/" title="政策知識庫">
   <link rel="related" href="https://advocacy.aabe.org.tw/" title="倡議成果資料庫">
@@ -151,6 +152,28 @@
     "isRelatedTo": [
       { "@type": "Dataset", "name": "政策知識庫", "url": "https://policy.aabe.org.tw/" },
       { "@type": "Dataset", "name": "倡議成果資料庫", "url": "https://advocacy.aabe.org.tw/" }
+    ]
+  }
+  </script>
+
+  <!-- ═══ Schema.org #4.5: SiteNavigationElement（讓 Google 認得網站結構）═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SiteNavigationElement",
+    "name": ["關於我們", "兒少與教育議題", "大事紀", "活動公告", "行動與參與", "媒體中心", "資料方法", "影響力報告", "政策知識庫", "倡議成果資料庫", "聯絡我們"],
+    "url": [
+      "https://aabe.org.tw/about/",
+      "https://aabe.org.tw/issues/",
+      "https://aabe.org.tw/chronicle/",
+      "https://aabe.org.tw/events/",
+      "https://aabe.org.tw/act/",
+      "https://aabe.org.tw/press/",
+      "https://aabe.org.tw/methodology/",
+      "https://aabe.org.tw/impact/",
+      "https://policy.aabe.org.tw/",
+      "https://advocacy.aabe.org.tw/",
+      "https://aabe.org.tw/contact/"
     ]
   }
   </script>
