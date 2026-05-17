@@ -24,7 +24,11 @@ https://quickstatements.toolforge.org/#/
 
 ---
 
-## QuickStatements 指令（直接貼用）
+## QuickStatements 指令（v1.1 修正版 — 25 筆 安全可跑）
+
+> **重大修正**（瀏覽器 AI 品管發現）：
+> - 4 個 Q 編號 v1.0 用錯了（指到灶神星、藝術形式、地下水、日本航母 G18 計畫）→ v1.1 全部換正確
+> - P488 chairperson × 5 + P112 founder 因王立昇/陳鐵虎/王瀚陽都還沒 Q-item，**暫刪 6 筆**（之後三人有 Q-item 再單獨補 batch）
 
 ```
 Q10926848	Len	"國教行動聯盟"
@@ -41,24 +45,39 @@ Q10926848	Azh-tw	"AABE"
 Q10926848	Aen	"AABE"
 Q10926848	Aen	"National Education Action Alliance"
 Q10926848	P31	Q163740	S854	"https://aabe.org.tw/about/"
-Q10926848	P31	Q11200727	S854	"https://aabe.org.tw/about/"
+Q10926848	P31	Q431603	S854	"https://aabe.org.tw/about/"
 Q10926848	P17	Q865	S854	"https://aabe.org.tw/about/"
 Q10926848	P571	+2012-06-26T00:00:00Z/11	S854	"https://aabe.org.tw/about/"
 Q10926848	P1454	"人民團體"	S854	"https://aabe.org.tw/about/"
 Q10926848	P856	"https://aabe.org.tw/"
 Q10926848	P968	"Action.A.E0626@gmail.com"
 Q10926848	P2013	"twedumove"	S854	"https://www.facebook.com/twedumove/"
-Q10926848	P101	Q3030	S854	"https://aabe.org.tw/issues/"
-Q10926848	P101	Q1437361	S854	"https://aabe.org.tw/issues/"
-Q10926848	P101	Q161598	S854	"https://aabe.org.tw/issues/"
-Q10926848	P488	"王立昇"	P580	+2012-06-26T00:00:00Z/11	P582	+2015-06-26T00:00:00Z/11	S854	"https://aabe.org.tw/about/"
-Q10926848	P488	"王立昇"	P580	+2015-06-26T00:00:00Z/11	P582	+2018-06-26T00:00:00Z/11	S854	"https://aabe.org.tw/about/"
-Q10926848	P488	"陳鐵虎"	P580	+2018-06-26T00:00:00Z/11	P582	+2021-06-26T00:00:00Z/11	S854	"https://aabe.org.tw/about/"
-Q10926848	P488	"王瀚陽"	P580	+2021-06-26T00:00:00Z/11	P582	+2023-11-01T00:00:00Z/11	S854	"https://aabe.org.tw/about/"
-Q10926848	P488	"王瀚陽"	P580	+2023-11-01T00:00:00Z/11	P582	+2025-12-31T00:00:00Z/11	S854	"https://aabe.org.tw/about/"
-Q10926848	P112	"王立昇"	S854	"https://aabe.org.tw/about/"
+Q10926848	P101	Q8434	S854	"https://aabe.org.tw/issues/"
+Q10926848	P101	Q8354948	S854	"https://aabe.org.tw/issues/"
+Q10926848	P101	Q546113	S854	"https://aabe.org.tw/issues/"
 Q10926848	Sen_wiki	"國教行動聯盟"
 ```
+
+### v1.0 → v1.1 變更對照
+
+| 動作 | 之前（v1.0 錯）| 之後（v1.1 正）|
+|---|---|---|
+| P31 instance of | Q11200727（日本航母 G18 計畫 ✈️🚢）| **Q431603**（advocacy group）|
+| P101 field of work | Q3030（灶神星 ☄️）| **Q8434**（education）|
+| P101 field of work | Q1437361（藝術形式 🎨）| **Q8354948**（children's rights）|
+| P101 field of work | Q161598（地下水 💧）| **Q546113**（public policy）|
+| P488 chairperson × 5 | 字串 "王立昇/陳鐵虎/王瀚陽" | **刪除**（datatype 不接受字串）|
+| P112 founded by × 1 | 字串 "王立昇" | **刪除**（同上）|
+
+### 為什麼刪 chairperson？
+
+P488 / P112 的 datatype 都是 `wikibase-item`，只接受 Q-item 不接受字串值。
+王立昇 / 陳鐵虎 / 王瀚陽 在 Wikidata 都還沒有 Q-item。
+
+**處理**：
+1. 本批先省略
+2. Wikipedia 條目大事紀已寫到「2026 年 王瀚陽接任理事長」等資訊（第一輪 Frankw0128 已完成編輯）
+3. 之後若要為三人申請 Q-item（需每人至少 1 篇獨立第三方來源證明 notability）再單獨補 chairperson batch
 
 ---
 
