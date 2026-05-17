@@ -46,7 +46,7 @@
 ### 2025 年
 
 ```wikitext
-* 10月：[[衛福部國民健康署]]啟動指定菸品（加熱菸）健康風險評估審查機制，首波核准8項加熱菸品於10月11日合法上市，但因菸品標示瑕疵，國健署於上市後旋即下令撤架<ref>{{cite web |url=https://www.hpa.gov.tw/Pages/List.aspx?nodeid=4779 |title=指定菸品健康風險評估審查專區 |publisher=衛福部國民健康署 |access-date=2026-05-17}}</ref>。國教行動聯盟結合民間團體共同關注加熱菸管制議題。
+* 10月：[[衛福部國民健康署]]啟動指定菸品（加熱菸）健康風險評估審查機制，首波核准8項加熱菸品於10月11日合法上市，但因菸品標示瑕疵，國健署於上市後旋即下令撤架<ref>{{cite web |url=https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4878&pid=19396 |title=中央與地方政府攜手加強加熱菸上市後監管機制 |publisher=衛福部國民健康署 |access-date=2026-05-17}}</ref><ref>{{cite news |url=https://health.ettoday.net/news/3032516 |title=加熱菸最快10/11上市！國健署核定「8品項、3載具」合法販售 |publisher=ETtoday健康雲 |date=2025}}</ref>。國教行動聯盟結合民間團體共同關注加熱菸管制議題。
 * 11月：[[行政院]]核定[[衛生福利部]]組織改造方案，新設「兒童及家庭支持署」與「長照及社會發展署」<ref>{{cite news |url=https://udn.com/news/story/124657/9143577 |title=衛福部將設兒少及家庭支持署 4年135億照顧兒童健康 |publisher=聯合報 |date=2025-11}}</ref>。國教行動聯盟持續主張應升格為部會層級「兒童家庭部」。
 ```
 
