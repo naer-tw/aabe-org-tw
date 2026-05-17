@@ -1,0 +1,75 @@
+name: IndexNow Push
+
+# 每次 push 到 main 後自動推送 URL 給 Bing/Yandex/Naver
+# Cloudflare 部署完成後（通常 1-2 分鐘）才推，確保新內容已可訪問
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/**/*.html'
+      - 'public/sitemap.xml'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # 拿 HEAD + HEAD~1，用 diff 偵測改了哪些頁面
+
+      - name: Wait 90s for Cloudflare deploy
+        run: sleep 90
+
+      - name: Detect changed HTML paths
+        id: changes
+        run: |
+          # 偵測這次 commit 改了哪些 .html
+          CHANGED=$(git diff --name-only HEAD~1 HEAD | grep -E '^public/.*\.html$' || true)
+          if [ -z "$CHANGED" ]; then
+            echo "No HTML changes, will ping main pages only"
+            URLS='https://aabe.org.tw/'
+          else
+            # public/index.html → https://aabe.org.tw/
+            # public/about/index.html → https://aabe.org.tw/about/
+            # public/foo/bar.html → https://aabe.org.tw/foo/bar.html
+            URLS=$(echo "$CHANGED" | while read f; do
+              url=$(echo "$f" | sed 's|^public||' | sed 's|/index\.html$|/|')
+              echo "https://aabe.org.tw$url"
+            done | sort -u)
+          fi
+          # 一定加上首頁（freshness signal）
+          URLS=$(echo -e "https://aabe.org.tw/\n$URLS" | sort -u)
+          echo "$URLS" > /tmp/urls.txt
+          echo "URL count: $(wc -l < /tmp/urls.txt)"
+          cat /tmp/urls.txt
+
+      - name: Build IndexNow payload
+        run: |
+          # 把 URL list 轉成 JSON array
+          URL_JSON=$(cat /tmp/urls.txt | awk '{printf "\"%s\",", $0}' | sed 's/,$//')
+          cat > /tmp/payload.json <<EOF
+          {
+            "host": "aabe.org.tw",
+            "key": "cf7b84e6b78b446bd75fd7e04b9c06b7",
+            "keyLocation": "https://aabe.org.tw/cf7b84e6b78b446bd75fd7e04b9c06b7.txt",
+            "urlList": [$URL_JSON]
+          }
+          EOF
+          cat /tmp/payload.json
+
+      - name: Push to IndexNow
+        run: |
+          RESP=$(curl -s -w "\n%{http_code}" -X POST "https://api.indexnow.org/IndexNow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d @/tmp/payload.json)
+          BODY=$(echo "$RESP" | sed '$d')
+          STATUS=$(echo "$RESP" | tail -1)
+          echo "Status: $STATUS"
+          [ -n "$BODY" ] && echo "Body: $BODY"
+          case "$STATUS" in
+            200|202) echo "✅ IndexNow accepted"; exit 0 ;;
+            *) echo "⚠️ IndexNow returned $STATUS"; exit 0 ;;
+            # 不讓 IndexNow 失敗擋 build；只是 SEO 加分功能
+          esac

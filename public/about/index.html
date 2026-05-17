@@ -76,6 +76,81 @@
   }
   </script>
 
+  <!-- Schema: Person × 5（讓 AI / Google Knowledge Graph 認得理事長與部門領導） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://aabe.org.tw/about/#wang-hanyang",
+        "name": "王瀚陽",
+        "givenName": "瀚陽",
+        "familyName": "王",
+        "jobTitle": "第四、五屆理事長",
+        "affiliation": { "@id": "https://aabe.org.tw/#organization" },
+        "worksFor": { "@id": "https://aabe.org.tw/#organization" },
+        "image": "https://aabe.org.tw/wp-content/uploads/portrait-wang-hanyang.jpg",
+        "url": "https://aabe.org.tw/about/",
+        "description": "國教行動聯盟（AABE）現任理事長，連任第四、五屆（2021-2025）。任內推動少年司法改革、加熱菸下架、青年部成立、立法院 8 項訴求 6 項獲司法院正面回應。"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://aabe.org.tw/about/#wang-lisheng",
+        "name": "王立昇",
+        "givenName": "立昇",
+        "familyName": "王",
+        "jobTitle": "創會理事長（第一、二屆）、現任常務監事",
+        "affiliation": [
+          { "@id": "https://aabe.org.tw/#organization" },
+          { "@type": "EducationalOrganization", "name": "國立臺灣大學應用力學研究所" }
+        ],
+        "image": "https://aabe.org.tw/wp-content/uploads/portrait-wang-lisheng.jpg",
+        "url": "https://aabe.org.tw/about/",
+        "description": "國教行動聯盟創會理事長（2012-2018，連任 6 年），台大應用力學教授。任內主導 12 年國教高中入學制度改革。卸任後擔任現任常務監事。"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://aabe.org.tw/about/#chen-tiehu",
+        "name": "陳鐵虎",
+        "givenName": "鐵虎",
+        "familyName": "陳",
+        "jobTitle": "第三屆理事長",
+        "affiliation": { "@id": "https://aabe.org.tw/#organization" },
+        "image": "https://aabe.org.tw/wp-content/uploads/portrait-chen-tiehu.jpg",
+        "url": "https://aabe.org.tw/about/",
+        "description": "國教行動聯盟第三屆理事長（2018-2021，任期 3 年），全國家長會長聯盟創會理事長。深耕家長會體系與 108 課綱、考招制度倡議。"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://aabe.org.tw/about/#zhong-junwei",
+        "name": "鍾君偉",
+        "givenName": "君偉",
+        "familyName": "鍾",
+        "jobTitle": "家長部部長",
+        "affiliation": { "@id": "https://aabe.org.tw/#organization" },
+        "memberOf": { "@type": "Organization", "name": "國教行動聯盟家長部" },
+        "image": "https://aabe.org.tw/wp-content/uploads/portrait-zhong-junwei.jpg",
+        "url": "https://aabe.org.tw/about/",
+        "description": "國教行動聯盟家長部部長，連結全國各級學校家長會、單親家庭、新住民家庭，把家庭真實經驗轉化為政策論述。"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://aabe.org.tw/about/#li-yuhan",
+        "name": "李雨函",
+        "givenName": "雨函",
+        "familyName": "李",
+        "jobTitle": "青年部執行長",
+        "affiliation": { "@id": "https://aabe.org.tw/#organization" },
+        "memberOf": { "@type": "Organization", "name": "國教行動聯盟青年部" },
+        "image": "https://aabe.org.tw/wp-content/uploads/portrait-li-yuhan.jpg",
+        "url": "https://aabe.org.tw/about/",
+        "description": "國教行動聯盟青年部執行長。2024 年青年部成立，由青年代表主導青少年身心健康與校園議題，將年輕世代第一線視角帶入政策討論。"
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
