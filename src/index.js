@@ -21,7 +21,17 @@ const REDIRECTS = {
   '/event-announcement/': '/events/',
   '/contact-us': '/contact/',
   '/contact-us/': '/contact/',
+  // 舊 WordPress slug → 新版頁面（Google 已索引這些 URL，導向新頁面回收 link equity）
+  '/safety_and_security': '/issues/',
+  '/safety_and_security/': '/issues/',
 };
+
+// 中文 slug（含 % encoding）需要 prefix match — 在 fetch 內處理
+const REDIRECT_PREFIXES = [
+  // 2024 割頸案系列舊 WP 中文 slug → /press/
+  { match: '/%E5%89%B2%E9%A0%B8', to: '/press/' },  // 「割頸」開頭中文 slug
+  { match: '/%E5%9C%8B%E6%95%99', to: '/press/' },  // 「國教」開頭中文 slug
+];
 
 // ───────────────────────────────────────────
 // 2. 安全標頭（套用所有 HTML 回應）
@@ -68,10 +78,17 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // 1) 301 redirects
+    // 1) 301 redirects（精確路徑）
     const redirectTo = REDIRECTS[url.pathname];
     if (redirectTo) {
       return Response.redirect(url.origin + redirectTo + url.search, 301);
+    }
+
+    // 1a) 301 prefix redirects（中文 slug 一律導向新版索引頁）
+    for (const { match, to } of REDIRECT_PREFIXES) {
+      if (url.pathname.startsWith(match)) {
+        return Response.redirect(url.origin + to, 301);
+      }
     }
 
     // 1.5) /robots.txt — 直接從 ASSETS 回傳純文字（覆寫 Cloudflare AI Audit 注入）

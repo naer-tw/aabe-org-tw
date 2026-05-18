@@ -1,0 +1,24 @@
+{
+  "name": "aabe-deploy",
+  "version": "1.0.0",
+  "description": "社團法人國教行動聯盟（Action Alliance on Basic Education）官方網站原始碼。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naer-tw/aabe-org-tw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/naer-tw/aabe-org-tw/issues"
+  },
+  "homepage": "https://github.com/naer-tw/aabe-org-tw#readme",
+  "devDependencies": {
+    "wrangler": "^3.114.17"
+  }
+}

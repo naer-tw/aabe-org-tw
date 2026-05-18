@@ -88,10 +88,41 @@ a { color: inherit; text-decoration: none; }
 .topbar-inner { max-width: 1280px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 18px; }
 .topbar-logo { display: flex; align-items: center; }
 .topbar-logo img { height: 52px; display: block; width: auto; }
-.topbar-nav { display: flex; gap: 22px; margin-left: auto; font-size: 0.92rem; font-weight: 500; }
+/* ═══════ Utility Bar — 跨站 / 工具 / 社群常駐入口（在 topbar 上方）═══════ */
+.utility-bar { position: sticky; top: 0; z-index: 101; background: #1a1a1a; color: #e5e7eb;
+  font-size: 0.78rem; letter-spacing: 0.02em; border-bottom: 1px solid #2a2a2a; }
+.utility-bar-inner { max-width: 1280px; margin: 0 auto; padding: 7px 32px;
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.utility-bar a { color: #d4d4d4; text-decoration: none; transition: color 0.15s; display: inline-flex; align-items: center; gap: 4px; }
+.utility-bar a:hover { color: #EB9B31; }
+.utility-bar-divider { color: #444; user-select: none; }
+.utility-bar-ext { font-size: 0.7rem; opacity: 0.7; }
+.utility-bar-social { margin-left: auto; display: inline-flex; gap: 14px; }
+.utility-bar-social a { display: inline-flex; align-items: center; }
+.utility-bar-social svg { width: 16px; height: 16px; fill: currentColor; }
+/* topbar 跟著 utility bar 一起 sticky，但 z-index 較低 */
+.topbar { top: 32px !important; }
+@media (max-width: 768px) {
+  .utility-bar-inner { padding: 6px 18px; gap: 10px; font-size: 0.72rem; }
+  .utility-bar a:not(.utility-bar-social a) { font-size: 0.72rem; }
+  .utility-bar-divider:nth-of-type(n+3) { display: none; }
+  /* 手機版隱藏 影響力報告 / 資料方法（保留最重要的兩個跨站連結 + 社群）*/
+  .utility-bar a.util-secondary { display: none; }
+  .topbar { top: 30px !important; }
+}
+
+.topbar-nav { display: flex; gap: 22px; margin-left: auto; font-size: 0.92rem; font-weight: 500; align-items: center; }
 .topbar-nav a { color: var(--ink-2); transition: color 0.2s; white-space: nowrap; }
 .topbar-nav a:hover { color: var(--brand-orange); }
 .topbar-nav a.active { color: var(--ink); border-bottom: 2px solid var(--brand-orange); padding-bottom: 4px; }
+.topbar-nav a.nav-events { color: var(--brand-orange); font-weight: 700; position: relative; padding-right: 14px; }
+.topbar-nav a.nav-events:hover { color: #c97318; }
+.nav-dot { position: absolute; top: 2px; right: 0; width: 7px; height: 7px;
+  background: #e74c3c; border-radius: 50%; box-shadow: 0 0 0 0 rgba(231,76,60,0.6);
+  animation: nav-pulse 1.8s infinite; }
+@keyframes nav-pulse { 0% { box-shadow: 0 0 0 0 rgba(231,76,60,0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(231,76,60,0); }
+  100% { box-shadow: 0 0 0 0 rgba(231,76,60,0); } }
 
 /* Hamburger menu (mobile only) */
 .nav-toggle { display: none; }
