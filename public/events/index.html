@@ -28,131 +28,381 @@
   <!-- Schema: CollectionPage + ItemList of Event -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "國教行動聯盟活動公告",
-    "description": "即將舉辦的政策論壇、公聽會、記者會與近期已舉辦活動精選。",
-    "url": "https://aabe.org.tw/events/",
-    "inLanguage": "zh-TW",
-    "isPartOf": { "@id": "https://aabe.org.tw/#website" },
-    "about": { "@id": "https://aabe.org.tw/#organization" },
-    "mainEntity": {
-      "@type": "ItemList",
-      "name": "近期活動",
-      "itemListElement": [
-        {
-          "@type": "ListItem", "position": 1,
-          "item": {
-            "@type": "Event",
-            "name": "兒少權法修正草案公聽會",
-            "startDate": "2026-05",
-            "eventStatus": "https://schema.org/EventScheduled",
-            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "description": "衛福部主辦，國教盟出席。將就六大制度缺口提出補強建議，重點包括社工注意義務、起訴前審查、跨機關資訊共享授權。",
-            "organizer": [
-              { "@type": "GovernmentOrganization", "name": "衛生福利部" },
-              { "@id": "https://aabe.org.tw/#organization" }
-            ],
-            "location": { "@type": "Place", "name": "台灣" }
-          }
-        },
-        {
-          "@type": "ListItem", "position": 2,
-          "item": {
-            "@type": "Event",
-            "name": "「健康台灣無菸品世代」聯合記者會",
-            "startDate": "2026-04-24",
-            "eventStatus": "https://schema.org/EventScheduled",
-            "description": "國教盟、台灣拒菸聯盟、董氏基金會聯合倡議全面禁絕新型菸品。",
-            "organizer": { "@id": "https://aabe.org.tw/#organization" }
-          }
-        },
-        {
-          "@type": "ListItem", "position": 3,
-          "item": {
-            "@type": "Event",
-            "name": "兒少權法六大制度缺口分析發表",
-            "startDate": "2026-04-22",
-            "description": "衛福部預告草案 165 條的條文對照分析，呼籲 5 月公聽會補強。",
-            "organizer": { "@id": "https://aabe.org.tw/#organization" }
-          }
-        },
-        {
-          "@type": "ListItem", "position": 4,
-          "item": {
-            "@type": "Event",
-            "name": "剴剴案社工判刑後制度修補論壇",
-            "startDate": "2026-04-17",
-            "description": "從保證人地位法理到五大修法工程。",
-            "organizer": { "@id": "https://aabe.org.tw/#organization" }
-          }
-        },
-        {
-          "@type": "ListItem", "position": 5,
-          "item": {
-            "@type": "Event",
-            "name": "性平法再校準公聽會",
-            "startDate": "2026-04-15",
-            "description": "三大修法主張守住教育本位。國教盟主辦。",
-            "organizer": { "@id": "https://aabe.org.tw/#organization" }
-          }
-        },
-        {
-          "@type": "ListItem", "position": 6,
-          "item": {
-            "@type": "Event",
-            "name": "家長立場全長聯公聽會",
-            "startDate": "2026-04-15",
-            "description": "家長團體聯合倡議性平法修法方向。",
-            "organizer": { "@type": "Organization", "name": "全國家長會長聯盟（全長聯）" }
-          }
-        },
-        {
-          "@type": "ListItem", "position": 7,
-          "item": {
-            "@type": "Event",
-            "name": "實驗教育國際比較研討",
-            "startDate": "2026-04-12",
-            "description": "偏鄉公校轉型、偽實驗、國際模式三場專題。",
-            "organizer": { "@id": "https://aabe.org.tw/#organization" }
-          }
-        },
-        {
-          "@type": "ListItem", "position": 8,
-          "item": {
-            "@type": "Event",
-            "name": "立法院教文會公聽會",
-            "startDate": "2026-03-23",
-            "description": "國教盟 8 項訴求 6 項獲司法院正面回應。",
-            "organizer": { "@id": "https://aabe.org.tw/#organization" },
-            "location": { "@type": "Place", "name": "立法院" }
-          }
-        },
-        {
-          "@type": "ListItem", "position": 9,
-          "item": {
-            "@type": "Event",
-            "name": "校事會議修法分流落實",
-            "startDate": "2026-01-23",
-            "description": "推動分流檢舉、提升受理層級、強化外部專業三大改革成果。",
-            "organizer": { "@id": "https://aabe.org.tw/#organization" }
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "國教行動聯盟活動公告",
+  "description": "即將舉辦的政策論壇、公聽會、記者會與近期已舉辦活動精選。",
+  "url": "https://aabe.org.tw/events/",
+  "inLanguage": "zh-TW",
+  "isPartOf": {
+    "@id": "https://aabe.org.tw/#website"
+  },
+  "about": {
+    "@id": "https://aabe.org.tw/#organization"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "近期活動",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Event",
+          "name": "兒少權法修正草案公聽會",
+          "startDate": "2026-05",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "description": "衛福部主辦，國教盟出席。將就六大制度缺口提出補強建議，重點包括社工注意義務、起訴前審查、跨機關資訊共享授權。",
+          "organizer": [
+            {
+              "@type": "GovernmentOrganization",
+              "name": "衛生福利部"
+            },
+            {
+              "@id": "https://aabe.org.tw/#organization"
+            }
+          ],
+          "location": {
+            "@type": "Place",
+            "name": "台灣"
+          },
+          "endDate": "2026-05",
+          "image": "https://aabe.org.tw/wp-content/uploads/og-events.jpg",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://aabe.org.tw/events/"
+          },
+          "performer": {
+            "@type": "NGO",
+            "@id": "https://aabe.org.tw/#organization",
+            "name": "國教行動聯盟",
+            "url": "https://aabe.org.tw/"
           }
         }
-      ]
-    }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Event",
+          "name": "「健康台灣無菸品世代」聯合記者會",
+          "startDate": "2026-04-24",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "description": "國教盟、台灣拒菸聯盟、董氏基金會聯合倡議全面禁絕新型菸品。",
+          "organizer": {
+            "@id": "https://aabe.org.tw/#organization"
+          },
+          "endDate": "2026-04-24",
+          "location": {
+            "@type": "Place",
+            "name": "台灣",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "TW"
+            }
+          },
+          "image": "https://aabe.org.tw/wp-content/uploads/og-events.jpg",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://aabe.org.tw/events/"
+          },
+          "performer": {
+            "@type": "NGO",
+            "@id": "https://aabe.org.tw/#organization",
+            "name": "國教行動聯盟",
+            "url": "https://aabe.org.tw/"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Event",
+          "name": "兒少權法六大制度缺口分析發表",
+          "startDate": "2026-04-22",
+          "description": "衛福部預告草案 165 條的條文對照分析，呼籲 5 月公聽會補強。",
+          "organizer": {
+            "@id": "https://aabe.org.tw/#organization"
+          },
+          "endDate": "2026-04-22",
+          "location": {
+            "@type": "Place",
+            "name": "台灣",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "TW"
+            }
+          },
+          "image": "https://aabe.org.tw/wp-content/uploads/og-events.jpg",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://aabe.org.tw/events/"
+          },
+          "performer": {
+            "@type": "NGO",
+            "@id": "https://aabe.org.tw/#organization",
+            "name": "國教行動聯盟",
+            "url": "https://aabe.org.tw/"
+          },
+          "eventStatus": "https://schema.org/EventScheduled"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Event",
+          "name": "剴剴案社工判刑後制度修補論壇",
+          "startDate": "2026-04-17",
+          "description": "從保證人地位法理到五大修法工程。",
+          "organizer": {
+            "@id": "https://aabe.org.tw/#organization"
+          },
+          "endDate": "2026-04-17",
+          "location": {
+            "@type": "Place",
+            "name": "台灣",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "TW"
+            }
+          },
+          "image": "https://aabe.org.tw/wp-content/uploads/og-events.jpg",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://aabe.org.tw/events/"
+          },
+          "performer": {
+            "@type": "NGO",
+            "@id": "https://aabe.org.tw/#organization",
+            "name": "國教行動聯盟",
+            "url": "https://aabe.org.tw/"
+          },
+          "eventStatus": "https://schema.org/EventScheduled"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Event",
+          "name": "性平法再校準公聽會",
+          "startDate": "2026-04-15",
+          "description": "三大修法主張守住教育本位。國教盟主辦。",
+          "organizer": {
+            "@id": "https://aabe.org.tw/#organization"
+          },
+          "endDate": "2026-04-15",
+          "location": {
+            "@type": "Place",
+            "name": "台灣",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "TW"
+            }
+          },
+          "image": "https://aabe.org.tw/wp-content/uploads/og-events.jpg",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://aabe.org.tw/events/"
+          },
+          "performer": {
+            "@type": "NGO",
+            "@id": "https://aabe.org.tw/#organization",
+            "name": "國教行動聯盟",
+            "url": "https://aabe.org.tw/"
+          },
+          "eventStatus": "https://schema.org/EventScheduled"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Event",
+          "name": "家長立場全長聯公聽會",
+          "startDate": "2026-04-15",
+          "description": "家長團體聯合倡議性平法修法方向。",
+          "organizer": {
+            "@type": "Organization",
+            "name": "全國家長會長聯盟（全長聯）",
+            "url": "https://aabe.org.tw/"
+          },
+          "endDate": "2026-04-15",
+          "location": {
+            "@type": "Place",
+            "name": "台灣",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "TW"
+            }
+          },
+          "image": "https://aabe.org.tw/wp-content/uploads/og-events.jpg",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://aabe.org.tw/events/"
+          },
+          "performer": {
+            "@type": "NGO",
+            "@id": "https://aabe.org.tw/#organization",
+            "name": "國教行動聯盟",
+            "url": "https://aabe.org.tw/"
+          },
+          "eventStatus": "https://schema.org/EventScheduled"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "Event",
+          "name": "實驗教育國際比較研討",
+          "startDate": "2026-04-12",
+          "description": "偏鄉公校轉型、偽實驗、國際模式三場專題。",
+          "organizer": {
+            "@id": "https://aabe.org.tw/#organization"
+          },
+          "endDate": "2026-04-12",
+          "location": {
+            "@type": "Place",
+            "name": "台灣",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "TW"
+            }
+          },
+          "image": "https://aabe.org.tw/wp-content/uploads/og-events.jpg",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://aabe.org.tw/events/"
+          },
+          "performer": {
+            "@type": "NGO",
+            "@id": "https://aabe.org.tw/#organization",
+            "name": "國教行動聯盟",
+            "url": "https://aabe.org.tw/"
+          },
+          "eventStatus": "https://schema.org/EventScheduled"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "Event",
+          "name": "立法院教文會公聽會",
+          "startDate": "2026-03-23",
+          "description": "國教盟 8 項訴求 6 項獲司法院正面回應。",
+          "organizer": {
+            "@id": "https://aabe.org.tw/#organization"
+          },
+          "location": {
+            "@type": "Place",
+            "name": "立法院"
+          },
+          "endDate": "2026-03-23",
+          "image": "https://aabe.org.tw/wp-content/uploads/og-events.jpg",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://aabe.org.tw/events/"
+          },
+          "performer": {
+            "@type": "NGO",
+            "@id": "https://aabe.org.tw/#organization",
+            "name": "國教行動聯盟",
+            "url": "https://aabe.org.tw/"
+          },
+          "eventStatus": "https://schema.org/EventScheduled"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "Event",
+          "name": "校事會議修法分流落實",
+          "startDate": "2026-01-23",
+          "description": "推動分流檢舉、提升受理層級、強化外部專業三大改革成果。",
+          "organizer": {
+            "@id": "https://aabe.org.tw/#organization"
+          },
+          "endDate": "2026-01-23",
+          "location": {
+            "@type": "Place",
+            "name": "台灣",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "TW"
+            }
+          },
+          "image": "https://aabe.org.tw/wp-content/uploads/og-events.jpg",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://aabe.org.tw/events/"
+          },
+          "performer": {
+            "@type": "NGO",
+            "@id": "https://aabe.org.tw/#organization",
+            "name": "國教行動聯盟",
+            "url": "https://aabe.org.tw/"
+          },
+          "eventStatus": "https://schema.org/EventScheduled"
+        }
+      }
+    ]
   }
+}
   </script>
 
   <!-- Schema: BreadcrumbList -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://aabe.org.tw/" },
-      { "@type": "ListItem", "position": 2, "name": "活動公告", "item": "https://aabe.org.tw/events/" }
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://aabe.org.tw/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "活動公告",
+      "item": "https://aabe.org.tw/events/"
+    }
+  ]
+}
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
