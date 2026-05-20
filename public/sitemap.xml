@@ -116,6 +116,20 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- 2026 藥物濫用研討會 Day 1 完整筆記（2026-05-20）-->
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/01-saliva-screening/</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/02-fraud-crime/</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/03-juvenile-drug-gang-fraud/</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/04-drug-sex-trafficking/</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/05-epidemiology/</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/07-thailand-cannabis/</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/08-hong-kong-drug/</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/09-japan-drug/</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- 兩會聯合新聞稿 5/21 -->
+  <url><loc>https://aabe.org.tw/press/2026-05-21-drug-abuse-conference-day1/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
   <!-- RSS Feed (alternate index for subscribers) -->
   <url>
     <loc>https://aabe.org.tw/feed.xml</loc>
