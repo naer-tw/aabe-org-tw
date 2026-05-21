@@ -846,29 +846,22 @@
 
     <!-- ═══ Event Banner（5/20-21 研討會搶眼橫幅 · 活動後自動隱藏） ═══ -->
     <div class="event-banner-wrap" id="eventBannerWrap" style="display:none;">
-      <a href="/events/2026-05-20-drug-abuse-conference/" class="event-banner">
-        <span class="event-banner-pulse"><span id="eventBannerCountdown">本週</span></span>
+      <a href="/events/2026-05-20-drug-abuse-conference/notes/" class="event-banner">
+        <span class="event-banner-pulse"><span id="eventBannerCountdown">圓滿落幕</span></span>
         <div class="event-banner-main">
-          <div class="event-banner-title">5/20-21 · 2026 青少年藥物濫用預防與犯罪防治國際研討會</div>
-          <div class="event-banner-meta">嘉義中正大學 · 教育部指導 · 國教盟共同主辦 · 王瀚陽 5/21 主持論文報告（四）</div>
+          <div class="event-banner-title">5/20-21 · 2026 青少年藥物濫用研討會 · 18 場全紀錄</div>
+          <div class="event-banner-meta">三盟 × 雙核 × 18 場專題 + 綜合座談 · 193 張投影片完整逐字筆記</div>
         </div>
-        <span class="event-banner-cta">查看完整議程 →</span>
+        <span class="event-banner-cta">進入全紀錄 →</span>
       </a>
     </div>
     <script>
       (function(){
         var wrap = document.getElementById('eventBannerWrap');
-        var cd = document.getElementById('eventBannerCountdown');
-        if (!wrap || !cd) return;
-        var eventStart = new Date('2026-05-20T00:00:00+08:00');
-        var eventEnd = new Date('2026-05-22T00:00:00+08:00');  // 5/21 結束、5/22 凌晨後消失
-        var now = new Date();
-        if (now >= eventEnd) { wrap.style.display = 'none'; return; }
-        var msPerDay = 86400000;
-        var daysLeft = Math.ceil((eventStart - now) / msPerDay);
-        if (daysLeft > 0) cd.textContent = '倒數 ' + daysLeft + ' 天';
-        else if (now >= eventStart && now < eventEnd) cd.textContent = '進行中';
-        else cd.textContent = '本週';
+        if (!wrap) return;
+        // 圓滿落幕後再延續 1 週引流，5/28 後自動隱藏
+        var bannerEnd = new Date('2026-05-28T00:00:00+08:00');
+        if (new Date() >= bannerEnd) { wrap.style.display = 'none'; return; }
         wrap.style.display = 'block';
       })();
     </script>
@@ -954,7 +947,7 @@
           <h3>現在在做</h3>
           <div class="nav-sub">Current Action</div>
           <div class="nav-body">
-            <strong>5/20-21 嘉義國際研討會</strong>（共同主辦、王瀚陽主持）、兒少權法 165 條大修、22 縣市營養午餐落實追蹤。
+            <strong>兒少權法 5 場公聽會 5/20-6/4</strong>（北區主場王瀚陽 + 林韋伶 + 政策研究組）、5/20-21 國際研討會 <a href="/events/2026-05-20-drug-abuse-conference/notes/" style="color:#EB9B31;font-weight:700;">18 場全紀錄</a>、22 縣市營養午餐落實追蹤。
           </div>
           <span class="nav-cta">看當前行動 →</span>
         </a>
