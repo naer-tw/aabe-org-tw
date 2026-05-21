@@ -1,0 +1,112 @@
+name: Scheduled Deploy (Daily 09:00 TW)
+
+# 每天台灣時間 09:00 自動部署 main branch 到 Cloudflare Workers
+# 工作流程：你 (或 Claude) 在前一天 commit + push 新聞稿/GEO 頁，隔天 09:00 自動上線
+#
+# 也支援手動立即觸發：GitHub repo → Actions → Scheduled Deploy → Run workflow
+#
+# 需要的 GitHub Secrets：
+#   CLOUDFLARE_API_TOKEN  - 到 https://dash.cloudflare.com/profile/api-tokens 建立
+#                            (使用 "Edit Cloudflare Workers" 模板，限定 aabe-org-tw zone)
+#   CLOUDFLARE_ACCOUNT_ID - 到 Cloudflare Dashboard 右側欄複製 Account ID
+
+on:
+  schedule:
+    # UTC 01:00 = 台灣 09:00（UTC+8）
+    - cron: '0 1 * * *'
+
+  # 手動觸發（緊急發稿 / 測試用）
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: '部署原因（記錄用）'
+        required: false
+        default: 'manual trigger'
+
+jobs:
+  deploy:
+    name: Deploy + IndexNow
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # 拿 HEAD + HEAD~1，用於 diff 偵測新 URL
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-wrangler-3
+
+      - name: Install wrangler
+        run: npm install --no-save --ignore-scripts wrangler@3
+
+      - name: Deploy to Cloudflare Workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          echo "🚀 部署原因: ${{ github.event.inputs.reason || '排程觸發 (Daily 09:00 TW)' }}"
+          npx wrangler deploy
+
+      - name: Wait 90s for CDN propagation
+        run: sleep 90
+
+      - name: Detect changed HTML (last commit)
+        id: detect
+        run: |
+          # 抓最新 commit 改了哪些 HTML
+          CHANGED=$(git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -E '^public/.*\.(html|xml)$' || true)
+          if [ -z "$CHANGED" ]; then
+            echo "📭 沒新 HTML，僅 ping 首頁當 freshness signal"
+            URLS='https://aabe.org.tw/'
+          else
+            # public/index.html → /
+            # public/about/index.html → /about/
+            # public/foo/bar.html → /foo/bar.html
+            URLS=$(echo "$CHANGED" | while read f; do
+              url=$(echo "$f" | sed 's|^public||' | sed 's|/index\.html$|/|')
+              echo "https://aabe.org.tw$url"
+            done | sort -u)
+          fi
+          # 一定加首頁 + sitemap
+          URLS=$(echo -e "https://aabe.org.tw/\nhttps://aabe.org.tw/sitemap.xml\n$URLS" | sort -u)
+          echo "URLs to ping ($(echo "$URLS" | wc -l) 個):"
+          echo "$URLS"
+          echo "$URLS" > /tmp/urls.txt
+
+      - name: IndexNow ping (Bing / Yandex / Naver)
+        run: |
+          KEY=$(ls public/ | grep -E '^[a-f0-9]{20,}\.txt$' | head -1 | sed 's/\.txt$//')
+          if [ -z "$KEY" ]; then
+            echo "⚠️  找不到 IndexNow key 檔，跳過"
+            exit 0
+          fi
+          URL_JSON=$(cat /tmp/urls.txt | awk 'NF{printf "\"%s\",", $0}' | sed 's/,$//')
+          PAYLOAD="{\"host\":\"aabe.org.tw\",\"key\":\"$KEY\",\"keyLocation\":\"https://aabe.org.tw/$KEY.txt\",\"urlList\":[$URL_JSON]}"
+          echo "Payload: $PAYLOAD"
+          STATUS=$(curl -s -o /tmp/indexnow.body -w "%{http_code}" -X POST "https://api.indexnow.org/IndexNow" \
+            -H "Content-Type: application/json; charset=utf-8" -d "$PAYLOAD")
+          echo "HTTP $STATUS"
+          [ -s /tmp/indexnow.body ] && cat /tmp/indexnow.body
+          # 不擋 build：IndexNow 是 SEO 加分項
+          case "$STATUS" in
+            200|202) echo "✅ IndexNow accepted" ;;
+            *) echo "⚠️  IndexNow returned $STATUS（不影響部署）" ;;
+          esac
+
+      - name: Deploy summary
+        run: |
+          echo "═══════════════════════════════════════════"
+          echo "✅ 部署完成 + IndexNow ping 已發"
+          echo "Production: https://aabe.org.tw/"
+          echo "═══════════════════════════════════════════"
