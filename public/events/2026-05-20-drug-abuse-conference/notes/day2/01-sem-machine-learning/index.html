@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>論文報告（一）｜施用毒品多元處遇成效與再犯預測 SEM × ML ｜ 鄭元皓 × Shun-Yung Kevin Wang</title>
+<link rel="stylesheet" href="../../styles.css">
+<link rel="canonical" href="https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/01-sem-machine-learning/">
+<meta name="description" content="Day 2 · 論文報告(一) · 鄭元皓 / Shun-Yung Kevin Wang 教授 · 施用毒品多元處遇成效與再犯預測 SEM × ML">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<meta property="og:title" content="施用毒品多元處遇成效與再犯預測 SEM × ML｜2026 藥物濫用研討會 Day 2">
+<meta property="og:description" content="Day 2 · 論文報告(一) · 鄭元皓 / Shun-Yung Kevin Wang 教授">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/01-sem-machine-learning/">
+<meta property="og:image" content="https://aabe.org.tw/wp-content/uploads/og-events.jpg">
+<meta property="og:site_name" content="國教行動聯盟">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="施用毒品多元處遇成效與再犯預測 SEM × ML">
+<meta name="twitter:description" content="Day 2 · 論文報告(一) · 鄭元皓 / Shun-Yung Kevin Wang 教授">
+<meta name="twitter:image" content="https://aabe.org.tw/wp-content/uploads/og-events.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "施用毒品多元處遇成效與再犯預測 SEM × ML",
+  "description": "Day 2 · 論文報告(一) · 鄭元皓 / Shun-Yung Kevin Wang 教授",
+  "url": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/01-sem-machine-learning/",
+  "image": "https://aabe.org.tw/wp-content/uploads/og-events.jpg",
+  "datePublished": "2026-05-21T17:30:00+08:00",
+  "inLanguage": "zh-TW",
+  "author": {
+    "@type": "NGO",
+    "name": "國教行動聯盟",
+    "url": "https://aabe.org.tw/"
+  },
+  "publisher": {
+    "@type": "NGO",
+    "@id": "https://aabe.org.tw/#organization",
+    "name": "國教行動聯盟",
+    "url": "https://aabe.org.tw/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aabe.org.tw/wp-content/uploads/logo-naer.png",
+      "width": 600,
+      "height": 600
+    }
+  },
+  "isPartOf": {
+    "@type": "WebPage",
+    "url": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://aabe.org.tw/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "活動公告",
+      "item": "https://aabe.org.tw/events/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "2026 藥物濫用研討會",
+      "item": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "全紀錄首頁",
+      "item": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Day 2 索引",
+      "item": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "施用毒品多元處遇成效與再犯預測 SEM × ML",
+      "item": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/01-sem-machine-learning/"
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+<!-- ═══ 極簡頂部導覽列（回主站）═══ -->
+<div style="background:#1a1a1a;color:#d4d4d4;font-family:'Inter','Noto Sans TC',sans-serif;font-size:0.78rem;letter-spacing:0.04em;border-bottom:1px solid #2a2a2a;">
+  <div style="max-width:1080px;margin:0 auto;padding:8px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+    <a href="https://aabe.org.tw/" style="color:#EB9B31;text-decoration:none;font-weight:700;">aabe.org.tw</a>
+    <span style="opacity:0.4;">→</span>
+    <a href="https://aabe.org.tw/events/" style="color:#d4d4d4;text-decoration:none;">活動公告</a>
+    <span style="opacity:0.4;">→</span>
+    <a href="https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/" style="color:#d4d4d4;text-decoration:none;">5/20-21 國際研討會</a>
+    <span style="opacity:0.4;">→</span>
+    <a href="../../" style="color:#d4d4d4;text-decoration:none;">全紀錄首頁</a>
+    <span style="opacity:0.4;">→</span><a href="../" style="color:#d4d4d4;text-decoration:none;">Day 2 索引</a>
+  </div>
+</div>
+
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1 class="masthead-title">
+      2026 青少年藥物濫用預防與犯罪防治國際研討會
+      <small>Day 2 · Paper Session 1 of 9 · 2026 May 21</small>
+    </h1>
+    <div class="masthead-meta">
+      <div><a href="../">← 回到第二天總覽</a></div>
+      <div>國立中正大學國際會議廳</div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="session-header">
+    <div class="session-kicker">論文報告（一） · Paper I</div>
+    <h2 class="session-title">Effectiveness Evaluation &amp; Recidivism Prediction in Diversified Drug Treatment</h2>
+    <h2 class="session-title-zh">施用毒品多元處遇成效與再犯預測：結構方程式與機器學習觀點</h2>
+    <p class="session-subtitle">以 688 名第二級毒品施用者為樣本，雙引擎驗證 SEM 心理動態與機器學習風險預測——當資源有限，<strong>科學化決策</strong>能否取代「人人一致」的處遇？</p>
+    <div class="session-byline">
+      <div><strong>主講人</strong>鄭元皓 助理研究員<br>法務部司法官學院犯罪防治研究中心</div>
+      <div><strong>與談人</strong>Dr. Shun-Yung Kevin Wang<br>Associate Professor, Tarleton State University（Texas A&amp;M System）</div>
+      <div><strong>主持人</strong>陳尚仁 理事長<br>社團法人共善促進協會</div>
+      <div><strong>時間</strong>09:00–09:30<br>15 張投影片 · 1 段錄音</div>
+    </div>
+  </section>
+
+  <p class="lede">
+    這場開場論文，是「<strong>新世代反毒策略 3.0</strong>」的科學化注腳。
+    鄭元皓助理研究員以結構方程式（CB-SEM／PLS-SEM）建立心理動態圖譜，再以梯度提升分類（GBC）機器學習預測再犯失敗——
+    <strong>AUC 0.83、Recall 0.75</strong>，並落地為「<em>再犯風險自動計算介面</em>」於新北、臺中、橋頭、臺東、澎湖五地檢實機試辦。
+    Wang 教授從美國 Tarleton State 提供 SEM 雙步驟 vs 多步驟、ML 模型樹的方法學框架。
+  </p>
+
+  <section class="thesis">
+    <div class="thesis-label">Core Thesis · 核心論述</div>
+    <div class="thesis-body">
+      <ol>
+        <li><strong>處遇不能再「人人一致」</strong>——資源有限，必須以「<em>分層、分流、分類</em>」導向個別化實證處遇。</li>
+        <li><strong>三大核心構念</strong>：負向情緒（DASS）、生活滿意度（SWLS）、主觀療效（TEA），構成介入成效的縱貫追蹤地圖。</li>
+        <li><strong>婚姻是焦慮改善的關鍵調節因子</strong>（時間 × 婚姻 ANX p=.002）；50-70 歲族群焦慮卻顯著惡化（p=.030）。</li>
+        <li><strong>機器學習找到的高風險前五因子</strong>：方案經費、年齡、生活滿意度、最後一次服刑期間、壓力分數——四個與「司法歷程／心理構念」直接相關。</li>
+        <li><strong>從評估到行動</strong>：再犯風險自動計算介面（rrai.tpitest.moj）將模型轉化為地檢署可操作的數據輔助系統。</li>
+      </ol>
+    </div>
+  </section>
+
+  <h3 class="section-title-zh">投影片重點 · Slide Walkthrough</h3>
+
+  <div class="slide-grid">
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107092_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 01</span>
+          <img src="../../img/day2/01/S__127107092_0.jpg" alt="封面：施用毒品多元處遇成效與再犯預測" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">Opening · 計畫基礎</div>
+        <h4 class="slide-title">以科學化證據推動再犯防止</h4>
+        <div class="slide-content">
+          <p>主講人：鄭元皓助理研究員（法務部司法官學院犯罪防治研究中心）。</p>
+          <ul>
+            <li><strong>三大原則</strong>：分層（Stratification）／分流（Diversion）／分類（Classification）。</li>
+            <li><strong>計畫沿革</strong>：112 年推動多元處遇最佳實踐標準 → 113 年全國試辦 → 114 年納入「全人康復推進計畫」。</li>
+            <li><strong>最終目標</strong>：建立科學化、可複製、可預測的處遇實務；以證據導向促進再犯防止。</li>
+            <li><strong>合作單位</strong>：臺灣高等檢察署、司法官學院犯罪防治研究中心。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107091_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 02</span>
+          <img src="../../img/day2/01/S__127107091_0.jpg" alt="緣起與研究藍圖" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">Rationale · 緣起</div>
+        <h4 class="slide-title">在有限資源下，追求處遇效益最大化</h4>
+        <div class="slide-content">
+          <ul>
+            <li><strong>政策驅動</strong>：呼應行政院「新世代反毒策略 3.0」，以科學實證為基礎，有效運用有限的反毒基金。</li>
+            <li><strong>核心挑戰</strong>：①資源有限，毒防基金須精準投入；②成效標準不一，各地處遇模式多元、難以橫向比較。</li>
+            <li><strong>三大核心構念</strong>：負向情緒（DASS）、生活滿意度（SWLS）、主觀療效（TEA）。</li>
+            <li><strong>分析三步</strong>：CB-SEM 模型驗證 → PLS-SEM 關係探索 → GLM 差異分析。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107089_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 03</span>
+          <img src="../../img/day2/01/S__127107089_0.jpg" alt="分析範疇 688 名樣本" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">Sample · 樣本</div>
+        <h4 class="slide-title">688 名完成完整前後測的核心樣本</h4>
+        <div class="slide-content">
+          <table>
+            <tbody>
+              <tr><td>樣本數</td><td><strong>688 人</strong></td></tr>
+              <tr><td>平均年齡</td><td>40 歲</td></tr>
+              <tr><td>男性比例</td><td>82.5%</td></tr>
+              <tr><td>未婚狀態</td><td>80.5%</td></tr>
+              <tr><td>具犯罪前科</td><td>57.3%</td></tr>
+              <tr><td>第二級毒品施用者</td><td><strong>81.8%</strong>（核心群體）</td></tr>
+            </tbody>
+          </table>
+          <p>CB-SEM 測量模型適配度：ChiSqr/df 6.607、RMSEA .089、CFI .896、TLI .883、GFI .837、PGFI .680——大樣本下整體可接受。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107090_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 04</span>
+          <img src="../../img/day2/01/S__127107090_0.jpg" alt="工具品質與心理動態圖譜" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">Reliability · 信效度</div>
+        <h4 class="slide-title">三構念信效度：DASS 卓越、SWLS 良好、TEA 可接受</h4>
+        <div class="slide-content">
+          <table>
+            <thead><tr><th>構念</th><th>Cronbach's α</th><th>ρc</th><th>AVE</th></tr></thead>
+            <tbody>
+              <tr><td>DASS（負向情緒）</td><td>0.93</td><td>0.93</td><td>0.81</td></tr>
+              <tr><td>SWLS（生活滿意度）</td><td>0.90</td><td>0.88</td><td>0.67</td></tr>
+              <tr><td>TEA（主觀療效）</td><td>0.78</td><td>0.76</td><td>0.48*</td></tr>
+            </tbody>
+          </table>
+          <p><strong>心理動態縱貫路徑</strong>（CB-SEM）：DASS 前測→DASS 後測 β=.619；SWLS 前→後 β=.495；負情緒滯後效應 β=-.162（拖累後期生活滿意度）。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107088_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 05</span>
+          <img src="../../img/day2/01/S__127107088_0.jpg" alt="預測力檢視與世代鴻溝" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">Cohort Gap · 世代鴻溝</div>
+        <h4 class="slide-title">介入成效因年齡而顯著分歧</h4>
+        <div class="slide-content">
+          <p><strong>時間 × 年齡（DASS）p=.016</strong>——同一套處遇，年齡撕裂出截然不同的效果：</p>
+          <ul>
+            <li><strong>50 歲以下</strong>：主觀療效（TEA）顯著提升、憂鬱／焦慮顯著下降。</li>
+            <li><strong>51–70 歲高齡群</strong>：負向情緒<em>不降反升</em>——憂鬱從 7.69→9.68，焦慮從 8.38→9.77。</li>
+          </ul>
+          <p>意涵：高齡施用者需要「<strong>客製化處遇</strong>」，而非沿用青壯年版本。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107086_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 06</span>
+          <img src="../../img/day2/01/S__127107086_0.jpg" alt="婚姻調節作用" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">Moderator · 婚姻調節</div>
+        <h4 class="slide-title">婚姻：對「焦慮」改善的關鍵調節因子</h4>
+        <div class="slide-content">
+          <ul>
+            <li><strong>整體 DASS</strong>：時間 × 婚姻 F=4.594, <strong>p=.032</strong>——已婚與未婚整體情緒走勢存在差異。</li>
+            <li><strong>焦慮（ANX）</strong>：時間 × 婚姻 F=10.039, <strong>p=.002</strong>——高度顯著，已婚者焦慮改善幅度遠大於未婚。</li>
+            <li><strong>性別／前科／毒品級別</strong>：交互作用均不顯著（p&gt;.05）——背景變項非關鍵調節因子。</li>
+          </ul>
+          <p>結論：<em>家庭關係資本</em>是焦慮改善的真正槓桿，不是性別或前科。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107085_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 07</span>
+          <img src="../../img/day2/01/S__127107085_0.jpg" alt="結果解釋：SEM 與 ML 雙引擎" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">Dual Engine · SEM × ML</div>
+        <h4 class="slide-title">SEM 解釋因果、ML 預測風險的雙引擎策略</h4>
+        <div class="slide-content">
+          <ul>
+            <li><strong>SEM 提供「為什麼」</strong>：心理動態的縱貫穩定性、負向情緒的廣泛干擾、虛弱個體的雙重劣勢、敏感族群的客製化處遇。</li>
+            <li><strong>ML 提供「誰是高風險」</strong>：超越人類預測的風險辨識，整合背景＋動態心理表（RQ2, DASS-Stress）＋司法歷程。</li>
+            <li><strong>轉化為協助實踐決策系統</strong>：藉由研究結果，引入司法機關搭配精準科技，提供風險估計＋處遇建議參考。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107075_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 08</span>
+          <img src="../../img/day2/01/S__127107075_0.jpg" alt="機器學習模型實證" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">ML Validation · 模型實證</div>
+        <h4 class="slide-title">GBC 模型：AUC 0.83、Recall 0.75 防堵失敗風險</h4>
+        <div class="slide-content">
+          <p><strong>預測核心</strong>：多維度「處遇失敗」定義——①再施用毒品；②緩起訴撤銷；③未完成治療。</p>
+          <p><strong>核心模型決策</strong>：選用梯度提升分類（GBC），能將上述失敗風險的<em>召回率</em>提升至 0.75，有效防堵漏網。</p>
+          <table>
+            <thead><tr><th>指標</th><th>數值</th></tr></thead>
+            <tbody>
+              <tr><td>整體準確率（Accuracy）</td><td><strong>79.5%</strong></td></tr>
+              <tr><td>模型區辨力（AUC）</td><td><strong>0.83</strong>（預測效度良好）</td></tr>
+            </tbody>
+          </table>
+          <p><strong>關鍵預測因子前五名</strong>：①方案每個案經費（資源投入）；②年齡（人口學變項）；③生活滿意度 RQ2（心理構念）；④最後一次服刑期間（司法歷程）；⑤壓力分數 DASS-Stress（心理構念）。</p>
+          <p><strong>資源分配效益</strong>：高報酬族群＝資源充足、年輕、已婚、刑期較短者，投資回報最高；前 20% 高成功率個案貢獻大部分效益，<em>精準投放 ＞ 平均分配</em>。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107087_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 09</span>
+          <img src="../../img/day2/01/S__127107087_0.jpg" alt="工具賦能：再犯風險自動計算介面" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">Tool · 全國首個介面</div>
+        <h4 class="slide-title">打造全國首個「再犯風險自動計算介面」</h4>
+        <div class="slide-content">
+          <ul>
+            <li><strong>即時整合</strong>：輸入＝系統內接參數（個案資料、司法紀錄、心理量表 TEA / SWLS / DASS）。</li>
+            <li><strong>自動演算</strong>：GBC 模型風險預測 → 低 / 中 / 高風險分層。</li>
+            <li><strong>處遇建議</strong>：低風險＝確認方案／心願；中風險＝支持性服務及監督；高風險＝個別化／社區處遇。</li>
+            <li><strong>核心目標</strong>：落實治療性司法——在司法決策初期，精準識別個案再犯風險，並推薦最切合的處遇模式。</li>
+            <li><strong>試辦地檢</strong>：新北 NTP、臺中 TC、橋頭 CT、臺東 TT、澎湖 PH。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107084_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 10</span>
+          <img src="../../img/day2/01/S__127107084_0.jpg" alt="系統實機展示" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">Live Demo · 實機展示</div>
+        <h4 class="slide-title">系統實機展示：rrai.tpitest.moj</h4>
+        <div class="slide-content">
+          <p>登入介面（再犯風險估計自動計算介面）→ 基本資訊（出生年月、性別、教育、就業）→ 案件紀錄（前犯、暴力、到底、共同案件、強盜搶劫）→ 量表分數（TEA 量表分數、SWLS 量表分數、DASS 分量表分數）→ 計算欄位（22.計畫經費等）→ 確認送出 → 再犯風險動計算。</p>
+          <p>講者強調：這不是「黑盒子」，每個輸入欄位都對應到實證模型中的關鍵預測因子，能讓地檢署檢察官、保護官、觀護人在<strong>決策當下</strong>看見科學佐證。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107076_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 11</span>
+          <img src="../../img/day2/01/S__127107076_0.jpg" alt="Wang 與談封面" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">Discussant · 與談人</div>
+        <h4 class="slide-title">Shun-Yung Kevin Wang｜Tarleton State (Texas A&amp;M System)</h4>
+        <div class="slide-content">
+          <p>與談人 Wang 教授以「Effectiveness Evaluation and Recidivism Prediction in Diversified Drug Treatment: Insights from SEM and Machine Learning」回應主講內容，提供方法學上的補充：</p>
+          <ul>
+            <li>SEM 採 Anderson & Gerbing（1988）兩步驟、Mulaik & Millsap（2000）四步驟法。</li>
+            <li>Data-Model fit indexes：chi-square、CFI、TFI、RMSEA、SRMR、Chi-square/df、PGFI。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107077_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 12</span>
+          <img src="../../img/day2/01/S__127107077_0.jpg" alt="INSTRUMENTS DASS / SWLS" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">Instruments · 量表</div>
+        <h4 class="slide-title">研究工具：DASS 與 SWLS</h4>
+        <div class="slide-content">
+          <p><strong>DASS</strong>（Depression Anxiety Stress Scales）：抑鬱、焦慮、壓力三個分量表，分別評估負面情緒／生理過度激動／放鬆困難。</p>
+          <p><strong>SWLS</strong>（Satisfaction With Life Scale，Diener 1985）：5 題 7 點 Likert——「In most ways my life is close to my ideal」「I am satisfied with my life」等。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107078_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 13</span>
+          <img src="../../img/day2/01/S__127107078_0.jpg" alt="TEA 量表" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">TEA · 主觀療效</div>
+        <h4 class="slide-title">Treatment Effectiveness Assessment（TEA）</h4>
+        <div class="slide-content">
+          <p>受測者就以下四個面向自評 1（毫無改善）至 10（顯著改善）：</p>
+          <ul>
+            <li><strong>Substance use</strong>：用藥／酒頻率與量、購毒花費、戒斷困擾。</li>
+            <li><strong>Health</strong>：身心健康、運動、飲食、口腔／牙齒、自我感受。</li>
+            <li><strong>Lifestyle</strong>：生活條件、家庭、就業、人際與承諾。</li>
+            <li><strong>Community</strong>：守法、社區責任、對他人正／負影響。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107079_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 14</span>
+          <img src="../../img/day2/01/S__127107079_0.jpg" alt="MODEL BUILDING SEM × ML" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">Model · 雙模型</div>
+        <h4 class="slide-title">Model Building：SEM 與 ML 並用</h4>
+        <div class="slide-content">
+          <p><strong>SEM</strong>：以 Anderson & Gerbing 兩步驟、Mulaik & Millsap 四步驟法建構，並列舉適配度指標（chi-square、CFI、TFI、RMSEA、SRMR、Chi-square/df、PGFI 等）。</p>
+          <p><strong>Machine Learning 圈譜</strong>：Big Data Hubris、Decision Tree、Random Forest、Deep Learning Neural Networks、Regressions、Supervised Learning——七節點環繞「Machine Learning」核心。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-img">
+        <a href="../../img/day2/01/S__127107080_0.jpg" target="_blank">
+          <span class="slide-num">SLIDE 15</span>
+          <img src="../../img/day2/01/S__127107080_0.jpg" alt="Takeaway Points" loading="lazy">
+        </a>
+      </div>
+      <div class="slide-body">
+        <div class="slide-kicker">Takeaway · 收束</div>
+        <h4 class="slide-title">兩條線：模型優化 ＋ 理論深化 → 理想的結果預測</h4>
+        <div class="slide-content">
+          <p>Wang 教授收束：要往「<strong>理想的結果預測</strong>」邁進，必須同時走兩條腿——一邊優化機器學習模型（演算法、特徵工程、調參），另一邊深化犯罪學／心理學理論（情境、機制、因果）。<em>單靠 AI 不夠，單靠理論也不夠</em>。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h3 class="section-title-zh">本場關鍵數字 · Key Numbers</h3>
+  <div class="callout">
+    <h4>688 / 0.83 / 0.75 / 5 / .002</h4>
+    <div class="callout-body">
+      <strong>688</strong>＝完成前後測有效樣本；<strong>0.83</strong>＝機器學習模型 AUC（區辨力）；<strong>0.75</strong>＝Recall（防漏網率）；
+      <strong>5</strong>＝再犯風險自動計算介面試辦地檢數（新北／臺中／橋頭／臺東／澎湖）；<strong>p=.002</strong>＝婚姻調節焦慮改善的顯著性。
+    </div>
+  </div>
+
+  <div class="callout">
+    <h4>對國教盟與家長的政策意涵</h4>
+    <div class="callout-body">
+      <ul>
+        <li><strong>家庭關係資本決定處遇成敗</strong>——婚姻是焦慮改善的真正槓桿，意味著家庭支持系統的強化（含家長／伴侶教育）是反毒政策的<em>必要前置</em>，而非附屬。</li>
+        <li><strong>反對「一刀切」處遇</strong>——50 歲以上的高齡施用者焦慮反升，等同警示：未成年／青壯／高齡需要分流分類，國教盟對青少年特別處遇方案的倡議獲得實證支持。</li>
+        <li><strong>透明的決策科學</strong>——「再犯風險自動計算介面」公開特徵權重，意味著家長／監護人可在法庭程序中要求看到、討論預測依據，不是黑盒子。</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  2026 青少年藥物濫用預防與犯罪防治國際研討會 ｜ 國立中正大學國際會議廳 ｜ 2026.05.20–21
+</footer>
+
+</body>
+</html>

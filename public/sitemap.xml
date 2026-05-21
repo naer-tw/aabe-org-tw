@@ -130,6 +130,23 @@
   <!-- 兩會聯合新聞稿 5/21 -->
   <url><loc>https://aabe.org.tw/press/2026-05-21-drug-abuse-conference-day1/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
+  <!-- 5/22 雙稿並列完整報導 -->
+  <url><loc>https://aabe.org.tw/press/2026-05-22-drug-abuse-conference-full-report/</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- Day 1 第 6 場（補登）+ Day 2 完整 9 場 + 綜合座談 + Day 2 索引 -->
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/06-california-paradox/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/01-sem-machine-learning/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/02-ketamine-health/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/03-hong-kong-invisible-minority/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/04-holistic-recovery/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/05-etomidate/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/06-systematic-review/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/07-juvenile-counseling/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/08-juvenile-fraud-life-course/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/09-three-inmate-comparison/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/day2/panel/</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
   <!-- RSS Feed (alternate index for subscribers) -->
   <url>
     <loc>https://aabe.org.tw/feed.xml</loc>

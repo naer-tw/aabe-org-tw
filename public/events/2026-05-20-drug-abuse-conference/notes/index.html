@@ -3,27 +3,359 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 青少年藥物濫用預防與犯罪防治國際研討會 ｜ 第一天總覽</title>
+<title>2026 青少年藥物濫用預防與犯罪防治國際研討會｜全紀錄</title>
+<meta name="description" content="2026 國際研討會兩天完整紀錄：18 場專題報告與論文、綜合座談、楊士隆終身成就獎、國教盟與兒少健盟雙主場。完整投影片、論文、政策意涵整理。">
 <link rel="stylesheet" href="styles.css">
-<link rel="canonical" href="https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/">
-<meta name="description" content="2026 青少年藥物濫用預防與犯罪防治國際研討會 Day 1 完整逐字筆記：9 場專題 193 張投影片，從唾液篩檢、打詐、少年涉毒幫派、毒品性拐賣、流行病學到泰港日大麻政策三國比較。">
-<meta name="robots" content="index,follow,max-image-preview:large">
+<style>
+  /* === 主入口頁專屬樣式 === */
+  .hero {
+    background: linear-gradient(135deg, #f3eee5 0%, #faf7f2 100%);
+    border-bottom: 4px double var(--ink);
+    padding: 60px 0 50px;
+    margin: -48px 0 56px;
+  }
+  .hero-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  .hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+  .hero-title-zh {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 900;
+    font-size: 52px;
+    line-height: 1.15;
+    margin: 0 0 30px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 48px;
+    font-family: var(--sans);
+    font-size: 14px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .hero-meta-item strong {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .hero-meta-item span {
+    font-size: 15px;
+    color: var(--ink);
+    font-weight: 600;
+  }
 
-<meta property="og:title" content="2026 青少年藥物濫用研討會 Day 1 完整筆記｜9 場專題 193 張投影片">
-<meta property="og:description" content="從唾液篩檢、打詐、少年涉毒幫派詐欺、毒品性拐賣，到泰港日三國大麻政策比較。">
+  /* === 終身成就獎致敬卡 === */
+  .tribute {
+    background: var(--paper-warm);
+    border: 1px solid var(--line);
+    border-left: 6px solid var(--accent);
+    padding: 36px 40px;
+    margin: 0 0 56px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .tribute-kicker {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .tribute-title {
+    font-family: "Noto Serif TC", var(--display);
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 1.2;
+    margin: 6px 0 16px;
+    color: var(--ink);
+  }
+  .tribute-body {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+  .tribute-body strong { color: var(--ink); }
+  .tribute-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+  }
+  .tribute-media video,
+  .tribute-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--line);
+  }
+
+  /* === 大入口卡 (Day 1 / Day 2) === */
+  .day-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin: 0 0 64px;
+  }
+  .day-card {
+    display: block;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 38px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: all .25s ease;
+    position: relative;
+  }
+  .day-card:hover {
+    background: var(--paper-warm);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .day-card-num {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .day-card-title {
+    font-family: "Noto Serif TC", var(--display);
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 1.15;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+  .day-card-en {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-mute);
+    margin: 0 0 18px;
+  }
+  .day-card-summary {
+    font-family: var(--serif);
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+  }
+  .day-card-summary strong { color: var(--ink); }
+  .day-card-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line-soft);
+    font-family: var(--sans);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+  .day-card-stats strong {
+    font-family: var(--display);
+    font-size: 17px;
+    color: var(--accent);
+    margin-right: 4px;
+  }
+  .day-card-arrow {
+    position: absolute;
+    bottom: 28px;
+    right: 32px;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+  }
+
+  /* === 照片牆 === */
+  .photo-wall {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin: 0 0 14px;
+  }
+  .photo-wall .photo {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--paper-warm);
+  }
+  .photo-wall .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+  }
+  .photo-wall .photo:hover img { transform: scale(1.04); }
+  .photo-wall .photo.size-1 { grid-column: span 2; aspect-ratio: 4/3; }
+  .photo-wall .photo.size-2 { grid-column: span 3; aspect-ratio: 3/2; }
+  .photo-wall .photo.size-3 { grid-column: span 2; grid-row: span 2; aspect-ratio: 1/1.3; }
+  .photo-wall .photo.size-4 { grid-column: span 2; aspect-ratio: 4/3; }
+  .photo-wall .photo.size-5 { grid-column: span 2; aspect-ratio: 4/3; }
+  .photo-wall .photo.size-6 { grid-column: span 3; aspect-ratio: 3/2; }
+  .photo-wall .photo .caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,.78));
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 12px;
+    padding: 30px 12px 10px;
+    line-height: 1.4;
+  }
+  @media (max-width: 768px) {
+    .photo-wall { grid-template-columns: repeat(2, 1fr); }
+    .photo-wall .photo { grid-column: span 1 !important; aspect-ratio: 4/3 !important; grid-row: auto !important; }
+  }
+
+  /* === Big stat 區 === */
+  .big-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 0 0 56px;
+  }
+  .big-stats .stat {
+    background: var(--paper);
+    padding: 28px 22px;
+    text-align: center;
+  }
+  .big-stats .stat-num {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--accent);
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+  .big-stats .stat-label {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+  .big-stats .stat-sub {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--ink-mute);
+    margin-top: 6px;
+    font-style: italic;
+  }
+  @media (max-width: 768px) {
+    .big-stats { grid-template-columns: repeat(2, 1fr); }
+    .hero-title { font-size: 44px; }
+    .hero-title-zh { font-size: 32px; }
+    .day-grid { grid-template-columns: 1fr; }
+    .tribute-media { grid-template-columns: 1fr; }
+  }
+
+  /* === 議程時序列表 === */
+  .agenda-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--serif);
+    margin-bottom: 56px;
+  }
+  .agenda-table th {
+    background: var(--paper-warm);
+    border-bottom: 2px solid var(--ink);
+    border-top: 1px solid var(--ink);
+    padding: 12px 14px;
+    text-align: left;
+    font-family: var(--sans);
+    font-size: 11.5px;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .agenda-table td {
+    border-bottom: 1px solid var(--line-soft);
+    padding: 12px 14px;
+    vertical-align: top;
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+  .agenda-table td.time { font-family: var(--sans); white-space: nowrap; color: var(--ink-mute); font-size: 13px; }
+  .agenda-table td.title strong { font-weight: 700; color: var(--ink); }
+  .agenda-table td a { color: var(--accent); text-decoration: none; }
+  .agenda-table td a:hover { text-decoration: underline; }
+  .agenda-table tr.day-row td {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 8px 14px;
+  }
+  .agenda-table tr.unattended td { color: var(--ink-mute); font-style: italic; }
+  .agenda-table tr.aabe td { background: rgba(138, 44, 44, 0.04); }
+  .agenda-table .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 2px 7px;
+    margin-left: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+</style>
+<link rel="canonical" href="https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/">
+<meta name="description" content="2026 青少年藥物濫用預防與犯罪防治國際研討會 完整全紀錄：兩日 18 場專題 + 1 場綜合座談，三盟（國教盟 + 共善促進協會 + 台灣藥物濫用防治學會）× 雙核（中正大學犯罪研究中心、犯罪防治系）聯合主辦。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:title" content="2026 青少年藥物濫用研討會 全紀錄｜18 場專題 + 綜合座談">
+<meta property="og:description" content="兩日 18 場專題 + 1 場綜合座談 完整紀錄。三盟 × 雙核 × 一場典範轉移。">
+<meta property="og:image" content="https://aabe.org.tw/wp-content/uploads/og-events.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/">
-<meta property="og:image" content="https://aabe.org.tw/wp-content/uploads/og-events.jpg">
 <meta property="og:site_name" content="國教行動聯盟">
-
 <meta name="twitter:card" content="summary_large_image">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "2026 青少年藥物濫用預防與犯罪防治國際研討會 Day 1 完整筆記",
-  "description": "9 場專題 + 193 張投影片 + 講者引文 + 核心主張",
+  "name": "2026 青少年藥物濫用研討會 全紀錄",
+  "description": "兩日 18 場專題 + 綜合座談 完整紀錄",
   "url": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/",
   "inLanguage": "zh-TW",
   "isPartOf": {
@@ -31,64 +363,9 @@
   },
   "about": {
     "@id": "https://aabe.org.tw/#organization"
-  },
-  "mainEntity": {
-    "@type": "ItemList",
-    "name": "9 場專題報告",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "url": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/01-saliva-screening/",
-        "name": "唾液篩檢在校園毒品防制的展望"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "url": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/02-fraud-crime/",
-        "name": "詐欺犯罪之新近發展、防制對策與挑戰"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "url": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/03-juvenile-drug-gang-fraud/",
-        "name": "少年涉毒行為與幫派、詐欺之關聯性研究"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "url": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/04-drug-sex-trafficking/",
-        "name": "毒品與性拐賣青少年關係"
-      },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "url": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/05-epidemiology/",
-        "name": "青少年藥物濫用流行病學分析"
-      },
-      {
-        "@type": "ListItem",
-        "position": 6,
-        "url": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/07-thailand-cannabis/",
-        "name": "泰國娛樂大麻政策與亞洲青少年防制警訊"
-      },
-      {
-        "@type": "ListItem",
-        "position": 7,
-        "url": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/08-hong-kong-drug/",
-        "name": "香港藥物濫用：太空油與隱形使用者"
-      },
-      {
-        "@type": "ListItem",
-        "position": 8,
-        "url": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/09-japan-drug/",
-        "name": "日本藥物濫用防治政策"
-      }
-    ]
   }
 }
 </script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -115,7 +392,7 @@
     {
       "@type": "ListItem",
       "position": 4,
-      "name": "9 場深度筆記",
+      "name": "全紀錄首頁",
       "item": "https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/"
     }
   ]
@@ -124,16 +401,13 @@
 
 </head>
 <body>
-<!-- ═══ 極簡頂部導覽列（回主站）═══ -->
-<div class="topbar-mini" style="background:#1a1a1a;color:#d4d4d4;font-family:'Inter','Noto Sans TC',sans-serif;font-size:0.78rem;letter-spacing:0.04em;border-bottom:1px solid #2a2a2a;">
+<div style="background:#1a1a1a;color:#d4d4d4;font-family:'Inter','Noto Sans TC',sans-serif;font-size:0.78rem;letter-spacing:0.04em;border-bottom:1px solid #2a2a2a;">
   <div style="max-width:1080px;margin:0 auto;padding:8px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
     <a href="https://aabe.org.tw/" style="color:#EB9B31;text-decoration:none;font-weight:700;">aabe.org.tw</a>
     <span style="opacity:0.4;">→</span>
     <a href="https://aabe.org.tw/events/" style="color:#d4d4d4;text-decoration:none;">活動公告</a>
     <span style="opacity:0.4;">→</span>
     <a href="https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/" style="color:#d4d4d4;text-decoration:none;">5/20-21 國際研討會</a>
-    <span style="opacity:0.4;">→</span>
-    <a href="https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/notes/" style="color:#d4d4d4;text-decoration:none;">9 場深度筆記</a>
   </div>
 </div>
 
@@ -145,191 +419,414 @@
       <small>2026 International Conference on Juvenile Substance Abuse, Prevention and Crime Control in Taiwan</small>
     </h1>
     <div class="masthead-meta">
-      <div>Day 1 · 2026.05.20（Wed）</div>
-      <div>國立中正大學國際會議廳</div>
+      <div>全紀錄首頁</div>
+      <div><a href="/press/2026-05-22-drug-abuse-conference-full-report/">新聞稿 →</a></div>
+      <div>2026.05.20–21｜國立中正大學國際會議廳</div>
     </div>
   </div>
 </header>
 
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Full Record · 全 紀 錄</div>
+    <h1 class="hero-title">Eighteen Sessions, Two Days, One Paradigm Shift</h1>
+    <h2 class="hero-title-zh">十八場專題、兩個日子、一場典範轉移</h2>
+    <p class="lede" style="max-width: 920px; margin-top: 12px;">
+      18 場專題演講、論文報告與綜合座談；<strong>193 + 200+ 張投影片</strong>；<strong>近 250 位</strong>第一線專業工作者參與；
+      跨越台、美、港、日、泰、加、瑞典、印度等十餘國學術視野。
+      二日的核心訊息只有一個——
+      <strong>從「治安與懲罰」到「健康促進與全人復元」的典範轉移</strong>，
+      已在學術、實務、政策三端形成共識。
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><strong>日期</strong><span>2026.05.20（三）– 05.21（四）</span></div>
+      <div class="hero-meta-item"><strong>地點</strong><span>國立中正大學國際會議廳</span></div>
+      <div class="hero-meta-item"><strong>指導</strong><span>教育部（學特司）</span></div>
+      <div class="hero-meta-item"><strong>主辦</strong><span>中正大學犯罪研究中心、犯罪防治系</span></div>
+      <div class="hero-meta-item"><strong>本盟</strong><span>國教行動聯盟｜兒童健康聯盟（共同主辦）</span></div>
+    </div>
+  </div>
+</section>
+
 <main class="container">
 
-  <section class="session-header">
-    <div class="session-kicker">Day 1 Overview · 第一天總覽</div>
-    <h2 class="session-title">9 Sessions · 193 Slides</h2>
-    <h2 class="session-title-zh">九場專題報告 · 一日全紀錄</h2>
-    <p class="session-subtitle">從唾液篩檢、詐欺打詐到三國（泰／港／日）大麻政策比較——透過投影片影像與錄音逐字稿，重建研討會第一天的完整內容。</p>
-    <div class="session-byline">
-      <div><strong>指導單位</strong>教育部（學生事務及特殊教育司）</div>
-      <div><strong>主辦單位</strong>國立中正大學犯罪研究中心、犯罪防治學系</div>
-      <div><strong>共同主辦</strong>內政部警政署刑事警察局、法務部矯正署、台灣刑事司法學會、中華民國犯罪矯正協會、社團法人共善促進協會、國教行動聯盟、中華民國兒童健康聯盟、台灣藥物濫用防治學會、中華民國犯罪學學會 等</div>
+  <!-- 楊士隆終身成就獎 -->
+  <section class="tribute">
+    <div>
+      <div class="tribute-kicker">Lifetime Achievement Award · 115 年度終身成就獎</div>
+      <h2 class="tribute-title">楊士隆教授 獲頒中華民國犯罪學學會終身成就獎</h2>
+      <div class="tribute-body">
+        <p>研討會期間，<strong>中華民國犯罪學學會</strong>於 5 月 20 日現場頒發「<strong>115 年度終身成就獎</strong>」予中正大學犯罪防治學系特聘教授<strong>楊士隆</strong>，表彰其畢生對我國犯罪學研究與毒品防治政策的卓越貢獻。由犯罪學學會榮譽理事長<strong>蔡德輝</strong>、中正大學校長<strong>蔡少正</strong>、學會理事長<strong>李修安</strong>共同頒授。</p>
+        <p>楊士隆教授近 30 年來著作等身，出版《犯罪學》、《監獄學》、《犯罪心理學》等近 <strong>20 冊</strong>專書，發表近 <strong>90 篇</strong>論文並主持近 <strong>70 件</strong>政府研究計畫。95 年建言政府設立<em>「毒品危害防制中心」</em>；105 年推動成立<em>「毒品防制基金」</em>；108 年協助法務部矯正署實施<em>「以證據為導向的科學實證毒品犯處遇計畫」</em>。本研討會由楊教授擔任<strong>第一天大會主持人、Day 1 第 3 場主講人、Day 2 第 2 場（與陳為堅副院長共同）</strong>。</p>
+        <p style="font-size: 14px; color: var(--ink-mute); font-style: italic;">資料來源：中華民國犯罪學學會提供；中時新聞網報導（賴佑維）。</p>
+      </div>
+      <div class="tribute-media">
+        <video controls preload="metadata" poster="../活動照片/S__127123565_0.jpg">
+          <source src="../活動照片/楊士隆獲得終身成就獎.mp4" type="video/mp4">
+          您的瀏覽器不支援影片播放。
+        </video>
+        <a href="../活動照片/S__127123566_0.jpg" target="_blank">
+          <img src="../活動照片/S__127123566_0.jpg" alt="頒獎現場舞台廣角" loading="lazy">
+        </a>
+      </div>
     </div>
   </section>
 
-  <p class="lede">
-    本網站整理 2026 年 5 月 20 日（第一天）九場專題報告，
-    每場結合<strong>投影片實拍照片、文字摘要、講者引文、核心主張</strong>。
-    投影片照片可點擊放大；右側欄為核心數據與關鍵主張，便於快速比對各場次重點。
-    <br><br>
-    <em>第六場（California Paradox · 加州大麻悖論）因講者未出席而未紀錄。</em>
+  <!-- 兩天大入口卡 -->
+  <h2 class="section-title-zh" style="margin-top: 0;">兩日入口 · Two-Day Entry</h2>
+
+  <div class="day-grid">
+    <a class="day-card" href="./">
+      <div class="day-card-num">DAY 01 · 2026.05.20 (Wed)</div>
+      <h3 class="day-card-title">九場專題報告</h3>
+      <p class="day-card-en">Keynotes & Country Reports</p>
+      <p class="day-card-summary">
+        從<strong>唾液篩檢、打詐 2.0、少年涉毒幫派</strong>，到<strong>泰國／香港／日本三國大麻政策比較</strong>——
+        九場專題以「<em>校園不是抓捕罪犯的地方</em>」開場，最終匯流到「依託咪酯電子煙危機」與「東亞政策三維度框架」。
+      </p>
+      <div class="day-card-stats">
+        <span><strong>9</strong>場演講</span>
+        <span><strong>193</strong>張投影片</span>
+        <span><strong>1</strong>聯合新聞稿</span>
+        <span><strong>6</strong>國國際視野</span>
+      </div>
+      <span class="day-card-arrow">View Day 1 →</span>
+    </a>
+
+    <a class="day-card" href="day2/">
+      <div class="day-card-num">DAY 02 · 2026.05.21 (Thu)</div>
+      <h3 class="day-card-title">九場論文＋綜合座談</h3>
+      <p class="day-card-en">Papers & Panel Discussion</p>
+      <p class="day-card-summary">
+        從<strong>SEM × ML 雙引擎、K他命 12 年世代研究、香港隱形少數族裔</strong>，
+        到<strong>全人復元、依託咪酯結婚蛋糕、少輔會結構改革</strong>。
+        <em>三盟（國教盟＋共善＋兒少健盟）共主持三場</em>論文，正式介入處遇與法制兩條軸線。
+      </p>
+      <div class="day-card-stats">
+        <span><strong>9</strong>場論文</span>
+        <span><strong>1</strong>場綜合座談</span>
+        <span><strong>200+</strong>頁文獻</span>
+        <span><strong>3</strong>盟主場</span>
+      </div>
+      <span class="day-card-arrow">View Day 2 →</span>
+    </a>
+  </div>
+
+  <!-- 活動花絮照片牆 -->
+  <h2 class="section-title-zh">活動花絮 · Conference Moments</h2>
+  <div class="photo-wall">
+    <a href="../活動照片/S__127123559_0.jpg" target="_blank" class="photo size-2">
+      <img src="../活動照片/S__127123559_0.jpg" alt="2026 研討會開幕舞台">
+      <div class="caption"><strong>開幕舞台</strong>｜長官致詞｜大會主持楊士隆教授</div>
+    </a>
+    <a href="../活動照片/S__127123565_0.jpg" target="_blank" class="photo size-1">
+      <img src="../活動照片/S__127123565_0.jpg" alt="座談舞台">
+      <div class="caption"><strong>專題座談</strong></div>
+    </a>
+    <a href="../活動照片/S__127123561_0.jpg" target="_blank" class="photo size-3">
+      <img src="../活動照片/S__127123561_0.jpg" alt="會場滿座">
+      <div class="caption"><strong>全場滿座</strong>｜近 200 位學界與實務界參與｜中正大學國際會議廳</div>
+    </a>
+    <a href="../活動照片/研討會好友會場合照.jpg" target="_blank" class="photo size-4">
+      <img src="../活動照片/研討會好友會場合照.jpg" alt="會場好友合影">
+      <div class="caption"><strong>會場好友合影</strong>｜跨界結盟瞬間</div>
+    </a>
+    <a href="../活動照片/左到右王瀚陽張安慈陳尚仁曾品傑教授張文昌唐仙美.jpg" target="_blank" class="photo size-5">
+      <img src="../活動照片/左到右王瀚陽張安慈陳尚仁曾品傑教授張文昌唐仙美.jpg" alt="三盟領導合影">
+      <div class="caption"><strong>三盟結盟瞬間</strong>｜（左→右）<strong>王瀚陽</strong>（國教盟理事長）、<strong>張安慈</strong>（國教盟副理事長）、<strong>陳尚仁</strong>（共善理事長）、曾品傑 教授、<strong>張文昌</strong>（共善秘書長／國教盟常務理事）、<strong>唐仙美</strong>（國教盟理事）</div>
+    </a>
+    <a href="../活動照片/第一天晚宴.jpg" target="_blank" class="photo size-6">
+      <img src="../活動照片/第一天晚宴.jpg" alt="第一天晚宴">
+      <div class="caption"><strong>Day 1 晚宴</strong>｜跨日延伸的合作對話</div>
+    </a>
+  </div>
+
+  <!-- 關鍵數字 -->
+  <h2 class="section-title-zh" style="margin-top: 60px;">兩日關鍵數字 · By the Numbers</h2>
+  <div class="big-stats">
+    <div class="stat">
+      <div class="stat-num">132×</div>
+      <div class="stat-label">依託咪酯查獲跳升</div>
+      <div class="stat-sub">2024 vs 2023（Day 2 第 5 場）</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5×</div>
+      <div class="stat-label">少年詐欺人口率成長</div>
+      <div class="stat-sub">十年從 51 → 259 / 十萬（Day 2 第 4 場）</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">40×</div>
+      <div class="stat-label">K他命膀胱炎風險倍數</div>
+      <div class="stat-sub">12 年世代研究 IRR=51（Day 2 第 2 場）</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">10×</div>
+      <div class="stat-label">泰國青年大麻使用率</div>
+      <div class="stat-sub">0.9% → 9.7%（Day 1 第 7 場）</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">29,213</div>
+      <div class="stat-label">受刑人多面向比較樣本</div>
+      <div class="stat-sub">三類受刑人實證（Day 2 第 9 場）</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">688</div>
+      <div class="stat-label">處遇成效追蹤樣本</div>
+      <div class="stat-sub">SEM × ML 雙引擎（Day 2 第 1 場）</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">45</div>
+      <div class="stat-label">少年詐欺 SQLR 納入文獻</div>
+      <div class="stat-sub">從 4,619 篩選而得（Day 2 第 4 場）</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">43</div>
+      <div class="stat-label">受監禁青少年國際研究</div>
+      <div class="stat-sub">17 國系統性回顧（Day 2 第 6 場）</div>
+    </div>
+  </div>
+
+  <!-- 國教盟聯合新聞稿 -->
+  <h2 class="section-title-zh">📌 國教盟 × 共善促進協會 聯合新聞稿（Day 1 發布）</h2>
+
+  <div class="callout" style="border-left: 6px solid var(--accent); background: var(--paper-warm);">
+    <h4>反毒打詐不能只靠查緝<br>籲政府建立「接住孩子」的校園與家庭安全網</h4>
+    <div class="callout-body">
+      <p><em>「青少年涉毒已與詐欺、幫派、性剝削及太空油電子煙交織，民團肯定政府跨部會努力，呼籲從早期辨識、家庭介入到新興毒品預警全面升級。」</em></p>
+      <p>由<strong>國教行動聯盟理事長王瀚陽 × 共善促進協會理事長陳尚仁</strong>於 5 月 21 日聯名發布。新聞稿從 Day 1 九場專題的內容萃取出四點具體政策呼籲：</p>
+      <ol>
+        <li><strong>教育部</strong>應推動<em>非侵入式校園早期辨識與輔導制度</em>，讓篩檢、保密、輔導、轉銜與家庭合作形成完整流程。</li>
+        <li><strong>行政院打詐政策</strong>應納入<em>青少年防吸收專章</em>，將車手、人頭帳戶、門號提供、幫派吸收與校園詐欺招募列為重點防制。</li>
+        <li><strong>衛福部、教育部、法務部與警政署</strong>應建立<em>跨部會兒少個案管理平台</em>，讓涉毒、涉詐、幫派與性剝削風險不再被分散處理。</li>
+        <li>政府應針對<em>依託咪酯電子煙與其他新興毒品</em>建立<strong>快速預警、校園教育、社群平台監測及醫療端通報機制</strong>。</li>
+      </ol>
+      <p style="margin-top: 12px;">→ <a href="/press/2026-05-22-drug-abuse-conference-full-report/"><strong>閱讀完整新聞稿（含主辦方第二日官方稿與兩稿合讀洞察）</strong></a></p>
+    </div>
+  </div>
+
+  <!-- 三盟×雙核 -->
+  <h2 class="section-title-zh">三盟 × 雙核 · The Five Actors</h2>
+
+  <p class="lede" style="font-size: 17px; max-width: 920px; margin: 0 0 32px;">
+    本研討會由<strong>中正大學楊士隆教授（恩師）× 曾淑萍教授（高足）</strong>——一對<em>跨世代的學術師承雙核</em>，與<strong>國教盟、共善促進協會、兒童健康聯盟</strong>三盟共同主辦，
+    形成「<em>學界師生傳承 × 民間倡議轉化</em>」的政策共同體。
+    這五位 actor 在本研討會中各自承擔不同角色，但匯流到同一個訊息：<strong>「接住孩子」的校園與家庭安全網</strong>。
   </p>
 
-  <h3 class="section-title-zh">場次索引 · Session Index</h3>
-
-  <div class="index-grid">
-
-    <a class="index-card" href="01-saliva-screening/">
-      <div class="index-card-num">SESSION 01 · 10:30–11:00</div>
-      <div class="index-card-time">專題演講（一）｜主持：朱俊彰 教育部次長</div>
-      <h4 class="index-card-title">唾液篩檢在校園毒品防制的展望</h4>
-      <p class="index-card-speaker">郭鐘隆 特聘教授｜國立臺灣師範大學健康促進與衛生教育學系</p>
-      <p class="index-card-summary">從「治安懲罰」到「健康促進」典範轉移。八合一唾液快篩、春暉小組三個月輔導期程，把瀕臨邊緣的學生「接住」在教育體系內。</p>
-      <span class="arrow">View Session →</span>
-    </a>
-
-    <a class="index-card" href="02-fraud-crime/">
-      <div class="index-card-num">SESSION 02 · 11:00–11:30</div>
-      <div class="index-card-time">專題演講（二）｜主持：馮成 法務部次長</div>
-      <h4 class="index-card-title">詐欺犯罪之新近發展、防制對策與挑戰</h4>
-      <p class="index-card-speaker">張榮興 警政署署長／代為報告：廖訓誠 副署長</p>
-      <p class="index-card-summary">打詐 2.0 上路：案件下降 1/3、財損下降 2/3。挑戰三：機房外移、虛擬貨幣洗錢、青少年成共犯。修法加重未成年犯罪 1/2 刑責。</p>
-      <span class="arrow">View Session →</span>
-    </a>
-
-    <a class="index-card" href="03-juvenile-drug-gang-fraud/">
-      <div class="index-card-num">SESSION 03 · 11:30–12:00</div>
-      <div class="index-card-time">專題演講（三）｜主持：蔡德輝 名譽教授</div>
-      <h4 class="index-card-title">少年涉毒行為與幫派、詐欺之關聯性研究</h4>
-      <p class="index-card-speaker">楊士隆 特聘教授／曾淑萍 教授｜國立中正大學犯罪防治系</p>
-      <p class="index-card-summary">16 名矯正學校少年深度訪談。揭露毒品、幫派、詐欺三者交織為惡性循環；脫離犯罪的關鍵不是法律，而是「重要他人」。</p>
-      <span class="arrow">View Session →</span>
-    </a>
-
-    <a class="index-card" href="04-drug-sex-trafficking/">
-      <div class="index-card-num">SESSION 04 · 13:40–14:10</div>
-      <div class="index-card-time">專題報告（一）｜主持：劉建宏 亞洲犯罪學會主席</div>
-      <h4 class="index-card-title">毒品與性拐賣青少年關係</h4>
-      <p class="index-card-speaker">Dr. Xin Ren｜Cal State Sacramento／與談：賴擁連 教授</p>
-      <p class="index-card-summary">TVPA 2000：18 歲以下從事性交易，不論是否被強制都是被害者。臺灣 2024 年少年刑案 47.3% 為毒品案；複合型個案 9 年增 7 倍。</p>
-      <span class="arrow">View Session →</span>
-    </a>
-
-    <a class="index-card" href="05-epidemiology/">
-      <div class="index-card-num">SESSION 05 · 14:10–14:40</div>
-      <div class="index-card-time">專題報告（二）｜主持：李德 亞洲藥物濫用學會會長</div>
-      <h4 class="index-card-title">青少年藥物濫用盛行率、流行病學調查</h4>
-      <p class="index-card-speaker">陳為堅 副院長（NHRI）／楊士隆 特聘教授</p>
-      <p class="index-card-summary">五波全國調查 + 跨部會大數據連結。HRF 介入降 43% 再用風險、學校中輟升 46%；冰島模式、曼谷規則、性別回應矯治為國際典範。</p>
-      <span class="arrow">View Session →</span>
-    </a>
-
-    <div class="index-card unattended" aria-disabled="true">
-      <div class="index-card-num">SESSION 06 · 15:00–15:30</div>
-      <div class="index-card-time">專題報告（三）｜主持：林憲銘 矯正署署長</div>
-      <h4 class="index-card-title">The California Paradox（未出席紀錄）</h4>
-      <p class="index-card-speaker">Dr. Shih Lung Huang｜Cal State Sacramento／與談：許華孚 教授</p>
-      <p class="index-card-summary">本場為「加州大麻合法化十年（2016–2026）之社會正義與公共健康平衡」，因未到場參加，無錄音與照片紀錄。</p>
-      <span class="arrow">No record</span>
-    </div>
-
-    <a class="index-card" href="07-thailand-cannabis/">
-      <div class="index-card-num">SESSION 07 · 15:30–16:00</div>
-      <div class="index-card-time">專題報告（四）｜主持：鄭瑞隆 教育學院院長</div>
-      <h4 class="index-card-title">泰國開放娛樂性大麻對社會及個人身心之衝擊</h4>
-      <p class="index-card-speaker">Dr. Rasmon Kalayasiri｜Chulalongkorn 大學／與談：陳巧雲 教授</p>
-      <p class="index-card-summary">泰國 2019 醫用 → 2022 全面合法。3 年內 18–19 歲青少年大麻使用率從 0.9% → 9.7%（10 倍）；就診人次 6 倍成長。錄音不完整。</p>
-      <span class="arrow">View Session →</span>
-    </a>
-
-    <a class="index-card" href="08-hong-kong-drug/">
-      <div class="index-card-num">SESSION 08 · 16:00–16:30</div>
-      <div class="index-card-time">專題報告（五）｜主持：林錦村 檢察長</div>
-      <h4 class="index-card-title">香港青少年藥物濫用現況與防治對策</h4>
-      <p class="index-card-speaker">Dr. Zhong Hua｜香港中文大學／與談：馬躍中 理事長</p>
-      <p class="index-card-summary">「隱形使用者」框架：私人消費、自願通報差距、太空油電子煙、加密交易。港台共同新威脅：大麻、依託咪酯電子煙。</p>
-      <span class="arrow">View Session →</span>
-    </a>
-
-    <a class="index-card" href="09-japan-drug/">
-      <div class="index-card-num">SESSION 09 · 16:30–17:00</div>
-      <div class="index-card-time">專題報告（六）｜主持：蕭淑芬 法學院院長</div>
-      <h4 class="index-card-title">日本青少年藥物濫用之現況與防治對策</h4>
-      <p class="index-card-speaker">戴伸峰 教授（台灣藥物濫用防治學會秘書長）／與談：廖泊喬 精神科醫師</p>
-      <p class="index-card-summary">日本（精緻嚴管）vs 泰國（鬆綁失控）的兩極對照。日本少年大麻檢舉 15 倍成長；廖泊喬警示：20–50% 大麻誘發精神病轉變思覺失調症。錄音不完整。</p>
-      <span class="arrow">View Session →</span>
-    </a>
-
-  </div>
-
-  <h3 class="section-title-zh">跨場次主題串連 · Cross-Session Themes</h3>
+  <!-- 學界雙核 -->
+  <h3 class="section-title-zh" style="font-size: 22px; color: var(--accent); margin-top: 0;">學界雙核 · Academic Anchors</h3>
 
   <div class="callout">
-    <h4>主題一 ｜ 三大典範轉移</h4>
+    <h4>楊士隆 特聘教授｜<em>本研討會大會主持人 · 終身成就獎得主 · 學術師承核心</em></h4>
     <div class="callout-body">
-      <strong>從懲罰到健康／教育</strong>——
-      第 1 場郭鐘隆「接住學生」、第 4 場 Xin Ren「除罪化」、第 5 場陳為堅「健康導向轉向處遇」、第 9 場日本「教育裁量彈性」——
-      四場異口同聲提出：<em>司法不是答案，社會安全網才是</em>。
+      中正大學犯罪防治學系特聘教授、犯罪研究中心主任、台灣藥物濫用防治學會榮譽理事長、台灣刑事司法學會理事長。
+      本研討會擔任<strong>第一天大會主持人</strong>、<strong>Day 1 第 3 場主講人</strong>（少年涉毒幫派詐欺）、
+      <strong>Day 1 第 5 場主講人</strong>（與陳為堅副院長共同，流行病學調查）。本日獲頒中華民國犯罪學學會「<strong>115 年度終身成就獎</strong>」。
+      <br><br>
+      長期推動：<em>95 年</em>建言設立「毒品危害防制中心」｜<em>105 年</em>推動「毒品防制基金」｜<em>108 年</em>協助實施「以證據為導向的科學實證毒品犯處遇計畫」。
+      <br><br>
+      <em>學術傳承</em>：楊教授長期指導後繼學者，<strong>曾淑萍教授</strong>即為其親炙弟子之一，兩代學者在本研討會共同坐鎮中正大學犯罪防治學系的核心場次（Day 1 第 3 場）。
+      <br>→ <a href="03-juvenile-drug-gang-fraud/">查看 Day 1 第 3 場紀錄</a>｜<a href="05-epidemiology/">Day 1 第 5 場</a>
     </div>
   </div>
 
   <div class="callout">
-    <h4>主題二 ｜ 同儕與好奇心是用毒的共同起點</h4>
+    <h4>曾淑萍 教授｜<em>楊士隆教授親炙弟子、學術傳承核心</em></h4>
     <div class="callout-body">
-      第 3 場楊士隆 16 名矯正學校少年訪談、第 9 場戴伸峰援引日本警察庁全國調查——
-      <strong>各國各年齡層的用毒起點都是「好奇心 39–41.8%」與「現場氛圍 18.6–21.9%」</strong>。
-      這對校園預防教育的設計有直接意涵：不能只強調危害，必須處理同儕網絡。
+      中正大學犯罪防治學系教授、<strong>楊士隆教授指導下的學術傳承</strong>——師承自楊教授的犯罪學研究路徑，再以自身專長深化少年偏差行為、犯罪生命歷程與矯正處遇成效評估三大領域。
+      <br><br>
+      本研討會擔任<strong>Day 1 第 3 場共同主講</strong>（與恩師楊士隆教授）——負責 16 名矯正學校少年深度訪談的<em>質性研究主軸</em>，揭露毒品、幫派、詐欺三者交織為惡性循環的核心發現，並提出「<strong>脫離犯罪的關鍵不是法律，而是『重要他人』</strong>」這一精神標誌性論點。
+      <br><br>
+      <strong>Day 2 第 9 場與談人</strong>——回應葉碧翠副教授「理性算計或成癮衝動」三類受刑人（純詐欺／純毒品／涉毒詐欺）多面向比較研究。
+      <br><br>
+      <em>師承關係的意義</em>：楊／曾兩位學者代表中正大學犯罪防治學系<u>跨世代學術傳承</u>——從楊教授 95 年建言設立「毒品危害防制中心」的政策路徑，延續到曾教授對少年司法與生命歷程的細緻處遇研究。<u>三盟（國教盟／共善／兒少健盟）的政策合作對象，正是這個學術師承共同體</u>。
+      <br>→ <a href="03-juvenile-drug-gang-fraud/">查看 Day 1 第 3 場紀錄</a>｜<a href="day2/09-three-inmate-comparison/">Day 2 第 9 場</a>
     </div>
   </div>
 
+  <!-- 民間三盟 -->
+  <h3 class="section-title-zh" style="font-size: 22px; color: var(--accent); margin-top: 36px;">民間三盟 · Civil Society Coalition</h3>
+
   <div class="callout">
-    <h4>主題三 ｜ 標語與海報無效，互動與情感連結有效</h4>
+    <h4>國教行動聯盟｜本研討會出席代表</h4>
     <div class="callout-body">
-      第 5 場楊士隆 2022 高雄問卷研究、第 8 場 Dr. Zhong Hua「Digital-Native Prevention」、第 9 場戴伸峰援引 Cochrane Database——
-      <strong>知識傳達型 = 無效；社會技能增進型、互動型、過來人現身說法 = 有效</strong>。
-      意涵：教育部與毒防中心的反毒預算分配需要轉向。
+      <ul style="margin: 0 0 14px 0;">
+        <li><strong>理事長 王瀚陽</strong>——Day 1 聯合新聞稿共同發起人、<strong>Day 2 第 4 場主持人</strong>（白鎮福「從刑事嚇阻轉向全人復元」典範論文）。</li>
+        <li><strong>副理事長 張安慈</strong>——共同出席兩日全程。</li>
+        <li><strong>理事 唐仙美</strong>——共同出席兩日全程。</li>
+      </ul>
+      <p>Day 1 結束當晚由王瀚陽理事長與共善促進協會陳尚仁理事長聯名發布<strong>聯合新聞稿</strong>——萃取出 4 點政策呼籲（教育部唾液篩檢、行政院打詐青少年防吸收專章、跨部會兒少個案管理、依託咪酯預警）。Day 2 第 4 場主持，標誌國教盟議題版圖延伸至少年司法處遇。</p>
+      <p><em>議題版圖</em>：教育政策、家長運動、青少年安全網、全人復元典範倡議。
+      <br>→ <a href="day2/04-holistic-recovery/">查看 Day 2 第 4 場紀錄</a>｜<a href="/press/2026-05-22-drug-abuse-conference-full-report/">聯合新聞稿</a></p>
     </div>
   </div>
 
   <div class="callout">
-    <h4>主題四 ｜ 詐欺已企業化，青少年是它的工讀生</h4>
+    <h4>社團法人共善促進協會｜本研討會出席代表</h4>
     <div class="callout-body">
-      第 2 場警政署：詐欺集團大量招募青少年擔任車手、人頭帳戶——「2026 主題式專案：幫派涉詐」。
-      第 3 場楊士隆訪談：青少年已主動參與策劃，跨幫派堂口「技術交流」。
-      第 4 場 Xin Ren 與賴擁連：男性少年常轉化為媒介/詐騙車手等勞動剝削角色。
-      <em>三場匯流到同一個結論：詐欺、毒品、性剝削已成為青少年的多重交織風險</em>。
+      <ul style="margin: 0 0 14px 0;">
+        <li><strong>理事長 陳尚仁</strong>——Day 1 聯合新聞稿共同發起人、<strong>Day 2 第 1 場主持人</strong>（鄭元皓 × Dr. Shun-Yung Kevin Wang「SEM × 機器學習」開場論文）。</li>
+        <li><strong>秘書長 張文昌</strong>——<u>同時擔任國教盟常務理事</u>，是兩會結盟的具體象徵與制度橋樑。</li>
+        <li><strong>副秘書長 駱怡汝</strong>——共同出席兩日全程。</li>
+      </ul>
+      <p><em>議題版圖</em>：信仰社群、公共倫理、社會復歸、再犯防止之科學化推動。陳尚仁理事長是少年司法<em>「全人復元」</em>典範跨界倡議的核心推手之一；張文昌秘書長的「<strong>國教盟常務理事 × 共善秘書長</strong>」雙重身份，使兩會在組織層面就具備天然合作介面。
+      <br>→ <a href="day2/01-sem-machine-learning/">查看 Day 2 第 1 場紀錄</a></p>
     </div>
   </div>
 
   <div class="callout">
-    <h4>主題五 ｜ 港台中三地都在面對「太空油／依託咪酯」電子煙危機</h4>
+    <h4>中華民國兒童健康聯盟｜本研討會出席代表</h4>
     <div class="callout-body">
-      第 5 場陳為堅指出新興毒品 2.29% 上升；第 8 場馬躍中：「<strong>港台青少年共同新威脅：依託咪酯以電子煙形式濫用</strong>」；
-      第 7 場陳巧雲：泰國也面臨「醫用」名義下大麻電子煙散布。
-      電子煙形態的隱匿性使<em>第 1 場郭鐘隆的唾液篩檢工具更為重要</em>——這是唯一能在校園日常監測這些新興毒品的工具。
+      <ul style="margin: 0 0 14px 0;">
+        <li><strong>理事長 林志嘉</strong>——親自蒞臨主持<strong>Day 2 第 7 場</strong>（鄭瑞隆教授「少年輔導委員會結構功能之探討」）。林志嘉理事長長期投入兒童權益、健康權與少年福利政策倡議，於本研討會中代表兒少健盟以最高層級參與。</li>
+      </ul>
+
+      <p><strong>兒童健康聯盟在本研討會的角色不可低估</strong>——林志嘉理事長親自主持的鄭瑞隆教授論文，是 Day 2 整日論文場唯一<em>直球針對「少年輔導委員會主管機關」</em>進行結構性質疑的場次。鄭教授明確主張<strong>少輔會主管機關應由內政部警政署<u>轉移至衛生福利部</u></strong>，揭示少輔會 50 年來「美麗的延續（錯誤）」需被正視。</p>
+
+      <p>由林志嘉理事長親自主持這場論文，<strong>本身就是政治訊號</strong>——意味著兒少健盟正式以倡議者身份介入少年司法的<u>結構法制</u>改革。本場與國教盟主場（Day 2 第 4 場「全人復元」處遇典範）形成「<strong>處遇典範 × 結構法制</strong>」雙軸協作，是本研討會兒少倡議的核心軸線。</p>
+
+      <p><em>議題版圖</em>：兒童健康權、少年福利、少事法修法倡議、跨部會兒少政策整合、衛福主管化倡議。
+      <br><em>結盟戰略意義</em>：林志嘉理事長的政治經歷（含長期國會與立法歷練）為三盟結盟提供<strong>法案立法路徑的關鍵橋樑</strong>——能將學界研究與民間倡議轉化為實際法案推動力。
+      <br>→ <a href="day2/07-juvenile-counseling/">查看 Day 2 第 7 場紀錄</a></p>
     </div>
   </div>
 
-  <div class="callout">
-    <h4>主題六 ｜ 國際比較：日本（精緻嚴管） vs 泰國（鬆綁失控）</h4>
+  <!-- 三盟×雙核交織意涵 -->
+  <div class="callout" style="background: var(--paper-warm); border-left: 6px solid var(--accent);">
+    <h4>三盟×雙核的政策行動藍圖</h4>
     <div class="callout-body">
-      第 9 場戴伸峰系統呈現兩極對照：
-      <strong>日本</strong>——1948 大麻取締法到 2024 大修正「醫療解禁＋使用罪嚴罰」，採 THC 濃度為規範對象之科學途徑。
-      <strong>泰國</strong>——2019 醫用合法 → 2022 全面合法 → 2024 政爭重新討論收回。
-      <em>對臺灣的意義：合法化討論必須分清「植株／成分／用途」三維度</em>（廖泊喬醫師框架），任何一個維度都需要獨立決策依據。
+      <p>本研討會的學界×民間結構，把<strong>「實證 → 倡議 → 政策」</strong>三階段串連起來：</p>
+      <ul>
+        <li><strong>學界產出</strong>（楊士隆 + 曾淑萍 + 鄭瑞隆 + 白鎮福 + 葉碧翠 + 陳娟瑜 + 賴擁連 等）→ 質性訪談、量化模型、系統性回顧、SEM × ML 預測介面。</li>
+        <li><strong>民間轉化</strong>（國教盟 + 共善 + 兒少健盟）→ Day 1 聯合新聞稿 4 點呼籲、Day 2 雙主場主持。</li>
+        <li><strong>政策標的</strong>：教育部學特司、行政院打詐辦、衛福部心健司／食藥署、法務部矯正署——對應 4 點呼籲。</li>
+      </ul>
+      <p><em>建議下一步</em>：三盟可考慮以「<strong>三盟聯名行動</strong>」（國教盟＋共善＋兒少健盟）形式，推動少事法第 13 次修法、少輔會主管機關轉移衛福、跨部會兒少個案管理平台立法——三大母法（少事法、毒防條例、兒少權法）並進改革。</p>
     </div>
   </div>
 
-  <h3 class="section-title-zh">資料與來源 · Sources</h3>
+  <!-- 跨日跨場主題 -->
+  <h2 class="section-title-zh" style="margin-top: 56px;">跨日主軸 · Cross-Day Themes</h2>
 
   <div class="callout">
-    <h4>本網站資料來源</h4>
+    <h4>主題一 ｜ 「健康促進取代治安懲罰」是兩日的最強共識</h4>
+    <div class="callout-body">
+      第一天郭鐘隆「<em>校園不是抓捕罪犯的地方</em>」 →
+      第一天 Xin Ren「除罪化＋ TVPA 被害者保護」 →
+      第一天陳為堅「健康導向轉向處遇」 →
+      第二天白鎮福「<strong>生／心／靈／社 全人復元</strong>」 →
+      第二天鄭瑞隆「少輔會應由衛福主管」 →
+      第二天 Tzu-Ying Lo「<em>機構成功應重新定義（beyond recidivism）</em>」。
+      <strong>七位學者從不同角度匯流到同一主張：司法系統不能再是唯一答案，公衛/社工/教育體系應主導青少年藥物與犯罪防制。</strong>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h4>主題二 ｜ 「同儕與好奇心」是用毒與用藥的共同起點</h4>
+    <div class="callout-body">
+      第一天楊士隆 16 名矯正學校少年訪談、戴伸峰援引日本警察庁全國調查、
+      第二天許華孚／黃光甫 17 名跨國詐欺少年深訪、葉碧翠 29,213 名受刑人量化——
+      <strong>各國各年齡層的偏差起點都是「好奇心 39-41.8%」與「同儕現場氛圍 18-22%」</strong>。
+      第二天 Xi Chen（香港）的「Enclave Effect」進一步說明：戒毒後復發機制 = 回到熟人圈。
+      <em>意涵：校園預防教育不能只強調「危害」，必須處理「同儕網絡」與「家庭情感支持」。</em>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h4>主題三 ｜ 「電子煙＋液態毒品化」是當前最大威脅</h4>
+    <div class="callout-body">
+      第一天馬躍中、戴伸峰、陳巧雲（泰國／港／日／中）三場一致警告「<em>太空油／依託咪酯／合成大麻電子煙</em>」的隱匿擴散。
+      第二天陳娟瑜 K他命 12 年世代研究、賴擁連／劉璟薇「<strong>依託咪酯 132 倍跳升</strong>」結構性偵防論文——將威脅量化、定義為公共安全問題。
+      <em>解法</em>：第一天郭鐘隆<strong>八合一唾液快篩</strong>是當前唯一能在校園日常監測這些新興毒品的工具。
+    </div>
+  </div>
+
+  <div class="callout">
+    <h4>主題四 ｜ 詐欺與毒品已企業化、青少年化、複合化</h4>
+    <div class="callout-body">
+      第一天警政署：詐欺集團大量招募青少年擔任車手、人頭帳戶；楊士隆訪談：青少年已主動參與策劃、跨幫派堂口「技術交流」。
+      第二天白鎮福：少年詐欺人口率 10 年增 5 倍；許華孚／黃光甫：跨國詐欺少年生命歷程；葉碧翠：<em>涉毒詐欺犯</em>道德/認知偏差動機最高（45.7%）。
+      <strong>整體圖景</strong>：青少年司法已成<em>毒品 × 詐欺 × 性剝削</em>多重交織風險，反毒與反詐欺策略必須整合，不能切割。
+    </div>
+  </div>
+
+  <div class="callout">
+    <h4>主題五 ｜ 「分類化／精準化／整合化」三化處遇</h4>
+    <div class="callout-body">
+      第一天陳為堅「<em>HRF 介入降 43% 再用風險</em>」是個案層先驅；
+      第二天鄭元皓「SEM × ML 雙引擎、再犯風險自動計算介面試辦 5 地檢」是技術層落地；
+      第二天葉碧翠「29,213 名三類受刑人」是群體層實證；
+      第二天 Tzu-Ying Lo「17 國 43 篇」是國際層回顧；
+      第二天綜合座談共識：<strong>「精準化＋分類化＋整合化」三化處遇</strong>需以衛福為主管、跨部會整合推動。
+    </div>
+  </div>
+
+  <!-- 完整議程目錄 -->
+  <h2 class="section-title-zh" style="margin-top: 56px;">完整議程目錄 · Complete Session Directory</h2>
+
+  <table class="agenda-table">
+    <thead>
+      <tr><th style="width: 130px;">時間</th><th>場次</th><th style="width: 200px;">主持／與談</th></tr>
+    </thead>
+    <tbody>
+      <tr class="day-row"><td colspan="3">DAY 1 · 2026.05.20（Wed）｜九場專題報告</td></tr>
+      <tr><td class="time">10:30-11:00</td><td class="title"><a href="01-saliva-screening/"><strong>專題演講（一）｜唾液篩檢在校園毒品防制的展望</strong></a><br>郭鐘隆 特聘教授（臺師大）</td><td>主持：<strong>蔡宜靜 教育部學特司司長</strong><br><small style="color: var(--ink-mute);">（議程原訂朱俊彰次長，實際蔡宜靜司長出席）</small></td></tr>
+      <tr><td class="time">11:00-11:30</td><td class="title"><a href="02-fraud-crime/"><strong>專題演講（二）｜詐欺犯罪之新近發展、防制對策與挑戰</strong></a><br>張榮興 警政署署長（廖訓誠副署長代）</td><td>主持：馮成 法務部次長</td></tr>
+      <tr><td class="time">11:30-12:00</td><td class="title"><a href="03-juvenile-drug-gang-fraud/"><strong>專題演講（三）｜少年涉毒行為與幫派、詐欺之關聯性</strong></a><br>楊士隆 特聘教授／曾淑萍 教授（中正大學）</td><td>主持：蔡德輝 名譽教授</td></tr>
+      <tr><td class="time">13:40-14:10</td><td class="title"><a href="04-drug-sex-trafficking/"><strong>專題報告（一）｜毒品與性拐賣青少年關係</strong></a><br>Dr. Xin Ren（Cal State Sacramento）／賴擁連 教授（中正）</td><td>主持：劉建宏 亞洲犯罪學會主席</td></tr>
+      <tr><td class="time">14:10-14:40</td><td class="title"><a href="05-epidemiology/"><strong>專題報告（二）｜青少年藥物濫用盛行率、流行病學調查</strong></a><br>陳為堅 副院長（NHRI）／楊士隆 特聘教授</td><td>主持：李德 亞洲藥防會會長</td></tr>
+      <tr><td class="time">15:00-15:30</td><td class="title"><a href="06-california-paradox/"><strong>專題報告（三）｜The California Paradox</strong></a>（講員出席，本聯盟未現場紀錄）<br>Dr. Shih Lung Huang（Cal State Sacramento）／與談：許華孚 教授</td><td>主持：林憲銘 矯正署署長</td></tr>
+      <tr><td class="time">15:30-16:00</td><td class="title"><a href="07-thailand-cannabis/"><strong>專題報告（四）｜泰國開放娛樂性大麻對社會及個人身心之衝擊</strong></a><br>Dr. Rasmon Kalayasiri（Chulalongkorn）／陳巧雲 教授</td><td>主持：鄭瑞隆 院長</td></tr>
+      <tr><td class="time">16:00-16:30</td><td class="title"><a href="08-hong-kong-drug/"><strong>專題報告（五）｜香港青少年藥物濫用現況與防治對策</strong></a><br>Dr. Zhong Hua（香港中文大學）／馬躍中 理事長</td><td>主持：林錦村 檢察長</td></tr>
+      <tr><td class="time">16:30-17:00</td><td class="title"><a href="09-japan-drug/"><strong>專題報告（六）｜日本青少年藥物濫用之現況與防治對策</strong></a><br>戴伸峰 教授／廖泊喬 醫師</td><td>主持：蕭淑芬 院長</td></tr>
+
+      <tr class="day-row"><td colspan="3">DAY 2 · 2026.05.21（Thu）｜九場論文＋綜合座談</td></tr>
+      <tr><td class="time">09:00-09:30</td><td class="title"><a href="day2/01-sem-machine-learning/"><strong>論文報告（一）｜施用毒品多元處遇成效與再犯預測：SEM × ML</strong></a><br>鄭元皓 助理研究員（司法官學院）／Dr. Shun-Yung Kevin Wang（Tarleton State）</td><td>主持：陳尚仁 共善促進協會理事長</td></tr>
+      <tr><td class="time">09:30-10:00</td><td class="title"><a href="day2/02-ketamine-health/"><strong>論文報告（二）｜K他命使用對台灣青少年健康後果</strong></a><br>陳娟瑜 教授（陽明交通大學）／沈勝昂 系主任</td><td>主持：章光明 系主任</td></tr>
+      <tr><td class="time">10:10-10:40</td><td class="title"><a href="day2/03-hong-kong-invisible-minority/"><strong>論文報告（三）｜香港青少年藥物濫用比較路徑：隱形少數族裔 vs 主流</strong></a><br>Dr. Xi Chen（嶺南大學）／Dr. Ming-Li Hsieh（Wisconsin-Eau Claire）</td><td>主持：鄭添成 主任</td></tr>
+      <tr class="aabe"><td class="time">11:00-11:30</td><td class="title"><a href="day2/04-holistic-recovery/"><strong>論文報告（四）｜從「刑事嚇阻」轉向「全人復元」<span class="badge">國教盟主場</span></strong></a><br>白鎮福 助理研究員（司法官學院）／許詩淇 副教授（中央警察大學）</td><td>主持：<strong>王瀚陽 國教盟理事長</strong></td></tr>
+      <tr><td class="time">11:30-12:00</td><td class="title"><a href="day2/05-etomidate/"><strong>論文報告（五）｜二級毒品依託咪酯偵防查緝模式：結婚蛋糕為框架</strong></a><br>賴擁連 教授（中正）／劉璟薇 助理教授（警大）／郭鐘隆 特聘教授</td><td>主持：林故廷 副局長</td></tr>
+      <tr><td class="time">13:30-14:00</td><td class="title"><a href="day2/06-systematic-review/"><strong>論文報告（六）｜全球受監禁青少年物質使用：17 國 43 篇系統性回顧</strong></a><br>Dr. Tzu-Ying Lo（St. John's University）／林英琦 主任</td><td>主持：黃蘭瑛 所長</td></tr>
+      <tr class="aabe"><td class="time">14:00-14:30</td><td class="title"><a href="day2/07-juvenile-counseling/"><strong>論文報告（七）｜少年輔導委員會結構功能之探討<span class="badge">兒少健盟主場</span></strong></a><br>鄭瑞隆 教授兼院長（中正）／許福生 系主任（警大）</td><td>主持：<strong>林志嘉 兒少健盟理事長</strong></td></tr>
+      <tr><td class="time">14:30-15:00</td><td class="title"><a href="day2/08-juvenile-fraud-life-course/"><strong>論文報告（八）｜台灣少年詐欺犯生命歷程之探究</strong></a><br>許華孚 教授／黃光甫 博士（中正）／董旭英 教授（成大）</td><td>主持：徐吉志 參議</td></tr>
+      <tr><td class="time">15:30-16:00</td><td class="title"><a href="day2/09-three-inmate-comparison/"><strong>論文報告（九）｜理性算計或成癮衝動：詐欺、毒品與混合型受刑人多面向比較</strong></a><br>葉碧翠 副教授（警大）／曾淑萍 教授（中正）</td><td>主持：洪信旭 司長</td></tr>
+      <tr><td class="time">16:00-17:00</td><td class="title"><a href="day2/panel/"><strong>綜合座談｜少年藥物濫用、犯罪與防治</strong></a><br>8 位實務界與學界專家（警政、檢察、海巡、矯正、警校、公衛）</td><td>主持：邱紹洲 局長／徐吉志 參議</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 資料來源 -->
+  <h2 class="section-title-zh">資料來源 · Sources & Methods</h2>
+  <div class="callout">
+    <h4>本紀錄網站的整理方式</h4>
     <div class="callout-body">
       <ul>
-        <li><strong>投影片影像</strong>：現場手機拍攝，共 193 張（橫向 jpg）</li>
-        <li><strong>錄音檔</strong>：18 段 m4a 共約 12,000 秒（200 分鐘）。第 1–5 場錄音完整，第 7、9 場錄音不完整，第 6 場無錄音</li>
-        <li><strong>逐字稿</strong>：以 OpenAI Whisper large-v3-turbo 模型本地轉錄（中文，含技術詞彙提示）</li>
-        <li><strong>議程資料</strong>：<em>2026_05國際研討會議程0421.pdf</em></li>
-        <li><strong>整理者</strong>：以投影片內容為主、錄音為輔；少數場次因錄音不完整以投影片為主要依據</li>
+        <li><strong>投影片影像</strong>：現場手機拍攝（Day 1 共 193 張、Day 2 上午 109 張、Day 2 下午 79 頁／頁面），點擊可放大。</li>
+        <li><strong>第 4 場（白鎮福）</strong>：因現場無拍照，由議事手冊 PDF 自動轉成 21 張投影片 jpg。</li>
+        <li><strong>錄音檔</strong>：共 23 段 m4a/aac/mp3，使用 OpenAI <em>Whisper large-v3-turbo</em> 模型本地轉錄（中文 prompt 含技術詞彙）。第二天錄音轉錄仍由背景作業處理中。</li>
+        <li><strong>議程資料</strong>：<em>2026_05國際研討會議程0421.pdf</em>。</li>
+        <li><strong>終身成就獎</strong>：照片、影片、新聞稿由中華民國犯罪學學會提供；新聞報導出自中時新聞網（賴佑維記者）。</li>
+        <li><strong>整理者</strong>：以投影片與議事手冊內容為主、錄音為輔；少數場次因錄音不完整以投影片為主要依據。</li>
       </ul>
+    </div>
+  </div>
+
+  <!-- 楊士隆閉幕語 -->
+  <div class="callout" style="background: var(--paper-warm); border-left: 4px solid var(--accent-soft);">
+    <h4>閉幕致詞 · Closing Remarks｜楊士隆 特聘教授</h4>
+    <div class="callout-body">
+      <p style="font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.7;">
+        「此國際研討會不僅<strong>深化國內外在青少年藥物濫用與犯罪防治領域之交流合作</strong>，更為我國未來推動相關政策、教育宣導及實務工作奠定堅實基礎，對提升青少年保護與社會安全具有深遠意義。」
+      </p>
+      <p style="text-align: right; margin-top: 12px;">—— 楊士隆 特聘教授<br>國立中正大學犯罪防治學系暨犯罪研究中心主任<br>本日獲頒中華民國犯罪學學會「115 年度終身成就獎」</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h4>致謝 · Acknowledgements</h4>
+    <div class="callout-body">
+      感謝<strong>中正大學犯罪研究中心、犯罪防治學系</strong>主辦本研討會；感謝<strong>楊士隆特聘教授</strong>長期推動本領域、並擔任本研討會大會主持；
+      感謝<strong>共善促進協會陳尚仁理事長、國教行動聯盟王瀚陽理事長、中華民國兒童健康聯盟林志嘉理事長</strong>等共同主辦單位代表；
+      感謝所有國內外講者、與談人、主持人、實務界代表的智慧貢獻。
     </div>
   </div>
 
