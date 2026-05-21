@@ -5,7 +5,7 @@
   <!-- 首頁 -->
   <url>
     <loc>https://aabe.org.tw/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -37,7 +37,7 @@
   <!-- 活動公告 -->
   <url>
     <loc>https://aabe.org.tw/events/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -85,7 +85,7 @@
   <!-- 2026 國際研討會詳情頁 -->
   <url>
     <loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
