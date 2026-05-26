@@ -50,6 +50,8 @@
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://aabe.org.tw/"},{"@type":"ListItem","position":2,"name":"青少年健康","item":"https://aabe.org.tw/issues/"},{"@type":"ListItem","position":3,"name":"毒駕．載具．源頭 三部曲","item":"https://aabe.org.tw/press/"},{"@type":"ListItem","position":4,"name":"Part 3｜倡議深度專題","item":"https://aabe.org.tw/press/2026-05-26-drug-driving-advocacy/"}]}
   </script>
 
+    <link rel="stylesheet" href="/assets/aabe.css">
+
   <style>
     .org-banner{background:linear-gradient(135deg,#1a3a52 0%,#2c5aa0 100%);color:#fff;padding:12px 20px;border-bottom:3px solid #fbbf24;font-size:.9rem;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
     .banner-content{max-width:1200px;margin:0 auto}
@@ -62,7 +64,7 @@
     .series-card{padding:6px 12px;background:#fff;border:1.5px solid #d1d5db;border-radius:6px;font-size:.85rem;font-weight:600;color:#4b5563;text-decoration:none;transition:all .2s}
     .series-card:hover{border-color:#dc2626;color:#dc2626;background:#fff7ed}
     .series-card.current{background:#dc2626;color:#fff;border-color:#dc2626}
-    .series-card.current::after{content:" ●"}
+    .series-card.current::after{content:" "}
     .breadcrumb{display:flex;align-items:center;padding:12px 20px;font-size:.9rem;background:#f9fafb;border-bottom:1px solid #e5e7eb;overflow-x:auto;flex-wrap:wrap}
     .breadcrumb a{color:#2563eb;text-decoration:none}
     .breadcrumb .current{color:#4b5563;font-weight:600}
@@ -185,11 +187,39 @@
     .inline-figure img{width:100%;height:auto;border-radius:8px;display:block;box-shadow:0 4px 16px rgba(0,0,0,.08)}
     .inline-figure figcaption{font-size:14px;line-height:1.7;color:#555;margin-top:14px;text-align:center;font-style:italic;padding:0 8px}
     @media (max-width:640px){.inline-figure figcaption{font-size:13px;text-align:left}}
+  
+    /* === Phase 2: Emoji→SVG icon system === */
+    .sn{display:inline-flex;width:1.5em;height:1.5em;border-radius:50%;background:#1a3a52;color:#fff;font-size:.65em;font-weight:700;align-items:center;justify-content:center;margin-right:.45em;vertical-align:2px;font-family:'Inter','Noto Sans TC',sans-serif;line-height:1}
+    .ic{display:inline-block;width:1em;height:1em;vertical-align:-0.125em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-right:.35em}
+    h2 .ic, h3 .ic{width:1.1em;height:1.1em;vertical-align:-0.15em}
   </style>
 </head>
 <body>
 
-  <header class="org-banner">
+  <!-- 主站統一 topbar -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="topbar-logo">
+      <picture>
+        <source media="(max-width: 768px)" srcset="/wp-content/uploads/logo-naer-icon-only.png">
+        <img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟｜Action Alliance on Basic Education">
+      </picture>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="切換選單">
+    <label for="nav-toggle" class="nav-toggle-btn" aria-label="開啟選單"><span></span></label>
+    <nav class="topbar-nav" aria-label="Primary">
+      <a href="/about/">關於我們</a>
+      <a href="/issues/">兒少與教育議題</a>
+      <a href="/events/" class="nav-events">活動公告<span class="nav-dot"></span></a>
+      <a href="/chronicle/">大事紀</a>
+      <a href="/act/">行動與參與</a>
+      <a href="/press/" aria-current="page">媒體與資料</a>
+      <a href="/contact/">聯絡我們</a>
+    </nav>
+  </div>
+</header>
+
+<header class="org-banner">
     <div class="banner-content">
       <span>國教行動聯盟</span><span class="separator">|</span>
       <span>政策知識庫</span><span class="separator">|</span>
@@ -199,12 +229,12 @@
 
   <div class="series-nav-bar">
     <div class="series-nav-inner">
-      <span class="series-label">📚 政策三部曲｜毒駕・載具・源頭</span>
+      <span class="series-label"><svg class="ic" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg> 政策三部曲｜毒駕・載具・源頭</span>
       <span class="series-position">第 3 篇 / 共 3 篇</span>
       <div class="series-cards">
-        <a class="series-card" href="../2026-05-26-vape-device-research/">① 載具研究</a>
-        <a class="series-card" href="../2026-05-26-drug-driving-policy/">② 政策深度</a>
-        <a class="series-card current" href="#">③ 倡議專題</a>
+        <a class="series-card" href="../2026-05-26-vape-device-research/"><span class="sn">1</span> 載具研究</a>
+        <a class="series-card" href="../2026-05-26-drug-driving-policy/"><span class="sn">2</span> 政策深度</a>
+        <a class="series-card current" href="#"><span class="sn">3</span> 倡議專題</a>
       </div>
     </div>
   </div>
@@ -230,10 +260,10 @@
     </p>
 
     <div class="meta-info">
-      <span>📅 2026 年 5 月 26 日</span>
-      <span>✍️ 國教行動聯盟｜<a href="https://policy.aabe.org.tw/">政策知識庫</a></span>
-      <span>📋 審稿：<span class="person">王瀚陽 理事長</span></span>
-      <span>📂 三部曲 Part 3 / 字數約 3,800 字 / 預計閱讀 12 分鐘</span>
+      <span><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 2026 年 5 月 26 日</span>
+      <span><svg class="ic" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>️ 國教行動聯盟｜<a href="https://policy.aabe.org.tw/">政策知識庫</a></span>
+      <span><svg class="ic" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg> 審稿：<span class="person">王瀚陽 理事長</span></span>
+      <span><svg class="ic" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg> 三部曲 Part 3 / 字數約 3,800 字 / 預計閱讀 12 分鐘</span>
     </div>
 
     <!-- ========== 場景開頭 ========== -->
@@ -243,7 +273,7 @@
       <figcaption><strong>5/20-21 國際研討會跨界結盟瞬間</strong>｜學界、實務界、NGO 共同警告——新興毒品已不只是個人吸食問題，而是電子煙載具、分裝場、網路販售構成的新型流通鏈。<strong>當時的警告，於彰化、中和兩起死傷事故後具象化為道路公共安全災難</strong></figcaption>
     </figure>
 
-    <h2 class="section-head">① 24 小時，兩條命，兩個家庭</h2>
+    <h2 class="section-head"><span class="sn">1</span> 24 小時，兩條命，兩個家庭</h2>
 
     <p class="lede scene-open">2026 年 5 月 22 日，彰化市彰南路一家火鍋店外，林姓老翁一家三代坐在店外聊天。李姓男子駕駛的貨車失控撞上路邊電線桿，再衝進火鍋店外側——<strong>林老翁與兒子當場死亡，孫子重傷</strong>。員警到場後對李男實施<strong>唾液快篩</strong>呈陽性反應，依《<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0000001" target="_blank" rel="noopener">刑法》第 185-3 條第 1 項第 2 款（吸食毒品不能安全駕駛）</a>及第 2 項（致死加重刑度）<strong>以現行犯逮捕</strong>。這是彰化市本月的<strong>第二起毒駕致死案件</strong><a href="#source-1" class="source-link">[1]</a>。</p>
 
@@ -255,7 +285,7 @@
 
     <!-- ========== 核心數據卡 ========== -->
     <section>
-      <h2 class="section-head">② 彰化、中和不是個案——是趨勢的兩個點</h2>
+      <h2 class="section-head"><span class="sn">2</span> 彰化、中和不是個案——是趨勢的兩個點</h2>
 
       <p>把鏡頭拉遠，這兩起 24 小時連續發生的死亡事件，落在一條「<strong>年增 2.7 倍</strong>」的曲線上。內政部警政署 2026 年 4 月底公布的全國數據顯示<a href="#source-4" class="source-link">[4]</a>：</p>
 
@@ -279,7 +309,7 @@
 
     <!-- ========== 五月時間軸 ========== -->
     <section>
-      <h2 class="section-head">③ 五月的政府動作清單，與一塊還沒補上的拼圖</h2>
+      <h2 class="section-head"><span class="sn">3</span> 五月的政府動作清單，與一塊還沒補上的拼圖</h2>
 
       <p>把鏡頭拉近最近這個月。從 5 月 11 日到 5 月 23 日彰化案發生為止，行政體系不是沒動——但每一項動作都聚焦在「<strong>下游補救</strong>」，沒有觸及「載具源頭」。</p>
 
@@ -321,7 +351,7 @@
 
     <!-- ========== 源頭已經在我們腳下 ========== -->
     <section>
-      <h2 class="section-head">④ 「源頭已經在我們腳下」——當製毒鏈走出地下工廠</h2>
+      <h2 class="section-head"><span class="sn">4</span> 「源頭已經在我們腳下」——當製毒鏈走出地下工廠</h2>
 
       <p>5 月 14 日海巡署破獲的依托咪酯酸轉化首例，比新聞標題上的「破案」更值得停下來想一想。這個案件揭露三件事：</p>
 
@@ -343,7 +373,7 @@
 
     <!-- ========== 為什麼酒駕可以、毒駕不行 ========== -->
     <section>
-      <h2 class="section-head">⑤ 「同樣一條命」——酒駕與毒駕的不公平悖論</h2>
+      <h2 class="section-head"><span class="sn">5</span> 「同樣一條命」——酒駕與毒駕的不公平悖論</h2>
 
       <p>彰化案的李姓男子之所以被現行犯逮捕，是因為員警備有<strong>唾液快篩試劑</strong>（lateral-flow immunoassay，現場 10 分鐘判定）。中和案的王姓男子被新北檢聲押，是因為 9 天前才剛三讀通過的<strong>刑事訴訟法第 101 條之 1</strong>已將毒駕納入得預防性羈押犯罪<a href="#source-6" class="source-link">[6]</a>。</p>
 
@@ -370,7 +400,7 @@
 
     <!-- ========== 兩項訴求 ========== -->
     <section>
-      <h2 class="section-head">⑥ 國教行動聯盟對行政院的兩項訴求</h2>
+      <h2 class="section-head"><span class="sn">6</span> 國教行動聯盟對行政院的兩項訴求</h2>
 
       <p>把 5 月以來的所有事件——彰化、中和、依托咪酯酸首例、劉世芳記者會、預防性羈押修法——放在一起檢視，我們可以看到政府已經在做下游與末端的措施。<strong>但少了關鍵的中間一塊：載具與通路的源頭管理</strong>。</p>
 
@@ -407,7 +437,7 @@
       <figcaption><strong>5/21 三盟領導合影</strong>｜（左→右）<strong>王瀚陽</strong>（國教盟理事長）、<strong>張安慈</strong>（國教盟副理事長）、<strong>陳尚仁</strong>（共善促進協會理事長）、曾品傑教授、<strong>張文昌</strong>（共善秘書長／國教盟常務理事）、<strong>唐仙美</strong>（國教盟理事）。<strong>三盟整合教育、健康、犯罪三大領域，共同向行政院提出兩項訴求</strong></figcaption>
     </figure>
 
-    <h2 class="section-head">⑦ 為什麼一個守法的人會在意這件事？</h2>
+    <h2 class="section-head"><span class="sn">7</span> 為什麼一個守法的人會在意這件事？</h2>
 
       <p>讀到這裡，您可能在想：我又不吸毒、不開貨車、不騎機車，這件事跟我有什麼關係？</p>
 
@@ -422,7 +452,7 @@
 
     <!-- ========== FAQ ========== -->
     <section class="faq-section">
-      <h2 class="section-head">❓ 常見問題</h2>
+      <h2 class="section-head"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> 常見問題</h2>
 
       <div class="faq-item">
         <h3>Q1：為什麼說毒駕的第一現場不在馬路上？</h3>
@@ -456,7 +486,7 @@
 
     <!-- Related -->
     <div class="related-links">
-      <h2>🔗 相關議題</h2>
+      <h2><svg class="ic" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> 相關議題</h2>
       <ul>
         <li><a href="../2026-05-26-vape-device-research/">本系列 Part 1｜電子煙、加熱菸、喪屍煙彈——當「載具」成為毒品流通溫床</a></li>
         <li><a href="../2026-05-26-drug-driving-policy/">本系列 Part 2｜為什麼毒駕難以斷根？從依託咪酯升二級到預防性羈押的政策路徑</a></li>
@@ -468,7 +498,7 @@
 
     <!-- Sources -->
     <div class="sources">
-      <h2>📚 參考文獻</h2>
+      <h2><svg class="ic" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg> 參考文獻</h2>
       <ol>
         <li id="source-1">公視新聞網（2026 年 5 月 23 日）。<em>彰化彰南路毒駕悲劇 一家 3 口 2 死 1 傷　李男唾液快篩陽性遭逮</em>。<a href="https://news.pts.org.tw/article/809692" target="_blank" rel="noopener">https://news.pts.org.tw/article/809692</a></li>
         <li id="source-2">中央社（2026 年 5 月 23 日）。<em>中和毒駕車禍 1 死 1 傷　新北檢聲押肇事駕駛</em>。<a href="https://www.cna.com.tw/news/asoc/202605230200.aspx" target="_blank" rel="noopener">https://www.cna.com.tw/news/asoc/202605230200.aspx</a></li>
@@ -489,7 +519,7 @@
 
     <!-- Series Footer -->
     <section class="series-footer">
-      <h2>📚 繼續閱讀本系列｜毒駕．載具．源頭 三部曲</h2>
+      <h2><svg class="ic" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg> 繼續閱讀本系列｜毒駕．載具．源頭 三部曲</h2>
       <div class="series-grid">
         <a class="series-full-card" href="../2026-05-26-vape-device-research/">
           <div class="series-num">← PART 1</div>
@@ -502,7 +532,7 @@
           <p class="series-desc">林故廷副局長逐字稿、毒駕／酒駕刑責、預防性羈押修法</p>
         </a>
         <div class="series-full-card current">
-          <div class="series-num">PART 3 ● 正在閱讀</div>
+          <div class="series-num">PART 3 正在閱讀</div>
           <div class="series-title">深度倡議專題</div>
           <p class="series-desc">彰化、中和 24 小時兩死｜兩項訴求全解析</p>
         </div>
@@ -510,7 +540,7 @@
     </section>
 
     <footer class="update-date">
-      <p>📞 <strong>新聞聯絡人：國教行動聯盟 理事長 王瀚陽｜0983-097-165</strong></p>
+      <p><svg class="ic" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <strong>新聞聯絡人：國教行動聯盟 理事長 王瀚陽｜0983-097-165</strong></p>
       <p>本文為 2026 年 5 月 26 日國教行動聯盟新聞稿延伸深度專題。Schema.org + APA 7 引用｜GEO 優化頁面｜全文約 3,800 字</p>
     </footer>
 
