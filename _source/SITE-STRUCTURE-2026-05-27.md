@@ -318,3 +318,40 @@ _advocacy-deploy/
 ---
 
 **最後更新**：2026-05-27 by Claude
+
+---
+
+## 📌 P0 sweep 完成紀錄（2026-05-27 晚）
+
+依用戶兩輪 audit 結果（先發現我描述的舊問題實際已修，再發現我新 sweep 仍漏 4 處 phrasing 變體），完成跨三站 P0 一次清創：
+
+### 完成項目（5 commits）
+- 主站 `05a3f02` + `93e11b0`：14 處 29→31（首頁 meta、累計數字、contact、press、llms.txt 等）+ 1 處錯英文名 + 1 處 Schema alt-name + 還原 2 處教學文字
+- Policy `4997d70`：77 檔 / 371 處（276 個 naer-tw.github.io URL + 49 個 Schema @id 子站 → 主站 + 38 個 advocacy URL + 等）
+- Advocacy `5b5364f`：3 檔（4 個 @id + 2 處社團法人 + 4 處 29→31）
+
+### 清除後三站一致性
+| P0 項 | 主站 | Policy | Advocacy |
+|---|---|---|---|
+| NAER / 錯英文名 | 0 (4 處教學脈絡保留) | 0 | 0 |
+| 社團法人國教行動聯盟 | 1 處教學保留 | 0 | 0 |
+| 29 篇 / 25 篇（應 31） | 0 | 0 | 0 |
+| naer-tw.github.io 舊連結 | 0 | 0 | 0 |
+| Schema @id（應 aabe.org.tw/#organization）| ✓ 統一 | ✓ 統一 | ✓ 統一 |
+
+### 用戶 audit 方法論教訓（寫入未來 SOP）
+1. **audit 一份結構文件之前必先驗證它與實際檔案的一致性** — 我的 SITE-STRUCTURE doc 寫完即過時，user 跟著我錯
+2. **計數出處要 grep 多種 phrasing 變體**：「29 篇」「29篇」「29 個」「29 篇政策深度」「政策深度分析（29 篇）」「>29 篇<」（HTML 內 a tag 包覆）
+3. **「社團法人」要分流處理**：教學脈絡（「請勿使用」「人民團體 vs 社團法人」）必須保留，自稱 / Schema alt-name 才要刪
+4. **NAER 4 處主站殘留**為教學警示用法（「請勿用 NAER」），應保留
+
+### 仍待動的 P1（待用戶決定）
+- press 三版本整併（press 68 / press-v2 11 / press-complete 124）— 整合單一 canonical 版本
+- 抽 `aabe-tokens.css` 三站共享（色彩 / 字級 / spacing / radius）
+- `logo-aabe.svg` + 保留 PNG redirect
+- Logo PNG 視覺內容檢查（是否含 NAER 字樣）
+
+### P3（架構級，文件止血先）
+- GitHub `naer-tw` org rename（牽動部署、舊連結、references — 不急）
+- events 子站化
+- advocacy docs 化或隱身化
