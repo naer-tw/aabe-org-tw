@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
+<script>document.documentElement.className += ' js';</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -148,9 +149,14 @@
     .infocard dl{grid-template-columns:1fr;gap:4px 0;}
     .infocard dt{margin-top:8px;}
   }
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,#0d9488,#0c4a6e);transition:width .1s linear;}
+  .js .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  .js .reveal.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none;}}
 </style>
 </head>
 <body>
+<div id="progress"></div>
 
 <header class="topbar">
   <div class="topbar-inner">
@@ -184,8 +190,8 @@
     <div class="cap">2026.05.29 台灣拒菸聯盟世界無菸日記者會 ─ 6 個民間團體代表於台大校友會館合影</div>
   </div>
 
-  <h2>活動資訊</h2>
-  <div class="infocard">
+  <h2 class="reveal">活動資訊</h2>
+  <div class="infocard reveal">
     <dl>
       <dt>日期</dt><dd>2026 年 5 月 29 日（五）上午 10:00</dd>
       <dt>地點</dt><dd>台大校友會館 3B 會議室（臺北市中正區濟南路一段 2-1 號）</dd>
@@ -195,7 +201,7 @@
     </dl>
   </div>
 
-  <h2>關於這場記者會</h2>
+  <h2 class="reveal">關於這場記者會</h2>
   <p>
     5 月 31 日<span class="entity">世界無菸日</span>前夕，<span class="entity">台灣拒菸聯盟</span>於台大校友會館舉行記者會。WHO 接連三年（2024-2026）揭露菸品藉風味添加物誘惑年輕人上癮，今年更推出「別被加味菸品騙了」影片，把新興菸品比喻為「恐怖室友」。反觀台灣，自《菸害防制法》新法 2023 年上路、明定加味菸應予禁止，卻已拖延超過 <strong>40 個月</strong>，政府遲未依法公告「除菸草原味外，禁止所有加味菸品」。
   </p>
@@ -203,8 +209,8 @@
     聯盟指出，國健署 2023 年首次預告僅禁 4 種口味、2024 年改為禁「27 種成分」，但菸商仍可從上千種添加物提煉相同口味，「破口愈補愈大」。在 0-18 歲津貼政策討論之際，拒菸聯盟呼籲，照顧下一代應先從<strong>影響年輕人健康最深的禁止加味菸品</strong>做起。
   </p>
 
-  <h2>出席代表與發言重點</h2>
-  <div class="speakers">
+  <h2 class="reveal">出席代表與發言重點</h2>
+  <div class="speakers reveal">
     <div class="speaker">
       <span class="who">郭斐然</span>　<span class="role">台灣醫界菸害防制聯盟祕書長／醫師</span>
       <p class="say">尼古丁是大腦毒素，直接傷害青少年仍在發育的前額葉皮質，干擾認知、學習與衝動控制；新興菸品以「加味」降低戒心，成為青少年接觸菸品的入門磚。</p>
@@ -231,15 +237,15 @@
     </div>
   </div>
 
-  <h2>三項訴求</h2>
-  <ol class="demands">
+  <h2 class="reveal">三項訴求</h2>
+  <ol class="demands reveal">
     <li>依法公告「除菸草原味外，禁止所有加味菸品」，加味加熱菸下架。</li>
     <li>建立「衛生福利部新興菸品查緝平臺」，確實監控新興菸品的魅惑行銷。</li>
     <li>推動無菸品世代。</li>
   </ol>
 
-  <h2>活動花絮</h2>
-  <div class="moments">
+  <h2 class="reveal">活動花絮</h2>
+  <div class="moments reveal">
     <figure>
       <img src="images/photo-conference.jpg" alt="記者會出席代表手持『禁止加味菸品刻不容緩』『勿犧牲青少年』訴求標語">
       <figcaption>出席代表手持「禁止加味菸品刻不容緩」「勿犧牲青少年」訴求標語</figcaption>
@@ -250,8 +256,8 @@
     </figure>
   </div>
 
-  <h2>延伸閱讀</h2>
-  <div class="related">
+  <h2 class="reveal">延伸閱讀</h2>
+  <div class="related reveal">
     <a href="https://policy.aabe.org.tw/youth-health/20260529-world-no-tobacco-day-ban-flavoured.html">
       <div class="k">政策知識庫</div>
       <div class="t">世界無菸日前夕：6 民間團體呼籲落實禁加味菸</div>
@@ -275,5 +281,15 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver' in window)){items.forEach(function(el){el.classList.add('in');});}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -7% 0px'});items.forEach(function(el){io.observe(el);});}
+  var bar=document.getElementById('progress');function upd(){var h=document.documentElement;var max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';}
+  window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd,{passive:true});upd();
+})();
+</script>
 </body>
 </html>

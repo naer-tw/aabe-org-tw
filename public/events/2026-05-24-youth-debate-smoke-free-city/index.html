@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
+<script>document.documentElement.className += ' js';</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -150,9 +151,14 @@
     .infocard dl{grid-template-columns:1fr;gap:4px 0;}
     .infocard dt{margin-top:8px;}
   }
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,#0d9488,#0c4a6e);transition:width .1s linear;}
+  .js .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  .js .reveal.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none;}}
 </style>
 </head>
 <body>
+<div id="progress"></div>
 
 <header class="topbar">
   <div class="topbar-inner">
@@ -186,8 +192,8 @@
     <div class="cap">2026.05.24 臺北市青年發聲盃「無菸城市」辯論賽 ─ 正反雙方學生於國立臺灣大學應用力學研究所合影</div>
   </div>
 
-  <h2>活動資訊</h2>
-  <div class="infocard">
+  <h2 class="reveal">活動資訊</h2>
+  <div class="infocard reveal">
     <dl>
       <dt>日期</dt><dd>2026 年 5 月 24 日（六）</dd>
       <dt>地點</dt><dd>國立臺灣大學應用力學研究所</dd>
@@ -198,7 +204,7 @@
     </dl>
   </div>
 
-  <h2>關於這場辯論賽</h2>
+  <h2 class="reveal">關於這場辯論賽</h2>
   <p>
     國教盟青年部於 5 月 24 日假<span class="entity">國立臺灣大學應用力學研究所</span>舉辦「2026 臺北市青年發聲盃公共議題辯論賽」，與全球慈善行動協會、中華仁親社區關懷協會、國際兒少人權促進會、董氏基金會共同主辦，邀集北北基桃國中、高中職及大專院校學生跨校組隊，針對「您是否支持 2026 年台北市推動『無菸城市』之政策？」進行辯論。
   </p>
@@ -206,8 +212,8 @@
     這場辯論賽展現青年世代對公共政策的理性參與。無論支持或反對，青年們的論點都指向同一個核心：<strong>要的不是「看起來無菸」，而是「真正無菸」的城市</strong>。青年部後續將辯論賽彙整的政策疑問，整理為對台北市無菸城市政策的三道考驗（二手菸外溢、執行配套、加熱菸納管），詳見下方延伸閱讀。
   </p>
 
-  <h2>得獎隊伍</h2>
-  <div class="awards">
+  <h2 class="reveal">得獎隊伍</h2>
+  <div class="awards reveal">
     <div class="award gold">
       <img src="images/photo-champion.jpg" alt="第一名永和小戲院隊頒獎">
       <div class="body">
@@ -234,8 +240,8 @@
     </div>
   </div>
 
-  <h2>活動花絮</h2>
-  <div class="moments">
+  <h2 class="reveal">活動花絮</h2>
+  <div class="moments reveal">
     <figure>
       <img src="images/photo-opening.jpg" alt="2026 臺北市青年發聲盃辯論賽開場">
       <figcaption>賽事開場，跨校青年齊聚台大應用力學研究所</figcaption>
@@ -246,8 +252,8 @@
     </figure>
   </div>
 
-  <h2>延伸閱讀</h2>
-  <div class="related">
+  <h2 class="reveal">延伸閱讀</h2>
+  <div class="related reveal">
     <a href="https://aabe.org.tw/press/2026-06-01-smoke-free-city-debate/">
       <div class="k">新聞稿</div>
       <div class="t">響應世界無菸日，青年辯論賽檢驗北市無菸城市</div>
@@ -276,5 +282,15 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver' in window)){items.forEach(function(el){el.classList.add('in');});}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -7% 0px'});items.forEach(function(el){io.observe(el);});}
+  var bar=document.getElementById('progress');function upd(){var h=document.documentElement;var max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';}
+  window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd,{passive:true});upd();
+})();
+</script>
 </body>
 </html>
