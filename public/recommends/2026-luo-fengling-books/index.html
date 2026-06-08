@@ -60,7 +60,7 @@
     {"@type": "Thing", "name": "特殊教育"}
   ],
   "mentions": [
-    {"@type": "Book", "name": "融合教育，可能跟你想的不一樣", "author": {"@type": "Person", "name": "羅丰苓"}, "datePublished": "2026", "publisher": {"@type": "Organization", "name": "大塊文化"}, "url": "https://www.books.com.tw/products/0011051311"},
+    {"@type": "Book", "name": "融合教育，可能跟你想的不一樣", "author": {"@type": "Person", "name": "羅丰苓"}, "datePublished": "2026", "publisher": {"@type": "Organization", "name": "大可文化"}, "url": "https://www.books.com.tw/products/0011051311"},
     {"@type": "Book", "name": "霸凌真相，可能跟你想的不一樣", "author": {"@type": "Person", "name": "羅丰苓"}, "datePublished": "2024", "publisher": {"@type": "Organization", "name": "遠流出版"}, "url": "https://www.books.com.tw/products/0011000949"}
   ]
 }
@@ -196,6 +196,15 @@
   .fb:hover{background:#0f2740;transform:translateY(-1px);}
 
   .note{font-size:.83rem;color:var(--soft);background:var(--paper2);border:1px solid var(--line);border-radius:12px;padding:15px 20px;margin:24px 0;line-height:1.8;}
+  .invite{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:linear-gradient(135deg,#16314f,#234a72);color:#fff;border-radius:14px;padding:20px 26px;margin:30px 0;box-shadow:0 14px 34px rgba(22,49,79,.18);}
+  .invite .invite-ic{flex:0 0 auto;width:42px;height:42px;border-radius:50%;background:rgba(201,162,74,.25);display:flex;align-items:center;justify-content:center;}
+  .invite .invite-ic svg{width:21px;height:21px;stroke:#c9a24a;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .invite-body{flex:1;min-width:200px;}
+  .invite-t{font-weight:800;font-size:1.02rem;letter-spacing:.5px;}
+  .invite-d{font-size:.88rem;opacity:.9;margin-top:4px;line-height:1.7;}
+  .invite-mail{flex:0 0 auto;background:#c9a24a;color:#16314f;font-weight:800;text-decoration:none;padding:11px 20px;border-radius:9px;font-size:.95rem;letter-spacing:.5px;transition:.2s;}
+  .invite-mail:hover{background:#d9b35a;transform:translateY(-1px);}
+  @media(max-width:680px){.invite-mail{width:100%;text-align:center;}}
 
   footer{margin-top:54px;background:var(--navy);color:#cdd8e6;font-size:.86rem;}
   footer .wrap{padding:30px 24px;}
@@ -263,6 +272,15 @@
     霸凌防制與融合教育，是國教行動聯盟長年關注的兩大現場議題。第一線輔導教師<span class="em">羅丰苓</span>老師的兩本著作，沒有高調的論辯，而是把多年在教室裡磨練出來的方法，化為家長與老師「立刻用得上」的工具。理事長王瀚陽讀完全書後，誠摯為這兩本書撰寫推薦序，分享於此，邀請所有關心孩子的家長、教育工作者與政策制定者一同閱讀。
   </p>
 
+  <div class="invite reveal">
+    <div class="invite-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+    <div class="invite-body">
+      <div class="invite-t">講座邀約 ‧ 媒體採訪聯繫</div>
+      <div class="invite-d">羅丰苓老師接受校園、家長團體與機構之霸凌防制、融合教育、正向管教、青少年性教育等專題講座與相關邀約。</div>
+    </div>
+    <a class="invite-mail" href="mailto:nobully123@gmail.com">nobully123@gmail.com</a>
+  </div>
+
   <!-- ============ 書二 ============ -->
   <div id="book1" class="sec-h reveal">
     <div class="n">RECOMMENDATION 01</div>
@@ -270,7 +288,7 @@
   </div>
   <div class="bookbar reveal">
     <img class="bmini" src="images/cover-inclusive.jpg" alt="《融合教育，可能跟你想的不一樣》書封">
-    <div class="bt"><strong>融合教育，可能跟你想的不一樣</strong><span>羅丰苓 著｜大塊文化｜2026</span></div>
+    <div class="bt"><strong>融合教育，可能跟你想的不一樣</strong><span>羅丰苓 著｜大可文化｜2026</span></div>
     <a class="buy" href="https://www.books.com.tw/products/0011051311?sloc=main" target="_blank" rel="noopener">
       <svg class="ic" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>博客來購書
     </a>
@@ -328,26 +346,28 @@
     <div class="ah">
       <h3>羅丰苓</h3>
     </div>
-    <div class="role">台中市黎明國中專任輔導教師 · 霸凌防制與輔導實務專家 · 遠見・天下文化《未來 Family》專欄作家</div>
+    <div class="role">全職講師及作家 · 霸凌防制與輔導實務專家 · 臺師大特殊教育博士 · 遠見・天下文化《未來 Family》專欄作家</div>
     <div class="agrid">
       <div>
         <h4>霸凌專書著作</h4>
         <ul>
           <li>《霸凌真相，可能跟你想的不一樣》（2024，遠流出版）</li>
           <li>《SAFE 班級輔導模式：不再霸凌，也不再受凌》（2012，張老師文化）</li>
-          <li>《融合教育，可能跟你想的不一樣》（2026，大塊文化）</li>
+          <li>《融合教育，可能跟你想的不一樣》（2026，大可文化）</li>
+          <li>《大人不敢跟我們說的秘密——青少年性平教育專書》</li>
         </ul>
         <h4>媒體與專論</h4>
         <ul>
           <li>受臺灣大學教授邀請為《學生事務與輔導》撰寫「特教校園霸凌」專論</li>
           <li>親子天下、公共電視、教育廣播電臺、人間衛視等媒體專訪</li>
-          <li>於全國各級學校與教育主管機關進行 30 餘場霸凌防制與融合教育講座</li>
+          <li>受邀於教育部、各縣市教育局與全國各級學校進行數百場專題講座，主題涵蓋校園霸凌輔導、正向管教、親師溝通、青少年性教育、網路成癮與身心障礙學生輔導</li>
         </ul>
       </div>
       <div>
         <h4>專業現職與資歷</h4>
         <ul>
-          <li>台中市黎明國中專任輔導教師（2012 迄今）、輔導工作委員、性平人員</li>
+          <li>全職講師及作家（曾任國中專任輔導教師）；列入台中市性平人才資料庫</li>
+          <li>多次以「專家學者」身分受邀出席霸凌政策研議等公聽會</li>
           <li>教育部國教署「教師輔導與管教知能工作坊」「兒少保護種子教師」培訓講師</li>
           <li>台中市學生輔導諮商中心「防制校園霸凌種子人員」培訓老師</li>
           <li>台中市衛生局毒品危害防制中心「共病會議」諮詢專家</li>
@@ -359,6 +379,15 @@
     <a class="fb" href="https://www.facebook.com/p/%E7%BE%85%E4%B8%B0%E8%8B%93%E8%BC%94%E5%B0%8E%E8%80%81%E5%B8%AB-100057213799684/" target="_blank" rel="noopener">
       <svg class="ic" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>羅丰苓輔導老師 Facebook 粉絲專頁
     </a>
+  </div>
+
+  <div class="invite reveal">
+    <div class="invite-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+    <div class="invite-body">
+      <div class="invite-t">講座邀約 ‧ 媒體採訪聯繫</div>
+      <div class="invite-d">羅丰苓老師接受校園、家長團體與機構之霸凌防制、融合教育、正向管教、青少年性教育等專題講座與相關邀約。</div>
+    </div>
+    <a class="invite-mail" href="mailto:nobully123@gmail.com">nobully123@gmail.com</a>
   </div>
 
   <div class="note reveal">
