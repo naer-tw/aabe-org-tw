@@ -491,8 +491,9 @@
       <h2 class="section-title">近期與即將舉辦</h2>
       <span class="section-hint">Upcoming</span>
     </div>
+    <!-- AABE:EVENTS-START -->
 
-    <div class="upcoming">
+    <div class="upcoming" data-event-start="2026-05-20" data-event-end="2026-06-04">
       <span class="upcoming-kicker">Upcoming</span>
       <h3>兒少權法修正草案公聽會</h3>
       <div class="upcoming-when">2026 年 5 月-6 月・衛福部五場公聽會・國教盟全程出席</div>
@@ -503,7 +504,7 @@
       <span class="upcoming-note">五場時程：5/20 南、5/22 北、5/23 兒少、5/28 中、6/4 東。北區為國教盟主場（理事長王瀚陽、青年部林韋伶、政策研究組三角色發言）。</span>
     </div>
 
-    <div class="upcoming">
+    <div class="upcoming" data-event-start="2026-06-27" data-event-end="2026-06-28">
       <span class="upcoming-kicker">Upcoming · 國教盟協辦</span>
       <h3>2026 台灣ICF研究學會國際研討會──跨越生命歷程的優勢</h3>
       <div class="upcoming-when">2026 年 6 月 27-28 日・國立臺灣大學公共衛生學院・國教盟為協辦單位之一</div>
@@ -514,6 +515,7 @@
       <span class="upcoming-note">6/27 國際研討會限 200 人、6/28 工作坊限 50 人；報名以主辦單位台灣ICF研究學會公告之簡章為準。</span>
     </div>
 
+    <!-- AABE:EVENTS-END -->
     <p style="font-size:0.92rem;color:var(--ink-3);margin-top:24px;">活動資訊持續更新中。如需即時通知，請追蹤
       <a href="https://www.facebook.com/twedumove/" style="color:var(--brand-orange);font-weight:600;" target="_blank" rel="noopener">國教盟 Facebook</a>。
     </p>
@@ -711,5 +713,25 @@
   </div>
 </footer>
 
+<script>
+/* AABE freshness：data-date 14 天內自動加 NEW；data-event-end 過期自動標已結束（裝飾性，無 JS 不影響內容） */
+(function(){
+  var NOW=Date.now(), WIN=14*86400000;
+  document.querySelectorAll('[data-date]').forEach(function(c){
+    var t=Date.parse(c.getAttribute('data-date')+'T00:00:00+08:00');
+    if(isNaN(t)||NOW-t>=WIN||NOW<t-86400000) return;
+    var s=document.createElement('span'); s.textContent='NEW';
+    s.style.cssText='display:inline-block;margin-left:8px;padding:2px 8px;background:#c8385a;color:#fff;font:700 0.65rem/1.4 Inter,sans-serif;letter-spacing:.15em;border-radius:3px;vertical-align:middle;';
+    (c.querySelector('.date,.article-date')||c.firstElementChild||c).appendChild(s);
+  });
+  document.querySelectorAll('[data-event-end]').forEach(function(b){
+    var end=Date.parse(b.getAttribute('data-event-end')+'T23:59:59+08:00');
+    if(isNaN(end)||NOW<=end) return;
+    b.style.opacity='0.62';
+    var k=b.querySelector('.upcoming-kicker');
+    if(k){k.textContent='已結束';k.style.color='#9ca3af';}
+  });
+})();
+</script>
 </body>
 </html>
