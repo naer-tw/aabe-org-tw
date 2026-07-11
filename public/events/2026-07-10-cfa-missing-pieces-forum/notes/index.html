@@ -54,6 +54,43 @@
   ]
 }
 </script>
+<style>
+/* ── 公民監督社群邀請（本頁專用）── */
+.join-band{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;
+  background:var(--accent);border-radius:8px;padding:20px 26px;margin:36px 0 30px;}
+.join-band p{margin:0;flex:1;min-width:250px;font-family:var(--sans);font-weight:700;
+  font-size:16.5px;line-height:1.6;color:#fbf6ec;letter-spacing:.05em;}
+.join-btn{display:inline-block;background:var(--accent-soft);color:#fff;font-family:var(--sans);
+  font-weight:700;font-size:15px;letter-spacing:.08em;text-decoration:none;
+  padding:11px 24px;border-radius:999px;white-space:nowrap;}
+.join-btn:hover{filter:brightness(1.08);}
+.join-mid{border:1px solid var(--line);border-left:4px solid var(--accent-soft);
+  background:var(--paper-warm);border-radius:0 8px 8px 0;padding:20px 26px;margin:36px 0;
+  display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;}
+.join-mid .tx{flex:1;min-width:250px;}
+.join-mid h4{margin:0 0 6px;font-family:var(--sans);font-size:17px;color:var(--accent);letter-spacing:.06em;}
+.join-mid p{margin:0;font-family:var(--sans);font-size:15px;color:var(--ink-soft);line-height:1.75;}
+.join-end{display:flex;flex-wrap:wrap;align-items:center;gap:26px 40px;
+  background:var(--accent);border-radius:10px;padding:34px 38px;margin:40px 0 44px;}
+.join-end .tx{flex:1;min-width:270px;}
+.join-end .kick{font-family:var(--sans);font-size:12.5px;font-weight:700;color:#e08a4e;
+  letter-spacing:.28em;margin:0 0 10px;}
+.join-end h4{margin:0 0 10px;font-family:var(--serif);font-size:26px;color:#fbf6ec;letter-spacing:.04em;}
+.join-end p{margin:0 0 18px;font-family:var(--sans);font-size:15.5px;line-height:1.8;color:rgba(251,246,236,.85);}
+.join-end .qr{background:#fff;border-radius:10px;padding:10px;line-height:0;}
+.join-end .qr img{width:132px;height:132px;display:block;}
+.join-float{position:fixed;right:18px;bottom:18px;z-index:80;
+  opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .3s,transform .3s;}
+.join-float.on{opacity:1;transform:none;pointer-events:auto;}
+.join-float .pill{display:flex;align-items:center;gap:9px;background:var(--accent);color:#fbf6ec;
+  font-family:var(--sans);font-weight:700;font-size:14.5px;letter-spacing:.06em;text-decoration:none;
+  padding:12px 20px;border-radius:999px;box-shadow:0 10px 28px rgba(6,63,50,.4);}
+.join-float .pill::before{content:"";width:9px;height:9px;border-radius:50%;background:#e08a4e;}
+.join-float .x{position:absolute;top:-7px;right:-7px;width:22px;height:22px;border-radius:50%;
+  border:none;background:#fbf6ec;color:var(--accent);font-size:13px;line-height:1;cursor:pointer;
+  box-shadow:0 2px 8px rgba(0,0,0,.25);font-family:var(--sans);padding:0;}
+@media(max-width:560px){.join-float{right:12px;bottom:12px}.join-end{padding:26px 22px}}
+</style>
 </head>
 <body>
 
@@ -107,6 +144,11 @@
   <div class="quote">
     沒有兒童，就沒有國家。兒少不是福利剩餘議題，而是國家存續的核心。
     <span class="quote-attr">引言 · 呂鴻基教授（中華民國兒童健康聯盟 榮譽理事長）——兒少專責機關倡議的重要推手</span>
+  </div>
+
+  <div class="join-band">
+    <p>加入「公民監督社群」LINE，一起推動兒少與家庭政策。</p>
+    <a class="join-btn" href="https://lin.ee/97Nh9HT" target="_blank" rel="noopener">立即加入 LINE →</a>
   </div>
 
   <h3 class="section-title-zh">開幕引言影片 · Opening Address</h3>
@@ -199,6 +241,14 @@
     </div>
   </div>
 
+  <div class="join-mid">
+    <div class="tx">
+      <h4>政策進度不漏接</h4>
+      <p>加入「公民監督社群」LINE，每週收到政策進度追蹤、立法動態與行動邀請。</p>
+    </div>
+    <a class="join-btn" href="https://lin.ee/97Nh9HT" target="_blank" rel="noopener">立即加入 LINE →</a>
+  </div>
+
   <h3 class="section-title-zh">六場專題簡報 · Sessions</h3>
   <p style="font-family:var(--sans);font-size:13.5px;color:var(--ink-mute);margin:-12px 0 0;letter-spacing:.04em;">點入各場，可閱讀講者摘要與完整投影片。</p>
 
@@ -282,6 +332,16 @@
     <div class="callout-body">政府應<strong>公開親職教育完成率與成效</strong>，將家庭支持納入兒少預防預算，並試辦家庭教育專業人員，以穩定人力、訓練、督導與評估制度支撐，而非只靠短期計畫補助。</div>
   </div>
 
+  <div class="join-end">
+    <div class="tx">
+      <p class="kick">最低門檻 · 立刻可以做</p>
+      <h4>加入「公民監督社群」LINE</h4>
+      <p>兒家署組織法三讀在即——加入社群，一起補上缺少的拼圖，推動兒少與家庭政策。</p>
+      <a class="join-btn" href="https://lin.ee/97Nh9HT" target="_blank" rel="noopener">立即加入 LINE →</a>
+    </div>
+    <div class="qr"><img src="/wp-content/uploads/line-qr-aabe.png" alt="LINE 公民監督社群 QR Code" loading="lazy"></div>
+  </div>
+
   <h3 class="section-title-zh">資料說明 · About</h3>
   <div class="callout" style="border-left-color:var(--accent-soft);">
     <h4>關於本頁</h4>
@@ -296,6 +356,28 @@
 <footer>
   2026 兒少政策論壇 ｜ 兒家署，缺少的拼圖？ ｜ Zoom 線上論壇 ｜ 2026.07.10 ｜ 中華民國兒童健康聯盟・全國婦兒團體聯盟・國教行動聯盟
 </footer>
+
+<div class="join-float" id="joinFloat">
+  <a class="pill" href="https://lin.ee/97Nh9HT" target="_blank" rel="noopener">加入公民監督社群</a>
+  <button class="x" id="joinFloatX" aria-label="關閉">✕</button>
+</div>
+<script>
+(function(){
+  var f=document.getElementById('joinFloat');
+  if(!f)return;
+  try{if(sessionStorage.getItem('jfHide'))return}catch(e){}
+  var on=false;
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY||document.documentElement.scrollTop;
+    if(y>520&&!on){f.classList.add('on');on=true}
+    else if(y<=520&&on){f.classList.remove('on');on=false}
+  },{passive:true});
+  document.getElementById('joinFloatX').addEventListener('click',function(){
+    f.style.display='none';
+    try{sessionStorage.setItem('jfHide','1')}catch(e){}
+  });
+})();
+</script>
 
 </body>
 </html>
