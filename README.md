@@ -1,6 +1,6 @@
 # aabe-org-tw
 
-社團法人國教行動聯盟（Action Alliance on Basic Education）官方網站原始碼。
+國教行動聯盟（Action Alliance on Basic Education，AABE）官方網站原始碼。
 
 > **網址**：https://aabe.org.tw
 > **部署**：Cloudflare Pages

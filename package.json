@@ -1,7 +1,7 @@
 {
   "name": "aabe-deploy",
   "version": "1.0.0",
-  "description": "社團法人國教行動聯盟（Action Alliance on Basic Education）官方網站原始碼。",
+  "description": "國教行動聯盟（Action Alliance on Basic Education，AABE）官方網站原始碼。",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
