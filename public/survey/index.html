@@ -81,9 +81,13 @@ h1{font-size:40px;line-height:1.25;letter-spacing:.03em;font-weight:700;margin:0
   text-wrap:balance}
 
 .survey-sec{padding:8px 0 48px}
-.survey-sec iframe{display:block;width:100%}
-.frame-fallback{margin:16px 0 0;font-size:16px;line-height:1.7;color:var(--ink-3);text-align:center}
-.frame-fallback a{font-weight:700}
+.cover{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:2px}
+.cta{display:block;margin:28px auto 0;max-width:420px;background:var(--gov);color:#fff;
+  text-align:center;font-size:21px;font-weight:700;letter-spacing:.04em;
+  padding:18px 24px;border-radius:6px;text-decoration:none}
+.cta:hover{background:#154b7b}
+.cta-note{margin:14px 0 0;font-size:15px;color:var(--ink-3);text-align:center}
+.line-hint{margin:22px 0 0;font-size:14.5px;line-height:1.7;color:var(--ink-3);text-align:center}
 
 footer{margin-top:16px;padding:30px 0 80px;border-top:1px solid var(--rule);
   font-size:15px;line-height:1.85;color:var(--ink-3)}
@@ -96,7 +100,7 @@ footer a{color:var(--ink-2);text-decoration:underline;text-underline-offset:2px}
   header{padding:32px 0 30px}
   h1{font-size:29px}
   .lede{font-size:17px}
-  .survey-sec #survey-frame{height:80vh !important;min-height:640px !important}
+  .cta{font-size:19px;padding:16px 20px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -111,8 +115,10 @@ footer a{color:var(--ink-2);text-decoration:underline;text-underline-offset:2px}
 </header>
 
 <div class="survey-sec">
-  <iframe id="survey-frame" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-modals" width="100%" src="https://www.surveycake.com/s/vL86N" style="border:#ddd 1px solid; height:85vh; min-height:720px;" allowTransparency="true" frameborder="0" title="菸盒警示圖文問卷"></iframe>
-  <p class="frame-fallback">問卷無法顯示？<a href="https://www.surveycake.com/s/vL86N" target="_blank" rel="noopener">點此直接填寫 →</a></p>
+  <img class="cover" src="/survey/og.jpg" alt="菸盒警示圖要放大到 85%？說出你的看法——約 2 分鐘、18 歲以上" width="1200" height="630">
+  <a class="cta" href="https://www.surveycake.com/s/vL86N?openExternalBrowser=1" rel="noopener">開始填寫問卷 →</a>
+  <p class="cta-note">約 2 分鐘　·　18 歲以上　·　不記名</p>
+  <p class="line-hint">在 LINE 中開啟本頁時，按鈕會自動轉至手機瀏覽器填寫。</p>
 </div>
 
 <footer>
