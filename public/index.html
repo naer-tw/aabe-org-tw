@@ -324,112 +324,53 @@
 
     /* Hero — 升級為大標 + 副標 + manifesto preview */
     .hero { padding: 72px 32px 72px; text-align: center; max-width: 1080px; margin: 0 auto; }
-    .hero-video-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 960px;
-      margin: 0 auto 56px;
-      aspect-ratio: 16 / 9;
-      max-height: 420px;
-      overflow: hidden;
-      border-radius: 10px;
-      background: #1a1a1a;
-      box-shadow: 0 24px 60px -20px rgba(0,0,0,0.3), 0 8px 24px -8px rgba(0,0,0,0.15);
-      cursor: zoom-in;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .hero-video-wrap:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 30px 70px -20px rgba(0,0,0,0.4), 0 12px 30px -10px rgba(0,0,0,0.2);
-    }
-    .hero-video {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      pointer-events: none;
-    }
-    /* 桌面顯示 16:9 cinematic, 手機切換到 9:16 直式（在下方 @media 內處理） */
-    .hero-video-mobile { display: none; }
-    .hero-video-expand {
-      position: absolute; right: 10px; top: 10px;
-      width: 34px; height: 34px;
-      background: rgba(10,10,10,0.55);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      padding: 0;
-    }
-    .hero-video-expand:hover { background: var(--brand-orange); transform: scale(1.06); }
-    .hero-video-expand svg { width: 16px; height: 16px; fill: #fff; display: block; }
-
-    /* Hero fullscreen modal */
-    .hero-modal {
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.92);
-      display: none;
-      align-items: center; justify-content: center;
-      z-index: 9999;
-      padding: 32px;
-      animation: heroModalIn 0.18s ease-out;
-    }
-    .hero-modal.open { display: flex; }
-    @keyframes heroModalIn { from { opacity: 0; } to { opacity: 1; } }
-    .hero-modal-video {
-      max-width: 100%;
-      max-height: 90vh;
-      width: auto;
-      aspect-ratio: 9 / 16;
-      object-fit: contain;
-      border-radius: 14px;
-      background: #1a1a1a;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-    }
-    .hero-modal-close {
-      position: absolute;
-      top: 24px; right: 24px;
-      width: 44px; height: 44px;
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 50%;
-      font-size: 24px; font-weight: 300; line-height: 1;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-      padding: 0;
-    }
-    .hero-modal-close:hover { background: var(--brand-orange); border-color: var(--brand-orange); }
-    .hero-video-badge {
-      position: absolute;
-      left: 16px; bottom: 16px;
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 12px;
-      background: rgba(10,10,10,0.55);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 999px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.66rem; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: #fafafa;
-    }
-    .hero-video-badge::before {
-      content: ""; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--brand-orange); flex: none;
-      box-shadow: 0 0 0 3px rgba(235,155,49,0.25);
-    }
     .hero-kicker { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.32em; color: var(--brand-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 28px; }
     .hero h1 { font-family: 'Noto Serif TC', 'Noto Sans TC', serif; font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; line-height: 1.1; letter-spacing: 0.02em; margin-bottom: 28px; }
     .hero h1 .accent { color: var(--brand-orange); }
     .hero h1 .hero-brand { display: block; font-family: 'Noto Sans TC', sans-serif; font-size: clamp(1.05rem, 2.2vw, 1.35rem); font-weight: 800; letter-spacing: 0.22em; color: var(--ink-2); margin-bottom: 18px; line-height: 1; }
     .hero .tagline { font-family: 'Noto Serif TC', serif; font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--ink-2); max-width: 680px; margin: 0 auto 36px; line-height: 1.85; }
+    /* ═══ Our Mandate — 民意與聲量（2026-09-05 取代 hero 影片） ═══
+       全部 class 加 m- 前綴並收斂在 .mandate 之下，
+       避免與站內既有 .stat / .stat-num / .stat-label（stats-band）衝突。 */
+    .mandate { background: #FBF8F2; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 64px 32px 56px; }
+    .mandate-inner { max-width: 1080px; margin: 0 auto; }
+    .mandate h2 { font-family: 'Noto Serif TC', serif; font-size: clamp(1.75rem, 3.6vw, 2.5rem); font-weight: 900; line-height: 1.3; margin: 0 0 14px; letter-spacing: 0.01em; }
+    .mandate h2 em { font-style: normal; color: var(--brand-teal); }
+    .mandate-lead { font-family: 'Noto Serif TC', serif; font-size: 1.02rem; line-height: 1.95; color: var(--ink-2); max-width: 640px; margin: 0 0 40px; }
+
+    .m-tier-head { display: flex; align-items: baseline; gap: 14px; margin: 0 0 18px; }
+    .m-tier-tag { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; padding: 5px 11px; border-radius: 3px; color: #fff; white-space: nowrap; }
+    .m-voice .m-tier-tag { background: #1F7C6D; }
+    .m-echo .m-tier-tag { background: var(--brand-orange); color: #1c2422; }
+    .m-tier-desc { font-family: 'Noto Serif TC', serif; font-size: 0.9rem; color: var(--ink-3); line-height: 1.6; }
+
+    .m-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 0 0 44px; }
+    .m-card { background: #fff; border: 1px solid var(--line); border-radius: 5px; padding: 26px 24px 20px; position: relative; display: flex; flex-direction: column; }
+    .m-card::before { content: ""; position: absolute; left: -1px; top: -1px; bottom: -1px; width: 3px; border-radius: 5px 0 0 5px; }
+    .m-voice .m-card::before { background: var(--brand-teal); }
+    .m-echo .m-card::before { background: var(--brand-orange); }
+
+    .m-num { font-family: 'Inter', sans-serif; font-weight: 900; font-size: clamp(2.3rem, 4.6vw, 3.05rem); line-height: 1; letter-spacing: -0.025em; color: var(--ink); font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; display: flex; align-items: baseline; gap: 5px; margin-bottom: 10px; }
+    .m-affix { font-size: 0.94rem; font-weight: 800; letter-spacing: 0.02em; color: var(--ink-2); }
+    .m-voice .m-affix.m-plus { color: var(--brand-teal); }
+    .m-echo .m-affix.m-plus { color: #C77A18; }
+    .m-label { font-family: 'Noto Serif TC', serif; font-size: 1.06rem; font-weight: 800; line-height: 1.45; margin-bottom: 5px; color: var(--ink); }
+    .m-period { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+    .m-how { font-family: 'Noto Serif TC', serif; font-size: 0.83rem; line-height: 1.75; color: var(--ink-2); padding-top: 13px; border-top: 1px solid #EFEAE1; margin: 0 0 12px; }
+    .m-how b { font-weight: 800; color: var(--ink); }
+    .m-src { font-family: 'Inter', sans-serif; font-size: 0.72rem; line-height: 1.6; color: var(--ink-3); margin-bottom: 12px; }
+    .m-link { font-family: 'Inter', sans-serif; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em; color: #1F7F70; border-bottom: 1px solid transparent; align-self: flex-start; padding-bottom: 1px; margin-top: auto; }
+    .m-echo .m-link { color: #C77A18; }
+    .m-link:hover, .m-link:focus-visible { border-bottom-color: currentColor; }
+
+    .m-foot { border-top: 1px solid var(--line); padding-top: 26px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; justify-content: space-between; }
+    .m-foot-note { font-family: 'Noto Serif TC', serif; font-size: 0.82rem; line-height: 1.85; color: var(--ink-3); max-width: 520px; }
+    .m-foot-note strong { color: var(--ink-2); font-weight: 800; }
+    .m-stamp { display: block; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-3); margin-top: 10px; }
+    .m-cta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+    @media (max-width: 900px) { .m-grid { grid-template-columns: repeat(2, 1fr); } }
+
     .hero-cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 4px; font-size: 0.92rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s; }
     .btn-primary { background: var(--ink); color: #fff; }
@@ -630,20 +571,13 @@
       .topbar-nav a { padding: 12px 4px; border-bottom: 1px solid #f4f5f7; font-size: 0.95rem; }
       .topbar-nav a:last-child { border-bottom: 0; }
       .hero { padding: 48px 20px 48px; }
-      /* 手機切回直式 9:16（內容看得清） */
-      .hero-video-wrap {
-        margin-bottom: 36px;
-        border-radius: 10px;
-        aspect-ratio: 9 / 16;
-        max-width: 240px;
-        max-height: 427px;
-      }
-      .hero-video-desktop { display: none; }
-      .hero-video-mobile { display: block; }
-      .hero-video-badge { left: 10px; bottom: 10px; font-size: 0.6rem; padding: 5px 10px; letter-spacing: 0.18em; }
-      .hero-video-expand { width: 32px; height: 32px; right: 8px; top: 8px; }
-      .hero-modal { padding: 16px; }
-      .hero-modal-close { top: 16px; right: 16px; width: 40px; height: 40px; }
+      .mandate { padding: 44px 20px 40px; }
+      .m-grid { grid-template-columns: 1fr; gap: 14px; margin-bottom: 34px; }
+      .m-card { padding: 22px 20px 18px; }
+      .mandate-lead { margin-bottom: 30px; }
+      .m-foot { flex-direction: column; gap: 22px; }
+      .m-cta { width: 100%; }
+      .m-cta .btn { flex: 1 1 100%; justify-content: center; }
       .hero h1 { font-size: clamp(2.6rem, 11vw, 3.6rem); }
       .hero .tagline { font-size: 1.05rem; }
       .chapter { padding: 40px 20px 0; gap: 10px; }
@@ -718,119 +652,6 @@
       <span class="chapter-label">Opening</span>
     </div>
     <section class="hero">
-      <!-- Hero 動畫：2023-2025 三年倡議成果（無聲自動播放、循環） -->
-      <!-- 桌面 cinematic 16:9 / 手機直式 9:16，CSS 切換 -->
-      <div class="hero-video-wrap" role="button" tabindex="0"
-           aria-label="點擊放大影片：2023-2025 倡議成果 Impact Reel">
-        <video class="hero-video hero-video-desktop" id="heroVideo"
-               autoplay muted loop playsinline preload="auto"
-               poster="/wp-content/uploads/hero-poster.jpg">
-          <source src="/wp-content/uploads/hero-loop.webm" type="video/webm">
-          <source src="/wp-content/uploads/hero-loop.mp4" type="video/mp4">
-        </video>
-        <video class="hero-video hero-video-mobile" id="heroVideoMobile"
-               autoplay muted loop playsinline preload="auto"
-               poster="/wp-content/uploads/hero-modal-poster.jpg">
-          <source src="/wp-content/uploads/hero-modal.webm" type="video/webm">
-          <source src="/wp-content/uploads/hero-modal.mp4" type="video/mp4">
-        </video>
-        <span class="hero-video-badge">2023 — 2025 · Impact Reel</span>
-        <button class="hero-video-expand" type="button" aria-label="放大影片">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 5h6V3H3v8h2V5zm14 0v6h2V3h-8v2h6zM5 19v-6H3v8h8v-2H5zm14-6v6h-6v2h8v-8h-2z"/>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Fullscreen modal for hero video -->
-      <div class="hero-modal" id="heroModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="2023-2025 倡議成果影片">
-        <button class="hero-modal-close" id="heroModalClose" type="button" aria-label="關閉影片">×</button>
-        <video class="hero-modal-video" id="heroModalVideo"
-               muted loop playsinline preload="metadata"
-               poster="/wp-content/uploads/hero-modal-poster.jpg">
-          <source src="/wp-content/uploads/hero-modal.webm" type="video/webm">
-          <source src="/wp-content/uploads/hero-modal.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <script>
-        (function(){
-          var vDesktop = document.getElementById('heroVideo');
-          var vMobile = document.getElementById('heroVideoMobile');
-          var heroVideos = [vDesktop, vMobile].filter(Boolean);
-          if (!heroVideos.length) return;
-
-          // 保險觸發 autoplay（muted 已符合所有瀏覽器 policy）
-          heroVideos.forEach(function(v){
-            var tryPlay = function(){ v.play().catch(function(){}); };
-            v.addEventListener('loadedmetadata', tryPlay);
-            v.addEventListener('canplay', tryPlay);
-            tryPlay();
-          });
-
-          // Fullscreen modal
-          var wrap = document.querySelector('.hero-video-wrap');
-          var modal = document.getElementById('heroModal');
-          var modalVideo = document.getElementById('heroModalVideo');
-          var closeBtn = document.getElementById('heroModalClose');
-          if (!wrap || !modal || !modalVideo) return;
-
-          // 找到「目前可見」的 hero video 來同步 currentTime
-          function visibleHero(){
-            return heroVideos.find(function(v){ return v.offsetParent !== null; }) || heroVideos[0];
-          }
-
-          // iOS Safari 對 modal 內 video 的 autoplay/seek 很嚴格，要分階段觸發
-          function playModal(){
-            // currentTime 同步：只在 video 可 seek 時做（避免 readyState=0 時 throw）
-            try {
-              var src = visibleHero();
-              if (src && src.readyState >= 2 && modalVideo.readyState >= 1 && src.currentTime > 0) {
-                modalVideo.currentTime = src.currentTime;
-              }
-            } catch(e){}
-            var p = modalVideo.play();
-            if (p && p.catch) p.catch(function(){
-              // 若 play() 被 reject（iOS 偶發），延遲再試一次
-              setTimeout(function(){ modalVideo.play().catch(function(){}); }, 100);
-            });
-          }
-          function open(){
-            modal.classList.add('open');
-            modal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-            // 確保 playsinline 屬性（iOS Safari 必要）
-            modalVideo.playsInline = true;
-            modalVideo.muted = true;
-            // 若 metadata 還沒載，先觸發載入再播放
-            if (modalVideo.readyState === 0) {
-              modalVideo.load();
-              modalVideo.addEventListener('loadedmetadata', playModal, { once: true });
-              modalVideo.addEventListener('canplay', playModal, { once: true });
-            }
-            playModal();
-          }
-          function close(){
-            modal.classList.remove('open');
-            modal.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-            modalVideo.pause();
-          }
-
-          wrap.addEventListener('click', open);
-          wrap.addEventListener('keydown', function(e){
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
-          });
-          closeBtn.addEventListener('click', close);
-          modal.addEventListener('click', function(e){
-            if (e.target === modal) close();
-          });
-          document.addEventListener('keydown', function(e){
-            if (e.key === 'Escape' && modal.classList.contains('open')) close();
-          });
-        })();
-      </script>
-
       <span class="hero-kicker">Est. 2012 · A Parent-Driven Advocacy NGO</span>
       <h1>
         <span class="hero-brand">國教行動聯盟</span>
@@ -840,6 +661,114 @@
       <div class="hero-cta">
         <a href="/contact/" class="btn btn-primary">加入公民監督社群 →</a>
         <a href="https://policy.aabe.org.tw/" class="btn btn-secondary">探索政策論述</a>
+      </div>
+    </section>
+
+    <!-- CH 02 — Our Mandate（民意與聲量；2026-09-05 取代原 hero 影片） -->
+    <div class="chapter">
+      <span class="chapter-num">Ch 02</span>
+      <span class="chapter-line"></span>
+      <span class="chapter-label">Our Mandate</span>
+    </div>
+    <section class="mandate" aria-labelledby="mandate-title">
+      <div class="mandate-inner">
+
+        <h2 id="mandate-title">我們代表的民意，<em>每一個數字都可以被查</em></h2>
+        <p class="mandate-lead">
+          我們不給一個大總數。數字分成兩層：一層是真的動手作答的人，一層是被討論出去的量。每個數字下面都寫清楚怎麼算、資料期間、資料來自哪裡——因為能被檢驗的數字，才是有力量的數字。
+        </p>
+
+        <!-- ── 第一層：民意 ───────────────────────── -->
+        <div class="m-tier m-voice">
+          <div class="m-tier-head">
+            <span class="m-tier-tag">民意</span>
+            <span class="m-tier-desc">真的按下送出的人，與願意跟我們一起具名的組織</span>
+          </div>
+
+          <div class="m-grid">
+
+            <div class="m-card">
+              <div class="m-num">66,247<span class="m-affix">份</span></div>
+              <div class="m-label">有效問卷</div>
+              <div class="m-period">2023 — 2026 · 八項調查累計</div>
+              <p class="m-how"><b>怎麼算：</b>扣除重複 IP、未成年填答、整份同一選項等無效卷後的最終筆數，八項調查逐案相加。不是點擊數，是完整作答數。</p>
+              <p class="m-src">來源：各案調查報告與新聞稿原件。本盟<b>自辦 3 案 18,706 份</b>（青少年十大議題 8,743／兒虐修法 8,724，年報標題作約 8,700／菸盒警示 1,239）；<b>與夥伴團體合辦 5 案 47,541 份</b>（大麻 38,502．台灣共善促進協會／十大教育議題 5,379．全國家長會長聯盟等／職場心理健康 1,368．台灣心理健康聯盟／性教育 1,203．台灣性教育學會／神經多樣性 1,089．神經多樣性正名學生小組等）。各調查各自去重，未跨調查合併去重，故為份數累計。</p>
+              <a class="m-link" href="/methodology/">看完整說明與各案原始報告 →</a>
+            </div>
+
+            <div class="m-card">
+              <div class="m-num">104,000<span class="m-affix">人次</span></div>
+              <div class="m-label">單場調查最高觸及</div>
+              <div class="m-period">2023 · 大麻合法化意見調查</div>
+              <p class="m-how"><b>怎麼算：</b>問卷連結被開啟／曝光的總<b>人次</b>，含沒有作答的人，同一人可能重複計算，因此必然大於填答人數。<b>是人次，不是人數。</b></p>
+              <p class="m-src">來源：2023-11-13 調查報告（與台灣共善促進協會合辦，本盟為主要協助調查單位）；成果發表於 BMC Public Health 2023;23:1954。</p>
+              <a class="m-link" href="/methodology/">看完整說明與論文連結 →</a>
+            </div>
+
+            <div class="m-card">
+              <div class="m-num">168<span class="m-affix m-plus">+</span></div>
+              <div class="m-label">個合作組織</div>
+              <div class="m-period">2023 — 2025 · 三年累計</div>
+              <p class="m-how"><b>怎麼算：</b>三年內在任一倡議行動（記者會、聯署、論壇、聯合聲明）與本盟共同列名的跨領域組織，去除重複後的唯一組織數。</p>
+              <p class="m-src">來源：內部行政紀錄＋倡議成果資料庫。</p>
+              <a class="m-link" href="/methodology/">看完整說明 →</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── 第二層：聲量 ───────────────────────── -->
+        <div class="m-tier m-echo">
+          <div class="m-tier-head">
+            <span class="m-tier-tag">聲量</span>
+            <span class="m-tier-desc">這些聲音被媒體與社會討論了多少、我們把它們帶到了哪些場合</span>
+          </div>
+
+          <div class="m-grid">
+
+            <div class="m-card">
+              <div class="m-num">3,000<span class="m-affix m-plus">+</span><span class="m-affix">篇</span></div>
+              <div class="m-label">媒體露出</div>
+              <div class="m-period">2023 — 2026 / 08 累計</div>
+              <p class="m-how"><b>怎麼算：</b>媒體刊登本盟新聞稿或報導本盟主張的<b>篇數</b>，同一事件被多家轉載算多篇。<b>不是讀者人數</b>，我們不做受眾推估。與右方「聲量則數」是<b>兩套不同的統計系統</b>，不可相加、不可互相驗算。</p>
+              <p class="m-src">來源：本盟新聞稿露出索引逐篇加總（列管範圍內實計 3,017 篇；因索引仍有少數缺口，對外採保守表述「逾 3,000 篇」）。此項只計新聞稿露出，不含輿情監測系統另行抓取的社群、討論區與轉載。</p>
+              <a class="m-link" href="/methodology/">看完整說明 →</a>
+            </div>
+
+            <div class="m-card">
+              <div class="m-num">2,889<span class="m-affix">則</span></div>
+              <div class="m-label">近一年網路聲量</div>
+              <div class="m-period">2025 / 08 / 01 — 2026 / 08 / 27</div>
+              <p class="m-how"><b>怎麼算：</b>第三方輿情監測系統統計、提及本盟的網路<b>則數</b>：新聞 2,298＋社群 539＋討論區 50＋部落格 2。不是觸及人次。</p>
+              <p class="m-src">來源：輿情監測系統日趨勢資料逐日加總。註：三年累計口徑（7,917+ 則）另見資料方法頁，兩者期間與抓取系統不同，不可相加。</p>
+              <a class="m-link" href="/methodology/">看完整說明 →</a>
+            </div>
+
+            <div class="m-card">
+              <div class="m-num">286<span class="m-affix">場</span></div>
+              <div class="m-label">倡議行動</div>
+              <div class="m-period">2023 — 2025 · 三年累計</div>
+              <p class="m-how"><b>怎麼算：</b>記者會、立法院公聽會、政策論壇、議題座談、研究發表、跨組織聯合會議。<b>不含</b>內部行政會議與單純社群直播。</p>
+              <p class="m-src">來源：內部活動紀錄與行事曆，每場含時間、地點、議題、媒體出席與後續成果。</p>
+              <a class="m-link" href="/methodology/">看完整說明 →</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── 註腳與行動呼籲 ─────────────────────── -->
+        <div class="m-foot">
+          <div class="m-foot-note">
+            <strong>三個不做的事：</strong>不把「人次」寫成「人」；不用「篇數 × 平均讀者」推估觸及人數；
+            不把不同單位的數字（份／人次／篇／則）加成一個總數。夥伴主辦、本盟協力的調查，一律標明主辦單位。
+            <span class="m-stamp">最後更新 2026-09-05 · 資料期間 2023.01 — 2026.08</span>
+          </div>
+          <div class="m-cta">
+            <a class="btn btn-primary" href="/impact/">看我們的調查 →</a>
+            <a class="btn btn-secondary" href="/methodology/">看完整說明</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -867,7 +796,7 @@
 
     <!-- CH 02 — Now Happening（3 卡 Current Actions） -->
     <div class="chapter">
-      <span class="chapter-num">Ch 02</span>
+      <span class="chapter-num">Ch 03</span>
       <span class="chapter-line"></span>
       <span class="chapter-label">Now Happening</span>
     </div>
@@ -918,7 +847,7 @@
 
     <!-- CH 03 — Latest -->
     <div class="chapter">
-      <span class="chapter-num">Ch 03</span>
+      <span class="chapter-num">Ch 04</span>
       <span class="chapter-line"></span>
       <span class="chapter-label">Latest Voice</span>
     </div>
@@ -1124,7 +1053,7 @@
 
     <!-- CH 04 — Numbers -->
     <div class="chapter">
-      <span class="chapter-num">Ch 04</span>
+      <span class="chapter-num">Ch 05</span>
       <span class="chapter-line"></span>
       <span class="chapter-label">Numbers That Matter</span>
     </div>
@@ -1156,7 +1085,7 @@
 
     <!-- CH 06 — Three Sites -->
     <div class="chapter">
-      <span class="chapter-num">Ch 05</span>
+      <span class="chapter-num">Ch 06</span>
       <span class="chapter-line"></span>
       <span class="chapter-label">Knowledge &amp; Action</span>
     </div>
