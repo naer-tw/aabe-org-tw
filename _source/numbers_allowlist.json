@@ -1,0 +1,613 @@
+{
+  "version": 1,
+  "updated": "2026-09-06",
+  "purpose": "登記「未用 data-metric 標記、但確實顯示已知數值」的文案位置。登記＝這處由人工維護；numbers_check.py 只在筆數變動時才報錯，所以改數字時請照 _source/數字位置表_20260906.md 逐處人工更新。",
+  "limits": "本掃描只找得到『目前的值』。已經寫錯或過期的舊值（例：press/index.html 仍寫政策深度分析 36 篇）掃不出來，需靠季度冷讀。",
+  "allow": [
+    {
+      "id": "actions",
+      "file": "about/index.html",
+      "count": 1,
+      "lines_20260906": [
+        699
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "partners",
+      "file": "about/index.html",
+      "count": 5,
+      "lines_20260906": [
+        17,
+        302,
+        310,
+        496,
+        699
+      ],
+      "reason": "關於我們頁的 og:description、導言、業務清單與影響力報告卡，含一處 stat-num 顯示值（本波未納入標記範圍）"
+    },
+    {
+      "id": "policy_briefs",
+      "file": "about/index.html",
+      "count": 2,
+      "lines_20260906": [
+        340,
+        675
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "press_releases",
+      "file": "about/index.html",
+      "count": 2,
+      "lines_20260906": [
+        676,
+        699
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "actions",
+      "file": "act/index.html",
+      "count": 1,
+      "lines_20260906": [
+        543
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "legislators",
+      "file": "act/index.html",
+      "count": 2,
+      "lines_20260906": [
+        444,
+        516
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "partners",
+      "file": "act/index.html",
+      "count": 3,
+      "lines_20260906": [
+        436,
+        508,
+        543
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "policy_briefs",
+      "file": "act/index.html",
+      "count": 1,
+      "lines_20260906": [
+        430
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "press_releases",
+      "file": "act/index.html",
+      "count": 2,
+      "lines_20260906": [
+        430,
+        543
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "actions",
+      "file": "chronicle/index.html",
+      "count": 3,
+      "lines_20260906": [
+        8,
+        17,
+        770
+      ],
+      "reason": "大事紀頁的年度表與文案；本波未納入標記範圍，數字改動時須人工一併更新"
+    },
+    {
+      "id": "buzz_3y",
+      "file": "chronicle/index.html",
+      "count": 6,
+      "lines_20260906": [
+        8,
+        17,
+        564,
+        577,
+        753,
+        770
+      ],
+      "reason": "大事紀頁的影響力數字帶（含 impact-num 顯示值與年度表 <td>）；本波標記範圍只含首頁／方法頁／影響力頁，本頁數字改動時須人工一併更新"
+    },
+    {
+      "id": "partners",
+      "file": "chronicle/index.html",
+      "count": 5,
+      "lines_20260906": [
+        8,
+        565,
+        589,
+        755,
+        762
+      ],
+      "reason": "大事紀頁的影響力數字帶與文案（含 impact-num 顯示值）；本波未納入標記範圍，數字改動時須人工一併更新"
+    },
+    {
+      "id": "press_releases",
+      "file": "chronicle/index.html",
+      "count": 3,
+      "lines_20260906": [
+        8,
+        17,
+        770
+      ],
+      "reason": "大事紀頁的年度表與文案；本波未納入標記範圍，數字改動時須人工一併更新"
+    },
+    {
+      "id": "policy_briefs",
+      "file": "contact/index.html",
+      "count": 2,
+      "lines_20260906": [
+        424,
+        459
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "legislators",
+      "file": "events/2026-05-20-drug-abuse-conference/index.html",
+      "count": 1,
+      "lines_20260906": [
+        560
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "legislators",
+      "file": "events/2026-05-20-drug-abuse-conference/notes/09-japan-drug/index.html",
+      "count": 1,
+      "lines_20260906": [
+        526
+      ],
+      "reason": "誤命中：日本毒品統計的年齡分布「31–40 歲 19 位」，與本盟跨黨派立委數無關，數字改動時不必動"
+    },
+    {
+      "id": "actions",
+      "file": "events/index.html",
+      "count": 4,
+      "lines_20260906": [
+        8,
+        532,
+        741,
+        742
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "actions",
+      "file": "humans.txt",
+      "count": 1,
+      "lines_20260906": [
+        11
+      ],
+      "reason": "AI 可讀層摘要引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "buzz_3y",
+      "file": "humans.txt",
+      "count": 1,
+      "lines_20260906": [
+        11
+      ],
+      "reason": "AI 可讀層摘要引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "policy_briefs",
+      "file": "humans.txt",
+      "count": 1,
+      "lines_20260906": [
+        10
+      ],
+      "reason": "AI 可讀層摘要引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "press_releases",
+      "file": "humans.txt",
+      "count": 1,
+      "lines_20260906": [
+        11
+      ],
+      "reason": "AI 可讀層摘要引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "actions",
+      "file": "impact/index.html",
+      "count": 4,
+      "lines_20260906": [
+        8,
+        19,
+        37,
+        552
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "buzz_3y",
+      "file": "impact/index.html",
+      "count": 5,
+      "lines_20260906": [
+        8,
+        19,
+        37,
+        552,
+        669
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "legislators",
+      "file": "impact/index.html",
+      "count": 3,
+      "lines_20260906": [
+        8,
+        779,
+        780
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "partners",
+      "file": "impact/index.html",
+      "count": 7,
+      "lines_20260906": [
+        8,
+        19,
+        37,
+        552,
+        594,
+        863,
+        864
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "policy_briefs",
+      "file": "impact/index.html",
+      "count": 1,
+      "lines_20260906": [
+        906
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "press_releases",
+      "file": "impact/index.html",
+      "count": 4,
+      "lines_20260906": [
+        8,
+        19,
+        37,
+        552
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "actions",
+      "file": "index.html",
+      "count": 5,
+      "lines_20260906": [
+        10,
+        138,
+        161,
+        205,
+        1103
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "buzz_3y",
+      "file": "index.html",
+      "count": 5,
+      "lines_20260906": [
+        138,
+        161,
+        205,
+        743,
+        1103
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "legislators",
+      "file": "index.html",
+      "count": 1,
+      "lines_20260906": [
+        229
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "partners",
+      "file": "index.html",
+      "count": 6,
+      "lines_20260906": [
+        10,
+        138,
+        161,
+        205,
+        660,
+        1103
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "policy_briefs",
+      "file": "index.html",
+      "count": 4,
+      "lines_20260906": [
+        10,
+        138,
+        151,
+        1097
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "press_coverage",
+      "file": "index.html",
+      "count": 2,
+      "lines_20260906": [
+        734
+      ],
+      "reason": "CH 02 媒體露出卡的來源說明：列管實計「3,017 篇」與對外保守表述「逾 3,000 篇」各一處"
+    },
+    {
+      "id": "press_releases",
+      "file": "index.html",
+      "count": 4,
+      "lines_20260906": [
+        138,
+        161,
+        205,
+        1103
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "actions",
+      "file": "issues/index.html",
+      "count": 1,
+      "lines_20260906": [
+        354
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "buzz_3y",
+      "file": "issues/index.html",
+      "count": 2,
+      "lines_20260906": [
+        345,
+        354
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "partners",
+      "file": "issues/index.html",
+      "count": 2,
+      "lines_20260906": [
+        349,
+        354
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "policy_briefs",
+      "file": "issues/index.html",
+      "count": 4,
+      "lines_20260906": [
+        8,
+        170,
+        363,
+        383
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "press_releases",
+      "file": "issues/index.html",
+      "count": 3,
+      "lines_20260906": [
+        8,
+        170,
+        354
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "actions",
+      "file": "llms.txt",
+      "count": 2,
+      "lines_20260906": [
+        57,
+        79
+      ],
+      "reason": "AI 可讀層摘要引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "buzz_3y",
+      "file": "llms.txt",
+      "count": 2,
+      "lines_20260906": [
+        58,
+        79
+      ],
+      "reason": "AI 可讀層摘要引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "legislators",
+      "file": "llms.txt",
+      "count": 1,
+      "lines_20260906": [
+        60
+      ],
+      "reason": "AI 可讀層摘要引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "partners",
+      "file": "llms.txt",
+      "count": 1,
+      "lines_20260906": [
+        55
+      ],
+      "reason": "AI 可讀層摘要引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "policy_briefs",
+      "file": "llms.txt",
+      "count": 2,
+      "lines_20260906": [
+        59,
+        78
+      ],
+      "reason": "AI 可讀層摘要引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "press_releases",
+      "file": "llms.txt",
+      "count": 2,
+      "lines_20260906": [
+        56,
+        79
+      ],
+      "reason": "AI 可讀層摘要引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "actions",
+      "file": "methodology/index.html",
+      "count": 2,
+      "lines_20260906": [
+        8,
+        337
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "buzz_3y",
+      "file": "methodology/index.html",
+      "count": 4,
+      "lines_20260906": [
+        8,
+        195,
+        341,
+        460
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "partners",
+      "file": "methodology/index.html",
+      "count": 6,
+      "lines_20260906": [
+        8,
+        195,
+        215,
+        329,
+        452,
+        460
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "policy_briefs",
+      "file": "methodology/index.html",
+      "count": 3,
+      "lines_20260906": [
+        8,
+        295,
+        333
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "press_releases",
+      "file": "methodology/index.html",
+      "count": 2,
+      "lines_20260906": [
+        8,
+        333
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "actions",
+      "file": "press/index.html",
+      "count": 3,
+      "lines_20260906": [
+        485,
+        536,
+        604
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "buzz_3y",
+      "file": "press/index.html",
+      "count": 6,
+      "lines_20260906": [
+        443,
+        485,
+        510,
+        581,
+        598,
+        604
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "legislators",
+      "file": "press/index.html",
+      "count": 1,
+      "lines_20260906": [
+        450
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "partners",
+      "file": "press/index.html",
+      "count": 4,
+      "lines_20260906": [
+        428,
+        510,
+        536,
+        598
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "policy_briefs",
+      "file": "press/index.html",
+      "count": 1,
+      "lines_20260906": [
+        495
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "press_releases",
+      "file": "press/index.html",
+      "count": 5,
+      "lines_20260906": [
+        415,
+        433,
+        485,
+        536,
+        604
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    }
+  ]
+}
