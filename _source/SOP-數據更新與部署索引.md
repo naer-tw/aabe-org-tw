@@ -59,6 +59,7 @@
 - 2026-09-06｜Codex 盲審 9 個 Critical 收割（報告：`_source/審查_Codex盲審_數據SOP_20260906.md`，分支 numbers-sot-2026-09）｜三個坑是「規則寫了、腳本沒守」：①位置表只記錄「現在有什麼」，沒有「應該有什麼」，整張卡刪掉照樣 exit 0；②線上驗證做的是全文包含判斷，主數字被改回舊值＋同頁別處有新值就誤判通過；③IndexNow 兩條路徑都 fail-open，403 也印完成｜→ 加位置基線 manifest、線上逐標記比對、IndexNow fail-closed
 - 2026-09-06｜盲審過程另抓到兩件**現況就是壞的**（不是理論風險）｜①`apply_numbers.py` 更新方法頁「最近更新」月份是逐**行**取代，真實版面上 `<td>合作組織數</td>` 與 `<td>2026-09</td>` 分屬不同行，等於從來沒改到過，但 Changelog 照寫——已改成逐 `<tr>` 取代，換不到就 `ApplyError` 停手；②`public/press/index.html` 的政策深度分析仍寫 36 篇（真源 47），是第二次出現的「同型漏改」——已改成標記，並把 33、36 登記進 `previous_values`，之後殘留舊值掃得到｜→ 判準：**沒有「換了幾處」的斷言，就等於沒有替換**
 - 2026-09-06｜sitemap 的錯犯在兩個方向｜真的改過的 `/impact/` 漏更新 lastmod（測試把它排除在檢查範圍外），沒改內容的 `/contact/` 卻被標成 2026-09-06（謊報新鮮度）；父索引 `sitemap_index.xml` 完全沒人動｜→ 應更新清單改由 `git diff main -- public` 反推，測試雙向檢查，並納入 `sitemap_index.xml`
+- 2026-09-06｜`/impact/reach/` 新頁上線後讀回抓到兩個「新頁沒套用全站慣例」的坑｜①全站 CSS 是 `a{color:inherit;text-decoration:none}`，其餘四頁（`/impact/`、`/about/`、`/press/`、`/methodology/`）每個內文連結都**逐個**補了 inline style 才可辨識，新頁 5 個連結整個漏補、Playwright 量到的 computed color 與本文同色、讀者無法辨識這是連結；②既有頁面只有首頁單一入口指向新頁、`/methodology/` 未同步補回指連結，形成單向斷鏈｜→ 逐個連結補 style 容易漏，改成容器層級規則（`.page-end a, .callout a, .stat-note a { ... }` 一次涵蓋該頁全部連結）；改文案要注意 `test_markup.py::test_copy_text_untouched` 是逐字凍結比對，補連結一律**包裹既有文字**、不得新增/改寫文案，否則凍結測試會炸（本輪第一版加了新句導致 1 failed，改包裹既有文字後 133 passed）
 
 ### 有意識不採／暫緩（Codex 盲審 2026-09-06）
 - **C-02 的「卡片全模板生成」**：目前只做到「單位／期間等欄位可用 `data-metric-field` 吃真源」，既有頁面的單位與期間仍是手寫。全站改模板要動三頁的版面結構，風險大於這次要解的問題；**取捨理由**：漏改的實害集中在數字本體（已被標記與基線覆蓋），欄位漂移目前靠季度冷讀。下次改版時逐頁改標記，不另開一次全站重構。
