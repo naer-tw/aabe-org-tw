@@ -44,7 +44,8 @@ ROW_LABEL_TO_IDS = {
 }
 
 _NUMBER_TOKEN = re.compile(r"(?<![0-9])[0-9][0-9,]*")
-_MONTH_CELL = re.compile(r"(<td[^>]*>)(\d{4}-\d{2})(</td>)")
+_MONTH_CELL = re.compile(r"(<td[^>]*>\s*)(\d{4}-\d{2})(\s*</td>)")
+_TABLE_ROW = re.compile(r"<tr\b[^>]*>.*?</tr>", re.S | re.I)
 
 
 class ApplyError(RuntimeError):
@@ -77,6 +78,22 @@ def apply_html(src: str, metrics: dict) -> tuple[str, list[Change]]:
         if metric is None:
             raise ApplyError(f"版面上的 data-metric=\"{mk.metric_id}\"（行 {mk.line}）"
                              f"不在 numbers.json 裡")
+        if mk.field_key != "display":
+            # data-metric-field="unit|period|label|…"：整段換成真源欄位值
+            # （Codex 盲審 C-02：單一真源以前只管得到 display）
+            if mk.field_key not in nc.FIELD_KEYS:
+                raise ApplyError(f"{mk.metric_id}（行 {mk.line}）data-metric-field="
+                                 f"\"{mk.field_key}\" 不是可投影欄位")
+            want = str(metric[mk.field_key])
+            if mk.shown == re.sub(r"\s+", "", want):
+                continue
+            inner = out[mk.start:mk.end]
+            if "<" in inner:
+                raise ApplyError(f"{mk.metric_id}（行 {mk.line}）的 "
+                                 f"data-metric-field 區塊含巢狀標籤，請人工處理")
+            out = out[:mk.start] + want + out[mk.end:]
+            changes.append(Change(mk.metric_id, mk.shown, want, f"行 {mk.line}"))
+            continue
         if mk.shown == metric["display"]:
             continue
         core, _ = _split_display(metric["display"])
@@ -101,13 +118,37 @@ def update_methodology(src: str, changes: list[Change], today: str) -> str:
     changed_ids = {c.metric_id for c in changes}
     month = today[:7]
 
-    lines = src.splitlines(keepends=True)
-    for i, line in enumerate(lines):
-        for label, ids in ROW_LABEL_TO_IDS.items():
-            if label in line and changed_ids & set(ids):
-                lines[i] = _MONTH_CELL.sub(lambda m: m.group(1) + month + m.group(3), line)
-                break
-    src = "".join(lines)
+    # 逐「列」處理，不是逐「行」：真實版面上 <td>標題</td> 與 <td>2026-09</td>
+    # 分屬不同行，舊版的逐行取代永遠換不到月份（Codex 盲審 C-02，實測確認）。
+    targeted: list[str] = []      # 該更新月份的列標題
+    replaced: list[str] = []      # 真的被換掉的列標題
+    out: list[str] = []
+    cursor = 0
+    for row in _TABLE_ROW.finditer(src):
+        block = row.group(0)
+        hit = next((label for label, ids in ROW_LABEL_TO_IDS.items()
+                    if label in block and changed_ids & set(ids)), None)
+        if hit is None:
+            continue
+        targeted.append(hit)
+        new_block, n = _MONTH_CELL.subn(lambda m: m.group(1) + month + m.group(3), block)
+        if n:
+            replaced.append(hit)
+            out.append(src[cursor:row.start()])
+            out.append(new_block)
+            cursor = row.end()
+    out.append(src[cursor:])
+
+    if targeted and len(replaced) != len(targeted):
+        missed = sorted(set(targeted) - set(replaced))
+        raise ApplyError(
+            f"方法頁「最近更新」有 {len(targeted)} 列該改、只換掉 {len(replaced)} 列"
+            f"（沒換到：{'、'.join(missed)}）——表格版型可能改過，請人工確認")
+    if changed_ids and not targeted:
+        raise ApplyError(
+            f"方法頁「更新頻率」表找不到對應 {sorted(changed_ids)} 的列"
+            f"——ROW_LABEL_TO_IDS 需要補對照")
+    src = "".join(out)
 
     summary = "、".join(
         f"{cid} {old} → {new}" for cid, old, new in sorted(

@@ -6,8 +6,13 @@ import pytest
 
 REQUIRED_FIELDS = [
     "id", "value", "display", "unit", "label", "period",
-    "method", "source", "last_verified", "cadence", "owner", "notes",
+    "method", "source", "last_verified", "cadence", "owner", "notes", "status",
 ]
+
+# 來源鏈可由看板清單一手重算的＝approved；只回指官網下游頁面的＝provisional，
+# 待秘書處／理事長拍板（Codex 盲審 C-05）。
+APPROVED = ["valid_surveys", "single_reach", "press_coverage", "buzz_1y", "buzz_3y"]
+PROVISIONAL = ["partners", "actions", "press_releases", "policy_briefs", "legislators"]
 
 # SOP 第一節「首批 id（2026-09-06）」
 FIRST_BATCH = ["valid_surveys", "single_reach", "partners",
@@ -42,7 +47,7 @@ def metrics(numbers):
 
 
 def test_top_level_shape(numbers):
-    assert numbers["version"] == 1
+    assert numbers["version"] == 2
     assert numbers["updated"] == "2026-09-06"
     assert isinstance(numbers["metrics"], list)
 
@@ -77,7 +82,10 @@ def test_value_consistent_with_display(metrics):
             # 對外保守表述「逾 3,000 篇」，value 為列管範圍內實計 3,017
             assert m["value"] == 3017
             assert "3,017" in m["notes"]
+            # 近似對外值必須明寫，才不會靜默分岐（Codex 盲審 C-02）
+            assert m["display_approx"] is True
             continue
+        assert not m.get("display_approx"), f"{mid} display 就是精確值，不該標 display_approx"
         assert int(digits) == m["value"], f"{mid} display/value 不一致"
 
 
@@ -123,3 +131,19 @@ def test_short_numbers_require_unit_context(metrics):
             continue
         for p in m["scan_patterns"]:
             assert p != core, f"{mid} 不得用裸數字 {core} 當掃描字串（噪音過高）"
+
+
+def test_status_is_declared_and_valid(metrics):
+    """每筆都要標 status；draft 不得上站，provisional 要留待拍板的紀錄。"""
+    for mid in APPROVED:
+        assert metrics[mid]["status"] == "approved", mid
+    for mid in PROVISIONAL:
+        assert metrics[mid]["status"] == "provisional", mid
+        assert metrics[mid]["source_status"] == "downstream_only", mid
+    assert set(APPROVED + PROVISIONAL) == set(metrics)
+
+
+def test_changed_values_keep_previous_values(metrics):
+    """改過的數字要留舊值，殘留舊值才掃得到（Codex 盲審 C-03 / 縱深 3）。"""
+    olds = {p["value"] for p in metrics["policy_briefs"]["previous_values"]}
+    assert {33, 36} <= olds, "policy_briefs 曾是 33（方法頁）與 36（媒體中心頁）"

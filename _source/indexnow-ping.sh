@@ -50,9 +50,14 @@ printf '  • %s\n' "${URLS[@]}"
 echo ""
 
 # 推到 Bing（也會分發給 Yandex / Naver 等）
-RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "https://api.indexnow.org/IndexNow" \
+# 2026-09-06 依 Codex 盲審 C-07 改為 fail-closed：curl 掛掉或非 200/202 一律 exit 1。
+# 舊版只印訊息就 exit 0，key 失效／403／429 會被上游當成「索引已完成」。
+if ! RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "https://api.indexnow.org/IndexNow" \
   -H "Content-Type: application/json; charset=utf-8" \
-  -d "$PAYLOAD")
+  -d "$PAYLOAD"); then
+  echo "❌ curl 失敗（無網路或 DNS 問題）——IndexNow 未推送"
+  exit 1
+fi
 
 BODY=$(echo "$RESPONSE" | sed '$d')
 STATUS=$(echo "$RESPONSE" | tail -1)
@@ -61,10 +66,10 @@ echo "Bing/IndexNow response: HTTP $STATUS"
 [ -n "$BODY" ] && echo "Body: $BODY"
 
 case "$STATUS" in
-  200|202) echo "✅ 成功送出（200=已接受、202=排隊中）" ;;
-  400) echo "⚠️  Bad request（檢查 JSON 格式）" ;;
-  403) echo "❌ Forbidden（key 不存在於 keyLocation）" ;;
-  422) echo "⚠️  URL 不屬於 host（檢查 host 設定）" ;;
-  429) echo "⚠️  Too many requests（一天上限約 10,000）" ;;
-  *) echo "⚠️  未預期狀態：$STATUS" ;;
+  200|202) echo "✅ 成功送出（200=已接受、202=排隊中）"; exit 0 ;;
+  400) echo "❌ Bad request（檢查 JSON 格式）"; exit 1 ;;
+  403) echo "❌ Forbidden（key 不存在於 keyLocation）"; exit 1 ;;
+  422) echo "❌ URL 不屬於 host（檢查 host 設定）"; exit 1 ;;
+  429) echo "❌ Too many requests（一天上限約 10,000）"; exit 1 ;;
+  *) echo "❌ 未預期狀態：$STATUS"; exit 1 ;;
 esac

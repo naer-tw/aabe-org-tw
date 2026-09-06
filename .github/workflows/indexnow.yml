@@ -9,6 +9,9 @@ on:
     paths:
       - 'public/**/*.html'
       - 'public/sitemap.xml'
+      - 'public/sitemap_index.xml'
+      - 'public/llms.txt'
+      - 'public/humans.txt'
 
 jobs:
   ping:
@@ -60,6 +63,9 @@ jobs:
           cat /tmp/payload.json
 
       - name: Push to IndexNow
+        # 2026-09-06 Codex 盲審 C-07：失敗要看得見。步驟本身 fail（紅燈＋通知），
+        # 但 continue-on-error 讓它不擋 build——不再用 exit 0 把失敗偽裝成成功。
+        continue-on-error: true
         run: |
           RESP=$(curl -s -w "\n%{http_code}" -X POST "https://api.indexnow.org/IndexNow" \
             -H "Content-Type: application/json; charset=utf-8" \
@@ -70,6 +76,5 @@ jobs:
           [ -n "$BODY" ] && echo "Body: $BODY"
           case "$STATUS" in
             200|202) echo "✅ IndexNow accepted"; exit 0 ;;
-            *) echo "⚠️ IndexNow returned $STATUS"; exit 0 ;;
-            # 不讓 IndexNow 失敗擋 build；只是 SEO 加分功能
+            *) echo "::warning::IndexNow returned $STATUS — 索引未完成，請人工到 Bing Webmaster／GSC 補推"; exit 1 ;;
           esac

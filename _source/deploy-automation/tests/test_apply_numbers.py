@@ -151,3 +151,50 @@ def test_cli_applies_new_value_on_a_copy(repo_root, tmp_path):
     r2 = subprocess.run([sys.executable, str(check), "--root", str(site),
                          "--numbers", str(numbers)], capture_output=True, text=True)
     assert "❌" in r2.stdout or r2.returncode == 1, "文案處還寫著 168+，check 應該要抓到"
+
+
+# ══════════════════════════════════════════════════════════════
+# Codex 盲審 2026-09-06 C-02 的回歸測試
+# ══════════════════════════════════════════════════════════════
+
+MULTILINE_METHODOLOGY = """<html><body>
+<span class="def-num" data-metric="partners">168<span class="plus">+</span></span>
+<table>
+  <tr style="border-bottom:1px solid var(--line);">
+    <td style="padding:12px;">合作組織數</td>
+    <td style="padding:12px;">每季更新</td>
+    <td style="padding:12px;">2026-05</td>
+  </tr>
+</table>
+<h2>變更紀錄 Changelog</h2>
+<div class="changelog">
+</div>
+</body></html>
+"""
+
+
+def test_month_cell_updated_when_label_and_month_are_on_different_lines():
+    """真實版面上標題與月份分屬不同行；舊版逐行取代永遠換不到月份（靜默漏改）。"""
+    changes = [ap.Change("partners", "168+", "173+")]
+    out = ap.update_methodology(MULTILINE_METHODOLOGY, changes, "2026-09-06")
+    assert "<td style=\"padding:12px;\">2026-09</td>" in out
+    assert "2026-05" not in out
+
+
+def test_apply_stops_when_month_cell_cannot_be_updated():
+    """表格版型改掉、月份欄不見了：不可以只寫 Changelog 就當成功。"""
+    broken = MULTILINE_METHODOLOGY.replace(
+        '<td style="padding:12px;">2026-05</td>', '<td style="padding:12px;">—</td>')
+    with pytest.raises(ap.ApplyError, match="最近更新"):
+        ap.update_methodology(broken, [ap.Change("partners", "168+", "173+")], "2026-09-06")
+
+
+def test_metric_field_projection_is_applied():
+    """data-metric-field 讓單位／期間等欄位也吃單一真源，不再只有 display。"""
+    html = ('<p><span data-metric="partners">168<span class="plus">+</span></span>'
+            '<span data-metric="partners" data-metric-field="unit">家</span></p>')
+    m = metrics()
+    m["partners"]["unit"] = "個"
+    out, changes = ap.apply_html(html, m)
+    assert ">個<" in out
+    assert [(c.metric_id, c.old, c.new) for c in changes] == [("partners", "家", "個")]

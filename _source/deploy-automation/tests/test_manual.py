@@ -31,3 +31,16 @@ def test_warns_against_hand_editing_pages(section):
     """舊版寫「Claude 找出全站所有顯示這些數字的地方、一次改完」——正是漏改的來源。"""
     assert "手" in section or "不要" in section or "禁止" in section
     assert "找出全站所有顯示這些數字的地方、一次改完、push" not in section
+
+
+def test_no_absolute_claim_that_scripts_change_every_number(section):
+    """Codex 盲審 C-09：前段寫「頁面上不手改數字」的全稱句，後段又要人工改
+    158 處文案——操作者只讀前半段就會漏掉。"""
+    assert "頁面上不手改數字" not in section
+    assert "158" in section, "要講清楚還有多少處文案要人工改"
+
+
+def test_postdeploy_is_described_as_verify_plus_manual_followup(section):
+    """C-08：postdeploy 不是「一鍵全做完」，收據裡還有 pending 的人工項。"""
+    assert "POSTDEPLOY_OK" in section
+    assert "pending" in section or "收據" in section
