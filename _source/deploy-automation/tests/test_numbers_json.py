@@ -11,8 +11,11 @@ REQUIRED_FIELDS = [
 
 # 來源鏈可由看板清單一手重算的＝approved；只回指官網下游頁面的＝provisional，
 # 待秘書處／理事長拍板（Codex 盲審 C-05）。
-APPROVED = ["valid_surveys", "single_reach", "press_coverage", "buzz_1y", "buzz_3y"]
-PROVISIONAL = ["partners", "actions", "press_releases", "policy_briefs", "legislators"]
+# 2026-09-06 理事長裁決：partners/actions/press_releases/policy_briefs/legislators
+# 五筆口徑 OK（屬 2023–2026 年區間口徑，2026 年底需再整理），status 改 approved。
+APPROVED = ["valid_surveys", "single_reach", "press_coverage", "buzz_1y", "buzz_3y",
+            "partners", "actions", "press_releases", "policy_briefs", "legislators"]
+PROVISIONAL = []
 
 # SOP 第一節「首批 id（2026-09-06）」
 FIRST_BATCH = ["valid_surveys", "single_reach", "partners",

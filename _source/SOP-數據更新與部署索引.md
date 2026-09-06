@@ -62,7 +62,7 @@
 
 ### 有意識不採／暫緩（Codex 盲審 2026-09-06）
 - **C-02 的「卡片全模板生成」**：目前只做到「單位／期間等欄位可用 `data-metric-field` 吃真源」，既有頁面的單位與期間仍是手寫。全站改模板要動三頁的版面結構，風險大於這次要解的問題；**取捨理由**：漏改的實害集中在數字本體（已被標記與基線覆蓋），欄位漂移目前靠季度冷讀。下次改版時逐頁改標記，不另開一次全站重構。
-- **C-05 的數值裁決**：`partners=168`（清單只有 173+ 與 65+ 兩種口徑）、`press_releases=113`（清單另載 2025 年 111）等五筆的口徑，**不是腳本能決定的事**，屬秘書處／理事長裁決。本輪只做到機制面：加 `status`／`source_status`、`draft` 不得上站、`provisional` 每次跑都被列出來提醒。**待裁決事項**：①168 的重算依據補進看板清單；②新聞稿 2025 年單一官方口徑；③裁決後把 status 改 approved 並補 `approved_by`／`approved_at`。
+- **C-05 的數值裁決**：`partners=168`（清單只有 173+ 與 65+ 兩種口徑）、`press_releases=113`（清單另載 2025 年 111）等五筆的口徑，**不是腳本能決定的事**，屬秘書處／理事長裁決。本輪只做到機制面：加 `status`／`source_status`、`draft` 不得上站、`provisional` 每次跑都被列出來提醒。**待裁決事項（已裁決，2026-09-06）**：理事長王瀚陽裁決 `partners`（168+）／`actions`（286）／`press_releases`（113）／`policy_briefs`（47）／`legislators`（19）五筆口徑 OK，屬 2023–2026 年區間口徑，**2026 年底需再整理**（①168 的重算依據補進看板清單、②新聞稿 2025 年單一官方口徑等細部核對留到年底一併處理）；`numbers.json` 五筆 `status` 已改 `approved` 並補 `approved_by: 理事長 王瀚陽`／`approved_at: 2026-09-06`（分支 `reach-page-2026-09`）。
 - **C-08 的人工項自動化**：GSC 請求索引、看板回填、知識庫 caveat 無法由腳本驗證完成，改為收據裡逐項 `pending` 並要求回填證據。**取捨理由**：假裝驗得到比誠實標 pending 更危險。
 - **縱深 2（單一原子變更／PR 缺產物即失敗）**：本 repo 只有 IndexNow 一個 workflow、部署走 push main，沒有 PR 閘可掛。改用「部署前檢查清單（第四節）＋ `--check-report` 位置表過期偵測」達到近似效果。有 CI 之後再補。
 - **縱深 1 的「改用 HTML parser」**：只採了一半（屬性單／雙引號、順序不拘、全形數字與逗號正規化都已支援），沒有換成 `html.parser`。**理由**：現行掃描要保留「原始碼位移 → 行號」的對應，換 parser 會失去這個能力，而行號是位置表唯一能給人的定位。
@@ -78,5 +78,6 @@
 （建議 4 已落地：`postdeploy.sh --live-dir` ＋ `postdeploy_verify.py`，postdeploy 測試不再開 port。建議 1、2、3 落地在第六節「誰寫哪本日誌」與派工模板；建議 5 的重跑由未參與產製的代理執行。）
 
 ## 變更紀錄
+- 2026-09-06｜理事長王瀚陽裁決：`partners`／`actions`／`press_releases`／`policy_briefs`／`legislators` 五筆 provisional 口徑 OK（屬 2023–2026 年區間口徑，2026 年底需再整理）｜`numbers.json` 五筆 `status` 改 `approved`＋補 `approved_by`／`approved_at`，第七節「C-05 的數值裁決」待裁決事項改記已裁；同步更新 `tests/test_numbers_json.py` 的 APPROVED／PROVISIONAL 基準清單｜分支 `reach-page-2026-09`
 - 2026-09-06 v1.1｜依 Codex 盲審 9 個 Critical 收割：新增位置基線 manifest（C-01）、真源自檢與 `data-metric-field` 投影（C-02）、黑數別名表與殘留舊值掃描（C-03）、allowlist 綁語境雜湊（C-04）、`status`／`source_status` 欄位（C-05）、sitemap 應更新清單改由 git diff 反推並納入 `sitemap_index.xml`（C-06）、IndexNow fail-closed 與三段狀態（C-07）、驗證與推送範圍改為自動推導＋收據（C-08）、制度檔真源與日誌責任釐清（C-09）｜盲審報告：`_source/審查_Codex盲審_數據SOP_20260906.md`｜指揮部（fable）收割，分支 numbers-sot-2026-09
 - 2026-09-06 v1 建檔｜指揮部（fable）起草，待 Codex 盲審
