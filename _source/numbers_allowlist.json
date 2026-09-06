@@ -169,6 +169,18 @@
       "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
     },
     {
+      "id": "buzz_1y",
+      "file": "impact/reach/index.html",
+      "count": 1,
+      "lines_20260906": [
+        8
+      ],
+      "contexts": [
+        "e0272a807c"
+      ],
+      "reason": "meta description 引用近一年網路聲量則數；buzz_1y 改值時要一起改"
+    },
+    {
       "id": "buzz_3y",
       "file": "chronicle/index.html",
       "count": 6,
@@ -712,6 +724,18 @@
     },
     {
       "id": "press_coverage",
+      "file": "impact/reach/index.html",
+      "count": 1,
+      "lines_20260906": [
+        352
+      ],
+      "contexts": [
+        "a3df0101d5"
+      ],
+      "reason": "第 3 層卡片說明揭露列管範圍內精確值 3,017 篇（對外顯示採保守值 3,000+）；press_coverage 改值時要一起改"
+    },
+    {
+      "id": "press_coverage",
       "file": "index.html",
       "count": 2,
       "lines_20260906": [
@@ -879,6 +903,60 @@
         "fef8bf989d"
       ],
       "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "single_reach",
+      "file": "impact/reach/index.html",
+      "count": 3,
+      "lines_20260906": [
+        8,
+        280,
+        327
+      ],
+      "contexts": [
+        "531733073f",
+        "e0272a807c",
+        "e7b05ef20b"
+      ],
+      "reason": "meta description、首頁一句話的口語寫法「10 萬人次」、第 2 層卡片說明引述調查報告原始欄位（填寫人次 39,971／觸及人次 104,000）；single_reach 改值時三處都要改"
+    },
+    {
+      "id": "single_reach",
+      "file": "llms.txt",
+      "count": 1,
+      "lines_20260906": [
+        83
+      ],
+      "contexts": [
+        "df48b668ae"
+      ],
+      "reason": "AI 可讀層「我們能觸及多少人」條目引用單場最高觸及；改值時要一起改"
+    },
+    {
+      "id": "valid_surveys",
+      "file": "impact/reach/index.html",
+      "count": 2,
+      "lines_20260906": [
+        8,
+        302
+      ],
+      "contexts": [
+        "920067b54c",
+        "a7bbf5d394"
+      ],
+      "reason": "meta description 與第 1 層卡片說明的對外近似寫法「約 6.6 萬份」；valid_surveys 改值時兩處都要改"
+    },
+    {
+      "id": "valid_surveys",
+      "file": "llms.txt",
+      "count": 1,
+      "lines_20260906": [
+        83
+      ],
+      "contexts": [
+        "df48b668ae"
+      ],
+      "reason": "AI 可讀層「我們能觸及多少人」條目引用累計有效問卷數；改值時要一起改"
     }
   ]
 }
