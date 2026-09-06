@@ -203,7 +203,8 @@ def scan_file(path: Path, rel: str, metrics: dict) -> tuple[list[Row], list[str]
             kept.append((start, end, shown))
         for start, _, shown in kept:
             line = _line_of(starts, offsets[start])
-            rows.append(Row(mid, f"{rel}:{line}", shown.strip(), "prose", False, "未標記"))
+            rows.append(Row(mid, f"{rel}:{line}", re.sub(r"\s+", " ", shown.strip()),
+                            "prose", False, "未標記"))
     return rows, problems
 
 
@@ -320,11 +321,12 @@ def main(argv: list[str] | None = None) -> int:
     rows, problems = check(Path(args.root), metrics, allowlist)
 
     print(f"=== 數字位置表（真源 {Path(args.numbers).name}，{len(metrics)} 筆指標）===")
-    print(f"{'id':<16}{'檔案:行號':<44}{'顯示值':<12}是否相符")
+    width = max([len(r.location) for r in rows] + [20]) + 2
+    print(f"{'id':<16}{'檔案:行號':<{width}}{'顯示值':<14}是否相符")
     for r in rows:
         state = ("✅ 相符" if r.kind == "marked" else "✅ 已登記文案") if r.ok else \
                 ("❌ " + r.note if r.kind == "marked" else "❌ 黑數")
-        print(f"{r.metric_id:<16}{r.location:<44}{r.shown:<12}{state}")
+        print(f"{r.metric_id:<16}{r.location:<{width}}{r.shown:<14}{state}")
 
     marked = [r for r in rows if r.kind == "marked"]
     prose = [r for r in rows if r.kind == "prose"]

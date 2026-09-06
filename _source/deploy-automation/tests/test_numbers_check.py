@@ -115,6 +115,16 @@ def test_overlapping_patterns_count_once(tmp_path):
     assert [(r.kind, r.shown) for r in rows] == [("prose", "7,917+")]
 
 
+def test_shown_value_is_single_line(tmp_path):
+    """`113 新聞稿` 在 HTML 裡可能被換行切開，位置表的顯示值欄不能夾帶換行
+    （會把 markdown 表格撐破）。"""
+    metrics = {"press_releases": dict(METRIC, id="press_releases", display="113",
+                                      scan_patterns=["113 新聞稿"])}
+    html = "<p>113\n        新聞稿</p>"
+    rows, _ = nc.check(build(tmp_path, "index.html", html), metrics, [])
+    assert [r.shown for r in rows] == ["113 新聞稿"]
+
+
 def test_registered_prose_is_allowed(tmp_path):
     html = GOOD + "<p>累計 66,247 份問卷</p>"
     allow = [{"id": "valid_surveys", "file": "index.html", "count": 1, "reason": "文案敘述"}]
