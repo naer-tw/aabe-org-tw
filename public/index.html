@@ -351,6 +351,8 @@
     .m-echo .m-card::before { background: var(--brand-orange); }
 
     .m-num { font-family: 'Inter', sans-serif; font-weight: 900; font-size: clamp(2.3rem, 4.6vw, 3.05rem); line-height: 1; letter-spacing: -0.025em; color: var(--ink); font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; display: flex; align-items: baseline; gap: 5px; margin-bottom: 10px; }
+    /* data-metric 只是給腳本認位置用的殼，不能變成 flex item（會吃掉數字與 +／單位之間的 gap） */
+    .m-num [data-metric] { display: contents; }
     .m-affix { font-size: 0.94rem; font-weight: 800; letter-spacing: 0.02em; color: var(--ink-2); }
     .m-voice .m-affix.m-plus { color: var(--brand-teal); }
     .m-echo .m-affix.m-plus { color: #C77A18; }

@@ -28,7 +28,9 @@ EXPECTED = {
 
 
 def strip_tags(html: str) -> str:
-    return re.sub(r"\s+", "", re.sub(r"<[^>]*>", "", html))
+    """只留讀者看得到的文字：<style>／<script> 內容不算文案。"""
+    body = re.sub(r"<(style|script)\b.*?</\1>", "", html, flags=re.S | re.I)
+    return re.sub(r"\s+", "", re.sub(r"<[^>]*>", "", body))
 
 
 def find_marked(src: str):
@@ -86,3 +88,11 @@ def test_copy_text_untouched(public_dir, page, repo_root):
     now = strip_tags((public_dir / page).read_text(encoding="utf-8"))
     before = strip_tags(backup.read_text(encoding="utf-8"))
     assert now == before, f"{page} 的可見文字被改動了（標記只能包數字，不得改文案）"
+
+
+def test_wrapper_span_does_not_become_a_flex_item(public_dir):
+    """首頁 .m-num 是 flex 容器（gap:5px）。data-metric 包一層 span 會讓數字與
+    「+／份／篇」擠在一起——必須用 display:contents 讓殼退出版面。
+    移掉這條 CSS 會讓六張卡片的排版悄悄變樣，所以鎖在測試裡。"""
+    css = (public_dir / "index.html").read_text(encoding="utf-8")
+    assert ".m-num [data-metric] { display: contents; }" in css
