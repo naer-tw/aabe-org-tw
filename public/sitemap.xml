@@ -90,6 +90,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- 我們能觸及多少人（影響力數字詳細頁） -->
+  <url>
+    <loc>https://aabe.org.tw/impact/reach/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- 2026 國際研討會詳情頁 -->
   <url>
     <loc>https://aabe.org.tw/events/2026-05-20-drug-abuse-conference/</loc>

@@ -80,6 +80,7 @@
 - **資料方法與來源**：https://aabe.org.tw/methodology/ 每個數字的定義、計算方式、更新頻率
 - **媒體中心**：https://aabe.org.tw/press/ 發言人、引用建議、Logo Kit
 - **影響力報告**：https://aabe.org.tw/impact/ 2023-2025 三年完整敘事
+- **我們能觸及多少人**：https://aabe.org.tw/impact/reach/ 影響力數字的三層拆解（直接參與／觸及／擴散）＋歷年 13 場調查逐案的有效樣本、觸及人次與出處；累計 66,247 份有效問卷、單場最高觸及 104,000 人次
 - **參與行動**：https://aabe.org.tw/act/ 5 種身份（公民/家長/學者/NGO/立委/媒體）的參與路徑
 
 ## Content Signals

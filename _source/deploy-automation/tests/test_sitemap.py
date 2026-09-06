@@ -4,6 +4,12 @@
 2026-09-06 依 Codex 盲審 C-06 改寫：舊版把「本次上線的四頁」寫死在測試裡，
 結果這次真的改過的 /impact/ 被排除在外，漏更新 lastmod 卻仍判綠。
 現在改成從 `git diff <base>...HEAD -- public/**/*.html` 反推應更新的 URL。
+
+2026-09-06 再修一次「同一天第二次部署」的假警報：基準原本寫死 `main`，當天第一批
+頁面併進 main 之後，同一天的第二個分支跑起來會把那些頁面算成「沒改卻標了今天」
+（實測誤報 /、/press/、/methodology/、/impact/ 四頁，而且 `changed_urls` 在 main
+上是空的，第一條測試必定紅）。基準改成「DEPLOY_DATE 當天之前的最後一次 commit」，
+語意即「本次部署日以來改過的頁面」，同一天開幾個分支都成立；取不到就退回 main。
 """
 import re
 import subprocess
@@ -11,7 +17,7 @@ import subprocess
 import pytest
 
 DEPLOY_DATE = "2026-09-06"
-BASE_REF = "main"          # 這次部署的比較基準
+FALLBACK_BASE_REF = "main"   # 取不到日期基準時的退路
 SITE = "https://aabe.org.tw"
 
 URL_BLOCK = re.compile(r"<url>(.*?)</url>", re.S)
@@ -26,15 +32,33 @@ def _url_of(rel: str) -> str:
     return SITE + path
 
 
+def _base_ref(repo_root) -> str:
+    """本次部署日之前的最後一次 commit；取不到就退回 main。
+
+    `--before=2026-09-06` 會被 git 的 approxidate 補上「現在的時分秒」，等於把當天
+    稍早的 commit 也算進去——那正是要排除的東西，所以時間要寫滿 T00:00:00。
+    """
+    r = subprocess.run(
+        ["git", "rev-list", "-1", f"--before={DEPLOY_DATE}T00:00:00", "main"],
+        capture_output=True, text=True, cwd=repo_root)
+    ref = r.stdout.strip()
+    return ref if r.returncode == 0 and ref else FALLBACK_BASE_REF
+
+
 @pytest.fixture(scope="module")
 def changed_urls(repo_root):
     # 用兩點 diff（含工作區未 commit 的改動）：部署上去的是工作區的內容，
-    # 不是只有已 commit 的部分。
-    r = subprocess.run(["git", "diff", "--name-only", BASE_REF, "--", "public"],
+    # 不是只有已 commit 的部分。新增的頁面在 commit 前是 untracked，diff 看不到，
+    # 要另外把它們撈進來——否則「新頁忘了寫進 sitemap」這種漏法測不出來。
+    base = _base_ref(repo_root)
+    r = subprocess.run(["git", "diff", "--name-only", base, "--", "public"],
                        capture_output=True, text=True, cwd=repo_root)
     if r.returncode != 0:
         pytest.skip(f"取不到 git diff（{r.stderr.strip()}）")
-    files = [f for f in r.stdout.split() if f.endswith(".html")]
+    untracked = subprocess.run(
+        ["git", "ls-files", "--others", "--exclude-standard", "--", "public"],
+        capture_output=True, text=True, cwd=repo_root)
+    files = [f for f in (r.stdout + "\n" + untracked.stdout).split() if f.endswith(".html")]
     return sorted({_url_of(f) for f in files})
 
 
