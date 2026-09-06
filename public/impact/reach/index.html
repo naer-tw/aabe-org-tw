@@ -220,6 +220,10 @@
     }
     @media (max-width: 620px) {
       .stat-grid { grid-template-columns: 1fr; }
+      /* 標題與英文提示擠在同一行會把「歷年調查（本盟自辦或合辦）」折成兩段，
+         窄螢幕改成標題整行、提示掉下一行 */
+      .section-head { flex-wrap: wrap; gap: 4px 12px; }
+      .section-head .section-title { flex: 1 0 100%; }
       .reach-quote { padding: 22px 20px; }
       .page-end { padding: 24px 20px 0; }
       table.reach-table.narrow { min-width: 560px; }
