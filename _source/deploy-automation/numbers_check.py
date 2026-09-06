@@ -9,7 +9,8 @@
      `display_approx`）、`status` 合法；`draft` 指標不得出現在頁面上。
   2. 掃 public/**/*.html ＋ llms.txt ＋ humans.txt，列出每個 data-metric 標記的
      檔案:行號與顯示值，與 numbers.json 的 `display`（或 data-metric-field 指定的
-     欄位）比對。
+     欄位）比對。清單型的 `data-metric-list="survey:<slug>"`（歷年調查表逐格的
+     樣本／觸及數）比對 numbers.json 的 `surveys` 陣列，規則相同。
   3. 位置基線：比對 `_source/numbers_manifest.json`——標記整個被刪、卡片被刪、
      數量變少、id 從未上站，都要報錯（C-01：沒有基線就等於「刪掉就沒事」）。
   4. 黑數掃描：把已知數值正規化成別名表（逗號／全形／萬千量級／約逾超過近／
@@ -51,6 +52,18 @@ VALID_STATUS = ("approved", "provisional", "draft")
 FIELD_KEYS = ("display", "value", "unit", "label", "period", "method", "source",
               "last_verified")
 
+# ── 清單型真源（numbers.json 的 surveys 陣列）────────────────
+# 歷年調查每一案的樣本／觸及是「一整張表」的資料，不適合每案各開一個 metric；
+# 用 `data-metric-list="survey:<slug>"` 標記，欄位仍用 data-metric-field 指定。
+LIST_PREFIXES = {"survey": "surveys"}
+LIST_KEY_FIELD = {"surveys": "slug"}
+LIST_FIELD_KEYS = ("valid_samples", "reach", "name", "year", "period", "partner",
+                   "role", "published", "source")
+LIST_REQUIRED_FIELDS = ("slug", "name", "year", "period", "partner", "role",
+                        "valid_samples", "reach", "published", "source",
+                        "last_verified", "status")
+LIST_DEFAULT_FIELD = "valid_samples"
+
 # 這些區塊裡的數字不是給人看的內容（樣式、腳本、向量圖、註解），不掃
 _BLANK_BLOCKS = re.compile(
     r"<style\b[^>]*>.*?</style>"
@@ -64,6 +77,9 @@ _META_CONTENT = re.compile(r'^<meta\b[^>]*\bcontent=(?:"([^"]*)"|\'([^\']*)\')',
 # 屬性可用單引號或雙引號、順序不拘（縱深建議 1）
 _OPEN_WITH_METRIC = re.compile(
     r'<(?P<tag>[a-zA-Z][\w-]*)\b[^>]*?\bdata-metric=(?:"(?P<id>[^"]+)"|\'(?P<id2>[^\']+)\')[^>]*>')
+_OPEN_WITH_METRIC_LIST = re.compile(
+    r'<(?P<tag>[a-zA-Z][\w-]*)\b[^>]*?\bdata-metric-list='
+    r'(?:"(?P<id>[^"]+)"|\'(?P<id2>[^\']+)\')[^>]*>')
 _METRIC_FIELD = re.compile(r'\bdata-metric-field=(?:"([^"]+)"|\'([^\']+)\')', re.I)
 
 # 全形數字／逗號／加號 → 半形（1:1 對應，位移不變）
@@ -160,15 +176,15 @@ def _strip_tags(html: str) -> str:
     return re.sub(r"\s+", "", _TAG.sub("", html)).translate(_WIDE)
 
 
-def find_marked(src: str) -> list[Marked]:
-    """找出所有 data-metric 標記，回傳 id、顯示文字（去標籤去空白）、行號與內文區間。"""
+def _find_by(src: str, opener: re.Pattern, default_field: str) -> list[Marked]:
+    """找出 opener 命中的標記，回傳 id、顯示文字（去標籤去空白）、行號與內文區間。"""
     starts = _line_starts(src)
     found: list[Marked] = []
-    for m in _OPEN_WITH_METRIC.finditer(src):
+    for m in opener.finditer(src):
         tag = m.group("tag")
         metric_id = m.group("id") or m.group("id2")
         fm = _METRIC_FIELD.search(m.group(0))
-        field_key = (fm.group(1) or fm.group(2)) if fm else "display"
+        field_key = (fm.group(1) or fm.group(2)) if fm else default_field
         closer = re.compile(r"</?" + re.escape(tag) + r"\b[^>]*>", re.I)
         depth, cursor, inner_end = 1, m.end(), None
         while depth:
@@ -183,7 +199,7 @@ def find_marked(src: str) -> list[Marked]:
                 depth += 1
             cursor = t.end()
         if inner_end is None:
-            raise ValueError(f'data-metric="{metric_id}" 的 <{tag}> 缺少收尾標籤')
+            raise ValueError(f'標記「{metric_id}」的 <{tag}> 缺少收尾標籤')
         found.append(Marked(
             metric_id=metric_id,
             shown=_strip_tags(src[m.end():inner_end]),
@@ -193,6 +209,20 @@ def find_marked(src: str) -> list[Marked]:
             field_key=field_key,
         ))
     return found
+
+
+def find_marked(src: str) -> list[Marked]:
+    """所有 `data-metric` 標記（指標型；apply_numbers.py 會依此改值）。"""
+    return _find_by(src, _OPEN_WITH_METRIC, "display")
+
+
+def find_marked_lists(src: str) -> list[Marked]:
+    """所有 `data-metric-list` 標記（清單型，例 `survey:cannabis-2023`）。
+
+    清單型的值是歷史紀錄（某一場調查的樣本數），不會像六大指標那樣被季度更新，
+    所以 apply_numbers.py 不碰它們；但顯示值仍必須等於真源，故一樣進位置表與基線。
+    """
+    return _find_by(src, _OPEN_WITH_METRIC_LIST, LIST_DEFAULT_FIELD)
 
 
 # ── 別名表（C-03）────────────────────────────────────────────
@@ -327,13 +357,52 @@ def context_hash(text: str, start: int, end: int, window: int = 60) -> str:
     return hashlib.sha1(sentence.encode("utf-8")).hexdigest()[:10]
 
 
-def scan_file(path: Path, rel: str, metrics: dict) -> tuple[list[Row], list[str]]:
+def scan_list_marks(marks: list[Marked], rel: str, lists: dict,
+                    ) -> tuple[list[Row], list[str]]:
+    """清單型標記（data-metric-list）逐格比對真源。"""
+    rows: list[Row] = []
+    problems: list[str] = []
+    for mk in marks:
+        loc = f"{rel}:{mk.line}"
+        entry = lists.get(mk.metric_id)
+        if entry is None:
+            problems.append(f"{loc} 用了 numbers.json 沒有的清單項目：{mk.metric_id}"
+                            f"（可用前綴：{'、'.join(sorted(LIST_PREFIXES))}）")
+            rows.append(Row(mk.metric_id, loc, mk.shown, "marked", False,
+                            "清單項目不存在於真源", field_key=mk.field_key))
+            continue
+        if mk.field_key not in LIST_FIELD_KEYS:
+            problems.append(f"{loc} data-metric-field=\"{mk.field_key}\" 不是清單可投影欄位"
+                            f"（可用：{'、'.join(LIST_FIELD_KEYS)}）")
+            rows.append(Row(mk.metric_id, loc, mk.shown, "marked", False, "欄位名不合法",
+                            field_key=mk.field_key))
+            continue
+        want = re.sub(r"\s+", " ", str(entry[mk.field_key])).strip()
+        shown = re.sub(r"\s+", " ", mk.shown).strip()
+        ok = shown == re.sub(r"\s+", "", want) or shown == want
+        if not ok:
+            problems.append(
+                f"{loc} {mk.metric_id}.{mk.field_key} 顯示「{shown}」，真源是「{want}」")
+        if entry.get("status") == "draft":
+            problems.append(f"{loc} {mk.metric_id} 的 status 是 draft，未經裁決不得上站")
+        rows.append(Row(mk.metric_id, loc, mk.shown, "marked", ok,
+                        "" if ok else f"應為 {want}", field_key=mk.field_key))
+    return rows, problems
+
+
+def scan_file(path: Path, rel: str, metrics: dict, lists: dict | None = None,
+              ) -> tuple[list[Row], list[str]]:
     src = path.read_text(encoding="utf-8")
     starts = _line_starts(src)
     rows: list[Row] = []
     problems: list[str] = []
+    lists = lists or {}
 
     marked = find_marked(src) if path.suffix == ".html" else []
+    listed = find_marked_lists(src) if path.suffix == ".html" else []
+    r, p = scan_list_marks(listed, rel, lists)
+    rows.extend(r)
+    problems.extend(p)
     for mk in marked:
         loc = f"{rel}:{mk.line}"
         metric = metrics.get(mk.metric_id)
@@ -358,7 +427,8 @@ def scan_file(path: Path, rel: str, metrics: dict) -> tuple[list[Row], list[str]
         rows.append(Row(mk.metric_id, loc, mk.shown, "marked", ok,
                         "" if ok else f"應為 {want}", field_key=mk.field_key))
 
-    text, offsets = condense(src, [(mk.start, mk.end) for mk in marked])
+    # 已標記處（含清單型）挖空：標記裡的數字有真源可比，不該再被黑數掃描抓一次
+    text, offsets = condense(src, [(mk.start, mk.end) for mk in marked + listed])
     for mid, metric in metrics.items():
         units = metric_units(metric)
         hits = []
@@ -403,6 +473,20 @@ def check_source(metrics: dict) -> list[str]:
     return problems
 
 
+def check_lists(lists: dict) -> list[str]:
+    """清單型真源自檢：欄位齊全、status 合法、值不得留空。"""
+    problems: list[str] = []
+    for key, entry in lists.items():
+        for field_name in LIST_REQUIRED_FIELDS:
+            if field_name not in entry or entry[field_name] in (None, ""):
+                problems.append(f"numbers.json 的 {key} 缺欄位 `{field_name}`"
+                                f"（查不到就寫「待查」，不得留空）")
+        if entry.get("status") not in VALID_STATUS:
+            problems.append(f"numbers.json 的 {key} status「{entry.get('status')}」不合法"
+                            f"（可用：{'、'.join(VALID_STATUS)}）")
+    return problems
+
+
 def load_json(path: Path) -> dict:
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
@@ -415,6 +499,20 @@ def load_metrics(path: Path) -> dict:
             raise ValueError(f"numbers.json 有重複 id：{m['id']}")
         metrics[m["id"]] = m
     return metrics
+
+
+def load_lists(path: Path) -> dict:
+    """讀 numbers.json 的清單型真源，回傳 {"survey:<slug>": entry}。"""
+    data = load_json(Path(path))
+    out: dict = {}
+    for prefix, key in LIST_PREFIXES.items():
+        id_field = LIST_KEY_FIELD[key]
+        for entry in data.get(key, []):
+            marker_id = f"{prefix}:{entry[id_field]}"
+            if marker_id in out:
+                raise ValueError(f"numbers.json 的 {key} 有重複 {id_field}：{entry[id_field]}")
+            out[marker_id] = entry
+    return out
 
 
 def load_allowlist(path: Path) -> list:
@@ -433,17 +531,18 @@ def load_manifest(path: Path) -> list:
 
 # ── 主檢查 ──────────────────────────────────────────────────
 def check(root: Path, metrics: dict, allowlist: list, manifest: list | None = None,
-          ) -> tuple[list[Row], list[str]]:
+          lists: dict | None = None) -> tuple[list[Row], list[str]]:
     root = Path(root)
+    lists = lists or {}
     rows: list[Row] = []
-    problems: list[str] = check_source(metrics)
+    problems: list[str] = check_source(metrics) + check_lists(lists)
     for path in iter_files(root):
         rel = path.relative_to(root).as_posix()
-        r, p = scan_file(path, rel, metrics)
+        r, p = scan_file(path, rel, metrics, lists)
         rows.extend(r)
         problems.extend(p)
 
-    problems += check_manifest(rows, metrics, manifest)
+    problems += check_manifest(rows, metrics, manifest, lists)
     problems += check_allowlist(rows, allowlist)
 
     rows.sort(key=lambda r: (r.location.rsplit(":", 1)[0],
@@ -461,12 +560,14 @@ def marked_counts(rows: list[Row]) -> dict[tuple[str, str], int]:
     return counts
 
 
-def check_manifest(rows: list[Row], metrics: dict, manifest: list | None) -> list[str]:
+def check_manifest(rows: list[Row], metrics: dict, manifest: list | None,
+                   lists: dict | None = None) -> list[str]:
     """位置基線（C-01）：標記整片消失、卡片被刪、數量變少，都要擋下來。"""
     problems: list[str] = []
     counts = marked_counts(rows)
 
     on_site = {mid for mid, m in metrics.items() if m.get("on_site", True)}
+    on_site |= {mid for mid, e in (lists or {}).items() if e.get("on_site", True)}
     present = {mid for (_f, mid) in counts}
     for mid in sorted(on_site - present):
         problems.append(f"位置基線：{mid} 宣告會上站（on_site），但全站找不到任何 data-metric 標記"
@@ -588,7 +689,8 @@ def build_allowlist(rows: list[Row], previous: list) -> dict:
 
 
 # ── 輸出 ────────────────────────────────────────────────────
-def report_text(rows: list[Row], metrics: dict, root: Path) -> str:
+def report_text(rows: list[Row], metrics: dict, root: Path,
+                lists: dict | None = None) -> str:
     lines = [
         "# 官網影響力數字位置表",
         "",
@@ -625,12 +727,20 @@ def report_text(rows: list[Row], metrics: dict, root: Path) -> str:
     for mid, m in metrics.items():
         lines.append(f"| `{mid}` | {m['display']} | {m['unit']} | {m['period']} | "
                      f"{m.get('status', '—')} | {m['last_verified']} |")
+    if lists:
+        lines += ["", "## 四、清單型真源摘要（surveys，data-metric-list）", "",
+                  "| 標記 id | 調查 | 有效樣本 | 觸及 | 角色 | status |",
+                  "|---|---|---|---|---|---|"]
+        for mid, e in lists.items():
+            lines.append(f"| `{mid}` | {e['name']} | {e['valid_samples']} | {e['reach']} | "
+                         f"{e['role']} | {e.get('status', '—')} |")
     lines.append("")
     return "\n".join(lines)
 
 
-def write_report(path: Path, rows: list[Row], metrics: dict, root: Path) -> None:
-    Path(path).write_text(report_text(rows, metrics, root), encoding="utf-8")
+def write_report(path: Path, rows: list[Row], metrics: dict, root: Path,
+                 lists: dict | None = None) -> None:
+    Path(path).write_text(report_text(rows, metrics, root, lists), encoding="utf-8")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -648,11 +758,12 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
 
     metrics = load_metrics(Path(args.numbers))
+    lists = load_lists(Path(args.numbers))
     allowlist = load_allowlist(Path(args.allowlist))
     manifest = load_manifest(Path(args.manifest))
 
     if args.update_allowlist or args.update_manifest:
-        rows, _ = check(Path(args.root), metrics, [], None)
+        rows, _ = check(Path(args.root), metrics, [], None, lists)
         if args.update_allowlist:
             Path(args.allowlist).write_text(
                 json.dumps(build_allowlist(rows, allowlist), ensure_ascii=False, indent=2) + "\n",
@@ -665,9 +776,10 @@ def main(argv: list[str] | None = None) -> int:
             print(f"已重新登記標記基線：{args.manifest}")
         return 0
 
-    rows, problems = check(Path(args.root), metrics, allowlist, manifest)
+    rows, problems = check(Path(args.root), metrics, allowlist, manifest, lists)
 
-    print(f"=== 數字位置表（真源 {Path(args.numbers).name}，{len(metrics)} 筆指標）===")
+    print(f"=== 數字位置表（真源 {Path(args.numbers).name}，{len(metrics)} 筆指標"
+          f"＋{len(lists)} 筆清單項目）===")
     width = max([len(r.location) for r in rows] + [20]) + 2
     print(f"{'id':<16}{'檔案:行號':<{width}}{'顯示值':<14}是否相符")
     for r in rows:
@@ -686,12 +798,12 @@ def main(argv: list[str] | None = None) -> int:
               f"{'、'.join(provisional)}")
 
     if args.report:
-        write_report(Path(args.report), rows, metrics, Path(args.root))
+        write_report(Path(args.report), rows, metrics, Path(args.root), lists)
         print(f"位置表已寫入：{args.report}")
 
     if args.check_report:
         p = Path(args.check_report)
-        want = report_text(rows, metrics, Path(args.root))
+        want = report_text(rows, metrics, Path(args.root), lists)
         got = p.read_text(encoding="utf-8") if p.exists() else ""
         if want != got:
             problems.append(f"位置表過期：{args.check_report} 與現況不符，請跑 --report 重生後 commit")
