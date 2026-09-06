@@ -215,6 +215,15 @@
       color: var(--ink-2);
     }
 
+    /* 全站 CSS 是 a{color:inherit;text-decoration:none}，內文連結若不另外上色會與本文
+       完全同色、讀者找不到。站上其他頁一律逐個連結補 inline style；本頁連結集中在
+       這三個容器，改用一條規則統一補，避免漏標。 */
+    .page-end a, .callout a, .stat-note a {
+      color: var(--ink);
+      border-bottom: 1px solid var(--brand-orange);
+    }
+    .page-end a:hover, .callout a:hover, .stat-note a:hover { color: var(--brand-orange); }
+
     @media (max-width: 900px) {
       .stat-grid { grid-template-columns: 1fr 1fr; }
     }
