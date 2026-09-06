@@ -24,3 +24,8 @@ package-lock.json
 # Build artifacts
 dist/
 .cache/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
