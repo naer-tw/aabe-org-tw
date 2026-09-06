@@ -5,7 +5,7 @@
   <!-- 首頁 -->
   <url>
     <loc>https://aabe.org.tw/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -45,7 +45,7 @@
   <!-- 聯絡我們 -->
   <url>
     <loc>https://aabe.org.tw/contact/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -53,7 +53,7 @@
   <!-- 媒體中心 -->
   <url>
     <loc>https://aabe.org.tw/press/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -77,7 +77,7 @@
   <!-- 資料方法與來源 -->
   <url>
     <loc>https://aabe.org.tw/methodology/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
