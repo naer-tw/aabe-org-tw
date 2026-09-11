@@ -16,7 +16,7 @@ import subprocess
 
 import pytest
 
-DEPLOY_DATE = "2026-09-06"
+DEPLOY_DATE = "2026-09-11"
 FALLBACK_BASE_REF = "main"   # 取不到日期基準時的退路
 SITE = "https://aabe.org.tw"
 
