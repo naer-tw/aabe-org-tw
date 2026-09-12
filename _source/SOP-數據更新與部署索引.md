@@ -64,7 +64,6 @@
 
 > 理事長 2026-09-06 指示：上線的同時設計規則，讓以後每次部署都把「每個位置、每個數字」更新好，並把部署後的索引一起做完；規則由 fable 起草、Codex 盲審、合併後兩邊共同遵守。
 > 原則：**單一真源、腳本檢查、部署即索引、經驗回寫**。人記不住十幾個位置，腳本記得住。
-- 2026-09-12 研討會新聞稿（含 8 圖）發布經驗｜①`publish.py add` **沒有卡片去重**——stage 失敗後不得重跑 add，否則首頁與列表各多一張卡；push 段改為直接 `git add -A / commit / push`（複製 publish.py `git_push()` 行為）。②pytest 兩個新失敗都不是本次造成：`test_committed_position_table_is_current`＝新聞稿插卡改了 index.html／press/index.html 行號，照 9/11 作法 `numbers_check.py --report _source/數字位置表_20260906.md` 重生即過；`test_sitemap.py::test_unchanged_pages_keep_their_lastmod`＝既有 events 頁（a17248b）lastmod 預設為活動日 2026-09-12，恰與部署日相同被判「謊報」——屬測試對「既有同日 lastmod」的假陽性，本次 deselect；**改進項**：測試應比對 HEAD 與工作區 lastmod 是否改變，而非只看是否等於 DEPLOY_DATE。③`test_markup.py::test_copy_text_untouched[index.html]` 在未改動 baseline 就紅（凍結基準過期，9/11 坑④延續）——已開卡。④hold-post 對 `postdeploy.sh` 報孤兒進程是自我匹配假陽性（pgrep 命中呼叫它的 shell 與 tee），以 pgrep 實查為準。⑤部署腳本 `deploy_nd2026.sh`（新聞稿專案 6_發布版）把 stage／push 兩段固化，預期檔清單要含位置表。收據：`_source/收據_2026-09-12.md`。
 
 ## 一、單一真源：`_source/numbers.json`
 - 全站每一個「影響力數字」只在這個檔定義一次。每筆欄位：
@@ -141,6 +140,7 @@
 > 6. 依本次唯一寫檔限制，我沒有 append `codex-crosscheck-playbook.md`；請指揮部從本節擷取一條經驗回寫，避免稽核者越權修改 Claude 端真源。
 
 （建議 4 已落地：`postdeploy.sh --live-dir` ＋ `postdeploy_verify.py`，postdeploy 測試不再開 port。建議 1、2、3 落地在第六節「誰寫哪本日誌」與派工模板；建議 5 的重跑由未參與產製的代理執行。）
+- 2026-09-12 研討會新聞稿（含 8 圖）發布經驗｜①`publish.py add` **沒有卡片去重**——stage 失敗後不得重跑 add，否則首頁與列表各多一張卡；push 段改為直接 `git add -A / commit / push`（複製 publish.py `git_push()` 行為）。②pytest 兩個新失敗都不是本次造成：`test_committed_position_table_is_current`＝新聞稿插卡改了 index.html／press/index.html 行號，照 9/11 作法 `numbers_check.py --report _source/數字位置表_20260906.md` 重生即過；`test_sitemap.py::test_unchanged_pages_keep_their_lastmod`＝既有 events 頁（a17248b）lastmod 預設為活動日 2026-09-12，恰與部署日相同被判「謊報」——屬測試對「既有同日 lastmod」的假陽性，本次 deselect；**改進項**：測試應比對 HEAD 與工作區 lastmod 是否改變，而非只看是否等於 DEPLOY_DATE。③`test_markup.py::test_copy_text_untouched[index.html]` 在未改動 baseline 就紅（凍結基準過期，9/11 坑④延續）——已開卡。④hold-post 對 `postdeploy.sh` 報孤兒進程是自我匹配假陽性（pgrep 命中呼叫它的 shell 與 tee），以 pgrep 實查為準。⑤部署腳本 `deploy_nd2026.sh`（新聞稿專案 6_發布版）把 stage／push 兩段固化，預期檔清單要含位置表。收據：`_source/收據_2026-09-12.md`。
 
 ## 變更紀錄
 - 2026-09-06｜理事長王瀚陽裁決：`partners`／`actions`／`press_releases`／`policy_briefs`／`legislators` 五筆 provisional 口徑 OK（屬 2023–2026 年區間口徑，2026 年底需再整理）｜`numbers.json` 五筆 `status` 改 `approved`＋補 `approved_by`／`approved_at`，第七節「C-05 的數值裁決」待裁決事項改記已裁；同步更新 `tests/test_numbers_json.py` 的 APPROVED／PROVISIONAL 基準清單｜分支 `reach-page-2026-09`
