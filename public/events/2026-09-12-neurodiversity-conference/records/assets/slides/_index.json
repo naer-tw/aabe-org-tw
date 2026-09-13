@@ -1,0 +1,2480 @@
+{
+  "021": {
+    "halves": {
+      "上": {
+        "file": "p-021上.jpg",
+        "thumb": "p-021上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-021下.jpg",
+        "thumb": "p-021下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 20,
+    "type": "split",
+    "whole": {
+      "file": "p-021.jpg",
+      "thumb": "p-021_thumb.jpg"
+    }
+  },
+  "022": {
+    "halves": {
+      "上": {
+        "file": "p-022上.jpg",
+        "thumb": "p-022上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-022下.jpg",
+        "thumb": "p-022下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 21,
+    "type": "split",
+    "whole": {
+      "file": "p-022.jpg",
+      "thumb": "p-022_thumb.jpg"
+    }
+  },
+  "023": {
+    "halves": {
+      "上": {
+        "file": "p-023上.jpg",
+        "thumb": "p-023上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-023下.jpg",
+        "thumb": "p-023下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 22,
+    "type": "split",
+    "whole": {
+      "file": "p-023.jpg",
+      "thumb": "p-023_thumb.jpg"
+    }
+  },
+  "024": {
+    "halves": {
+      "上": {
+        "file": "p-024上.jpg",
+        "thumb": "p-024上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-024下.jpg",
+        "thumb": "p-024下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 23,
+    "type": "split",
+    "whole": {
+      "file": "p-024.jpg",
+      "thumb": "p-024_thumb.jpg"
+    }
+  },
+  "025": {
+    "halves": {
+      "上": {
+        "file": "p-025上.jpg",
+        "thumb": "p-025上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-025下.jpg",
+        "thumb": "p-025下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 24,
+    "type": "split",
+    "whole": {
+      "file": "p-025.jpg",
+      "thumb": "p-025_thumb.jpg"
+    }
+  },
+  "026": {
+    "halves": {
+      "上": {
+        "file": "p-026上.jpg",
+        "thumb": "p-026上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-026下.jpg",
+        "thumb": "p-026下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 25,
+    "type": "split",
+    "whole": {
+      "file": "p-026.jpg",
+      "thumb": "p-026_thumb.jpg"
+    }
+  },
+  "027": {
+    "halves": {
+      "上": {
+        "file": "p-027上.jpg",
+        "thumb": "p-027上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-027下.jpg",
+        "thumb": "p-027下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 26,
+    "type": "split",
+    "whole": {
+      "file": "p-027.jpg",
+      "thumb": "p-027_thumb.jpg"
+    }
+  },
+  "028": {
+    "halves": {
+      "上": {
+        "file": "p-028上.jpg",
+        "thumb": "p-028上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-028下.jpg",
+        "thumb": "p-028下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 27,
+    "type": "split",
+    "whole": {
+      "file": "p-028.jpg",
+      "thumb": "p-028_thumb.jpg"
+    }
+  },
+  "029": {
+    "halves": {
+      "上": {
+        "file": "p-029上.jpg",
+        "thumb": "p-029上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-029下.jpg",
+        "thumb": "p-029下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 28,
+    "type": "split",
+    "whole": {
+      "file": "p-029.jpg",
+      "thumb": "p-029_thumb.jpg"
+    }
+  },
+  "030": {
+    "halves": {
+      "上": {
+        "file": "p-030上.jpg",
+        "thumb": "p-030上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-030下.jpg",
+        "thumb": "p-030下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 29,
+    "type": "split",
+    "whole": {
+      "file": "p-030.jpg",
+      "thumb": "p-030_thumb.jpg"
+    }
+  },
+  "031": {
+    "halves": {
+      "上": {
+        "file": "p-031上.jpg",
+        "thumb": "p-031上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-031下.jpg",
+        "thumb": "p-031下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 30,
+    "type": "split",
+    "whole": {
+      "file": "p-031.jpg",
+      "thumb": "p-031_thumb.jpg"
+    }
+  },
+  "032": {
+    "halves": {
+      "上": {
+        "file": "p-032上.jpg",
+        "thumb": "p-032上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-032下.jpg",
+        "thumb": "p-032下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 31,
+    "type": "split",
+    "whole": {
+      "file": "p-032.jpg",
+      "thumb": "p-032_thumb.jpg"
+    }
+  },
+  "033": {
+    "halves": {
+      "上": {
+        "file": "p-033上.jpg",
+        "thumb": "p-033上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-033下.jpg",
+        "thumb": "p-033下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 32,
+    "type": "split",
+    "whole": {
+      "file": "p-033.jpg",
+      "thumb": "p-033_thumb.jpg"
+    }
+  },
+  "034": {
+    "halves": {
+      "上": {
+        "file": "p-034上.jpg",
+        "thumb": "p-034上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-034下.jpg",
+        "thumb": "p-034下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 33,
+    "type": "split",
+    "whole": {
+      "file": "p-034.jpg",
+      "thumb": "p-034_thumb.jpg"
+    }
+  },
+  "035": {
+    "halves": {
+      "上": {
+        "file": "p-035上.jpg",
+        "thumb": "p-035上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-035下.jpg",
+        "thumb": "p-035下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 34,
+    "type": "split",
+    "whole": {
+      "file": "p-035.jpg",
+      "thumb": "p-035_thumb.jpg"
+    }
+  },
+  "036": {
+    "halves": {
+      "上": {
+        "file": "p-036上.jpg",
+        "thumb": "p-036上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-036下.jpg",
+        "thumb": "p-036下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 35,
+    "type": "split",
+    "whole": {
+      "file": "p-036.jpg",
+      "thumb": "p-036_thumb.jpg"
+    }
+  },
+  "037": {
+    "halves": {
+      "上": {
+        "file": "p-037上.jpg",
+        "thumb": "p-037上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-037下.jpg",
+        "thumb": "p-037下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 36,
+    "type": "split",
+    "whole": {
+      "file": "p-037.jpg",
+      "thumb": "p-037_thumb.jpg"
+    }
+  },
+  "038": {
+    "halves": {
+      "上": {
+        "file": "p-038上.jpg",
+        "thumb": "p-038上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-038下.jpg",
+        "thumb": "p-038下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 37,
+    "type": "split",
+    "whole": {
+      "file": "p-038.jpg",
+      "thumb": "p-038_thumb.jpg"
+    }
+  },
+  "039": {
+    "halves": {
+      "上": {
+        "file": "p-039上.jpg",
+        "thumb": "p-039上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-039下.jpg",
+        "thumb": "p-039下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 38,
+    "type": "split",
+    "whole": {
+      "file": "p-039.jpg",
+      "thumb": "p-039_thumb.jpg"
+    }
+  },
+  "040": {
+    "halves": {
+      "上": {
+        "file": "p-040上.jpg",
+        "thumb": "p-040上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-040下.jpg",
+        "thumb": "p-040下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 39,
+    "type": "split",
+    "whole": {
+      "file": "p-040.jpg",
+      "thumb": "p-040_thumb.jpg"
+    }
+  },
+  "041": {
+    "halves": {
+      "上": {
+        "file": "p-041上.jpg",
+        "thumb": "p-041上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-041下.jpg",
+        "thumb": "p-041下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 40,
+    "type": "split",
+    "whole": {
+      "file": "p-041.jpg",
+      "thumb": "p-041_thumb.jpg"
+    }
+  },
+  "042": {
+    "halves": {
+      "上": {
+        "file": "p-042上.jpg",
+        "thumb": "p-042上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-042下.jpg",
+        "thumb": "p-042下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 41,
+    "type": "split",
+    "whole": {
+      "file": "p-042.jpg",
+      "thumb": "p-042_thumb.jpg"
+    }
+  },
+  "043": {
+    "halves": {
+      "上": {
+        "file": "p-043上.jpg",
+        "thumb": "p-043上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-043下.jpg",
+        "thumb": "p-043下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 42,
+    "type": "split",
+    "whole": {
+      "file": "p-043.jpg",
+      "thumb": "p-043_thumb.jpg"
+    }
+  },
+  "044": {
+    "halves": {
+      "上": {
+        "file": "p-044上.jpg",
+        "thumb": "p-044上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-044下.jpg",
+        "thumb": "p-044下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 43,
+    "type": "split",
+    "whole": {
+      "file": "p-044.jpg",
+      "thumb": "p-044_thumb.jpg"
+    }
+  },
+  "045": {
+    "halves": {
+      "上": {
+        "file": "p-045上.jpg",
+        "thumb": "p-045上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-045下.jpg",
+        "thumb": "p-045下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 44,
+    "type": "split",
+    "whole": {
+      "file": "p-045.jpg",
+      "thumb": "p-045_thumb.jpg"
+    }
+  },
+  "046": {
+    "halves": {
+      "上": {
+        "file": "p-046上.jpg",
+        "thumb": "p-046上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-046下.jpg",
+        "thumb": "p-046下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 45,
+    "type": "split",
+    "whole": {
+      "file": "p-046.jpg",
+      "thumb": "p-046_thumb.jpg"
+    }
+  },
+  "047": {
+    "halves": {
+      "上": {
+        "file": "p-047上.jpg",
+        "thumb": "p-047上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-047下.jpg",
+        "thumb": "p-047下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 46,
+    "type": "split",
+    "whole": {
+      "file": "p-047.jpg",
+      "thumb": "p-047_thumb.jpg"
+    }
+  },
+  "048": {
+    "halves": {
+      "上": {
+        "file": "p-048上.jpg",
+        "thumb": "p-048上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-048下.jpg",
+        "thumb": "p-048下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 47,
+    "type": "split",
+    "whole": {
+      "file": "p-048.jpg",
+      "thumb": "p-048_thumb.jpg"
+    }
+  },
+  "049": {
+    "halves": {
+      "上": {
+        "file": "p-049上.jpg",
+        "thumb": "p-049上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-049下.jpg",
+        "thumb": "p-049下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 48,
+    "type": "split",
+    "whole": {
+      "file": "p-049.jpg",
+      "thumb": "p-049_thumb.jpg"
+    }
+  },
+  "050": {
+    "halves": {
+      "上": {
+        "file": "p-050上.jpg",
+        "thumb": "p-050上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-050下.jpg",
+        "thumb": "p-050下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 49,
+    "type": "split",
+    "whole": {
+      "file": "p-050.jpg",
+      "thumb": "p-050_thumb.jpg"
+    }
+  },
+  "051": {
+    "halves": {
+      "上": {
+        "file": "p-051上.jpg",
+        "thumb": "p-051上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-051下.jpg",
+        "thumb": "p-051下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 50,
+    "type": "split",
+    "whole": {
+      "file": "p-051.jpg",
+      "thumb": "p-051_thumb.jpg"
+    }
+  },
+  "052": {
+    "halves": {
+      "上": {
+        "file": "p-052上.jpg",
+        "thumb": "p-052上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-052下.jpg",
+        "thumb": "p-052下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 51,
+    "type": "split",
+    "whole": {
+      "file": "p-052.jpg",
+      "thumb": "p-052_thumb.jpg"
+    }
+  },
+  "053": {
+    "halves": {
+      "上": {
+        "file": "p-053上.jpg",
+        "thumb": "p-053上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-053下.jpg",
+        "thumb": "p-053下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 52,
+    "type": "split",
+    "whole": {
+      "file": "p-053.jpg",
+      "thumb": "p-053_thumb.jpg"
+    }
+  },
+  "054": {
+    "halves": {
+      "上": {
+        "file": "p-054上.jpg",
+        "thumb": "p-054上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-054下.jpg",
+        "thumb": "p-054下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 53,
+    "type": "split",
+    "whole": {
+      "file": "p-054.jpg",
+      "thumb": "p-054_thumb.jpg"
+    }
+  },
+  "055": {
+    "halves": {
+      "上": {
+        "file": "p-055上.jpg",
+        "thumb": "p-055上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-055下.jpg",
+        "thumb": "p-055下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 54,
+    "type": "split",
+    "whole": {
+      "file": "p-055.jpg",
+      "thumb": "p-055_thumb.jpg"
+    }
+  },
+  "056": {
+    "halves": {
+      "上": {
+        "file": "p-056上.jpg",
+        "thumb": "p-056上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-056下.jpg",
+        "thumb": "p-056下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 55,
+    "type": "split",
+    "whole": {
+      "file": "p-056.jpg",
+      "thumb": "p-056_thumb.jpg"
+    }
+  },
+  "057": {
+    "halves": {
+      "上": {
+        "file": "p-057上.jpg",
+        "thumb": "p-057上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-057下.jpg",
+        "thumb": "p-057下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 56,
+    "type": "split",
+    "whole": {
+      "file": "p-057.jpg",
+      "thumb": "p-057_thumb.jpg"
+    }
+  },
+  "058": {
+    "halves": {
+      "上": {
+        "file": "p-058上.jpg",
+        "thumb": "p-058上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-058下.jpg",
+        "thumb": "p-058下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 57,
+    "type": "split",
+    "whole": {
+      "file": "p-058.jpg",
+      "thumb": "p-058_thumb.jpg"
+    }
+  },
+  "059": {
+    "halves": {
+      "上": {
+        "file": "p-059上.jpg",
+        "thumb": "p-059上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-059下.jpg",
+        "thumb": "p-059下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 58,
+    "type": "split",
+    "whole": {
+      "file": "p-059.jpg",
+      "thumb": "p-059_thumb.jpg"
+    }
+  },
+  "060": {
+    "halves": {
+      "上": {
+        "file": "p-060上.jpg",
+        "thumb": "p-060上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-060下.jpg",
+        "thumb": "p-060下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 59,
+    "type": "split",
+    "whole": {
+      "file": "p-060.jpg",
+      "thumb": "p-060_thumb.jpg"
+    }
+  },
+  "061": {
+    "halves": {
+      "上": {
+        "file": "p-061上.jpg",
+        "thumb": "p-061上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-061下.jpg",
+        "thumb": "p-061下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 60,
+    "type": "split",
+    "whole": {
+      "file": "p-061.jpg",
+      "thumb": "p-061_thumb.jpg"
+    }
+  },
+  "062": {
+    "halves": {
+      "上": {
+        "file": "p-062上.jpg",
+        "thumb": "p-062上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-062下.jpg",
+        "thumb": "p-062下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 61,
+    "type": "split",
+    "whole": {
+      "file": "p-062.jpg",
+      "thumb": "p-062_thumb.jpg"
+    }
+  },
+  "063": {
+    "halves": {
+      "上": {
+        "file": "p-063上.jpg",
+        "thumb": "p-063上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-063下.jpg",
+        "thumb": "p-063下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 62,
+    "type": "split",
+    "whole": {
+      "file": "p-063.jpg",
+      "thumb": "p-063_thumb.jpg"
+    }
+  },
+  "064": {
+    "halves": {
+      "上": {
+        "file": "p-064上.jpg",
+        "thumb": "p-064上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-064下.jpg",
+        "thumb": "p-064下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 63,
+    "type": "split",
+    "whole": {
+      "file": "p-064.jpg",
+      "thumb": "p-064_thumb.jpg"
+    }
+  },
+  "065": {
+    "halves": {
+      "上": {
+        "file": "p-065上.jpg",
+        "thumb": "p-065上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-065下.jpg",
+        "thumb": "p-065下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 64,
+    "type": "split",
+    "whole": {
+      "file": "p-065.jpg",
+      "thumb": "p-065_thumb.jpg"
+    }
+  },
+  "066": {
+    "halves": {
+      "上": {
+        "file": "p-066上.jpg",
+        "thumb": "p-066上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-066下.jpg",
+        "thumb": "p-066下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 65,
+    "type": "split",
+    "whole": {
+      "file": "p-066.jpg",
+      "thumb": "p-066_thumb.jpg"
+    }
+  },
+  "067": {
+    "halves": {
+      "上": {
+        "file": "p-067上.jpg",
+        "thumb": "p-067上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-067下.jpg",
+        "thumb": "p-067下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 66,
+    "type": "split",
+    "whole": {
+      "file": "p-067.jpg",
+      "thumb": "p-067_thumb.jpg"
+    }
+  },
+  "068": {
+    "halves": {
+      "上": {
+        "file": "p-068上.jpg",
+        "thumb": "p-068上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-068下.jpg",
+        "thumb": "p-068下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 67,
+    "type": "split",
+    "whole": {
+      "file": "p-068.jpg",
+      "thumb": "p-068_thumb.jpg"
+    }
+  },
+  "069": {
+    "halves": {
+      "上": {
+        "file": "p-069上.jpg",
+        "thumb": "p-069上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-069下.jpg",
+        "thumb": "p-069下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 68,
+    "type": "split",
+    "whole": {
+      "file": "p-069.jpg",
+      "thumb": "p-069_thumb.jpg"
+    }
+  },
+  "070": {
+    "halves": {
+      "上": {
+        "file": "p-070上.jpg",
+        "thumb": "p-070上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-070下.jpg",
+        "thumb": "p-070下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 69,
+    "type": "split",
+    "whole": {
+      "file": "p-070.jpg",
+      "thumb": "p-070_thumb.jpg"
+    }
+  },
+  "071": {
+    "halves": {
+      "上": {
+        "file": "p-071上.jpg",
+        "thumb": "p-071上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-071下.jpg",
+        "thumb": "p-071下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 70,
+    "type": "split",
+    "whole": {
+      "file": "p-071.jpg",
+      "thumb": "p-071_thumb.jpg"
+    }
+  },
+  "072": {
+    "halves": {
+      "上": {
+        "file": "p-072上.jpg",
+        "thumb": "p-072上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-072下.jpg",
+        "thumb": "p-072下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 71,
+    "type": "split",
+    "whole": {
+      "file": "p-072.jpg",
+      "thumb": "p-072_thumb.jpg"
+    }
+  },
+  "073": {
+    "halves": {
+      "上": {
+        "file": "p-073上.jpg",
+        "thumb": "p-073上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-073下.jpg",
+        "thumb": "p-073下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 72,
+    "type": "split",
+    "whole": {
+      "file": "p-073.jpg",
+      "thumb": "p-073_thumb.jpg"
+    }
+  },
+  "074": {
+    "halves": {
+      "上": {
+        "file": "p-074上.jpg",
+        "thumb": "p-074上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-074下.jpg",
+        "thumb": "p-074下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 73,
+    "type": "split",
+    "whole": {
+      "file": "p-074.jpg",
+      "thumb": "p-074_thumb.jpg"
+    }
+  },
+  "075": {
+    "halves": {
+      "上": {
+        "file": "p-075上.jpg",
+        "thumb": "p-075上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-075下.jpg",
+        "thumb": "p-075下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 74,
+    "type": "split",
+    "whole": {
+      "file": "p-075.jpg",
+      "thumb": "p-075_thumb.jpg"
+    }
+  },
+  "076": {
+    "halves": {
+      "上": {
+        "file": "p-076上.jpg",
+        "thumb": "p-076上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-076下.jpg",
+        "thumb": "p-076下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 75,
+    "type": "split",
+    "whole": {
+      "file": "p-076.jpg",
+      "thumb": "p-076_thumb.jpg"
+    }
+  },
+  "077": {
+    "has_content": {
+      "box1": true,
+      "box2": false
+    },
+    "printed_page": 76,
+    "type": "single",
+    "whole": {
+      "file": "p-077.jpg",
+      "thumb": "p-077_thumb.jpg"
+    }
+  },
+  "078": {
+    "halves": {
+      "上": {
+        "file": "p-078上.jpg",
+        "thumb": "p-078上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-078下.jpg",
+        "thumb": "p-078下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 77,
+    "type": "split",
+    "whole": {
+      "file": "p-078.jpg",
+      "thumb": "p-078_thumb.jpg"
+    }
+  },
+  "079": {
+    "halves": {
+      "上": {
+        "file": "p-079上.jpg",
+        "thumb": "p-079上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-079下.jpg",
+        "thumb": "p-079下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 78,
+    "type": "split",
+    "whole": {
+      "file": "p-079.jpg",
+      "thumb": "p-079_thumb.jpg"
+    }
+  },
+  "080": {
+    "halves": {
+      "上": {
+        "file": "p-080上.jpg",
+        "thumb": "p-080上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-080下.jpg",
+        "thumb": "p-080下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 79,
+    "type": "split",
+    "whole": {
+      "file": "p-080.jpg",
+      "thumb": "p-080_thumb.jpg"
+    }
+  },
+  "081": {
+    "halves": {
+      "上": {
+        "file": "p-081上.jpg",
+        "thumb": "p-081上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-081下.jpg",
+        "thumb": "p-081下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 80,
+    "type": "split",
+    "whole": {
+      "file": "p-081.jpg",
+      "thumb": "p-081_thumb.jpg"
+    }
+  },
+  "082": {
+    "halves": {
+      "上": {
+        "file": "p-082上.jpg",
+        "thumb": "p-082上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-082下.jpg",
+        "thumb": "p-082下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 81,
+    "type": "split",
+    "whole": {
+      "file": "p-082.jpg",
+      "thumb": "p-082_thumb.jpg"
+    }
+  },
+  "083": {
+    "halves": {
+      "上": {
+        "file": "p-083上.jpg",
+        "thumb": "p-083上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-083下.jpg",
+        "thumb": "p-083下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 82,
+    "type": "split",
+    "whole": {
+      "file": "p-083.jpg",
+      "thumb": "p-083_thumb.jpg"
+    }
+  },
+  "084": {
+    "halves": {
+      "上": {
+        "file": "p-084上.jpg",
+        "thumb": "p-084上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-084下.jpg",
+        "thumb": "p-084下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 83,
+    "type": "split",
+    "whole": {
+      "file": "p-084.jpg",
+      "thumb": "p-084_thumb.jpg"
+    }
+  },
+  "085": {
+    "halves": {
+      "上": {
+        "file": "p-085上.jpg",
+        "thumb": "p-085上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-085下.jpg",
+        "thumb": "p-085下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 84,
+    "type": "split",
+    "whole": {
+      "file": "p-085.jpg",
+      "thumb": "p-085_thumb.jpg"
+    }
+  },
+  "086": {
+    "halves": {
+      "上": {
+        "file": "p-086上.jpg",
+        "thumb": "p-086上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-086下.jpg",
+        "thumb": "p-086下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 85,
+    "type": "split",
+    "whole": {
+      "file": "p-086.jpg",
+      "thumb": "p-086_thumb.jpg"
+    }
+  },
+  "087": {
+    "halves": {
+      "上": {
+        "file": "p-087上.jpg",
+        "thumb": "p-087上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-087下.jpg",
+        "thumb": "p-087下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 86,
+    "type": "split",
+    "whole": {
+      "file": "p-087.jpg",
+      "thumb": "p-087_thumb.jpg"
+    }
+  },
+  "088": {
+    "halves": {
+      "上": {
+        "file": "p-088上.jpg",
+        "thumb": "p-088上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-088下.jpg",
+        "thumb": "p-088下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 87,
+    "type": "split",
+    "whole": {
+      "file": "p-088.jpg",
+      "thumb": "p-088_thumb.jpg"
+    }
+  },
+  "089": {
+    "halves": {
+      "上": {
+        "file": "p-089上.jpg",
+        "thumb": "p-089上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-089下.jpg",
+        "thumb": "p-089下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 88,
+    "type": "split",
+    "whole": {
+      "file": "p-089.jpg",
+      "thumb": "p-089_thumb.jpg"
+    }
+  },
+  "090": {
+    "halves": {
+      "上": {
+        "file": "p-090上.jpg",
+        "thumb": "p-090上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-090下.jpg",
+        "thumb": "p-090下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 89,
+    "type": "split",
+    "whole": {
+      "file": "p-090.jpg",
+      "thumb": "p-090_thumb.jpg"
+    }
+  },
+  "091": {
+    "halves": {
+      "上": {
+        "file": "p-091上.jpg",
+        "thumb": "p-091上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-091下.jpg",
+        "thumb": "p-091下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 90,
+    "type": "split",
+    "whole": {
+      "file": "p-091.jpg",
+      "thumb": "p-091_thumb.jpg"
+    }
+  },
+  "092": {
+    "halves": {
+      "上": {
+        "file": "p-092上.jpg",
+        "thumb": "p-092上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-092下.jpg",
+        "thumb": "p-092下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 91,
+    "type": "split",
+    "whole": {
+      "file": "p-092.jpg",
+      "thumb": "p-092_thumb.jpg"
+    }
+  },
+  "093": {
+    "halves": {
+      "上": {
+        "file": "p-093上.jpg",
+        "thumb": "p-093上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-093下.jpg",
+        "thumb": "p-093下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 92,
+    "type": "split",
+    "whole": {
+      "file": "p-093.jpg",
+      "thumb": "p-093_thumb.jpg"
+    }
+  },
+  "094": {
+    "halves": {
+      "上": {
+        "file": "p-094上.jpg",
+        "thumb": "p-094上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-094下.jpg",
+        "thumb": "p-094下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 93,
+    "type": "split",
+    "whole": {
+      "file": "p-094.jpg",
+      "thumb": "p-094_thumb.jpg"
+    }
+  },
+  "095": {
+    "halves": {
+      "上": {
+        "file": "p-095上.jpg",
+        "thumb": "p-095上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-095下.jpg",
+        "thumb": "p-095下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 94,
+    "type": "split",
+    "whole": {
+      "file": "p-095.jpg",
+      "thumb": "p-095_thumb.jpg"
+    }
+  },
+  "096": {
+    "halves": {
+      "上": {
+        "file": "p-096上.jpg",
+        "thumb": "p-096上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-096下.jpg",
+        "thumb": "p-096下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 95,
+    "type": "split",
+    "whole": {
+      "file": "p-096.jpg",
+      "thumb": "p-096_thumb.jpg"
+    }
+  },
+  "097": {
+    "halves": {
+      "上": {
+        "file": "p-097上.jpg",
+        "thumb": "p-097上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-097下.jpg",
+        "thumb": "p-097下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 96,
+    "type": "split",
+    "whole": {
+      "file": "p-097.jpg",
+      "thumb": "p-097_thumb.jpg"
+    }
+  },
+  "098": {
+    "halves": {
+      "上": {
+        "file": "p-098上.jpg",
+        "thumb": "p-098上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-098下.jpg",
+        "thumb": "p-098下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 97,
+    "type": "split",
+    "whole": {
+      "file": "p-098.jpg",
+      "thumb": "p-098_thumb.jpg"
+    }
+  },
+  "099": {
+    "halves": {
+      "上": {
+        "file": "p-099上.jpg",
+        "thumb": "p-099上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-099下.jpg",
+        "thumb": "p-099下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 98,
+    "type": "split",
+    "whole": {
+      "file": "p-099.jpg",
+      "thumb": "p-099_thumb.jpg"
+    }
+  },
+  "100": {
+    "halves": {
+      "上": {
+        "file": "p-100上.jpg",
+        "thumb": "p-100上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-100下.jpg",
+        "thumb": "p-100下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 99,
+    "type": "split",
+    "whole": {
+      "file": "p-100.jpg",
+      "thumb": "p-100_thumb.jpg"
+    }
+  },
+  "101": {
+    "has_content": {
+      "box1": true,
+      "box2": false
+    },
+    "printed_page": 100,
+    "type": "single",
+    "whole": {
+      "file": "p-101.jpg",
+      "thumb": "p-101_thumb.jpg"
+    }
+  },
+  "102": {
+    "halves": {
+      "上": {
+        "file": "p-102上.jpg",
+        "thumb": "p-102上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-102下.jpg",
+        "thumb": "p-102下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 101,
+    "type": "split",
+    "whole": {
+      "file": "p-102.jpg",
+      "thumb": "p-102_thumb.jpg"
+    }
+  },
+  "103": {
+    "halves": {
+      "上": {
+        "file": "p-103上.jpg",
+        "thumb": "p-103上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-103下.jpg",
+        "thumb": "p-103下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 102,
+    "type": "split",
+    "whole": {
+      "file": "p-103.jpg",
+      "thumb": "p-103_thumb.jpg"
+    }
+  },
+  "104": {
+    "halves": {
+      "上": {
+        "file": "p-104上.jpg",
+        "thumb": "p-104上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-104下.jpg",
+        "thumb": "p-104下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 103,
+    "type": "split",
+    "whole": {
+      "file": "p-104.jpg",
+      "thumb": "p-104_thumb.jpg"
+    }
+  },
+  "105": {
+    "halves": {
+      "上": {
+        "file": "p-105上.jpg",
+        "thumb": "p-105上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-105下.jpg",
+        "thumb": "p-105下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 104,
+    "type": "split",
+    "whole": {
+      "file": "p-105.jpg",
+      "thumb": "p-105_thumb.jpg"
+    }
+  },
+  "106": {
+    "halves": {
+      "上": {
+        "file": "p-106上.jpg",
+        "thumb": "p-106上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-106下.jpg",
+        "thumb": "p-106下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 105,
+    "type": "split",
+    "whole": {
+      "file": "p-106.jpg",
+      "thumb": "p-106_thumb.jpg"
+    }
+  },
+  "107": {
+    "halves": {
+      "上": {
+        "file": "p-107上.jpg",
+        "thumb": "p-107上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-107下.jpg",
+        "thumb": "p-107下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 106,
+    "type": "split",
+    "whole": {
+      "file": "p-107.jpg",
+      "thumb": "p-107_thumb.jpg"
+    }
+  },
+  "108": {
+    "halves": {
+      "上": {
+        "file": "p-108上.jpg",
+        "thumb": "p-108上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-108下.jpg",
+        "thumb": "p-108下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 107,
+    "type": "split",
+    "whole": {
+      "file": "p-108.jpg",
+      "thumb": "p-108_thumb.jpg"
+    }
+  },
+  "109": {
+    "halves": {
+      "上": {
+        "file": "p-109上.jpg",
+        "thumb": "p-109上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-109下.jpg",
+        "thumb": "p-109下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 108,
+    "type": "split",
+    "whole": {
+      "file": "p-109.jpg",
+      "thumb": "p-109_thumb.jpg"
+    }
+  },
+  "110": {
+    "halves": {
+      "上": {
+        "file": "p-110上.jpg",
+        "thumb": "p-110上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-110下.jpg",
+        "thumb": "p-110下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 109,
+    "type": "split",
+    "whole": {
+      "file": "p-110.jpg",
+      "thumb": "p-110_thumb.jpg"
+    }
+  },
+  "111": {
+    "halves": {
+      "上": {
+        "file": "p-111上.jpg",
+        "thumb": "p-111上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-111下.jpg",
+        "thumb": "p-111下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 110,
+    "type": "split",
+    "whole": {
+      "file": "p-111.jpg",
+      "thumb": "p-111_thumb.jpg"
+    }
+  },
+  "112": {
+    "halves": {
+      "上": {
+        "file": "p-112上.jpg",
+        "thumb": "p-112上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-112下.jpg",
+        "thumb": "p-112下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 111,
+    "type": "split",
+    "whole": {
+      "file": "p-112.jpg",
+      "thumb": "p-112_thumb.jpg"
+    }
+  },
+  "113": {
+    "halves": {
+      "上": {
+        "file": "p-113上.jpg",
+        "thumb": "p-113上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-113下.jpg",
+        "thumb": "p-113下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 112,
+    "type": "split",
+    "whole": {
+      "file": "p-113.jpg",
+      "thumb": "p-113_thumb.jpg"
+    }
+  },
+  "114": {
+    "halves": {
+      "上": {
+        "file": "p-114上.jpg",
+        "thumb": "p-114上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-114下.jpg",
+        "thumb": "p-114下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 113,
+    "type": "split",
+    "whole": {
+      "file": "p-114.jpg",
+      "thumb": "p-114_thumb.jpg"
+    }
+  },
+  "115": {
+    "halves": {
+      "上": {
+        "file": "p-115上.jpg",
+        "thumb": "p-115上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-115下.jpg",
+        "thumb": "p-115下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 114,
+    "type": "split",
+    "whole": {
+      "file": "p-115.jpg",
+      "thumb": "p-115_thumb.jpg"
+    }
+  },
+  "116": {
+    "halves": {
+      "上": {
+        "file": "p-116上.jpg",
+        "thumb": "p-116上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-116下.jpg",
+        "thumb": "p-116下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 115,
+    "type": "split",
+    "whole": {
+      "file": "p-116.jpg",
+      "thumb": "p-116_thumb.jpg"
+    }
+  },
+  "117": {
+    "halves": {
+      "上": {
+        "file": "p-117上.jpg",
+        "thumb": "p-117上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-117下.jpg",
+        "thumb": "p-117下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 116,
+    "type": "split",
+    "whole": {
+      "file": "p-117.jpg",
+      "thumb": "p-117_thumb.jpg"
+    }
+  },
+  "118": {
+    "halves": {
+      "上": {
+        "file": "p-118上.jpg",
+        "thumb": "p-118上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-118下.jpg",
+        "thumb": "p-118下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 117,
+    "type": "split",
+    "whole": {
+      "file": "p-118.jpg",
+      "thumb": "p-118_thumb.jpg"
+    }
+  },
+  "119": {
+    "halves": {
+      "上": {
+        "file": "p-119上.jpg",
+        "thumb": "p-119上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-119下.jpg",
+        "thumb": "p-119下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 118,
+    "type": "split",
+    "whole": {
+      "file": "p-119.jpg",
+      "thumb": "p-119_thumb.jpg"
+    }
+  },
+  "120": {
+    "halves": {
+      "上": {
+        "file": "p-120上.jpg",
+        "thumb": "p-120上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-120下.jpg",
+        "thumb": "p-120下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 119,
+    "type": "split",
+    "whole": {
+      "file": "p-120.jpg",
+      "thumb": "p-120_thumb.jpg"
+    }
+  },
+  "121": {
+    "halves": {
+      "上": {
+        "file": "p-121上.jpg",
+        "thumb": "p-121上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-121下.jpg",
+        "thumb": "p-121下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 120,
+    "type": "split",
+    "whole": {
+      "file": "p-121.jpg",
+      "thumb": "p-121_thumb.jpg"
+    }
+  },
+  "122": {
+    "halves": {
+      "上": {
+        "file": "p-122上.jpg",
+        "thumb": "p-122上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-122下.jpg",
+        "thumb": "p-122下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 121,
+    "type": "split",
+    "whole": {
+      "file": "p-122.jpg",
+      "thumb": "p-122_thumb.jpg"
+    }
+  },
+  "123": {
+    "halves": {
+      "上": {
+        "file": "p-123上.jpg",
+        "thumb": "p-123上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-123下.jpg",
+        "thumb": "p-123下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 122,
+    "type": "split",
+    "whole": {
+      "file": "p-123.jpg",
+      "thumb": "p-123_thumb.jpg"
+    }
+  },
+  "124": {
+    "halves": {
+      "上": {
+        "file": "p-124上.jpg",
+        "thumb": "p-124上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-124下.jpg",
+        "thumb": "p-124下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 123,
+    "type": "split",
+    "whole": {
+      "file": "p-124.jpg",
+      "thumb": "p-124_thumb.jpg"
+    }
+  },
+  "125": {
+    "halves": {
+      "上": {
+        "file": "p-125上.jpg",
+        "thumb": "p-125上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-125下.jpg",
+        "thumb": "p-125下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 124,
+    "type": "split",
+    "whole": {
+      "file": "p-125.jpg",
+      "thumb": "p-125_thumb.jpg"
+    }
+  },
+  "126": {
+    "halves": {
+      "上": {
+        "file": "p-126上.jpg",
+        "thumb": "p-126上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-126下.jpg",
+        "thumb": "p-126下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 125,
+    "type": "split",
+    "whole": {
+      "file": "p-126.jpg",
+      "thumb": "p-126_thumb.jpg"
+    }
+  },
+  "127": {
+    "halves": {
+      "上": {
+        "file": "p-127上.jpg",
+        "thumb": "p-127上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-127下.jpg",
+        "thumb": "p-127下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 126,
+    "type": "split",
+    "whole": {
+      "file": "p-127.jpg",
+      "thumb": "p-127_thumb.jpg"
+    }
+  },
+  "128": {
+    "halves": {
+      "上": {
+        "file": "p-128上.jpg",
+        "thumb": "p-128上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-128下.jpg",
+        "thumb": "p-128下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 127,
+    "type": "split",
+    "whole": {
+      "file": "p-128.jpg",
+      "thumb": "p-128_thumb.jpg"
+    }
+  },
+  "129": {
+    "halves": {
+      "上": {
+        "file": "p-129上.jpg",
+        "thumb": "p-129上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-129下.jpg",
+        "thumb": "p-129下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 128,
+    "type": "split",
+    "whole": {
+      "file": "p-129.jpg",
+      "thumb": "p-129_thumb.jpg"
+    }
+  },
+  "130": {
+    "halves": {
+      "上": {
+        "file": "p-130上.jpg",
+        "thumb": "p-130上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-130下.jpg",
+        "thumb": "p-130下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 129,
+    "type": "split",
+    "whole": {
+      "file": "p-130.jpg",
+      "thumb": "p-130_thumb.jpg"
+    }
+  },
+  "131": {
+    "halves": {
+      "上": {
+        "file": "p-131上.jpg",
+        "thumb": "p-131上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-131下.jpg",
+        "thumb": "p-131下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 130,
+    "type": "split",
+    "whole": {
+      "file": "p-131.jpg",
+      "thumb": "p-131_thumb.jpg"
+    }
+  },
+  "132": {
+    "halves": {
+      "上": {
+        "file": "p-132上.jpg",
+        "thumb": "p-132上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-132下.jpg",
+        "thumb": "p-132下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 131,
+    "type": "split",
+    "whole": {
+      "file": "p-132.jpg",
+      "thumb": "p-132_thumb.jpg"
+    }
+  },
+  "133": {
+    "halves": {
+      "上": {
+        "file": "p-133上.jpg",
+        "thumb": "p-133上_thumb.jpg"
+      },
+      "下": {
+        "file": "p-133下.jpg",
+        "thumb": "p-133下_thumb.jpg"
+      }
+    },
+    "has_content": {
+      "box1": true,
+      "box2": true
+    },
+    "printed_page": 132,
+    "type": "split",
+    "whole": {
+      "file": "p-133.jpg",
+      "thumb": "p-133_thumb.jpg"
+    }
+  },
+  "134": {
+    "has_content": {
+      "box1": true,
+      "box2": false
+    },
+    "printed_page": 133,
+    "type": "single",
+    "whole": {
+      "file": "p-134.jpg",
+      "thumb": "p-134_thumb.jpg"
+    }
+  }
+}

@@ -1,0 +1,260 @@
+/* 全紀錄網站 公開版 v4 樣稿 — 共用樣式（單檔，無外部依賴） */
+
+:root{
+  --bg:#FAFAF7;
+  --ink:#3F3B3A;
+  --teal:#2BA18E;
+  --amber:#EC9B32;
+  --line:#E3E0D8;
+  --card-bg:#FFFFFF;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"PingFang TC","Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px;
+  line-height:1.75;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block;}
+a{color:var(--teal);text-underline-offset:2px;}
+a:not(.no-underline){text-decoration:underline;}
+
+.wrap{
+  width:min(100% - 32px, 40em);
+  margin:0 auto;
+}
+@media (min-width:760px){
+  .wrap{width:min(100% - 48px, 720px);}
+}
+
+/* ---------- 頂部列 ---------- */
+.top-bar{
+  position:sticky;top:0;z-index:20;
+  height:48px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+  padding:0 16px;
+}
+.top-bar a.back{
+  color:var(--ink);
+  font-weight:600;
+  text-decoration:none;
+  display:flex;align-items:center;height:44px;
+}
+.toc-checkbox{position:absolute;opacity:0;pointer-events:none;}
+.toc-btn{
+  display:flex;align-items:center;justify-content:center;
+  min-height:44px;min-width:44px;padding:0 10px;
+  color:var(--teal);font-weight:600;cursor:pointer;
+  border:1px solid var(--teal);border-radius:8px;
+  user-select:none;
+}
+#toc-panel{
+  max-height:0;overflow:hidden;
+  background:var(--card-bg);
+  border-bottom:1px solid var(--line);
+  transition:max-height .2s ease;
+}
+.toc-checkbox:checked ~ #toc-panel{max-height:600px;overflow-y:auto;}
+#toc-panel ol{list-style:none;margin:0;padding:8px 16px;}
+#toc-panel li{border-bottom:1px solid var(--line);}
+#toc-panel li:last-child{border-bottom:none;}
+#toc-panel a{
+  display:block;padding:10px 4px;min-height:44px;
+  text-decoration:none;color:var(--ink);
+}
+#toc-panel a .toc-time{color:var(--teal);font-size:14px;margin-right:8px;}
+#toc-panel a:hover{color:var(--teal);}
+
+/* ---------- 標題階層 ---------- */
+h1{font-size:26px;line-height:1.3;margin:20px 0 8px;font-weight:700;}
+h2{font-size:20px;line-height:1.35;margin:28px 0 12px;font-weight:700;}
+h3{font-size:18px;line-height:1.4;margin:0 0 10px;font-weight:700;color:var(--ink);}
+
+/* ---------- 首頁：大會名稱 ---------- */
+.hero{padding:20px 0 8px;}
+.hero h1{font-family:"Noto Serif TC","PingFang TC",serif;font-size:24px;}
+.hero p.tagline{margin:4px 0 0;color:var(--ink);opacity:.8;}
+
+/* ---------- 議程列表（首頁） ---------- */
+.agenda{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);}
+.agenda li{border-bottom:1px solid var(--line);}
+.agenda a{
+  display:block;padding:14px 4px;text-decoration:none;color:var(--ink);
+  min-height:44px;
+}
+.agenda .row-time{color:var(--teal);font-size:14px;font-weight:600;}
+.agenda .row-title{font-size:17px;font-weight:700;margin:2px 0;}
+.agenda .row-speaker{font-size:14px;opacity:.8;}
+.agenda .row-summary{font-size:14px;opacity:.75;margin-top:2px;}
+.agenda a:active,.agenda a:hover{background:#F1F6F4;}
+
+/* ---------- 照片橫滑 ---------- */
+.photo-scroll{
+  display:flex;gap:10px;overflow-x:auto;padding:6px 0 14px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+}
+.photo-scroll figure{
+  flex:0 0 auto;width:70%;max-width:280px;margin:0;scroll-snap-align:start;
+}
+.photo-scroll img{border-radius:10px;width:100%;aspect-ratio:4/3;object-fit:cover;}
+.photo-scroll figcaption{font-size:13px;color:var(--ink);opacity:.75;margin-top:4px;}
+
+/* ---------- 區塊通用 ---------- */
+section.block{margin:22px 0;}
+.small{font-size:14px;}
+.badge{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:13px;font-weight:600;
+  padding:2px 8px;border-radius:999px;
+  background:rgba(43,161,142,.12);color:var(--teal);
+}
+.badge.amber{background:rgba(236,155,50,.14);color:#9C6212;}
+
+/* ---------- 場次頁：標題區 ---------- */
+.session-head{padding:18px 0 4px;border-bottom:1px solid var(--line);margin-bottom:18px;}
+.session-head .eyebrow{color:var(--teal);font-weight:700;font-size:14px;}
+.session-head h1{font-size:24px;margin:6px 0 2px;}
+.session-head .title-en{font-size:15px;color:var(--ink);opacity:.7;margin:0 0 10px;}
+.speaker-line{font-size:15px;margin:0 0 4px;}
+.speaker-line strong{font-weight:700;}
+.speaker-title{font-size:14px;opacity:.75;margin:0 0 4px;}
+.time-line{font-size:14px;color:var(--teal);font-weight:600;}
+
+.one-liner{
+  font-size:19px;font-weight:700;line-height:1.55;
+  margin:18px 0;padding:14px 16px;
+  background:#F1F6F4;border-left:4px solid var(--teal);border-radius:4px;
+}
+.lede{font-size:17px;margin:0 0 8px;}
+
+/* ---------- 主題小節 ---------- */
+.theme{margin:26px 0;padding-top:4px;}
+.theme h3{
+  display:flex;align-items:baseline;gap:8px;
+}
+.theme h3 .theme-no{color:var(--teal);font-size:15px;font-weight:700;}
+.points{margin:0 0 14px;padding-left:0;list-style:none;counter-reset:pt;}
+.points li{
+  counter-increment:pt;
+  position:relative;padding-left:34px;margin-bottom:12px;
+}
+.points li::before{
+  content:counter(pt,decimal-leading-zero);
+  position:absolute;left:0;top:0;
+  color:var(--teal);font-weight:700;font-size:15px;
+}
+/* 主題錨圖（該主題最具代表性的投影片） */
+.theme-hero{margin:12px 0 14px;}
+.theme-hero a{display:block;}
+.theme-hero img{
+  width:100%;border:1px solid var(--line);border-radius:6px;
+}
+.theme-hero figcaption{font-size:13px;color:var(--ink);opacity:.65;margin-top:6px;}
+
+/* 同主題其他投影片縮圖列 */
+.theme-slides-row{
+  display:flex;gap:8px;overflow-x:auto;padding:2px 0 4px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+}
+.theme-slides-row a{flex:0 0 auto;scroll-snap-align:start;}
+.theme-slides-row img{
+  width:96px;height:96px;object-fit:cover;
+  border:1px solid var(--line);border-radius:6px;
+}
+
+.quote-card{
+  margin:14px 0 0;padding:14px 16px;
+  background:var(--card-bg);border:1px solid var(--line);border-radius:10px;
+}
+.quote-card .q-en{font-style:italic;margin:0 0 8px;}
+.quote-card .q-en::before,.quote-card .q-en::after{content:"\201C";}
+.quote-card .q-en::after{content:"\201D";}
+.quote-card .q-zh{margin:0 0 8px;color:var(--ink);}
+.quote-card .q-zh .tag{color:var(--teal);font-size:13px;font-weight:600;margin-right:4px;}
+.quote-card .q-meta{display:flex;gap:8px;flex-wrap:wrap;}
+
+/* ---------- 問答 ---------- */
+.qa-item{margin-bottom:16px;}
+.qa-item .q{font-weight:700;margin:0 0 4px;}
+.qa-item .q::before{content:"問　";color:var(--teal);}
+.qa-item .a{margin:0;}
+.qa-item .a::before{content:"答　";color:var(--ink);opacity:.6;}
+.qa-note{
+  padding:12px 14px;background:#F1F6F4;border-radius:8px;font-size:15px;
+}
+
+/* ---------- 帶走的一句 ---------- */
+.takeaway{
+  margin:28px 0;padding:20px 18px;
+  background:#F1F6F4;border-radius:12px;border:1px solid rgba(43,161,142,.25);
+}
+.takeaway .cap{font-size:14px;font-weight:700;color:var(--teal);margin:0 0 10px;}
+.takeaway .q-en{font-size:19px;font-style:italic;line-height:1.5;margin:0 0 10px;}
+.takeaway .q-en::before,.takeaway .q-en::after{content:"\201C";}
+.takeaway .q-en::after{content:"\201D";}
+.takeaway .q-zh{font-size:17px;margin:0;}
+.takeaway .q-zh .tag{color:var(--teal);font-size:13px;font-weight:600;margin-right:4px;}
+
+/* ---------- 投影片橫滑 ---------- */
+.slides-scroll{
+  display:flex;gap:10px;overflow-x:auto;padding:6px 0 6px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+}
+.slides-scroll figure{
+  flex:0 0 auto;width:58%;max-width:230px;margin:0;scroll-snap-align:start;
+}
+.slides-scroll a{display:block;}
+.slides-scroll img{border:1px solid var(--line);border-radius:8px;}
+.slides-scroll figcaption{font-size:13px;color:var(--ink);opacity:.7;margin-top:4px;text-align:center;}
+
+/* ---------- 下載 / 關於 ---------- */
+.dl-list{list-style:none;margin:0;padding:0;}
+.dl-list li{margin-bottom:10px;}
+.dl-list a{
+  display:inline-flex;align-items:center;min-height:44px;
+  padding:0 4px;text-decoration:none;font-weight:600;
+}
+.dl-list .dl-unavailable{
+  display:inline-flex;align-items:center;min-height:44px;
+  padding:0 4px;color:var(--ink);opacity:.55;font-style:italic;
+}
+.about dl{margin:0;}
+.about dt{color:var(--teal);font-weight:700;font-size:14px;margin-top:10px;}
+.about dd{margin:2px 0 0;}
+
+/* ---------- 頁尾 ---------- */
+footer{
+  margin:36px 0 24px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:14px;color:var(--ink);opacity:.85;
+}
+footer .foot-note{margin:0 0 14px;}
+footer details{margin-top:10px;}
+footer summary{
+  cursor:pointer;color:var(--teal);font-weight:600;min-height:44px;
+  display:flex;align-items:center;
+}
+footer .legend-body{margin-top:8px;}
+footer .legend-body p{margin:0 0 8px;}
+footer .org-name{font-weight:600;}
+footer .legend-tag{color:var(--teal);font-weight:600;}
+
+/* ---------- 無錄音場次 ---------- */
+.no-audio-note{
+  padding:12px 14px;background:rgba(236,155,50,.10);border-radius:8px;
+  font-size:15px;margin:14px 0;
+}
+
+/* ---------- 讀者需知（reader_notes，2026-09-13 v4 產生器新增微調） ---------- */
+ul.reader-notes{
+  list-style:none;margin:14px 0;padding:12px 14px;
+  background:#F1F6F4;border-radius:8px;font-size:14px;color:var(--ink);opacity:.9;
+}
+ul.reader-notes li{margin:0 0 4px;padding-left:16px;position:relative;}
+ul.reader-notes li:last-child{margin-bottom:0;}
+ul.reader-notes li::before{content:"※";position:absolute;left:0;color:var(--teal);}
