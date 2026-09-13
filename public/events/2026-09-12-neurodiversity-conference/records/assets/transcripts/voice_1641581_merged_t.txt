@@ -1,0 +1,596 @@
+[00:00:00][ZH] 今天早上我們有探討到
+[00:00:55][EN*]  How do we respond in those everyday moments when a young person becomes overwhelmed, rigid, socially disconnected, or simply can't access the skills we know they possess?
+[00:01:08][EN]  Those moments happen every day in therapy, in the classroom, in homes, and in residential treatment.
+[00:01:15][EN]  I'd like to share the framework we use at TELOS for these moments.
+[00:01:20][EN]  We call it the processing approach.
+[00:01:22][EN]  It has become one of the functional ways we teach life skills, not just in therapy sessions, but throughout every interaction we have with the young person that they have around them.
+[00:01:49][ZH] 我們在日常生活中該怎麼樣跟他們其實應對
+[00:01:53][ZH] 那這些狀況其實隨時每天都可能會發生
+[00:01:56][ZH] 可能在資商市,可能在教室,可能在家庭日常
+[00:01:59][ZH] 或是說是在TELOS這樣的住宿機構當中
+[00:02:03][ZH] 那今天我就想向各位介紹我們TELOS機構
+[00:02:06][ZH] 在面對這些時刻所使用的這個介入架構
+[00:02:09][ZH] 那我們把它稱作The Processing Approach
+[00:02:12][ZH] 就是我今天的講題
+[00:02:13][ZH] 那中文我們就把它翻成歷程梳理模式
+[00:02:17][ZH] 它會成為我們教導生活技能的核心基礎
+[00:02:20][ZH] 它不僅是可以用於心理諮商的誤談
+[00:02:24][ZH] 也可以使用在孩子跟周遭成年人每一次的日常互動當中
+[00:02:29][ZH] 我希望今天是你會不只在理解方法的方法
+[00:02:34][ZH] 也會知道你能夠開始使用它
+[00:02:37][ZH] 在明天工作的方法
+[00:02:39][ZH] 我們先講解方法的方法
+[00:02:42][ZH] 我想先開始為何我們相信它是必須的
+[00:02:45][ZH] 那我希望大家今天離開這個會場的時候可以完全瞭解什麼叫做Processing Approach
+[00:02:53][ZH] 然後呢也可以掌握它的具體方法
+[00:02:55][ZH] 然後明天就可以把它運用在你陪伴的孩子身上
+[00:02:59][ZH] 那在說明不是Processing Approach之前我想要先談談為什麼我覺得它很重要
+[00:03:04][ZH] 我先講一個我印象深刻的臨床實務當事人說起,
+[00:03:25][ZH] 幾年前我們機構接收了一個已經轉學過多手機構的學生,
+[00:03:39][EN*]  Hold on, it's missing some of my slide here.
+[00:03:52][EN*]  Oppositional, manipulative, defiant.
+[00:03:54][EN*]  What surprised me was how intelligent he was.
+[00:03:58][EN*]  He knew exactly what adults wanted him to do.
+[00:04:01][ZH]  He simply couldn't do it
+[00:04:03][ZH] 這個孩子他展現了高度的反抗性,對立性,可是令我驚訝的是這個孩子其實他很聰明,他很清楚知道大人希望他做什麼,他只是沒有辦法穩定持續地做到
+[00:04:17][ZH] 那部分的青少年,他們知道的道理遠比他們可以做得到的多很多
+[00:04:46][ZH] 比如說他們知道不應該對父母大吼大叫,他們知道他們應該要去使用諮商中練習過的技巧,然後他們知道應該隨時保持禮貌溝通,然後他們也知道應該要在情緒崩潰前去主動尋求協助,可是他們還是會犯下重複的錯誤。
+[00:05:05][EN*]  Early in my career, I found that frustrating.
+[00:05:10][EN*]  I assumed that if I explained things clear enough, taught enough skills, or held them accountable enough, things would improve.
+[00:05:18][EN*]  Sometimes they did, but often they did not.
+[00:05:22][EN*]  Over time, I realized something important. The problem usually wasn't knowledge. The problem was performance.
+[00:05:29][EN*]  Many adolescents simply could not access the skills they already knew they had before they became emotionally overwhelmed.
+[00:05:42][ZH] 我就覺得因為我已經講得很清楚啦 我也教你很多技巧
+[00:05:45][ZH] 然後我也很嚴格的要求你要去做到 但是情況都沒有好轉
+[00:05:50][ZH] 有的時候會有效 但有時候是沒有什麼效果
+[00:05:53][ZH] 那隨著時間的演進 我意識到一些很關鍵的事情
+[00:05:58][ZH] 就是知意行難
+[00:05:59][ZH] 問題在於不在於你擁有足夠的知識
+[00:06:10][EN*]  Think about the adolescent you work with. Many struggle with emotion regulation.
+[00:06:15][EN*]  Others have executive functioning challenges. Some have become overwhelmed by stress.
+[00:06:20][EN*]  Others misread social situations or have difficulty adapting when plans change unexpectedly.
+[00:06:27][EN*]  These are isolated problems, they are reoccurring patterns.
+[00:06:57][ZH] 這就是我們Telos的processing approach,它就是為了家長和臨床人員和學生提供的一套最佳的方法。
+[00:07:27][ZH] 我第一次聽到的詞,他們會想到一場危機,他們會想到一場危機,他們會想到一場危機。
+[00:07:35][EN]  a crisis and talking through what happened.
+[00:07:39][EN]  Certainly these conversations are important, but at Telos the processing approach is much
+[00:07:45][EN]  broader than that.
+[00:07:47][EN]  The processing approach is not simply a conversation, it is an approach to every interaction we
+[00:07:52][EN]  have with adolescents.
+[00:07:54][EN]  it is the lens through which we interpret behavior, it is the mindset that guides us how to respond, and it is the method we use to teach life skills in everyday moments.
+[00:08:00][ZH] 導致我們如何回應
+[00:08:02][ZH] 而這就是我們用來教授生活技術
+[00:08:05][ZH] 在每天的時刻
+[00:08:07][ZH] 大家聽到processing approach
+[00:08:09][ZH] 就是歷程梳理這個名詞的時候
+[00:08:12][ZH] 會以為說這個可能就是危機事件爆發後
+[00:08:16][ZH] 我們平靜下來坐下來
+[00:08:18][ZH] 回顧發生了什麼事情
+[00:08:19][ZH] 這樣子的時候對話很重要
+[00:08:21][ZH] 但是在我們TELOS
+[00:08:23][ZH] 歷程書裡的範疇其實要比這個更廣
+[00:08:26][ZH] 它不是一個事後對話而已
+[00:08:28][ZH] 它是貫穿我們每次跟青少年互動的核心方法
+[00:08:49][EN*]  adolescent to stop this behavior and start asking what is this adolescent
+[00:08:54][EN*]  struggling to do successfully? What skills are they lacking? Those questions
+[00:08:59][EN*]  change everything. Once we understand the missing skill, our roles
+[00:09:14][ZH] 我們會要求所有TILOS的團隊人員還有生活培考師做出的一個核心思維轉變
+[00:09:30][ZH] 是我們會要大家不要再問這個問題
+[00:09:33][ZH] 我們要如何讓這個孩子停止這個不恰當的行為
+[00:09:37][ZH] 而是要問我們說這個孩子在順利打成目標上遇到什麼樣的阻礙
+[00:09:43][ZH] 他目前缺乏了哪一項關鍵的技能
+[00:09:46][ZH] 那一旦我們看清楚他是缺乏了哪方面的技能
+[00:09:49][ZH] 我們的角色就會徹底轉變
+[00:09:52][ZH] 我們不再是要在爭論中要贏過孩子
+[00:09:55][ZH] 也不再是要強迫這些孩子要順從我們
+[00:09:58][ZH] 我們變成了陪伴他們學習的教師
+[00:10:01][ZH] 還有生活陪跑師
+[00:10:03][ZH] 所以每一次的摩擦每一次的互動
+[00:10:05][ZH] 其實都是在幫助孩子建立一個一生受用技能的契機
+[00:10:11][ZH] 這就是為什麼我們強調,processing approach是建立在關係的基礎之上
+[00:10:25][ZH] 這就是為什麼我們強調
+[00:10:32][ZH] Processing Approach是建立在關係的基礎之上
+[00:10:37][ZH] 青少年不會因為你比他大聲然後就順服你
+[00:10:42][ZH] 他是因為他信任這個大人
+[00:10:45][ZH] 然後呢覺得這個大人提供給他們安全感
+[00:10:48][ZH] 可預測性然後才願意跟他們配合
+[00:10:51][ZH] 所以processing approach不是結束之後才做的事情
+[00:10:56][ZH] 它就是發生當下可以使用的具體方式
+[00:11:00][EN]  Before the adolescent people remember what we say, they remember how we made them feel.
+[00:11:05][EN]  Think back to the adults who have the greatest influence in your own life.
+[00:11:10][EN]  Most of us remember very little of what their exact words are,
+[00:11:14][EN]  words are, but we remember how they treated us. At Telos, we call this the way of being.
+[00:11:20][EN]  It describes the emotional presence we bring into every interaction. The first principle
+[00:11:25][EN]  is maintaining a heart of peace. Adolescents often borrow our emotion regulation before
+[00:11:50][ZH] 他其實會記住的是我們給他怎麼樣的感受
+[00:11:54][ZH] 所以大家回想看看
+[00:11:56][ZH] 各位應該在生命中都有影響你們最深的人
+[00:12:00][ZH] 那其實回想這些人的時候
+[00:12:02][ZH] 我們其實很少能記住他們
+[00:12:04][ZH] 到底對我們說過了具體哪些話或字句
+[00:12:08][ZH] 但是你會記得他們對待我們的方式
+[00:12:11][ZH] 所以在TLs的話
+[00:12:12][ZH] 我們會把這個稱作Way of Being
+[00:12:15][ZH] 中文可以說是一個內在同在的狀態
+[00:12:20][ZH] 那這也是我們希望每次可以帶入互動中的情緒氛圍
+[00:12:25][ZH] 就是同一篇上面寫的
+[00:12:28][ZH] Way of Bean
+[00:12:30][ZH] The second principle is Teflon Demeanor
+[00:12:33][ZH] Sorry I lost the part
+[00:12:35][ZH] 那這個
+[00:12:37][ZH] Way of Bean裡面有一個很重要的原則是
+[00:12:40][ZH] 和平之心就是Heart of Peace
+[00:12:42][ZH] 同一篇上面也有
+[00:12:43][ZH] 就是青少年在發展出自身的情緒調節能力之前
+[00:12:48][ZH] 就是我們大人需要做出一個很好的示範
+[00:12:51][ZH] 如果我們大人自己先焦慮或是情緒反應過度
+[00:12:54][ZH] 孩子只會更加失調
+[00:12:56][ZH] 所以當我們保持Heart of Peace
+[00:12:58][ZH] 和平之心的時候
+[00:13:00][ZH] 我們其實就在傳遞他們一個安全的訊號
+[00:13:03][ZH] 第二專案是Teflon的意見
+[00:13:06][ZH] 年輕人時常會說傷心的事
+[00:13:09][ZH] 他們測試規定的階段
+[00:13:10][ZH] 他們挑戰的權力
+[00:13:13][ZH] 若所有的評判都適合我們,我們就開始回應,而不是教訓
+[00:13:19][ZH] 像個手枝,我們讓這些評判掉,不因為我們不在乎,
+[00:13:25][ZH] 而是因為我們的焦點是在教育學習的。
+[00:13:29][ZH] 第二個原則是不沾鍋的態度。
+[00:13:32][ZH] 手枝是一個不沾鍋的態度。
+[00:13:35][ZH] 就是比喻成我們的態度應該要像不沾鍋一樣,
+[00:13:39][ZH] 就是要冷靜、沉著,然後不隨之起舞。
+[00:13:42][ZH] 因為有時候青少年會說出很傷人的話
+[00:13:44][ZH] 他們會測試我們的那個那條底線在哪裡
+[00:13:48][ZH] 那如果我們把每一句話都黏在我們情緒之下
+[00:13:51][ZH] 我們就變成是會落入想要反擊的那個狀態之下
+[00:13:57][ZH] 所以我們要學習不沾鍋
+[00:13:58][ZH] 我們要讓這些情緒像沾到鍋子就滑掉一樣
+[00:14:01][ZH] 那我們讓這些情緒以言語滑入
+[00:14:04][ZH] 不是因為我們不在乎這個青少年
+[00:14:06][ZH] 而是因為我們的焦點應該要放在陪伴上的學習
+[00:14:09][ZH] 第三個原則是我們避免公開指責他們
+[00:14:37][ZH] 因為公開糾正往往會讓當事人產生羞恥感
+[00:14:40][ZH] 我們要產生尊重安全感和互信的關係才能創造成長的契機
+[00:14:51][ZH] 我們看到的一種最 common的模式是硬性
+[00:14:55][ZH] 這顯示是黑白的想法、全是無所謂的想法
+[00:14:59][ZH] 也有時顯示是無所謂的
+[00:15:02][ZH] 一年輕人會被認識他們只有一個接受的結果,他們的結果。
+[00:15:09][ZH] 反正,年輕人會反應相當硬。年輕人會在一面的角度,年輕人會在另一面。
+[00:15:19][ZH] 這次的交流變成力量。
+[00:15:23][ZH] 然後在TELOS Processing Approach的第二個支柱
+[00:15:27][ZH] 叫做Flexibility Understanding
+[00:15:29][ZH] 彈性跟理解
+[00:15:31][ZH] 我們常常會看到一個行為模式
+[00:15:33][ZH] 就是有些孩子他是非常的固著
+[00:15:35][ZH] 很僵化的
+[00:15:36][ZH] 那有的時候他的固執
+[00:15:38][ZH] 看起來就像是他在刻意跟你對立
+[00:15:41][ZH] 那這個孩子他會
+[00:15:43][ZH] 只接受一種他覺得OK的結果
+[00:15:46][ZH] 可是不幸的是大人
+[00:15:47][ZH] 有時候也會用同時固執
+[00:15:49][ZH] 僵化的態度去回應他
+[00:15:51][ZH] 那這時候就變成是孩子他堅持己見
+[00:15:53][ZH] 然後我們大人也不肯讓步
+[00:15:55][ZH] 所以這個對話的瞬間就沒有辦法繼續下去
+[00:15:58][ZH] 變成一個權力抖擇
+[00:16:00][EN]  One phrase we often use at Telos is rigidity plus rigidity never equals flexibility. Nobody learns, nobody grows, everyone leaves frustrated.
+[00:16:12][EN]  Flexibility does not mean lowering our standards or expectations. It means changing how we help adolescents reach those expectations.
+[00:16:20][EN]  we collaborate instead of control, we seek understanding before problem solving, we look for a win-win whenever possible, we remember our goal is movement, not victory.
+[00:16:53][ZH] 我們能夠改變我們協助孩子達到期待的方式
+[00:16:56][ZH] 比如說我們可以用合作取代控制
+[00:16:59][ZH] 然後在急於解決問題之前我們先追求理解
+[00:17:02][EN*]  And we also need to remember that our goal is to continue to change and to progress,
+[00:17:08][EN*]  and not to be able to win in this debate.
+[00:17:12][EN*]  I found that adolescents become remarkably more flexible when they feel understood.
+[00:17:18][EN*]  Understanding does not mean agreement.
+[00:17:21][EN*]  It means communicating.
+[00:17:22][EN*]  I see your struggle, and I am willing to work with you through it.
+[00:17:27][EN*]  That simple shift changes how the entire conversation goes often.
+[00:17:32][EN*]  Understanding reduces defensiveness.
+[00:17:34][EN*]  Defensiveness prevents learning.
+[00:17:37][EN*]  Even with the right mindset and flexibility, one mistake can still prevent learning.
+[00:17:43][EN*]  Communicating too fast, too much, that brings us to slow, simple and clear.
+[00:18:03][ZH] 而是要傳達說看見了你的掙扎
+[00:18:05][ZH] 然後我願意陪你去克服
+[00:18:06][ZH] 所以理解是可以降低防衛星的
+[00:18:09][ZH] 然後呢防衛星可以
+[00:18:11][ZH] 防衛星就是會阻礙大家一起成長的這個元兇
+[00:18:15][ZH] 所以我們要把防衛星降低
+[00:18:17][ZH] 然後這帶到我接下來要講的事情
+[00:18:20][ZH] 就是我們在溝通的時候
+[00:18:21][ZH] 我們需要放慢精簡還有明確我們的支援
+[00:18:35][EN]  When an adolescent is frustrated, anxious, or emotionally flooded, our instinct is to explain more.
+[00:18:42][EN]  We repeat ourselves. We give it additional reasoning. We try to convince, or we lecture.
+[00:18:50][EN]  Unfortunately, when the brain is overwhelmed, more words rarely produces more understanding.
+[00:18:56][EN]  Instead, we need to slow down, use fewer words, be intentional.
+[00:19:03][EN]  At Telos, we summarize one idea at a time.
+[00:19:06][EN]  We use concrete language and frequently ask the adolescent to tell us back what they heard
+[00:19:12][EN]  rather than asking, do you understand?
+[00:19:15][EN]  Those are very different questions.
+[00:19:18][EN]  One checks for agreement, the other checks for understanding.
+[00:19:22][EN]  We also pay attention to proximity and connection.
+[00:19:25][EN]  A calm voice, eye contact, and walking alongside the student communicates safety rather than
+[00:19:31][ZH] 互相交流,
+[00:19:32][ZH] 互相交流,
+[00:19:33][ZH] 互相交流,
+[00:19:34][ZH] 互相交流。
+[00:19:35][ZH] 一位交流是簡單的。
+[00:19:38][ZH] 我們可以開始創造批評的經驗,
+[00:19:42][ZH] 那processing approach第三個支柱是放慢、經節、明確化你的指示還有對話的方式
+[00:19:51][ZH] 那我多年來注意到一個現象就是當有一個青少年他已經很缺乏複雜訓練能力的時候
+[00:19:58][ZH] 那跟他講話的大人有時候卻把這個講話的內容搞得更複雜
+[00:20:03][ZH] 就是當這個孩子他已經覺得很挫折或是很有情緒了
+[00:20:07][ZH] 但是跟他互動的大人往往是試著要跟他講更多的道理
+[00:20:11][ZH] 或是反覆的重複這個道理
+[00:20:13][ZH] 或者是適足說服這個道理
+[00:20:15][ZH] 然而當這個孩子覺得大腦已經超載了
+[00:20:18][ZH] 你講再多話也沒辦法讓他加深理解
+[00:20:21][ZH] 所以我們應該要反其道而行
+[00:20:23][ZH] 跟他對話的時候應該要放慢速度
+[00:20:25][ZH] 精簡內容
+[00:20:27][ZH] 然後有意識的溝通
+[00:20:28][ZH] 那可以把節奏放慢
+[00:20:30][ZH] 然後把訊息拆解
+[00:20:32][ZH] 每次傳達一個概念就好
+[00:20:33][ZH] 然後呢語言儘量具體
+[00:20:36][ZH] 還有一個很重要的事情就是
+[00:20:37][ZH] 引導孩子去複述說
+[00:20:40][ZH] 我剛剛跟你講了什麼
+[00:20:42][ZH] 你會講一次給我聽
+[00:20:43][ZH] 而不是隻是問他說
+[00:20:44][ZH] 你到底聽懂了沒
+[00:20:45][ZH] 因為前者是在尋求他們的同意
+[00:20:49][ZH] 那後者才是真正在問他們理解了沒
+[00:20:53][ZH] 那還有就是肢體的
+[00:20:55][ZH] 這個肢體的互動也很重要
+[00:20:59][ZH] 就是希望跟他們講話的時候
+[00:21:00][ZH] 是可以保持平靜的語調
+[00:21:02][ZH] 眼神接觸
+[00:21:03][ZH] 也許也可以輕輕搭到他們肩膀
+[00:21:06][ZH] 那或是說把身體降到
+[00:21:07][ZH] 跟他們一樣的高度
+[00:21:09][ZH] 這樣傳遞的是一個並肩並行的安全感或是陪伴感
+[00:21:15][ZH] 而不是好像站在高處居高領導看他們這樣的感覺
+[00:21:34][EN]  to figure out what comes next instead of learning. That is why we believe in clear
+[00:21:39][EN]  processes. We forecast the day. We front load difficult conversations. We prepare
+[00:21:45][EN]  students for changes before they occur whenever possible. We practice
+[00:21:51][EN]  leads repeatedly until they become familiar. And a predictable environment creates psychological
+[00:21:58][EN]  safety, and psychological safety makes learning possible. Our goal isn't to remove every challenge.
+[00:22:02][ZH] our goal isn't to remove every challenge
+[00:22:05][ZH] 我們的目標是削除非必須的確確,讓小學生能夠關注新的技術。
+[00:22:13][ZH] 接下來的問題是一樣的重要。
+[00:22:16][ZH] 即使用很高的方法,當時是正確的時間教學嗎?
+[00:22:21][ZH] 第四個方法的支柱是要把流程確立起來。
+[00:22:26][ZH] 在這麼多年執行功能困難或自閉症特質的青少年互動的過程,
+[00:22:33][ZH] 教會有一件事情就是幫他們創造可預測性
+[00:22:37][ZH] 可以大幅降低他們的焦慮還有壓力
+[00:22:39][ZH] 那當週遭的這個常規要是一直常常變動的話
+[00:22:45][ZH] 那其實孩子會花很多的心理能量在耗費猜測
+[00:22:49][ZH] 接下來發生什麼事情
+[00:22:51][ZH] 然後沒有辦法把就是這些能量放在學習上面
+[00:22:54][ZH] 所以我們相信把流程定得很清楚
+[00:22:57][ZH] 是很有幫助的
+[00:22:59][ZH] 比如說我們可以做預告一整天
+[00:23:01][ZH] 接下來形成規劃
+[00:23:03][ZH] 那也可以預告他們接下來會發生什麼事
+[00:23:06][ZH] 你可能會有什麼樣的反應跟情緒
+[00:23:08][ZH] 在這個變動發生之前
+[00:23:09][ZH] 提早為學生做好心理準備
+[00:23:11][ZH] 那也可以反覆讓他們練習生活的常規
+[00:23:14][ZH] 讓他們習慣生活的結構
+[00:23:16][ZH] 那直到他們內化變得很熟悉
+[00:23:19][ZH] 這樣就可以幫助孩子掃除不必要的不確定性
+[00:23:22][ZH] 讓他們可以把心理專注在學習
+[00:23:25][ZH] 真正重要的技能上面
+[00:23:27][ZH] 那這邊我也想要做一個更正
+[00:23:28][ZH] 因為我聽到這邊就有意識到
+[00:23:56][EN*]  approach. When adolescents become emotionally overwhelmed, their ability to
+[00:24:02][EN]  think, reason, and problem-solve becomes limited. Trying to teach during that
+[00:24:08][EN]  moment is often ineffective. We say, mind the funnel. Imagine trying to pour
+[00:24:14][EN]  information into a funnel while somebody plugs the hole. It quickly overflows. Our
+[00:24:21][EN]  Our responsibility is first to reduce emotional intensity.
+[00:24:25][EN]  We lower stimulation.
+[00:24:27][EN]  We move away an audience.
+[00:24:49][ZH] 我會示範你什麼樣的感覺,當我們開始認識的模式,在小孩的調整專案中。
+[00:25:19][ZH] 其實效果是很不好的
+[00:25:21][ZH] 所以就是我把它形容成這個Minder Follow
+[00:25:24][ZH] Follow是一個漏斗
+[00:25:25][ZH] 就是像是那個情境就很像是一個漏斗
+[00:25:28][ZH] 當你把那個漏斗的底部堵住的話
+[00:25:32][ZH] 那你在上面去灌東西、灌資訊的話
+[00:25:34][ZH] 會發生什麼事情
+[00:25:36][ZH] 就是水就驗出來了
+[00:25:38][ZH] 因為下面被堵住了
+[00:25:39][ZH] 那就很像是你在孩子就是已經情緒很…
+[00:25:44][ZH] 在那個當下的時候
+[00:25:46][ZH] 你還硬要跟他說很多道理會發生的事情
+[00:25:49][ZH] 所以其實在這時候與其說道理
+[00:25:51][ZH] 我們的首要任務應該是要降低他情緒的強度
+[00:25:54][ZH] 還有感官上面的負荷
+[00:25:56][ZH] 你可以降低外在環境的刺激
+[00:25:59][ZH] 或是說把他帶離群眾視線
+[00:26:02][ZH] 跟他進入比較一對一比較有隱私的互動的情境
+[00:26:07][ZH] 然後先協助他調節好他的生性狀態
+[00:26:10][ZH] 然後再來做反思跟反省
+[00:26:13][ZH] 因為當大陸冷靜下來
+[00:26:14][ZH] 這個漏斗才是暢通了
+[00:26:16][ZH] 那這時候你在給予資訊的時候
+[00:26:18][ZH] 他才有辦法順順的接受跟留下來
+[00:26:23][ZH] 這張圖片幫助了很多的孩子
+[00:26:25][ZH] 理解自己的孩子
+[00:26:27][ZH] 很多的孩子告訴我
+[00:26:29][ZH] 我知道他很聰明
+[00:26:34][EN*]  I like to think of our brain as a funnel.
+[00:26:49][EN*]  In my previous presentation, I spoke of the IQ scores and the importance of understanding
+[00:26:54][EN*]  them.
+[00:26:55][EN*]  When I compare a brain to the funnel, I picture the upper portion of the funnel as a working
+[00:27:01][EN]  memory, the ability to hold information at the forefront of my mind and use it. I then
+[00:27:07][EN]  think of the spout of the funnel as my processing, or the ability to take information in, make
+[00:27:13][EN]  sense of it, and use it. When my scores have gaps, or I have ADHD, learning disabilities,
+[00:27:20][EN]  or neurodiversities, my funnel becomes blocked, or the spout can become smaller, which then
+[00:27:26][EN]  It can't halt my understanding or processing. When this happens, we show warning signs.
+[00:27:30][ZH] 它是在你腦海中掌管,讓漏斗的上半部代表著Working memory
+[00:27:43][ZH] 然後還中掌管暫存還有運用訊息的這個位置
+[00:27:47][ZH] 那漏斗的下半部呢
+[00:27:49][ZH] 出口它是代表processing
+[00:27:51][ZH] 就是訊息處理的能力
+[00:27:52][ZH] 它是用來接收理解還有運用資訊的這個能力
+[00:27:57][ZH] 那如果今天這個孩子他可能有ADHD
+[00:28:00][ZH] 學習障礙或是他有認知落差的話
+[00:28:02][ZH] 這個漏斗的出口通常會比較窄
+[00:28:05][ZH] 所以如果一次給他太多感官刺激
+[00:28:08][ZH] 或是複雜要求的話
+[00:28:09][ZH] 那個漏斗就會隱住
+[00:28:11][ZH] 那這個時候孩子就會釋放出一個警訊.
+[00:28:15][ZH] 我們剛才講到當孩子的訊息負責量太大,他就會發出警訊。
+[00:28:21][ZH] 那這個時候孩子就會釋放出一個警訊。
+[00:28:26][ZH] 那我剛才講到當孩子的訊息負責量太大,他就會發出警訊。
+[00:28:31][ZH] 那我剛才講到當孩子的訊息負責量太大,他就會發出警訊。
+[00:28:40][ZH] 那這些警訊的話,有時候會是用這樣子反復出現的行為模式來表現的,第一個是固著這樣的話,
+[00:28:48][ZH] 壓力敏感,抓不到重點,執行功能障礙,社交障礙,
+[00:29:01][EN*]  social struggles,
+[00:29:05][EN*]  and difficulty with changes and transitions.
+[00:29:12][EN*]  These are not labels, they are indicators.
+[00:29:16][EN*]  Each one points towards a different set of life skills
+[00:29:19][EN*]  that need to be strengthened.
+[00:29:21][EN*]  As we go through each pattern, I would invite you to think of the adolescents you currently work with.
+[00:29:26][EN*]  Ask yourself, what pattern do I see most often, and how might I respond differently using the processing approach?
+[00:29:33][EN*]  Patterns are invitations to teach, not simply problems to solve.
+[00:29:38][EN*]  Let's begin with one of the most common patterns we encounter.
+[00:29:51][EN*]  and how to use the rules and how to use the rules. It can be called the ability to use the life skills of life skills. So I hope you can see a young man in your life.
+[00:30:06][EN*]  In learning this process, you can use it in their hands and see what changes you can do.
+[00:30:15][EN*]  When we see these patterns, the goal is not to immediately correct behavior.
+[00:30:20][EN*]  The goal is to recognize that adolescents' current skills are no longer matching the demands of the situation.
+[00:30:27][EN*]  The processing approach asks us to slow down, become curious, and identify which life skill is missing before deciding how to respond.
+[00:30:31][ZH] 然後解決哪個生命技術是遺失的,之前決定如何回應。
+[00:30:36][ZH] 那種心態避免我們發生的情緒和幫助我們回應。
+[00:30:42][ZH] 那當發生這些情緒,我們不用急著去糾正他們,而是可以去觀察接下來會發生什麼樣的事情。
+[00:30:57][ZH] 我們要複習,不要用情緒化去面對他們的反應。
+[00:31:15][ZH] 好,那首先,第一個情訊就是故作降話。
+[00:31:30][EN]  Adults frequently interpret rigidity as stubbornness, disrespect, a desire to control the situation, or just flat-out deviance.
+[00:31:41][EN]  And sometimes that's true, but more often, the adolescent genuinely cannot see another workable option in that moment.
+[00:31:50][EN]  When anxiety increases, thinking narrows.
+[00:31:54][EN]  The adolescent becomes attached to one solution because it feels safe.
+[00:31:59][EN]  When adults respond by insisting on their own situation or our own solution, we often create a power struggle. Remember, rigidity plus rigidity never equals flexibility.
+[00:32:13][ZH] 那當孩子出現過濁和僵化的現象的時候
+[00:32:16][ZH] 大人常常會把它解讀成他是故意要挑釁
+[00:32:20][ZH] 才會那麼固執,不聽話
+[00:32:22][ZH] 但其實有時候他發生是因為當孩子焦慮感升高的時候
+[00:32:26][ZH] 他的思考模式會變得很狹窄
+[00:32:28][ZH] 所以他會緊抓著就是唯一讓他感到安全感的這個選項不放
+[00:32:33][ZH] 所以這就會變成是淪為一個權力鬥爭
+[00:32:37][ZH] 就是我們剛剛講的rigidity加rigidity就會是雙數的狀態
+[00:32:41][ZH] 所以我們當對孩子有充分的理解才會創造出彈性的空間
+[00:33:25][EN*]  the life skill we are teaching is cognitive flexibility our job is to expand possibilities
+[00:33:31][EN]  rather than force agreement we slow the conversation down we help the adolescent feel heard
+[00:33:39][EN]  notice our first goal is not solving the problem our first goal is helping the adolescent experience
+[00:33:45][EN]  another perspective without feeling threatened at telos we often use a turn-taking process
+[00:33:52][EN]  We call it the talking stick.
+[00:33:54][EN]  Each person explains their perspective one at a time.
+[00:33:57][EN]  The other reflects back what they heard before responding.
+[00:34:02][EN]  They may ask some clarifying questions if needed.
+[00:34:04][EN]  This slows the interaction and reduces defensiveness.
+[00:34:09][EN]  Only after both people feel understood do we begin problem solving.
+[00:34:14][EN]  That process teaches a skill that they can use eventually in their relationships, at school, and in their families.
+[00:34:22][EN]  We need to teach flexibility before expecting flexibility.
+[00:34:50][ZH] 才有可能創造出彈性
+[00:34:53][ZH] 我們在TLOS會運用一個機制
+[00:34:55][ZH] 叫做Talking Stick Process
+[00:34:57][ZH] 叫做發言棒
+[00:34:59][ZH] 就是讓一個人先說他的想法和意見
+[00:35:04][ZH] 他的下一個人必須要先如實的重複
+[00:35:08][ZH] 他的上一個人講的話
+[00:35:09][ZH] 表示說他有確實理解上一位講的內容的話
+[00:35:12][ZH] 才會輪到這個第二個人發言
+[00:35:15][ZH] 透過這樣的練習的話
+[00:35:16][ZH] 就可以確保說你是有認真在聽上一位人說話
+[00:35:21][ZH] 那所以也可以培養孩子的同理性
+[00:35:24][ZH] 所以先讓他們學會同理理解的能力以後
+[00:35:28][ZH] 再教他們如何解決問題
+[00:35:36][EN*]  Another pattern we frequently see looks very different from rigidity, stress sensitivity.
+[00:35:43][EN*]  Some adolescents pierce anxious all the time.
+[00:35:55][EN*]  Others avoid difficult tasks.
+[00:35:57][EN*]  Some shut down.
+[00:35:59][EN*]  Others become explosive.
+[00:36:01][EN]  Although these behaviors look different, they often have something in common.
+[00:36:06][EN]  The adolescent's stress level has exceeded their coping capacity.
+[00:36:10][EN]  When funnels are overflowing, the brain shifts towards protection rather than learning.
+[00:36:16][EN]  This is why adding more pressure often makes the situation worse.
+[00:36:21][EN]  This is how resilience is developed, not by overwhelming adolescents,
+[00:36:26][EN]  but by stretching them within their current capacity.
+[00:36:39][ZH] 的這個呈現方式呢是有一些青少年
+[00:36:42][ZH] 他們隨時都處於一個很焦慮的狀態
+[00:36:45][ZH] 他們會逃避他們覺得很難的任務
+[00:36:47][ZH] 然後遇到困難可能就會整個盪掉
+[00:36:50][ZH] 或是情緒爆炸
+[00:36:51][ZH] 或是說他們就不想要面對責任
+[00:36:53][ZH] 那這個成因可能是因為
+[00:36:56][ZH] 當這個壓力超出他們的負荷的時候
+[00:36:59][ZH] 就像剛剛那個漏斗圖一樣
+[00:37:01][ZH] 大腦會切換到一個自我防衛的機制
+[00:37:04][ZH] 那當這個自我防衛機制啟動的時候
+[00:37:06][ZH] 他們就失去了理性學習的能力
+[00:37:09][ZH] 因應這個壓力敏感,我們可以教他們什麼樣的生活技能呢?
+[00:37:39][ZH] 我們可以教他們的生活技能並不是教他們如何減壓而是如何與壓力共處
+[00:37:58][ZH] 比如說我們可以把龐大的任務拆解成比較好達成的比較小的任務
+[00:38:04][ZH] 然後能教導他們怎樣去情緒調節
+[00:38:07][ZH] 還有隨著他們的能力提升去慢慢淡化外在的支援
+[00:38:13][ZH] 幫助他們邁向獨立自主
+[00:38:15][ZH] 還有可以去除一些無助於學習的不必要壓力
+[00:38:18][ZH] 讓他們保留這個鍛煉復原力的挑戰
+[00:38:34][ZH] 當孩子可以達成這些小任務,他們會獲得成功的感覺
+[00:38:38][ZH] 伴隨的來就是願意承擔更多的責任
+[00:38:41][ZH] 下一個我要介紹的簡訊跟壓力敏感也很不一樣
+[00:38:44][ZH] 它呈現的方式就是孩子他無法理解你講的話
+[00:38:47][ZH] 他們可能表面上點頭會說
+[00:38:49][ZH] 好,表面上點頭會說〔重複 ×8，疑幻覺〕
+[00:38:58][ZH] 好,肯定是好
+[00:38:58][ZH] 好,肯定是好,肯定是好
+[00:38:59][ZH] 孩子他無法理解你講的話
+[00:39:14][EN*]  are not giving it an executive dysfunction.
+[00:39:25][EN*]  Over the years, I've learned that some adolescents
+[00:39:27][EN*]  are not being oppositional at all.
+[00:39:29][EN*]  They simply do not understand what
+[00:39:32][EN*]  we think we've communicated.
+[00:39:34][EN*]  They nod.
+[00:39:35][EN*]  They say, OK.
+[00:39:37][EN*]  They genuinely want to succeed.
+[00:39:40][EN*]  Then they do something completely different.
+[00:39:44][EN*]  They actually don't understand what you want to do, but they don't understand what you want to do.
+[00:39:58][EN*]  Adults often assume they just weren't listening.
+[00:40:01][EN]  Sometimes the real issue is language processing, working memory, attention, or abstract reasoning.
+[00:40:08][EN]  Our responsibility is not to repeat the same explanation louder.
+[00:40:13][EN]  Our responsibility is to communicate differently. Whenever I see repeated confusion, I stop asking, why are they doing this? And start asking, have I made myself understandable? Confusion is a cue to clarify, not to criticize.
+[00:40:53][ZH] 當我們理解這個模式以後,我們也就是可以幫助他們比較好的學習。
+[00:41:23][ZH] 我們比我們更多問,你明白嗎?當他們再解釋,不理解會變得不見,前面的操作發展。一些小的調整會避免後來避免更多的問題。你永遠不想理解,要注意。
+[00:41:53][ZH] 就是你可以要求孩子複數他聽到的內容來確認他是不是真的有聽懂
+[00:42:01][ZH] 第三個就是你不應該假設聽懂的,你必須要確認他聽懂的,你必須常常去檢查,不是自己假設他一定聽得懂
+[00:42:10][ZH] 下一個警訊的話是執行功能失調
+[00:42:23][ZH] 這應該是很多家長和治療師會在孩子身上觀察到的
+[00:42:33][EN]  In my experience, it's usually a skill deficit.
+[00:42:38][EN]  Some adolescents genuinely struggle to organize materials, prioritize tasks, remember assignments, or anticipate what they will need.
+[00:42:47][EN]  Executive functioning is like the brain's management system.
+[00:42:51][EN]  When that system is weak, capable adolescents can become, and appear, irresponsible.
+[00:42:58][EN]  So how do we teach organizational skills and everyday interaction?
+[00:43:05][ZH] 但其實它是一個大腦執行功能的技能的缺失
+[00:43:09][ZH] 那它反應的表現出來的狀況常常就是這個人他會找不到他要的東西
+[00:43:13][ZH] 他沒辦法預測他接下來要什麼
+[00:43:15][ZH] 然後他的這個生活空間整個就是很亂很沒有秩序的
+[00:43:19][ZH] 然後常常丟在蠟絲的呈現方式。
+[00:43:23][ZH] 那我們要教他們什麼樣的生活技能嗎?
+[00:43:44][EN]  We simplify their environment. We create predictable places for important things. We establish daily routines. We use checklists, calendars, and visual reminders. Instead of punishments, we teach systems, calendars, checklists, routines, visual reminders.
+[00:44:29][ZH] 那所以我們的目標記得不是讓自己變成
+[00:44:59][ZH] 可以有條理的家長或自己的詞
+[00:45:01][ZH] 要讓孩子變得更有條理才對
+[00:45:03][ZH] 所以我們要逐步的將這個責任由大人轉移到孩子手中
+[00:45:07][ZH] 轉回他們的手上
+[00:45:08][ZH] 那他們的這些弱點是可以靠著工具輔助來去彌補的
+[00:45:14][ZH] 那直到他們越來越熟悉練習變成內在的能力
+[00:45:18][ZH] 他們就建立了這個獨立性
+[00:45:21][ZH] The next pattern is one that often creates loneliness or conflict, that is social struggles.
+[00:45:42][EN*]  Some are anxious or rigid. Some struggle because relationships simply don't come naturally.
+[00:45:47][EN*]  Others struggle because even small changes feel overwhelming.
+[00:45:51][EN*]  These are two very different presentations, both benefit from the same processing mindset.
+[00:45:57][EN*]  Let's begin with the social struggles.
+[00:46:00][EN*]  Many children don't have social problems because they don't have social problems with social problems.
+[00:46:11][EN*]  Or they don't have social problems with social problems.
+[00:46:19][EN*]  One of the saddest experiences for an adolescent is wanting friends, but repeatedly failing socially.
+[00:46:26][EN*]  Many adolescents are not intentionally rude or insensitive. They simply miss social cues that others notice automatically. They interpret conversations, misread humor, stand too close, talk too long, or struggle to adjust their tone. Some may bombard their friends with text messages or ignore others' text messages.
+[00:46:33][ZH] They interpret conversations, misread humor, stand too close, talk too long, or struggle to adjust their tone.
+[00:46:44][ZH] 有些孩子的社互動動障礙,其實是展現在互動的方式錯誤,錯誤就是比較不一樣,比如說他們可能會不是故意要很沒禮貌,但是他們沒有辦法去解讀空氣,他們可能跟人家講話的語氣是不恰當的,或是說他可能會不小心講太久話,或是他會誤讀太久話。
+[00:47:14][ZH] 誤解這個幽默,或是說他跟人家講話的時候會站得太近,或是說講話沒有分寸或是實際不當,這些溝通的方式會讓他們被鼓勵。
+[00:47:44][ZH] 所以其實社交能力也是可以被教導的
+[00:47:50][ZH] 就像是閱讀、數學、其他的科目一樣
+[00:47:53][ZH] 有的時候孩子沒辦法自然學習的話
+[00:47:55][ZH] 我們是可以刻意的讓他們去練習
+[00:47:58][ZH] 然後給予他們回饋
+[00:47:59][ZH] 還有刻意給他們教導的
+[00:48:02][EN]  At Telos, we try to teach one social skill at a time.
+[00:48:06][EN]  When we overwhelm adolescents with ten different conversations or corrections, very little changes.
+[00:48:12][EN]  Instead, we choose one skill, maybe it's eye contact.
+[00:48:16][EN]  maybe it's waiting for another person to finish speaking maybe it's asking a
+[00:48:21][EN]  follow-up question then we practice it repeatedly across all settings
+[00:48:27][EN]  afterwards we provide immediate specific feedback in private learning
+[00:48:43][ZH] 就是對於有社交障礙的孩子來說
+[00:48:46][ZH] 我們會一次只糾正他們一個社交技能
+[00:48:51][ZH] 比如說一次給他十個的話
+[00:48:53][ZH] 他可能是沒有辦法好好的去調整的
+[00:48:55][ZH] 但是如果一次只教導一個具體的社交技能
+[00:48:58][ZH] 比如說我們這次練習就只要練習眼神接觸
+[00:49:01][ZH] 或是我們這次練習只練習等待別人把話講完
+[00:49:05][ZH] 或是我們這次只練習
+[00:49:06][ZH] 你要自己聽完別人話提出一些延伸的問題
+[00:49:09][ZH] 一次只練習一個就好
+[00:49:11][ZH] 然後就在跨情境的狀況下反覆的練習反覆的示範
+[00:49:17][ZH] 然後立即再給他們回饋還有鼓勵
+[00:49:21][ZH] 那這樣的話他們就可以慢慢的打到練習的效果
+[00:49:25][ZH] 那最後一個警訊的話是適應變動還有緊靜轉換困難
+[00:49:41][EN]  narrow thinking reduces flexibility. When we understand that sequence, we stop interpreting
+[00:49:47][EN]  distress as defiance. Instead, we begin preparing students before transitions occur. Preparation
+[00:49:56][EN]  is more often effective than correction. Preparation prevents many problems that correction
+[00:50:03][ZH]  So how do we prepare adolescents well?
+[00:50:06][ZH] 那最後一個警訊是很多孩子會有適應變動和情境轉換困難的現象
+[00:50:13][ZH] 原因是變動會帶來不確定性
+[00:50:16][ZH] 不確定性就會引發焦慮
+[00:50:18][ZH] 焦慮引發了他們的思考模式就變得很狹窄
+[00:50:21][ZH] 就會失去了適應的彈性
+[00:50:23][ZH] 所以我們一直強調準備做好心理的建設
+[00:50:28][ZH] 會比事後糾正要來得有效很多
+[00:50:32][EN*]  We forecast the day. We front load expected emotions. We explain upcoming changes before
+[00:50:40][EN*]  they happen when we can. When unexpected changes occur, we slow down and give adolescents extra
+[00:50:47][EN*]  time to adjust. These simple practices reduce uncertainty and allow adolescents to remain
+[00:50:54][EN*]  engaged rather than overwhelmed. Our goal is not to eliminate change. It is to help
+[00:51:00][ZH] 是助於年輕人進行更加進行改變的信心。
+[00:51:06][ZH] 批評性增加了信心,信心增加了運動性。
+[00:51:12][ZH] 那這邊哪些生活技巧可以應用呢?
+[00:51:15][ZH] 首先我們可以預告他們接下來會發生什麼樣的事,什麼樣的行程,就是剛剛講到的預告。
+[00:51:21][ZH] 然後我們可以預告他們預期會有什麼樣的情緒,就是從低感情。
+[00:51:27][ZH] 然後呢 當突然的變動會發生的話
+[00:51:31][ZH] 我們就刻意的放慢節奏
+[00:51:33][ZH] 讓他們有足夠的時間去消化
+[00:51:35][ZH] 還有梳理發生的事
+[00:51:37][ZH] 還有隨之的情緒
+[00:51:38][ZH] 那這樣的話 透過減少不確定感
+[00:51:41][ZH] 他們還是同時可以保有這個參與度
+[00:51:44][ZH] 那就可以減少這樣子的不確定性
+[00:51:48][ZH] 讓他們還是可以用自信跟能力來面對變動
+[00:51:53][ZH] 那這些人生出現變動是無可避免的
+[00:52:15][ZH] 然後人生出現失望也是無可避免的
+[00:52:18][ZH] 所以我們並不是要把這些變動給拿掉
+[00:52:21][ZH] 而是讓他們如何去梳理,如何去遊刃有益地去面對這些變動。
+[00:52:28][ZH] 在TELOS,我們預計什麼可以,我們前面無期的情感,我們準備好學生前面的談論。
+[00:52:36][ZH] 我們預計不期的改變,我們會慢著,我們會給小學們的時間,我們會期待他們的表現。
+[00:52:44][ZH] 那簡單的改變,會常常改變成結果。
+[00:52:48][ZH] 所以在TLOS我們一定會先預告他們經驗的行程
+[00:52:52][ZH] 然後預告他們接下來可能會有的情緒
+[00:52:55][ZH] 然後要發生變動時我們都會把節奏放慢
+[00:52:58][ZH] 讓他們有足夠的時間去消化和熟理
+[00:53:01][ZH] 通常這樣的調整都會讓他們結構很不一樣
+[00:53:05][ZH] 目標不就是要生命,目標是要生命,要求生命,能夠保持持續性,思考,情感,情感,不斷地保持,當生活不正如計劃。
+[00:53:16][ZH] 一瓶子的防疫,就算是一瓶子的治療。
+[00:53:21][ZH] 我們不是要讓人生變得簡單,而是學習培養彈性,如何學習調整自己的情緒,還是要預防攝影。
+[00:53:56][EN*]  When we see confusion, we slow down and clarify.
+[00:54:00][ZH] 當我們看到經濟活動的問題,我們建立了系統前期待離開。當我們看到社交的問題,我們訓練而判斷。當我們看到不同的問題,我們準備好,而不只是反應。
+[00:54:30][ZH] 像我剛剛講的比如說孩子出現了理解困難
+[00:54:33][ZH] 那我們就是要透過剛才講的方式去尋找可以教他們什麼
+[00:54:38][ZH] 或是說他們有社互動動困難
+[00:54:41][ZH] 那我們可以教他們什麼
+[00:54:43][ZH] 以及他們如果面對巨大的變動出現困難
+[00:54:47][ZH] 我們可以教他們怎麼樣去預測還有做準備等等
+[00:54:51][ZH] 所以要看到的並不是警訊本身
+[00:54:54][ZH] 而是他背後可以有什麼樣的教導機會
+[00:54:58][ZH] Processing approach is not about perfect conversations. Relationship first, curiosity before correction. Teach skills, not simply compliance.
+[00:55:09][ZH] 所以我們在TILOS運用的Processing approach並不是期待每一次的對話都可以很完美的進行,而是我們要教導生活技能,而不是強迫他們的順從,還有關係優先.
+[00:55:24][ZH] 我希望你一段最後一想,在過去兩次的講述,我們已經談到不理解和接受到不理解和接受到不理解。這些想法不能分別。
+[00:55:35][ZH] 我們更加精確地理解,我們更加精確地教他們,更加精確地教他們,更加精確地教他們,更加精確地教他們,更加精確地教他們,更加精確地學習技巧他們需要後接受到診斷。
+[00:55:54][ZH] 我講到了如何去理解青少年,如何去回應青少年。
+[00:55:58][ZH] 當我們對他有更正確的理解的話,我們對他的教導也就可以更有效,進而培養他們非常實用的生活技能。
+[00:56:24][ZH] 我相信沒有青少年是早上一起床就希望今天的人生過得很失敗
+[00:56:36][ZH] 其實他們每個人都是很努力在用目前所具備的技能去過好他們的生活
+[00:56:41][ZH] 那我們就是要幫助他們可以發展出更多更好的技能
+[00:56:45][ZH] 所以要把每一次的失敗每次的挑戰當作是教導的契機以及建立關係的契機
+[00:56:51][ZH] 謝謝各位在第一線為青少年健康付出的努力
+[00:57:06][ZH] 我希望今天分享的 Processing approach 給大家一個架構
+[00:57:10][ZH] 讓大家在不管什麼場合 家庭、工作、學校或是診間都可以有一些幫助
+[00:57:17][ZH] 謝謝

@@ -1,0 +1,2384 @@
+1
+00:00:00,000 --> 00:00:29,980
+[ZH] 今天早上我們有探討到
+
+2
+00:00:55,560 --> 00:01:07,540
+[EN*]  How do we respond in those everyday moments when a young person becomes overwhelmed, rigid, socially disconnected, or simply can't access the skills we know they possess?
+
+3
+00:01:08,440 --> 00:01:14,880
+[EN]  Those moments happen every day in therapy, in the classroom, in homes, and in residential treatment.
+
+4
+00:01:15,820 --> 00:01:19,880
+[EN]  I'd like to share the framework we use at TELOS for these moments.
+
+5
+00:01:20,620 --> 00:01:22,180
+[EN]  We call it the processing approach.
+
+6
+00:01:22,680 --> 00:01:33,680
+[EN]  It has become one of the functional ways we teach life skills, not just in therapy sessions, but throughout every interaction we have with the young person that they have around them.
+
+7
+00:01:49,600 --> 00:01:53,160
+[ZH] 我們在日常生活中該怎麼樣跟他們其實應對
+
+8
+00:01:53,160 --> 00:01:56,240
+[ZH] 那這些狀況其實隨時每天都可能會發生
+
+9
+00:01:56,240 --> 00:01:59,400
+[ZH] 可能在資商市,可能在教室,可能在家庭日常
+
+10
+00:01:59,400 --> 00:02:03,120
+[ZH] 或是說是在TELOS這樣的住宿機構當中
+
+11
+00:02:03,120 --> 00:02:06,200
+[ZH] 那今天我就想向各位介紹我們TELOS機構
+
+12
+00:02:06,200 --> 00:02:09,800
+[ZH] 在面對這些時刻所使用的這個介入架構
+
+13
+00:02:09,800 --> 00:02:12,640
+[ZH] 那我們把它稱作The Processing Approach
+
+14
+00:02:12,640 --> 00:02:13,840
+[ZH] 就是我今天的講題
+
+15
+00:02:13,840 --> 00:02:17,320
+[ZH] 那中文我們就把它翻成歷程梳理模式
+
+16
+00:02:17,320 --> 00:02:20,500
+[ZH] 它會成為我們教導生活技能的核心基礎
+
+17
+00:02:20,500 --> 00:02:24,000
+[ZH] 它不僅是可以用於心理諮商的誤談
+
+18
+00:02:24,000 --> 00:02:29,560
+[ZH] 也可以使用在孩子跟周遭成年人每一次的日常互動當中
+
+19
+00:02:29,560 --> 00:02:34,240
+[ZH] 我希望今天是你會不只在理解方法的方法
+
+20
+00:02:34,240 --> 00:02:37,140
+[ZH] 也會知道你能夠開始使用它
+
+21
+00:02:37,140 --> 00:02:39,200
+[ZH] 在明天工作的方法
+
+22
+00:02:39,200 --> 00:02:42,680
+[ZH] 我們先講解方法的方法
+
+23
+00:02:42,680 --> 00:02:45,480
+[ZH] 我想先開始為何我們相信它是必須的
+
+24
+00:02:45,480 --> 00:02:53,500
+[ZH] 那我希望大家今天離開這個會場的時候可以完全瞭解什麼叫做Processing Approach
+
+25
+00:02:53,500 --> 00:02:55,980
+[ZH] 然後呢也可以掌握它的具體方法
+
+26
+00:02:55,980 --> 00:02:59,480
+[ZH] 然後明天就可以把它運用在你陪伴的孩子身上
+
+27
+00:02:59,480 --> 00:03:04,500
+[ZH] 那在說明不是Processing Approach之前我想要先談談為什麼我覺得它很重要
+
+28
+00:03:04,500 --> 00:03:25,100
+[ZH] 我先講一個我印象深刻的臨床實務當事人說起,
+
+29
+00:03:25,100 --> 00:03:31,000
+[ZH] 幾年前我們機構接收了一個已經轉學過多手機構的學生,
+
+30
+00:03:39,020 --> 00:03:42,020
+[EN*]  Hold on, it's missing some of my slide here.
+
+31
+00:03:52,060 --> 00:03:54,260
+[EN*]  Oppositional, manipulative, defiant.
+
+32
+00:03:54,860 --> 00:03:57,440
+[EN*]  What surprised me was how intelligent he was.
+
+33
+00:03:58,440 --> 00:04:01,100
+[EN*]  He knew exactly what adults wanted him to do.
+
+34
+00:04:01,120 --> 00:04:03,280
+[ZH]  He simply couldn't do it
+
+35
+00:04:03,280 --> 00:04:17,780
+[ZH] 這個孩子他展現了高度的反抗性,對立性,可是令我驚訝的是這個孩子其實他很聰明,他很清楚知道大人希望他做什麼,他只是沒有辦法穩定持續地做到
+
+36
+00:04:17,780 --> 00:04:46,740
+[ZH] 那部分的青少年,他們知道的道理遠比他們可以做得到的多很多
+
+37
+00:04:46,740 --> 00:05:05,760
+[ZH] 比如說他們知道不應該對父母大吼大叫,他們知道他們應該要去使用諮商中練習過的技巧,然後他們知道應該隨時保持禮貌溝通,然後他們也知道應該要在情緒崩潰前去主動尋求協助,可是他們還是會犯下重複的錯誤。
+
+38
+00:05:05,020 --> 00:05:10,020
+[EN*]  Early in my career, I found that frustrating.
+
+39
+00:05:10,020 --> 00:05:18,020
+[EN*]  I assumed that if I explained things clear enough, taught enough skills, or held them accountable enough, things would improve.
+
+40
+00:05:18,020 --> 00:05:22,020
+[EN*]  Sometimes they did, but often they did not.
+
+41
+00:05:22,020 --> 00:05:29,020
+[EN*]  Over time, I realized something important. The problem usually wasn't knowledge. The problem was performance.
+
+42
+00:05:29,020 --> 00:05:37,020
+[EN*]  Many adolescents simply could not access the skills they already knew they had before they became emotionally overwhelmed.
+
+43
+00:05:42,200 --> 00:05:45,660
+[ZH] 我就覺得因為我已經講得很清楚啦 我也教你很多技巧
+
+44
+00:05:45,660 --> 00:05:50,420
+[ZH] 然後我也很嚴格的要求你要去做到 但是情況都沒有好轉
+
+45
+00:05:50,420 --> 00:05:53,900
+[ZH] 有的時候會有效 但有時候是沒有什麼效果
+
+46
+00:05:53,900 --> 00:05:58,200
+[ZH] 那隨著時間的演進 我意識到一些很關鍵的事情
+
+47
+00:05:58,200 --> 00:05:59,800
+[ZH] 就是知意行難
+
+48
+00:05:59,800 --> 00:06:06,520
+[ZH] 問題在於不在於你擁有足夠的知識
+
+49
+00:06:10,020 --> 00:06:15,020
+[EN*]  Think about the adolescent you work with. Many struggle with emotion regulation.
+
+50
+00:06:15,020 --> 00:06:20,020
+[EN*]  Others have executive functioning challenges. Some have become overwhelmed by stress.
+
+51
+00:06:20,020 --> 00:06:27,020
+[EN*]  Others misread social situations or have difficulty adapting when plans change unexpectedly.
+
+52
+00:06:27,020 --> 00:06:31,660
+[EN*]  These are isolated problems, they are reoccurring patterns.
+
+53
+00:06:57,740 --> 00:07:27,720
+[ZH] 這就是我們Telos的processing approach,它就是為了家長和臨床人員和學生提供的一套最佳的方法。
+
+54
+00:07:27,740 --> 00:07:38,740
+[ZH] 我第一次聽到的詞,他們會想到一場危機,他們會想到一場危機,他們會想到一場危機。
+
+55
+00:07:35,640 --> 00:07:39,200
+[EN]  a crisis and talking through what happened.
+
+56
+00:07:39,200 --> 00:07:45,340
+[EN]  Certainly these conversations are important, but at Telos the processing approach is much
+
+57
+00:07:45,340 --> 00:07:47,140
+[EN]  broader than that.
+
+58
+00:07:47,140 --> 00:07:52,800
+[EN]  The processing approach is not simply a conversation, it is an approach to every interaction we
+
+59
+00:07:52,800 --> 00:07:54,600
+[EN]  have with adolescents.
+
+60
+00:07:54,600 --> 00:08:07,480
+[EN]  it is the lens through which we interpret behavior, it is the mindset that guides us how to respond, and it is the method we use to teach life skills in everyday moments.
+
+61
+00:08:00,620 --> 00:08:02,840
+[ZH] 導致我們如何回應
+
+62
+00:08:02,840 --> 00:08:05,620
+[ZH] 而這就是我們用來教授生活技術
+
+63
+00:08:05,620 --> 00:08:07,480
+[ZH] 在每天的時刻
+
+64
+00:08:07,480 --> 00:08:09,920
+[ZH] 大家聽到processing approach
+
+65
+00:08:09,920 --> 00:08:12,260
+[ZH] 就是歷程梳理這個名詞的時候
+
+66
+00:08:12,260 --> 00:08:16,520
+[ZH] 會以為說這個可能就是危機事件爆發後
+
+67
+00:08:16,520 --> 00:08:18,260
+[ZH] 我們平靜下來坐下來
+
+68
+00:08:18,260 --> 00:08:19,800
+[ZH] 回顧發生了什麼事情
+
+69
+00:08:19,800 --> 00:08:21,440
+[ZH] 這樣子的時候對話很重要
+
+70
+00:08:21,440 --> 00:08:23,040
+[ZH] 但是在我們TELOS
+
+71
+00:08:23,040 --> 00:08:26,040
+[ZH] 歷程書裡的範疇其實要比這個更廣
+
+72
+00:08:26,040 --> 00:08:28,040
+[ZH] 它不是一個事後對話而已
+
+73
+00:08:28,040 --> 00:08:32,040
+[ZH] 它是貫穿我們每次跟青少年互動的核心方法
+
+74
+00:08:49,660 --> 00:08:54,100
+[EN*]  adolescent to stop this behavior and start asking what is this adolescent
+
+75
+00:08:54,100 --> 00:08:59,740
+[EN*]  struggling to do successfully? What skills are they lacking? Those questions
+
+76
+00:08:59,740 --> 00:09:05,860
+[EN*]  change everything. Once we understand the missing skill, our roles
+
+77
+00:09:14,040 --> 00:09:30,980
+[ZH] 我們會要求所有TILOS的團隊人員還有生活培考師做出的一個核心思維轉變
+
+78
+00:09:30,980 --> 00:09:33,940
+[ZH] 是我們會要大家不要再問這個問題
+
+79
+00:09:33,940 --> 00:09:37,480
+[ZH] 我們要如何讓這個孩子停止這個不恰當的行為
+
+80
+00:09:37,480 --> 00:09:43,680
+[ZH] 而是要問我們說這個孩子在順利打成目標上遇到什麼樣的阻礙
+
+81
+00:09:43,680 --> 00:09:46,740
+[ZH] 他目前缺乏了哪一項關鍵的技能
+
+82
+00:09:46,740 --> 00:09:49,940
+[ZH] 那一旦我們看清楚他是缺乏了哪方面的技能
+
+83
+00:09:49,940 --> 00:09:52,180
+[ZH] 我們的角色就會徹底轉變
+
+84
+00:09:52,180 --> 00:09:55,620
+[ZH] 我們不再是要在爭論中要贏過孩子
+
+85
+00:09:55,620 --> 00:09:58,480
+[ZH] 也不再是要強迫這些孩子要順從我們
+
+86
+00:09:58,480 --> 00:10:01,480
+[ZH] 我們變成了陪伴他們學習的教師
+
+87
+00:10:01,480 --> 00:10:03,180
+[ZH] 還有生活陪跑師
+
+88
+00:10:03,180 --> 00:10:05,420
+[ZH] 所以每一次的摩擦每一次的互動
+
+89
+00:10:05,420 --> 00:10:11,420
+[ZH] 其實都是在幫助孩子建立一個一生受用技能的契機
+
+90
+00:10:11,420 --> 00:10:25,980
+[ZH] 這就是為什麼我們強調,processing approach是建立在關係的基礎之上
+
+91
+00:10:25,980 --> 00:10:32,380
+[ZH] 這就是為什麼我們強調
+
+92
+00:10:32,380 --> 00:10:37,880
+[ZH] Processing Approach是建立在關係的基礎之上
+
+93
+00:10:37,880 --> 00:10:42,080
+[ZH] 青少年不會因為你比他大聲然後就順服你
+
+94
+00:10:42,080 --> 00:10:45,080
+[ZH] 他是因為他信任這個大人
+
+95
+00:10:45,080 --> 00:10:48,280
+[ZH] 然後呢覺得這個大人提供給他們安全感
+
+96
+00:10:48,280 --> 00:10:51,880
+[ZH] 可預測性然後才願意跟他們配合
+
+97
+00:10:51,880 --> 00:10:56,980
+[ZH] 所以processing approach不是結束之後才做的事情
+
+98
+00:10:56,980 --> 00:11:00,580
+[ZH] 它就是發生當下可以使用的具體方式
+
+99
+00:11:00,760 --> 00:11:05,760
+[EN]  Before the adolescent people remember what we say, they remember how we made them feel.
+
+100
+00:11:05,760 --> 00:11:10,760
+[EN]  Think back to the adults who have the greatest influence in your own life.
+
+101
+00:11:10,760 --> 00:11:14,760
+[EN]  Most of us remember very little of what their exact words are,
+
+102
+00:11:14,760 --> 00:11:20,760
+[EN]  words are, but we remember how they treated us. At Telos, we call this the way of being.
+
+103
+00:11:20,760 --> 00:11:25,960
+[EN]  It describes the emotional presence we bring into every interaction. The first principle
+
+104
+00:11:25,960 --> 00:11:32,680
+[EN]  is maintaining a heart of peace. Adolescents often borrow our emotion regulation before
+
+105
+00:11:50,720 --> 00:11:54,840
+[ZH] 他其實會記住的是我們給他怎麼樣的感受
+
+106
+00:11:54,840 --> 00:11:56,960
+[ZH] 所以大家回想看看
+
+107
+00:11:56,960 --> 00:12:00,600
+[ZH] 各位應該在生命中都有影響你們最深的人
+
+108
+00:12:00,600 --> 00:12:02,840
+[ZH] 那其實回想這些人的時候
+
+109
+00:12:02,840 --> 00:12:04,720
+[ZH] 我們其實很少能記住他們
+
+110
+00:12:04,720 --> 00:12:08,160
+[ZH] 到底對我們說過了具體哪些話或字句
+
+111
+00:12:08,160 --> 00:12:11,400
+[ZH] 但是你會記得他們對待我們的方式
+
+112
+00:12:11,400 --> 00:12:12,480
+[ZH] 所以在TLs的話
+
+113
+00:12:12,480 --> 00:12:15,880
+[ZH] 我們會把這個稱作Way of Being
+
+114
+00:12:15,880 --> 00:12:20,640
+[ZH] 中文可以說是一個內在同在的狀態
+
+115
+00:12:20,640 --> 00:12:25,040
+[ZH] 那這也是我們希望每次可以帶入互動中的情緒氛圍
+
+116
+00:12:25,040 --> 00:12:28,640
+[ZH] 就是同一篇上面寫的
+
+117
+00:12:28,640 --> 00:12:30,640
+[ZH] Way of Bean
+
+118
+00:12:30,640 --> 00:12:33,640
+[ZH] The second principle is Teflon Demeanor
+
+119
+00:12:33,640 --> 00:12:35,640
+[ZH] Sorry I lost the part
+
+120
+00:12:35,640 --> 00:12:37,640
+[ZH] 那這個
+
+121
+00:12:37,640 --> 00:12:40,640
+[ZH] Way of Bean裡面有一個很重要的原則是
+
+122
+00:12:40,640 --> 00:12:42,640
+[ZH] 和平之心就是Heart of Peace
+
+123
+00:12:42,640 --> 00:12:43,640
+[ZH] 同一篇上面也有
+
+124
+00:12:43,640 --> 00:12:48,640
+[ZH] 就是青少年在發展出自身的情緒調節能力之前
+
+125
+00:12:48,640 --> 00:12:51,340
+[ZH] 就是我們大人需要做出一個很好的示範
+
+126
+00:12:51,340 --> 00:12:54,640
+[ZH] 如果我們大人自己先焦慮或是情緒反應過度
+
+127
+00:12:54,640 --> 00:12:56,440
+[ZH] 孩子只會更加失調
+
+128
+00:12:56,440 --> 00:12:58,840
+[ZH] 所以當我們保持Heart of Peace
+
+129
+00:12:58,840 --> 00:13:00,040
+[ZH] 和平之心的時候
+
+130
+00:13:00,040 --> 00:13:03,640
+[ZH] 我們其實就在傳遞他們一個安全的訊號
+
+131
+00:13:03,640 --> 00:13:06,040
+[ZH] 第二專案是Teflon的意見
+
+132
+00:13:06,040 --> 00:13:09,040
+[ZH] 年輕人時常會說傷心的事
+
+133
+00:13:09,040 --> 00:13:10,840
+[ZH] 他們測試規定的階段
+
+134
+00:13:10,840 --> 00:13:13,040
+[ZH] 他們挑戰的權力
+
+135
+00:13:13,040 --> 00:13:19,340
+[ZH] 若所有的評判都適合我們,我們就開始回應,而不是教訓
+
+136
+00:13:19,340 --> 00:13:25,280
+[ZH] 像個手枝,我們讓這些評判掉,不因為我們不在乎,
+
+137
+00:13:25,280 --> 00:13:29,340
+[ZH] 而是因為我們的焦點是在教育學習的。
+
+138
+00:13:29,340 --> 00:13:32,780
+[ZH] 第二個原則是不沾鍋的態度。
+
+139
+00:13:32,780 --> 00:13:35,180
+[ZH] 手枝是一個不沾鍋的態度。
+
+140
+00:13:35,180 --> 00:13:39,500
+[ZH] 就是比喻成我們的態度應該要像不沾鍋一樣,
+
+141
+00:13:39,500 --> 00:13:42,240
+[ZH] 就是要冷靜、沉著,然後不隨之起舞。
+
+142
+00:13:42,240 --> 00:13:44,440
+[ZH] 因為有時候青少年會說出很傷人的話
+
+143
+00:13:44,440 --> 00:13:48,400
+[ZH] 他們會測試我們的那個那條底線在哪裡
+
+144
+00:13:48,400 --> 00:13:51,440
+[ZH] 那如果我們把每一句話都黏在我們情緒之下
+
+145
+00:13:51,440 --> 00:13:57,360
+[ZH] 我們就變成是會落入想要反擊的那個狀態之下
+
+146
+00:13:57,360 --> 00:13:58,920
+[ZH] 所以我們要學習不沾鍋
+
+147
+00:13:58,920 --> 00:14:01,880
+[ZH] 我們要讓這些情緒像沾到鍋子就滑掉一樣
+
+148
+00:14:01,880 --> 00:14:04,640
+[ZH] 那我們讓這些情緒以言語滑入
+
+149
+00:14:04,640 --> 00:14:06,400
+[ZH] 不是因為我們不在乎這個青少年
+
+150
+00:14:06,400 --> 00:14:09,560
+[ZH] 而是因為我們的焦點應該要放在陪伴上的學習
+
+151
+00:14:09,560 --> 00:14:37,060
+[ZH] 第三個原則是我們避免公開指責他們
+
+152
+00:14:37,060 --> 00:14:40,820
+[ZH] 因為公開糾正往往會讓當事人產生羞恥感
+
+153
+00:14:40,820 --> 00:14:48,460
+[ZH] 我們要產生尊重安全感和互信的關係才能創造成長的契機
+
+154
+00:14:51,460 --> 00:14:55,340
+[ZH] 我們看到的一種最 common的模式是硬性
+
+155
+00:14:55,340 --> 00:14:59,260
+[ZH] 這顯示是黑白的想法、全是無所謂的想法
+
+156
+00:14:59,260 --> 00:15:02,020
+[ZH] 也有時顯示是無所謂的
+
+157
+00:15:02,020 --> 00:15:09,620
+[ZH] 一年輕人會被認識他們只有一個接受的結果,他們的結果。
+
+158
+00:15:09,620 --> 00:15:19,820
+[ZH] 反正,年輕人會反應相當硬。年輕人會在一面的角度,年輕人會在另一面。
+
+159
+00:15:19,820 --> 00:15:23,820
+[ZH] 這次的交流變成力量。
+
+160
+00:15:23,820 --> 00:15:27,020
+[ZH] 然後在TELOS Processing Approach的第二個支柱
+
+161
+00:15:27,020 --> 00:15:29,560
+[ZH] 叫做Flexibility Understanding
+
+162
+00:15:29,560 --> 00:15:31,020
+[ZH] 彈性跟理解
+
+163
+00:15:31,020 --> 00:15:33,360
+[ZH] 我們常常會看到一個行為模式
+
+164
+00:15:33,360 --> 00:15:35,760
+[ZH] 就是有些孩子他是非常的固著
+
+165
+00:15:35,760 --> 00:15:36,960
+[ZH] 很僵化的
+
+166
+00:15:36,960 --> 00:15:38,660
+[ZH] 那有的時候他的固執
+
+167
+00:15:38,660 --> 00:15:41,200
+[ZH] 看起來就像是他在刻意跟你對立
+
+168
+00:15:41,200 --> 00:15:43,780
+[ZH] 那這個孩子他會
+
+169
+00:15:43,780 --> 00:15:46,200
+[ZH] 只接受一種他覺得OK的結果
+
+170
+00:15:46,200 --> 00:15:47,580
+[ZH] 可是不幸的是大人
+
+171
+00:15:47,580 --> 00:15:49,420
+[ZH] 有時候也會用同時固執
+
+172
+00:15:49,420 --> 00:15:51,080
+[ZH] 僵化的態度去回應他
+
+173
+00:15:51,080 --> 00:15:53,580
+[ZH] 那這時候就變成是孩子他堅持己見
+
+174
+00:15:53,580 --> 00:15:55,820
+[ZH] 然後我們大人也不肯讓步
+
+175
+00:15:55,820 --> 00:15:58,300
+[ZH] 所以這個對話的瞬間就沒有辦法繼續下去
+
+176
+00:15:58,300 --> 00:15:59,660
+[ZH] 變成一個權力抖擇
+
+177
+00:16:00,100 --> 00:16:12,100
+[EN]  One phrase we often use at Telos is rigidity plus rigidity never equals flexibility. Nobody learns, nobody grows, everyone leaves frustrated.
+
+178
+00:16:12,100 --> 00:16:20,100
+[EN]  Flexibility does not mean lowering our standards or expectations. It means changing how we help adolescents reach those expectations.
+
+179
+00:16:20,100 --> 00:16:33,100
+[EN]  we collaborate instead of control, we seek understanding before problem solving, we look for a win-win whenever possible, we remember our goal is movement, not victory.
+
+180
+00:16:53,580 --> 00:16:56,420
+[ZH] 我們能夠改變我們協助孩子達到期待的方式
+
+181
+00:16:56,420 --> 00:16:59,180
+[ZH] 比如說我們可以用合作取代控制
+
+182
+00:16:59,180 --> 00:17:02,660
+[ZH] 然後在急於解決問題之前我們先追求理解
+
+183
+00:17:02,960 --> 00:17:08,020
+[EN*]  And we also need to remember that our goal is to continue to change and to progress,
+
+184
+00:17:08,020 --> 00:17:12,480
+[EN*]  and not to be able to win in this debate.
+
+185
+00:17:12,480 --> 00:17:18,900
+[EN*]  I found that adolescents become remarkably more flexible when they feel understood.
+
+186
+00:17:18,900 --> 00:17:20,640
+[EN*]  Understanding does not mean agreement.
+
+187
+00:17:21,600 --> 00:17:22,620
+[EN*]  It means communicating.
+
+188
+00:17:22,980 --> 00:17:26,260
+[EN*]  I see your struggle, and I am willing to work with you through it.
+
+189
+00:17:27,240 --> 00:17:31,340
+[EN*]  That simple shift changes how the entire conversation goes often.
+
+190
+00:17:32,220 --> 00:17:34,000
+[EN*]  Understanding reduces defensiveness.
+
+191
+00:17:34,860 --> 00:17:36,600
+[EN*]  Defensiveness prevents learning.
+
+192
+00:17:37,400 --> 00:17:42,800
+[EN*]  Even with the right mindset and flexibility, one mistake can still prevent learning.
+
+193
+00:17:43,540 --> 00:17:50,420
+[EN*]  Communicating too fast, too much, that brings us to slow, simple and clear.
+
+194
+00:18:03,180 --> 00:18:05,280
+[ZH] 而是要傳達說看見了你的掙扎
+
+195
+00:18:05,280 --> 00:18:06,780
+[ZH] 然後我願意陪你去克服
+
+196
+00:18:06,780 --> 00:18:09,280
+[ZH] 所以理解是可以降低防衛星的
+
+197
+00:18:09,280 --> 00:18:11,580
+[ZH] 然後呢防衛星可以
+
+198
+00:18:11,580 --> 00:18:15,780
+[ZH] 防衛星就是會阻礙大家一起成長的這個元兇
+
+199
+00:18:15,780 --> 00:18:17,380
+[ZH] 所以我們要把防衛星降低
+
+200
+00:18:17,380 --> 00:18:20,080
+[ZH] 然後這帶到我接下來要講的事情
+
+201
+00:18:20,080 --> 00:18:21,320
+[ZH] 就是我們在溝通的時候
+
+202
+00:18:21,320 --> 00:18:24,920
+[ZH] 我們需要放慢精簡還有明確我們的支援
+
+203
+00:18:35,540 --> 00:18:42,540
+[EN]  When an adolescent is frustrated, anxious, or emotionally flooded, our instinct is to explain more.
+
+204
+00:18:42,540 --> 00:18:49,100
+[EN]  We repeat ourselves. We give it additional reasoning. We try to convince, or we lecture.
+
+205
+00:18:50,300 --> 00:18:55,920
+[EN]  Unfortunately, when the brain is overwhelmed, more words rarely produces more understanding.
+
+206
+00:18:56,980 --> 00:19:02,520
+[EN]  Instead, we need to slow down, use fewer words, be intentional.
+
+207
+00:19:03,280 --> 00:19:06,140
+[EN]  At Telos, we summarize one idea at a time.
+
+208
+00:19:06,980 --> 00:19:12,660
+[EN]  We use concrete language and frequently ask the adolescent to tell us back what they heard
+
+209
+00:19:12,660 --> 00:19:15,780
+[EN]  rather than asking, do you understand?
+
+210
+00:19:15,780 --> 00:19:18,000
+[EN]  Those are very different questions.
+
+211
+00:19:18,000 --> 00:19:22,480
+[EN]  One checks for agreement, the other checks for understanding.
+
+212
+00:19:22,480 --> 00:19:25,660
+[EN]  We also pay attention to proximity and connection.
+
+213
+00:19:25,660 --> 00:19:33,020
+[EN]  A calm voice, eye contact, and walking alongside the student communicates safety rather than
+
+214
+00:19:31,400 --> 00:19:32,400
+[ZH] 互相交流,
+
+215
+00:19:32,400 --> 00:19:33,400
+[ZH] 互相交流,
+
+216
+00:19:33,400 --> 00:19:34,400
+[ZH] 互相交流,
+
+217
+00:19:34,400 --> 00:19:35,400
+[ZH] 互相交流。
+
+218
+00:19:35,400 --> 00:19:38,400
+[ZH] 一位交流是簡單的。
+
+219
+00:19:38,400 --> 00:19:42,400
+[ZH] 我們可以開始創造批評的經驗,
+
+220
+00:19:42,400 --> 00:19:51,400
+[ZH] 那processing approach第三個支柱是放慢、經節、明確化你的指示還有對話的方式
+
+221
+00:19:51,400 --> 00:19:58,400
+[ZH] 那我多年來注意到一個現象就是當有一個青少年他已經很缺乏複雜訓練能力的時候
+
+222
+00:19:58,400 --> 00:20:03,400
+[ZH] 那跟他講話的大人有時候卻把這個講話的內容搞得更複雜
+
+223
+00:20:03,400 --> 00:20:07,400
+[ZH] 就是當這個孩子他已經覺得很挫折或是很有情緒了
+
+224
+00:20:07,400 --> 00:20:11,400
+[ZH] 但是跟他互動的大人往往是試著要跟他講更多的道理
+
+225
+00:20:11,400 --> 00:20:13,580
+[ZH] 或是反覆的重複這個道理
+
+226
+00:20:13,580 --> 00:20:15,660
+[ZH] 或者是適足說服這個道理
+
+227
+00:20:15,660 --> 00:20:18,380
+[ZH] 然而當這個孩子覺得大腦已經超載了
+
+228
+00:20:18,380 --> 00:20:21,360
+[ZH] 你講再多話也沒辦法讓他加深理解
+
+229
+00:20:21,360 --> 00:20:23,300
+[ZH] 所以我們應該要反其道而行
+
+230
+00:20:23,300 --> 00:20:25,900
+[ZH] 跟他對話的時候應該要放慢速度
+
+231
+00:20:25,900 --> 00:20:27,140
+[ZH] 精簡內容
+
+232
+00:20:27,140 --> 00:20:28,780
+[ZH] 然後有意識的溝通
+
+233
+00:20:28,780 --> 00:20:30,780
+[ZH] 那可以把節奏放慢
+
+234
+00:20:30,780 --> 00:20:32,040
+[ZH] 然後把訊息拆解
+
+235
+00:20:32,040 --> 00:20:33,800
+[ZH] 每次傳達一個概念就好
+
+236
+00:20:33,800 --> 00:20:36,000
+[ZH] 然後呢語言儘量具體
+
+237
+00:20:36,000 --> 00:20:37,980
+[ZH] 還有一個很重要的事情就是
+
+238
+00:20:37,980 --> 00:20:40,740
+[ZH] 引導孩子去複述說
+
+239
+00:20:40,740 --> 00:20:42,120
+[ZH] 我剛剛跟你講了什麼
+
+240
+00:20:42,120 --> 00:20:43,120
+[ZH] 你會講一次給我聽
+
+241
+00:20:43,120 --> 00:20:44,560
+[ZH] 而不是隻是問他說
+
+242
+00:20:44,560 --> 00:20:45,400
+[ZH] 你到底聽懂了沒
+
+243
+00:20:45,400 --> 00:20:49,360
+[ZH] 因為前者是在尋求他們的同意
+
+244
+00:20:49,360 --> 00:20:53,100
+[ZH] 那後者才是真正在問他們理解了沒
+
+245
+00:20:53,100 --> 00:20:55,480
+[ZH] 那還有就是肢體的
+
+246
+00:20:55,480 --> 00:20:59,240
+[ZH] 這個肢體的互動也很重要
+
+247
+00:20:59,240 --> 00:21:00,960
+[ZH] 就是希望跟他們講話的時候
+
+248
+00:21:00,960 --> 00:21:02,400
+[ZH] 是可以保持平靜的語調
+
+249
+00:21:02,400 --> 00:21:03,320
+[ZH] 眼神接觸
+
+250
+00:21:03,320 --> 00:21:06,040
+[ZH] 也許也可以輕輕搭到他們肩膀
+
+251
+00:21:06,040 --> 00:21:07,920
+[ZH] 那或是說把身體降到
+
+252
+00:21:07,920 --> 00:21:09,180
+[ZH] 跟他們一樣的高度
+
+253
+00:21:09,180 --> 00:21:15,300
+[ZH] 這樣傳遞的是一個並肩並行的安全感或是陪伴感
+
+254
+00:21:15,300 --> 00:21:19,360
+[ZH] 而不是好像站在高處居高領導看他們這樣的感覺
+
+255
+00:21:34,020 --> 00:21:39,080
+[EN]  to figure out what comes next instead of learning. That is why we believe in clear
+
+256
+00:21:39,080 --> 00:21:45,920
+[EN]  processes. We forecast the day. We front load difficult conversations. We prepare
+
+257
+00:21:45,920 --> 00:21:51,300
+[EN]  students for changes before they occur whenever possible. We practice
+
+258
+00:21:51,300 --> 00:21:58,840
+[EN]  leads repeatedly until they become familiar. And a predictable environment creates psychological
+
+259
+00:21:58,840 --> 00:22:05,380
+[EN]  safety, and psychological safety makes learning possible. Our goal isn't to remove every challenge.
+
+260
+00:22:02,180 --> 00:22:05,180
+[ZH] our goal isn't to remove every challenge
+
+261
+00:22:05,180 --> 00:22:13,180
+[ZH] 我們的目標是削除非必須的確確,讓小學生能夠關注新的技術。
+
+262
+00:22:13,180 --> 00:22:16,180
+[ZH] 接下來的問題是一樣的重要。
+
+263
+00:22:16,180 --> 00:22:21,180
+[ZH] 即使用很高的方法,當時是正確的時間教學嗎?
+
+264
+00:22:21,180 --> 00:22:26,180
+[ZH] 第四個方法的支柱是要把流程確立起來。
+
+265
+00:22:26,180 --> 00:22:33,180
+[ZH] 在這麼多年執行功能困難或自閉症特質的青少年互動的過程,
+
+266
+00:22:33,180 --> 00:22:37,100
+[ZH] 教會有一件事情就是幫他們創造可預測性
+
+267
+00:22:37,100 --> 00:22:39,940
+[ZH] 可以大幅降低他們的焦慮還有壓力
+
+268
+00:22:39,940 --> 00:22:45,520
+[ZH] 那當週遭的這個常規要是一直常常變動的話
+
+269
+00:22:45,520 --> 00:22:49,840
+[ZH] 那其實孩子會花很多的心理能量在耗費猜測
+
+270
+00:22:49,840 --> 00:22:51,100
+[ZH] 接下來發生什麼事情
+
+271
+00:22:51,100 --> 00:22:54,460
+[ZH] 然後沒有辦法把就是這些能量放在學習上面
+
+272
+00:22:54,460 --> 00:22:57,440
+[ZH] 所以我們相信把流程定得很清楚
+
+273
+00:22:57,440 --> 00:22:59,120
+[ZH] 是很有幫助的
+
+274
+00:22:59,120 --> 00:23:01,580
+[ZH] 比如說我們可以做預告一整天
+
+275
+00:23:01,580 --> 00:23:03,460
+[ZH] 接下來形成規劃
+
+276
+00:23:03,460 --> 00:23:06,180
+[ZH] 那也可以預告他們接下來會發生什麼事
+
+277
+00:23:06,180 --> 00:23:08,120
+[ZH] 你可能會有什麼樣的反應跟情緒
+
+278
+00:23:08,120 --> 00:23:09,900
+[ZH] 在這個變動發生之前
+
+279
+00:23:09,900 --> 00:23:11,880
+[ZH] 提早為學生做好心理準備
+
+280
+00:23:11,880 --> 00:23:14,960
+[ZH] 那也可以反覆讓他們練習生活的常規
+
+281
+00:23:14,960 --> 00:23:16,860
+[ZH] 讓他們習慣生活的結構
+
+282
+00:23:16,860 --> 00:23:19,380
+[ZH] 那直到他們內化變得很熟悉
+
+283
+00:23:19,380 --> 00:23:22,840
+[ZH] 這樣就可以幫助孩子掃除不必要的不確定性
+
+284
+00:23:22,840 --> 00:23:25,180
+[ZH] 讓他們可以把心理專注在學習
+
+285
+00:23:25,180 --> 00:23:27,200
+[ZH] 真正重要的技能上面
+
+286
+00:23:27,200 --> 00:23:28,720
+[ZH] 那這邊我也想要做一個更正
+
+287
+00:23:28,720 --> 00:23:30,680
+[ZH] 因為我聽到這邊就有意識到
+
+288
+00:23:56,680 --> 00:24:02,260
+[EN*]  approach. When adolescents become emotionally overwhelmed, their ability to
+
+289
+00:24:02,260 --> 00:24:08,860
+[EN]  think, reason, and problem-solve becomes limited. Trying to teach during that
+
+290
+00:24:08,860 --> 00:24:14,980
+[EN]  moment is often ineffective. We say, mind the funnel. Imagine trying to pour
+
+291
+00:24:14,980 --> 00:24:21,100
+[EN]  information into a funnel while somebody plugs the hole. It quickly overflows. Our
+
+292
+00:24:21,100 --> 00:24:25,880
+[EN]  Our responsibility is first to reduce emotional intensity.
+
+293
+00:24:25,880 --> 00:24:27,920
+[EN]  We lower stimulation.
+
+294
+00:24:27,920 --> 00:24:30,680
+[EN]  We move away an audience.
+
+295
+00:24:49,180 --> 00:24:55,180
+[ZH] 我會示範你什麼樣的感覺,當我們開始認識的模式,在小孩的調整專案中。
+
+296
+00:25:19,180 --> 00:25:21,060
+[ZH] 其實效果是很不好的
+
+297
+00:25:21,060 --> 00:25:24,460
+[ZH] 所以就是我把它形容成這個Minder Follow
+
+298
+00:25:24,460 --> 00:25:25,900
+[ZH] Follow是一個漏斗
+
+299
+00:25:25,900 --> 00:25:28,820
+[ZH] 就是像是那個情境就很像是一個漏斗
+
+300
+00:25:28,820 --> 00:25:32,300
+[ZH] 當你把那個漏斗的底部堵住的話
+
+301
+00:25:32,300 --> 00:25:34,980
+[ZH] 那你在上面去灌東西、灌資訊的話
+
+302
+00:25:34,980 --> 00:25:36,300
+[ZH] 會發生什麼事情
+
+303
+00:25:36,300 --> 00:25:38,420
+[ZH] 就是水就驗出來了
+
+304
+00:25:38,420 --> 00:25:39,860
+[ZH] 因為下面被堵住了
+
+305
+00:25:39,860 --> 00:25:44,420
+[ZH] 那就很像是你在孩子就是已經情緒很…
+
+306
+00:25:44,420 --> 00:25:46,260
+[ZH] 在那個當下的時候
+
+307
+00:25:46,260 --> 00:25:49,100
+[ZH] 你還硬要跟他說很多道理會發生的事情
+
+308
+00:25:49,100 --> 00:25:51,140
+[ZH] 所以其實在這時候與其說道理
+
+309
+00:25:51,140 --> 00:25:54,640
+[ZH] 我們的首要任務應該是要降低他情緒的強度
+
+310
+00:25:54,640 --> 00:25:56,300
+[ZH] 還有感官上面的負荷
+
+311
+00:25:56,300 --> 00:25:59,640
+[ZH] 你可以降低外在環境的刺激
+
+312
+00:25:59,640 --> 00:26:02,440
+[ZH] 或是說把他帶離群眾視線
+
+313
+00:26:02,440 --> 00:26:07,220
+[ZH] 跟他進入比較一對一比較有隱私的互動的情境
+
+314
+00:26:07,220 --> 00:26:10,460
+[ZH] 然後先協助他調節好他的生性狀態
+
+315
+00:26:10,460 --> 00:26:13,020
+[ZH] 然後再來做反思跟反省
+
+316
+00:26:13,020 --> 00:26:14,960
+[ZH] 因為當大陸冷靜下來
+
+317
+00:26:14,960 --> 00:26:16,620
+[ZH] 這個漏斗才是暢通了
+
+318
+00:26:16,620 --> 00:26:18,980
+[ZH] 那這時候你在給予資訊的時候
+
+319
+00:26:18,980 --> 00:26:21,760
+[ZH] 他才有辦法順順的接受跟留下來
+
+320
+00:26:23,860 --> 00:26:25,960
+[ZH] 這張圖片幫助了很多的孩子
+
+321
+00:26:25,960 --> 00:26:27,960
+[ZH] 理解自己的孩子
+
+322
+00:26:27,960 --> 00:26:29,160
+[ZH] 很多的孩子告訴我
+
+323
+00:26:29,160 --> 00:26:30,840
+[ZH] 我知道他很聰明
+
+324
+00:26:34,260 --> 00:26:49,780
+[EN*]  I like to think of our brain as a funnel.
+
+325
+00:26:49,780 --> 00:26:54,800
+[EN*]  In my previous presentation, I spoke of the IQ scores and the importance of understanding
+
+326
+00:26:54,800 --> 00:26:55,800
+[EN*]  them.
+
+327
+00:26:55,800 --> 00:27:01,500
+[EN*]  When I compare a brain to the funnel, I picture the upper portion of the funnel as a working
+
+328
+00:27:01,500 --> 00:27:07,120
+[EN]  memory, the ability to hold information at the forefront of my mind and use it. I then
+
+329
+00:27:07,120 --> 00:27:13,340
+[EN]  think of the spout of the funnel as my processing, or the ability to take information in, make
+
+330
+00:27:13,340 --> 00:27:19,600
+[EN]  sense of it, and use it. When my scores have gaps, or I have ADHD, learning disabilities,
+
+331
+00:27:20,460 --> 00:27:26,780
+[EN]  or neurodiversities, my funnel becomes blocked, or the spout can become smaller, which then
+
+332
+00:27:26,780 --> 00:27:32,780
+[EN]  It can't halt my understanding or processing. When this happens, we show warning signs.
+
+333
+00:27:30,420 --> 00:27:43,860
+[ZH] 它是在你腦海中掌管,讓漏斗的上半部代表著Working memory
+
+334
+00:27:43,860 --> 00:27:47,580
+[ZH] 然後還中掌管暫存還有運用訊息的這個位置
+
+335
+00:27:47,580 --> 00:27:49,480
+[ZH] 那漏斗的下半部呢
+
+336
+00:27:49,480 --> 00:27:51,160
+[ZH] 出口它是代表processing
+
+337
+00:27:51,160 --> 00:27:52,860
+[ZH] 就是訊息處理的能力
+
+338
+00:27:52,860 --> 00:27:57,380
+[ZH] 它是用來接收理解還有運用資訊的這個能力
+
+339
+00:27:57,380 --> 00:28:00,040
+[ZH] 那如果今天這個孩子他可能有ADHD
+
+340
+00:28:00,040 --> 00:28:02,620
+[ZH] 學習障礙或是他有認知落差的話
+
+341
+00:28:02,620 --> 00:28:05,600
+[ZH] 這個漏斗的出口通常會比較窄
+
+342
+00:28:05,600 --> 00:28:08,500
+[ZH] 所以如果一次給他太多感官刺激
+
+343
+00:28:08,500 --> 00:28:09,820
+[ZH] 或是複雜要求的話
+
+344
+00:28:09,820 --> 00:28:11,300
+[ZH] 那個漏斗就會隱住
+
+345
+00:28:11,300 --> 00:28:15,300
+[ZH] 那這個時候孩子就會釋放出一個警訊.
+
+346
+00:28:15,300 --> 00:28:21,300
+[ZH] 我們剛才講到當孩子的訊息負責量太大,他就會發出警訊。
+
+347
+00:28:21,300 --> 00:28:26,300
+[ZH] 那這個時候孩子就會釋放出一個警訊。
+
+348
+00:28:26,300 --> 00:28:31,300
+[ZH] 那我剛才講到當孩子的訊息負責量太大,他就會發出警訊。
+
+349
+00:28:31,300 --> 00:28:40,300
+[ZH] 那我剛才講到當孩子的訊息負責量太大,他就會發出警訊。
+
+350
+00:28:40,300 --> 00:28:48,300
+[ZH] 那這些警訊的話,有時候會是用這樣子反復出現的行為模式來表現的,第一個是固著這樣的話,
+
+351
+00:28:48,300 --> 00:29:05,300
+[ZH] 壓力敏感,抓不到重點,執行功能障礙,社交障礙,
+
+352
+00:29:01,280 --> 00:29:05,120
+[EN*]  social struggles,
+
+353
+00:29:05,120 --> 00:29:12,240
+[EN*]  and difficulty with changes and transitions.
+
+354
+00:29:12,240 --> 00:29:16,340
+[EN*]  These are not labels, they are indicators.
+
+355
+00:29:16,340 --> 00:29:19,280
+[EN*]  Each one points towards a different set of life skills
+
+356
+00:29:19,280 --> 00:29:21,340
+[EN*]  that need to be strengthened.
+
+357
+00:29:21,340 --> 00:29:26,040
+[EN*]  As we go through each pattern, I would invite you to think of the adolescents you currently work with.
+
+358
+00:29:26,040 --> 00:29:33,540
+[EN*]  Ask yourself, what pattern do I see most often, and how might I respond differently using the processing approach?
+
+359
+00:29:33,540 --> 00:29:38,840
+[EN*]  Patterns are invitations to teach, not simply problems to solve.
+
+360
+00:29:38,840 --> 00:29:42,340
+[EN*]  Let's begin with one of the most common patterns we encounter.
+
+361
+00:29:51,340 --> 00:30:06,340
+[EN*]  and how to use the rules and how to use the rules. It can be called the ability to use the life skills of life skills. So I hope you can see a young man in your life.
+
+362
+00:30:06,340 --> 00:30:15,340
+[EN*]  In learning this process, you can use it in their hands and see what changes you can do.
+
+363
+00:30:15,340 --> 00:30:19,480
+[EN*]  When we see these patterns, the goal is not to immediately correct behavior.
+
+364
+00:30:20,140 --> 00:30:26,800
+[EN*]  The goal is to recognize that adolescents' current skills are no longer matching the demands of the situation.
+
+365
+00:30:27,980 --> 00:30:35,980
+[EN*]  The processing approach asks us to slow down, become curious, and identify which life skill is missing before deciding how to respond.
+
+366
+00:30:31,680 --> 00:30:36,680
+[ZH] 然後解決哪個生命技術是遺失的,之前決定如何回應。
+
+367
+00:30:36,680 --> 00:30:42,680
+[ZH] 那種心態避免我們發生的情緒和幫助我們回應。
+
+368
+00:30:42,680 --> 00:30:57,680
+[ZH] 那當發生這些情緒,我們不用急著去糾正他們,而是可以去觀察接下來會發生什麼樣的事情。
+
+369
+00:30:57,680 --> 00:31:15,680
+[ZH] 我們要複習,不要用情緒化去面對他們的反應。
+
+370
+00:31:15,680 --> 00:31:45,660
+[ZH] 好,那首先,第一個情訊就是故作降話。
+
+371
+00:31:30,860 --> 00:31:41,880
+[EN]  Adults frequently interpret rigidity as stubbornness, disrespect, a desire to control the situation, or just flat-out deviance.
+
+372
+00:31:41,880 --> 00:31:49,600
+[EN]  And sometimes that's true, but more often, the adolescent genuinely cannot see another workable option in that moment.
+
+373
+00:31:50,380 --> 00:31:53,160
+[EN]  When anxiety increases, thinking narrows.
+
+374
+00:31:54,060 --> 00:31:58,500
+[EN]  The adolescent becomes attached to one solution because it feels safe.
+
+375
+00:31:59,480 --> 00:32:09,480
+[EN]  When adults respond by insisting on their own situation or our own solution, we often create a power struggle. Remember, rigidity plus rigidity never equals flexibility.
+
+376
+00:32:13,900 --> 00:32:16,900
+[ZH] 那當孩子出現過濁和僵化的現象的時候
+
+377
+00:32:16,900 --> 00:32:20,900
+[ZH] 大人常常會把它解讀成他是故意要挑釁
+
+378
+00:32:20,900 --> 00:32:22,900
+[ZH] 才會那麼固執,不聽話
+
+379
+00:32:22,900 --> 00:32:26,900
+[ZH] 但其實有時候他發生是因為當孩子焦慮感升高的時候
+
+380
+00:32:26,900 --> 00:32:28,900
+[ZH] 他的思考模式會變得很狹窄
+
+381
+00:32:28,900 --> 00:32:33,900
+[ZH] 所以他會緊抓著就是唯一讓他感到安全感的這個選項不放
+
+382
+00:32:33,900 --> 00:32:37,900
+[ZH] 所以這就會變成是淪為一個權力鬥爭
+
+383
+00:32:37,900 --> 00:32:41,900
+[ZH] 就是我們剛剛講的rigidity加rigidity就會是雙數的狀態
+
+384
+00:32:41,900 --> 00:33:09,420
+[ZH] 所以我們當對孩子有充分的理解才會創造出彈性的空間
+
+385
+00:33:25,480 --> 00:33:31,640
+[EN*]  the life skill we are teaching is cognitive flexibility our job is to expand possibilities
+
+386
+00:33:31,640 --> 00:33:38,200
+[EN]  rather than force agreement we slow the conversation down we help the adolescent feel heard
+
+387
+00:33:39,240 --> 00:33:45,880
+[EN]  notice our first goal is not solving the problem our first goal is helping the adolescent experience
+
+388
+00:33:45,880 --> 00:33:52,200
+[EN]  another perspective without feeling threatened at telos we often use a turn-taking process
+
+389
+00:33:52,200 --> 00:33:53,620
+[EN]  We call it the talking stick.
+
+390
+00:33:54,560 --> 00:33:57,220
+[EN]  Each person explains their perspective one at a time.
+
+391
+00:33:57,880 --> 00:34:01,160
+[EN]  The other reflects back what they heard before responding.
+
+392
+00:34:02,180 --> 00:34:04,320
+[EN]  They may ask some clarifying questions if needed.
+
+393
+00:34:04,960 --> 00:34:08,220
+[EN]  This slows the interaction and reduces defensiveness.
+
+394
+00:34:09,140 --> 00:34:13,260
+[EN]  Only after both people feel understood do we begin problem solving.
+
+395
+00:34:14,280 --> 00:34:21,800
+[EN]  That process teaches a skill that they can use eventually in their relationships, at school, and in their families.
+
+396
+00:34:22,200 --> 00:34:27,180
+[EN]  We need to teach flexibility before expecting flexibility.
+
+397
+00:34:50,000 --> 00:34:53,540
+[ZH] 才有可能創造出彈性
+
+398
+00:34:53,540 --> 00:34:55,820
+[ZH] 我們在TLOS會運用一個機制
+
+399
+00:34:55,820 --> 00:34:57,500
+[ZH] 叫做Talking Stick Process
+
+400
+00:34:57,500 --> 00:34:59,180
+[ZH] 叫做發言棒
+
+401
+00:34:59,180 --> 00:35:04,220
+[ZH] 就是讓一個人先說他的想法和意見
+
+402
+00:35:04,220 --> 00:35:08,160
+[ZH] 他的下一個人必須要先如實的重複
+
+403
+00:35:08,160 --> 00:35:09,660
+[ZH] 他的上一個人講的話
+
+404
+00:35:09,660 --> 00:35:12,620
+[ZH] 表示說他有確實理解上一位講的內容的話
+
+405
+00:35:12,620 --> 00:35:15,040
+[ZH] 才會輪到這個第二個人發言
+
+406
+00:35:15,040 --> 00:35:16,900
+[ZH] 透過這樣的練習的話
+
+407
+00:35:16,900 --> 00:35:21,400
+[ZH] 就可以確保說你是有認真在聽上一位人說話
+
+408
+00:35:21,400 --> 00:35:24,940
+[ZH] 那所以也可以培養孩子的同理性
+
+409
+00:35:24,940 --> 00:35:28,440
+[ZH] 所以先讓他們學會同理理解的能力以後
+
+410
+00:35:28,440 --> 00:35:30,200
+[ZH] 再教他們如何解決問題
+
+411
+00:35:36,100 --> 00:35:43,100
+[EN*]  Another pattern we frequently see looks very different from rigidity, stress sensitivity.
+
+412
+00:35:43,100 --> 00:35:54,180
+[EN*]  Some adolescents pierce anxious all the time.
+
+413
+00:35:55,180 --> 00:35:56,640
+[EN*]  Others avoid difficult tasks.
+
+414
+00:35:57,560 --> 00:35:58,520
+[EN*]  Some shut down.
+
+415
+00:35:59,280 --> 00:36:00,480
+[EN*]  Others become explosive.
+
+416
+00:36:01,820 --> 00:36:05,600
+[EN]  Although these behaviors look different, they often have something in common.
+
+417
+00:36:06,260 --> 00:36:09,680
+[EN]  The adolescent's stress level has exceeded their coping capacity.
+
+418
+00:36:10,380 --> 00:36:15,780
+[EN]  When funnels are overflowing, the brain shifts towards protection rather than learning.
+
+419
+00:36:16,620 --> 00:36:20,180
+[EN]  This is why adding more pressure often makes the situation worse.
+
+420
+00:36:21,520 --> 00:36:25,840
+[EN]  This is how resilience is developed, not by overwhelming adolescents,
+
+421
+00:36:26,340 --> 00:36:29,060
+[EN]  but by stretching them within their current capacity.
+
+422
+00:36:39,700 --> 00:36:42,600
+[ZH] 的這個呈現方式呢是有一些青少年
+
+423
+00:36:42,600 --> 00:36:45,180
+[ZH] 他們隨時都處於一個很焦慮的狀態
+
+424
+00:36:45,180 --> 00:36:47,600
+[ZH] 他們會逃避他們覺得很難的任務
+
+425
+00:36:47,600 --> 00:36:50,520
+[ZH] 然後遇到困難可能就會整個盪掉
+
+426
+00:36:50,520 --> 00:36:51,680
+[ZH] 或是情緒爆炸
+
+427
+00:36:51,680 --> 00:36:53,980
+[ZH] 或是說他們就不想要面對責任
+
+428
+00:36:53,980 --> 00:36:56,040
+[ZH] 那這個成因可能是因為
+
+429
+00:36:56,040 --> 00:36:59,120
+[ZH] 當這個壓力超出他們的負荷的時候
+
+430
+00:36:59,120 --> 00:37:01,080
+[ZH] 就像剛剛那個漏斗圖一樣
+
+431
+00:37:01,080 --> 00:37:04,320
+[ZH] 大腦會切換到一個自我防衛的機制
+
+432
+00:37:04,320 --> 00:37:06,800
+[ZH] 那當這個自我防衛機制啟動的時候
+
+433
+00:37:06,800 --> 00:37:09,300
+[ZH] 他們就失去了理性學習的能力
+
+434
+00:37:09,300 --> 00:37:14,300
+[ZH] 因應這個壓力敏感,我們可以教他們什麼樣的生活技能呢?
+
+435
+00:37:39,300 --> 00:37:58,700
+[ZH] 我們可以教他們的生活技能並不是教他們如何減壓而是如何與壓力共處
+
+436
+00:37:58,700 --> 00:38:04,600
+[ZH] 比如說我們可以把龐大的任務拆解成比較好達成的比較小的任務
+
+437
+00:38:04,600 --> 00:38:07,700
+[ZH] 然後能教導他們怎樣去情緒調節
+
+438
+00:38:07,700 --> 00:38:13,000
+[ZH] 還有隨著他們的能力提升去慢慢淡化外在的支援
+
+439
+00:38:13,000 --> 00:38:15,280
+[ZH] 幫助他們邁向獨立自主
+
+440
+00:38:15,280 --> 00:38:18,920
+[ZH] 還有可以去除一些無助於學習的不必要壓力
+
+441
+00:38:18,920 --> 00:38:22,520
+[ZH] 讓他們保留這個鍛煉復原力的挑戰
+
+442
+00:38:34,600 --> 00:38:38,060
+[ZH] 當孩子可以達成這些小任務,他們會獲得成功的感覺
+
+443
+00:38:38,060 --> 00:38:41,040
+[ZH] 伴隨的來就是願意承擔更多的責任
+
+444
+00:38:41,040 --> 00:38:44,360
+[ZH] 下一個我要介紹的簡訊跟壓力敏感也很不一樣
+
+445
+00:38:44,360 --> 00:38:47,460
+[ZH] 它呈現的方式就是孩子他無法理解你講的話
+
+446
+00:38:47,460 --> 00:38:49,460
+[ZH] 他們可能表面上點頭會說
+
+447
+00:38:49,460 --> 00:38:58,060
+[ZH] 好,表面上點頭會說〔重複 ×8，疑幻覺〕
+
+448
+00:38:58,060 --> 00:38:58,940
+[ZH] 好,肯定是好
+
+449
+00:38:58,940 --> 00:38:59,940
+[ZH] 好,肯定是好,肯定是好
+
+450
+00:38:59,940 --> 00:39:01,720
+[ZH] 孩子他無法理解你講的話
+
+451
+00:39:14,980 --> 00:39:17,200
+[EN*]  are not giving it an executive dysfunction.
+
+452
+00:39:25,080 --> 00:39:27,700
+[EN*]  Over the years, I've learned that some adolescents
+
+453
+00:39:27,700 --> 00:39:29,900
+[EN*]  are not being oppositional at all.
+
+454
+00:39:29,900 --> 00:39:32,260
+[EN*]  They simply do not understand what
+
+455
+00:39:32,260 --> 00:39:34,220
+[EN*]  we think we've communicated.
+
+456
+00:39:34,220 --> 00:39:35,680
+[EN*]  They nod.
+
+457
+00:39:35,680 --> 00:39:37,480
+[EN*]  They say, OK.
+
+458
+00:39:37,480 --> 00:39:40,400
+[EN*]  They genuinely want to succeed.
+
+459
+00:39:40,400 --> 00:39:42,440
+[EN*]  Then they do something completely different.
+
+460
+00:39:44,980 --> 00:39:58,980
+[EN*]  They actually don't understand what you want to do, but they don't understand what you want to do.
+
+461
+00:39:58,980 --> 00:40:01,980
+[EN*]  Adults often assume they just weren't listening.
+
+462
+00:40:01,980 --> 00:40:08,980
+[EN]  Sometimes the real issue is language processing, working memory, attention, or abstract reasoning.
+
+463
+00:40:08,980 --> 00:40:13,980
+[EN]  Our responsibility is not to repeat the same explanation louder.
+
+464
+00:40:13,980 --> 00:40:31,440
+[EN]  Our responsibility is to communicate differently. Whenever I see repeated confusion, I stop asking, why are they doing this? And start asking, have I made myself understandable? Confusion is a cue to clarify, not to criticize.
+
+465
+00:40:53,980 --> 00:41:05,380
+[ZH] 當我們理解這個模式以後,我們也就是可以幫助他們比較好的學習。
+
+466
+00:41:23,980 --> 00:41:41,980
+[ZH] 我們比我們更多問,你明白嗎?當他們再解釋,不理解會變得不見,前面的操作發展。一些小的調整會避免後來避免更多的問題。你永遠不想理解,要注意。
+
+467
+00:41:53,980 --> 00:42:01,220
+[ZH] 就是你可以要求孩子複數他聽到的內容來確認他是不是真的有聽懂
+
+468
+00:42:01,220 --> 00:42:10,820
+[ZH] 第三個就是你不應該假設聽懂的,你必須要確認他聽懂的,你必須常常去檢查,不是自己假設他一定聽得懂
+
+469
+00:42:10,820 --> 00:42:23,040
+[ZH] 下一個警訊的話是執行功能失調
+
+470
+00:42:23,040 --> 00:42:28,440
+[ZH] 這應該是很多家長和治療師會在孩子身上觀察到的
+
+471
+00:42:33,880 --> 00:42:38,380
+[EN]  In my experience, it's usually a skill deficit.
+
+472
+00:42:38,380 --> 00:42:47,580
+[EN]  Some adolescents genuinely struggle to organize materials, prioritize tasks, remember assignments, or anticipate what they will need.
+
+473
+00:42:47,580 --> 00:42:51,380
+[EN]  Executive functioning is like the brain's management system.
+
+474
+00:42:51,380 --> 00:42:58,380
+[EN]  When that system is weak, capable adolescents can become, and appear, irresponsible.
+
+475
+00:42:58,380 --> 00:43:27,380
+[EN]  So how do we teach organizational skills and everyday interaction?
+
+476
+00:43:05,020 --> 00:43:09,000
+[ZH] 但其實它是一個大腦執行功能的技能的缺失
+
+477
+00:43:09,000 --> 00:43:13,800
+[ZH] 那它反應的表現出來的狀況常常就是這個人他會找不到他要的東西
+
+478
+00:43:13,800 --> 00:43:15,720
+[ZH] 他沒辦法預測他接下來要什麼
+
+479
+00:43:15,720 --> 00:43:19,540
+[ZH] 然後他的這個生活空間整個就是很亂很沒有秩序的
+
+480
+00:43:19,540 --> 00:43:23,960
+[ZH] 然後常常丟在蠟絲的呈現方式。
+
+481
+00:43:23,960 --> 00:43:33,060
+[ZH] 那我們要教他們什麼樣的生活技能嗎?
+
+482
+00:43:44,820 --> 00:44:06,280
+[EN]  We simplify their environment. We create predictable places for important things. We establish daily routines. We use checklists, calendars, and visual reminders. Instead of punishments, we teach systems, calendars, checklists, routines, visual reminders.
+
+483
+00:44:29,060 --> 00:44:59,020
+[ZH] 那所以我們的目標記得不是讓自己變成
+
+484
+00:44:59,020 --> 00:45:01,080
+[ZH] 可以有條理的家長或自己的詞
+
+485
+00:45:01,080 --> 00:45:03,660
+[ZH] 要讓孩子變得更有條理才對
+
+486
+00:45:03,660 --> 00:45:07,500
+[ZH] 所以我們要逐步的將這個責任由大人轉移到孩子手中
+
+487
+00:45:07,500 --> 00:45:08,900
+[ZH] 轉回他們的手上
+
+488
+00:45:08,900 --> 00:45:14,500
+[ZH] 那他們的這些弱點是可以靠著工具輔助來去彌補的
+
+489
+00:45:14,500 --> 00:45:18,640
+[ZH] 那直到他們越來越熟悉練習變成內在的能力
+
+490
+00:45:18,640 --> 00:45:21,940
+[ZH] 他們就建立了這個獨立性
+
+491
+00:45:21,940 --> 00:45:28,940
+[ZH] The next pattern is one that often creates loneliness or conflict, that is social struggles.
+
+492
+00:45:42,140 --> 00:45:47,140
+[EN*]  Some are anxious or rigid. Some struggle because relationships simply don't come naturally.
+
+493
+00:45:47,140 --> 00:45:51,140
+[EN*]  Others struggle because even small changes feel overwhelming.
+
+494
+00:45:51,140 --> 00:45:57,140
+[EN*]  These are two very different presentations, both benefit from the same processing mindset.
+
+495
+00:45:57,140 --> 00:46:00,140
+[EN*]  Let's begin with the social struggles.
+
+496
+00:46:00,140 --> 00:46:11,140
+[EN*]  Many children don't have social problems because they don't have social problems with social problems.
+
+497
+00:46:11,140 --> 00:46:19,140
+[EN*]  Or they don't have social problems with social problems.
+
+498
+00:46:19,140 --> 00:46:26,140
+[EN*]  One of the saddest experiences for an adolescent is wanting friends, but repeatedly failing socially.
+
+499
+00:46:26,140 --> 00:46:49,900
+[EN*]  Many adolescents are not intentionally rude or insensitive. They simply miss social cues that others notice automatically. They interpret conversations, misread humor, stand too close, talk too long, or struggle to adjust their tone. Some may bombard their friends with text messages or ignore others' text messages.
+
+500
+00:46:33,940 --> 00:46:44,940
+[ZH] They interpret conversations, misread humor, stand too close, talk too long, or struggle to adjust their tone.
+
+501
+00:46:44,940 --> 00:47:14,920
+[ZH] 有些孩子的社互動動障礙,其實是展現在互動的方式錯誤,錯誤就是比較不一樣,比如說他們可能會不是故意要很沒禮貌,但是他們沒有辦法去解讀空氣,他們可能跟人家講話的語氣是不恰當的,或是說他可能會不小心講太久話,或是他會誤讀太久話。
+
+502
+00:47:14,940 --> 00:47:24,940
+[ZH] 誤解這個幽默,或是說他跟人家講話的時候會站得太近,或是說講話沒有分寸或是實際不當,這些溝通的方式會讓他們被鼓勵。
+
+503
+00:47:44,940 --> 00:47:50,960
+[ZH] 所以其實社交能力也是可以被教導的
+
+504
+00:47:50,960 --> 00:47:53,460
+[ZH] 就像是閱讀、數學、其他的科目一樣
+
+505
+00:47:53,460 --> 00:47:55,480
+[ZH] 有的時候孩子沒辦法自然學習的話
+
+506
+00:47:55,480 --> 00:47:58,180
+[ZH] 我們是可以刻意的讓他們去練習
+
+507
+00:47:58,180 --> 00:47:59,540
+[ZH] 然後給予他們回饋
+
+508
+00:47:59,540 --> 00:48:01,080
+[ZH] 還有刻意給他們教導的
+
+509
+00:48:02,900 --> 00:48:06,900
+[EN]  At Telos, we try to teach one social skill at a time.
+
+510
+00:48:06,900 --> 00:48:12,900
+[EN]  When we overwhelm adolescents with ten different conversations or corrections, very little changes.
+
+511
+00:48:12,900 --> 00:48:16,900
+[EN]  Instead, we choose one skill, maybe it's eye contact.
+
+512
+00:48:16,900 --> 00:48:21,900
+[EN]  maybe it's waiting for another person to finish speaking maybe it's asking a
+
+513
+00:48:21,900 --> 00:48:27,460
+[EN]  follow-up question then we practice it repeatedly across all settings
+
+514
+00:48:27,460 --> 00:48:33,940
+[EN]  afterwards we provide immediate specific feedback in private learning
+
+515
+00:48:43,300 --> 00:48:46,300
+[ZH] 就是對於有社交障礙的孩子來說
+
+516
+00:48:46,300 --> 00:48:51,900
+[ZH] 我們會一次只糾正他們一個社交技能
+
+517
+00:48:51,900 --> 00:48:53,300
+[ZH] 比如說一次給他十個的話
+
+518
+00:48:53,300 --> 00:48:55,900
+[ZH] 他可能是沒有辦法好好的去調整的
+
+519
+00:48:55,900 --> 00:48:58,700
+[ZH] 但是如果一次只教導一個具體的社交技能
+
+520
+00:48:58,700 --> 00:49:01,900
+[ZH] 比如說我們這次練習就只要練習眼神接觸
+
+521
+00:49:01,900 --> 00:49:05,100
+[ZH] 或是我們這次練習只練習等待別人把話講完
+
+522
+00:49:05,100 --> 00:49:06,700
+[ZH] 或是我們這次只練習
+
+523
+00:49:06,700 --> 00:49:09,900
+[ZH] 你要自己聽完別人話提出一些延伸的問題
+
+524
+00:49:09,900 --> 00:49:11,500
+[ZH] 一次只練習一個就好
+
+525
+00:49:11,500 --> 00:49:17,140
+[ZH] 然後就在跨情境的狀況下反覆的練習反覆的示範
+
+526
+00:49:17,140 --> 00:49:21,620
+[ZH] 然後立即再給他們回饋還有鼓勵
+
+527
+00:49:21,620 --> 00:49:25,380
+[ZH] 那這樣的話他們就可以慢慢的打到練習的效果
+
+528
+00:49:25,380 --> 00:49:29,980
+[ZH] 那最後一個警訊的話是適應變動還有緊靜轉換困難
+
+529
+00:49:41,740 --> 00:49:47,760
+[EN]  narrow thinking reduces flexibility. When we understand that sequence, we stop interpreting
+
+530
+00:49:47,760 --> 00:49:56,040
+[EN]  distress as defiance. Instead, we begin preparing students before transitions occur. Preparation
+
+531
+00:49:56,040 --> 00:50:02,160
+[EN]  is more often effective than correction. Preparation prevents many problems that correction
+
+532
+00:50:03,260 --> 00:50:06,760
+[ZH]  So how do we prepare adolescents well?
+
+533
+00:50:06,760 --> 00:50:13,760
+[ZH] 那最後一個警訊是很多孩子會有適應變動和情境轉換困難的現象
+
+534
+00:50:13,760 --> 00:50:16,760
+[ZH] 原因是變動會帶來不確定性
+
+535
+00:50:16,760 --> 00:50:18,760
+[ZH] 不確定性就會引發焦慮
+
+536
+00:50:18,760 --> 00:50:21,760
+[ZH] 焦慮引發了他們的思考模式就變得很狹窄
+
+537
+00:50:21,760 --> 00:50:23,760
+[ZH] 就會失去了適應的彈性
+
+538
+00:50:23,760 --> 00:50:28,760
+[ZH] 所以我們一直強調準備做好心理的建設
+
+539
+00:50:28,760 --> 00:50:32,760
+[ZH] 會比事後糾正要來得有效很多
+
+540
+00:50:32,780 --> 00:50:40,500
+[EN*]  We forecast the day. We front load expected emotions. We explain upcoming changes before
+
+541
+00:50:40,500 --> 00:50:47,420
+[EN*]  they happen when we can. When unexpected changes occur, we slow down and give adolescents extra
+
+542
+00:50:47,420 --> 00:50:54,540
+[EN*]  time to adjust. These simple practices reduce uncertainty and allow adolescents to remain
+
+543
+00:50:54,540 --> 00:51:01,380
+[EN*]  engaged rather than overwhelmed. Our goal is not to eliminate change. It is to help
+
+544
+00:51:00,440 --> 00:51:06,440
+[ZH] 是助於年輕人進行更加進行改變的信心。
+
+545
+00:51:06,440 --> 00:51:12,440
+[ZH] 批評性增加了信心,信心增加了運動性。
+
+546
+00:51:12,440 --> 00:51:15,440
+[ZH] 那這邊哪些生活技巧可以應用呢?
+
+547
+00:51:15,440 --> 00:51:21,440
+[ZH] 首先我們可以預告他們接下來會發生什麼樣的事,什麼樣的行程,就是剛剛講到的預告。
+
+548
+00:51:21,440 --> 00:51:27,440
+[ZH] 然後我們可以預告他們預期會有什麼樣的情緒,就是從低感情。
+
+549
+00:51:27,440 --> 00:51:31,080
+[ZH] 然後呢 當突然的變動會發生的話
+
+550
+00:51:31,080 --> 00:51:33,020
+[ZH] 我們就刻意的放慢節奏
+
+551
+00:51:33,020 --> 00:51:35,380
+[ZH] 讓他們有足夠的時間去消化
+
+552
+00:51:35,380 --> 00:51:37,220
+[ZH] 還有梳理發生的事
+
+553
+00:51:37,220 --> 00:51:38,820
+[ZH] 還有隨之的情緒
+
+554
+00:51:38,820 --> 00:51:41,460
+[ZH] 那這樣的話 透過減少不確定感
+
+555
+00:51:41,460 --> 00:51:44,960
+[ZH] 他們還是同時可以保有這個參與度
+
+556
+00:51:44,960 --> 00:51:48,060
+[ZH] 那就可以減少這樣子的不確定性
+
+557
+00:51:48,060 --> 00:51:53,260
+[ZH] 讓他們還是可以用自信跟能力來面對變動
+
+558
+00:51:53,260 --> 00:52:15,780
+[ZH] 那這些人生出現變動是無可避免的
+
+559
+00:52:15,780 --> 00:52:18,360
+[ZH] 然後人生出現失望也是無可避免的
+
+560
+00:52:18,360 --> 00:52:21,180
+[ZH] 所以我們並不是要把這些變動給拿掉
+
+561
+00:52:21,180 --> 00:52:28,180
+[ZH] 而是讓他們如何去梳理,如何去遊刃有益地去面對這些變動。
+
+562
+00:52:28,180 --> 00:52:36,180
+[ZH] 在TELOS,我們預計什麼可以,我們前面無期的情感,我們準備好學生前面的談論。
+
+563
+00:52:36,180 --> 00:52:44,180
+[ZH] 我們預計不期的改變,我們會慢著,我們會給小學們的時間,我們會期待他們的表現。
+
+564
+00:52:44,180 --> 00:52:48,180
+[ZH] 那簡單的改變,會常常改變成結果。
+
+565
+00:52:48,180 --> 00:52:52,540
+[ZH] 所以在TLOS我們一定會先預告他們經驗的行程
+
+566
+00:52:52,540 --> 00:52:55,340
+[ZH] 然後預告他們接下來可能會有的情緒
+
+567
+00:52:55,340 --> 00:52:58,380
+[ZH] 然後要發生變動時我們都會把節奏放慢
+
+568
+00:52:58,380 --> 00:53:01,380
+[ZH] 讓他們有足夠的時間去消化和熟理
+
+569
+00:53:01,380 --> 00:53:05,380
+[ZH] 通常這樣的調整都會讓他們結構很不一樣
+
+570
+00:53:05,380 --> 00:53:15,380
+[ZH] 目標不就是要生命,目標是要生命,要求生命,能夠保持持續性,思考,情感,情感,不斷地保持,當生活不正如計劃。
+
+571
+00:53:16,380 --> 00:53:20,380
+[ZH] 一瓶子的防疫,就算是一瓶子的治療。
+
+572
+00:53:21,380 --> 00:53:33,380
+[ZH] 我們不是要讓人生變得簡單,而是學習培養彈性,如何學習調整自己的情緒,還是要預防攝影。
+
+573
+00:53:56,580 --> 00:54:00,900
+[EN*]  When we see confusion, we slow down and clarify.
+
+574
+00:54:00,380 --> 00:54:16,380
+[ZH] 當我們看到經濟活動的問題,我們建立了系統前期待離開。當我們看到社交的問題,我們訓練而判斷。當我們看到不同的問題,我們準備好,而不只是反應。
+
+575
+00:54:30,380 --> 00:54:33,960
+[ZH] 像我剛剛講的比如說孩子出現了理解困難
+
+576
+00:54:33,960 --> 00:54:38,260
+[ZH] 那我們就是要透過剛才講的方式去尋找可以教他們什麼
+
+577
+00:54:38,260 --> 00:54:41,320
+[ZH] 或是說他們有社互動動困難
+
+578
+00:54:41,320 --> 00:54:43,060
+[ZH] 那我們可以教他們什麼
+
+579
+00:54:43,060 --> 00:54:47,700
+[ZH] 以及他們如果面對巨大的變動出現困難
+
+580
+00:54:47,700 --> 00:54:51,360
+[ZH] 我們可以教他們怎麼樣去預測還有做準備等等
+
+581
+00:54:51,360 --> 00:54:54,640
+[ZH] 所以要看到的並不是警訊本身
+
+582
+00:54:54,640 --> 00:54:58,180
+[ZH] 而是他背後可以有什麼樣的教導機會
+
+583
+00:54:58,180 --> 00:55:09,180
+[ZH] Processing approach is not about perfect conversations. Relationship first, curiosity before correction. Teach skills, not simply compliance.
+
+584
+00:55:09,180 --> 00:55:24,180
+[ZH] 所以我們在TILOS運用的Processing approach並不是期待每一次的對話都可以很完美的進行,而是我們要教導生活技能,而不是強迫他們的順從,還有關係優先.
+
+585
+00:55:24,180 --> 00:55:35,180
+[ZH] 我希望你一段最後一想,在過去兩次的講述,我們已經談到不理解和接受到不理解和接受到不理解。這些想法不能分別。
+
+586
+00:55:35,180 --> 00:55:48,180
+[ZH] 我們更加精確地理解,我們更加精確地教他們,更加精確地教他們,更加精確地教他們,更加精確地教他們,更加精確地教他們,更加精確地學習技巧他們需要後接受到診斷。
+
+587
+00:55:54,180 --> 00:55:58,080
+[ZH] 我講到了如何去理解青少年,如何去回應青少年。
+
+588
+00:55:58,080 --> 00:56:07,300
+[ZH] 當我們對他有更正確的理解的話,我們對他的教導也就可以更有效,進而培養他們非常實用的生活技能。
+
+589
+00:56:24,180 --> 00:56:36,120
+[ZH] 我相信沒有青少年是早上一起床就希望今天的人生過得很失敗
+
+590
+00:56:36,120 --> 00:56:41,180
+[ZH] 其實他們每個人都是很努力在用目前所具備的技能去過好他們的生活
+
+591
+00:56:41,180 --> 00:56:45,680
+[ZH] 那我們就是要幫助他們可以發展出更多更好的技能
+
+592
+00:56:45,680 --> 00:56:51,680
+[ZH] 所以要把每一次的失敗每次的挑戰當作是教導的契機以及建立關係的契機
+
+593
+00:56:51,680 --> 00:57:06,240
+[ZH] 謝謝各位在第一線為青少年健康付出的努力
+
+594
+00:57:06,240 --> 00:57:10,000
+[ZH] 我希望今天分享的 Processing approach 給大家一個架構
+
+595
+00:57:10,000 --> 00:57:17,440
+[ZH] 讓大家在不管什麼場合 家庭、工作、學校或是診間都可以有一些幫助
+
+596
+00:57:17,440 --> 00:57:19,440
+[ZH] 謝謝
+
