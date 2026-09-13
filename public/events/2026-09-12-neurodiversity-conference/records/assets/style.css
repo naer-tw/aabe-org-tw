@@ -124,6 +124,7 @@ img { max-width: 100%; height: auto; }
 .callout { background: var(--paper-warm); border: 1px solid var(--line); border-left: 6px solid var(--accent); padding: 20px 24px; margin: 28px 0; }
 .callout h4, .callout h3.callout-h { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); margin: 0 0 12px; text-transform: uppercase; }
 .callout-body { font-size: 15.5px; line-height: 1.75; color: var(--ink-soft); }
+.inline-summary-title { display: inline; border: none; margin: 0; padding: 0; }
 .callout-body strong, .record-list strong { color: var(--ink); }
 
 .session-header { border-top: 4px double var(--ink); border-bottom: 1px solid var(--line); padding: 24px 0 26px; margin-bottom: 28px; }
