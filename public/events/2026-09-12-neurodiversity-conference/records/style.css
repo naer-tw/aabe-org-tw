@@ -46,6 +46,14 @@ a:not(.no-underline){text-decoration:underline;}
   text-decoration:none;
   display:flex;align-items:center;height:44px;
 }
+.top-bar-right{display:flex;align-items:center;gap:12px;}
+.top-bar a.site-link{
+  color:var(--ink);
+  font-weight:600;
+  font-size:14px;
+  text-decoration:none;
+  display:flex;align-items:center;height:44px;
+}
 .toc-checkbox{position:absolute;opacity:0;pointer-events:none;}
 .toc-btn{
   display:flex;align-items:center;justify-content:center;
