@@ -196,9 +196,8 @@
         <img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟｜Action Alliance on Basic Education">
       </picture>
     </a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="切換選單">
-    <label for="nav-toggle" class="nav-toggle-btn" aria-label="開啟選單"><span></span></label>
-    <nav class="topbar-nav" aria-label="Primary">
+    <button type="button" class="nav-toggle-btn" aria-label="開啟選單" aria-expanded="false" aria-controls="topbar-nav"><span></span></button>
+    <nav class="topbar-nav" id="topbar-nav" aria-label="Primary">
       <a href="/about/">關於我們</a>
       <a href="/issues/">我們關注的議題</a>
       <a href="/events/" class="nav-events">活動公告<span class="nav-dot"></span></a>
@@ -229,7 +228,7 @@
     <div class="urgent-card-col">
       <h3>緊急議題回應</h3>
       <div class="big">秘書處 LINE 群</div>
-      <div class="small">議題發生需即時回應請加入：<a href="https://lin.ee/97Nh9HT" style="color:#fff;border-bottom:1px solid rgba(255,255,255,0.3);">lin.ee/97Nh9HT</a>（公民監督社群）</div>
+      <div class="small">議題發生需即時回應，歡迎<a href="https://lin.ee/97Nh9HT" target="_blank" rel="noopener" style="color:#fff;border-bottom:1px solid rgba(255,255,255,0.3);">加入 LINE 好友</a>，收到即時通知。</div>
     </div>
   </div>
 
@@ -707,5 +706,6 @@
   });
 })();
 </script>
+<script src="/assets/nav-toggle.js" defer></script>
 </body>
 </html>

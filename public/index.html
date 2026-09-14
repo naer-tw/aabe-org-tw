@@ -242,7 +242,7 @@
         "name": "如何聯絡國教行動聯盟或參與行動？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "媒體採訪 / 合作邀請：Action.A.E0626@gmail.com；公民參與：加入 LINE 公民監督社群 https://lin.ee/97Nh9HT，每週收到政策進度與行動邀請。詳細參與路徑（家長、學者、NGO、立委辦公室、媒體等不同身份）見 https://aabe.org.tw/act/。"
+          "text": "媒體採訪 / 合作邀請：Action.A.E0626@gmail.com；公民參與：加入 LINE 好友，收到倡議進度通知（https://lin.ee/97Nh9HT）。詳細參與路徑（家長、學者、NGO、立委辦公室、媒體等不同身份）見 https://aabe.org.tw/act/。"
         }
       }
     ]
@@ -258,6 +258,7 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --brand-orange: #EB9B31;
+      --brand-orange-text: #9A5A0C; /* 2026-09-14：文字專用，實測 WCAG 對比 5.47:1 on #FFF（--brand-orange 只留色塊/線條/標記） */
       --brand-teal: #2FA598;
       --ink: #0a0a0a;
       --ink-2: #3a3f48;
@@ -312,21 +313,20 @@
       100% { box-shadow: 0 0 0 0 rgba(231,76,60,0); } }
 
     /* Hamburger */
-    .nav-toggle { display: none; }
-    .nav-toggle-btn { display: none; cursor: pointer; width: 32px; height: 32px; align-items: center; justify-content: center; margin-left: auto; }
+    .nav-toggle-btn { display: none; cursor: pointer; width: 32px; height: 32px; align-items: center; justify-content: center; margin-left: auto; background: none; border: 0; padding: 0; }
     .nav-toggle-btn span { display: block; width: 22px; height: 2px; background: var(--ink); position: relative; transition: all 0.3s; }
     .nav-toggle-btn span::before, .nav-toggle-btn span::after { content: ""; display: block; position: absolute; left: 0; width: 22px; height: 2px; background: var(--ink); transition: all 0.3s; }
     .nav-toggle-btn span::before { top: -7px; }
     .nav-toggle-btn span::after { top: 7px; }
-    .nav-toggle:checked ~ .nav-toggle-btn span { background: transparent; }
-    .nav-toggle:checked ~ .nav-toggle-btn span::before { top: 0; transform: rotate(45deg); }
-    .nav-toggle:checked ~ .nav-toggle-btn span::after { top: 0; transform: rotate(-45deg); }
+    .nav-toggle-btn[aria-expanded="true"] span { background: transparent; }
+    .nav-toggle-btn[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+    .nav-toggle-btn[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
 
     /* Hero — 升級為大標 + 副標 + manifesto preview */
     .hero { padding: 72px 32px 72px; text-align: center; max-width: 1080px; margin: 0 auto; }
-    .hero-kicker { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.32em; color: var(--brand-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 28px; }
+    .hero-kicker { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.32em; color: var(--brand-orange-text); font-weight: 700; text-transform: uppercase; margin-bottom: 28px; }
     .hero h1 { font-family: 'Noto Serif TC', 'Noto Sans TC', serif; font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; line-height: 1.1; letter-spacing: 0.02em; margin-bottom: 28px; }
-    .hero h1 .accent { color: var(--brand-orange); }
+    .hero h1 .accent { color: var(--brand-orange-text); }
     .hero h1 .hero-brand { display: block; font-family: 'Noto Sans TC', sans-serif; font-size: clamp(1.05rem, 2.2vw, 1.35rem); font-weight: 800; letter-spacing: 0.22em; color: var(--ink-2); margin-bottom: 18px; line-height: 1; }
     .hero .tagline { font-family: 'Noto Serif TC', serif; font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--ink-2); max-width: 680px; margin: 0 auto 36px; line-height: 1.85; }
     /* ═══ Our Mandate — 民意與聲量（2026-09-05 取代 hero 影片） ═══
@@ -355,14 +355,14 @@
     .m-num [data-metric] { display: contents; }
     .m-affix { font-size: 0.94rem; font-weight: 800; letter-spacing: 0.02em; color: var(--ink-2); }
     .m-voice .m-affix.m-plus { color: var(--brand-teal); }
-    .m-echo .m-affix.m-plus { color: #C77A18; }
+    .m-echo .m-affix.m-plus { color: #9F6213; }
     .m-label { font-family: 'Noto Serif TC', serif; font-size: 1.06rem; font-weight: 800; line-height: 1.45; margin-bottom: 5px; color: var(--ink); }
     .m-period { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
     .m-how { font-family: 'Noto Serif TC', serif; font-size: 0.83rem; line-height: 1.75; color: var(--ink-2); padding-top: 13px; border-top: 1px solid #EFEAE1; margin: 0 0 12px; }
     .m-how b { font-weight: 800; color: var(--ink); }
     .m-src { font-family: 'Inter', sans-serif; font-size: 0.72rem; line-height: 1.6; color: var(--ink-3); margin-bottom: 12px; }
     .m-link { font-family: 'Inter', sans-serif; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em; color: #1F7F70; border-bottom: 1px solid transparent; align-self: flex-start; padding-bottom: 1px; margin-top: auto; }
-    .m-echo .m-link { color: #C77A18; }
+    .m-echo .m-link { color: #9F6213; }
     .m-link:hover, .m-link:focus-visible { border-bottom-color: currentColor; }
 
     .m-foot { border-top: 1px solid var(--line); padding-top: 26px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; justify-content: space-between; }
@@ -382,7 +382,7 @@
 
     /* Chapter break */
     .chapter { display: flex; align-items: baseline; gap: 14px; max-width: 1040px; margin: 0 auto; padding: 56px 32px 0; }
-    .chapter-num { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.32em; color: var(--brand-orange); text-transform: uppercase; }
+    .chapter-num { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.32em; color: var(--brand-orange-text); text-transform: uppercase; }
     .chapter-line { flex: 1; height: 1.5px; background: var(--ink); }
     .chapter-label { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.28em; color: var(--ink-3); text-transform: uppercase; }
 
@@ -444,7 +444,7 @@
     .nh-card.urgent .nh-badge { background: #d63838; color: #fff; }
     .nh-card.urgent .nh-when { color: #d63838; }
     .nh-badge { display: inline-block; padding: 4px 10px; background: var(--brand-orange); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 2px; margin-bottom: 14px; align-self: flex-start; }
-    .nh-when { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; color: var(--brand-orange); margin-bottom: 10px; }
+    .nh-when { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; color: var(--brand-orange-text); margin-bottom: 10px; }
     .nh-card h3 { font-family: 'Noto Serif TC', serif; font-size: 1.25rem; font-weight: 900; line-height: 1.45; margin-bottom: 12px; }
     .nh-card .nh-body { color: var(--ink-2); line-height: 1.7; font-size: 0.92rem; flex: 1; margin-bottom: 14px; }
     .nh-card .nh-body b { color: var(--ink); }
@@ -526,7 +526,7 @@
     .section-head { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 16px; margin-bottom: 32px; border-bottom: 2px solid var(--ink); }
     .section-title { font-size: 2rem; font-weight: 900; }
     .section-hint { font-size: 0.78rem; color: var(--ink-3); letter-spacing: 0.15em; text-transform: uppercase; }
-    .article-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .article-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 24px; }
     .article-card { padding: 24px; border: 1px solid var(--line); border-radius: 4px; transition: all 0.2s; }
     .article-card:hover { border-color: var(--ink); transform: translateY(-2px); }
     .article-card .date { font-size: 0.78rem; color: var(--ink-3); letter-spacing: 0.08em; }
@@ -541,10 +541,10 @@
     .cross-card.line-card { border-left-color: #06C755; }
     .cross-card.line-card .kicker { color: #06C755; }
     .cross-card.line-card .arrow { color: #06C755; }
-    .cross-card .kicker { font-size: 0.72rem; letter-spacing: 0.25em; color: var(--brand-orange); font-weight: 600; text-transform: uppercase; margin-bottom: 12px; }
+    .cross-card .kicker { font-size: 0.72rem; letter-spacing: 0.25em; color: var(--brand-orange-text); font-weight: 600; text-transform: uppercase; margin-bottom: 12px; }
     .cross-card h2 { font-size: 1.4rem; font-weight: 900; margin-bottom: 12px; }
     .cross-card p { color: var(--ink-2); margin-bottom: 20px; flex: 1; font-size: 0.95rem; line-height: 1.7; }
-    .cross-card .arrow { font-weight: 700; color: var(--brand-orange); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem; align-self: flex-start; }
+    .cross-card .arrow { font-weight: 700; color: var(--brand-orange-text); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem; align-self: flex-start; }
     @media (max-width: 1024px) {
       .cross-inner { grid-template-columns: 1fr; max-width: 640px; }
     }
@@ -569,7 +569,7 @@
       .topbar-logo img { height: 38px; }
       .nav-toggle-btn { display: flex; }
       .topbar-nav { display: none; flex-direction: column; width: 100%; gap: 0; padding-top: 12px; border-top: 1px solid var(--line); margin-top: 4px; }
-      .nav-toggle:checked ~ .topbar-nav { display: flex; }
+      .nav-toggle-btn[aria-expanded="true"] ~ .topbar-nav { display: flex; }
       .topbar-nav a { padding: 12px 4px; border-bottom: 1px solid #f4f5f7; font-size: 0.95rem; }
       .topbar-nav a:last-child { border-bottom: 0; }
       .hero { padding: 48px 20px 48px; }
@@ -631,9 +631,8 @@
           <img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟｜Action Alliance on Basic Education">
         </picture>
       </a>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="切換選單">
-      <label for="nav-toggle" class="nav-toggle-btn" aria-label="開啟選單"><span></span></label>
-      <nav class="topbar-nav" aria-label="Primary">
+      <button type="button" class="nav-toggle-btn" aria-label="開啟選單" aria-expanded="false" aria-controls="topbar-nav"><span></span></button>
+      <nav class="topbar-nav" id="topbar-nav" aria-label="Primary">
       <a href="/about/">關於我們</a>
       <a href="/issues/">我們關注的議題</a>
       <a href="/events/" class="nav-events">活動公告<span class="nav-dot"></span></a>
@@ -661,7 +660,7 @@
       </h1>
       <p class="tagline">13 年來，串聯 168 個跨領域組織，把家庭擔憂轉化為國家層級的政策改變。</p>
       <div class="hero-cta">
-        <a href="/contact/" class="btn btn-primary">加入公民監督社群 →</a>
+        <a href="https://lin.ee/97Nh9HT" class="btn btn-primary" target="_blank" rel="noopener">加入 LINE 好友 →</a>
         <a href="https://policy.aabe.org.tw/" class="btn btn-secondary">探索政策論述</a>
       </div>
     </section>
@@ -828,7 +827,7 @@
             <h3>台灣兒童青少年神經多樣性<br>第三屆國際研討會</h3>
             <div class="nh-body">
               9/12 亞東醫院——美國青少年支持機構專家訪台分享，聚焦家庭理解、臨床照護、社區心理與成人轉銜。
-              <br><span style="color:var(--brand-orange);font-weight:700;">會議全紀錄已上線</span>
+              <br><span style="color:var(--brand-orange-text);font-weight:700;">會議全紀錄已上線</span>
             </div>
             <span class="nh-cta">看會議全紀錄 →</span>
           </a>
@@ -867,9 +866,9 @@
           <p>台灣兒童青少年神經多樣性第三屆國際研討會於2026年9月12日在亞東紀念醫院南棟14樓國際會議廳登場，由亞東紀念醫院、新北市政府社會局等六個單位共同主辦（國教行動聯盟為其一），台美日專家齊聚探討神經多樣性兒少的日常支持。</p>
         </article>
         <article class="article-card" data-date="2026-09-12" style="border-left:4px solid #EB9B31;padding-left:14px;">
-          <div class="date" style="color:#EB9B31;font-weight:700;">2026.09.12 · 活動</div>
+          <div class="date" style="color:var(--brand-orange-text);font-weight:700;">2026.09.12 · 活動</div>
           <h3><a href="https://aabe.org.tw/events/2026-09-12-neurodiversity-conference/">台灣兒童青少年神經多樣性第三屆國際研討會</a></h3>
-          <p>9/12（六）08:30–17:30 亞東紀念醫院南棟14樓國際會議廳。新北市政府社會局、亞東紀念醫院、台灣青少年神經多樣性行動協會、國教行動聯盟共同主辦，聚焦家庭理解、臨床照護、社區心理、生活技能與成人轉銜，美日專家分享「生活陪跑師」經驗。名額300人，Accupass 報名。</p>
+          <p>9/12（六）08:30–17:30 亞東紀念醫院南棟14樓國際會議廳。新北市政府社會局、亞東紀念醫院、台灣青少年神經多樣性行動協會、國教行動聯盟共同主辦，聚焦家庭理解、臨床照護、社區心理、生活技能與成人轉銜，美日專家分享「生活陪跑師」經驗。活動已於當日舉行。</p>
         </article>
         <article class="article-card" data-date="2026-09-11" style="border-left:4px solid #c8385a;padding-left:14px;">
           <div class="date" style="color:#c8385a;font-weight:700;">2026.09.11 · 新聞稿</div>
@@ -897,9 +896,9 @@
           <p>立法院8/25三讀通過兒家署組織法，三聯盟（兒童健康聯盟、婦兒盟、國教盟）聯合聲明：設專責機關是起點，服務真正進入家庭才是目標。提出四項訴求：儘速公布施行與籌備時程、依職掌足額配置專業人力與預算、建立行政院層級常態協作機制並納入教育體系、提出可公開驗收的首年目標。</p>
         </article>
         <article class="article-card" data-date="2026-08-21" style="border-left:4px solid #EB9B31;padding-left:14px;">
-          <div class="date" style="color:#EB9B31;font-weight:700;">2026.08.21 · 活動</div>
+          <div class="date" style="color:var(--brand-orange-text);font-weight:700;">2026.08.21 · 活動</div>
           <h3><a href="https://aabe.org.tw/survey/">菸盒警示圖要放大到 85%？——72 小時民意徵集</a></h3>
-          <p>立法院修法只差三讀最後一步。花 2 分鐘填問卷說出你的看法，結果將於 8/26 記者會公開發布，向立法院表達民意。</p>
+          <p>72 小時民意徵集已於 8/24 截止，結果已於 8/26 記者會公開發布，向立法院表達民意。</p>
         </article>
         <article class="article-card" data-date="2026-08-13">
           <div class="date">2026.08.13</div>
@@ -927,7 +926,7 @@
           <p>從中聯苯駢芘毒油波及全國 881 校，一次看懂學校午餐的供餐、財政、營養與立法全貌；含供餐佔比、財政×食育、營養師負擔三張資料圖表與國教盟三大主張，以《食力》2026 食育力調查與監督資料庫為據。</p>
         </article>
         <article class="article-card" data-date="2026-07-10" style="border-left:4px solid #EB9B31;padding-left:14px;">
-          <div class="date" style="color:#EB9B31;font-weight:700;">2026.07.10 · 活動</div>
+          <div class="date" style="color:var(--brand-orange-text);font-weight:700;">2026.07.10 · 活動</div>
           <h3><a href="https://aabe.org.tw/events/2026-07-10-cfa-missing-pieces-forum/">「兒家署缺少的拼圖？」論壇──重建從家庭出發的兒童支持系統</a></h3>
           <p>2026/7/10（五）09:00–12:00 於台大公衛。中華民國兒童健康聯盟、全國婦兒團體聯盟、國教行動聯盟共同主辦，就家庭、教育、預算、司法、醫療五大制度缺口提出民間版補強建議，呼應兒少及家庭支持署（兒家署）組織法審議。</p>
         </article>
@@ -997,7 +996,7 @@
           <p>WHO 連喊 3 年禁加味菸，台灣已拖 40 個月仍未公告全面禁止。台灣拒菸聯盟三項訴求：依法全面禁加味菸、建立衛福部新興菸品查緝平臺、推動無菸品世代。</p>
         </article>
         <article class="article-card" data-date="2026-05-29" style="border-left:4px solid #EB9B31;padding-left:14px;">
-          <div class="date" style="color:#EB9B31;font-weight:700;">2026.05.29 · 活動紀實</div>
+          <div class="date" style="color:var(--brand-orange-text);font-weight:700;">2026.05.29 · 活動紀實</div>
           <h3><a href="/events/2026-05-29-world-no-tobacco-day-press-conference/">台灣拒菸聯盟 5.31 世界無菸日記者會</a></h3>
           <p>6 個民間團體於台大校友會館召開記者會，6 位代表說明加味菸對青少年的危害，並提出三項政策訴求。</p>
         </article>
@@ -1012,7 +1011,7 @@
           <p>面對近日教師離世事件，國教盟主張不單一歸因但更應追究制度責任。提三項訴求：教育部建立教師心理安全方案、校方建立守門人制度、啟動「心理／行政／法律」三軌支持。</p>
         </article>
         <article class="article-card" data-date="2026-05-24" style="border-left:4px solid #EB9B31;padding-left:14px;">
-          <div class="date" style="color:#EB9B31;font-weight:700;">2026.05.24 · 活動紀實</div>
+          <div class="date" style="color:var(--brand-orange-text);font-weight:700;">2026.05.24 · 活動紀實</div>
           <h3><a href="/events/2026-05-24-youth-debate-smoke-free-city/">2026 臺北市青年發聲盃「無菸城市」辯論賽</a></h3>
           <p>青年部跨校辯論賽，從青年視角檢驗台北市無菸城市政策。冠軍永和小戲院、亞軍我們都是大寶寶、季軍學長菜菜撈撈。</p>
         </article>
@@ -1199,5 +1198,6 @@
   });
 })();
 </script>
+<script src="/assets/nav-toggle.js" defer></script>
 </body>
 </html>

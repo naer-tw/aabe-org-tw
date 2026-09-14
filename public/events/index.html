@@ -464,7 +464,7 @@
 
     .event-list { margin: 32px 0; }
     .event-item { display: grid; grid-template-columns: 130px 1fr; gap: 28px; padding: 24px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
-    .event-date { font-size: 0.95rem; font-weight: 700; color: var(--brand-orange); letter-spacing: 0.02em; font-variant-numeric: tabular-nums; }
+    .event-date { font-size: 0.95rem; font-weight: 700; color: var(--brand-orange-text); letter-spacing: 0.02em; font-variant-numeric: tabular-nums; }
     .event-detail h3 { font-size: 1.08rem; font-weight: 700; margin-bottom: 8px; line-height: 1.5; }
     .event-detail p { font-size: 0.92rem; color: var(--ink-2); line-height: 1.7; }
     .event-tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.72rem; letter-spacing: 0.08em; font-weight: 600; background: var(--bg-soft); color: var(--ink-2); margin-right: 6px; }
@@ -504,9 +504,8 @@
           <img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟｜Action Alliance on Basic Education">
         </picture>
       </a>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="切換選單">
-      <label for="nav-toggle" class="nav-toggle-btn" aria-label="開啟選單"><span></span></label>
-    <nav class="topbar-nav" aria-label="Primary">
+      <button type="button" class="nav-toggle-btn" aria-label="開啟選單" aria-expanded="false" aria-controls="topbar-nav"><span></span></button>
+    <nav class="topbar-nav" id="topbar-nav" aria-label="Primary">
       <a href="/about/">關於我們</a>
       <a href="/issues/">我們關注的議題</a>
       <a href="/events/" class="nav-events">活動公告<span class="nav-dot"></span></a>
@@ -531,30 +530,27 @@
   <!-- Upcoming -->
   <section class="section">
     <div class="section-head">
-      <h2 class="section-title">近期與即將舉辦</h2>
-      <span class="section-hint">Upcoming</span>
+      <h2 class="section-title">近期活動</h2>
+      <span class="section-hint">Recent</span>
     </div>
     <!-- AABE:EVENTS-START -->
 
     <div class="upcoming" data-event-start="2026-08-21" data-event-end="2026-08-24">
-      <span class="upcoming-kicker">Upcoming · 國教盟發起</span>
+      <span class="upcoming-kicker" style="color:#9ca3af;">已結束 · 國教盟發起</span>
       <h3>菸盒警示圖要放大到 85%？——72 小時民意徵集</h3>
       <div class="upcoming-when">2026 年 8 月 21-24 日・線上問卷・國教盟發起</div>
-      <p>立法院修法只差三讀最後一步。花 2 分鐘填問卷說出你的看法，結果將於 8/26 記者會公開發布，向立法院表達民意。</p>
-      <p style="margin-top:14px;">
-        <a href="/survey/" style="display:inline-block;padding:10px 20px;background:#EB9B31;color:#fff;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;border-radius:4px;">立即填寫問卷 →</a>
-      </p>
-      <span class="upcoming-note">結果將於 8/26 記者會公開發布，向立法院表達民意。</span>
+      <p>72 小時民意徵集已截止，結果已於 8/26 記者會公開發布，向立法院表達民意。</p>
+      <span class="upcoming-note">意見徵集已截止；結果已於 8/26 記者會公開發布。</span>
     </div>
 
     <div class="upcoming" data-event-start="2026-09-12" data-event-end="2026-09-12">
-      <span class="upcoming-kicker">Upcoming · 國教盟主辦</span>
+      <span class="upcoming-kicker" style="color:#9ca3af;">已結束 · 國教盟主辦</span>
       <h3>台灣兒童青少年神經多樣性第三屆國際研討會</h3>
       <div class="upcoming-when">2026 年 9 月 12 日（六）08:30–17:30・亞東紀念醫院南棟 14 樓國際會議廳・國教盟為主辦單位之一</div>
       <p>新北市政府社會局、亞東紀念醫院（神經醫學部、家庭醫學部、精神暨心身醫學部）、台灣青少年神經多樣性行動協會與國教行動聯盟共同主辦。聚焦兒童青少年神經多樣性的家庭理解、臨床照護、社區心理、生活技能與成人轉銜，邀請美國 Telos 與日本社區心理學專家分享「生活陪跑師」實務經驗。歡迎家長、醫療人員、教師、輔導人員、心理人員、社工及政府相關單位參與。</p>
       <p style="margin-top:14px;">
         <a href="/events/2026-09-12-neurodiversity-conference/records/" style="display:inline-block;padding:10px 20px;background:#EB9B31;color:#fff;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;border-radius:4px;margin-right:10px;">看會議全紀錄 →</a>
-        <a href="/events/2026-09-12-neurodiversity-conference/" style="display:inline-block;padding:10px 20px;background:transparent;color:#EB9B31;border:1px solid #EB9B31;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;border-radius:4px;">完整議程 →</a>
+        <a href="/events/2026-09-12-neurodiversity-conference/" style="display:inline-block;padding:10px 20px;background:transparent;color:var(--brand-orange-text);border:1px solid #EB9B31;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;border-radius:4px;">完整議程 →</a>
       </p>
       <span class="upcoming-note">已於 9 月 12 日舉行；會議全紀錄（十三場重點整理與投影片）已上線。</span>
     </div>
@@ -576,7 +572,7 @@
 
       <!-- 7/10 兒家署缺少的拼圖論壇（已結束）-->
       <div class="event-item" style="border-left:4px solid #EB9B31;padding-left:18px;">
-        <span class="event-date" style="color:#EB9B31;font-weight:700;">2026.07.10</span>
+        <span class="event-date" style="color:var(--brand-orange-text);font-weight:700;">2026.07.10</span>
         <div class="event-detail">
           <h3>「兒家署缺少的拼圖？」論壇──重建從家庭出發的兒童支持系統</h3>
           <p>
@@ -590,7 +586,7 @@
 
       <!-- 6/27-28 台灣ICF研究學會國際研討會（已結束）-->
       <div class="event-item" style="border-left:4px solid #EB9B31;padding-left:18px;">
-        <span class="event-date" style="color:#EB9B31;font-weight:700;">2026.06.27-28</span>
+        <span class="event-date" style="color:var(--brand-orange-text);font-weight:700;">2026.06.27-28</span>
         <div class="event-detail">
           <h3>2026 台灣ICF研究學會國際研討會──跨越生命歷程的優勢</h3>
           <p>
@@ -604,7 +600,7 @@
 
       <!-- 5/20-6/4 兒少權法五場公聽會（已結束，6/4 東區為最終場）-->
       <div class="event-item" style="border-left:4px solid #EB9B31;padding-left:18px;">
-        <span class="event-date" style="color:#EB9B31;font-weight:700;">2026.05.20–06.04</span>
+        <span class="event-date" style="color:var(--brand-orange-text);font-weight:700;">2026.05.20–06.04</span>
         <div class="event-detail">
           <h3>兒少權法修正草案五場公聽會（衛福部）</h3>
           <p>
@@ -618,7 +614,7 @@
 
       <!-- 5/20-21 研討會（圓滿落幕，重大事件置頂）-->
       <div class="event-item" style="border-left:4px solid #EB9B31;padding-left:18px;background:linear-gradient(90deg,rgba(235,155,49,0.06) 0%,transparent 60%);">
-        <span class="event-date" style="color:#EB9B31;font-weight:700;">2026.05.20-21</span>
+        <span class="event-date" style="color:var(--brand-orange-text);font-weight:700;">2026.05.20-21</span>
         <div class="event-detail">
           <h3>2026 青少年藥物濫用預防與犯罪防治國際研討會</h3>
           <p>
@@ -636,7 +632,7 @@
 
       <!-- 5/29 世界無菸日記者會 -->
       <div class="event-item" style="border-left:4px solid #EB9B31;padding-left:18px;">
-        <span class="event-date" style="color:#EB9B31;font-weight:700;">2026.05.29</span>
+        <span class="event-date" style="color:var(--brand-orange-text);font-weight:700;">2026.05.29</span>
         <div class="event-detail">
           <h3>台灣拒菸聯盟 5.31 世界無菸日記者會──落實禁加味菸</h3>
           <p>
@@ -651,7 +647,7 @@
 
       <!-- 5/24 青年發聲盃辯論賽 -->
       <div class="event-item" style="border-left:4px solid #EB9B31;padding-left:18px;">
-        <span class="event-date" style="color:#EB9B31;font-weight:700;">2026.05.24</span>
+        <span class="event-date" style="color:var(--brand-orange-text);font-weight:700;">2026.05.24</span>
         <div class="event-detail">
           <h3>2026 臺北市青年發聲盃「無菸城市」辯論賽</h3>
           <p>
@@ -820,5 +816,6 @@
   });
 })();
 </script>
+<script src="/assets/nav-toggle.js" defer></script>
 </body>
 </html>

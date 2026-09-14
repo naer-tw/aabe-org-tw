@@ -227,9 +227,8 @@
         <img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟｜Action Alliance on Basic Education">
       </picture>
     </a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="切換選單">
-    <label for="nav-toggle" class="nav-toggle-btn" aria-label="開啟選單"><span></span></label>
-    <nav class="topbar-nav" aria-label="Primary">
+    <button type="button" class="nav-toggle-btn" aria-label="開啟選單" aria-expanded="false" aria-controls="topbar-nav"><span></span></button>
+    <nav class="topbar-nav" id="topbar-nav" aria-label="Primary">
       <a href="/about/">關於我們</a>
       <a href="/issues/">我們關注的議題</a>
       <a href="/events/" class="nav-events">活動公告<span class="nav-dot"></span></a>
@@ -397,7 +396,7 @@
       <span class="kicker">最低門檻 · 立刻可以做</span>
       <h2>加入「公民監督社群」LINE</h2>
       <p>每週收到政策進度追蹤、立法動態與行動邀請。你只需要點一下，就完成第一步公民監督。</p>
-      <a href="https://lin.ee/97Nh9HT" class="ls-btn" target="_blank" rel="noopener">立即加入 LINE →</a>
+      <a href="https://lin.ee/97Nh9HT" class="ls-btn" target="_blank" rel="noopener">加入 LINE 好友 →</a>
     </div>
     <div class="qr-wrap">
       <img src="/wp-content/uploads/line-qr-aabe.png" alt="LINE 公民監督社群 QR Code" loading="lazy">
@@ -414,7 +413,7 @@
         <div class="who">For 一般公民 · Citizen</div>
         <h3>加入監督社群<br>讓政策進度進你的口袋</h3>
         <div class="desc">不用研究法案、不用記得會期，每週秘書處整理重點推送。看到關心的議題，分享出去就是行動。</div>
-        <a href="https://lin.ee/97Nh9HT" class="cta" target="_blank" rel="noopener">加入 LINE 社群 →</a>
+        <a href="https://lin.ee/97Nh9HT" class="cta" target="_blank" rel="noopener">加入 LINE 好友 →</a>
       </div>
 
       <div class="action-card">
@@ -454,17 +453,17 @@
     </div>
   </section>
 
-  <!-- ════════ 最新活動 Upcoming Events ════════ -->
+  <!-- ════════ 最新活動 Latest Activity ════════ -->
   <section class="section">
     <h2>最新活動</h2>
-    <span class="section-hint">Upcoming Events · 即將舉辦</span>
+    <span class="section-hint">Latest · 最新動態</span>
 
     <div style="display:grid;gap:16px;margin:24px 0;">
-      <div style="padding:24px 28px;border-left:5px solid #d63838;background:#fff;border-radius:6px;">
-        <div style="font-family:'Inter',sans-serif;font-size:0.66rem;letter-spacing:0.22em;color:#d63838;font-weight:700;text-transform:uppercase;margin-bottom:8px;">即將舉辦 · Upcoming</div>
+      <div style="padding:24px 28px;border-left:5px solid #9ca3af;background:#fff;border-radius:6px;">
+        <div style="font-family:'Inter',sans-serif;font-size:0.66rem;letter-spacing:0.22em;color:#9ca3af;font-weight:700;text-transform:uppercase;margin-bottom:8px;">已結束 · Concluded</div>
         <h3 style="font-family:'Noto Serif TC',serif;font-size:1.2rem;font-weight:900;margin-bottom:8px;">「兒家署缺少的拼圖？」論壇──重建從家庭出發的兒童支持系統</h3>
-        <div style="color:var(--ink-2);font-size:0.92rem;line-height:1.7;margin-bottom:8px;">7/10（五）09:00–12:00 · 國立臺灣大學公共衛生學院 · 國教盟共同主辦。就家庭、教育、預算、司法、醫療五大制度缺口提出民間版補強建議，理事長王瀚陽主講「教育拼圖」。</div>
-        <a href="/events/2026-07-10-cfa-missing-pieces-forum/" style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;color:var(--ink);border-bottom:2px solid #d63838;padding-bottom:2px;">論壇詳情 →</a>
+        <div style="color:var(--ink-2);font-size:0.92rem;line-height:1.7;margin-bottom:8px;">7/10（五）已於國立臺灣大學公共衛生學院舉行，國教盟共同主辦。就家庭、教育、預算、司法、醫療五大制度缺口提出民間版補強建議，理事長王瀚陽主講「教育拼圖」。</div>
+        <a href="/events/2026-07-10-cfa-missing-pieces-forum/notes/" style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;color:var(--ink);border-bottom:2px solid #9ca3af;padding-bottom:2px;">看會議全紀錄 →</a>
       </div>
 
       <div style="padding:20px 28px;border-left:5px solid var(--brand-orange);background:#fff;border-radius:6px;">
@@ -501,7 +500,7 @@
     <div class="faq-list">
       <details class="faq-item">
         <summary>我什麼都不懂，也能參與嗎？</summary>
-        <div class="ans">當然可以。最低門檻是「加入 LINE 公民監督社群」（lin.ee/97Nh9HT），每週收到政策重點整理。看到關心的議題，分享給家人朋友，就是有效的公民參與。</div>
+        <div class="ans">當然可以。最低門檻是「加入 LINE 好友」（lin.ee/97Nh9HT），每週收到政策重點整理。看到關心的議題，分享給家人朋友，就是有效的公民參與。</div>
       </details>
       <details class="faq-item">
         <summary>我不是家長 / 沒有小孩，可以參與嗎？</summary>
@@ -582,5 +581,6 @@
   </div>
 </footer>
 
+<script src="/assets/nav-toggle.js" defer></script>
 </body>
 </html>

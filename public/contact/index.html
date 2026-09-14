@@ -312,9 +312,8 @@
           <img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟｜Action Alliance on Basic Education">
         </picture>
       </a>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="切換選單">
-      <label for="nav-toggle" class="nav-toggle-btn" aria-label="開啟選單"><span></span></label>
-    <nav class="topbar-nav" aria-label="Primary">
+      <button type="button" class="nav-toggle-btn" aria-label="開啟選單" aria-expanded="false" aria-controls="topbar-nav"><span></span></button>
+    <nav class="topbar-nav" id="topbar-nav" aria-label="Primary">
       <a href="/about/">關於我們</a>
       <a href="/issues/">我們關注的議題</a>
       <a href="/events/" class="nav-events">活動公告<span class="nav-dot"></span></a>
@@ -523,5 +522,6 @@
   </div>
 </footer>
 
+<script src="/assets/nav-toggle.js" defer></script>
 </body>
 </html>

@@ -92,9 +92,8 @@
         <img src="/wp-content/uploads/logo-naer.png" alt="國教行動聯盟｜Action Alliance on Basic Education">
       </picture>
     </a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="切換選單">
-    <label for="nav-toggle" class="nav-toggle-btn" aria-label="開啟選單"><span></span></label>
-    <nav class="topbar-nav" aria-label="Primary">
+    <button type="button" class="nav-toggle-btn" aria-label="開啟選單" aria-expanded="false" aria-controls="topbar-nav"><span></span></button>
+    <nav class="topbar-nav" id="topbar-nav" aria-label="Primary">
       <a href="/about/">關於我們</a>
       <a href="/issues/">我們關注的議題</a>
       <a href="/events/" class="nav-events">活動公告<span class="nav-dot"></span></a>
@@ -201,5 +200,6 @@
     <p>本新聞稿引述之數據以官方與監察院報告為準。媒體採訪請聯繫新聞聯絡人 王瀚陽 理事長 0983-097-165。</p>
   </footer>
 </main>
+<script src="/assets/nav-toggle.js" defer></script>
 </body>
 </html>

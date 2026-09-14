@@ -13,7 +13,8 @@
 
   /* 品牌主色 */
   --brand-orange: #EB9B31;                       /* fallback */
-  --brand-orange: oklch(0.74 0.13 65);           /* L=74% 明亮溫暖 */
+  --brand-orange: oklch(0.74 0.13 65);           /* L=74% 明亮溫暖；只用於色塊/線條/標記，不可用於文字（對白底僅 2.27:1） */
+  --brand-orange-text: #9A5A0C;                  /* 2026-09-14 新增：文字專用，實測對白底 WCAG 5.47:1 */
   --brand-teal: #2FA598;                          /* fallback */
   --brand-teal: oklch(0.63 0.08 185);            /* L=63% 平靜對比 */
   --brand-gold: #C9A961;                          /* fallback */
@@ -124,16 +125,17 @@ a { color: inherit; text-decoration: none; }
   70% { box-shadow: 0 0 0 8px rgba(231,76,60,0); }
   100% { box-shadow: 0 0 0 0 rgba(231,76,60,0); } }
 
-/* Hamburger menu (mobile only) */
-.nav-toggle { display: none; }
-.nav-toggle-btn { display: none; cursor: pointer; width: 32px; height: 32px; align-items: center; justify-content: center; margin-left: auto; }
+/* Hamburger menu (mobile only)
+   2026-09-14 第一批修復：checkbox+label hack 不接受鍵盤 Enter/Space，
+   改用真正可聚焦的 <button aria-expanded>，CSS 用 [aria-expanded] 屬性選擇器連動。 */
+.nav-toggle-btn { display: none; cursor: pointer; width: 32px; height: 32px; align-items: center; justify-content: center; margin-left: auto; background: none; border: 0; padding: 0; }
 .nav-toggle-btn span { display: block; width: 22px; height: 2px; background: var(--ink); position: relative; transition: all 0.3s; }
 .nav-toggle-btn span::before, .nav-toggle-btn span::after { content: ""; display: block; position: absolute; left: 0; width: 22px; height: 2px; background: var(--ink); transition: all 0.3s; }
 .nav-toggle-btn span::before { top: -7px; }
 .nav-toggle-btn span::after { top: 7px; }
-.nav-toggle:checked ~ .nav-toggle-btn span { background: transparent; }
-.nav-toggle:checked ~ .nav-toggle-btn span::before { top: 0; transform: rotate(45deg); }
-.nav-toggle:checked ~ .nav-toggle-btn span::after { top: 0; transform: rotate(-45deg); }
+.nav-toggle-btn[aria-expanded="true"] span { background: transparent; }
+.nav-toggle-btn[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+.nav-toggle-btn[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
 
 /* ─── Chapter break ─── */
 .chapter { display: flex; align-items: baseline; gap: 14px; max-width: 1040px; margin: 0 auto; padding: 56px 32px 0; }
@@ -195,7 +197,7 @@ footer { background: var(--ink); color: #fff; padding: 64px 32px 32px; }
     border-top: 1px solid var(--line);
     margin-top: 4px;
   }
-  .nav-toggle:checked ~ .topbar-nav { display: flex; }
+  .nav-toggle-btn[aria-expanded="true"] ~ .topbar-nav { display: flex; }
   .topbar-nav a { padding: 12px 4px; border-bottom: 1px solid var(--line-soft); font-size: 0.95rem; }
   .topbar-nav a:last-child { border-bottom: 0; }
   .topbar-nav a.active { border-bottom-color: var(--brand-orange); }
