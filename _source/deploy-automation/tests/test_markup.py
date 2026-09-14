@@ -12,9 +12,11 @@ OPEN_TAG = re.compile(r'<(?P<tag>[a-zA-Z][\w-]*)\b[^>]*\bdata-metric="(?P<id>[^"
 
 # 每頁預期的標記數（id -> 次數）
 EXPECTED = {
+    # 2026-09-14 官網第二批套站：首頁能力摘要縮成 3 個數字（理事長裁決），
+    # single_reach/buzz_1y/actions/press_releases/policy_briefs/buzz_3y 六個
+    # 標記隨舊六卡＋Ch05 統計帶一併移除，不再出現在首頁（完整口徑見 /methodology/）。
     "index.html": {
-        "valid_surveys": 1, "single_reach": 1, "partners": 2, "press_coverage": 1,
-        "buzz_1y": 1, "actions": 2, "press_releases": 1, "policy_briefs": 1, "buzz_3y": 1,
+        "valid_surveys": 1, "partners": 1, "press_coverage": 1,
     },
     "methodology/index.html": {
         "partners": 1, "press_releases": 1, "actions": 1,

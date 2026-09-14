@@ -338,40 +338,14 @@
     .mandate h2 em { font-style: normal; color: var(--brand-teal); }
     .mandate-lead { font-family: 'Noto Serif TC', serif; font-size: 1.02rem; line-height: 1.95; color: var(--ink-2); max-width: 640px; margin: 0 0 40px; }
 
-    .m-tier-head { display: flex; align-items: baseline; gap: 14px; margin: 0 0 18px; }
-    .m-tier-tag { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; padding: 5px 11px; border-radius: 3px; color: #fff; white-space: nowrap; }
-    .m-voice .m-tier-tag { background: #1F7C6D; }
-    .m-echo .m-tier-tag { background: var(--brand-orange); color: #1c2422; }
-    .m-tier-desc { font-family: 'Noto Serif TC', serif; font-size: 0.9rem; color: var(--ink-3); line-height: 1.6; }
-
-    .m-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 0 0 44px; }
-    .m-card { background: #fff; border: 1px solid var(--line); border-radius: 5px; padding: 26px 24px 20px; position: relative; display: flex; flex-direction: column; }
-    .m-card::before { content: ""; position: absolute; left: -1px; top: -1px; bottom: -1px; width: 3px; border-radius: 5px 0 0 5px; }
-    .m-voice .m-card::before { background: var(--brand-teal); }
-    .m-echo .m-card::before { background: var(--brand-orange); }
-
+    /* 2026-09-14 套站：能力摘要縮成 3 數字，重用 .m-num／.m-affix（原六卡制的
+       .m-tier/.m-voice/.m-echo/.m-card/.m-label/.m-period/.m-how/.m-src/.m-link/
+       .m-foot* 分層樣式已隨內容一併移除，避免殘留未用 CSS）。 */
     .m-num { font-family: 'Inter', sans-serif; font-weight: 900; font-size: clamp(2.3rem, 4.6vw, 3.05rem); line-height: 1; letter-spacing: -0.025em; color: var(--ink); font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; display: flex; align-items: baseline; gap: 5px; margin-bottom: 10px; }
     /* data-metric 只是給腳本認位置用的殼，不能變成 flex item（會吃掉數字與 +／單位之間的 gap） */
     .m-num [data-metric] { display: contents; }
     .m-affix { font-size: 0.94rem; font-weight: 800; letter-spacing: 0.02em; color: var(--ink-2); }
-    .m-voice .m-affix.m-plus { color: var(--brand-teal); }
-    .m-echo .m-affix.m-plus { color: #9F6213; }
-    .m-label { font-family: 'Noto Serif TC', serif; font-size: 1.06rem; font-weight: 800; line-height: 1.45; margin-bottom: 5px; color: var(--ink); }
-    .m-period { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
-    .m-how { font-family: 'Noto Serif TC', serif; font-size: 0.83rem; line-height: 1.75; color: var(--ink-2); padding-top: 13px; border-top: 1px solid #EFEAE1; margin: 0 0 12px; }
-    .m-how b { font-weight: 800; color: var(--ink); }
-    .m-src { font-family: 'Inter', sans-serif; font-size: 0.72rem; line-height: 1.6; color: var(--ink-3); margin-bottom: 12px; }
-    .m-link { font-family: 'Inter', sans-serif; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em; color: #1F7F70; border-bottom: 1px solid transparent; align-self: flex-start; padding-bottom: 1px; margin-top: auto; }
-    .m-echo .m-link { color: #9F6213; }
-    .m-link:hover, .m-link:focus-visible { border-bottom-color: currentColor; }
-
-    .m-foot { border-top: 1px solid var(--line); padding-top: 26px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; justify-content: space-between; }
-    .m-foot-note { font-family: 'Noto Serif TC', serif; font-size: 0.82rem; line-height: 1.85; color: var(--ink-3); max-width: 520px; }
-    .m-foot-note strong { color: var(--ink-2); font-weight: 800; }
-    .m-stamp { display: block; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-3); margin-top: 10px; }
-    .m-cta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-
-    @media (max-width: 900px) { .m-grid { grid-template-columns: repeat(2, 1fr); } }
+    .cap-card .m-affix.m-plus { color: var(--brand-teal); }
 
     .hero-cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 4px; font-size: 0.92rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s; }
@@ -514,12 +488,8 @@
     @media (max-width: 900px) { .nav-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 540px) { .nav-grid { grid-template-columns: 1fr; } }
 
-    .stats-band { background: var(--ink); color: #fff; padding: 80px 32px; }
-    .stats-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; }
-    .stat-num { font-family: 'Inter', sans-serif; font-size: clamp(3rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
-    .stat-num .plus { color: var(--brand-orange); }
-    .stat-label { margin-top: 16px; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: #b8bcc3; }
-    .stats-note { max-width: 1080px; margin: 32px auto 0; font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 0.2em; color: #7a8089; text-transform: uppercase; }
+    /* 2026-09-14 套站：.stats-band／.stat-num／.stat-label／.stats-note（Ch05
+       數字帶）已隨內容併入能力摘要移除，不再殘留未用 CSS。 */
 
     /* Latest articles */
     .latest { max-width: 1280px; margin: 80px auto; padding: 0 32px; }
@@ -558,6 +528,62 @@
     .footer-col a:hover { opacity: 1; color: var(--brand-orange); }
     .footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 0.85rem; color: #b8bcc3; }
 
+    /* ═══ 2026-09-14 第二批樣稿：精選成果（block②）═══ */
+    #join { scroll-margin-top: 110px; }
+    .featured-outcomes { max-width: 1280px; margin: 0 auto; padding: 64px 32px 56px; }
+    .fo-head { text-align: center; margin-bottom: 10px; }
+    .fo-head h2 { font-family: 'Noto Serif TC', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 900; }
+    .fo-lead { text-align: center; color: var(--ink-2); font-size: 1rem; max-width: 640px; margin: 10px auto 8px; line-height: 1.75; }
+    .fo-note { text-align: center; font-size: 0.76rem; color: var(--ink-3); max-width: 680px; margin: 0 auto 36px; line-height: 1.7; }
+    .fo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .fo-card { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 24px 22px 20px; display: flex; flex-direction: column; }
+    .fo-topic { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand-orange-text); margin-bottom: 8px; }
+    .fo-problem { font-family: 'Noto Serif TC', serif; font-size: 0.9rem; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px dashed var(--line); }
+    .fo-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+    .fo-col-label { font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.08em; color: var(--ink-3); text-transform: uppercase; margin-bottom: 6px; }
+    .fo-col-text { font-size: 0.84rem; color: var(--ink-2); line-height: 1.65; }
+    .fo-meta { display: flex; align-items: center; justify-content: space-between; font-size: 0.72rem; color: var(--ink-3); margin-bottom: 12px; flex-wrap: wrap; gap: 6px; }
+    .fo-stage { display: inline-block; padding: 3px 9px; background: var(--bg-soft); border-radius: 3px; font-weight: 700; color: var(--ink-2); }
+    .fo-evidence { margin-top: auto; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; color: #1F7F70; border-bottom: 1px solid transparent; align-self: flex-start; }
+    .fo-evidence:hover, .fo-evidence:focus-visible { border-bottom-color: currentColor; }
+    .fo-evidence.pending { color: var(--ink-3); font-weight: 500; border-bottom: none; }
+    .fo-foot { text-align: center; margin-top: 32px; }
+
+    /* ═══ 能力與公信力摘要（block③，縮成 3 個數字＋怎麼算收合；容器沿用既有
+       .mandate／.mandate-inner，數字沿用既有 .m-num／.m-affix，故本區塊 CSS
+       只新增卡片與收合本身用得到的 class，不重複定義容器層） ═══ */
+    .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px; }
+    .cap-card { background: #fff; border: 1px solid var(--line); border-radius: 5px; padding: 24px 22px 18px; }
+    .cap-label { font-family: 'Noto Serif TC', serif; font-size: 0.98rem; font-weight: 800; margin-bottom: 4px; margin-top: 8px; }
+    .cap-period { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 12px; }
+    .cap-card details { border-top: 1px solid #EFEAE1; padding-top: 10px; }
+    .cap-card summary { cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.76rem; font-weight: 700; color: #1F7F70; list-style: none; }
+    .cap-card summary::-webkit-details-marker { display: none; }
+    .cap-card summary::after { content: ' ▾'; }
+    .cap-card details[open] summary::after { content: ' ▴'; }
+    .cap-card .cap-how { font-family: 'Noto Serif TC', serif; font-size: 0.8rem; line-height: 1.75; color: var(--ink-2); margin-top: 10px; }
+    .cap-card .cap-src { font-family: 'Inter', sans-serif; font-size: 0.7rem; line-height: 1.6; color: var(--ink-3); margin-top: 8px; }
+    .cap-foot { text-align: center; font-size: 0.78rem; color: var(--ink-3); }
+    .cap-foot a { color: #1F7F70; font-weight: 700; }
+
+    /* ═══ 依生活問題找議題（block⑤）═══ */
+    .life-questions { max-width: 1280px; margin: 0 auto; padding: 56px 32px; }
+    .lq-head { text-align: center; margin-bottom: 32px; }
+    .lq-head h2 { font-family: 'Noto Serif TC', serif; font-size: clamp(1.6rem, 2.8vw, 2.1rem); font-weight: 900; }
+    .lq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .lq-card { background: var(--bg-soft); border-radius: 6px; padding: 26px 24px; border-top: 4px solid var(--brand-teal); display: flex; flex-direction: column; }
+    .lq-q { font-family: 'Noto Serif TC', serif; font-size: 1.1rem; font-weight: 900; line-height: 1.5; margin-bottom: 12px; }
+    .lq-topic { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand-teal); margin-bottom: 8px; }
+    .lq-desc { font-size: 0.86rem; color: var(--ink-2); line-height: 1.7; margin-bottom: 16px; flex: 1; }
+    .lq-cta { font-family: 'Inter', sans-serif; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); border-bottom: 2px solid var(--brand-teal); padding-bottom: 2px; align-self: flex-start; }
+
+    /* ═══ 正在推動的重點議題（block④，now-happening 加三欄）═══ */
+    .ki-fields { border-top: 1px dashed var(--line); padding-top: 12px; margin-bottom: 12px; }
+    .ki-field { font-size: 0.82rem; line-height: 1.65; color: var(--ink-2); margin-bottom: 8px; }
+    .ki-field b { color: var(--ink); font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; display: block; margin-bottom: 3px; color: var(--brand-orange-text); }
+    .ki-field a { color: #1F7F70; font-weight: 700; border-bottom: 1px solid transparent; }
+    .ki-field a:hover { border-bottom-color: currentColor; }
+
     @media (max-width: 768px) {
       /* Utility bar mobile */
       .utility-bar-inner { padding: 6px 16px; gap: 10px; font-size: 0.72rem; }
@@ -574,12 +600,7 @@
       .topbar-nav a:last-child { border-bottom: 0; }
       .hero { padding: 48px 20px 48px; }
       .mandate { padding: 44px 20px 40px; }
-      .m-grid { grid-template-columns: 1fr; gap: 14px; margin-bottom: 34px; }
-      .m-card { padding: 22px 20px 18px; }
       .mandate-lead { margin-bottom: 30px; }
-      .m-foot { flex-direction: column; gap: 22px; }
-      .m-cta { width: 100%; }
-      .m-cta .btn { flex: 1 1 100%; justify-content: center; }
       .hero h1 { font-size: clamp(2.6rem, 11vw, 3.6rem); }
       .hero .tagline { font-size: 1.05rem; }
       .chapter { padding: 40px 20px 0; gap: 10px; }
@@ -593,12 +614,15 @@
       .now-focus-inner { grid-template-columns: 1fr; gap: 24px; }
       .now-focus-title { font-size: 1.7rem; }
       .now-focus-body { font-size: 0.98rem; }
-      .stats-band { padding: 56px 20px; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-      .stat-num { font-size: 2.6rem; }
-      .stats-note { margin-top: 24px; font-size: 0.68rem; }
       .footer-cols { grid-template-columns: 1fr; gap: 28px; }
       .cross-inner { grid-template-columns: 1fr; }
+      /* 2026-09-14 第二批樣稿 mobile */
+      .featured-outcomes { padding: 44px 20px 40px; }
+      .fo-grid { grid-template-columns: 1fr; gap: 16px; }
+      .fo-cols { grid-template-columns: 1fr; gap: 10px; }
+      .cap-grid { grid-template-columns: 1fr; gap: 14px; }
+      .life-questions { padding: 40px 20px; }
+      .lq-grid { grid-template-columns: 1fr; gap: 14px; }
     }
   </style>
 </head>
@@ -660,115 +684,209 @@
       </h1>
       <p class="tagline">13 年來，串聯 168 個跨領域組織，把家庭擔憂轉化為國家層級的政策改變。</p>
       <div class="hero-cta">
-        <a href="https://lin.ee/97Nh9HT" class="btn btn-primary" target="_blank" rel="noopener">加入 LINE 好友 →</a>
-        <a href="https://policy.aabe.org.tw/" class="btn btn-secondary">探索政策論述</a>
+        <a href="/impact/" class="btn btn-primary">查看倡議成果 →</a>
+        <a href="#join" class="btn btn-secondary">參與公民監督 →</a>
       </div>
     </section>
 
-    <!-- CH 02 — Our Mandate（民意與聲量；2026-09-05 取代原 hero 影片） -->
+    <!-- CH 02 — 精選成果（block②，2026-09-14 第二批樣稿；六張卡文案 v2） -->
     <div class="chapter">
       <span class="chapter-num">Ch 02</span>
       <span class="chapter-line"></span>
-      <span class="chapter-label">Our Mandate</span>
+      <span class="chapter-label">Featured Outcomes</span>
+    </div>
+    <section class="featured-outcomes" aria-labelledby="fo-title">
+      <div class="fo-head">
+        <h2 id="fo-title">國教行動聯盟（民間團體）精選成果</h2>
+      </div>
+      <p class="fo-lead">六件正在追蹤的事：我們提了什麼，後來發生什麼。</p>
+      <p class="fo-note">「國教盟做了什麼」與「機關／立院的相關進展」為並列呈現的兩件事，時間先後不代表因果關係。</p>
+      <div class="fo-grid">
+
+        <article class="fo-card" aria-label="成果卡，兒少專責機關：立法院 2026-08-25 三讀通過兒少及家庭支持署組織法，目前階段為完成法制。">
+          <div class="fo-topic">兒少專責機關</div>
+          <p class="fo-problem">兒少與家庭業務分散在衛政、社政、教育、警政、司法，沒有專責機關統整。</p>
+          <div class="fo-cols">
+            <div>
+              <div class="fo-col-label">國教盟做了什麼</div>
+              <div class="fo-col-text">2025 年起與兒童健康聯盟、婦兒盟共同倡議，2026-08-26 提四項訴求。</div>
+            </div>
+            <div>
+              <div class="fo-col-label">機關／立院的相關進展</div>
+              <div class="fo-col-text">立法院 2026-08-25 三讀通過《衛生福利部兒少及家庭支持署組織法》，尚待總統公布。</div>
+            </div>
+          </div>
+          <div class="fo-meta">
+            <span class="fo-stage">完成法制（僅指組織法三讀，兒家署尚未掛牌）</span>
+            <span>更新 2026-09-14</span>
+          </div>
+          <a class="fo-evidence" href="https://ppg.ly.gov.tw/ppg/publications/official-gazettes/115/74/04/details" target="_blank" rel="noopener">證據：立法院公報 →</a>
+        </article>
+
+        <article class="fo-card" aria-label="成果卡，校事會議分流：教育部 2026-01-12 修正發布解聘辦法後，進入校事會議比率由 82% 降至 22%，該辦法現遭立法院退回重訂。">
+          <div class="fo-topic">校事會議分流</div>
+          <p class="fo-problem">管教爭議等小案被當大案查，耗掉學校資源；嚴重案件卻因調查專業不足而輕放。</p>
+          <div class="fo-cols">
+            <div>
+              <div class="fo-col-label">國教盟做了什麼</div>
+              <div class="fo-col-text">2025-11-19 與全家盟提分流檢舉、提升受理層級、強化外部專業三項主張。</div>
+            </div>
+            <div>
+              <div class="fo-col-label">機關／立院的相關進展</div>
+              <div class="fo-col-text">教育部 2026-01-12 修正發布辦法，進校事會議比率 82%→22%。</div>
+            </div>
+          </div>
+          <div class="fo-meta">
+            <span class="fo-stage">執行追蹤（該辦法 2026-07-31 遭立法院退回重訂）</span>
+            <span>更新 2026-09-14</span>
+          </div>
+          <a class="fo-evidence" href="https://news.ltn.com.tw/news/life/breakingnews/5504841" target="_blank" rel="noopener">證據：自由時報報導 →</a>
+        </article>
+
+        <article class="fo-card" aria-label="成果卡，適應體育：行政院 2026-09-03 通過國民體育法修正草案並新增適應運動專章，目前仍待立法院審議。">
+          <div class="fo-topic">適應體育</div>
+          <p class="fo-problem">113 學年學校填報具適應體育知能的體育教師占 43.35%，且無師資資格基準。</p>
+          <div class="fo-cols">
+            <div>
+              <div class="fo-col-label">國教盟做了什麼</div>
+              <div class="fo-col-text">2025-08 起主張適應體育進每所學校；2026-09-10 提三項建議。</div>
+            </div>
+            <div>
+              <div class="fo-col-label">機關／立院的相關進展</div>
+              <div class="fo-col-text">行政院 2026-09-03 通過國民體育法修正草案，新增適應運動專章。</div>
+            </div>
+          </div>
+          <div class="fo-meta">
+            <span class="fo-stage">機關有進展（草案階段，尚待立法院審議）</span>
+            <span>更新 2026-09-14</span>
+          </div>
+          <a class="fo-evidence" href="https://www.ey.gov.tw/Page/9277F759E41CCD91/d0eb8192-299e-4522-a74d-23435408aed2" target="_blank" rel="noopener">證據：行政院新聞稿 →</a>
+        </article>
+
+        <article class="fo-card" aria-label="成果卡，免費營養午餐：國教盟 2026-08-28 提出四項要求並啟動開學 100 日檢核，將於 2026-12-09 公布檢核結果。">
+          <div class="fo-topic">免費營養午餐</div>
+          <p class="fo-problem">各縣市每餐補助從 50 多元到 90 多元不等，成本差額由誰負擔沒有公開。</p>
+          <div class="fo-cols">
+            <div>
+              <div class="fo-col-label">國教盟做了什麼</div>
+              <div class="fo-col-text">2026-08-28 提四項要求，啟動「開學 100 日檢核」。</div>
+            </div>
+            <div>
+              <div class="fo-col-label">機關／立院的相關進展</div>
+              <div class="fo-col-text">立法院教文會 2026-07-27 完成午餐專法併案審查，須交黨團協商。</div>
+            </div>
+          </div>
+          <div class="fo-meta">
+            <span class="fo-stage">提出訴求（機關尚未回應本盟訴求；12/09 公布檢核結果）</span>
+            <span>更新 2026-09-14</span>
+          </div>
+          <a class="fo-evidence" href="https://ppg.ly.gov.tw/ppg/sittings/2026072496/details?meetingDate=115/07/27" target="_blank" rel="noopener">證據：立法院教文會會議 →</a>
+        </article>
+
+        <article class="fo-card" aria-label="成果卡，輔導職務加給：公共政策平臺提案 2026-09-04 達 5,000 人附議，教育部回應期限為 11 月 4 日，加給尚未核定。">
+          <div class="fo-topic">輔導職務加給</div>
+          <p class="fo-problem">導師有職務加給、特教有專業加給，專任輔導教師沒有對應的職務加給。</p>
+          <div class="fo-cols">
+            <div>
+              <div class="fo-col-label">國教盟做了什麼</div>
+              <div class="fo-col-text">2025-09-26 起倡議增設，2026-09-11 要求教育部公開研議進度。</div>
+            </div>
+            <div>
+              <div class="fo-col-label">機關／立院的相關進展</div>
+              <div class="fo-col-text">公共政策平臺提案 2026-09-04 達 5,000 人附議門檻。</div>
+            </div>
+          </div>
+          <div class="fo-meta">
+            <span class="fo-stage">提出訴求（提案非本盟提出，加給未核定，11/4 回應）</span>
+            <span>更新 2026-09-14</span>
+          </div>
+          <a class="fo-evidence" href="https://join.gov.tw/idea/detail/a54af383-3ee9-4338-9990-e17468090164" target="_blank" rel="noopener">證據：公共政策平臺 →</a>
+        </article>
+
+        <!-- 2026-09-14 套站：理事長裁決本卡排第六（六張卡文案 v2 弱點二：兩條證據皆不可點，建議排最後） -->
+        <article class="fo-card" aria-label="成果卡，兒少權法修法：衛生福利部 2026-04-21 預告 165 條修正草案，國教盟次日指出六大制度缺口仍未補上。">
+          <div class="fo-topic">兒少權法修法</div>
+          <p class="fo-problem">兒少權法自 2011 年後未大修，剴剴案暴露的通報、安置、銜接缺口仍未補。</p>
+          <div class="fo-cols">
+            <div>
+              <div class="fo-col-label">國教盟做了什麼</div>
+              <div class="fo-col-text">2026-04-22 於預告次日發表分析，指出六大制度缺口仍未補上。</div>
+            </div>
+            <div>
+              <div class="fo-col-label">機關／立院的相關進展</div>
+              <div class="fo-col-text">衛福部 2026-04-21 預告兒少權法修正草案 165 條，尚未送立法院。</div>
+            </div>
+          </div>
+          <div class="fo-meta">
+            <span class="fo-stage">提出訴求（預告版草案，尚未送立法院）</span>
+            <span>更新 2026-09-14</span>
+          </div>
+          <a class="fo-evidence" href="https://policy.aabe.org.tw/child-rights/" target="_blank" rel="noopener">證據：兒少保護主軸頁 →</a>
+          <span style="display:block;font-size:0.7rem;color:var(--ink-3);margin-top:4px;">衛福部預告全文連結待補</span>
+        </article>
+
+      </div>
+      <div class="fo-foot">
+        <a href="/impact/" class="btn btn-secondary">看全部成果與時間軸 →</a>
+      </div>
+    </section>
+
+    <!-- CH 03 — 能力與公信力摘要（block③，2026-09-14 由原「Our Mandate」六卡＋Ch05 統計帶縮併） -->
+    <div class="chapter">
+      <span class="chapter-num">Ch 03</span>
+      <span class="chapter-line"></span>
+      <span class="chapter-label">Capability Summary</span>
     </div>
     <section class="mandate" aria-labelledby="mandate-title">
       <div class="mandate-inner">
 
         <h2 id="mandate-title">我們代表的民意，<em>每一個數字都可以被查</em></h2>
         <p class="mandate-lead">
-          我們不給一個大總數。數字分成兩層：一層是真的動手作答的人，一層是被討論出去的量。每個數字下面都寫清楚怎麼算、資料期間、資料來自哪裡——因為能被檢驗的數字，才是有力量的數字。
+          三個數字，濃縮研究、連結夥伴與公共溝通的能力；完整口徑、資料期間與來源，點「怎麼算」展開，或到資料方法頁看全部。
         </p>
 
-        <!-- ── 第一層：民意 ───────────────────────── -->
-        <div class="m-tier m-voice">
-          <div class="m-tier-head">
-            <span class="m-tier-tag">民意</span>
-            <span class="m-tier-desc">真的按下送出的人，與願意跟我們一起具名的組織</span>
+        <div class="cap-grid">
+
+          <div class="cap-card">
+            <div class="m-num"><span data-metric="valid_surveys">66,247</span><span class="m-affix">份</span></div>
+            <div class="cap-label">有效問卷（研究能力）</div>
+            <div class="cap-period">2023 — 2026 · 八項調查累計</div>
+            <details>
+              <summary>怎麼算</summary>
+              <p class="cap-how"><b>怎麼算：</b>扣除重複 IP、未成年填答、整份同一選項等無效卷後的最終筆數，八項調查逐案相加。不是點擊數，是完整作答數。</p>
+              <p class="cap-src">來源：各案調查報告與新聞稿原件。本盟自辦 3 案 18,706 份；與夥伴團體合辦 5 案 47,541 份。各調查各自去重，未跨調查合併去重，故為份數累計。</p>
+            </details>
           </div>
 
-          <div class="m-grid">
-
-            <div class="m-card">
-              <div class="m-num"><span data-metric="valid_surveys">66,247</span><span class="m-affix">份</span></div>
-              <div class="m-label">有效問卷</div>
-              <div class="m-period">2023 — 2026 · 八項調查累計</div>
-              <p class="m-how"><b>怎麼算：</b>扣除重複 IP、未成年填答、整份同一選項等無效卷後的最終筆數，八項調查逐案相加。不是點擊數，是完整作答數。</p>
-              <p class="m-src">來源：各案調查報告與新聞稿原件。本盟<b>自辦 3 案 18,706 份</b>（青少年十大議題 8,743／兒虐修法 8,724，年報標題作約 8,700／菸盒警示 1,239）；<b>與夥伴團體合辦 5 案 47,541 份</b>（大麻 38,502．台灣共善促進協會／十大教育議題 5,379．全國家長會長聯盟等／職場心理健康 1,368．台灣心理健康聯盟／性教育 1,203．台灣性教育學會／神經多樣性 1,089．神經多樣性正名學生小組等）。各調查各自去重，未跨調查合併去重，故為份數累計。</p>
-              <a class="m-link" href="/methodology/">看完整說明與各案原始報告 →</a>
-            </div>
-
-            <div class="m-card">
-              <div class="m-num"><span data-metric="single_reach">104,000</span><span class="m-affix">人次</span></div>
-              <div class="m-label">單場調查最高觸及</div>
-              <div class="m-period">2023 · 大麻合法化意見調查</div>
-              <p class="m-how"><b>怎麼算：</b>問卷連結被開啟／曝光的總<b>人次</b>，含沒有作答的人，同一人可能重複計算，因此必然大於填答人數。<b>是人次，不是人數。</b></p>
-              <p class="m-src">來源：2023-11-13 調查報告（與台灣共善促進協會合辦，本盟為主要協助調查單位）；成果發表於 BMC Public Health 2023;23:1954。</p>
-              <a class="m-link" href="/methodology/">看完整說明與論文連結 →</a>
-            </div>
-
-            <div class="m-card">
-              <div class="m-num"><span data-metric="partners">168<span class="m-affix m-plus">+</span></span></div>
-              <div class="m-label">個合作組織</div>
-              <div class="m-period">2023 — 2025 · 三年累計</div>
-              <p class="m-how"><b>怎麼算：</b>三年內在任一倡議行動（記者會、聯署、論壇、聯合聲明）與本盟共同列名的跨領域組織，去除重複後的唯一組織數。</p>
-              <p class="m-src">來源：內部行政紀錄＋倡議成果資料庫。</p>
-              <a class="m-link" href="/methodology/">看完整說明 →</a>
-            </div>
-
+          <div class="cap-card">
+            <div class="m-num"><span data-metric="partners">168<span class="m-affix m-plus">+</span></span></div>
+            <div class="cap-label">合作組織（連結夥伴）</div>
+            <div class="cap-period">2023 — 2025 · 三年累計</div>
+            <details>
+              <summary>怎麼算</summary>
+              <p class="cap-how"><b>怎麼算：</b>三年內在任一倡議行動（記者會、聯署、論壇、聯合聲明）與本盟共同列名的跨領域組織，去除重複後的唯一組織數。</p>
+              <p class="cap-src">來源：內部行政紀錄＋倡議成果資料庫。</p>
+            </details>
           </div>
+
+          <div class="cap-card">
+            <div class="m-num"><span data-metric="press_coverage">3,000<span class="m-affix m-plus">+</span></span><span class="m-affix">篇</span></div>
+            <div class="cap-label">媒體露出（公共溝通）</div>
+            <div class="cap-period">2023 — 2026 / 08 累計</div>
+            <details>
+              <summary>怎麼算</summary>
+              <p class="cap-how"><b>怎麼算：</b>媒體刊登本盟新聞稿或報導本盟主張的篇數，同一事件被多家轉載算多篇。不是讀者人數，我們不做受眾推估。</p>
+              <p class="cap-src">來源：本盟新聞稿露出索引逐篇加總（列管範圍內實計 3,017 篇，對外採保守表述「逾 3,000 篇」）。</p>
+            </details>
+          </div>
+
         </div>
 
-        <!-- ── 第二層：聲量 ───────────────────────── -->
-        <div class="m-tier m-echo">
-          <div class="m-tier-head">
-            <span class="m-tier-tag">聲量</span>
-            <span class="m-tier-desc">這些聲音被媒體與社會討論了多少、我們把它們帶到了哪些場合</span>
-          </div>
-
-          <div class="m-grid">
-
-            <div class="m-card">
-              <div class="m-num"><span data-metric="press_coverage">3,000<span class="m-affix m-plus">+</span></span><span class="m-affix">篇</span></div>
-              <div class="m-label">媒體露出</div>
-              <div class="m-period">2023 — 2026 / 08 累計</div>
-              <p class="m-how"><b>怎麼算：</b>媒體刊登本盟新聞稿或報導本盟主張的<b>篇數</b>，同一事件被多家轉載算多篇。<b>不是讀者人數</b>，我們不做受眾推估。與右方「聲量則數」是<b>兩套不同的統計系統</b>，不可相加、不可互相驗算。</p>
-              <p class="m-src">來源：本盟新聞稿露出索引逐篇加總（列管範圍內實計 3,017 篇；因索引仍有少數缺口，對外採保守表述「逾 3,000 篇」）。此項只計新聞稿露出，不含輿情監測系統另行抓取的社群、討論區與轉載。</p>
-              <a class="m-link" href="/methodology/">看完整說明 →</a>
-            </div>
-
-            <div class="m-card">
-              <div class="m-num"><span data-metric="buzz_1y">2,889</span><span class="m-affix">則</span></div>
-              <div class="m-label">近一年網路聲量</div>
-              <div class="m-period">2025 / 08 / 01 — 2026 / 08 / 27</div>
-              <p class="m-how"><b>怎麼算：</b>第三方輿情監測系統統計、提及本盟的網路<b>則數</b>：新聞 2,298＋社群 539＋討論區 50＋部落格 2。不是觸及人次。</p>
-              <p class="m-src">來源：輿情監測系統日趨勢資料逐日加總。註：三年累計口徑（7,917+ 則）另見資料方法頁，兩者期間與抓取系統不同，不可相加。</p>
-              <a class="m-link" href="/methodology/">看完整說明 →</a>
-            </div>
-
-            <div class="m-card">
-              <div class="m-num"><span data-metric="actions">286</span><span class="m-affix">場</span></div>
-              <div class="m-label">倡議行動</div>
-              <div class="m-period">2023 — 2025 · 三年累計</div>
-              <p class="m-how"><b>怎麼算：</b>記者會、立法院公聽會、政策論壇、議題座談、研究發表、跨組織聯合會議。<b>不含</b>內部行政會議與單純社群直播。</p>
-              <p class="m-src">來源：內部活動紀錄與行事曆，每場含時間、地點、議題、媒體出席與後續成果。</p>
-              <a class="m-link" href="/methodology/">看完整說明 →</a>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- ── 註腳與行動呼籲 ─────────────────────── -->
-        <div class="m-foot">
-          <div class="m-foot-note">
-            <strong>三個不做的事：</strong>不把「人次」寫成「人」；不用「篇數 × 平均讀者」推估觸及人數；
-            不把不同單位的數字（份／人次／篇／則）加成一個總數。夥伴主辦、本盟協力的調查，一律標明主辦單位。
-            <span class="m-stamp">最後更新 2026-09-05 · 資料期間 2023.01 — 2026.08</span>
-          </div>
-          <div class="m-cta">
-            <a class="btn btn-primary" href="/impact/reach/">看我們的調查 →</a>
-            <a class="btn btn-secondary" href="/methodology/">看完整說明</a>
-          </div>
-        </div>
+        <p class="cap-foot">
+          三個不做的事：不把「人次」寫成「人」；不用「篇數 × 平均讀者」推估觸及人數；不把不同單位的數字加成一個總數。
+          最後更新 2026-09-05 · 資料期間 2023.01 — 2026.08 ·
+          <a href="/methodology/">看完整口徑與資料方法 →</a>
+        </p>
 
       </div>
     </section>
@@ -795,61 +913,109 @@
       })();
     </script>
 
-    <!-- CH 02 — Now Happening（3 卡 Current Actions） -->
+    <!-- CH 04 — 正在推動的重點議題（block④，2026-09-14 由「正在發生的事」搬上＋補三欄；文案沿用既有頁面句子） -->
     <div class="chapter">
-      <span class="chapter-num">Ch 03</span>
+      <span class="chapter-num">Ch 04</span>
       <span class="chapter-line"></span>
-      <span class="chapter-label">Now Happening</span>
+      <span class="chapter-label">Key Issues Now</span>
     </div>
     <section class="now-happening">
       <div class="now-happening-inner">
         <div class="now-happening-head">
-          <h2><span class="highlight">正在發生</span>的事</h2>
+          <h2><span class="highlight">正在推動</span>的重點議題</h2>
           <a href="/events/" class="nh-link">完整活動公告 →</a>
         </div>
         <div class="now-happening-grid">
 
           <!-- 卡 1：兒家署組織法三讀（8/25 三讀，三聯盟聯合聲明） -->
-          <a href="/press/2026-08-26-cyfsa-third-reading/" class="nh-card urgent">
+          <div class="nh-card urgent">
             <span class="nh-badge">追蹤中</span>
             <div class="nh-when">8/25 立法院三讀 · 三聯盟聯合聲明</div>
-            <h3>兒家署組織法三讀<br>設立專責機關是起點</h3>
+            <h3><a href="/press/2026-08-26-cyfsa-third-reading/" style="color:inherit;">兒家署組織法三讀<br>設立專責機關是起點</a></h3>
             <div class="nh-body">
               倡議多年的中央兒少專責機關取得設立法源。三聯盟提出<b>四項訴求</b>：公布籌備期程、足額配置專業人力預算、建立行政院層級常態協作機制並納入教育體系、提出可驗收的首年目標。
             </div>
-            <span class="nh-cta">閱讀聯合新聞稿 →</span>
-          </a>
-
-          <!-- 卡 2：9/12 神經多樣性國際研討會（已於 2026-09-14 改為會議全紀錄入口）-->
-          <a href="/events/2026-09-12-neurodiversity-conference/records/" class="nh-card">
-            <span class="nh-badge">已舉行</span>
-            <div class="nh-when">9/12（六）· 亞東紀念醫院 · 國教盟為主辦單位之一</div>
-            <h3>台灣兒童青少年神經多樣性<br>第三屆國際研討會</h3>
-            <div class="nh-body">
-              9/12 亞東醫院——美國青少年支持機構專家訪台分享，聚焦家庭理解、臨床照護、社區心理與成人轉銜。
-              <br><span style="color:var(--brand-orange-text);font-weight:700;">會議全紀錄已上線</span>
+            <div class="ki-fields">
+              <div class="ki-field"><b>卡在哪</b>組織法尚待總統公布，依三讀條文，施行日期由行政院以命令定之。</div>
+              <div class="ki-field"><b>期望政府做什麼</b>公布籌備期程、足額配置專業人力預算、建立行政院層級常態協作機制並納入教育體系、提出可驗收的首年目標。</div>
+              <div class="ki-field"><b>民眾能做什麼</b><a href="https://lin.ee/97Nh9HT" target="_blank" rel="noopener">加入 LINE 好友，收到倡議進度通知 →</a></div>
             </div>
-            <span class="nh-cta">看會議全紀錄 →</span>
-          </a>
+            <a href="/press/2026-08-26-cyfsa-third-reading/" class="nh-cta">閱讀聯合新聞稿 →</a>
+          </div>
+
+          <!-- 卡 2：免費午餐開學 100 日檢核（2026-09-14 套站：理事長裁決換下神經多樣性研討會——
+               後者為已舉行活動紀錄，套不進「卡在哪／期望政府／民眾能做什麼」框架；本案到期日
+               2026-12-09 尚在追蹤中，三欄文字均取自既有頁面句子，不新寫主張） -->
+          <div class="nh-card">
+            <span class="nh-badge">進行中</span>
+            <div class="nh-when">2026-08-28 提四項要求 · 檢核到期 2026-12-09</div>
+            <h3><a href="/press/2026-08-28-school-lunch-100day-check/" style="color:inherit;">新學年22縣市免費營養午餐上路<br>免費不能變「便宜午餐」</a></h3>
+            <div class="nh-body">
+              全國22縣市免費營養午餐新學年全面上路，國教盟提醒「免費不等於制度零缺失」，提出食安抽驗、偏鄉量能、財源永續三項體檢，並呼籲教育部與各縣市啟動「開學100日檢核」，讓免費午餐同時是安全、優質的午餐。
+            </div>
+            <div class="ki-fields">
+              <div class="ki-field"><b>卡在哪</b>立法院已完成《學校午餐及飲食教育條例》草案初審，但中央與地方經費分擔、營養師及午餐執行人力等關鍵條文仍待協商；機關尚未回應本盟訴求。</div>
+              <div class="ki-field"><b>期望政府做什麼</b>國教盟呼籲行政院、教育部及立法院儘速補上財源、人力與監督機制。</div>
+              <div class="ki-field"><b>民眾能做什麼</b><a href="https://lin.ee/97Nh9HT" target="_blank" rel="noopener">加入 LINE 好友，收到倡議進度通知 →</a></div>
+            </div>
+            <a href="/press/2026-08-28-school-lunch-100day-check/" class="nh-cta">閱讀新聞稿 →</a>
+          </div>
 
           <!-- 卡 3：兒少權法 15 年大修（進行中） -->
-          <a href="/act/cwa-reform/" class="nh-card">
+          <div class="nh-card">
             <span class="nh-badge">進行中</span>
             <div class="nh-when">2026 衛福部草案預告 · 五場公聽會已全程出席</div>
-            <h3>兒少權法 15 年大修<br>165 條 · 六大缺口分析</h3>
+            <h3><a href="/act/cwa-reform/" style="color:inherit;">兒少權法 15 年大修<br>165 條 · 六大缺口分析</a></h3>
             <div class="nh-body">
               衛福部 4/21 預告兒少權法草案 165 條，國教盟發表<b>六大制度缺口分析</b>；5/20-6/4 五場公聽會全程出席（北區主場）。社工保證人地位、跨部會整合、緊急安置皆待補強。
             </div>
-            <span class="nh-cta">深度分析 →</span>
-          </a>
+            <div class="ki-fields">
+              <div class="ki-field"><b>卡在哪</b>社工保證人地位、跨部會整合、緊急安置皆待補強。</div>
+              <div class="ki-field"><b>期望政府做什麼</b><a href="/act/cwa-reform/">詳見六大制度缺口分析 →</a></div>
+              <div class="ki-field"><b>民眾能做什麼</b><a href="https://lin.ee/97Nh9HT" target="_blank" rel="noopener">加入 LINE 好友，收到倡議進度通知 →</a></div>
+            </div>
+            <a href="/act/cwa-reform/" class="nh-cta">深度分析 →</a>
+          </div>
 
         </div>
       </div>
     </section>
 
-    <!-- CH 03 — Latest -->
+    <!-- CH 05 — 依生活問題找議題（block⑤，2026-09-14 第二批樣稿；連結目標為既有議題頁，標題逐字沿用） -->
     <div class="chapter">
-      <span class="chapter-num">Ch 04</span>
+      <span class="chapter-num">Ch 05</span>
+      <span class="chapter-line"></span>
+      <span class="chapter-label">Find By Everyday Question</span>
+    </div>
+    <section class="life-questions" aria-labelledby="lq-title">
+      <div class="lq-head">
+        <h2 id="lq-title">依生活問題找議題</h2>
+      </div>
+      <div class="lq-grid">
+        <a href="https://policy.aabe.org.tw/education-reform/" class="lq-card" style="text-decoration:none;color:inherit;">
+          <div class="lq-topic">教育政策與改革</div>
+          <div class="lq-q">孩子在學校的午餐安全嗎？</div>
+          <p class="lq-desc">實驗教育、性平法、營養午餐、教育平權。從偏鄉公校轉型到性平法再校準的完整論述。</p>
+          <span class="lq-cta">看議題 →</span>
+        </a>
+        <a href="https://policy.aabe.org.tw/campus-safety/" class="lq-card" style="text-decoration:none;color:inherit;">
+          <div class="lq-topic">校園安全</div>
+          <div class="lq-q">校園霸凌發生時，怎麼處理？</div>
+          <p class="lq-desc">校園霸凌、少年司法、轉介教育、校園檢測。從新北割頸案啟動的兩年倡議路。</p>
+          <span class="lq-cta">看議題 →</span>
+        </a>
+        <a href="https://policy.aabe.org.tw/youth-health/" class="lq-card" style="text-decoration:none;color:inherit;">
+          <div class="lq-topic">青少年身心健康</div>
+          <div class="lq-q">孩子需要的輔導支持，到位了嗎？</div>
+          <p class="lq-desc">自殺防治、心理健康、菸害防制、無菸品世代。聯合拒菸聯盟推動 Tobacco-Free Generation。</p>
+          <span class="lq-cta">看議題 →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CH 06 — Latest -->
+    <div class="chapter">
+      <span class="chapter-num">Ch 06</span>
       <span class="chapter-line"></span>
       <span class="chapter-label">Latest Voice</span>
     </div>
@@ -890,228 +1056,22 @@
           <h3><a href="https://aabe.org.tw/press/2026-08-28-school-lunch-100day-check/">新學年22縣市免費營養午餐上路　國教盟：免費不能變「便宜午餐」</a></h3>
           <p>全國22縣市免費營養午餐新學年全面上路，國教盟提醒「免費不等於制度零缺失」，提出食安抽驗、偏鄉量能、財源永續三項體檢，並呼籲教育部與各縣市啟動「開學100日檢核」，讓免費午餐同時是安全、優質的午餐。</p>
         </article>
-        <article class="article-card" data-date="2026-08-26" style="border-left:4px solid #c8385a;padding-left:14px;">
-          <div class="date" style="color:#c8385a;font-weight:700;">2026.08.26 · 新聞稿</div>
-          <h3><a href="https://aabe.org.tw/press/2026-08-26-cyfsa-third-reading/">兒家署組織法三讀　三聯盟：設立專責機關是起點</a></h3>
-          <p>立法院8/25三讀通過兒家署組織法，三聯盟（兒童健康聯盟、婦兒盟、國教盟）聯合聲明：設專責機關是起點，服務真正進入家庭才是目標。提出四項訴求：儘速公布施行與籌備時程、依職掌足額配置專業人力與預算、建立行政院層級常態協作機制並納入教育體系、提出可公開驗收的首年目標。</p>
-        </article>
-        <article class="article-card" data-date="2026-08-21" style="border-left:4px solid #EB9B31;padding-left:14px;">
-          <div class="date" style="color:var(--brand-orange-text);font-weight:700;">2026.08.21 · 活動</div>
-          <h3><a href="https://aabe.org.tw/survey/">菸盒警示圖要放大到 85%？——72 小時民意徵集</a></h3>
-          <p>72 小時民意徵集已於 8/24 截止，結果已於 8/26 記者會公開發布，向立法院表達民意。</p>
-        </article>
-        <article class="article-card" data-date="2026-08-13">
-          <div class="date">2026.08.13</div>
-          <h3><a href="https://policy.aabe.org.tw/youth-health/20260813-student-counseling-act-implementation.html">學生輔導法人力落地追蹤：第 11 條施行日期、專輔敘薪與 213 人進度</a></h3>
-          <p>修正公布不等於施行。學輔法第11條、第11-1條施行日期仍待行政院核定；專輔調薪辦法完成發布後，亦自第11條施行之日起施行。本追蹤頁持續更新三個進度：行政院核定施行日期、專輔辦法預告與發布、213名新增專輔配置到位。</p>
-        </article>
-        <article class="article-card" data-date="2026-08-13" style="border-left:4px solid #c8385a;padding-left:14px;">
-          <div class="date" style="color:#c8385a;font-weight:700;">2026.08.13 · 新聞稿</div>
-          <h3><a href="https://aabe.org.tw/press/2026-08-13-counselor-salary-and-manpower/">教育部預告提高專輔人員敘薪上限　國教盟：行政院應同步核定施行日期、經費預算與補人期程</a></h3>
-          <p>教育部8/11預告修正專輔人員設置辦法，敘薪上限提高並增設資深優良職級。國教盟肯定改善待遇，提醒生效仍繫於學生輔導法第11條施行日期，提出三項訴求：核定施行日期、公開213名新增專輔配置與到位期程、公布服務品質與責任機制。</p>
-        </article>
-        <article class="article-card" data-date="2026-07-28" style="border-left:4px solid #c8385a;padding-left:14px;">
-          <div class="date" style="color:#c8385a;font-weight:700;">2026.07.28 · 新聞稿</div>
-          <h3><a href="https://aabe.org.tw/press/2026-07-28-teacher-dismissal-rules-returned/">教師解聘、考核辦法退回重訂 國教盟籲制度絕不能倒退！</a></h3>
-          <p>立法院退回教師解聘及考核辦法，國教盟籲制度絕不能倒退：退回重訂不等於廢除不適任教師處理機制，提出跨專業受理分流、全國一致檢核表等五項重訂原則，讓重大案件不漏接、一般爭議不升級。</p>
-        </article>
-        <article class="article-card" data-date="2026-07-25" style="border-left:4px solid #c8385a;padding-left:14px;">
-          <div class="date" style="color:#c8385a;font-weight:700;">2026.07.25 · 新聞稿</div>
-          <h3><a href="https://aabe.org.tw/press/2026-07-25-child-future-account-act/">國教盟肯定兒少未來帳戶立法 籲說清114萬元、確保財政永續及弱勢兒少權利</a></h3>
-          <p>立法院三讀通過《臺灣兒少成長及未來帳戶條例》，國教盟肯定制度方向，籲政府說清楚114萬元＝75萬成長津貼＋39萬帳戶本金，並提出財務規畫、津貼整合、提領簡明、公開監督四點建議。</p>
-        </article>
-        <article class="article-card" data-date="2026-07-10">
-          <div class="date">2026.07.10</div>
-          <h3><a href="https://policy.aabe.org.tw/school-lunch/2026-07-10-school-lunch-lazypack.html">毒油燒進校園，然後呢？——學校午餐專法懶人包</a></h3>
-          <p>從中聯苯駢芘毒油波及全國 881 校，一次看懂學校午餐的供餐、財政、營養與立法全貌；含供餐佔比、財政×食育、營養師負擔三張資料圖表與國教盟三大主張，以《食力》2026 食育力調查與監督資料庫為據。</p>
-        </article>
-        <article class="article-card" data-date="2026-07-10" style="border-left:4px solid #EB9B31;padding-left:14px;">
-          <div class="date" style="color:var(--brand-orange-text);font-weight:700;">2026.07.10 · 活動</div>
-          <h3><a href="https://aabe.org.tw/events/2026-07-10-cfa-missing-pieces-forum/">「兒家署缺少的拼圖？」論壇──重建從家庭出發的兒童支持系統</a></h3>
-          <p>2026/7/10（五）09:00–12:00 於台大公衛。中華民國兒童健康聯盟、全國婦兒團體聯盟、國教行動聯盟共同主辦，就家庭、教育、預算、司法、醫療五大制度缺口提出民間版補強建議，呼應兒少及家庭支持署（兒家署）組織法審議。</p>
-        </article>
-        <article class="article-card" data-date="2026-07-09" style="border-left:4px solid #c8385a;padding-left:14px;">
-          <div class="date" style="color:#c8385a;font-weight:700;">2026.07.09 · 新聞稿</div>
-          <h3><a href="https://aabe.org.tw/press/2026-07-09-school-lunch-law-toxic-oil/">苯駢芘超標油品波及校園，國教盟籲本會期完成學校午餐專法</a></h3>
-          <p>中聯油脂大豆沙拉油檢出苯駢芘達我國食用油脂法定上限 4.05 倍，波及 20 縣市 623 校與 258 幼兒園。國教盟籲立法院把握第 11 屆第 5 會期完成學校午餐專法，把校園食材追溯、公開、把關與穩定財源一併入法。</p>
-        </article>
-        <article class="article-card" data-date="2026-06-25">
-          <div class="date">2026.06.25</div>
-          <h3><a href="https://policy.aabe.org.tw/health/20260625-who-tobacco-harm-reduction-warning.html">WHO 為什麼示警「菸草減害」不是科學？</a></h3>
-          <p>行政院提案將持有電子煙納入禁止並提升刑責。拒菸聯盟指WHO FCTC COP11議程4.5直指菸草業「減害」論述；國教盟：喪屍菸彈多透過電子煙裝置流通、部分不含尼古丁，「非燃燒」不是低危害。</p>
-        </article>
-        <article class="article-card" data-date="2026-06-15">
-          <div class="date">2026.06.15</div>
-          <h3><a href="https://policy.aabe.org.tw/teacher-affairs/school-affairs-meeting-guide/">校事會議知識專頁：是什麼、怎麼進行、修法沿革、爭議與數據（中立事實整理）</a></h3>
-          <p>台灣校事會議制度的中立知識專頁：制度定義與法源、七步完整流程與法定時限、2019–2026 修法沿革、1,372 件投訴的完整漏斗與四方爭點地圖、十個公開報導案例——事實整理，不含主張。</p>
-        </article>
-        <article class="article-card" data-date="2026-06-15">
-          <div class="date">2026.06.15</div>
-          <h3><a href="https://policy.aabe.org.tw/teacher-affairs/20260615-korea-education-activity-protection-manual.html">韓國《2025 教育活動保護手冊》中文重點編譯：台灣校事會議改革的 10 點借鏡</a></h3>
-          <p>韓國教育部與教育開發院合編 220 頁《2025 教育活動保護手冊》之中文結構化重點編譯：兩級教權保護委員會、全鏈條時限、學生處分計分制、紛爭調解前置、被害教師支援 12 項、16 類侵害與 27 種公文書式；附對台灣校事會議改革的 10 點啟示與引用限制。</p>
-        </article>
-        <article class="article-card" data-date="2026-06-15" style="border-left:4px solid #c8385a;padding-left:14px;">
-          <div class="date" style="color:#c8385a;font-weight:700;">2026.06.15 · 新聞稿</div>
-          <h3><a href="https://aabe.org.tw/press/2026-06-15-school-affairs-meeting-triage/">校事會議不是廢不廢，而是分不分流——國教盟籲案件上移教育局處、合理管教提升法律位階</a></h3>
-          <p>立法院教育及文化委員會 6/15 召開教師解聘辦法及成績考核辦法公聽會。國教盟主張校事會議不廢除而分流：重大案件查到底、日常管教爭議不進最嚴格程序；受理分流上移縣市教育局處、合理管教提升法律位階。提出四項訴求，並籲教育部半年檢視提改革路線圖。</p>
-        </article>
-        <article class="article-card" data-date="2026-06-15">
-          <div class="date">2026.06.15</div>
-          <h3><a href="https://policy.aabe.org.tw/teacher-affairs/20260615-school-affairs-meeting-triage.html">校事會議該廢除嗎？國教盟公聽會完整書面意見：不是廢不廢，而是分流</a></h3>
-          <p>國教盟就立法院教育及文化委員會校事會議公聽會提出完整書面意見：不廢除而分流——小案前端化解、重案查到底、高風險快速轉介；依雇主原則上移教育局處；三層 15 項建議含合理管教安全港、程序終結效力、名譽回復與韓英日國際借鏡。</p>
-        </article>
-        <article class="article-card" data-date="2026-06-10">
-          <div class="date">2026.06.10</div>
-          <h3><a href="https://policy.aabe.org.tw/youth-health/20260610-new-drug-three-gaps.html">重懲毒駕之後，新興毒品還有哪三個防制缺口？</a></h3>
-          <p>依托咪酯（喪屍煙彈）引發毒駕，行政院 6/4 提出 14 項作為。國教盟指出重懲毒駕不等於擋住新興毒品，呼籲行政院與立法院補上「處理成少共犯、接住孩子、預警下一個毒品」三大缺口。</p>
-        </article>
-        <article class="article-card" data-date="2026-06-05" style="border-left:4px solid #2c6a64;padding-left:14px;">
-          <div class="date" style="color:#2c6a64;font-weight:700;">2026.06 · 推薦閱讀</div>
-          <h3><a href="/recommends/2026-yen-hanwen-life-course/">理事長推薦序：在日子裡數算──晏涵文《令人感動的生活課程》</a></h3>
-          <p>王瀚陽理事長為晏涵文教授策劃、七位第一線教師合著的健康教育教學實踐撰寫推薦序：健康教育從來不是副科，而是陪孩子練習一輩子的能力。</p>
-        </article>
-        <article class="article-card" data-date="2026-06-05" style="border-left:4px solid #9c4a3c;padding-left:14px;">
-          <div class="date" style="color:#9c4a3c;font-weight:700;">2026.06 · 推薦閱讀</div>
-          <h3><a href="/recommends/2026-luo-fengling-books/">理事長推薦序：把理想帶進現實──兩本給家長與老師的好書</a></h3>
-          <p>王瀚陽理事長為羅丰苓老師《霸凌真相，可能跟你想的不一樣》與《融合教育，可能跟你想的不一樣》撰寫推薦序，談霸凌防制與融合教育的可操作方法。</p>
-        </article>
-        <article class="article-card" data-date="2026-06-02" style="border-left:4px solid #0d9488;padding-left:14px;">
-          <div class="date" style="color:#0d9488;font-weight:700;">2026.06.27-28 · 研討會（協辦）</div>
-          <h3><a href="/events/2026-06-27-strengths-icf-conference/">2026 台灣ICF研究學會國際研討會──跨越生命歷程的優勢</a></h3>
-          <p>國教盟協辦：呼應 CRPD 與 CRC，從優勢取向與 ICF 探討兒童到成人的參與實踐。國際講者、優勢取向實務與錐體模式工作坊，6/27-28 於台大公衛學院。</p>
-        </article>
-        <article class="article-card" data-date="2026-06-01" style="border-left:4px solid #c8385a;padding-left:14px;">
-          <div class="date" style="color:#c8385a;font-weight:700;">2026.06.01 · 新聞稿</div>
-          <h3><a href="/press/2026-06-01-smoke-free-city-debate/">響應世界無菸日，青年辯論賽檢驗北市無菸城市</a></h3>
-          <p>國教盟青年部 6/1 新聞稿：基於 5/24 辯論賽觀察，呼籲關注二手菸外溢、執行配套與新興菸品管理——不是放幾座吸菸室，就叫真正無菸。</p>
-        </article>
-        <article class="article-card" data-date="2026-06-01">
-          <div class="date">2026.06.01</div>
-          <h3><a href="https://policy.aabe.org.tw/youth-health/20260601-true-smoke-free-city-three-tests.html">北市無菸城市上路後，要過哪三道考驗？</a></h3>
-          <p>國教盟青年部從青年發聲盃辯論賽彙整三道政策考驗：二手菸外溢、執行配套、加熱菸納管。含時間軸、數據與常見問題。</p>
-        </article>
-        <article class="article-card" data-date="2026-05-29" style="border-left:4px solid #c8385a;padding-left:14px;">
-          <div class="date" style="color:#c8385a;font-weight:700;">2026.05.29 · 新聞稿</div>
-          <h3><a href="/press/2026-05-29-flavoured-tobacco-ban/">世界無菸日前夕，6 民間團體籲落實禁加味菸：勿讓青少年成最大犧牲者</a></h3>
-          <p>WHO 連喊 3 年禁加味菸，台灣已拖 40 個月仍未公告全面禁止。台灣拒菸聯盟三項訴求：依法全面禁加味菸、建立衛福部新興菸品查緝平臺、推動無菸品世代。</p>
-        </article>
-        <article class="article-card" data-date="2026-05-29" style="border-left:4px solid #EB9B31;padding-left:14px;">
-          <div class="date" style="color:var(--brand-orange-text);font-weight:700;">2026.05.29 · 活動紀實</div>
-          <h3><a href="/events/2026-05-29-world-no-tobacco-day-press-conference/">台灣拒菸聯盟 5.31 世界無菸日記者會</a></h3>
-          <p>6 個民間團體於台大校友會館召開記者會，6 位代表說明加味菸對青少年的危害，並提出三項政策訴求。</p>
-        </article>
-        <article class="article-card" data-date="2026-05-28">
-          <div class="date">2026.05.28</div>
-          <h3><a href="https://policy.aabe.org.tw/teacher-affairs/20260528-teacher-mental-health-safety-net.html">老師被期待當學生的守門人，誰來當老師的守門人？</a></h3>
-          <p>教師離世事件不簡化歸因，但要追究制度責任。三項訴求：建立與考核脫鉤的教師心理安全支持方案、校方守門人制度、高壓事件啟動心理／行政／法律三軌支持並定期辦理守門人訓練。</p>
-        </article>
-        <article class="article-card" data-date="2026-05-28" style="border-left:4px solid #c8385a;padding-left:14px;">
-          <div class="date" style="color:#c8385a;font-weight:700;">2026.05.28 · 新聞稿</div>
-          <h3><a href="/press/2026-05-28-teacher-mental-health/">教師離世事件不簡化歸因——國教盟籲建立教師心理安全網：讓制度成為老師的守門人</a></h3>
-          <p>面對近日教師離世事件，國教盟主張不單一歸因但更應追究制度責任。提三項訴求：教育部建立教師心理安全方案、校方建立守門人制度、啟動「心理／行政／法律」三軌支持。</p>
-        </article>
-        <article class="article-card" data-date="2026-05-24" style="border-left:4px solid #EB9B31;padding-left:14px;">
-          <div class="date" style="color:var(--brand-orange-text);font-weight:700;">2026.05.24 · 活動紀實</div>
-          <h3><a href="/events/2026-05-24-youth-debate-smoke-free-city/">2026 臺北市青年發聲盃「無菸城市」辯論賽</a></h3>
-          <p>青年部跨校辯論賽，從青年視角檢驗台北市無菸城市政策。冠軍永和小戲院、亞軍我們都是大寶寶、季軍學長菜菜撈撈。</p>
-        </article>
-        <article class="article-card" data-date="2026-05-22">
-          <div class="date">2026.05.22</div>
-          <h3><a href="https://policy.aabe.org.tw/health/20260522-adhd-drug-licence-gap.html">ADHD 用藥，台灣為什麼連藥證都沒有？</a></h3>
-          <p>lisdexamfetamine、guanfacine、dexamfetamine 三項國際主流ADHD用藥在台TFDA藥證0張。不是健保不給付要自費，而是國內無正式上市的合法處方管道；附18項跨部會資料缺口總覽。</p>
-        </article>
-        <article class="article-card" data-date="2026-05-21">
-          <div class="date">2026.05.21</div>
-          <h3><a href="https://policy.aabe.org.tw/youth-health/20260521-anti-drug-anti-fraud-safety-net.html">反毒打詐，為什麼不能只靠查緝？</a></h3>
-          <p>2026青少年藥物濫用預防與犯罪防治國際研討會Day1。國教盟×共善促進協會四點呼籲：校園早期辨識輔導、打詐納青少年防吸收專章、跨部會兒少個案管理平台、依託咪酯電子煙快速預警機制。</p>
-        </article>
-        <article class="article-card" data-date="2026-04-23">
-          <div class="date">2026.04.23</div>
-          <h3><a href="https://policy.aabe.org.tw/education-reform/20260423-marathon-vs-tvec-exam.html">大型路跑再撞統測，考生的赴考風險由誰承擔？</a></h3>
-          <p>115學年度四技二專統測遇台北市路跑交管。國教盟：不能把考生風險簡化成一句「請提早出門」；四項訴求含大型活動核准前先與重大考試日期預先比對的制度性機制。</p>
-        </article>
-        <article class="article-card" data-date="2026-03-10">
-          <div class="date">2026.03.10</div>
-          <h3><a href="https://policy.aabe.org.tw/campus-safety/20260310-chiayi-campus-safety-chain.html">嘉義退學少年持刀返校，暴露校園安全的哪些制度斷鏈？</a></h3>
-          <p>國教盟指校園安全斷鏈在三個接口：在校預警、離校追蹤、跨系統聯防。四點呼籲——高風險離校青少年追蹤轉介、校安人力裝備盤點、門禁辨識最低標準、教育警政社政衛政跨系統聯防。</p>
-        </article>
-        <article class="article-card" style="border-left:4px solid #c8385a;padding-left:14px;">
-          <div class="date" style="color:#c8385a;font-weight:700;">2026.05.26 · 新聞稿</div>
-          <h3><a href="/press/2026-05-26-drug-driving-advocacy/">24 小時內彰化、中和兩死：當毒駕成為日常風險，行政院為什麼還沒補上電子煙載具漏洞？</a></h3>
-          <p>國教盟向行政院提出兩項訴求：補上電子煙載具法制漏洞、建立「源頭斷鏈＋第一線支援」專案。附三部曲深度政策報告（載具研究 + 毒駕政策）連結延伸閱讀。</p>
-        </article>
-        <article class="article-card">
-          <div class="date">2026.05.12</div>
-          <h3><a href="https://policy.aabe.org.tw/child-rights/20260512-children-families-ministry-how.html">兒童家庭部組織法該怎麼寫?16 條草案與雙條同修法律承諾解析</a></h3>
-          <p>兒童家庭部組織法草案 16 條 5 章完整要點與 9 個預期質疑回應。</p>
-        </article>
-        <article class="article-card">
-          <div class="date">2026.05.12</div>
-          <h3><a href="https://policy.aabe.org.tw/child-rights/20260512-children-families-ministry-why.html">為什麼台灣需要把兒少主管機關升格為「兒童家庭部」?</a></h3>
-          <p>兒少權法施行 15 年來最大幅度的全文修正,165 條卻沒有部級主管機關。兩會聯合呼籲修正第 2 條與第 3 條「雙條同修」,升格為部會層級的「兒童家庭部」…</p>
-        </article>
-        <article class="article-card">
-          <div class="date">2026.04.24</div>
-          <h3><a href="https://policy.aabe.org.tw/health/2026-04-24-健康台灣無菸品世代.html">台灣為何應推動「無菸品世代」全面禁絕新型菸品？</a></h3>
-          <p>英國《菸草和電子煙法案》通過終身禁紙菸但保留電子煙；國教盟、拒菸聯盟主張台灣應走真正的「無菸品世代」。</p>
-        </article>
-        <article class="article-card">
-          <div class="date">2026.04.22</div>
-          <h3><a href="https://policy.aabe.org.tw/child-rights/2026-04-22-兒少權法修法六大缺口.html">兒少權法15年大修為何仍補不上剴剴案六大制度缺口？</a></h3>
-          <p>國教盟肯定衛福部啟動近15年最大修法，但指出草案165條仍未觸及注意義務、升級機制、檢討法制化、委外責任鏈與起訴前審查六大核心。</p>
-        </article>
-        <article class="article-card">
-          <div class="date">2026.04.17</div>
-          <h3><a href="https://policy.aabe.org.tw/child-rights/2026-04-17-兒少保護體系改革五大修法工程.html">從保證人地位法理到五大修法工程：台灣兒少保護體系如何重建？</a></h3>
-          <p>三層論據解構保證人地位、四大法制漏洞、五大修法工程與五國經驗比較。</p>
-        </article>
-        <article class="article-card">
-          <div class="date">2026.04.17</div>
-          <h3><a href="https://policy.aabe.org.tw/child-rights/2026-04-17-剴剴案社工判刑與兒少保護修法訴求.html">剴剴案社工一審判刑後，台灣兒少保護制度該如何修補？</a></h3>
-          <p>法院三層論據認定社工保證人地位，判決法理可成立，但制度漏洞更需立法填補。</p>
-        </article>
+      <p style="margin-top:28px;font-size:0.85rem;color:var(--ink-3);text-align:center;">
+        僅顯示最新 6 則。完整索引與依議題／類型／年份篩選，請至
+        <a href="/press/all/" style="color:var(--brand-orange-text);font-weight:700;">全部文章列表 →</a>
+      </p>
       </div>
     </section>
 
-    <!-- CH 04 — Numbers -->
-    <div class="chapter">
-      <span class="chapter-num">Ch 05</span>
-      <span class="chapter-line"></span>
-      <span class="chapter-label">Numbers That Matter</span>
-    </div>
-    <section class="stats-band">
-      <div class="stats-inner">
-        <div>
-          <div class="stat-num" data-metric="partners">168<span class="plus">+</span></div>
-          <div class="stat-label">Partner Orgs · 合作組織</div>
-        </div>
-        <div>
-          <div class="stat-num" data-metric="press_releases">113</div>
-          <div class="stat-label">Press Releases · 新聞稿</div>
-        </div>
-        <div>
-          <div class="stat-num" data-metric="policy_briefs">47</div>
-          <div class="stat-label">Policy Briefs · 政策深度分析</div>
-        </div>
-        <div>
-          <div class="stat-num" data-metric="actions">286</div>
-          <div class="stat-label">Advocacy Events · 倡議行動</div>
-        </div>
-        <div>
-          <div class="stat-num" data-metric="buzz_3y">7,917<span class="plus">+</span></div>
-          <div class="stat-label">Media Mentions · 媒體聲量</div>
-        </div>
-      </div>
-      <p class="stats-note">2023 — 2025 近三年累計</p>
-    </section>
+    <!-- CH 05 統計帶已於 block③（能力與公信力摘要）併入，不再重複顯示；partners/actions/buzz_3y/press_releases/policy_briefs 完整值仍在 /methodology/ -->
 
-    <!-- CH 06 — Three Sites -->
+    <!-- CH 07 — 加入、合作與聯絡（block⑦） -->
     <div class="chapter">
-      <span class="chapter-num">Ch 06</span>
+      <span class="chapter-num">Ch 07</span>
       <span class="chapter-line"></span>
-      <span class="chapter-label">Knowledge &amp; Action</span>
+      <span class="chapter-label">Join &amp; Partner</span>
     </div>
-    <section class="cross-sites">
+    <section class="cross-sites" id="join">
       <div class="cross-inner">
         <a href="https://policy.aabe.org.tw/" class="cross-card" style="text-decoration:none;">
           <span class="kicker">Policy Knowledge Hub</span>
