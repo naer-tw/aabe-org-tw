@@ -29,3 +29,6 @@ dist/
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# 內部審查／複驗／規劃筆記不進公開 repo（真源另存工作區與看板）
+_source/審查/
