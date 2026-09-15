@@ -26,7 +26,6 @@ dist/
 .cache/
 
 # Pagefind 搜尋索引（部署前由 build_search_index.sh 產生，不進 repo）
-public/pagefind/
 
 # Python
 __pycache__/

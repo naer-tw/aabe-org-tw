@@ -23,7 +23,7 @@
 #   用 mergeIndex 做真正合併查詢——兩者都需要另外派工。
 #
 # 部署管線串接建議：在 postdeploy.sh 的「git push 之前」呼叫本腳本，
-# 確保 public/pagefind/（gitignore 排除，不進 repo）在每次部署前重建、
+# 確保 public/pagefind/（2026-09-15 起納入版控：正式站直接取用 repo 內 public/）在每次內容變更後重建、
 # 不會用到舊索引。
 
 set -euo pipefail
