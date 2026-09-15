@@ -4,6 +4,16 @@
   "how_to_update": "確認頁面改動是刻意的之後，跑 `python3 _source/deploy-automation/numbers_check.py --update-manifest`。",
   "marked": [
     {
+      "file": "briefs/school-lunch/index.html",
+      "id": "actions",
+      "count": 1
+    },
+    {
+      "file": "briefs/school-lunch/index.html",
+      "id": "press_releases",
+      "count": 1
+    },
+    {
       "file": "impact/index.html",
       "id": "actions",
       "count": 1
