@@ -21,7 +21,9 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import json
+import mimetypes
 import os
 import re
 import sys
@@ -34,7 +36,7 @@ BRIEFS_DIR = REPO / "_source" / "briefs"
 TEMPLATE_PATH = BRIEFS_DIR / "_template.html"
 NUMBERS_PATH = REPO / "_source" / "numbers.json"
 PUBLIC_DIR = REPO / "public"
-LOGO_SRC = "/wp-content/uploads/logo-naer.png"
+LOGO_FILE = PUBLIC_DIR / "wp-content" / "uploads" / "logo-naer.png"
 
 SECTION_ORDER = [
     "問題",
@@ -64,6 +66,26 @@ class Brief:
     updated: str
     contact: str
     sections: dict  # 標題 -> 原始 markdown 內容（含 HTML 註解）
+
+
+# ── logo ─────────────────────────────────────────────────────
+def logo_data_uri(path: Path = LOGO_FILE) -> str:
+    """把 logo 內嵌成 base64 data URI。
+
+    緣由（2026-09-15 理事長回饋）：模板原本用絕對路徑 `/wp-content/uploads/
+    logo-naer.png`——這條路徑在正式站（served from https://aabe.org.tw/）
+    解得到，但 build_briefs.py 是用 `page.goto(html_path.as_uri())` 直接開
+    file:// 本機檔案來產 PDF／HTML，`/wp-content/...` 在 file:// 底下會被
+    解成檔案系統根目錄，logo 讀不到、只剩 alt 文字。內嵌 base64 後，HTML／
+    PDF 兩種輸出都自帶圖檔，不依賴用什麼方式開頁面，之後也不用另外跑
+    http.server。
+    """
+    if not path.exists():
+        raise BriefError(f"logo 檔案不存在：{path}")
+    mime, _ = mimetypes.guess_type(str(path))
+    mime = mime or "image/png"
+    b64 = base64.b64encode(path.read_bytes()).decode("ascii")
+    return f"data:{mime};base64,{b64}"
 
 
 # ── 解析 ────────────────────────────────────────────────────
@@ -281,7 +303,7 @@ def build_one(md_path: Path, *, metrics: dict, template: str, dry_run: bool = Fa
     html = template
     html = html.replace("{{TITLE}}", brief.title)
     html = html.replace("{{CANONICAL}}", f"https://aabe.org.tw/briefs/{brief.issue}/")
-    html = html.replace("{{LOGO_SRC}}", LOGO_SRC)
+    html = html.replace("{{LOGO_SRC}}", logo_data_uri())
     html = html.replace("{{SEC_PROBLEM}}", render_section("問題", brief.sections["問題"], metrics))
     html = html.replace("{{SEC_RECOMMEND}}", render_section("具體建議", brief.sections["具體建議"], metrics))
     html = html.replace("{{SEC_AGENCIES}}", render_section("需協作機關", brief.sections["需協作機關"], metrics))
