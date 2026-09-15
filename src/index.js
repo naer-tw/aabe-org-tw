@@ -56,7 +56,12 @@ const SECURITY_HEADERS = {
   // 白名單：Google Fonts、Cloudflare Insights、自家圖片、inline style/script
   'Content-Security-Policy': [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com",
+    // 'wasm-unsafe-eval' 2026-09-15 新增：Pagefind 站內搜尋在 Worker 執行緒內用
+    // WebAssembly.instantiate 編譯搜尋索引，CSP3 起瀏覽器要求 script-src 明白列出
+    // 'wasm-unsafe-eval' 才准許（不等同 'unsafe-eval'，不開放文字 eval()/Function()，
+    // 只開放 WASM 編譯）。不影響同源限制，未新增任何外部網域。實測：不加這個關鍵字時
+    // pagefind.js 的 WebAssembly.instantiate 直接被 CSP 擋下（CompileError），搜尋完全無法用。
+    "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://static.cloudflareinsights.com",
     "script-src-elem 'self' 'unsafe-inline' https://static.cloudflareinsights.com",
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "font-src 'self' https://fonts.gstatic.com",

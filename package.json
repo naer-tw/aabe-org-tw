@@ -4,7 +4,8 @@
   "description": "國教行動聯盟（Action Alliance on Basic Education，AABE）官方網站原始碼。",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "search:index": "pagefind --site public --output-path public/pagefind"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/naer-tw/aabe-org-tw#readme",
   "devDependencies": {
+    "pagefind": "1.5.2",
     "wrangler": "^3.114.17"
   }
 }
