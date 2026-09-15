@@ -567,9 +567,15 @@
     .cap-foot a { color: #1F7F70; font-weight: 700; }
 
     /* ═══ 依生活問題找議題（block⑤）═══ */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     .life-questions { max-width: 1280px; margin: 0 auto; padding: 56px 32px; }
     .lq-head { text-align: center; margin-bottom: 32px; }
     .lq-head h2 { font-family: 'Noto Serif TC', serif; font-size: clamp(1.6rem, 2.8vw, 2.1rem); font-weight: 900; }
+    .lq-search-form { display: flex; gap: 8px; max-width: 480px; margin: 18px auto 0; }
+    .lq-search-input { flex: 1; min-width: 0; padding: 11px 18px; border: 1px solid var(--line); border-radius: 24px; font-size: 0.95rem; font-family: inherit; color: var(--ink); background: #fff; }
+    .lq-search-input:focus-visible { outline: 2px solid var(--brand-teal); outline-offset: 2px; }
+    .lq-search-btn { flex-shrink: 0; padding: 11px 22px; border-radius: 24px; border: 1px solid var(--ink); background: var(--ink); color: #fff; font-weight: 700; font-size: 0.9rem; cursor: pointer; }
+    .lq-search-btn:hover { background: var(--brand-teal); border-color: var(--brand-teal); }
     .lq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .lq-card { background: var(--bg-soft); border-radius: 6px; padding: 26px 24px; border-top: 4px solid var(--brand-teal); display: flex; flex-direction: column; }
     .lq-q { font-family: 'Noto Serif TC', serif; font-size: 1.1rem; font-weight: 900; line-height: 1.5; margin-bottom: 12px; }
@@ -623,10 +629,11 @@
       .cap-grid { grid-template-columns: 1fr; gap: 14px; }
       .life-questions { padding: 40px 20px; }
       .lq-grid { grid-template-columns: 1fr; gap: 14px; }
+      .lq-search-form { max-width: 100%; }
     }
   </style>
 </head>
-<body>
+<body data-pagefind-body>
 
   <a href="#main" class="skip-link">跳至主內容</a>
 
@@ -647,7 +654,7 @@
     </span>
   </div>
 </div>
-  <header class="topbar">
+  <header class="topbar" data-pagefind-ignore>
     <div class="topbar-inner">
       <a href="/" class="topbar-logo">
         <picture>
@@ -990,6 +997,11 @@
     <section class="life-questions" aria-labelledby="lq-title">
       <div class="lq-head">
         <h2 id="lq-title">依生活問題找議題</h2>
+        <form action="/press/all/" method="get" class="lq-search-form" role="search" aria-label="站內搜尋">
+          <label for="lqSearchInput" class="sr-only">搜尋文章</label>
+          <input type="search" id="lqSearchInput" name="q" class="lq-search-input" placeholder="或直接搜尋：營養午餐、特教、兒少權、霸凌……" aria-label="搜尋文章">
+          <button type="submit" class="lq-search-btn">搜尋</button>
+        </form>
       </div>
       <div class="lq-grid">
         <a href="https://policy.aabe.org.tw/education-reform/" class="lq-card" style="text-decoration:none;color:inherit;">
@@ -1103,7 +1115,7 @@
   </main>
 
   <!-- Footer -->
-  <footer>
+  <footer data-pagefind-ignore>
     <div class="footer-inner">
       <div class="footer-cols">
         <div class="footer-col">

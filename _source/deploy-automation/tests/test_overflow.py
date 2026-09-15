@@ -9,7 +9,7 @@ _policy-deploy 那頁的溢出測試在 `_policy-deploy` repo 自己的測試裡
 import pytest
 
 WIDTHS = [320, 390, 768, 1024, 1440]
-PAGES = ["/", "/events/", "/act/"]
+PAGES = ["/", "/events/", "/act/", "/press/all/"]  # 2026-09-15 加入 /press/all/（第三批②搜尋新增搜尋框）
 
 
 @pytest.mark.parametrize("path", PAGES)
