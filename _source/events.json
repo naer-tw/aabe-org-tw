@@ -1,101 +1,127 @@
 {
   "_meta": {
-    "schema": "1.0",
-    "purpose": "全站活動狀態單一來源，供 _source/deploy-automation/events_check.py 對表；欄位定義見規劃書「官網UIUX_改善規劃_20260914.md」第一批工作項1",
-    "updated": "2026-09-14",
-    "fields": "id/title/start/end/status(upcoming|ended|cancelled)/record_url/cta_label/cta_url/pages[]"
+    "schema": "1.1",
+    "purpose": "全站活動狀態單一來源，供 _source/deploy-automation/events_check.py 對表、apply_events.py 回填多頁卡片；欄位定義見規劃書「官網UIUX_改善規劃_20260914.md」第一批工作項1＋第三批工作項3",
+    "updated": "2026-09-15",
+    "fields": "id/title/display_title/start/end/status(upcoming|ended|cancelled)/record_url/cta_label/cta_url(舊版扁平欄位，events_check.py 仍讀取，保留相容)/badge(卡片徽章顯示文字，可人工覆寫；未填時由 status 與日期推得)/cta{label,url}(新版結構化欄位，apply_events.py 回填依據；url 可為 null＝純文字狀態不連結)/pages[]"
   },
   "events": [
     {
       "id": "2026-05-20-drug-abuse-conference",
       "title": "反毒／新興毒品趨勢研討會",
+      "display_title": "2026 青少年藥物濫用預防與犯罪防治國際研討會",
       "start": "2026-05-20",
       "end": "2026-05-20",
       "status": "ended",
       "record_url": "/events/2026-05-20-drug-abuse-conference/notes/",
       "cta_label": "看會議紀錄 →",
       "cta_url": "/events/2026-05-20-drug-abuse-conference/notes/",
+      "badge": null,
+      "cta": {"label": "18 場全紀錄 →", "url": "/events/2026-05-20-drug-abuse-conference/notes/"},
       "pages": ["/events/", "/events/2026-05-20-drug-abuse-conference/"]
     },
     {
       "id": "2026-05-24-youth-debate-smoke-free-city",
       "title": "青年部跨校辯論賽：無菸城市政策",
+      "display_title": "2026 臺北市青年發聲盃「無菸城市」辯論賽",
       "start": "2026-05-24",
       "end": "2026-05-24",
       "status": "ended",
       "record_url": "/events/2026-05-24-youth-debate-smoke-free-city/",
       "cta_label": "活動紀實 →",
       "cta_url": "/events/2026-05-24-youth-debate-smoke-free-city/",
-      "pages": ["/events/", "/", "/events/2026-05-24-youth-debate-smoke-free-city/"]
+      "badge": null,
+      "cta": {"label": "活動紀實 →", "url": "/events/2026-05-24-youth-debate-smoke-free-city/"},
+      "pages": ["/events/", "/events/2026-05-24-youth-debate-smoke-free-city/"]
     },
     {
       "id": "2026-05-29-world-no-tobacco-day-press-conference",
       "title": "世界無菸日記者會",
+      "display_title": "台灣拒菸聯盟 5.31 世界無菸日記者會──落實禁加味菸",
       "start": "2026-05-29",
       "end": "2026-05-29",
       "status": "ended",
       "record_url": "/events/2026-05-29-world-no-tobacco-day-press-conference/",
       "cta_label": "活動紀實 →",
       "cta_url": "/events/2026-05-29-world-no-tobacco-day-press-conference/",
-      "pages": ["/events/", "/", "/events/2026-05-29-world-no-tobacco-day-press-conference/"]
+      "badge": null,
+      "cta": {"label": "活動紀實 →", "url": "/events/2026-05-29-world-no-tobacco-day-press-conference/"},
+      "pages": ["/events/", "/events/2026-05-29-world-no-tobacco-day-press-conference/"]
     },
     {
       "id": "2026-06-26-tears-behind-the-phone",
       "title": "手機背後的眼淚：建構兒少網路霸凌行為之防護",
+      "display_title": "手機背後的眼淚：建構兒少網路霸凌行為之防護",
       "start": "2026-06-26",
       "end": "2026-06-26",
       "status": "ended",
       "record_url": null,
       "cta_label": "活動已結束",
       "cta_url": null,
-      "pages": ["/events/", "/events/2026-06-26-tears-behind-the-phone/"],
-      "note": "第三方主辦（TIPA），無公開會後紀錄頁；CTA 改純文字狀態，不連結"
+      "badge": "活動已結束",
+      "cta": {"label": "活動已結束", "url": null},
+      "pages": ["/events/2026-06-26-tears-behind-the-phone/"],
+      "note": "第三方主辦（TIPA），無公開會後紀錄頁；CTA 改純文字狀態，不連結。2026-09-15 複驗：/events/ 與 /act/ 目前無此活動卡片，pages[] 由 [\"/events/\",\"/events/2026-06-26-tears-behind-the-phone/\"] 修正為僅本頁"
     },
     {
       "id": "2026-06-27-strengths-icf-conference",
       "title": "台灣ICF研究學會第七次國際研討會：跨越生命歷程的優勢",
+      "display_title": "2026 台灣ICF研究學會國際研討會──跨越生命歷程的優勢",
       "start": "2026-06-27",
       "end": "2026-06-28",
       "status": "ended",
       "record_url": null,
       "cta_label": "活動已結束",
       "cta_url": null,
+      "badge": "活動已結束",
+      "cta": {"label": "研討會詳情 →", "url": "/events/2026-06-27-strengths-icf-conference/"},
       "pages": ["/events/", "/events/2026-06-27-strengths-icf-conference/"],
-      "note": "第三方主辦（台灣ICF研究學會），無公開會後紀錄頁；CTA 改純文字狀態，不連結"
+      "note": "第三方主辦（台灣ICF研究學會），無公開會後紀錄頁；badge 沿用既有「活動已結束」純文字狀態"
     },
     {
       "id": "2026-07-10-cfa-missing-pieces-forum",
       "title": "「兒家署缺少的拼圖？」論壇",
+      "display_title": "「兒家署缺少的拼圖？」論壇──重建從家庭出發的兒童支持系統",
       "start": "2026-07-10",
       "end": "2026-07-10",
       "status": "ended",
       "record_url": "/events/2026-07-10-cfa-missing-pieces-forum/notes/",
       "cta_label": "看會議全紀錄 →",
       "cta_url": "/events/2026-07-10-cfa-missing-pieces-forum/notes/",
-      "pages": ["/events/", "/act/", "/", "/events/2026-07-10-cfa-missing-pieces-forum/"]
+      "badge": "已結束 · Concluded",
+      "cta": {"label": "看會議全紀錄 →", "url": "/events/2026-07-10-cfa-missing-pieces-forum/notes/"},
+      "pages": ["/events/", "/act/", "/events/2026-07-10-cfa-missing-pieces-forum/"],
+      "note": "2026-09-15 複驗：首頁「最新倡議」卡目前無此活動（僅顯示最新 6 則會輪替），pages[] 移除「/」"
     },
     {
       "id": "2026-08-21-tobacco-warning-survey",
       "title": "菸盒警示圖文放大到 85%？72 小時民意徵集",
+      "display_title": "菸盒警示圖要放大到 85%？——72 小時民意徵集",
       "start": "2026-08-21",
       "end": "2026-08-24",
       "status": "ended",
       "record_url": null,
       "cta_label": "意見徵集已截止",
       "cta_url": null,
-      "pages": ["/", "/survey/"],
-      "note": "非 /events/ 子站的問卷型活動；結果已於 8/26 記者會發布，站上無專屬結果頁"
+      "badge": "已結束 · 國教盟發起",
+      "cta": {"label": "本次意見徵集已截止", "url": null},
+      "pages": ["/events/", "/survey/"],
+      "note": "非 /events/ 子站的問卷型活動；結果已於 8/26 記者會發布，站上無專屬結果頁。2026-09-15 複驗：首頁目前無引用，pages[] 移除「/」"
     },
     {
       "id": "2026-09-12-neurodiversity-conference",
       "title": "台灣兒童青少年神經多樣性第三屆國際研討會",
+      "display_title": "台灣兒童青少年神經多樣性第三屆國際研討會",
       "start": "2026-09-12",
       "end": "2026-09-12",
       "status": "ended",
       "record_url": "/events/2026-09-12-neurodiversity-conference/records/",
       "cta_label": "看會議全紀錄 →",
       "cta_url": "/events/2026-09-12-neurodiversity-conference/records/",
-      "pages": ["/events/", "/act/", "/", "/events/2026-09-12-neurodiversity-conference/"]
+      "badge": "已結束 · 國教盟主辦",
+      "cta": {"label": "看會議全紀錄 →", "url": "/events/2026-09-12-neurodiversity-conference/records/"},
+      "pages": ["/events/", "/", "/events/2026-09-12-neurodiversity-conference/"],
+      "note": "2026-09-15 複驗：/act/ 目前無此活動卡片，pages[] 移除「/act/」"
     }
   ]
 }

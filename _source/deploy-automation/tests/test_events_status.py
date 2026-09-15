@@ -29,16 +29,63 @@ def test_events_json_well_formed(repo_root: Path):
     events_path = repo_root / "_source" / "events.json"
     assert events_path.exists(), "缺少 _source/events.json（活動狀態單一來源）"
     data = json.loads(events_path.read_text(encoding="utf-8"))
+    assert data["_meta"]["schema"] == "1.1", "第三批工作項 3 已把 schema 升到 1.1"
     events = data["events"]
     assert len(events) >= 7, "events.json 應至少涵蓋現有 /events/ 子站的活動"
 
-    required = {"id", "title", "start", "end", "status"}
+    required = {"id", "title", "display_title", "start", "end", "status", "cta", "pages"}
     for ev in events:
         missing = required - ev.keys()
         assert not missing, f"活動 {ev.get('id')} 缺少欄位 {missing}"
         assert ev["status"] in ("upcoming", "ended", "cancelled"), (
             f"活動 {ev['id']} 的 status 值不合法：{ev['status']!r}"
         )
+        assert isinstance(ev["display_title"], str) and ev["display_title"], (
+            f"活動 {ev['id']} 的 display_title 必須是非空字串"
+        )
+        cta = ev["cta"]
+        assert isinstance(cta, dict) and "label" in cta and "url" in cta, (
+            f"活動 {ev['id']} 的 cta 必須是 {{label, url}} 結構"
+        )
+        assert isinstance(cta["label"], str) and cta["label"], (
+            f"活動 {ev['id']} 的 cta.label 必須是非空字串"
+        )
+        assert cta["url"] is None or isinstance(cta["url"], str), (
+            f"活動 {ev['id']} 的 cta.url 必須是字串或 null"
+        )
+        assert "badge" in ev, f"活動 {ev['id']} 缺少 badge 欄位（可為 null）"
+
+
+def test_event_pages_have_marker_coverage(repo_root: Path):
+    """② 涵蓋率：每個活動 pages[] 裡列的每一頁，都要有對應的 data-event-id 標記。
+
+    這是 apply_events.py 能回填的前提——pages[] 若宣稱某頁有這場活動的卡片，
+    但頁面上實際找不到標記，apply_events.py 會 ApplyError；這裡直接用同一套
+    邏輯對真站跑一次涵蓋率檢查，避免 pages[] 與版面現況脫勾（2026-09-14 之前
+    的 pages[] 就曾經是這樣，8 場活動裡有 4 場的 pages[] 與實際卡片位置對不
+    上，第三批複驗時修正）。
+    """
+    import json
+    import sys
+
+    automation_dir = repo_root / "_source" / "deploy-automation"
+    if str(automation_dir) not in sys.path:
+        sys.path.insert(0, str(automation_dir))
+    import apply_events as ae
+
+    events_data = json.loads((repo_root / "_source" / "events.json").read_text(encoding="utf-8"))
+    events = {ev["id"]: ev for ev in events_data["events"]}
+    public_dir = repo_root / "public"
+
+    file_ids: dict[str, set[str]] = {}
+    for path in public_dir.rglob("*.html"):
+        src = path.read_text(encoding="utf-8", errors="replace")
+        file_ids[str(path)] = {im.event_id for im in ae.find_event_ids(src)}
+
+    try:
+        ae.check_coverage(public_dir, events, file_ids)
+    except ae.ApplyError as e:
+        raise AssertionError(str(e))
 
 
 def test_checker_actually_detects_violations(tmp_path: Path, repo_root: Path):
