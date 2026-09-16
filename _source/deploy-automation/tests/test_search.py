@@ -89,6 +89,266 @@ def test_policy_pagefind_index_exists(public_dir: Path):
     assert page_count >= 40, f"政策站索引頁數 {page_count} < 40（預期 47 篇左右）"
 
 
+@pytest.mark.parametrize(
+    "query,expected_url_fragment",
+    [
+        ("營養午餐", "/press/2026-08-28-school-lunch-100day-check/"),
+        ("營養午餐", "/press/2026-07-09-school-lunch-law-toxic-oil/"),
+        ("校園安全", "/press/2026-07-09-school-lunch-law-toxic-oil/"),
+    ],
+)
+def test_search_cjk_bigram_fallback_recovers_press_pages(
+    page, local_site, public_dir: Path, query, expected_url_fragment
+):
+    """2026-09-16 中文分詞退化修法驗收（見 _source/審查/官網_搜尋分詞退化_診斷_20260916.md）。
+
+    修法前：新增 `/briefs/*` 政策摘要頁後，Pagefind 對「營養午餐」「校園安全」
+    這類剛好等於摘要頁標題起手片語的查詢，會用精確詞比對整個蓋掉模糊比對，
+    讓原本查得到的新聞稿從結果中消失（命中數從 5／21 坍縮到 1，且首筆換成
+    `/briefs/*` 頁）。修法：整詞結果 <3 筆時加開 2 字滑窗子查詢、分數打 5 折
+    後與整詞結果合併去重。本測試驗證新聞稿頁重新出現在結果卡片清單中。
+    """
+    if not (public_dir / "pagefind" / "pagefind.js").exists():
+        pytest.skip("public/pagefind/ 索引未建置，無法實測搜尋結果")
+
+    page.goto(local_site + "/press/all/")
+    page.fill("#siteSearchInput", query)
+    page.click("#siteSearchForm button[type=submit]")
+    page.wait_for_selector("#searchStatus:not([hidden])", timeout=5000)
+    page.wait_for_timeout(500)
+
+    links = page.locator("#searchResults .article-card h3 a")
+    hrefs = [links.nth(i).get_attribute("href") for i in range(links.count())]
+    matches = [h for h in hrefs if h and expected_url_fragment in h]
+    assert matches, (
+        f"「{query}」搜尋結果沒有找到 {expected_url_fragment}（新聞稿被政策摘要頁"
+        f"擠出結果，中文分詞退化修法未生效）：目前結果 {hrefs!r}"
+    )
+
+
+@pytest.mark.parametrize(
+    "query,min_count",
+    [
+        ("特教", 16),
+        ("兒少權", 20),
+        ("霸凌", 10),
+        ("免費營養午餐", 2),
+    ],
+)
+def test_search_regression_counts_not_below_prefix(
+    page, local_site, public_dir: Path, query, min_count
+):
+    """回歸檢查：中文分詞退化修法（2 字滑窗 fallback）不能讓修法前本來就正常的
+    查詢結果數變少。門檻值取自本檔套 patch 前，對真實 `/press/all/` 頁面（本站
+    ＋政策站鏡射合併後）用 Playwright 實跑量到的卡片數（非診斷檔對照表的單一
+    索引 `pf.search()` 數字——那是不同量測口徑，UI 是本站＋政策站合併＋slice
+    top 20，單索引數字不能直接套用）：特教 16、兒少權 20、霸凌 10、免費營養
+    午餐 2。fallback 邏輯只在整詞結果 <3 筆時「加開」子查詢並與整詞結果合併
+    去重（byUrl map 只增不減），理論上結果數只增不減，本測試確認這個假設
+    成立（即使「免費營養午餐」本身整詞結果 <3 筆會觸發 fallback，也不該低於
+    修法前的 2 筆）。
+    """
+    if not (public_dir / "pagefind" / "pagefind.js").exists():
+        pytest.skip("public/pagefind/ 索引未建置，無法實測搜尋結果")
+
+    page.goto(local_site + "/press/all/")
+    page.fill("#siteSearchInput", query)
+    page.click("#siteSearchForm button[type=submit]")
+    page.wait_for_selector("#searchStatus:not([hidden])", timeout=5000)
+    page.wait_for_timeout(1200)
+
+    cards = page.locator("#searchResults .article-card")
+    assert cards.count() >= min_count, (
+        f"「{query}」結果卡片數 {cards.count()} < 修法前門檻 {min_count}"
+        "（回歸：修法可能誤傷了原本正常的查詢）"
+    )
+
+
+BASE_30_CHARS = "國家教育政策兒少權益福利醫療衛生司法勞動環境保護能源交通建設科技文化體育"
+assert len(set(BASE_30_CHARS)) >= 30, "BASE_30_CHARS 唯一字數不足 30，量不到 C1 的 8-bigram 上限"
+LONG_CJK_QUERY = (BASE_30_CHARS * 7)[:200]
+assert len(LONG_CJK_QUERY) == 200
+
+
+# Codex 盲測縱深建議 1（2026-09-16，見 _source/審查/Codex盲測_PR2_搜尋分詞修法_20260916.md
+# §2-1）：舊版測試只信任產品自己的 `window.__pfSearchCalls` 全域變數——如果
+# instrumentation 本身失效（那個變數根本沒被遞增，甚至不存在），`window.__pfSearchCalls
+# || 0` 永遠是 0，`0 <= 18` 恆真，測試變成空殼綠燈。審查報告實測：把 8-bigram
+# 上限拿掉、真的打了 60 次 `pf.search()`，但如果同時假裝 instrumentation 不存在，
+# 舊斷言還是會過。
+#
+# 修法：不依賴產品程式碼裡的計數器，改用 Playwright `page.route` 攔截兩個
+# `pagefind.js` module 的網路請求，在回傳給頁面之前，對其原始碼做「逐字比對＋
+# 逐字替換」——比對／替換的字串來自本機實際的 `public/pagefind/pagefind.js`
+# 與 `public/pagefind-policy/pagefind.js`（2026-09-16 用 grep -F 逐字核對過，
+# 兩份檔案這段完全相同）：
+#
+#   var search=async(term,options2)=>{init_pagefind();return await pagefind.search(term,options2);};
+#
+# 換成同一行但在最前面多遞增一個測試自己專屬的全域 `window.__pfIndependentCalls`
+# ——這個變數名稱和產品的 `__pfSearchCalls` 不同、注入點也不同（在 ES module
+# 原始碼層級動刀，不是呼叫產品暴露出來的 API），因此不會被產品那層
+# instrumentation 失效牽連。比對字串若不存在（Pagefind 升版把這段原始碼改了），
+# 用 assert 讓測試直接失敗並印出訊息，不會靜默地「沒替換到，計數永遠 0，
+# 斷言照樣過」。
+_PAGEFIND_SEARCH_EXPORT_MARKER = (
+    "var search=async(term,options2)=>{init_pagefind();"
+    "return await pagefind.search(term,options2);};"
+)
+_PAGEFIND_SEARCH_EXPORT_INSTRUMENTED = (
+    "var search=async(term,options2)=>{"
+    "window.__pfIndependentCalls=(window.__pfIndependentCalls||0)+1;"
+    "init_pagefind();return await pagefind.search(term,options2);};"
+)
+
+
+def _instrument_pagefind_module_route(route):
+    """攔截 `**/pagefind{,-policy}/pagefind.js`，在原始碼裡逐字插入一個獨立
+    計數器，不改變其餘任何行為（route.fetch() 拿到的是真實回應，只動這一段
+    字串）。"""
+    resp = route.fetch()
+    body = resp.text()
+    assert _PAGEFIND_SEARCH_EXPORT_MARKER in body, (
+        "pagefind.js 的 search export 原始碼比對字串找不到——Pagefind 版本可能"
+        "已變，需要重新核對逐字字串（_PAGEFIND_SEARCH_EXPORT_MARKER），"
+        "不能讓測試在比對不到的情況下悄悄跳過 instrumentation"
+    )
+    route.fulfill(
+        response=resp,
+        body=body.replace(_PAGEFIND_SEARCH_EXPORT_MARKER, _PAGEFIND_SEARCH_EXPORT_INSTRUMENTED),
+    )
+
+
+def test_search_long_cjk_query_bounds_search_calls(page, local_site, public_dir: Path):
+    """C1 資源耗盡修法驗收（同源補審 PR2；2026-09-16 依 Codex 盲測縱深建議 1
+    改為不信任產品全域變數，見上方模組層註解）。
+
+    修法前：N 字全漢字查詢會對每個索引發 N-1 次未去重、無上限的 `pf.search()`
+    （196 字查詢實量 196 次、唯一 bigram 只有 28 個，約 85% 重複；四段長度
+    196／600／1200／2000 字耗時 5.06／14.31／26.68／43.56 秒，線性成長無上限）。
+    修法：查詢先截到前 30 字元、滑窗結果 Set 去重、唯一 bigram 最多取前 8 個。
+    本測試用 200 字全漢字查詢（前 30 字全不重複，確保撞到 8 的上限而非因為
+    重複字提早收斂），用獨立於產品程式碼的計數器驗證兩個索引合計
+    `pf.search()` 呼叫數 ≥1（確認 instrumentation 真的生效，不是空殼）且
+    不超過 2 索引 ×（1 次整詞＋8 次子查詢）＝18 次，且在 3 秒內完成。
+    """
+    if not (public_dir / "pagefind" / "pagefind.js").exists():
+        pytest.skip("public/pagefind/ 索引未建置，無法實測搜尋結果")
+
+    page.route("**/pagefind/pagefind.js", _instrument_pagefind_module_route)
+    page.route("**/pagefind-policy/pagefind.js", _instrument_pagefind_module_route)
+
+    page.goto(local_site + "/press/all/")
+    calls_before = page.evaluate("window.__pfIndependentCalls || 0")
+    assert calls_before == 0, f"計數器初始值應為 0，實際 {calls_before}（頁面載入時就有查詢？）"
+
+    import time
+    t0 = time.monotonic()
+    page.fill("#siteSearchInput", LONG_CJK_QUERY)
+    page.click("#siteSearchForm button[type=submit]")
+    page.wait_for_selector("#searchStatus:not([hidden])", timeout=5000)
+    page.wait_for_function(
+        "document.getElementById('searchStatus').textContent.indexOf('搜尋中') === -1",
+        timeout=10000,
+    )
+    elapsed = time.monotonic() - t0
+
+    calls_after = page.evaluate("window.__pfIndependentCalls || 0")
+    assert calls_after >= 1, (
+        "獨立計數器全程為 0——instrumentation 沒有生效（route 攔截或字串替換"
+        "可能失敗），這代表下面的上限斷言即使通過也不能證明什麼，必須先修好"
+        "instrumentation 本身"
+    )
+    assert calls_after <= 18, (
+        f"200 字全漢字查詢觸發 pf.search() {calls_after} 次，超過兩索引合計上限 18 次"
+        "（每索引 1 次整詞＋最多 8 次子查詢）——bigram 去重／上限可能失效"
+    )
+    assert elapsed < 3.0, f"200 字查詢耗時 {elapsed:.2f}s，超過 3 秒上限（資源耗盡修法可能失效）"
+
+
+CROSSCHECK_QUERIES = [
+    "營養午餐", "校園安全", "實驗教育", "神經多樣性",
+    "少子女化", "特教", "兒少權", "霸凌",
+    # 2026-09-16 Codex 盲測縱深建議 2：原清單漏了「免費營養午餐」——這個查詢
+    # main 只有 2 筆、修法前分支曾出現 12 筆錯誤政策網址（審查報告 §3.4 九查詢
+    # 對照表裡缺漏與錯誤網址數字最高的一列），是 C1／C2 兩個問題重疊命中
+    # 最嚴重的一個查詢，必須留在交叉比對清單裡才驗得到。
+    "免費營養午餐",
+]
+
+
+def _search_result_hrefs(pg, site, query):
+    pg.goto(site + "/press/all/")
+    pg.fill("#siteSearchInput", query)
+    pg.click("#siteSearchForm button[type=submit]")
+    pg.wait_for_selector("#searchStatus:not([hidden])", timeout=5000)
+    pg.wait_for_function(
+        "document.getElementById('searchStatus').textContent.indexOf('搜尋中') === -1",
+        timeout=10000,
+    )
+    links = pg.locator("#searchResults .article-card h3 a")
+    return [links.nth(i).get_attribute("href") for i in range(links.count())]
+
+
+@pytest.mark.parametrize("query", CROSSCHECK_QUERIES)
+def test_search_branch_results_superset_of_main_ordered(
+    page, browser, local_site, local_site_main, public_dir: Path, query
+):
+    """C2 擠出既有結果修法驗收（同源補審 PR2；2026-09-16 依 Codex 盲測縱深
+    建議 2 加逐筆政策網址網域斷言、縱深建議 4 加 top-20 上限斷言）：main 版
+    （修法前）查得到的結果，分支版（修法後）一筆都不能少（集合斷言），且
+    分支版前 N 筆（N＝main 版筆數）順序需與 main 版一致——因為本修法沒有
+    改動整詞查詢本身的算分與排序，只改「要不要／怎麼補 fallback」，main 版
+    原本查得到的整詞結果理應原封不動出現在分支版結果最前面。另外逐筆檢查
+    分支版每個政策站結果的網址網域正確（C1：不能被重複前綴污染成
+    `policy.aabe.org.twpolicy.aabe.org.tw` 這類假網域），以及分支版結果總數
+    不超過 20 筆（C2 縱深 4：top-20 契約）。
+    """
+    if not (public_dir / "pagefind" / "pagefind.js").exists():
+        pytest.skip("public/pagefind/ 索引未建置，無法實測搜尋結果")
+
+    main_ctx = browser.new_context()
+    main_page = main_ctx.new_page()
+    try:
+        main_hrefs = _search_result_hrefs(main_page, local_site_main, query)
+    finally:
+        main_ctx.close()
+
+    branch_hrefs = _search_result_hrefs(page, local_site, query)
+
+    assert len(branch_hrefs) <= 20, (
+        f"「{query}」分支版結果 {len(branch_hrefs)} 筆，超過 top-20 契約：{branch_hrefs!r}"
+    )
+
+    from urllib.parse import urlparse
+
+    seen_hosts = set()
+    for h in branch_hrefs:
+        if not h or "policy.aabe.org.tw" not in h:
+            continue
+        parsed = urlparse(h)
+        assert parsed.scheme == "https" and parsed.netloc == "policy.aabe.org.tw", (
+            f"「{query}」分支版政策站網址網域異常（疑似重複前綴污染）：{h!r}\n"
+            f"branch={branch_hrefs!r}"
+        )
+        seen_hosts.add(parsed.netloc)
+    assert seen_hosts <= {"policy.aabe.org.tw"}, (
+        f"「{query}」分支版政策站結果出現非預期網域：{seen_hosts!r}\nbranch={branch_hrefs!r}"
+    )
+
+    missing = [h for h in main_hrefs if h not in branch_hrefs]
+    assert not missing, (
+        f"「{query}」main 版查得到、分支版消失：{missing!r}\n"
+        f"main={main_hrefs!r}\nbranch={branch_hrefs!r}"
+    )
+
+    n = len(main_hrefs)
+    assert branch_hrefs[:n] == main_hrefs, (
+        f"「{query}」分支版前 {n} 筆順序與 main 版不一致：\n"
+        f"main={main_hrefs!r}\nbranch={branch_hrefs[:n]!r}"
+    )
+
+
 def test_search_bullying_includes_policy_site_result(page, local_site, public_dir: Path):
     if not (public_dir / "pagefind" / "pagefind.js").exists():
         pytest.skip("public/pagefind/ 索引未建置")

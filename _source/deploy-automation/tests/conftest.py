@@ -81,3 +81,61 @@ def page(browser):
     pg = ctx.new_page()
     yield pg
     ctx.close()
+
+
+# ─────────────────────────────────────────────────────────────
+# 同源補審 PR2 C2 回歸驗收（2026-09-16，見
+# _source/審查/同源補審_PR2_搜尋分詞修法_20260916.md）：
+# 另起一個伺服器，目錄結構與 public/ 相同，但 press/all/index.html 換成
+# origin/main 版本（修法前），其餘檔案（/assets、/pagefind、/pagefind-policy…）
+# 用 symlink 指到真正的 public/，不重複複製整個站台、也不需要重建索引。
+# 用來跟分支版比對搜尋結果：main 版查得到的，分支版一筆都不能少。
+# ─────────────────────────────────────────────────────────────
+import os
+import subprocess
+
+
+@pytest.fixture(scope="session")
+def main_index_html(repo_root: Path) -> str:
+    """取 origin/main 版 public/press/all/index.html 內容（C2 回歸比較基準）。"""
+    try:
+        out = subprocess.run(
+            ["git", "show", "origin/main:public/press/all/index.html"],
+            cwd=str(repo_root), capture_output=True, text=True, check=True,
+        )
+    except subprocess.CalledProcessError as e:  # pragma: no cover
+        pytest.skip(f"讀不到 origin/main 版 public/press/all/index.html：{e.stderr}")
+    return out.stdout
+
+
+@pytest.fixture(scope="session")
+def local_site_main(public_dir: Path, main_index_html: str, tmp_path_factory):
+    tmp_dir = tmp_path_factory.mktemp("public-main")
+    for item in public_dir.iterdir():
+        if item.name == "press":
+            press_dir = tmp_dir / "press"
+            press_dir.mkdir()
+            for sub in item.iterdir():
+                if sub.name == "all":
+                    all_dir = press_dir / "all"
+                    all_dir.mkdir()
+                    for f in sub.iterdir():
+                        if f.name == "index.html":
+                            (all_dir / "index.html").write_text(main_index_html, encoding="utf-8")
+                        else:
+                            os.symlink(f, all_dir / f.name)
+                else:
+                    os.symlink(sub, press_dir / sub.name)
+        else:
+            os.symlink(item, tmp_dir / item.name)
+
+    handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(tmp_dir))
+    httpd = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
+    port = httpd.server_address[1]
+    thread = threading.Thread(target=httpd.serve_forever, daemon=True)
+    thread.start()
+    try:
+        yield f"http://127.0.0.1:{port}"
+    finally:
+        httpd.shutdown()
+        thread.join(timeout=5)
