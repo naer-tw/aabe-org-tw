@@ -599,7 +599,11 @@
   }
 
   /* 中文分詞退化補丁（2026-09-16 診斷，見 _source/審查/官網_搜尋分詞退化_診斷_20260916.md；
-     2026-09-16 同源補審 C1/C2 修法，見 _source/審查/同源補審_PR2_搜尋分詞修法_20260916.md）：
+     2026-09-16 同源補審 C1/C2 修法，見 _source/審查/同源補審_PR2_搜尋分詞修法_20260916.md；
+     2026-09-16 Codex 異源盲測抓到同源補審 C1 修法未生效＋top-20 契約漏做，
+     二次修法見 _source/審查/Codex盲測_PR2_搜尋分詞修法_20260916.md §1 C1、
+     §2 縱深 4——真正修法在下方 `toResults`〔改成 Object.assign 出新物件，
+     不改寫 Pagefind 快取物件〕與 `runSearch`〔primary 先 slice(0,20)〕）：
      Pagefind 對 CJK 採「無標點的整段連續漢字＝一個詞」斷詞。當查詢字串剛好是
      某一頁被標點或換行獨立出來的詞（例如政策摘要頁標題「營養午餐：」），而在
      其他頁只是更長一段連續漢字的一部分（例如新聞稿「22縣市免費營養午餐上路」
@@ -661,14 +665,26 @@
     return pf.search(q);
   }
 
+  // Codex 盲測 C1 修法（2026-09-16，見 _source/審查/Codex盲測_PR2_搜尋分詞修法_20260916.md
+  // §1 C1）：Pagefind 對同一頁在同一個 pf 實例的生命週期內會回傳「同一個」快取
+  // 物件（`r.data()` 解析出的 `d`）。修法前這裡直接原地改寫 `d._score`／
+  // `d._isPolicy`／`d.url`；同一頁被主查詢與 2 字滑窗子查詢都命中時，兩次呼叫
+  // 共用同一個物件，後呼叫的（通常是分數打 5 折的子查詢）會把前面已經算好、
+  // 已經加過前綴的展示資料整個覆蓋掉——子查詢的 urlPrefix 再疊加一次，就疊成
+  // `https://policy.aabe.org.twhttps://policy.aabe.org.tw…` 這種雙重／三重前綴，
+  // 且整詞分數被子查詢的低分覆蓋。修法：每次都用 `Object.assign({}, d)` 建立
+  // 一個新的展示物件再寫欄位，絕不改寫 Pagefind 回傳的原始物件；並加一道
+  // 「url 已經是絕對網址就不再加前綴」的防護，即使未來哪裡不小心對同一筆
+  // 資料呼叫兩次 toResults，也不會疊出雙重前綴。
   function toResults(rawResults, weight, isPolicy, urlPrefix) {
     var top = rawResults.slice(0, 20);
     return Promise.all(top.map(function (r) {
       return r.data().then(function (d) {
-        d._score = r.score * weight;
-        d._isPolicy = isPolicy;
-        if (urlPrefix) d.url = urlPrefix + d.url;
-        return d;
+        var out = Object.assign({}, d);
+        out._score = r.score * weight;
+        out._isPolicy = isPolicy;
+        if (urlPrefix && !/^https?:\/\//.test(out.url)) out.url = urlPrefix + out.url;
+        return out;
       });
     }));
   }
@@ -751,8 +767,15 @@
       // 整詞結果永遠優先：先放 primary（已依分數排序），只在合計 <20 筆時
       // 用 fallback 補滿，且 fallback 絕不排在任何 primary 之前、也不會
       // 頂掉已經在 primary 裡的網址（C2）。
+      // Codex 盲測縱深建議 4（2026-09-16）：main 版本來就有全域 top-20 契約
+      // （單一索引 rawResults 在 toResults 就先 slice(0,20)，但兩個索引的
+      // primary 合併去重後可能超過 20 筆——例如「兒少權」本站 20＋政策站
+      // 若干筆去重後仍有 33 筆）。修法：primary 先截到 20 筆，need 依截斷後
+      // 的長度計算，最終 merged 再保險截一次，確保合併後的結果永遠不超過
+      // 20 筆、且截斷只會截掉分數較低的尾端。
+      primary = primary.slice(0, 20);
       var need = Math.max(0, 20 - primary.length);
-      var merged = primary.concat(fallback.slice(0, need));
+      var merged = primary.concat(fallback.slice(0, need)).slice(0, 20);
       renderResults(query, merged);
     }).catch(function (err) {
       statusEl.hidden = false;

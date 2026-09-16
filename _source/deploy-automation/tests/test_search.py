@@ -170,22 +170,76 @@ LONG_CJK_QUERY = (BASE_30_CHARS * 7)[:200]
 assert len(LONG_CJK_QUERY) == 200
 
 
+# Codex 盲測縱深建議 1（2026-09-16，見 _source/審查/Codex盲測_PR2_搜尋分詞修法_20260916.md
+# §2-1）：舊版測試只信任產品自己的 `window.__pfSearchCalls` 全域變數——如果
+# instrumentation 本身失效（那個變數根本沒被遞增，甚至不存在），`window.__pfSearchCalls
+# || 0` 永遠是 0，`0 <= 18` 恆真，測試變成空殼綠燈。審查報告實測：把 8-bigram
+# 上限拿掉、真的打了 60 次 `pf.search()`，但如果同時假裝 instrumentation 不存在，
+# 舊斷言還是會過。
+#
+# 修法：不依賴產品程式碼裡的計數器，改用 Playwright `page.route` 攔截兩個
+# `pagefind.js` module 的網路請求，在回傳給頁面之前，對其原始碼做「逐字比對＋
+# 逐字替換」——比對／替換的字串來自本機實際的 `public/pagefind/pagefind.js`
+# 與 `public/pagefind-policy/pagefind.js`（2026-09-16 用 grep -F 逐字核對過，
+# 兩份檔案這段完全相同）：
+#
+#   var search=async(term,options2)=>{init_pagefind();return await pagefind.search(term,options2);};
+#
+# 換成同一行但在最前面多遞增一個測試自己專屬的全域 `window.__pfIndependentCalls`
+# ——這個變數名稱和產品的 `__pfSearchCalls` 不同、注入點也不同（在 ES module
+# 原始碼層級動刀，不是呼叫產品暴露出來的 API），因此不會被產品那層
+# instrumentation 失效牽連。比對字串若不存在（Pagefind 升版把這段原始碼改了），
+# 用 assert 讓測試直接失敗並印出訊息，不會靜默地「沒替換到，計數永遠 0，
+# 斷言照樣過」。
+_PAGEFIND_SEARCH_EXPORT_MARKER = (
+    "var search=async(term,options2)=>{init_pagefind();"
+    "return await pagefind.search(term,options2);};"
+)
+_PAGEFIND_SEARCH_EXPORT_INSTRUMENTED = (
+    "var search=async(term,options2)=>{"
+    "window.__pfIndependentCalls=(window.__pfIndependentCalls||0)+1;"
+    "init_pagefind();return await pagefind.search(term,options2);};"
+)
+
+
+def _instrument_pagefind_module_route(route):
+    """攔截 `**/pagefind{,-policy}/pagefind.js`，在原始碼裡逐字插入一個獨立
+    計數器，不改變其餘任何行為（route.fetch() 拿到的是真實回應，只動這一段
+    字串）。"""
+    resp = route.fetch()
+    body = resp.text()
+    assert _PAGEFIND_SEARCH_EXPORT_MARKER in body, (
+        "pagefind.js 的 search export 原始碼比對字串找不到——Pagefind 版本可能"
+        "已變，需要重新核對逐字字串（_PAGEFIND_SEARCH_EXPORT_MARKER），"
+        "不能讓測試在比對不到的情況下悄悄跳過 instrumentation"
+    )
+    route.fulfill(
+        response=resp,
+        body=body.replace(_PAGEFIND_SEARCH_EXPORT_MARKER, _PAGEFIND_SEARCH_EXPORT_INSTRUMENTED),
+    )
+
+
 def test_search_long_cjk_query_bounds_search_calls(page, local_site, public_dir: Path):
-    """C1 資源耗盡修法驗收（同源補審 PR2）。
+    """C1 資源耗盡修法驗收（同源補審 PR2；2026-09-16 依 Codex 盲測縱深建議 1
+    改為不信任產品全域變數，見上方模組層註解）。
 
     修法前：N 字全漢字查詢會對每個索引發 N-1 次未去重、無上限的 `pf.search()`
     （196 字查詢實量 196 次、唯一 bigram 只有 28 個，約 85% 重複；四段長度
     196／600／1200／2000 字耗時 5.06／14.31／26.68／43.56 秒，線性成長無上限）。
     修法：查詢先截到前 30 字元、滑窗結果 Set 去重、唯一 bigram 最多取前 8 個。
     本測試用 200 字全漢字查詢（前 30 字全不重複，確保撞到 8 的上限而非因為
-    重複字提早收斂），驗證兩個索引合計 `pf.search()` 呼叫數不超過
-    2 索引 ×（1 次整詞＋8 次子查詢）＝18 次，且在 3 秒內完成。
+    重複字提早收斂），用獨立於產品程式碼的計數器驗證兩個索引合計
+    `pf.search()` 呼叫數 ≥1（確認 instrumentation 真的生效，不是空殼）且
+    不超過 2 索引 ×（1 次整詞＋8 次子查詢）＝18 次，且在 3 秒內完成。
     """
     if not (public_dir / "pagefind" / "pagefind.js").exists():
         pytest.skip("public/pagefind/ 索引未建置，無法實測搜尋結果")
 
+    page.route("**/pagefind/pagefind.js", _instrument_pagefind_module_route)
+    page.route("**/pagefind-policy/pagefind.js", _instrument_pagefind_module_route)
+
     page.goto(local_site + "/press/all/")
-    calls_before = page.evaluate("window.__pfSearchCalls || 0")
+    calls_before = page.evaluate("window.__pfIndependentCalls || 0")
     assert calls_before == 0, f"計數器初始值應為 0，實際 {calls_before}（頁面載入時就有查詢？）"
 
     import time
@@ -199,7 +253,12 @@ def test_search_long_cjk_query_bounds_search_calls(page, local_site, public_dir:
     )
     elapsed = time.monotonic() - t0
 
-    calls_after = page.evaluate("window.__pfSearchCalls || 0")
+    calls_after = page.evaluate("window.__pfIndependentCalls || 0")
+    assert calls_after >= 1, (
+        "獨立計數器全程為 0——instrumentation 沒有生效（route 攔截或字串替換"
+        "可能失敗），這代表下面的上限斷言即使通過也不能證明什麼，必須先修好"
+        "instrumentation 本身"
+    )
     assert calls_after <= 18, (
         f"200 字全漢字查詢觸發 pf.search() {calls_after} 次，超過兩索引合計上限 18 次"
         "（每索引 1 次整詞＋最多 8 次子查詢）——bigram 去重／上限可能失效"
@@ -210,6 +269,11 @@ def test_search_long_cjk_query_bounds_search_calls(page, local_site, public_dir:
 CROSSCHECK_QUERIES = [
     "營養午餐", "校園安全", "實驗教育", "神經多樣性",
     "少子女化", "特教", "兒少權", "霸凌",
+    # 2026-09-16 Codex 盲測縱深建議 2：原清單漏了「免費營養午餐」——這個查詢
+    # main 只有 2 筆、修法前分支曾出現 12 筆錯誤政策網址（審查報告 §3.4 九查詢
+    # 對照表裡缺漏與錯誤網址數字最高的一列），是 C1／C2 兩個問題重疊命中
+    # 最嚴重的一個查詢，必須留在交叉比對清單裡才驗得到。
+    "免費營養午餐",
 ]
 
 
@@ -230,11 +294,15 @@ def _search_result_hrefs(pg, site, query):
 def test_search_branch_results_superset_of_main_ordered(
     page, browser, local_site, local_site_main, public_dir: Path, query
 ):
-    """C2 擠出既有結果修法驗收（同源補審 PR2）：main 版（修法前）查得到的
-    結果，分支版（修法後）一筆都不能少（集合斷言），且分支版前 N 筆
-    （N＝main 版筆數）順序需與 main 版一致——因為本修法沒有改動整詞查詢
-    本身的算分與排序，只改「要不要／怎麼補 fallback」，main 版原本查得到
-    的整詞結果理應原封不動出現在分支版結果最前面。
+    """C2 擠出既有結果修法驗收（同源補審 PR2；2026-09-16 依 Codex 盲測縱深
+    建議 2 加逐筆政策網址網域斷言、縱深建議 4 加 top-20 上限斷言）：main 版
+    （修法前）查得到的結果，分支版（修法後）一筆都不能少（集合斷言），且
+    分支版前 N 筆（N＝main 版筆數）順序需與 main 版一致——因為本修法沒有
+    改動整詞查詢本身的算分與排序，只改「要不要／怎麼補 fallback」，main 版
+    原本查得到的整詞結果理應原封不動出現在分支版結果最前面。另外逐筆檢查
+    分支版每個政策站結果的網址網域正確（C1：不能被重複前綴污染成
+    `policy.aabe.org.twpolicy.aabe.org.tw` 這類假網域），以及分支版結果總數
+    不超過 20 筆（C2 縱深 4：top-20 契約）。
     """
     if not (public_dir / "pagefind" / "pagefind.js").exists():
         pytest.skip("public/pagefind/ 索引未建置，無法實測搜尋結果")
@@ -247,6 +315,26 @@ def test_search_branch_results_superset_of_main_ordered(
         main_ctx.close()
 
     branch_hrefs = _search_result_hrefs(page, local_site, query)
+
+    assert len(branch_hrefs) <= 20, (
+        f"「{query}」分支版結果 {len(branch_hrefs)} 筆，超過 top-20 契約：{branch_hrefs!r}"
+    )
+
+    from urllib.parse import urlparse
+
+    seen_hosts = set()
+    for h in branch_hrefs:
+        if not h or "policy.aabe.org.tw" not in h:
+            continue
+        parsed = urlparse(h)
+        assert parsed.scheme == "https" and parsed.netloc == "policy.aabe.org.tw", (
+            f"「{query}」分支版政策站網址網域異常（疑似重複前綴污染）：{h!r}\n"
+            f"branch={branch_hrefs!r}"
+        )
+        seen_hosts.add(parsed.netloc)
+    assert seen_hosts <= {"policy.aabe.org.tw"}, (
+        f"「{query}」分支版政策站結果出現非預期網域：{seen_hosts!r}\nbranch={branch_hrefs!r}"
+    )
 
     missing = [h for h in main_hrefs if h not in branch_hrefs]
     assert not missing, (
