@@ -27,6 +27,10 @@ dist/
 
 # Pagefind 搜尋索引（部署前由 build_search_index.sh 產生，不進 repo）
 
+# 政策站搜尋索引暫存標記目錄（build_search_index.sh 建置過程用，不進 repo；
+# public/pagefind-policy/ 是最終索引檔，那個要進 repo，跟 public/pagefind/ 同待遇）
+.policy-search-staging/
+
 # Python
 __pycache__/
 *.pyc

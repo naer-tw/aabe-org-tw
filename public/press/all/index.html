@@ -515,9 +515,15 @@
 </script>
 
 <script type="module">
-/* 站內搜尋（Pagefind，2026-09-15 新增）：呼叫 /pagefind/pagefind.js 的 search() API，
-   結果卡片沿用 .article-card 樣式；有查詢字串時隱藏篩選區與一般列表，改顯示搜尋結果。
-   支援網址參數 ?q=關鍵字（首頁搜尋框導到本頁時帶入）。 */
+/* 站內搜尋（Pagefind，2026-09-15 新增；2026-09-16 第四輪納入政策站）：
+   呼叫本站 /pagefind/pagefind.js 與政策站鏡射索引 /pagefind-policy/pagefind.js
+   兩個各自獨立的 search() API（兩個索引都同源放在 aabe.org.tw，不需要
+   Pagefind 的 mergeIndex()／不需要放寬 CSP connect-src），把兩邊結果依
+   分數合併排序後一起顯示。政策站結果的網址在渲染時補上
+   https://policy.aabe.org.tw 前綴（Pagefind 記錄的 url 是相對於建索引時
+   的 --site 根目錄，本來就不含網域）。
+   結果卡片沿用 .article-card 樣式；有查詢字串時隱藏篩選區與一般列表，
+   改顯示搜尋結果。支援網址參數 ?q=關鍵字（首頁搜尋框導到本頁時帶入）。 */
 (function () {
   var form = document.getElementById('siteSearchForm');
   var input = document.getElementById('siteSearchInput');
@@ -527,12 +533,24 @@
   var filterCount = document.getElementById('filterCount');
   var articleGrid = document.getElementById('articleGrid');
   var pagefindMod = null;
+  var policyPagefindMod = null;
+  var POLICY_ORIGIN = 'https://policy.aabe.org.tw';
 
   function loadPagefind() {
     if (!pagefindMod) {
       pagefindMod = import('/pagefind/pagefind.js');
     }
     return pagefindMod;
+  }
+
+  function loadPolicyPagefind() {
+    if (!policyPagefindMod) {
+      policyPagefindMod = import('/pagefind-policy/pagefind.js').catch(function (err) {
+        console.error('[policy pagefind load failed]', err);
+        return null;
+      });
+    }
+    return policyPagefindMod;
   }
 
   function escapeHtml(s) {
@@ -566,13 +584,37 @@
       var typeStr = (filters.type && filters.type[0]) || '';
       var topicStr = (filters.topic && filters.topic[0]) || '';
       var metaLine = [dateStr, typeStr].filter(Boolean).join(' · ');
+      var sourceBadge = d._isPolicy
+        ? '<span class="topic-pill" style="background:#2BA18E1a;color:#2BA18E;border:1px solid #2BA18E66;">政策分析 · policy.aabe.org.tw</span>'
+        : '';
       card.innerHTML =
         '<div class="ac-meta"><span class="ac-date">' + escapeHtml(metaLine) + '</span>' +
         (topicStr ? '<span class="topic-pill">' + escapeHtml(topicStr) + '</span>' : '') +
+        sourceBadge +
         '</div>' +
         '<h3><a href="' + d.url + '">' + (meta.title ? escapeHtml(meta.title) : escapeHtml(d.url)) + '</a></h3>' +
         '<p>' + (d.excerpt || '') + '</p>';
       resultsEl.appendChild(card);
+    });
+  }
+
+  function searchOneIndex(loader, urlPrefix, isPolicy, query) {
+    return loader().then(function (pf) {
+      if (!pf) return [];
+      return pf.search(query).then(function (search) {
+        var top = search.results.slice(0, 20);
+        return Promise.all(top.map(function (r) {
+          return r.data().then(function (d) {
+            d._score = r.score;
+            d._isPolicy = isPolicy;
+            if (urlPrefix) d.url = urlPrefix + d.url;
+            return d;
+          });
+        }));
+      });
+    }).catch(function (err) {
+      console.error('[pagefind search failed]', urlPrefix || '(本站)', err);
+      return [];
     });
   }
 
@@ -587,13 +629,13 @@
     statusEl.textContent = '搜尋中…';
     resultsEl.hidden = true;
 
-    loadPagefind().then(function (pf) {
-      return pf.search(query);
-    }).then(function (search) {
-      var top = search.results.slice(0, 20);
-      return Promise.all(top.map(function (r) { return r.data(); }));
-    }).then(function (dataArr) {
-      renderResults(query, dataArr);
+    Promise.all([
+      searchOneIndex(loadPagefind, '', false, query),
+      searchOneIndex(loadPolicyPagefind, POLICY_ORIGIN, true, query)
+    ]).then(function (results) {
+      var merged = results[0].concat(results[1]);
+      merged.sort(function (a, b) { return (b._score || 0) - (a._score || 0); });
+      renderResults(query, merged.slice(0, 20));
     }).catch(function (err) {
       statusEl.hidden = false;
       statusEl.textContent = '搜尋暫時無法使用，請稍後再試（或直接用下方篩選瀏覽）。';

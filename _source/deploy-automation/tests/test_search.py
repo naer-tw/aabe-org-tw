@@ -1,10 +1,14 @@
-"""⑧ 站內搜尋（Pagefind，第三批②，2026-09-15）。
+"""⑧ 站內搜尋（Pagefind，第三批②，2026-09-15；第四輪納入政策站，2026-09-16）。
 
-驗兩件事：
+驗幾件事：
   1. `public/pagefind/` 索引檔存在且非空（`npm run search:index` 或
-     `_source/deploy-automation/build_search_index.sh` 產出，gitignore 排除、
-     不進 repo——本機沒跑過 build 就會直接 SKIP，不算失敗）。
+     `_source/deploy-automation/build_search_index.sh` 產出——已納入版控，
+     本機沒跑過 build 才會 SKIP，不算失敗）。
   2. `/press/all/` 頁面有搜尋框，輸入「營養午餐」後能看到 ≥1 筆結果卡片。
+  3.（第四輪）`public/pagefind-policy/` 索引存在且頁數 ≥40（47 篇政策站文章，
+     見 `_source/deploy-automation/build_policy_search_staging.py`）。
+  4.（第四輪）搜「霸凌」能在合併結果裡找到至少一筆 policy.aabe.org.tw 連結，
+     且點擊卡片標題連結的 href 以 https://policy.aabe.org.tw/ 開頭。
 
 注意：`local_site` fixture 是純 `http.server`，不會附加 `src/index.js` 的
 CSP header（該檔對「所有」回應都加 CSP，含 pagefind.js／wasm）。這裡驗的是
@@ -67,3 +71,37 @@ def test_search_query_returns_results(page, local_site, public_dir: Path, query)
 
     cards = page.locator("#searchResults .article-card")
     assert cards.count() >= 1, f"「{query}」結果卡片數為 0"
+
+
+def test_policy_pagefind_index_exists(public_dir: Path):
+    index_dir = public_dir / "pagefind-policy"
+    if not (index_dir / "pagefind.js").exists():
+        pytest.skip(
+            "public/pagefind-policy/ 索引未建置——先跑 "
+            "`_source/deploy-automation/build_search_index.sh`"
+            "（需要 sibling repo `_policy-deploy`，或設環境變數 POLICY_SITE_DIR）"
+        )
+    entry = index_dir / "pagefind-entry.json"
+    assert entry.exists(), "缺 pagefind-policy/pagefind-entry.json"
+    import json
+    data = json.loads(entry.read_text(encoding="utf-8"))
+    page_count = sum(v.get("page_count", 0) for v in data.get("languages", {}).values())
+    assert page_count >= 40, f"政策站索引頁數 {page_count} < 40（預期 47 篇左右）"
+
+
+def test_search_bullying_includes_policy_site_result(page, local_site, public_dir: Path):
+    if not (public_dir / "pagefind" / "pagefind.js").exists():
+        pytest.skip("public/pagefind/ 索引未建置")
+    if not (public_dir / "pagefind-policy" / "pagefind.js").exists():
+        pytest.skip("public/pagefind-policy/ 索引未建置，無法驗證政策站合併結果")
+
+    page.goto(local_site + "/press/all/")
+    page.fill("#siteSearchInput", "霸凌")
+    page.click("#siteSearchForm button[type=submit]")
+    page.wait_for_selector("#searchStatus:not([hidden])", timeout=5000)
+    page.wait_for_timeout(500)
+
+    links = page.locator("#searchResults .article-card h3 a")
+    hrefs = [links.nth(i).get_attribute("href") for i in range(links.count())]
+    policy_hrefs = [h for h in hrefs if h and h.startswith("https://policy.aabe.org.tw/")]
+    assert policy_hrefs, f"「霸凌」合併結果沒有任何 policy.aabe.org.tw 連結：{hrefs!r}"
