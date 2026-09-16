@@ -2,7 +2,7 @@
   "_meta": {
     "schema": "1.1",
     "purpose": "全站活動狀態單一來源，供 _source/deploy-automation/events_check.py 對表、apply_events.py 回填多頁卡片；欄位定義見規劃書「官網UIUX_改善規劃_20260914.md」第一批工作項1＋第三批工作項3",
-    "updated": "2026-09-15",
+    "updated": "2026-09-16",
     "fields": "id/title/display_title/start/end/status(upcoming|ended|cancelled)/record_url/cta_label/cta_url(舊版扁平欄位，events_check.py 仍讀取，保留相容)/badge(卡片徽章顯示文字，可人工覆寫；未填時由 status 與日期推得)/cta{label,url}(新版結構化欄位，apply_events.py 回填依據；url 可為 null＝純文字狀態不連結)/pages[]"
   },
   "events": [
@@ -16,9 +16,10 @@
       "record_url": "/events/2026-05-20-drug-abuse-conference/notes/",
       "cta_label": "看會議紀錄 →",
       "cta_url": "/events/2026-05-20-drug-abuse-conference/notes/",
-      "badge": null,
+      "badge": "5 月 20-21 · 已結束",
       "cta": {"label": "18 場全紀錄 →", "url": "/events/2026-05-20-drug-abuse-conference/notes/"},
-      "pages": ["/events/", "/events/2026-05-20-drug-abuse-conference/"]
+      "pages": ["/events/", "/events/2026-05-20-drug-abuse-conference/"],
+      "note": "2026-09-16 第四輪人工整理：hero 徽章原殘留「LIVE」（活動已於 5/20-21 結束），改標 data-event-field=\"badge\" 由本檔回填"
     },
     {
       "id": "2026-05-24-youth-debate-smoke-free-city",
