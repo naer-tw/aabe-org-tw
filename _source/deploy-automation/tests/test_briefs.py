@@ -60,46 +60,68 @@ def test_school_lunch_brief_parses_and_matches_frontmatter(repo_root: Path):
         brief.sections["原始來源"].count("http") >= 3
 
 
+# ── 第四批②（batch4-briefs2）：五個新議題＋既有 school-lunch，共六篇參數化跑 ──
+ALL_ISSUES = [
+    "school-lunch",
+    "child-protection",
+    "campus-safety",
+    "youth-mental-health",
+    "teacher-affairs",
+    "education-reform",
+]
+
+
+@pytest.mark.parametrize("issue", ALL_ISSUES)
+def test_all_briefs_parse_and_have_three_plus_sources(repo_root: Path, issue: str):
+    brief = bb.parse_brief(repo_root / "_source" / "briefs" / f"{issue}.md")
+    assert brief.issue == issue
+    assert set(brief.sections) == set(bb.SECTION_ORDER)
+    assert "王瀚陽" in brief.contact
+    assert brief.sections["原始來源"].count("http") >= 3, \
+        f"{issue}：原始來源少於 3 個 URL"
+
+
 # ── 端對端：需要 Playwright（無則 SKIP，見 conftest 的 sync_playwright fixture）──
-@pytest.fixture()
-def built_school_lunch(repo_root: Path, sync_playwright):
-    """真的跑一次 build_briefs.py（子行程，確保跟指揮部手動跑的路徑一致）。"""
+@pytest.fixture(params=ALL_ISSUES)
+def built_brief(request, repo_root: Path, sync_playwright):
+    """真的跑一次 build_briefs.py（子行程，確保跟指揮部手動跑的路徑一致），對六篇議題各參數化跑一次。"""
+    issue = request.param
     script = repo_root / "_source" / "deploy-automation" / "build_briefs.py"
     proc = subprocess.run(
-        [sys.executable, str(script), "school-lunch"],
+        [sys.executable, str(script), issue],
         cwd=repo_root, capture_output=True, text=True, timeout=120,
     )
-    assert proc.returncode == 0, f"build_briefs.py 失敗：\n{proc.stdout}\n{proc.stderr}"
-    html_path = repo_root / "public" / "briefs" / "school-lunch" / "index.html"
-    pdf_path = repo_root / "public" / "briefs" / "school-lunch.pdf"
+    assert proc.returncode == 0, f"build_briefs.py 失敗（{issue}）：\n{proc.stdout}\n{proc.stderr}"
+    html_path = repo_root / "public" / "briefs" / issue / "index.html"
+    pdf_path = repo_root / "public" / "briefs" / f"{issue}.pdf"
     assert html_path.exists()
     assert pdf_path.exists()
-    return html_path, pdf_path
+    return issue, html_path, pdf_path
 
 
-def test_pdf_is_exactly_one_page(built_school_lunch):
-    _html_path, pdf_path = built_school_lunch
+def test_pdf_is_exactly_one_page(built_brief):
+    issue, _html_path, pdf_path = built_brief
     pdfinfo = shutil.which("pdfinfo")
     if pdfinfo is None:
         pytest.skip("pdfinfo 未安裝（poppler-utils）")
     proc = subprocess.run([pdfinfo, str(pdf_path)], capture_output=True, text=True, check=True)
     pages_line = next(l for l in proc.stdout.splitlines() if l.startswith("Pages:"))
     pages = int(pages_line.split(":", 1)[1].strip())
-    assert pages == 1, f"PDF 不是一頁：{proc.stdout}"
+    assert pages == 1, f"{issue} 的 PDF 不是一頁：{proc.stdout}"
 
 
-def test_html_has_all_seven_section_headings(built_school_lunch):
-    html_path, _pdf_path = built_school_lunch
+def test_html_has_all_seven_section_headings(built_brief):
+    issue, html_path, _pdf_path = built_brief
     html = html_path.read_text(encoding="utf-8")
     for title in bb.SECTION_ORDER:
-        assert f">{title}<" in html, f"HTML 裡找不到段落標題 {title}"
+        assert f">{title}<" in html, f"{issue} 的 HTML 裡找不到段落標題 {title}"
 
 
-def test_html_metrics_are_marked_for_numbers_check(built_school_lunch):
-    html_path, _pdf_path = built_school_lunch
+def test_html_metrics_are_marked_for_numbers_check(built_brief):
+    issue, html_path, _pdf_path = built_brief
     html = html_path.read_text(encoding="utf-8")
-    assert 'data-metric="press_releases"' in html
-    assert 'data-metric="actions"' in html
+    assert 'data-metric="press_releases"' in html, issue
+    assert 'data-metric="actions"' in html, issue
 
 
 def test_build_unknown_metric_key_aborts_without_writing(repo_root: Path, sync_playwright):
