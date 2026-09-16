@@ -598,19 +598,60 @@
     });
   }
 
+  /* 中文分詞退化補丁（2026-09-16 診斷，見 _source/審查/官網_搜尋分詞退化_診斷_20260916.md）：
+     Pagefind 對 CJK 採「無標點的整段連續漢字＝一個詞」斷詞。當查詢字串剛好是
+     某一頁被標點或換行獨立出來的詞（例如政策摘要頁標題「營養午餐：」），而在
+     其他頁只是更長一段連續漢字的一部分（例如新聞稿「22縣市免費營養午餐上路」
+     中的「營養午餐」四字），Pagefind 的精確詞比對命中前者後，會讓原本靠模糊
+     比對才找得到的後者從結果中完全消失——這不是新聞稿內容被改壞，是新增一篇
+     政策摘要頁就足以讓既有頁面的搜尋結果坍縮到只剩 1 筆（已用最小重現案例
+     驗證：同樣兩篇新聞稿，索引裡有沒有那篇政策摘要頁，決定查得到查不到）。
+     修法：只在單一索引的「整詞查詢」結果偏少（<3 筆，正常運作的查詢通常
+     ≥5 筆，不受影響）時，才加開 2 字滑窗子查詢（例如「營養午餐」→「營養」
+     「養午」「午餐」）補查、依 URL 去重、子查詢命中分數打 5 折後與整詞結果
+     合併——只在確認退化時才觸發，不改變原本運作正常之查詢的結果與噪音。 */
+  function isCJKChar(ch) { return /[一-鿿]/.test(ch); }
+  function cjkBigramFallbacks(q) {
+    var chars = Array.from(q);
+    if (chars.length < 3 || !chars.every(isCJKChar)) return [];
+    var out = [];
+    for (var i = 0; i < chars.length - 1; i++) out.push(chars[i] + chars[i + 1]);
+    return out;
+  }
+
   function searchOneIndex(loader, urlPrefix, isPolicy, query) {
     return loader().then(function (pf) {
       if (!pf) return [];
-      return pf.search(query).then(function (search) {
-        var top = search.results.slice(0, 20);
+      function toResults(rawResults, weight) {
+        var top = rawResults.slice(0, 20);
         return Promise.all(top.map(function (r) {
           return r.data().then(function (d) {
-            d._score = r.score;
+            d._score = r.score * weight;
             d._isPolicy = isPolicy;
             if (urlPrefix) d.url = urlPrefix + d.url;
             return d;
           });
         }));
+      }
+      return pf.search(query).then(function (search) {
+        return toResults(search.results, 1).then(function (primary) {
+          if (primary.length >= 3) return primary;
+          var fallbacks = cjkBigramFallbacks(query);
+          if (!fallbacks.length) return primary;
+          return Promise.all(fallbacks.map(function (fq) {
+            return pf.search(fq).then(function (fs) { return toResults(fs.results, 0.5); });
+          })).then(function (extraArrs) {
+            var byUrl = {};
+            primary.forEach(function (d) { byUrl[d.url] = d; });
+            extraArrs.forEach(function (arr) {
+              arr.forEach(function (d) {
+                var prev = byUrl[d.url];
+                if (!prev || d._score > prev._score) byUrl[d.url] = d;
+              });
+            });
+            return Object.keys(byUrl).map(function (u) { return byUrl[u]; });
+          });
+        });
       });
     }).catch(function (err) {
       console.error('[pagefind search failed]', urlPrefix || '(本站)', err);

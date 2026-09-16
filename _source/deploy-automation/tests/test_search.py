@@ -89,6 +89,81 @@ def test_policy_pagefind_index_exists(public_dir: Path):
     assert page_count >= 40, f"政策站索引頁數 {page_count} < 40（預期 47 篇左右）"
 
 
+@pytest.mark.parametrize(
+    "query,expected_url_fragment",
+    [
+        ("營養午餐", "/press/2026-08-28-school-lunch-100day-check/"),
+        ("營養午餐", "/press/2026-07-09-school-lunch-law-toxic-oil/"),
+        ("校園安全", "/press/2026-07-09-school-lunch-law-toxic-oil/"),
+    ],
+)
+def test_search_cjk_bigram_fallback_recovers_press_pages(
+    page, local_site, public_dir: Path, query, expected_url_fragment
+):
+    """2026-09-16 中文分詞退化修法驗收（見 _source/審查/官網_搜尋分詞退化_診斷_20260916.md）。
+
+    修法前：新增 `/briefs/*` 政策摘要頁後，Pagefind 對「營養午餐」「校園安全」
+    這類剛好等於摘要頁標題起手片語的查詢，會用精確詞比對整個蓋掉模糊比對，
+    讓原本查得到的新聞稿從結果中消失（命中數從 5／21 坍縮到 1，且首筆換成
+    `/briefs/*` 頁）。修法：整詞結果 <3 筆時加開 2 字滑窗子查詢、分數打 5 折
+    後與整詞結果合併去重。本測試驗證新聞稿頁重新出現在結果卡片清單中。
+    """
+    if not (public_dir / "pagefind" / "pagefind.js").exists():
+        pytest.skip("public/pagefind/ 索引未建置，無法實測搜尋結果")
+
+    page.goto(local_site + "/press/all/")
+    page.fill("#siteSearchInput", query)
+    page.click("#siteSearchForm button[type=submit]")
+    page.wait_for_selector("#searchStatus:not([hidden])", timeout=5000)
+    page.wait_for_timeout(500)
+
+    links = page.locator("#searchResults .article-card h3 a")
+    hrefs = [links.nth(i).get_attribute("href") for i in range(links.count())]
+    matches = [h for h in hrefs if h and expected_url_fragment in h]
+    assert matches, (
+        f"「{query}」搜尋結果沒有找到 {expected_url_fragment}（新聞稿被政策摘要頁"
+        f"擠出結果，中文分詞退化修法未生效）：目前結果 {hrefs!r}"
+    )
+
+
+@pytest.mark.parametrize(
+    "query,min_count",
+    [
+        ("特教", 16),
+        ("兒少權", 20),
+        ("霸凌", 10),
+        ("免費營養午餐", 2),
+    ],
+)
+def test_search_regression_counts_not_below_prefix(
+    page, local_site, public_dir: Path, query, min_count
+):
+    """回歸檢查：中文分詞退化修法（2 字滑窗 fallback）不能讓修法前本來就正常的
+    查詢結果數變少。門檻值取自本檔套 patch 前，對真實 `/press/all/` 頁面（本站
+    ＋政策站鏡射合併後）用 Playwright 實跑量到的卡片數（非診斷檔對照表的單一
+    索引 `pf.search()` 數字——那是不同量測口徑，UI 是本站＋政策站合併＋slice
+    top 20，單索引數字不能直接套用）：特教 16、兒少權 20、霸凌 10、免費營養
+    午餐 2。fallback 邏輯只在整詞結果 <3 筆時「加開」子查詢並與整詞結果合併
+    去重（byUrl map 只增不減），理論上結果數只增不減，本測試確認這個假設
+    成立（即使「免費營養午餐」本身整詞結果 <3 筆會觸發 fallback，也不該低於
+    修法前的 2 筆）。
+    """
+    if not (public_dir / "pagefind" / "pagefind.js").exists():
+        pytest.skip("public/pagefind/ 索引未建置，無法實測搜尋結果")
+
+    page.goto(local_site + "/press/all/")
+    page.fill("#siteSearchInput", query)
+    page.click("#siteSearchForm button[type=submit]")
+    page.wait_for_selector("#searchStatus:not([hidden])", timeout=5000)
+    page.wait_for_timeout(1200)
+
+    cards = page.locator("#searchResults .article-card")
+    assert cards.count() >= min_count, (
+        f"「{query}」結果卡片數 {cards.count()} < 修法前門檻 {min_count}"
+        "（回歸：修法可能誤傷了原本正常的查詢）"
+    )
+
+
 def test_search_bullying_includes_policy_site_result(page, local_site, public_dir: Path):
     if not (public_dir / "pagefind" / "pagefind.js").exists():
         pytest.skip("public/pagefind/ 索引未建置")
