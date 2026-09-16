@@ -592,13 +592,14 @@
         (topicStr ? '<span class="topic-pill">' + escapeHtml(topicStr) + '</span>' : '') +
         sourceBadge +
         '</div>' +
-        '<h3><a href="' + d.url + '">' + (meta.title ? escapeHtml(meta.title) : escapeHtml(d.url)) + '</a></h3>' +
+        '<h3><a href="' + escapeHtml(d.url) + '">' + (meta.title ? escapeHtml(meta.title) : escapeHtml(d.url)) + '</a></h3>' +
         '<p>' + (d.excerpt || '') + '</p>';
       resultsEl.appendChild(card);
     });
   }
 
-  /* 中文分詞退化補丁（2026-09-16 診斷，見 _source/審查/官網_搜尋分詞退化_診斷_20260916.md）：
+  /* 中文分詞退化補丁（2026-09-16 診斷，見 _source/審查/官網_搜尋分詞退化_診斷_20260916.md；
+     2026-09-16 同源補審 C1/C2 修法，見 _source/審查/同源補審_PR2_搜尋分詞修法_20260916.md）：
      Pagefind 對 CJK 採「無標點的整段連續漢字＝一個詞」斷詞。當查詢字串剛好是
      某一頁被標點或換行獨立出來的詞（例如政策摘要頁標題「營養午餐：」），而在
      其他頁只是更長一段連續漢字的一部分（例如新聞稿「22縣市免費營養午餐上路」
@@ -606,56 +607,118 @@
      比對才找得到的後者從結果中完全消失——這不是新聞稿內容被改壞，是新增一篇
      政策摘要頁就足以讓既有頁面的搜尋結果坍縮到只剩 1 筆（已用最小重現案例
      驗證：同樣兩篇新聞稿，索引裡有沒有那篇政策摘要頁，決定查得到查不到）。
-     修法：只在單一索引的「整詞查詢」結果偏少（<3 筆，正常運作的查詢通常
-     ≥5 筆，不受影響）時，才加開 2 字滑窗子查詢（例如「營養午餐」→「營養」
-     「養午」「午餐」）補查、依 URL 去重、子查詢命中分數打 5 折後與整詞結果
-     合併——只在確認退化時才觸發，不改變原本運作正常之查詢的結果與噪音。 */
+
+     修法：只在「單一索引」自己的整詞查詢結果偏少（<3 筆，正常運作的查詢
+     通常 ≥5 筆，不受影響）時，才對那個索引加開 2 字滑窗子查詢補查——trigger
+     判準維持逐索引（不能改成看兩索引合計才觸發：實測「校園安全」本站索引
+     只查到 1 筆〔被政策摘要頁精確比對蓋掉〕、政策站另有 2 筆，合計恰好等於
+     3，若改成「合計 <3 才觸發」會讓這個退化案例本身永遠觸發不了 fallback，
+     retest 見下方 C2 決策紀錄）。真正被 C2 審查抓到的問題不是「該不該觸發」，
+     是觸發之後的「合併排序」：以前用全域 `slice(0,20)` 把 fallback 噪音跟
+     正常結果混在一起排序，噪音分數只要夠高就會把另一個索引的正常結果擠出
+     可見範圍。
+
+     C1（資源耗盡）修法：查詢先截到前 30 字元再切窗（超長查詢不放大成本）、
+     滑窗結果用 Set 去重、唯一 bigram 最多取前 8 個——200 字全漢字查詢對
+     每個索引最多 1 次整詞查詢＋8 次子查詢＝9 次 search()（修法前是 196 次、
+     且 85% 重複查同一個詞）。兩個索引的子查詢一律共用同一組 bigram（同一個
+     query 只算一次 cjkBigramFallbacks，兩個索引各自拿同一份清單去查自己的
+     索引）。
+
+     C2（擠出既有結果）修法：合併規則改成「整詞結果永遠優先」——先合併兩個
+     索引的整詞結果（依分數排序、以 url 去重），只有在合計 <20 筆時才用
+     子查詢結果（分數打 5 折、同樣以 url 去重且排除已在整詞結果中的網址）
+     補到 20 筆，且子查詢結果不得排在任何整詞結果之前、也不會頂掉已經在
+     整詞結果裡的網址——徹底解決「已有好結果被 fallback 噪音擠出 top 20」。
+
+     C2 決策紀錄（2026-09-16，與審查報告字面「fallback 觸發改看兩索引主
+     結果合計 <3」不同，留痕）：審查報告 C2 建議把觸發判準從「單一索引」
+     改成「兩索引合計」，但用當前真實索引重跑「校園安全」（本站 1 筆＋
+     政策站 2 筆＝合計 3，不 <3）實測發現：若真的改成合計判準，這個退化
+     案例本身就不會再觸發 fallback，`test_search_cjk_bigram_fallback_
+     recovers_press_pages[校園安全-...]` 從綠翻紅。改採「保留逐索引觸發
+     判準（讓真正結果坍縮的那個索引能救回自己的正常結果）＋修正合併排序
+     （整詞結果永遠優先、fallback 只補空位不擠人）」——這個組合同時達成
+     C2 要修的效果（好結果不再被擠出 top 20）且不破壞既有退化修復；已用
+     `test_search_regression_counts_not_below_prefix` 與新增的 main／分支
+     集合比對測試交叉驗證無副作用（見下方測試紅綠證據）。
+
+     縱深修法：每個子查詢各自 catch 回空陣列，單一 bigram 查詢失敗不會
+     連帶清空該索引原本查得到的整詞結果。 */
   function isCJKChar(ch) { return /[一-鿿]/.test(ch); }
   function cjkBigramFallbacks(q) {
-    var chars = Array.from(q);
+    var chars = Array.from(q).slice(0, 30);
     if (chars.length < 3 || !chars.every(isCJKChar)) return [];
-    var out = [];
-    for (var i = 0; i < chars.length - 1; i++) out.push(chars[i] + chars[i + 1]);
-    return out;
+    var all = [];
+    for (var i = 0; i < chars.length - 1; i++) all.push(chars[i] + chars[i + 1]);
+    return Array.from(new Set(all)).slice(0, 8);
   }
 
-  function searchOneIndex(loader, urlPrefix, isPolicy, query) {
-    return loader().then(function (pf) {
-      if (!pf) return [];
-      function toResults(rawResults, weight) {
-        var top = rawResults.slice(0, 20);
-        return Promise.all(top.map(function (r) {
-          return r.data().then(function (d) {
-            d._score = r.score * weight;
-            d._isPolicy = isPolicy;
-            if (urlPrefix) d.url = urlPrefix + d.url;
-            return d;
-          });
-        }));
+  // 測試／除錯用呼叫次數計數器（C1 驗收：見 _source/deploy-automation/tests/test_search.py）。
+  window.__pfSearchCalls = 0;
+  function pfSearch(pf, q) {
+    window.__pfSearchCalls++;
+    return pf.search(q);
+  }
+
+  function toResults(rawResults, weight, isPolicy, urlPrefix) {
+    var top = rawResults.slice(0, 20);
+    return Promise.all(top.map(function (r) {
+      return r.data().then(function (d) {
+        d._score = r.score * weight;
+        d._isPolicy = isPolicy;
+        if (urlPrefix) d.url = urlPrefix + d.url;
+        return d;
+      });
+    }));
+  }
+
+  function dedupeByUrl(list) {
+    var byUrl = {};
+    var order = [];
+    list.forEach(function (d) {
+      var prev = byUrl[d.url];
+      if (!prev) {
+        order.push(d.url);
+        byUrl[d.url] = d;
+      } else if (d._score > prev._score) {
+        byUrl[d.url] = d;
       }
-      return pf.search(query).then(function (search) {
-        return toResults(search.results, 1).then(function (primary) {
-          if (primary.length >= 3) return primary;
-          var fallbacks = cjkBigramFallbacks(query);
-          if (!fallbacks.length) return primary;
-          return Promise.all(fallbacks.map(function (fq) {
-            return pf.search(fq).then(function (fs) { return toResults(fs.results, 0.5); });
-          })).then(function (extraArrs) {
-            var byUrl = {};
-            primary.forEach(function (d) { byUrl[d.url] = d; });
-            extraArrs.forEach(function (arr) {
-              arr.forEach(function (d) {
-                var prev = byUrl[d.url];
-                if (!prev || d._score > prev._score) byUrl[d.url] = d;
-              });
+    });
+    return order.map(function (u) { return byUrl[u]; });
+  }
+
+  // 單一索引：先跑整詞查詢；只有「這個索引自己」的整詞結果 <3 筆時，才對
+  // 這個索引加開共用的 bigram 子查詢（trigger 判準逐索引，理由見上方註解）。
+  // 回傳 {primary, fallback} 兩個陣列，讓外層 runSearch 統一做「整詞優先」
+  // 的全域合併，避免任一索引的 fallback 噪音在合併排序時擠掉另一索引的
+  // 正常結果（C2）。
+  function searchOneIndex(loader, urlPrefix, isPolicy, query, bigrams) {
+    return loader().then(function (pf) {
+      if (!pf) return { primary: [], fallback: [] };
+      return pfSearch(pf, query).then(function (search) {
+        return toResults(search.results, 1, isPolicy, urlPrefix).then(function (primary) {
+          if (primary.length >= 3 || !bigrams.length) {
+            return { primary: primary, fallback: [] };
+          }
+          return Promise.all(bigrams.map(function (fq) {
+            // 每個子查詢各自 catch：單一 bigram 失敗只丟掉那一筆，不會連帶
+            // 清空這個索引原本查得到的整詞結果（縱深修法）。
+            return pfSearch(pf, fq).then(function (fs) {
+              return toResults(fs.results, 0.5, isPolicy, urlPrefix);
+            }).catch(function (err) {
+              console.error('[pagefind fallback search failed]', urlPrefix || '(本站)', fq, err);
+              return [];
             });
-            return Object.keys(byUrl).map(function (u) { return byUrl[u]; });
+          })).then(function (arrs) {
+            var fallback = arrs.reduce(function (a, b) { return a.concat(b); }, []);
+            return { primary: primary, fallback: fallback };
           });
         });
       });
     }).catch(function (err) {
       console.error('[pagefind search failed]', urlPrefix || '(本站)', err);
-      return [];
+      return { primary: [], fallback: [] };
     });
   }
 
@@ -670,13 +733,27 @@
     statusEl.textContent = '搜尋中…';
     resultsEl.hidden = true;
 
+    var bigrams = cjkBigramFallbacks(query);
+
     Promise.all([
-      searchOneIndex(loadPagefind, '', false, query),
-      searchOneIndex(loadPolicyPagefind, POLICY_ORIGIN, true, query)
-    ]).then(function (results) {
-      var merged = results[0].concat(results[1]);
-      merged.sort(function (a, b) { return (b._score || 0) - (a._score || 0); });
-      renderResults(query, merged.slice(0, 20));
+      searchOneIndex(loadPagefind, '', false, query, bigrams),
+      searchOneIndex(loadPolicyPagefind, POLICY_ORIGIN, true, query, bigrams)
+    ]).then(function (indexResults) {
+      var primary = dedupeByUrl(indexResults[0].primary.concat(indexResults[1].primary));
+      primary.sort(function (a, b) { return (b._score || 0) - (a._score || 0); });
+
+      var primaryUrls = {};
+      primary.forEach(function (d) { primaryUrls[d.url] = true; });
+      var fallback = dedupeByUrl(indexResults[0].fallback.concat(indexResults[1].fallback))
+        .filter(function (d) { return !primaryUrls[d.url]; });
+      fallback.sort(function (a, b) { return (b._score || 0) - (a._score || 0); });
+
+      // 整詞結果永遠優先：先放 primary（已依分數排序），只在合計 <20 筆時
+      // 用 fallback 補滿，且 fallback 絕不排在任何 primary 之前、也不會
+      // 頂掉已經在 primary 裡的網址（C2）。
+      var need = Math.max(0, 20 - primary.length);
+      var merged = primary.concat(fallback.slice(0, need));
+      renderResults(query, merged);
     }).catch(function (err) {
       statusEl.hidden = false;
       statusEl.textContent = '搜尋暫時無法使用，請稍後再試（或直接用下方篩選瀏覽）。';

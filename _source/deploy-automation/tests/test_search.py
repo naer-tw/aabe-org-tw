@@ -164,6 +164,103 @@ def test_search_regression_counts_not_below_prefix(
     )
 
 
+BASE_30_CHARS = "國家教育政策兒少權益福利醫療衛生司法勞動環境保護能源交通建設科技文化體育"
+assert len(set(BASE_30_CHARS)) >= 30, "BASE_30_CHARS 唯一字數不足 30，量不到 C1 的 8-bigram 上限"
+LONG_CJK_QUERY = (BASE_30_CHARS * 7)[:200]
+assert len(LONG_CJK_QUERY) == 200
+
+
+def test_search_long_cjk_query_bounds_search_calls(page, local_site, public_dir: Path):
+    """C1 資源耗盡修法驗收（同源補審 PR2）。
+
+    修法前：N 字全漢字查詢會對每個索引發 N-1 次未去重、無上限的 `pf.search()`
+    （196 字查詢實量 196 次、唯一 bigram 只有 28 個，約 85% 重複；四段長度
+    196／600／1200／2000 字耗時 5.06／14.31／26.68／43.56 秒，線性成長無上限）。
+    修法：查詢先截到前 30 字元、滑窗結果 Set 去重、唯一 bigram 最多取前 8 個。
+    本測試用 200 字全漢字查詢（前 30 字全不重複，確保撞到 8 的上限而非因為
+    重複字提早收斂），驗證兩個索引合計 `pf.search()` 呼叫數不超過
+    2 索引 ×（1 次整詞＋8 次子查詢）＝18 次，且在 3 秒內完成。
+    """
+    if not (public_dir / "pagefind" / "pagefind.js").exists():
+        pytest.skip("public/pagefind/ 索引未建置，無法實測搜尋結果")
+
+    page.goto(local_site + "/press/all/")
+    calls_before = page.evaluate("window.__pfSearchCalls || 0")
+    assert calls_before == 0, f"計數器初始值應為 0，實際 {calls_before}（頁面載入時就有查詢？）"
+
+    import time
+    t0 = time.monotonic()
+    page.fill("#siteSearchInput", LONG_CJK_QUERY)
+    page.click("#siteSearchForm button[type=submit]")
+    page.wait_for_selector("#searchStatus:not([hidden])", timeout=5000)
+    page.wait_for_function(
+        "document.getElementById('searchStatus').textContent.indexOf('搜尋中') === -1",
+        timeout=10000,
+    )
+    elapsed = time.monotonic() - t0
+
+    calls_after = page.evaluate("window.__pfSearchCalls || 0")
+    assert calls_after <= 18, (
+        f"200 字全漢字查詢觸發 pf.search() {calls_after} 次，超過兩索引合計上限 18 次"
+        "（每索引 1 次整詞＋最多 8 次子查詢）——bigram 去重／上限可能失效"
+    )
+    assert elapsed < 3.0, f"200 字查詢耗時 {elapsed:.2f}s，超過 3 秒上限（資源耗盡修法可能失效）"
+
+
+CROSSCHECK_QUERIES = [
+    "營養午餐", "校園安全", "實驗教育", "神經多樣性",
+    "少子女化", "特教", "兒少權", "霸凌",
+]
+
+
+def _search_result_hrefs(pg, site, query):
+    pg.goto(site + "/press/all/")
+    pg.fill("#siteSearchInput", query)
+    pg.click("#siteSearchForm button[type=submit]")
+    pg.wait_for_selector("#searchStatus:not([hidden])", timeout=5000)
+    pg.wait_for_function(
+        "document.getElementById('searchStatus').textContent.indexOf('搜尋中') === -1",
+        timeout=10000,
+    )
+    links = pg.locator("#searchResults .article-card h3 a")
+    return [links.nth(i).get_attribute("href") for i in range(links.count())]
+
+
+@pytest.mark.parametrize("query", CROSSCHECK_QUERIES)
+def test_search_branch_results_superset_of_main_ordered(
+    page, browser, local_site, local_site_main, public_dir: Path, query
+):
+    """C2 擠出既有結果修法驗收（同源補審 PR2）：main 版（修法前）查得到的
+    結果，分支版（修法後）一筆都不能少（集合斷言），且分支版前 N 筆
+    （N＝main 版筆數）順序需與 main 版一致——因為本修法沒有改動整詞查詢
+    本身的算分與排序，只改「要不要／怎麼補 fallback」，main 版原本查得到
+    的整詞結果理應原封不動出現在分支版結果最前面。
+    """
+    if not (public_dir / "pagefind" / "pagefind.js").exists():
+        pytest.skip("public/pagefind/ 索引未建置，無法實測搜尋結果")
+
+    main_ctx = browser.new_context()
+    main_page = main_ctx.new_page()
+    try:
+        main_hrefs = _search_result_hrefs(main_page, local_site_main, query)
+    finally:
+        main_ctx.close()
+
+    branch_hrefs = _search_result_hrefs(page, local_site, query)
+
+    missing = [h for h in main_hrefs if h not in branch_hrefs]
+    assert not missing, (
+        f"「{query}」main 版查得到、分支版消失：{missing!r}\n"
+        f"main={main_hrefs!r}\nbranch={branch_hrefs!r}"
+    )
+
+    n = len(main_hrefs)
+    assert branch_hrefs[:n] == main_hrefs, (
+        f"「{query}」分支版前 {n} 筆順序與 main 版不一致：\n"
+        f"main={main_hrefs!r}\nbranch={branch_hrefs[:n]!r}"
+    )
+
+
 def test_search_bullying_includes_policy_site_result(page, local_site, public_dir: Path):
     if not (public_dir / "pagefind" / "pagefind.js").exists():
         pytest.skip("public/pagefind/ 索引未建置")
