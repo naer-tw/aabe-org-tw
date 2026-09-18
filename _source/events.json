@@ -2,7 +2,7 @@
   "_meta": {
     "schema": "1.1",
     "purpose": "全站活動狀態單一來源，供 _source/deploy-automation/events_check.py 對表、apply_events.py 回填多頁卡片；欄位定義見規劃書「官網UIUX_改善規劃_20260914.md」第一批工作項1＋第三批工作項3",
-    "updated": "2026-09-17",
+    "updated": "2026-09-18",
     "fields": "id/title/display_title/start/end/status(upcoming|ended|cancelled)/record_url/cta_label/cta_url(舊版扁平欄位，events_check.py 仍讀取，保留相容)/badge(卡片徽章顯示文字，可人工覆寫；未填時由 status 與日期推得)/cta{label,url}(新版結構化欄位，apply_events.py 回填依據；url 可為 null＝純文字狀態不連結)/pages[]"
   },
   "events": [
@@ -194,6 +194,27 @@
         "/events/2026-10-02-mental-health-city-forum/"
       ],
       "note": "2026-09-17 新增：中華心理衛生協會×臺灣心理健康聯盟合辦，本盟為盟友深度參與；活動後改 status=ended 並視情補 record_url"
+    },
+    {
+      "id": "2026-child-pledge-signup",
+      "title": "兒少十大承諾・民間團體連署",
+      "display_title": "兒少十大承諾・民間團體連署",
+      "start": "2026-09-18",
+      "end": "2026-09-30",
+      "status": "upcoming",
+      "record_url": null,
+      "cta_label": "我要連署",
+      "cta_url": "/act/child-pledge/",
+      "badge": "連署中 · 邀請共同發起",
+      "cta": {
+        "label": "我要連署",
+        "url": "/act/child-pledge/"
+      },
+      "pages": [
+        "/",
+        "/events/"
+      ],
+      "note": "2026-09-18 新增：邀請民間團體具名共同發起兒少十大承諾，連署至 9/30；候選人簽署階段另行公告。理事長 2026-09-18 裁稱謂為共同發起（國教盟維持召集人）。"
     }
   ]
 }
