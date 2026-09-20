@@ -34,6 +34,39 @@ def test_parse_frontmatter_rejects_bad_slug():
         br.parse_frontmatter(text)
 
 
+def test_parse_frontmatter_allows_comment_lines():
+    """2026-09-20 新增：frontmatter 允許 `#` 開頭的註解行（例：標記某欄位是
+    佔位值，發布當日要改），不參與 key: value 解析、也不擋 parse。"""
+    text = ("---\nslug: 2026-01\ntitle: t\nreport_no: 1\nperiod_start: 2026-01-01\n"
+            "period_end: 2026-03-31\npublished: 2026-04-01\n"
+            "# published 於發布當日改為實際日期\n"
+            "summary: s\nstatus: draft\n---\n"
+            "# H\n## 摘要\nx\n## 本期數字一覽\n| a | b | c |\n|---|---|---|\n| x | y | z |\n"
+            "## 參考資料\nx\n")
+    meta, _body = br.parse_frontmatter(text)
+    assert meta["published"] == "2026-04-01"
+    assert "# published 於發布當日改為實際日期" not in meta
+
+
+def test_parse_frontmatter_rejects_published_before_period_end():
+    """2026-09-20 指揮部目視抓到：period_end 誤填季度尾日、published 佔位值比
+    period_end 還早，邏輯上「發布日期早於資料涵蓋期間結束」講不通——擋住。"""
+    text = ("---\nslug: 2026-01\ntitle: t\nreport_no: 1\nperiod_start: 2026-01-01\n"
+            "period_end: 2026-09-30\npublished: 2026-09-24\nsummary: s\nstatus: draft\n---\n"
+            "# H\n## 摘要\nx\n## 本期數字一覽\n| a | b | c |\n|---|---|---|\n| x | y | z |\n"
+            "## 參考資料\nx\n")
+    with pytest.raises(br.ReportError, match="不得早於 period_end"):
+        br.parse_frontmatter(text)
+
+
+def test_parse_frontmatter_allows_published_equal_to_period_end():
+    text = ("---\nslug: 2026-01\ntitle: t\nreport_no: 1\nperiod_start: 2026-01-01\n"
+            "period_end: 2026-09-24\npublished: 2026-09-24\nsummary: s\nstatus: draft\n---\n"
+            "# H\n## 摘要\nx\n")
+    meta, _body = br.parse_frontmatter(text)
+    assert meta["published"] == meta["period_end"] == "2026-09-24"
+
+
 def test_parse_frontmatter_rejects_summary_over_120_chars():
     long_summary = "字" * 121
     text = (f"---\nslug: 2026-01\ntitle: t\nreport_no: 1\nperiod_start: 2026-01-01\n"
@@ -130,12 +163,30 @@ def test_markdown_to_html_renders_table_list_blockquote_and_h3():
     assert '<a href="https://example.com/page"' in html
 
 
+def test_render_release_info_uses_frontmatter_published_not_body_date():
+    """2026-09-20 指揮部目視手機版單篇頁抓到：正文前言區塊帶著草稿當天的
+    「**發布日期**：2026 年 9 月 18 日」，跟 frontmatter published（正式發布日，
+    可能因審稿延後）不一致；render_release_info 一律改插入 published 換算的
+    日期，正文重複那行要被略過，頁面上只能有一個發布日期。"""
+    meta_lines = [("發布日期", "2026 年 9 月 18 日"), ("涵蓋期間", "2026 年 6 月 1 日至 9 月 16 日")]
+    html = br.render_release_info(meta_lines, "2026-09-24")
+    assert html.count("發布日期") == 1
+    assert "2026 年 9 月 24 日" in html
+    assert "2026 年 9 月 18 日" not in html
+    assert "2026 年 6 月 1 日至 9 月 16 日" in html  # 其餘欄位仍照正文原樣渲染
+
+
+def test_render_release_info_injects_published_when_body_has_no_date_line():
+    html = br.render_release_info([("涵蓋期間", "x")], "2026-09-24")
+    assert "發布日期：<strong>2026 年 9 月 24 日</strong>" in html
+
+
 def test_2026_03_report_parses_and_matches_frontmatter(repo_root: Path):
     report = br.parse_report(repo_root / "_source" / "reports" / "2026-03.md")
     assert report.slug == "2026-03"
     assert report.report_no == 3
     assert report.period_start == "2026-06-01"
-    assert report.period_end == "2026-09-30"
+    assert report.period_end == "2026-09-16"  # 2026-09-20 修正：對齊正文「統計至 9/16」
     assert len(report.summary) <= 120
     titles = [t for t, _ in report.sections]
     assert any(t.startswith("摘要") for t in titles)
@@ -173,6 +224,19 @@ def test_built_single_page_has_three_anchor_headings(built_reports):
     assert ">摘要<" in html
     assert ">本期數字一覽<" in html
     assert "參考資料" in html
+
+
+def test_built_single_page_shows_single_consistent_publish_date(built_reports):
+    """端對端回歸：2026-03.md 正文帶著草稿當天的「2026 年 9 月 18 日」，
+    frontmatter published 是 2026-09-24——實跑一次確認頁面只顯示後者。"""
+    single_path, index_path = built_reports
+    html = single_path.read_text(encoding="utf-8")
+    assert "2026 年 9 月 18 日" not in html
+    assert html.count("發布日期") == 1
+    assert "發布日期：<strong>2026 年 9 月 24 日</strong>" in html
+    list_html = index_path.read_text(encoding="utf-8")
+    assert "涵蓋期間 2026-06-01 ～ 2026-09-16" in list_html
+    assert "2026-09-30" not in list_html
 
 
 def test_built_single_page_has_no_governance_or_internal_code_leak(built_reports):

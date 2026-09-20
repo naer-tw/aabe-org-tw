@@ -104,8 +104,11 @@ def parse_frontmatter(text: str) -> tuple[dict, str]:
     fm_raw, body = parts[1], parts[2]
     meta: dict = {}
     for line in fm_raw.strip("\n").splitlines():
-        if not line.strip():
+        stripped = line.strip()
+        if not stripped:
             continue
+        if stripped.startswith("#"):
+            continue  # 註解行（例：標記某欄位是佔位值，發布當日要改），允許存在、不參與解析
         if ":" not in line:
             raise ReportError(f"front-matter 這行不是 key: value：{line!r}")
         key, val = line.split(":", 1)
@@ -121,6 +124,13 @@ def parse_frontmatter(text: str) -> tuple[dict, str]:
         raise ReportError(f"report_no 必須是整數：{meta['report_no']!r}")
     if len(meta["summary"]) > 120:
         raise ReportError(f"summary 超過 120 字（現 {len(meta['summary'])} 字）")
+    # 2026-09-20 指揮部目視手機版單篇頁抓到：published 曾經比 period_end 還早
+    # （period_end 誤填季度尾日 2026-09-30，published 佔位 2026-09-24），邏輯上
+    # 「發布日期早於資料涵蓋期間結束」講不通——加一道結構性檢查擋住。
+    if meta["published"] < meta["period_end"]:
+        raise ReportError(
+            f"published（{meta['published']!r}）不得早於 period_end"
+            f"（{meta['period_end']!r}）——發布日期不能比資料涵蓋期間的結束日還早")
     return meta, body.lstrip("\n")
 
 
@@ -310,11 +320,38 @@ META_ICONS = {
 }
 
 
-def render_release_info(meta_lines: list[tuple[str, str]]) -> str:
-    spans = []
+def _zh_date(iso: str) -> str:
+    """YYYY-MM-DD → 「YYYY 年 M 月 D 日」（月/日不補零，對齊本站草稿一貫寫法）。"""
+    y, m, d = iso.split("-")
+    return f"{int(y)} 年 {int(m)} 月 {int(d)} 日"
+
+
+def _release_span(label: str, value: str) -> str:
+    icon = META_ICONS.get(label, "")
+    return f"<span>{icon} {label}：<strong>{value}</strong></span>"
+
+
+def render_release_info(meta_lines: list[tuple[str, str]], published: str) -> str:
+    """「發布日期」一律用 frontmatter `published` 渲染，不用正文自己那行。
+
+    2026-09-20 指揮部目視手機版單篇頁抓到：正文前言區塊常帶著草稿當天寫的
+    「**發布日期**：2026 年 9 月 18 日」，跟 frontmatter `published`（正式發布日，
+    可能因審稿延後）不一致，兩者都顯示會讓讀者看到兩個互相矛盾的發布日期。
+    正文那行原樣留在真源裡（不改內容），但 build 時略過、一律改插入
+    frontmatter `published` 換算的日期，插在原本「發布日期」出現的位置
+    （通常是第一條），確保頁面上只有一個、且是權威來源的發布日期。
+    """
+    spans: list[str] = []
+    injected = False
     for label, value in meta_lines:
-        icon = META_ICONS.get(label, "")
-        spans.append(f"<span>{icon} {label}：<strong>{_inline(value)}</strong></span>")
+        if label == "發布日期":
+            if not injected:
+                spans.append(_release_span("發布日期", _zh_date(published)))
+                injected = True
+            continue  # 正文重複的發布日期行：略過，不渲染
+        spans.append(_release_span(label, _inline(value)))
+    if not injected:
+        spans.insert(0, _release_span("發布日期", _zh_date(published)))
     return '<div class="release-info">' + "".join(spans) + "</div>"
 
 
@@ -653,7 +690,7 @@ def render_single(report: Report) -> str:
     html = html.replace("{{PERIOD_START}}", report.period_start)
     html = html.replace("{{PERIOD_END}}", report.period_end)
     html = html.replace("{{H1}}", _inline(report.h1))
-    html = html.replace("{{RELEASE_INFO}}", render_release_info(report.meta_lines))
+    html = html.replace("{{RELEASE_INFO}}", render_release_info(report.meta_lines, report.published))
     html = html.replace("{{SECTIONS}}", render_sections(report.sections))
     return html
 
