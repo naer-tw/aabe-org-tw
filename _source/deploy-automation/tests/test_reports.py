@@ -185,8 +185,11 @@ def test_2026_03_report_parses_and_matches_frontmatter(repo_root: Path):
     report = br.parse_report(repo_root / "_source" / "reports" / "2026-03.md")
     assert report.slug == "2026-03"
     assert report.report_no == 3
-    assert report.period_start == "2026-06-01"
-    assert report.period_end == "2026-09-16"  # 2026-09-20 修正：對齊正文「統計至 9/16」
+    # 2026-09-20 改版：理事長裁採季報制，第三次工作報告改為 7-9 月（第三季），
+    # 原 6 月內容移入第二次工作報告（4-6 月）。理事長再裁：第三季不等 9/30 結算，
+    # 三份於 2026-09-24 同日發布，period_end 採本版統計截止日 9/20（季末事項後續補列）。
+    assert report.period_start == "2026-07-01"
+    assert report.period_end == "2026-09-20"
     assert len(report.summary) <= 120
     titles = [t for t, _ in report.sections]
     assert any(t.startswith("摘要") for t in titles)
@@ -215,7 +218,8 @@ def test_built_single_page_has_no_bracket_residue(built_reports):
     single_path, _index_path = built_reports
     html = single_path.read_text(encoding="utf-8")
     assert "【" not in html, "產出 HTML 不得殘留全形方括號（待補標記未渲染完成）"
-    assert html.count("（出處補充中）") == 4
+    # 2026-09-20 改版後 2026-03.md 實際待補處數：見 _source/reports/2026-03.md 逐項【待補】。
+    assert html.count("（出處補充中）") == 5
 
 
 def test_built_single_page_has_three_anchor_headings(built_reports):
@@ -228,15 +232,19 @@ def test_built_single_page_has_three_anchor_headings(built_reports):
 
 def test_built_single_page_shows_single_consistent_publish_date(built_reports):
     """端對端回歸：2026-03.md 正文帶著草稿當天的「2026 年 9 月 18 日」，
-    frontmatter published 是 2026-09-24——實跑一次確認頁面只顯示後者。"""
+    frontmatter published 於 2026-09-20 改版後先訂為 2026-10-01、再經理事長改裁
+    2026-09-24（三份季報同批發布，不等 9/30 季末結算；period_end 改採本版統計
+    截止日 9/20）——實跑一次確認頁面只顯示 frontmatter 權威值。「2026 年 9 月 18 日」
+    另作為參考資料引用日期合法出現於別處，此處改用更精準的 release-info 區塊比對。"""
     single_path, index_path = built_reports
     html = single_path.read_text(encoding="utf-8")
-    assert "2026 年 9 月 18 日" not in html
+    release_info = re.search(r'<div class="release-info">.*?</div>', html, re.S)
+    assert release_info, "找不到 release-info 區塊"
+    assert "2026 年 9 月 18 日" not in release_info.group(0)
     assert html.count("發布日期") == 1
     assert "發布日期：<strong>2026 年 9 月 24 日</strong>" in html
     list_html = index_path.read_text(encoding="utf-8")
-    assert "涵蓋期間 2026-06-01 ～ 2026-09-16" in list_html
-    assert "2026-09-30" not in list_html
+    assert "涵蓋期間 2026-07-01 ～ 2026-09-20" in list_html
 
 
 def test_built_single_page_has_no_governance_or_internal_code_leak(built_reports):
