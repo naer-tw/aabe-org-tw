@@ -13,6 +13,7 @@
 | 數字（人次、篇數、場次） | `_source/numbers.json`（唯一真源） | 全站 `data-metric` 標記處、六篇政策摘要 | `apply_numbers.py`、`build_briefs.py` | numbers_check（黑數＝擋） |
 | 政策摘要 PDF | `_source/briefs/<議題>.md` | `/briefs/`、PDF、搜尋索引 | `build_briefs.py` → 索引 | test_briefs（1 頁、七節、metric 全在真源） |
 | 政策站文章 | `_policy-deploy`（另一 repo） | 官網卡摘要（sync-policy-articles）、官網搜尋第二索引 | `sync-policy-articles.py`、`build_search_index.sh` | test_search（政策站 ≥40 頁） |
+| 工作報告 | `_source/reports/<slug>.md`（季度／半年度組織工作彙整，slug 格式 `YYYY-NN`＝該年度第 N 次報告） | `/reports/` 列表頁、`/reports/<slug>/` 單篇、首頁頁尾「工作報告」入口、搜尋索引 | `build_reports.py` → 索引重建 | test_reports（摘要／本期數字一覽／參考資料三錨點齊、治理內部字樣＝0、內部代號＝0、本期數字一覽出處欄不可空白、slug 格式合規、列表頁含每篇、產出 HTML 無「【」殘留） |
 
 ## 固定收尾（每次 push 後）
 
