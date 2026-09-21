@@ -16,11 +16,14 @@ REQUIRED_FIELDS = [
 APPROVED = ["valid_surveys", "single_reach", "press_coverage", "buzz_1y", "buzz_3y",
             "partners", "actions", "press_releases", "policy_briefs", "legislators"]
 # 2026-09-21 理事長裁決：連署頁引用的兩個「他方組織規模」納入管轄，但出處薄弱、
-# 現況未確認（秘書處已被交辦向兩位召集人各要一份書面現況數字），故一律 provisional。
+# 當時現況未確認（秘書處已被交辦向兩位召集人各要一份書面現況數字），故先一律 provisional。
 # 值是各自的 source_status：兩筆都不是「可由看板清單一手重算」，但薄弱的方式不同——
 #   downstream_only ＝ 來源鏈只回指官網下游頁面（等於引用自己）
 #   external_dated  ＝ 來源是外部單一媒體報導，且是舊日期（非現況）
-PROVISIONAL = {
+# 2026-09-21（同日）理事長確認兩筆書面團體數正確，裁決升 approved。source_status
+# 維持原值不變——出處薄弱的事實不因裁決而消失，留供之後追蹤；notes 保留原「並存
+# 數值」段落作留痕，並在末尾追加本次確認句，供之後聯盟成員數更新時參照。
+APPROVED_WEAK_SOURCE = {
     "family_resilience_orgs": "external_dated",
     "mental_health_alliance_orgs": "downstream_only",
 }
@@ -157,16 +160,19 @@ def test_short_numbers_require_unit_context(metrics):
 
 
 def test_status_is_declared_and_valid(metrics):
-    """每筆都要標 status；draft 不得上站，provisional 要留待拍板的紀錄。"""
+    """每筆都要標 status；draft 不得上站。出處薄弱但已由理事長拍板的兩筆，
+    status 為 approved，但 source_status 仍如實留薄弱標記，notes 仍留並存數值
+    與拍板確認句——approved 不等於出處變強，只等於裁決已拍板，紀錄不能消失。"""
     for mid in APPROVED:
         assert metrics[mid]["status"] == "approved", mid
-    for mid, want_source_status in PROVISIONAL.items():
-        assert metrics[mid]["status"] == "provisional", mid
+    for mid, want_source_status in APPROVED_WEAK_SOURCE.items():
+        assert metrics[mid]["status"] == "approved", mid
         assert metrics[mid]["source_status"] == want_source_status, mid
-        # 待拍板的紀錄要留在 notes 裡，換人接手才知道在等什麼
-        assert "待秘書處" in metrics[mid]["notes"], f"{mid} notes 未寫待補的書面現況數字"
+        # 拍板紀錄要留在 notes 裡，換人接手才知道薄弱處在哪、誰在何時拍板
         assert "並存的其他數值" in metrics[mid]["notes"], f"{mid} notes 未列並存數值"
-    assert set(APPROVED) | set(PROVISIONAL) == set(metrics)
+        assert "理事長 2026-09-21 確認" in metrics[mid]["notes"], \
+            f"{mid} notes 未寫理事長確認句"
+    assert set(APPROVED) | set(APPROVED_WEAK_SOURCE) == set(metrics)
 
 
 def test_changed_values_keep_previous_values(metrics):
