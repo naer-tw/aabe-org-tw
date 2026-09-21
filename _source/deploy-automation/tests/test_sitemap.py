@@ -27,7 +27,7 @@ import subprocess
 
 import pytest
 
-DEPLOY_DATE = "2026-09-20"
+DEPLOY_DATE = "2026-09-21"
 FALLBACK_BASE_REF = "main"   # 取不到日期基準時的退路
 SITE = "https://aabe.org.tw"
 EXCLUDED_FROM_SITEMAP = {"public/404.html"}  # 錯誤頁，本來就不進 sitemap
