@@ -198,3 +198,23 @@ def test_metric_field_projection_is_applied():
     out, changes = ap.apply_html(html, m)
     assert ">個<" in out
     assert [(c.metric_id, c.old, c.new) for c in changes] == [("partners", "家", "個")]
+
+
+def test_metric_without_methodology_row_does_not_abort():
+    """不在「更新頻率」表裡的指標（他方組織規模引用值）更新時不得整批中止。
+
+    2026-09-21：family_resilience_orgs／mental_health_alliance_orgs 納入管轄後，
+    /methodology/ 沒有對應列。少了 NO_METHODOLOGY_ROW 豁免，這裡會噴
+    「找不到對應列」ApplyError，等於這兩個數字永遠套不進去。
+    """
+    changes = [ap.Change("mental_health_alliance_orgs", "76", "79")]
+    out = ap.update_methodology(MULTILINE_METHODOLOGY, changes, "2026-10-01")
+    assert "2026-10" not in out.split("變更紀錄")[0], "不該去動「更新頻率」表的月份"
+    assert "mental_health_alliance_orgs 76 → 79" in out, "Changelog 仍要留痕"
+
+
+def test_unknown_metric_still_aborts_when_row_is_missing():
+    """豁免表只豁免名單內的 id：名單外的指標找不到對應列，仍要停手。"""
+    with pytest.raises(ap.ApplyError, match="ROW_LABEL_TO_IDS"):
+        ap.update_methodology(MULTILINE_METHODOLOGY,
+                              [ap.Change("legislators", "19", "20")], "2026-10-01")

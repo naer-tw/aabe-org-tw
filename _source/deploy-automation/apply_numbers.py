@@ -43,6 +43,11 @@ ROW_LABEL_TO_IDS = {
     "跨黨派合作立委": ("legislators",),
 }
 
+# 這些 id 不是本盟自己的統計（引用他方組織的規模），/methodology/ 的「更新頻率」表
+# 裡本來就沒有對應列。少了這張豁免表，更新它們會撞上下面的
+# 「找不到對應列」ApplyError、整批寫不進去；改動仍會照常寫進 Changelog。
+NO_METHODOLOGY_ROW = {"family_resilience_orgs", "mental_health_alliance_orgs"}
+
 _NUMBER_TOKEN = re.compile(r"(?<![0-9])[0-9][0-9,]*")
 _MONTH_CELL = re.compile(r"(<td[^>]*>\s*)(\d{4}-\d{2})(\s*</td>)")
 _TABLE_ROW = re.compile(r"<tr\b[^>]*>.*?</tr>", re.S | re.I)
@@ -115,7 +120,7 @@ def update_methodology(src: str, changes: list[Change], today: str) -> str:
     """更新「最近更新」月份（只動有改到的指標那幾列）並在 Changelog 追加一行。"""
     if not changes:
         return src
-    changed_ids = {c.metric_id for c in changes}
+    changed_ids = {c.metric_id for c in changes} - NO_METHODOLOGY_ROW
     month = today[:7]
 
     # 逐「列」處理，不是逐「行」：真實版面上 <td>標題</td> 與 <td>2026-09</td>

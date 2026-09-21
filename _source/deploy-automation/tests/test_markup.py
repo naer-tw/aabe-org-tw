@@ -26,6 +26,15 @@ EXPECTED = {
         "partners": 1, "press_releases": 1, "actions": 1,
         "buzz_3y": 1, "legislators": 1,
     },
+    # 2026-09-21：連署頁引用的兩個聯盟規模納入管轄（理事長裁決）。心理健康聯盟的
+    # 76 在站上有兩處——連署頁名冊，以及論壇頁那句「現由 76 個民間團體共同組成」
+    # （那一句正是 numbers.json 這筆的 source），兩處都要跟著真源動。
+    "act/child-pledge/index.html": {
+        "family_resilience_orgs": 1, "mental_health_alliance_orgs": 1,
+    },
+    "events/2026-10-02-mental-health-city-forum/index.html": {
+        "mental_health_alliance_orgs": 1,
+    },
 }
 
 

@@ -15,7 +15,15 @@ REQUIRED_FIELDS = [
 # 五筆口徑 OK（屬 2023–2026 年區間口徑，2026 年底需再整理），status 改 approved。
 APPROVED = ["valid_surveys", "single_reach", "press_coverage", "buzz_1y", "buzz_3y",
             "partners", "actions", "press_releases", "policy_briefs", "legislators"]
-PROVISIONAL = []
+# 2026-09-21 理事長裁決：連署頁引用的兩個「他方組織規模」納入管轄，但出處薄弱、
+# 現況未確認（秘書處已被交辦向兩位召集人各要一份書面現況數字），故一律 provisional。
+# 值是各自的 source_status：兩筆都不是「可由看板清單一手重算」，但薄弱的方式不同——
+#   downstream_only ＝ 來源鏈只回指官網下游頁面（等於引用自己）
+#   external_dated  ＝ 來源是外部單一媒體報導，且是舊日期（非現況）
+PROVISIONAL = {
+    "family_resilience_orgs": "external_dated",
+    "mental_health_alliance_orgs": "downstream_only",
+}
 
 # SOP 第一節「首批 id（2026-09-06）」
 FIRST_BATCH = ["valid_surveys", "single_reach", "partners",
@@ -94,18 +102,30 @@ def test_value_consistent_with_display(metrics):
 
 def test_last_verified_and_cadence(metrics):
     for mid, m in metrics.items():
-        assert m["last_verified"] in ("2026-09-05", "2026-09-06"), mid
+        assert re.fullmatch(r"\d{4}-\d{2}-\d{2}", m["last_verified"]), (
+            f"{mid}.last_verified 要寫成 YYYY-MM-DD：{m['last_verified']}")
+        if mid in EXPECTED_DISPLAY:
+            # 首批十筆是同一次盤點產生的，日期凍結在那兩天
+            assert m["last_verified"] in ("2026-09-05", "2026-09-06"), mid
         assert m["cadence"] in ("quarterly", "event", "yearly"), mid
         assert m["owner"] in ("指揮部", "秘書處", "指揮部＋秘書處"), mid
 
 
 def test_source_traceable(metrics):
-    """每筆 source 要嘛指向看板清單原件，要嘛指向官網方法頁既有出處。"""
+    """每筆 source 都要能回溯：看板清單原件、官網方法頁、外部 URL，或 repo 內「檔:行」。
+
+    2026-09-21 放寬兩種寫法（引用他方組織規模時，出處不在看板清單裡）：
+    `https://…` 的外部原件、以及 `public/…/index.html:488` 這種可 grep 的行級指向。
+    放寬的是「出處長什麼樣」，不是「可不可以沒有出處」——三種都對不上仍然 fail。
+    """
     for mid, m in metrics.items():
         src = m["source"]
-        assert ("20260905_清單_國教盟調查與觸及數據.md" in src
-                or "public/methodology/index.html" in src
-                or "影響力報告" in src), f"{mid} source 無法回溯：{src}"
+        traceable = ("20260905_清單_國教盟調查與觸及數據.md" in src
+                     or "public/methodology/index.html" in src
+                     or "影響力報告" in src
+                     or re.search(r"https?://\S+", src)
+                     or re.search(r"\bpublic/\S+\.html:\d+", src))
+        assert traceable, f"{mid} source 無法回溯：{src}"
 
 
 def test_period_difference_noted_for_legacy(metrics):
@@ -140,10 +160,13 @@ def test_status_is_declared_and_valid(metrics):
     """每筆都要標 status；draft 不得上站，provisional 要留待拍板的紀錄。"""
     for mid in APPROVED:
         assert metrics[mid]["status"] == "approved", mid
-    for mid in PROVISIONAL:
+    for mid, want_source_status in PROVISIONAL.items():
         assert metrics[mid]["status"] == "provisional", mid
-        assert metrics[mid]["source_status"] == "downstream_only", mid
-    assert set(APPROVED + PROVISIONAL) == set(metrics)
+        assert metrics[mid]["source_status"] == want_source_status, mid
+        # 待拍板的紀錄要留在 notes 裡，換人接手才知道在等什麼
+        assert "待秘書處" in metrics[mid]["notes"], f"{mid} notes 未寫待補的書面現況數字"
+        assert "並存的其他數值" in metrics[mid]["notes"], f"{mid} notes 未列並存數值"
+    assert set(APPROVED) | set(PROVISIONAL) == set(metrics)
 
 
 def test_changed_values_keep_previous_values(metrics):
