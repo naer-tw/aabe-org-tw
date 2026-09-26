@@ -90,15 +90,15 @@ def test_stale_main_number_is_caught_even_if_the_page_repeats_the_new_value(
         script, repo_root, tmp_path):
     """C-01 失效場景 2：方法頁主數字被改回 33，但同頁正文另有一個 47。
 
-    舊版做的是「頁面文字裡有沒有 47」→ 誤判通過；現在逐標記比對。
+    舊版做的是「頁面文字裡有沒有 48」→ 誤判通過；現在逐標記比對。
     """
     site = site_copy(repo_root, tmp_path)
     page = site / "methodology" / "index.html"
     src = page.read_text(encoding="utf-8")
-    assert 'data-metric="policy_briefs">47<' in src
-    page.write_text(src.replace('data-metric="policy_briefs">47<',
+    assert 'data-metric="policy_briefs">48<' in src
+    page.write_text(src.replace('data-metric="policy_briefs">48<',
                                 'data-metric="policy_briefs">33<', 1), encoding="utf-8")
-    assert "47 篇政策深度分析" in page.read_text(encoding="utf-8"), "同頁正文仍有另一個 47"
+    assert "48 篇政策深度分析" in page.read_text(encoding="utf-8"), "同頁正文仍有另一個 48"
     r = run(script, repo_root, site, "--skip-ping")
     assert r.returncode == 1, r.stdout
     assert "policy_briefs" in r.stdout

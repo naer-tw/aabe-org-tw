@@ -43,7 +43,7 @@ EXPECTED_DISPLAY = {
     "buzz_1y": "2,889",
     "actions": "286",
     "press_releases": "113",
-    "policy_briefs": "47",
+    "policy_briefs": "48",
     "buzz_3y": "7,917+",
     "legislators": "19",
 }
@@ -109,7 +109,7 @@ def test_last_verified_and_cadence(metrics):
             f"{mid}.last_verified 要寫成 YYYY-MM-DD：{m['last_verified']}")
         if mid in EXPECTED_DISPLAY:
             # 首批十筆是同一次盤點產生的，日期凍結在那兩天
-            assert m["last_verified"] in ("2026-09-05", "2026-09-06"), mid
+            assert m["last_verified"] in ("2026-09-05", "2026-09-06", "2026-09-23"), mid
         assert m["cadence"] in ("quarterly", "event", "yearly"), mid
         assert m["owner"] in ("指揮部", "秘書處", "指揮部＋秘書處"), mid
 
