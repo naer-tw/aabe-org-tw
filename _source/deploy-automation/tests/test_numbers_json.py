@@ -25,7 +25,8 @@ APPROVED = ["valid_surveys", "single_reach", "press_coverage", "buzz_1y", "buzz_
 # 數值」段落作留痕，並在末尾追加本次確認句，供之後聯盟成員數更新時參照。
 APPROVED_WEAK_SOURCE = {
     "family_resilience_orgs": "external_dated",
-    "mental_health_alliance_orgs": "downstream_only",
+    # 2026-09-29 理事長裁 76→77，出處改為聯盟公開會員名冊（外部、有截至日 2026-05-19）
+    "mental_health_alliance_orgs": "external_dated",
 }
 
 # SOP 第一節「首批 id（2026-09-06）」
