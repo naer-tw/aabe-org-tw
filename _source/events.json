@@ -179,21 +179,21 @@
       "display_title": "從健康邁向幸福：心理健康城市網絡論壇",
       "start": "2026-10-02",
       "end": "2026-10-02",
-      "status": "upcoming",
+      "status": "ended",
       "record_url": null,
-      "cta_label": "報名參加 →",
-      "cta_url": "https://forms.gle/9bRhAvmNTt1MUWMe9",
-      "badge": "報名中 · 本盟深度參與",
+      "cta_label": "看會後記錄 →",
+      "cta_url": "/events/2026-10-02-mental-health-city-forum/#register",
+      "badge": "10 月 2 日 · 已結束 · 會後記錄",
       "cta": {
-        "label": "報名參加 →",
-        "url": "https://forms.gle/9bRhAvmNTt1MUWMe9"
+        "label": "看會後記錄 →",
+        "url": "/events/2026-10-02-mental-health-city-forum/#register"
       },
       "pages": [
         "/",
         "/events/",
         "/events/2026-10-02-mental-health-city-forum/"
       ],
-      "note": "2026-09-17 新增：中華心理衛生協會×臺灣心理健康聯盟合辦，本盟為盟友深度參與；活動後改 status=ended 並視情補 record_url"
+      "note": "2026-09-17 新增：中華心理衛生協會×臺灣心理健康聯盟合辦，本盟為盟友深度參與；2026-10-03 論壇結束，已改 status=ended、CTA 改指會後記錄專區；完整記錄頁完成後補 record_url"
     },
     {
       "id": "2026-child-pledge-signup",

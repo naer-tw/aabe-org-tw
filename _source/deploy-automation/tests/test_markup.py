@@ -33,7 +33,7 @@ EXPECTED = {
         "family_resilience_orgs": 1, "mental_health_alliance_orgs": 1,
     },
     "events/2026-10-02-mental-health-city-forum/index.html": {
-        "mental_health_alliance_orgs": 1,
+        "mental_health_alliance_orgs": 4,
     },
 }
 
