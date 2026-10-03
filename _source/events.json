@@ -180,7 +180,7 @@
       "start": "2026-10-02",
       "end": "2026-10-02",
       "status": "ended",
-      "record_url": null,
+      "record_url": "/events/2026-10-02-mental-health-city-forum/record/",
       "cta_label": "看會後記錄 →",
       "cta_url": "/events/2026-10-02-mental-health-city-forum/#register",
       "badge": "10 月 2 日 · 已結束 · 會後記錄",
@@ -193,7 +193,7 @@
         "/events/",
         "/events/2026-10-02-mental-health-city-forum/"
       ],
-      "note": "2026-09-17 新增：中華心理衛生協會×臺灣心理健康聯盟合辦，本盟為盟友深度參與；2026-10-03 論壇結束，已改 status=ended、CTA 改指會後記錄專區；完整記錄頁完成後補 record_url"
+      "note": "2026-09-17 新增：中華心理衛生協會×臺灣心理健康聯盟合辦，本盟為盟友深度參與；2026-10-03 論壇結束，已改 status=ended、CTA 改指會後記錄專區；2026-10-03 補 record_url"
     },
     {
       "id": "2026-child-pledge-signup",
