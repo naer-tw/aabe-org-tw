@@ -262,6 +262,13 @@
   .callout blockquote{margin:0;padding:0 0 0 16px;border-left:3px solid var(--gold);font-size:1.05rem;font-weight:700;color:var(--ink);line-height:1.9;}
   .callout .attrib{display:block;margin-top:10px;font-size:.82rem;font-weight:600;color:var(--ink-2);}
 
+  /* 現場照片（主辦方提供） */
+  .photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:8px 0 14px;}
+  .photos figure{margin:0;min-width:0;}
+  .photos img{display:block;width:100%;height:auto;border-radius:10px;background:var(--paper-2);border:1px solid var(--line);}
+  .photos figcaption{font-size:.84rem;color:var(--ink-2);margin-top:6px;line-height:1.6;}
+  .photos .cr{display:block;font-size:.76rem;}
+
   .why{background:#EEF4F0;border:1px solid #D9E5DC;border-radius:12px;padding:20px 24px;margin:14px 0;}
   .why h3{margin:0 0 8px;font-size:1.08rem;color:var(--pine-d);}
   .why p{margin:0 0 10px;font-size:.94rem;}
@@ -295,7 +302,7 @@
     .fb-cd{flex-direction:row;gap:10px;align-items:baseline;justify-content:center;border-right:none;border-bottom:1px solid rgba(255,255,255,.22);padding:0 0 14px;}
     .fb-facts{justify-content:center;}
     .fb-btn{justify-self:center;}
-    .themes,.speakers,.related,.orgs{grid-template-columns:1fr;}
+    .themes,.speakers,.related,.orgs,.photos{grid-template-columns:minmax(0,1fr);}
     .infocard dl{grid-template-columns:1fr;gap:4px 0;}
     .infocard dt{margin-top:10px;}
     .arow{grid-template-columns:1fr;gap:6px;}
@@ -393,7 +400,7 @@
   <div class="reg reveal">
     <div>
       <h3>論壇已於 10 月 2 日舉行</h3>
-      <p>本論壇由中華心理衛生協會、臺灣心理健康聯盟（<span data-metric="mental_health_alliance_orgs">77</span> 盟友）共同主辦。以下提供心理健康城市共同宣言全文、論壇概況，以及本聯盟上午發言的重點整理；完整記錄整理中。</p>
+      <p>本論壇由中華心理衛生協會、臺灣心理健康聯盟（<span data-metric="mental_health_alliance_orgs">77</span> 盟友）共同主辦。國教行動聯盟為臺灣心理健康聯盟盟友。以下提供心理健康城市共同宣言全文、論壇概況，以及本聯盟上午發言的重點整理；完整記錄整理中。</p>
       <a class="btn-primary" href="https://www.youtube.com/watch?v=XrK6dzgxL8E" target="_blank" rel="noopener">主辦方官方直播　→</a>
       <a class="btn-ghost" href="./record/">完整記錄（整理中）</a>
       <div class="regurl">直播連結（外部網站，主辦方中華心理衛生協會 YouTube 頻道）：<a href="https://www.youtube.com/watch?v=XrK6dzgxL8E" target="_blank" rel="noopener">https://www.youtube.com/watch?v=XrK6dzgxL8E</a></div>
@@ -409,6 +416,13 @@
     <blockquote>「傾聽真實聲音，推動實質改變；沒有心理健康，就沒有健康臺灣！」</blockquote>
     <blockquote style="margin-top:14px;">2026 世界心理健康日，我們攜手政府與民間、中央與地方，<br>落實修法精神，將心理健康促進化為在地行動，<br>傾聽生命經驗、消除社會污名，<br>從健康邁向幸福，共創社會韌性與全民幸福的心理健康城市！</blockquote>
     <span class="attrib">——「2026 世界心理健康日：心理健康城市共同宣言」，10 月 2 日於立法院群賢樓記者會發布。文字依臺灣心理健康聯盟會後新聞稿。</span>
+  </div>
+
+  <h3 class="reveal" style="margin:26px 0 10px;color:var(--pine);">現場照片</h3>
+  <div class="photos reveal">
+    <figure><img src="images/declaration-signing-1.jpg" alt="論壇現場，與會者在長布條上簽署宣言" loading="lazy" width="1600" height="1066"><figcaption>心理健康城市網絡論壇：簽署宣言<span class="cr">照片提供：臺灣心理健康聯盟</span></figcaption></figure>
+    <figure><img src="images/declaration-launch.jpg" alt="宣言發布現場，投影幕顯示心理健康城市共同宣言，台下與會者就座" loading="lazy" width="1600" height="1066"><figcaption>心理健康城市共同宣言：民團、國會、政府代表齊聚<span class="cr">照片提供：臺灣心理健康聯盟</span></figcaption></figure>
+    <figure><img src="images/declaration-presented.jpg" alt="宣言發表現場，台上數人手持紙張面向台下，投影幕顯示心理健康城市共同宣言" loading="lazy" width="1600" height="1066"><figcaption>發表心理健康城市共同宣言：民團、國會、政府首長<span class="cr">照片提供：臺灣心理健康聯盟</span></figcaption></figure>
   </div>
 
   <h3 class="reveal" style="margin:26px 0 10px;color:var(--pine);">論壇概況</h3>
