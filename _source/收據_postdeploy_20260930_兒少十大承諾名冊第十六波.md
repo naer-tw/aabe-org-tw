@@ -5,7 +5,7 @@
 - content_live：done
 - indexnow：done
 - sitemap_lastmod：pending（改動頁與 sitemap_index.xml 由 numbers_check／pytest 擋，部署後請確認線上 sitemap 已更新）
-- gsc_request_index：pending（首頁或方法頁有改動時，到 Search Console 請求索引一次，回填請求時間）
+- gsc_request_index：done（併入 2026-10-05 對首頁 / 與連署頁 /act/child-pledge/ 的請求，見 收據_postdeploy_20261003_*名冊71上線.md）
 - board_status：pending（~/Desktop/國教盟指揮看板/議題_官網影響力數據/_狀態.md 最新交付行改 2026-09-30）
 - board_log：pending（當天日誌加一列：部署時間、main commit eef4f78、驗證結果）
 - list_checkbox：pending（清單檔「已上官網」欄勾 2026-09-30）

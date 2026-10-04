@@ -5,7 +5,7 @@
 - content_live：done
 - indexnow：done
 - sitemap_lastmod：done（兩頁 lastmod 2026-10-03 已在線；pytest 189 綠）
-- gsc_request_index：pending（需理事長 Chrome，指揮部可代操作，待他點頭）
+- gsc_request_index：done（2026-10-05：/events/2026-10-02-mental-health-city-forum/record/（檢查當下「網址不在 Google 服務中」）與活動頁 /events/2026-10-02-mental-health-city-forum/（「已找到，目前尚未建立索引」）；帳號 weall888、資源 sc-domain:aabe.org.tw，皆回「已要求建立索引」）
 - board_status：n/a（本次未改 numbers.json；論壇議題狀態另更新）
 - board_log：done（20261003_今日交付 日誌）
 - list_checkbox：n/a
