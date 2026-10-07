@@ -153,6 +153,8 @@ def test_orange_text_meets_wcag(page, local_site, path):
     assert not failures, (
         f"{path} 有 {len(failures)} 個橙色文字節點對比不足：\n" + "\n".join(failures)
     )
-    assert len(nodes) > 0 or path == "/contact/", (
+    # 兒少十大承諾公開平台（record/）用自己的配色（青綠、墨色、鉛筆線），本來就沒有橙色文字：「至少掃到一個橙色節點」的保險絲對它不適用
+    # （2026-10-07 驗證員在有 playwright 的環境實跑 4 failed 後加；沒有橙字＝沒有對比不足，上面的 failures 斷言仍照跑）。
+    assert len(nodes) > 0 or path == "/contact/" or path.startswith("/act/child-pledge/record/"), (
         f"{path} 完全沒掃到橙色文字節點，掃描腳本可能失效，需要人工確認"
     )
