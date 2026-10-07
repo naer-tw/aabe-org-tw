@@ -11,6 +11,11 @@
 上是空的，第一條測試必定紅）。基準改成「DEPLOY_DATE 當天之前的最後一次 commit」，
 語意即「本次部署日以來改過的頁面」，同一天開幾個分支都成立；取不到就退回 main。
 
+2026-10-07（兒少十大承諾公開平台 record/ 上線，網頁線 Task 12）：頁面帶 `<meta name="robots" content="noindex"` 者**不進 sitemap**
+（noindex 頁本來就不該被列給搜尋引擎），所以從 `changed_urls` 排除——否則「公開平台預設 noindex」與「改過的頁都要在 sitemap 且 lastmod＝部署日」
+互相矛盾（規劃 §2-5 指出的自相矛盾）。理事長決定開放收錄時，頁面不再有該 meta，25 頁自動回到「改過的一定要列、要標部署日」的檢查；兩種決定都能綠。
+若這次只改了 noindex 頁（沒有任何會進 sitemap 的頁），「這個分支沒改任何 public/*.html」的保險絲不誤報（見 test_every_changed_page_has_todays_lastmod）。
+
 2026-09-14 官網 UIUX 第一批修法錯（分兩步才穩定）：`_url_of` 原本只處理了
 `.../index.html` 這種目錄型頁面，第一次改到非 index 的 `.html` 檔
 （`act/cwa-reform/hearing-speeches.html`）就把 `.html` 也算進網址，跟
@@ -31,6 +36,8 @@ DEPLOY_DATE = "2026-10-07"
 FALLBACK_BASE_REF = "main"   # 取不到日期基準時的退路
 SITE = "https://aabe.org.tw"
 EXCLUDED_FROM_SITEMAP = {"public/404.html"}  # 錯誤頁，本來就不進 sitemap
+
+NOINDEX_META = re.compile(r'<meta\s+name=["\']robots["\']\s+content=["\'][^"\']*noindex', re.I)
 
 URL_BLOCK = re.compile(r"<url>(.*?)</url>", re.S)
 SITEMAP_BLOCK = re.compile(r"<sitemap>(.*?)</sitemap>", re.S)
@@ -76,6 +83,22 @@ def entries(public_dir):
     return out
 
 
+def _is_noindex(repo_root, rel: str) -> bool:
+    """工作樹上這個 html 檔帶 noindex robots meta（檔案不存在＝已刪除的頁，不算 noindex，維持原本「改過就要處理」的語意）。"""
+    path = repo_root / rel
+    return path.is_file() and bool(NOINDEX_META.search(path.read_text(encoding="utf-8", errors="ignore")))
+
+
+@pytest.fixture(scope="module")
+def noindex_changed(repo_root):
+    """自基準以來改過／新增、但帶 noindex 的 html（不進 sitemap，所以不在 changed_urls 內）。"""
+    base = _base_ref(repo_root)
+    r = subprocess.run(["git", "diff", "--name-only", base, "--", "public"], capture_output=True, text=True, cwd=repo_root)
+    untracked = subprocess.run(["git", "ls-files", "--others", "--exclude-standard", "--", "public"], capture_output=True, text=True, cwd=repo_root)
+    return sorted(f for f in (r.stdout + "\n" + untracked.stdout).split()
+                  if f.endswith(".html") and f not in EXCLUDED_FROM_SITEMAP and _is_noindex(repo_root, f))
+
+
 @pytest.fixture(scope="module")
 def changed_urls(repo_root, entries):
     # 用兩點 diff（含工作區未 commit 的改動）：部署上去的是工作區的內容，
@@ -91,7 +114,7 @@ def changed_urls(repo_root, entries):
         capture_output=True, text=True, cwd=repo_root)
     files = [
         f for f in (r.stdout + "\n" + untracked.stdout).split()
-        if f.endswith(".html") and f not in EXCLUDED_FROM_SITEMAP
+        if f.endswith(".html") and f not in EXCLUDED_FROM_SITEMAP and not _is_noindex(repo_root, f)
     ]
     resolved = set()
     for f in files:
@@ -112,7 +135,9 @@ def index_entries(public_dir):
     return out
 
 
-def test_every_changed_page_has_todays_lastmod(entries, changed_urls):
+def test_every_changed_page_has_todays_lastmod(entries, changed_urls, noindex_changed):
+    if not changed_urls and noindex_changed:
+        return   # 這個分支只改了 noindex 頁（本來就不進 sitemap），沒有東西可檢查；基準本身沒壞（有改檔）
     assert changed_urls, "這個分支沒改任何 public/*.html？測試基準要檢查"
     missing = [u for u in changed_urls if u not in entries]
     assert not missing, f"改過的頁面不在 sitemap 裡：{missing}"

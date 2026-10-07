@@ -10,6 +10,8 @@ import pytest
 
 WIDTHS = [320, 390, 768, 1024, 1440]
 PAGES = ["/", "/events/", "/act/", "/press/all/"]  # 2026-09-15 加入 /press/all/（第三批②搜尋新增搜尋框）
+# 2026-10-07 加入兒少十大承諾公開平台四個頁型（首頁、一個縣市頁、承諾書下載頁、怎麼回傳頁）；網頁線 Task 12 規格 §2-7。
+PAGES += ["/act/child-pledge/record/", "/act/child-pledge/record/taipei/", "/act/child-pledge/record/download/", "/act/child-pledge/record/how-to-return/"]
 
 
 @pytest.mark.parametrize("path", PAGES)

@@ -14,6 +14,7 @@
 | 政策摘要 PDF | `_source/briefs/<議題>.md` | `/briefs/`、PDF、搜尋索引 | `build_briefs.py` → 索引 | test_briefs（1 頁、七節、metric 全在真源） |
 | 政策站文章 | `_policy-deploy`（另一 repo） | 官網卡摘要（sync-policy-articles）、官網搜尋第二索引 | `sync-policy-articles.py`、`build_search_index.sh` | test_search（政策站 ≥40 頁） |
 | 工作報告 | `_source/reports/<slug>.md`（季度／半年度組織工作彙整，slug 格式 `YYYY-NN`＝該年度第 N 次報告） | `/reports/` 列表頁、`/reports/<slug>/` 單篇、首頁頁尾「工作報告」入口、搜尋索引 | `build_reports.py` → 索引重建 | test_reports（摘要／本期數字一覽／參考資料三錨點齊、治理內部字樣＝0、內部代號＝0、本期數字一覽出處欄不可空白、slug 格式合規、列表頁含每篇、產出 HTML 無「【」殘留） |
+| 兒少十大承諾公開平台（record/） | 真源在縣市長政見監督平台 repo：`data/pledge/`（campaign.yaml 的 `indexing`、candidates／signatures／commitment_versions）＋名冊真源 `docs/連署網頁_v1_20260918/index_template.html`（共同發起團體） | `/act/child-pledge/record/` 25 頁（首頁、22 縣市頁、承諾書下載、怎麼回傳；個人頁隨回覆出現）、sitemap（僅 `indexing: index`）、搜尋索引 | 真源 repo 的 `scripts/pledge_site/deploy_site.py --site-worktree <本 repo 的非 main 工作樹> --deploy-date YYYY-MM-DD`（一條龍：建置→寫入工作樹→sitemap→官網閘→收據；不 add／commit／push） | check_record 15 閘＋prod_readiness＋numbers_check（兩聯盟成員數 data-metric）＋lint＋events_check＋sitemap lastmod＋test_search（Pagefind）＋ux_audit；**永遠不在 main 工作樹建置**，推送由指揮部經理事長回「推」後 fast-forward |
 
 ## 固定收尾（每次 push 後）
 

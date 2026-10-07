@@ -8,6 +8,8 @@
 import pytest
 
 PAGES = ["/", "/events/", "/act/", "/contact/"]
+# 2026-10-07 加入兒少十大承諾公開平台四個頁型（首頁、一個縣市頁、承諾書下載頁、怎麼回傳頁）；網頁線 Task 12 規格 §2-7。
+PAGES += ["/act/child-pledge/record/", "/act/child-pledge/record/taipei/", "/act/child-pledge/record/download/", "/act/child-pledge/record/how-to-return/"]
 
 # 掃描腳本：找出所有可見、有文字內容、顏色偏橙的葉節點，回傳 [{tag, cls, text, color, bg, fontSize, bold}]
 #
