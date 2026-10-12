@@ -17,6 +17,7 @@ EXPECTED = {
     # 標記隨舊六卡＋Ch05 統計帶一併移除，不再出現在首頁（完整口徑見 /methodology/）。
     "index.html": {
         "valid_surveys": 1, "partners": 1, "press_coverage": 1,
+        "child_pledge_cosponsor_orgs": 1,  # 10/12 首頁活動卡「團體連署已截止，共 72 個團體」
     },
     "methodology/index.html": {
         "partners": 1, "press_releases": 1, "actions": 1,
@@ -32,7 +33,7 @@ EXPECTED = {
     "act/child-pledge/index.html": {
         "family_resilience_orgs": 1, "mental_health_alliance_orgs": 1,
         # 2026-10-12：共同發起團體數（本盟自有名冊）納入管轄
-        "child_pledge_cosponsor_orgs": 1,
+        "child_pledge_cosponsor_orgs": 3,  # 10/12 更正後：名冊小標＋hero 感謝句＋連署狀態區
     },
     "events/2026-10-02-mental-health-city-forum/index.html": {
         "mental_health_alliance_orgs": 4,
