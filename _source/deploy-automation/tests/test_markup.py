@@ -31,6 +31,8 @@ EXPECTED = {
     # （那一句正是 numbers.json 這筆的 source），兩處都要跟著真源動。
     "act/child-pledge/index.html": {
         "family_resilience_orgs": 1, "mental_health_alliance_orgs": 1,
+        # 2026-10-12：共同發起團體數（本盟自有名冊）納入管轄
+        "child_pledge_cosponsor_orgs": 1,
     },
     "events/2026-10-02-mental-health-city-forum/index.html": {
         "mental_health_alliance_orgs": 4,

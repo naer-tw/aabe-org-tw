@@ -300,6 +300,30 @@
         "逾 77 個團體",
         "77 個組織"
       ]
+    },
+    {
+      "id": "child_pledge_cosponsor_orgs",
+      "value": 72,
+      "display": "72",
+      "unit": "個民間團體",
+      "unit_aliases": [
+        "個團體",
+        "個共同發起團體"
+      ],
+      "label": "兒少十大承諾共同發起團體",
+      "period": "2026-10-07 · 共同發起團體名冊（第 72 筆為 10/7 查詢）",
+      "method": "本盟自有名冊：寄送版名冊逐列數過 72（兩聯盟各計 1 筆，聯盟成員不另計）；名冊真源 index_template.html 內 72 張共同發起卡片，與寄送版名冊筆數一致。",
+      "source": "2026-10-14_附件二_共同發起團體名冊_寄送版（看板 議題_縣市長政見/2_定稿）第 3 行；名冊真源 縣市長政見監督平台（docs/連署網頁_v1_20260918/index_template.html）；上站標記 public/act/child-pledge/index.html:299",
+      "last_verified": "2026-10-12",
+      "cadence": "event",
+      "status": "approved",
+      "source_status": "internal",
+      "owner": "指揮部＋秘書處",
+      "notes": "名冊變動（加入新團體）時同步更新本筆。兩聯盟成員數另見 family_resilience_orgs、mental_health_alliance_orgs，不併入 72。2026-10-12 理事長裁示加入官網數字真源。",
+      "scan_patterns": [
+        "72 個民間團體",
+        "72個民間團體"
+      ]
     }
   ],
   "surveys_note": "歷年調查逐案真源：頁面上「歷年調查」表格的每一格樣本／觸及數都要包 `data-metric-list=\"survey:<slug>\"`（欄位用 data-metric-field 指定，預設 valid_samples），numbers_check.py 會逐格比對。數值一律照看板清單，「待查」照抄不補值；夥伴主辦（role=協力）者不計入 valid_surveys 的加總。",
