@@ -214,6 +214,8 @@
   .nb{display:inline-block}
   .hero .motto{font-family:var(--serif);font-weight:600;font-size:clamp(19px,2.3vw,24px);line-height:1.7;color:#DDEBE7;max-width:23em;text-wrap:balance}
   .hero .right p.lede{font-size:16.5px;line-height:1.9;color:#C9D8D4;margin-bottom:14px}
+  .hero .right p.lede.hd{font-size:17px;color:#fff;margin-bottom:18px}
+  .hero .right p.lede.hd b{color:var(--amber);font-weight:700}
   .hero .right p.lede.s{font-size:15px;color:#9FB5B0;margin-bottom:26px}
   .hero .btns{display:flex;gap:12px;flex-wrap:wrap}
   .btn{display:inline-block;text-decoration:none;font-weight:700;padding:14px 26px;font-size:16px;letter-spacing:.02em;border:1.5px solid transparent}
@@ -271,7 +273,7 @@
   .dl-note{margin-top:18px;font-size:15px;color:var(--ink-2);max-width:42em}
   @media (max-width:640px){.dl{grid-template-columns:1fr}}
 
-  /* 04 怎麼回覆 */
+  /* 回傳區（#return） */
   section.join{background:var(--ink);color:#fff;padding:76px 0}
   .join .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
   .join h2{font-family:var(--serif);font-size:clamp(30px,4vw,44px);font-weight:700;line-height:1.25;margin:14px 0 16px;color:#fff}
@@ -288,6 +290,11 @@
   .join .chan:first-of-type{border-top:0;padding-top:4px}
   .join .chan .k{display:block;font-size:13px;letter-spacing:.12em;color:#9FB5B0;margin-bottom:6px}
   .join .chan .addr{display:block;color:#fff;line-height:1.7}
+  .join .chan .note{display:block;font-size:14px;color:#C9D8D4;line-height:1.75;margin-top:10px}
+  .join .after{margin-top:20px}
+  .join .after h3{font-size:16px;letter-spacing:.08em;color:#fff;margin-bottom:8px}
+  .join .after ol{margin:0 0 0 1.2em;font-size:15px;color:#C9D8D4;line-height:1.85}
+  .join .after li{margin-bottom:4px}
   .join .proxy{margin-top:18px;font-size:14.5px;color:#C9D8D4;border-top:1px solid rgba(255,255,255,.18);padding-top:14px;line-height:1.8}
   .join .ret{margin-top:16px;font-size:14px;color:#9FB5B0;line-height:1.8}
   @media (max-width:820px){.join .wrap{grid-template-columns:1fr;gap:30px}}
@@ -388,7 +395,7 @@
   <a class="cta-s" href="#download">下載承諾書</a>
 </div></header>
 
-<div class="xlink"><div class="wrap">同日發出的另一份承諾書：<a href="/act/child-pledge/">兒少十大承諾書</a>（國教行動聯盟召集、72 個民間團體共同發起）</div></div>
+<div class="xlink"><div class="wrap">同日發出的另一份承諾書：<a href="/act/child-pledge/">兒少十大承諾書</a>（國教行動聯盟召集、<span data-metric="child_pledge_cosponsor_orgs">72</span> 個民間團體共同發起）</div></div>
 
 <div class="hero"><div class="wrap">
   <div class="left">
@@ -400,6 +407,7 @@
   <div class="right">
     <p class="lede">2026 年是 22 縣市長選舉年，我們邀請每一位縣市長參選人，不分黨派，把促進心理健康寫進市政議程。</p>
     <p class="lede s">2026 年 10 月 14 日記者會公布；簽署與回覆原文依縣市如實刊登，不評分、不排名、不推薦。</p>
+    <p class="lede hd">回覆截止：<b>11 月 11 日（三）18:00</b></p>
     <div class="btns">
       <a class="btn r" href="#return">回傳簽好的承諾書</a>
       <a class="btn g" href="#download">下載承諾書</a>
@@ -422,12 +430,18 @@
   <div>
     <div class="mailcard">
       <span class="lab">回傳方式</span>
-      <div class="chan"><span class="k">Email</span><span class="mailbox" id="mailaddr">action.a.e0626@gmail.com</span><button type="button" id="copybtn">複製</button><a class="btn p" href="mailto:action.a.e0626@gmail.com">用電子郵件程式寄出</a></div>
-      <div class="chan"><span class="k">線上表單</span><a class="btn p" href="https://forms.gle/9jRmTqFVpo14j4W5A" target="_blank" rel="noopener">填寫線上表單</a></div>
+      <div class="chan"><span class="k">Email</span><span class="mailbox" id="mailaddr">action.a.e0626@gmail.com</span><button type="button" id="copybtn">複製</button><span class="note">主旨請寫：心理健康承諾書＋縣市＋參選人姓名</span><a class="btn p" href="mailto:action.a.e0626@gmail.com">用電子郵件程式寄出</a></div>
+      <div class="chan"><span class="k">線上表單</span><a class="btn p" href="https://forms.gle/9jRmTqFVpo14j4W5A" target="_blank" rel="noopener">線上表單上傳</a><span class="note">開啟表單需要先登入 Google 帳號（會另開新分頁）；沒有帳號或不方便登入，請改用 Email 或簡訊。</span></div>
       <div class="chan"><span class="k">郵寄</span><span class="addr">115 台北市南港區南港路二段60巷19號17樓之11　國教行動聯盟 收（信封請註明「承諾書回傳」）</span></div>
       <div class="chan"><span class="k">簡訊傳照片（協助）</span><span class="addr">Email 或上傳表單不方便時，拍好照片後，可用簡訊傳到秘書長李睿澤的手機 0921-113-066。照片多的話，建議改用 Email 或上傳表單。</span><a class="btn p" href="sms:0921113066">傳簡訊</a></div>
       <p class="ret">回傳方式與截止日：請將簽署後之承諾書以 Email 回傳至 action.a.e0626@gmail.com；簽署截止日為 2026 年 11 月 11 日（三）18:00，逾期回覆仍予收件並於網頁註記收件日期。</p>
     </div>
+    <div class="after"><h3>收到後怎麼處理</h3>
+      <ol>
+        <li>登記收件編號。</li>
+        <li>以電話向參選人本人或其聯絡窗口確認來源。</li>
+        <li>核對完成後，依勾選結果原文刊登。</li>
+      </ol></div>
     <p class="proxy">本承諾書由協力單位國教行動聯盟代為收件與刊登，發起單位臺灣心理健康聯盟共同追蹤。</p>
   </div>
 </div></section>
@@ -441,7 +455,7 @@
   <div class="who">
     <div><span class="k">發起單位</span><b>臺灣心理健康聯盟</b>
       <p>成員單位 <span data-metric="mental_health_alliance_orgs">77</span> 個團體與單位。</p>
-      <p class="fine">依聯盟公開會員名冊（截至 2026 年 5 月 19 日）；成員列名表示聯盟規模，不代表個別單位簽署本承諾書。<a href="https://www.mhat.org.tw/news1_cont.aspx?id=7ixhQj3/D1Q%3D" target="_blank" rel="noopener">聯盟介紹（中華心理衛生協會官網）</a></p></div>
+      <p class="fine">依聯盟公開會員名冊（截至 2026 年 5 月 19 日）；成員列名表示聯盟規模，不代表個別單位簽署本承諾書。<a href="https://docs.google.com/document/d/1FGAbadCsWx__k-LS-J4fn8wwzHki1ANZ/edit" target="_blank" rel="noopener">看成員名冊</a>　<a href="https://www.mhat.org.tw/news1_cont.aspx?id=7ixhQj3/D1Q%3D" target="_blank" rel="noopener">聯盟介紹（中華心理衛生協會官網）</a></p></div>
     <div><span class="k">協力單位</span><b>國教行動聯盟（民間團體）</b>
       <p>代為收件與刊登回覆、維護本頁；與發起單位共同追蹤。</p></div>
     <div><span class="k">公布日期</span><b>2026 年 10 月 14 日</b>
@@ -494,8 +508,8 @@
     <p class="sub">承諾書全文，版本日期 2026 年 10 月 14 日。</p>
   </div>
   <div class="dl">
-    <a href="downloads/mental-health-city-pledge.pdf" download><b>下載 PDF</b><span>PDF 檔・2026 年 10 月 14 日版・364 KB</span></a>
-    <a href="downloads/mental-health-city-pledge.docx" download><b>下載 Word</b><span>Word 檔（.docx）・2026 年 10 月 14 日版・45 KB</span></a>
+    <a href="downloads/mental-health-city-pledge.pdf" download><b>下載 PDF</b><span>PDF 檔・2026 年 10 月 14 日版・375 KB</span></a>
+    <a href="downloads/mental-health-city-pledge.docx" download><b>下載 Word</b><span>Word 檔（.docx）・2026 年 10 月 14 日版・46 KB</span></a>
   </div>
   <p class="dl-note">承諾書於正式寄發前公開全文與版本日期，寄發後不另行加碼期限、對象或數量。</p>
 </div></section>
