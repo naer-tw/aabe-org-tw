@@ -51,8 +51,8 @@
       "lines_20260906": [
         8,
         526,
-        769,
-        770
+        768,
+        769
       ],
       "contexts": [
         "45e332b3f9",
@@ -317,18 +317,6 @@
         "3b4bc0889c",
         "6285ddc9a6",
         "be8ea4c441"
-      ],
-      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
-    },
-    {
-      "id": "child_pledge_cosponsor_orgs",
-      "file": "events/index.html",
-      "count": 1,
-      "lines_20260906": [
-        580
-      ],
-      "contexts": [
-        "f47d604608"
       ],
       "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
     },
