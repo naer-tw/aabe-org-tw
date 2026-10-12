@@ -51,8 +51,8 @@
       "lines_20260906": [
         8,
         526,
-        759,
-        760
+        769,
+        770
       ],
       "contexts": [
         "45e332b3f9",
@@ -101,7 +101,7 @@
         138,
         161,
         205,
-        1142
+        1152
       ],
       "contexts": [
         "0c4a8bb7ec",
@@ -157,9 +157,9 @@
       "file": "press/index.html",
       "count": 3,
       "lines_20260906": [
-        563,
-        614,
-        682
+        574,
+        625,
+        693
       ],
       "contexts": [
         "013d90156c",
@@ -242,7 +242,7 @@
         138,
         161,
         205,
-        1142
+        1152
       ],
       "contexts": [
         "0c4a8bb7ec",
@@ -303,12 +303,12 @@
       "file": "press/index.html",
       "count": 6,
       "lines_20260906": [
-        521,
-        563,
-        588,
-        659,
-        676,
-        682
+        532,
+        574,
+        599,
+        670,
+        687,
+        693
       ],
       "contexts": [
         "013d90156c",
@@ -317,6 +317,42 @@
         "3b4bc0889c",
         "6285ddc9a6",
         "be8ea4c441"
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "child_pledge_cosponsor_orgs",
+      "file": "act/mental-health-city/index.html",
+      "count": 1,
+      "lines_20260906": [
+        391
+      ],
+      "contexts": [
+        "02def3da65"
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "child_pledge_cosponsor_orgs",
+      "file": "events/index.html",
+      "count": 1,
+      "lines_20260906": [
+        580
+      ],
+      "contexts": [
+        "f47d604608"
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "child_pledge_cosponsor_orgs",
+      "file": "press/2026-08-13-counselor-salary-and-manpower/index.html",
+      "count": 1,
+      "lines_20260906": [
+        313
+      ],
+      "contexts": [
+        "1a1bb3b737"
       ],
       "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
     },
@@ -403,7 +439,7 @@
       "file": "press/index.html",
       "count": 1,
       "lines_20260906": [
-        528
+        539
       ],
       "contexts": [
         "fefafd7ba6"
@@ -500,7 +536,7 @@
         161,
         205,
         692,
-        1142
+        1152
       ],
       "contexts": [
         "04d00010a9",
@@ -565,10 +601,10 @@
       "file": "press/index.html",
       "count": 4,
       "lines_20260906": [
-        506,
-        588,
-        614,
-        676
+        517,
+        599,
+        625,
+        687
       ],
       "contexts": [
         "1b13ee22a9",
@@ -650,7 +686,7 @@
         10,
         138,
         151,
-        1136
+        1146
       ],
       "contexts": [
         "61d8ef79a7",
@@ -713,7 +749,7 @@
       "file": "press/index.html",
       "count": 1,
       "lines_20260906": [
-        573
+        584
       ],
       "contexts": [
         "2bbe64096d"
@@ -828,7 +864,7 @@
         138,
         161,
         205,
-        1142
+        1152
       ],
       "contexts": [
         "0c4a8bb7ec",
@@ -887,11 +923,11 @@
       "file": "press/index.html",
       "count": 5,
       "lines_20260906": [
-        493,
-        511,
-        563,
-        614,
-        682
+        504,
+        522,
+        574,
+        625,
+        693
       ],
       "contexts": [
         "013d90156c",

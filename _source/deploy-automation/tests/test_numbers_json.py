@@ -29,6 +29,10 @@ APPROVED_WEAK_SOURCE = {
     "mental_health_alliance_orgs": "external_dated",
 }
 
+# 2026-10-12 理事長裁示共同發起團體數（72，本盟自有名冊）加入真源：出處是本盟自己的名冊，
+# 不屬「他方組織規模」，status approved、source_status internal。
+APPROVED_OWN_ROSTER = ["child_pledge_cosponsor_orgs"]
+
 # SOP 第一節「首批 id（2026-09-06）」
 FIRST_BATCH = ["valid_surveys", "single_reach", "partners",
                "press_coverage", "buzz_1y", "actions"]
@@ -173,7 +177,10 @@ def test_status_is_declared_and_valid(metrics):
         assert "並存的其他數值" in metrics[mid]["notes"], f"{mid} notes 未列並存數值"
         assert "理事長 2026-09-21 確認" in metrics[mid]["notes"], \
             f"{mid} notes 未寫理事長確認句"
-    assert set(APPROVED) | set(APPROVED_WEAK_SOURCE) == set(metrics)
+    for mid in APPROVED_OWN_ROSTER:
+        assert metrics[mid]["status"] == "approved", mid
+        assert metrics[mid]["source_status"] == "internal", mid
+    assert set(APPROVED) | set(APPROVED_WEAK_SOURCE) | set(APPROVED_OWN_ROSTER) == set(metrics)
 
 
 def test_changed_values_keep_previous_values(metrics):
