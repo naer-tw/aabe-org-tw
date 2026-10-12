@@ -197,6 +197,11 @@
   .cta-s:hover{background:var(--deep)}
   @media (max-width:860px){header.site nav{display:none}header.site .wrap{justify-content:space-between}}
 
+  /* 互連帶：同日發出的另一份承諾書（兩頁同款） */
+  .xlink{background:#E4F1EE;border-bottom:1px solid var(--rule)}
+  .xlink .wrap{padding-top:12px;padding-bottom:12px;font-size:15px;line-height:1.7;color:var(--ink-2)}
+  .xlink a{font-weight:700;color:var(--deep)}
+
   /* Hero */
   .hero{background:var(--ink);color:#fff;padding:76px 0 68px;position:relative;overflow:hidden}
   .hero::after{content:"";position:absolute;right:-8%;top:-30%;width:46vw;height:46vw;max-width:620px;max-height:620px;border-radius:50%;
@@ -276,6 +281,10 @@
   .mailbox{font-family:ui-monospace,Menlo,monospace;font-size:16px;color:#fff;background:rgba(255,255,255,.08);padding:3px 10px;word-break:break-all}
   #copybtn{font-size:13px;border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;padding:3px 12px;cursor:pointer;margin-left:6px}
   .join .btn.p{display:block;text-align:center;font-size:17px;padding:16px 24px;margin-top:18px}
+  .join .chan{padding:14px 0;border-top:1px solid rgba(255,255,255,.18)}
+  .join .chan:first-of-type{border-top:0;padding-top:4px}
+  .join .chan .k{display:block;font-size:13px;letter-spacing:.12em;color:#9FB5B0;margin-bottom:6px}
+  .join .chan .addr{display:block;color:#fff;line-height:1.7}
   .join .proxy{margin-top:18px;font-size:14.5px;color:#C9D8D4;border-top:1px solid rgba(255,255,255,.18);padding-top:14px;line-height:1.8}
   .join .ret{margin-top:16px;font-size:14px;color:#9FB5B0;line-height:1.8}
   @media (max-width:820px){.join .wrap{grid-template-columns:1fr;gap:30px}}
@@ -365,6 +374,8 @@
   <nav aria-label="本頁導覽"><a href="#six">六項承諾</a><a href="#download">下載</a><a href="#reply">怎麼回覆</a><a href="#rules">公開規則</a><a href="#replies">各縣市回覆</a></nav>
   <a class="cta-s" href="#download">下載承諾書</a>
 </div></header>
+
+<div class="xlink"><div class="wrap">同日發出的另一份承諾書：<a href="/act/child-pledge/">兒少十大承諾書</a>（國教行動聯盟召集、72 個民間團體共同發起）</div></div>
 
 <div class="hero"><div class="wrap">
   <div class="left">
@@ -464,9 +475,9 @@
   </div>
   <div>
     <div class="mailcard">
-      <span class="lab">請寄到</span>
-      <span class="mailbox" id="mailaddr">action.a.e0626@gmail.com</span><button type="button" id="copybtn">複製</button>
-      <a class="btn p" href="mailto:action.a.e0626@gmail.com">用電子郵件程式寄出</a>
+      <span class="lab">回傳方式</span>
+      <div class="chan"><span class="k">Email</span><span class="mailbox" id="mailaddr">action.a.e0626@gmail.com</span><button type="button" id="copybtn">複製</button><a class="btn p" href="mailto:action.a.e0626@gmail.com">用電子郵件程式寄出</a></div>
+      <div class="chan"><span class="k">簡訊傳照片（協助）</span><span class="addr">Email 或上傳表單不方便時，拍好照片後，可用簡訊傳到秘書長李睿澤的手機 0921-113-066。照片多的話，建議改用 Email 或上傳表單。</span><a class="btn p" href="sms:0921113066">傳簡訊</a></div>
       <p class="ret">回傳方式與截止日：請將簽署後之承諾書以 Email 回傳至 action.a.e0626@gmail.com；簽署截止日為 2026 年 11 月 11 日（三）18:00，逾期回覆仍予收件並於網頁註記收件日期。</p>
     </div>
     <p class="proxy">本承諾書由協力單位國教行動聯盟代為收件與刊登，發起單位臺灣心理健康聯盟共同追蹤。</p>
@@ -494,7 +505,7 @@
 <section id="replies"><div class="wrap">
   <div class="sec-head">
     <div><div class="eyebrow">06　各縣市回覆</div><h2>22 縣市回覆表</h2></div>
-    <p class="sub"><span class="ln">預定寄發日：2026 年 10 月 14 日（記者會同日）</span><span class="ln">本頁更新：2026 年 10 月 8 日</span></p>
+    <p class="sub"><span class="ln">預定寄發日：2026 年 10 月 14 日（記者會同日）</span><span class="ln">本頁更新：2026 年 10 月 12 日</span></p>
   </div>
   <p class="intro-t">表中只刊登已收到並核對完成的回覆，原文照登；表中未列出的參選人，視為尚未收到回覆。</p>
   <p class="gen">目前尚未收到任何縣市參選人的回覆。</p>
