@@ -333,6 +333,36 @@
       "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
     },
     {
+      "id": "child_pledge_cosponsor_orgs",
+      "file": "press/2026-10-14-child-pledge-launch/attachments/index.html",
+      "count": 2,
+      "lines_20260906": [
+        55,
+        97
+      ],
+      "contexts": [
+        "1d716b92c9",
+        "ab2165b992"
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "family_resilience_orgs",
+      "file": "press/2026-10-14-child-pledge-launch/attachments/index.html",
+      "count": 3,
+      "lines_20260906": [
+        97,
+        106,
+        218
+      ],
+      "contexts": [
+        "085f8be33c",
+        "3cdfb0cd21",
+        "cf620a0321"
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
       "id": "legislators",
       "file": "act/index.html",
       "count": 2,
@@ -419,6 +449,28 @@
       ],
       "contexts": [
         "fefafd7ba6"
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "mental_health_alliance_orgs",
+      "file": "press/2026-10-14-child-pledge-launch/attachments/index.html",
+      "count": 6,
+      "lines_20260906": [
+        97,
+        106,
+        117,
+        200,
+        231,
+        473
+      ],
+      "contexts": [
+        "085f8be33c",
+        "38ad2c6e9c",
+        "7684e02c64",
+        "9a1d9577fb",
+        "b3c3717874",
+        "fdddb2e0e3"
       ],
       "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
     },
