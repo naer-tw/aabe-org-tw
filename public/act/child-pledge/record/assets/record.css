@@ -8,7 +8,7 @@
 :root{
   --paper:#F8F9F4; --white:#FFFFFF; --glow:#FFF4D2;
   --ink:#0E2A26; --ink-2:#1F3B37; --gr:#34463F; --mute:#3A4A45;
-  --teal:#2BA18E; --tealD:#177868; --org:#EC9B32; --orgD:#D8760F;
+  --teal:#2BA18E; --tealD:#177868; --tealBtn:#1B6B60; --tealBtnH:#237A6D; --org:#EC9B32; --orgD:#D8760F;
   --rule:#D8DCCF; --rule-2:#B4BDB6;
   --serif:'Noto Serif TC','Songti TC','STSongti-TC-Black','PMingLiU','Noto Serif CJK TC','Source Han Serif TC',serif;
   --sans:'Noto Sans TC','PingFang TC','Microsoft JhengHei','Heiti TC','Noto Sans CJK TC','Source Han Sans TC',sans-serif;
@@ -100,14 +100,14 @@ main:focus{outline:none}
 .btn-g:hover{background:var(--white)}
 /* 2026-10-12 第四批：首屏主按鈕「回傳簽好的承諾書」——品牌青綠 #2BA18E 實心白字（約 3.2:1，未達一般文字 AA 4.5:1，所以字一律粗體 800、≥18.66px＝14pt 粗體大字門檻，適用 3:1），
    比原兩顆（現在都是次要的外框樣式）大一級、較厚；hover 改深青綠（對白字 ≥4.5:1）。 */
-.btn-r{background:var(--teal);color:#fff;border-color:var(--teal);font-size:22px;font-weight:800;min-height:64px;padding:0 36px;box-shadow:0 3px 0 var(--tealD)}
-.btn-r:hover{background:var(--tealD);border-color:var(--tealD)}
+.btn-r{background:var(--tealBtn);color:#fff;border-color:var(--teal);font-size:22px;font-weight:800;min-height:64px;padding:0 36px;box-shadow:0 3px 0 var(--tealD)}
+.btn-r:hover{background:var(--tealBtnH);border-color:var(--teal)}
 /* 浮動回傳鍵（record/ 除回傳頁外的每一頁，由 _shell 輸出；純 HTML＋CSS、不用 JS）：手機（≤768px）固定在視窗底部、整寬（左右各 16px 安全邊距）、高 ≥48px；桌機（>768px）右下角膠囊。
    同樣青綠 #2BA18E 實心白字，字粗體 800、≥18.66px（大字門檻）；.has-fab 讓頁尾底部多留空間不被蓋住；尊重 iOS 安全區（env(safe-area-inset-bottom)）。
    焦點輪廓用全站唯一的 :focus-visible（3px --tealD、offset 2px；tests/test_pledge_uiux.py UX-009 要求全站只有一條 focus-visible 規則，所以這裡不另寫）：輪廓畫在鍵外側 2px 處、落在紙白底上（對比 ≥4.5:1），鍵本身另有 2px 白邊把輪廓與青綠鍵面隔開。
    z-index 20：低於 .skip（100），站頭導覽不是 fixed／sticky 所以不會被蓋；不加任何動畫（prefers-reduced-motion 自然符合）；列印隱藏。 */
-.return-fab{position:fixed;z-index:20;display:flex;align-items:center;justify-content:center;min-height:52px;background:var(--teal);color:#fff;border:2px solid #fff;font-size:19px;font-weight:800;letter-spacing:.06em;text-decoration:none;white-space:nowrap;box-shadow:0 4px 16px rgba(14,42,38,.32)}
-.return-fab:hover{background:var(--tealD)}
+.return-fab{position:fixed;z-index:20;display:flex;align-items:center;justify-content:center;min-height:52px;background:var(--tealBtn);color:#fff;border:2px solid #fff;font-size:19px;font-weight:800;letter-spacing:.06em;text-decoration:none;white-space:nowrap;box-shadow:0 4px 16px rgba(14,42,38,.32)}
+.return-fab:hover{background:var(--tealBtnH)}
 .has-fab{padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 @media (max-width:768px){.return-fab{left:16px;right:16px;bottom:calc(12px + env(safe-area-inset-bottom,0px));border-radius:8px}}
 @media (min-width:769px){.return-fab{right:24px;bottom:calc(24px + env(safe-area-inset-bottom,0px));border-radius:999px;padding:0 30px;min-height:56px}.has-fab{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}}
