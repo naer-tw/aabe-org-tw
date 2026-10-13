@@ -101,7 +101,7 @@
         138,
         161,
         205,
-        1152
+        1157
       ],
       "contexts": [
         "0c4a8bb7ec",
@@ -157,9 +157,9 @@
       "file": "press/index.html",
       "count": 3,
       "lines_20260906": [
-        574,
-        625,
-        693
+        585,
+        636,
+        704
       ],
       "contexts": [
         "013d90156c",
@@ -242,7 +242,7 @@
         138,
         161,
         205,
-        1152
+        1157
       ],
       "contexts": [
         "0c4a8bb7ec",
@@ -303,12 +303,12 @@
       "file": "press/index.html",
       "count": 6,
       "lines_20260906": [
-        532,
-        574,
-        599,
-        670,
-        687,
-        693
+        543,
+        585,
+        610,
+        681,
+        698,
+        704
       ],
       "contexts": [
         "013d90156c",
@@ -335,14 +335,28 @@
     {
       "id": "child_pledge_cosponsor_orgs",
       "file": "press/2026-10-14-child-pledge-launch/attachments/index.html",
-      "count": 2,
+      "count": 3,
       "lines_20260906": [
         55,
-        97
+        97,
+        487
       ],
       "contexts": [
         "1d716b92c9",
+        "a50177d25b",
         "ab2165b992"
+      ],
+      "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "child_pledge_cosponsor_orgs",
+      "file": "press/2026-10-14-child-pledge-launch/index.html",
+      "count": 1,
+      "lines_20260906": [
+        260
+      ],
+      "contexts": [
+        "a50177d25b"
       ],
       "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
     },
@@ -445,7 +459,7 @@
       "file": "press/index.html",
       "count": 1,
       "lines_20260906": [
-        539
+        550
       ],
       "contexts": [
         "fefafd7ba6"
@@ -462,7 +476,7 @@
         117,
         200,
         231,
-        473
+        475
       ],
       "contexts": [
         "085f8be33c",
@@ -564,7 +578,7 @@
         161,
         205,
         692,
-        1152
+        1157
       ],
       "contexts": [
         "04d00010a9",
@@ -629,10 +643,10 @@
       "file": "press/index.html",
       "count": 4,
       "lines_20260906": [
-        517,
-        599,
-        625,
-        687
+        528,
+        610,
+        636,
+        698
       ],
       "contexts": [
         "1b13ee22a9",
@@ -714,7 +728,7 @@
         10,
         138,
         151,
-        1146
+        1151
       ],
       "contexts": [
         "61d8ef79a7",
@@ -777,7 +791,7 @@
       "file": "press/index.html",
       "count": 1,
       "lines_20260906": [
-        584
+        595
       ],
       "contexts": [
         "2bbe64096d"
@@ -892,7 +906,7 @@
         138,
         161,
         205,
-        1152
+        1157
       ],
       "contexts": [
         "0c4a8bb7ec",
@@ -951,11 +965,11 @@
       "file": "press/index.html",
       "count": 5,
       "lines_20260906": [
-        504,
-        522,
-        574,
-        625,
-        693
+        515,
+        533,
+        585,
+        636,
+        704
       ],
       "contexts": [
         "013d90156c",
