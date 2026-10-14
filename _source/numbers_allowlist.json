@@ -351,11 +351,15 @@
     {
       "id": "child_pledge_cosponsor_orgs",
       "file": "press/2026-10-14-child-pledge-launch/index.html",
-      "count": 1,
+      "count": 3,
       "lines_20260906": [
-        260
+        15,
+        265,
+        267
       ],
       "contexts": [
+        "50a2b4f8e0",
+        "50a2b4f8e0",
         "a50177d25b"
       ],
       "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
