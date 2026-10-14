@@ -289,7 +289,8 @@ def build(preview=False):
         media_blk = ('<details class="blk" id="media"><summary><span class="ttl">媒體報導</span><span class="cnt">上線後補</span></summary>'
                      '<div class="inner"><p class="pending">（預覽專用）10/15–16 聲量盤點後補，正式版沒有資料就整段不放。</p></div></details>')
     else:
-        media_blk = ""
+        media_blk = ('<details class="blk" id="media"><summary><span class="ttl">媒體報導</span><span class="cnt">10/15–16 補</span></summary>'
+                     '<div class="inner"><p class="pending">各媒體報導的連結與標題，10 月 15 至 16 日整理後補上。</p></div></details>')
 
     ld_event = """{
   "@context": "https://schema.org",

@@ -236,6 +236,26 @@
         "/events/"
       ],
       "note": "併入時由 merge_snippets 貼入（理事長 2026-10-08 15:43 裁決加首頁卡與活動卡）；2026-11-11 回覆截止後 status 改 ended、badge 改「已結束」、cta 改指專頁回覆表。"
+    },
+    {
+      "id": "2026-10-14-child-pledge-launch",
+      "title": "兒少十大承諾起跑記者會・完整記錄",
+      "display_title": "兒少十大承諾起跑記者會・完整記錄",
+      "start": "2026-10-14",
+      "end": "2026-10-14",
+      "status": "ended",
+      "record_url": "/events/2026-10-14-child-pledge-launch/",
+      "cta_label": "看記者會完整記錄 →",
+      "cta_url": "/events/2026-10-14-child-pledge-launch/",
+      "badge": "10 月 14 日 · 已舉行 · 完整記錄",
+      "cta": {
+        "label": "看記者會完整記錄 →",
+        "url": "/events/2026-10-14-child-pledge-launch/"
+      },
+      "pages": [
+        "/events/"
+      ],
+      "note": "2026-10-14 新增：72 團體兒少十大承諾起跑記者會，活動當日已舉行；完整記錄專頁 10/16 預定上線（記者會完整記錄專頁線，理事長核可上線前不推）。"
     }
   ]
 }
