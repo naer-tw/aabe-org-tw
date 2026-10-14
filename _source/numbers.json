@@ -324,6 +324,25 @@
         "72 個民間團體",
         "72個民間團體"
       ]
+    },
+    {
+      "id": "child_pledge_launch_photos",
+      "value": 47,
+      "display": "47",
+      "unit": "張",
+      "label": "10/14 記者會現場照片（Google Drive 公開資料夾）",
+      "period": "2026-10-14 · 起跑記者會現場照片",
+      "method": "指揮部 10/14 在 Google Drive 公開資料夾以 DOM 逐列數過，共 47 張 JPG；完整記錄專頁相簿只放精選，其餘連 Drive。",
+      "source": "指揮部 10/14 Drive 核（資料夾 https://drive.google.com/drive/folders/1XlaEUJJnRsw9OGUy7aJdmNvK_9p6CnKQ，DOM 計數 47 JPG；經 shared 訊息轉達，本線未獨立核對）；上站標記 public/events/2026-10-14-child-pledge-launch/index.html",
+      "last_verified": "2026-10-14",
+      "cadence": "event",
+      "status": "approved",
+      "source_status": "internal",
+      "owner": "指揮部",
+      "notes": "資料夾若增減照片，同步更新本筆。位置表註：指揮部 10/14 Drive 核（DOM 計數 47 JPG），本線未獨立核對。",
+      "scan_patterns": [
+        "47 張"
+      ]
     }
   ],
   "surveys_note": "歷年調查逐案真源：頁面上「歷年調查」表格的每一格樣本／觸及數都要包 `data-metric-list=\"survey:<slug>\"`（欄位用 data-metric-field 指定，預設 valid_samples），numbers_check.py 會逐格比對。數值一律照看板清單，「待查」照抄不補值；夥伴主辦（role=協力）者不計入 valid_surveys 的加總。",

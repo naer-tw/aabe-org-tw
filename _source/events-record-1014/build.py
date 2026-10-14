@@ -191,6 +191,7 @@ def press_body():
     body = re.sub(r'\s*<figure class="photo portrait">.*?</figure>', "", body, flags=re.S)
     body = re.sub(r'\s*<div class="person-card">.*?</div>', "", body, flags=re.S)
     body = body.replace('<h2 class="section-h">', "<h3>").replace("</h2>", "</h3>")
+    body = body.replace("聯合72個民間團體", '聯合<span data-metric="child_pledge_cosponsor_orgs">72</span>個民間團體')
     return body
 
 
@@ -204,12 +205,27 @@ def photo_src(ph):
     return (PRESS_REL if kind == "press" else "images/") + f
 
 
+# 卡片方形窗的臉部中心（占 3:4 原圖的百分比；2026-10-14 對縮圖估），讓人臉居中、背板字少入鏡
+FACE = {"chen-jing-hui": (47, 48, 1.25), "wang-cheng-hsu": (50, 55, 1.25), "fan-yun": (50, 46, 1.25),
+        "liu-shu-pin": (47, 53, 1.25), "wang-hanyang": (50, 36, 1.5), "chang-chueh": (45, 30, 1.45),
+        "tao-lian-sheng": (48, 45, 1.25), "lin-jia-hui": (48, 42, 1.25), "jian-xin-bin": (50, 20, 1.25),
+        "zhen-rui-xing": (50, 22, 1.25), "cai-pei-hua": (45, 26, 1.25)}
+
+
+def face_style(sid):
+    fx, fy, sc = FACE[sid]
+    start = min(max(fy - 37.5, 0), 25)          # 方形窗佔原圖高 75%，起點 0–25%
+    op = start / 25 * 100
+    oy = (fy - start) / 75 * 100                # 臉在窗內的縱向位置，當縮放原點
+    return "object-position:50%% %.0f%%;transform-origin:%d%% %.0f%%;--zs:%s" % (op, fx, oy, sc)
+
+
 def card(sp, said):
     n, sid, name, role, grp, status, ph, alt, src = sp
     q, kind = QUOTES[sid]
     if ph:
-        fig = ('<figure class="pf"><img src="%s" width="480" height="640" alt="%s" loading="lazy"></figure>'
-               % (photo_src(ph), E(alt)))
+        fig = ('<figure class="pf"><img src="%s" width="480" height="640" alt="%s" loading="lazy" style="%s"></figure>'
+               % (photo_src(ph), E(alt), face_style(sid)))
     else:
         fig = '<figure class="pf"><div class="pf-ph" aria-hidden="true">%s</div></figure>' % E(name[0])
     return (
@@ -220,8 +236,9 @@ def card(sp, said):
         '<span class="vh">分享</span></button>'
         '<h4>%(name)s</h4><p class="prole">%(role)s</p>'
         '<blockquote class="pq">「%(q)s」</blockquote>'
-        '<details class="pfull"><summary>完整發言<span class="st">%(status)s</span></summary>'
+        '<details class="pfull"><summary>完整發言</summary>'
         '<div class="said">%(said)s</div><p class="srcline"><b>原檔出處：</b>%(src)s</p></details>'
+        '<p class="pstat">%(status)s</p>'
         '</div></article>'
     ) % {"sid": sid, "fig": fig, "name": E(name), "role": E(role), "q": E(q), "status": E(status), "said": said, "src": E(src)}
 
@@ -396,8 +413,9 @@ body{margin:0;font-family:-apple-system,"Noto Sans TC","PingFang TC","Microsoft 
 .tb{font:inherit;font-size:.82rem;font-weight:700;padding:6px 12px;min-height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.55);background:transparent;color:#fff;cursor:pointer}
 .tb:hover{background:rgba(255,255,255,.12)}
 .wrap{max-width:920px;margin:0 auto;padding:0 16px}
-.hero{margin:12px 0 0;border-radius:16px;overflow:hidden;background:linear-gradient(150deg,#1B4D3E,#0E2E26);color:#F3F8F4}
-.hero img{display:block;width:100%;height:auto;aspect-ratio:1200/520;object-fit:cover;object-position:50% 40%;background:var(--paper-2)}
+.breadcrumb{font-size:.8rem;color:var(--ink-2);padding:8px 0 0;line-height:1.4}.breadcrumb a{color:var(--blue-d)}
+.hero{margin:6px 0 0;border-radius:16px;overflow:hidden;background:linear-gradient(150deg,#1B4D3E,#0E2E26);color:#F3F8F4}
+.hero img{display:block;width:100%;height:auto;aspect-ratio:1200/470;object-fit:cover;object-position:50% 40%;background:var(--paper-2)}
 .hero .in{padding:20px 22px 22px}
 .hero .kicker{font-size:.85rem;font-weight:800;color:#FDEBCB;letter-spacing:.05em;margin:0 0 4px}
 .hero h1{font-size:1.7rem;line-height:1.35;margin:0 0 6px;font-weight:900}
@@ -416,32 +434,33 @@ nav.sticky ul{list-style:none;margin:0;padding:0;display:flex;max-width:920px;ma
 nav.sticky li{flex:1}
 nav.sticky a{display:block;text-align:center;padding:12px 4px;min-height:48px;color:var(--pine-d);font-weight:800;text-decoration:none;font-size:.95rem}
 nav.sticky a:hover{background:var(--paper-2)}
-h2.sec{font-size:1.3rem;margin:26px 0 4px;color:var(--pine-d);scroll-margin-top:56px}
+h2.sec{font-size:1.3rem;margin:18px 0 2px;color:var(--pine-d);scroll-margin-top:56px}
 h3.grp{font-size:1.1rem;margin:20px 0 4px;padding-left:12px;border-left:5px solid var(--gold);color:var(--pine-d)}
 h3.grp small{display:block;font-size:.78rem;font-weight:500;color:var(--ink-2)}
-.legisnote{margin:6px 0 10px;font-size:.88rem;color:var(--ink-2)}
+.legisnote{margin:6px 0 10px;font-size:.74rem;line-height:1.5;color:var(--ink-2)}
 .wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:10px 0 0}
-.pcard{position:relative;display:grid;grid-template-columns:minmax(0,1fr);align-content:start;background:#fff;border:1px solid var(--line);border-top:4px solid var(--pine);border-radius:12px;padding:12px;scroll-margin-top:60px}
-.pcard .pf{margin:0}.pf img,.pf-ph{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 22%;border-radius:8px;background:var(--paper-2)}
+.pcard{position:relative;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;align-content:start;background:#fff;border:1px solid var(--line);border-top:4px solid var(--pine);border-radius:12px;padding:10px;scroll-margin-top:60px}
+.pcard .pf{margin:0;overflow:hidden;border-radius:8px}.pf img{transform:scale(var(--zs,1.25))}.pf img,.pf-ph{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 12%;border-radius:8px;background:var(--paper-2)}
 .pf-ph{display:flex;align-items:center;justify-content:center;font-size:3.2rem;font-weight:900;color:var(--pine);border:1px dashed var(--line-2)}
-.pbody{min-width:0;padding-top:8px}
-.pcard h4{font-size:1.1rem;margin:0;color:var(--pine-d)}
-.prole{font-size:.8rem;color:var(--ink-2);margin:0 0 6px;line-height:1.45}
-.pq{margin:0 0 8px;padding:0;font-size:.88rem;line-height:1.55;color:var(--ink)}
+.pbody{min-width:0;padding-top:6px}
+.pcard h4{font-size:1.05rem;margin:0;color:var(--pine-d)}
+.prole{font-size:.8rem;color:var(--ink-2);margin:0 0 4px;line-height:1.4}
+.pq{flex:1;margin:0 0 6px;padding:0;font-size:.86rem;line-height:1.5;color:var(--ink)}
 .bshare{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--pine-d);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.25)}
 .bshare:hover{background:#fff}.bshare.done::after{content:"已複製";position:absolute;top:44px;right:0;font-size:.72rem;background:var(--pine-d);color:#fff;border-radius:6px;padding:2px 8px;white-space:nowrap}
-details.pfull summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;min-height:44px;padding:6px 10px;border-radius:9px;background:var(--pine);color:#fff;font-weight:800;font-size:.9rem;text-align:center}
+details.pfull summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;min-height:44px;padding:6px 10px;border-radius:9px;background:var(--pine);color:#fff;font-weight:800;font-size:.9rem;text-align:center}
 details.pfull summary::-webkit-details-marker{display:none}
 details.pfull summary::after{content:"＋";font-weight:900}details.pfull[open] summary::after{content:"－"}
-details.pfull summary .st{background:rgba(255,255,255,.2);color:#fff;font-size:.7rem;padding:0 8px;border-radius:999px}
+.pbody{display:flex;flex-direction:column}.pbody details.pfull{order:1}.pstat{order:2;font-size:.72rem;color:var(--ink-2);text-align:center;margin:4px 0 0;line-height:1.4}
+details.pfull[open]~.pstat{display:none}
 .said{margin-top:12px;font-size:1rem}.said h5{font-size:1rem;margin:16px 0 4px;color:var(--pine)}
 .said p{margin:0 0 .95em}.said .orig-title{font-size:.85rem;color:var(--ink-2)}
 .srcline{font-size:.8rem;color:var(--ink-2);border-top:1px dashed var(--line);margin:10px 0 0;padding-top:8px}
 .pcard.open{grid-column:1/-1;grid-template-columns:190px minmax(0,1fr);column-gap:22px;border-top-color:var(--gold)}
 .pcard.open .pf{grid-column:1;grid-row:1}.pcard.open .pbody{grid-column:2;grid-row:1;padding-top:0}
-.pcard.open .pf img,.pcard.open .pf-ph{aspect-ratio:3/4}
+.pcard.open .pf img,.pcard.open .pf-ph{aspect-ratio:3/4}.pcard.open .pf img{transform:none}
 .pcard.open .bshare{top:14px;right:14px}
-.blk{background:#fff;border:1px solid var(--line);border-radius:12px;margin:10px 0;scroll-margin-top:60px}
+.blk{background:#fff;border:1px solid var(--line);border-radius:12px;margin:8px 0;scroll-margin-top:60px}
 .blk>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;min-height:52px;padding:10px 16px;font-weight:800;font-size:1.02rem;color:var(--pine-d)}
 .blk>summary::-webkit-details-marker{display:none}
 .blk>summary::after{content:"＋";margin-left:auto;font-weight:900;color:var(--pine)}.blk[open]>summary::after{content:"－"}
@@ -471,9 +490,9 @@ details.sub{margin:4px 0 10px}details.sub summary{cursor:pointer;font-weight:700
 .card{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--paper);text-decoration:none;color:var(--ink)}
 .card b{display:block;color:var(--pine-d);margin-bottom:2px;font-size:.95rem}.card span{font-size:.82rem;color:var(--ink-2)}
 ul.plain{margin:6px 0;padding-left:1.2em}
-section.docs{margin:26px 0 0}.docs .btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+section.docs{margin:16px 0 0}.docs .btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
 .rules{font-size:.9rem;margin:10px 0 0;color:var(--ink-2)}
-footer{margin-top:32px;background:#1B2420;color:#c3ccc6;font-size:.82rem;line-height:1.7}footer .wrap{padding:22px 16px}footer a{color:var(--gold)}
+footer{margin-top:22px;background:#1B2420;color:#c3ccc6;font-size:.82rem;line-height:1.7}footer .wrap{padding:16px 16px}footer a{color:var(--gold)}
 footer .fnote{margin:10px 0}footer .contact ul{margin:4px 0;padding-left:1.2em}
 .fbtns{display:flex;gap:8px;margin:12px 0}
 a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
@@ -500,14 +519,16 @@ details>*{display:block!important}details.pfull summary,.blk>summary{break-after
 %%PREVIEW_BAR%%
 <header class="topbar"><div class="topbar-inner"><div><div class="org"><a href="https://aabe.org.tw/" aria-label="回國教行動聯盟官網">國教行動聯盟</a></div><div class="org-en">Action Alliance on Basic Education (AABE) · 民間團體</div></div><div class="tools"><button type="button" class="tb" data-act="expand">全部展開</button><button type="button" class="tb" data-act="print">列印版</button></div></div></header>
 <div class="wrap">
+<nav class="breadcrumb" aria-label="麵包屑導航"><a href="https://aabe.org.tw/">首頁</a> / <a href="https://aabe.org.tw/events/">活動</a> / <span>兒少十大承諾起跑記者會 完整記錄</span></nav>
+<main>
 <div class="hero" id="top">
-<img src="%%PRESS_REL%%photo-group.jpg" width="1200" height="630" alt="72 個民間團體代表與出席立委手持「簽了就公開、不評分不排名」「少子化不只中央的事」等手舉板合影，2026 年 10 月 14 日於立法院">
+<img src="%%PRESS_REL%%photo-group.jpg" fetchpriority="high" width="1200" height="630" alt="72 個民間團體代表與出席立委手持「簽了就公開、不評分不排名」「少子化不只中央的事」等手舉板合影，2026 年 10 月 14 日於立法院">
 <div class="in">
 <p class="kicker">兒少十大承諾起跑記者會　完整記錄</p>
 <h1>少子化不只中央的事　72團體邀22縣市打造友善城市</h1>
 <p class="sub">兒少十大、全年齡心理健康城市六項承諾同步發布　邀三黨立委協助轉達</p>
 <p class="meta"><time datetime="2026-10-14T10:00:00+08:00">2026 年 10 月 14 日（三）上午 10:00</time>　立法院中興大樓 101 會議室</p>
-<ul class="facts"><li>72 個民間團體共同發起</li><li>寄送全國 22 縣市長參選人</li><li>11/11 回覆截止・預定 11/18 公布結果</li></ul>
+<ul class="facts"><li><span data-metric="child_pledge_cosponsor_orgs">72</span> 個民間團體共同發起</li><li>寄送全國 22 縣市長參選人</li><li>11/11 回覆截止・預定 11/18 公布結果</li></ul>
 <p class="slogan">孩子的事，縣市的事！</p>
 <div class="btns"><a class="btn p" href="https://aabe.org.tw/act/child-pledge/record/">看各縣市簽署與回覆</a><a class="btn g" href="#documents">下載兩份承諾書</a><a class="tlink" href="#press-release">新聞稿全文</a><a class="tlink" href="%%LIVE%%" target="_blank" rel="noopener">看記者會直播</a></div>
 </div></div>
@@ -529,7 +550,7 @@ details>*{display:block!important}details.pfull summary,.blk>summary{break-after
 <details class="blk" id="slogans"><summary><span class="ttl">口號與合影</span><span class="cnt">5 句口號・2 張合影</span></summary><div class="inner">%%SLOG%%%%PHS%%</div></details>
 <details class="blk" id="gallery"><summary><span class="ttl">現場相簿</span><span class="cnt">精選 8 張</span></summary><div class="inner">
 <p style="margin:12px 0 0;font-size:.92rem">點圖開大圖。</p>%%GAL%%
-<a class="btn o" href="%%DRIVE%%" target="_blank" rel="noopener">全部 47 張（Google Drive）</a></div></details>
+<a class="btn o" href="%%DRIVE%%" target="_blank" rel="noopener">全部 <span data-metric="child_pledge_launch_photos">47</span> 張（Google Drive）</a></div></details>
 <details class="blk" id="context"><summary><span class="ttl">脈絡與延伸</span><span class="cnt">3</span></summary><div class="inner"><div class="cards">
 <a class="card" href="../2026-10-02-mental-health-city-forum/record/"><b>10/2 心理健康城市網絡論壇　會後記錄</b><span>臺灣心理健康聯盟主辦；本頁只連結，不複製內容</span></a>
 <a class="card" href="https://aabe.org.tw/act/mental-health-city/"><b>心理健康城市六項承諾書</b><span>縣市長參選人簽署與回覆</span></a>
@@ -543,6 +564,7 @@ details>*{display:block!important}details.pfull summary,.blk>summary{break-after
 <a class="btn o" href="%%PRESS_URL%%attachments/">四附件與書面意見</a>
 <a class="btn o" href="https://aabe.org.tw/act/child-pledge/record/">各縣市簽署與回覆</a></div>
 <p class="rules">所有參選人適用一致規則：<strong>不評分、不排名、不推薦任何人</strong>。</p></section>
+</main>
 </div>
 <footer><div class="wrap">
 <div class="fbtns"><button type="button" class="tb" data-act="expand">全部展開</button><button type="button" class="tb" data-act="print">列印版</button></div>
