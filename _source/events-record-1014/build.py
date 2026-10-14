@@ -265,9 +265,6 @@ def build(preview=False):
         "<li><b>劉倩伃</b><span>中華民國兒童健康聯盟執行秘書</span></li>"
         "<li><b>莊凱仲</b><span>中華公民人權協會榮譽理事長</span></li></ul>"
     )
-    fb = "".join(
-        '<div class="fbcard"><b>%s</b><span class="who">立法委員</span>'
-        '<p class="pending">貼文日期：待補　到臉書看原文：連結待補</p></div>' % E(x) for x in LEGIS)
     slog = ('<p class="opener">孩子的事，縣市的事！</p><ol class="slogans">%s</ol>'
             '<p class="closer">候選人請回應！簽署要公開，承諾要追蹤！</p>'
             % "".join("<li>%s</li>" % E(s) for s in SLOGANS))
@@ -321,8 +318,8 @@ def build(preview=False):
 
     page = TEMPLATE
     rep = {
-        "%%PREVIEW_BAR%%": ('<div class="previewbar">本機預覽（未上線）｜四位立委臉書連結仍待補，不代表正式版。</div>' if preview else ""),
-        "%%WALL%%": wall, "%%FLOW%%": flow, "%%ATT%%": att, "%%FB%%": fb, "%%SLOG%%": slog, "%%PHS%%": phs,
+        "%%PREVIEW_BAR%%": ('<div class="previewbar">本機預覽（未上線）｜不代表正式版。</div>' if preview else ""),
+        "%%WALL%%": wall, "%%FLOW%%": flow, "%%ATT%%": att, "%%SLOG%%": slog, "%%PHS%%": phs,
         "%%GAL%%": gal, "%%PRESS%%": body, "%%MEDIA%%": media_blk, "%%NOTE%%": E(CANDIDATE_NOTE),
         "%%GALN%%": str(len(GALLERY) + 2),
         "%%LD_EVENT%%": ld_event, "%%LD_PAGE%%": ld_page,
@@ -474,9 +471,6 @@ table.flow td{padding:6px 0;border-bottom:1px solid var(--line)}table.flow tr:la
 .flowhint{font-size:.82rem;color:var(--ink-2);margin:8px 0 0}
 ul.people{list-style:none;margin:0 0 6px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
 ul.people li{display:flex;flex-direction:column;padding:4px 0}ul.people b{color:var(--pine)}ul.people span{font-size:.84rem;color:var(--ink-2)}
-.fbgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-.fbcard{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--paper)}
-.fbcard b{font-size:1.02rem;color:var(--pine-d);margin-right:8px}.fbcard .who{font-size:.8rem;color:var(--ink-2)}
 .pending{color:var(--ink-2);background:var(--paper);border:1px dashed var(--line-2);border-radius:8px;padding:6px 12px;margin:6px 0 0;font-size:.88rem}
 .slogans{margin:6px 0;padding-left:1.4em;font-size:1.15rem;font-weight:800;color:var(--pine-d)}.slogans li{margin:4px 0}
 .opener,.closer{font-size:1.2rem;font-weight:900;color:var(--pine-d);margin:8px 0}.closer{margin-bottom:0}
@@ -504,7 +498,7 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var
 .pcard{padding:8px}.pq{font-size:.8rem;line-height:1.5}.pcard h4{font-size:1rem}
 .pcard.open{grid-template-columns:minmax(0,1fr)}.pcard.open .pf{grid-row:auto}.pcard.open .pf img,.pcard.open .pf-ph{max-width:150px}
 .pcard.open .pbody{grid-column:1;grid-row:auto;padding-top:8px}
-ul.people,.fbgrid,.cards,.phs{grid-template-columns:minmax(0,1fr)}.gal{grid-template-columns:repeat(2,minmax(0,1fr))}
+ul.people,.cards,.phs{grid-template-columns:minmax(0,1fr)}.gal{grid-template-columns:repeat(2,minmax(0,1fr))}
 table.flow th{white-space:normal;width:6.5em}.btn{padding:10px 14px}}
 @media print{.previewbar,.topbar .tools,nav.sticky,.bshare,.fbtns{display:none!important}
 details>*{display:block!important}details.pfull summary,.blk>summary{break-after:avoid}.pcard,.blk{break-inside:avoid-page}.hero{break-after:avoid}body{background:#fff}}
@@ -546,8 +540,6 @@ details>*{display:block!important}details.pfull summary,.blk>summary{break-after
 <details class="blk" id="schedule"><summary><span class="ttl">記者會流程與出席名單</span><span class="cnt">依採訪通知整理</span></summary><div class="inner">
 <table class="flow"><tbody>%%FLOW%%</tbody></table><p class="flowhint">以上為採訪通知預排流程，實際先後與時間以現場為準。</p>
 %%ATT%%</div></details>
-<details class="blk" id="facebook"><summary><span class="ttl">立法委員臉書貼文</span><span class="cnt">4</span></summary><div class="inner">
-<p style="margin:12px 0 0;font-size:.92rem">四位立法委員於記者會當天在個人臉書的貼文，僅提供連結；貼文屬各委員個人，內容與立場由各委員自行負責。</p><div class="fbgrid">%%FB%%</div></div></details>
 <details class="blk" id="slogans"><summary><span class="ttl">口號與合影</span><span class="cnt">5 句口號・2 張合影</span></summary><div class="inner">%%SLOG%%%%PHS%%</div></details>
 <details class="blk" id="gallery"><summary><span class="ttl">現場相簿</span><span class="cnt">精選 8 張</span></summary><div class="inner">
 <p style="margin:12px 0 0;font-size:.92rem">點圖開大圖。</p>%%GAL%%
