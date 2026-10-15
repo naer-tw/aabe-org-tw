@@ -57,6 +57,11 @@ def load_speeches():
                 break
             block.append(ln)
         out[n] = block
+    # 蔡沛華：理事長 2026-10-15 裁決以附件一登載的調整版為準（取代彙整檔的原件）
+    ovr = os.path.join(HERE, "src_override_cai_pei_hua.md")
+    if os.path.exists(ovr):
+        txt = re.sub(r"<!--.*?-->", "", open(ovr, encoding="utf-8").read(), flags=re.S)
+        out[12] = txt.strip().split("\n")
     return out
 
 
@@ -122,7 +127,7 @@ SPEAKERS = [
      "台灣青少年神經多樣性行動協會理事長甄瑞興發言", SRC_NEWS),
     (12, "cai-pei-hua", "蔡沛華", "中華公民人權協會理事長", "ngo", "依新聞稿", M("photo-cai-pei-hua.jpg"),
      "中華公民人權協會理事長蔡沛華發言",
-     "本人提供之第三人稱書面稿（新聞稿用）原件，非現場逐字稿；新聞稿附件一〈各團體及貴賓書面意見〉另載經編輯微調、原意不變的版本，文字略有不同。"),
+     "附件一〈各團體及貴賓書面意見〉"),
 ]
 GROUPS = [
     ("host", "共同發起團體：主辦方開場與心理健康城市說明", "預排 10:02–10:08"),
@@ -364,6 +369,11 @@ def verbatim_check(page):
             total += 1
             if s not in plain:
                 bad.append((n, s[:40]))
+    att = open(os.path.join(ROOT, "public", "press", "2026-10-14-child-pledge-launch", "attachments", "index.html"), encoding="utf-8").read()
+    att_plain = html.unescape(re.sub(r"<[^>]+>", "", att))
+    for ln in speeches[12]:
+        if ln.strip() and ln.strip() not in att_plain:
+            bad.append((12, "不在附件一：" + ln.strip()[:30]))
     pp, praw = press_plain()
     qbad = []
     for sid, (q, kind) in QUOTES.items():
