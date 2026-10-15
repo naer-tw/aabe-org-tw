@@ -31,7 +31,8 @@ APPROVED_WEAK_SOURCE = {
 
 # 2026-10-12 理事長裁示共同發起團體數（72，本盟自有名冊）加入真源：出處是本盟自己的名冊，
 # 不屬「他方組織規模」，status approved、source_status internal。
-APPROVED_OWN_ROSTER = ["child_pledge_cosponsor_orgs"]
+# 2026-10-15 記者會完整記錄專頁新增「現場照片張數」（指揮部 10/14 Drive 核，source_status internal）。
+APPROVED_OWN_ROSTER = ["child_pledge_cosponsor_orgs", "child_pledge_launch_photos"]
 
 # SOP 第一節「首批 id（2026-09-06）」
 FIRST_BATCH = ["valid_surveys", "single_reach", "partners",

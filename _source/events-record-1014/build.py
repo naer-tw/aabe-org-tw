@@ -30,7 +30,7 @@ PRESS_REL = "../../press/2026-10-14-child-pledge-launch/"
 PRESS_URL = SITE + "/press/2026-10-14-child-pledge-launch/"
 LIVE_URL = "https://youtube.com/live/gcj19AY5LHU"
 DRIVE_URL = "https://drive.google.com/drive/folders/1XlaEUJJnRsw9OGUy7aJdmNvK_9p6CnKQ"
-PUBLISHED = "2026-10-16"
+PUBLISHED = "2026-10-15"
 LEGIS_NOTE = "以下為各立法委員於記者會現場的發言，屬其個人立場；本聯盟對所有參選人適用一致規則，不評分、不排名、不推薦任何人。"
 
 E = lambda s: html.escape(s, quote=True)
@@ -198,8 +198,6 @@ def press_body():
     body = re.sub(r'\s*<figure class="photo portrait">.*?</figure>', "", body, flags=re.S)
     body = re.sub(r'\s*<div class="person-card">.*?</div>', "", body, flags=re.S)
     body = body.replace('<h2 class="section-h">', "<h3>").replace("</h2>", "</h3>")
-    # 暫時：結果公布日 10/15 理事長再裁改為 11/13（五）；新聞稿頁 v6.4 上線後，以該頁文字為準並刪此行
-    body = body.replace("預定於11月18日公布", "預定於11月13日公布")
     body = body.replace("聯合72個民間團體", '聯合<span data-metric="child_pledge_cosponsor_orgs">72</span>個民間團體')
     return body
 
