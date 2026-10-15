@@ -121,8 +121,8 @@ SPEAKERS = [
      "家庭韌性行動聯盟召集人林嘉慧發言", SRC_NEWS + "原稿中的「任林」照登。"),
     (9, "jian-xin-bin", "簡信斌", "中華民國中小學校長協會副理事長", "ngo", "依新聞稿", M("photo-jian-xin-bin.jpg"),
      "中華民國中小學校長協會副理事長簡信斌發言", SRC_NEWS + "原稿第一行職稱姓名與「表示」分行，照登。"),
-    (10, "lin-ling-hua", "林玲華", "財團法人赤子心教育基金會董事長", "ngo", "依新聞稿", None,
-     "", SRC_NEWS),
+    (10, "lin-ling-hua", "林玲華", "財團法人赤子心教育基金會董事長", "ngo", "依新聞稿", M("photo-lin-ling-hua.jpg"),
+     "財團法人赤子心教育基金會董事長林玲華發言", SRC_NEWS),
     (11, "zhen-rui-xing", "甄瑞興", "台灣青少年神經多樣性行動協會理事長", "ngo", "依新聞稿", M("photo-zhen-rui-xing.jpg"),
      "台灣青少年神經多樣性行動協會理事長甄瑞興發言", SRC_NEWS),
     (12, "cai-pei-hua", "蔡沛華", "中華公民人權協會理事長", "ngo", "依新聞稿", M("photo-cai-pei-hua.jpg"),
@@ -220,7 +220,7 @@ def photo_src(ph):
 # 卡片方形窗的臉部中心（占 3:4 原圖的百分比；2026-10-14 對縮圖估），讓人臉居中、背板字少入鏡
 FACE = {"chen-jing-hui": (47, 48, 1.25), "wang-cheng-hsu": (50, 55, 1.25), "fan-yun": (50, 46, 1.25),
         "liu-shu-pin": (47, 53, 1.25), "wang-hanyang": (50, 36, 1.5), "chang-chueh": (45, 30, 1.45),
-        "tao-lian-sheng": (48, 45, 1.25), "lin-jia-hui": (48, 42, 1.25), "jian-xin-bin": (50, 20, 1.25),
+        "tao-lian-sheng": (48, 45, 1.25), "lin-jia-hui": (48, 42, 1.25), "jian-xin-bin": (50, 20, 1.25), "lin-ling-hua": (45, 54, 1.2),
         "zhen-rui-xing": (47, 48, 1.25), "cai-pei-hua": (45, 26, 1.25)}
 
 

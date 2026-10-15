@@ -23,4 +23,7 @@ for g in GALLERY:
     im = Image.open(SRC + g + ".JPG").convert("RGB")
     im.thumbnail((1200, 1200), Image.LANCZOS)
     im.save(os.path.join(OUT, "live-" + g[4:] + ".jpg"), quality=82, optimize=True)
-print("ok", len(PORTRAITS), len(GALLERY))
+# 林玲華：理事長 2026-10-15 提供的現成照片（_source 內 src_photo_lin_ling_hua_理事長提供.jpg），裁成 3:4 並避開他人桌牌
+im = Image.open(os.path.join(os.path.dirname(__file__), "src_photo_lin_ling_hua_理事長提供.jpg")).convert("RGB").crop((350, 60, 680, 500)).resize((480, 640), Image.LANCZOS)
+im.save(os.path.join(OUT, "photo-lin-ling-hua.jpg"), quality=88, optimize=True)
+print("ok", len(PORTRAITS) + 1, len(GALLERY))
