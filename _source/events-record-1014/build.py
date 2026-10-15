@@ -162,7 +162,7 @@ FB_LINKS = {"陳菁徽": "https://www.facebook.com/share/p/1DYZiZ25Wi/",
             "王正旭": None,
             "范雲": "https://www.facebook.com/share/v/1C7YxzTpN9/",
             "劉書彬": "https://www.facebook.com/share/p/1HrGX6Uv5q/"}
-FB_ALLOW_PARTIAL = False
+FB_ALLOW_PARTIAL = True  # 理事長 10/15：王正旭沒有更新貼文，先放已發布的三位（只列有貼文者，不點名缺的人）
 MEDIA = []  # 10/15–16 聲量盤點後補：[(媒體, 標題, 連結, 日期)]
 
 # ---------------------------------------------------------------- 新聞稿正文（複用官網頁）
@@ -291,9 +291,9 @@ def build(preview=False):
     if fb_ready:
         cards_fb = "".join(
             '<div class="fbcard"><b>%s</b><span class="who">立法委員</span><p style="margin:6px 0 0">%s</p></div>'
-            % (E(n), ('<a href="%s" target="_blank" rel="noopener">到臉書看原文 ↗</a>' % E(FB_LINKS[n])) if FB_LINKS[n] else "") for n in LEGIS)
+            % (E(n), '<a href="%s" target="_blank" rel="noopener">到臉書看原文 ↗</a>' % E(FB_LINKS[n])) for n in LEGIS if FB_LINKS[n])
         fb_blk = ('<details class="blk" id="facebook"><summary><span class="ttl">立法委員臉書貼文</span><span class="cnt">%d</span></summary>'
-                  '<div class="inner"><p style="margin:12px 0 0;font-size:.92rem">以下僅提供連結，不轉貼全文；貼文屬各委員個人，內容與立場由各委員自行負責。</p>'
+                  '<div class="inner"><p style="margin:12px 0 0;font-size:.92rem">本區僅列出已在個人臉書發布相關貼文的立法委員，只提供連結、不轉貼全文；貼文屬各委員個人，內容與立場由各委員自行負責。</p>'
                   '<div class="fbgrid">%s</div></div></details>' % (sum(1 for n in LEGIS if FB_LINKS[n]), cards_fb))
     if MEDIA:
         media = "".join('<li>%s｜<a href="%s" target="_blank" rel="noopener">%s</a>（%s）</li>' % (E(m), E(u), E(t), E(d))
@@ -477,7 +477,7 @@ details.pfull[open]~.pstat{display:none}
 .pcard.open .pf img,.pcard.open .pf-ph{aspect-ratio:3/4}.pcard.open .pf img{transform:none}
 .pcard.open .bshare{top:14px;right:14px}
 .blk{background:#fff;border:1px solid var(--line);border-radius:12px;margin:8px 0;scroll-margin-top:60px}
-.blk>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;min-height:52px;padding:10px 16px;font-weight:800;font-size:1.02rem;color:var(--pine-d)}
+.blk>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;min-height:48px;padding:8px 16px;font-weight:800;font-size:1.02rem;color:var(--pine-d)}
 .blk>summary::-webkit-details-marker{display:none}
 .blk>summary::after{content:"＋";margin-left:auto;font-weight:900;color:var(--pine)}.blk[open]>summary::after{content:"－"}
 .blk .cnt{font-size:.78rem;font-weight:700;background:var(--paper-2);color:var(--pine-d);border-radius:999px;padding:0 10px}
