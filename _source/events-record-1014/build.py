@@ -156,6 +156,13 @@ GALLERY = [
     ("live-8700.jpg", "會議室一角，出席者圍坐會議桌"),
     ("live-8710.jpg", "會議桌旁一位出席者持麥克風發言，其餘人坐在桌邊"),
 ]
+# 立法委員臉書貼文連結（理事長 10/15 貼來：陳菁徽、范雲、劉書彬；王正旭尚缺）。
+# 紅線：四位同款同序；只有四條齊全才渲染整區，缺一就整區不放（FB_ALLOW_PARTIAL 預設 False，須理事長明示才開）。
+FB_LINKS = {"陳菁徽": "https://www.facebook.com/share/p/1DYZiZ25Wi/",
+            "王正旭": None,
+            "范雲": "https://www.facebook.com/share/v/1C7YxzTpN9/",
+            "劉書彬": "https://www.facebook.com/share/p/1HrGX6Uv5q/"}
+FB_ALLOW_PARTIAL = False
 MEDIA = []  # 10/15–16 聲量盤點後補：[(媒體, 標題, 連結, 日期)]
 
 # ---------------------------------------------------------------- 新聞稿正文（複用官網頁）
@@ -279,6 +286,15 @@ def build(preview=False):
     gal = ('<div class="gal">%s</div><details class="sub"><summary>另 %d 張</summary><div class="gal">%s</div></details>'
            % ("".join(gal_items[:6]), len(gal_items) - 6, "".join(gal_items[6:])))
 
+    fb_ready = all(FB_LINKS[n] for n in LEGIS) or FB_ALLOW_PARTIAL
+    fb_blk = ""
+    if fb_ready:
+        cards_fb = "".join(
+            '<div class="fbcard"><b>%s</b><span class="who">立法委員</span><p style="margin:6px 0 0">%s</p></div>'
+            % (E(n), ('<a href="%s" target="_blank" rel="noopener">到臉書看原文 ↗</a>' % E(FB_LINKS[n])) if FB_LINKS[n] else "") for n in LEGIS)
+        fb_blk = ('<details class="blk" id="facebook"><summary><span class="ttl">立法委員臉書貼文</span><span class="cnt">%d</span></summary>'
+                  '<div class="inner"><p style="margin:12px 0 0;font-size:.92rem">以下僅提供連結，不轉貼全文；貼文屬各委員個人，內容與立場由各委員自行負責。</p>'
+                  '<div class="fbgrid">%s</div></div></details>' % (sum(1 for n in LEGIS if FB_LINKS[n]), cards_fb))
     if MEDIA:
         media = "".join('<li>%s｜<a href="%s" target="_blank" rel="noopener">%s</a>（%s）</li>' % (E(m), E(u), E(t), E(d))
                         for m, t, u, d in MEDIA)
@@ -322,7 +338,7 @@ def build(preview=False):
     rep = {
         "%%PREVIEW_BAR%%": ('<div class="previewbar">本機預覽（未上線）｜不代表正式版。</div>' if preview else ""),
         "%%WALL%%": wall, "%%FLOW%%": flow, "%%ATT%%": att, "%%SLOG%%": slog, "%%PHS%%": phs,
-        "%%GAL%%": gal, "%%PRESS%%": body, "%%MEDIA%%": media_blk, "%%NOTE%%": E(CANDIDATE_NOTE),
+        "%%GAL%%": gal, "%%PRESS%%": body, "%%FBBLK%%": fb_blk, "%%MEDIA%%": media_blk, "%%NOTE%%": E(CANDIDATE_NOTE),
         "%%GALN%%": str(len(GALLERY) + 2),
         "%%LD_EVENT%%": ld_event, "%%LD_PAGE%%": ld_page,
         "%%LIVE%%": LIVE_URL, "%%DRIVE%%": DRIVE_URL, "%%PAGE_URL%%": PAGE_URL, "%%PRESS_URL%%": PRESS_URL,
@@ -473,6 +489,9 @@ table.flow td{padding:6px 0;border-bottom:1px solid var(--line)}table.flow tr:la
 .flowhint{font-size:.82rem;color:var(--ink-2);margin:8px 0 0}
 ul.people{list-style:none;margin:0 0 6px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
 ul.people li{display:flex;flex-direction:column;padding:4px 0}ul.people b{color:var(--pine)}ul.people span{font-size:.84rem;color:var(--ink-2)}
+.fbgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.fbcard{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--paper)}
+.fbcard b{font-size:1.02rem;color:var(--pine-d);margin-right:8px}.fbcard .who{font-size:.8rem;color:var(--ink-2)}.fbcard a{color:var(--blue-d);font-weight:700}
 .pending{color:var(--ink-2);background:var(--paper);border:1px dashed var(--line-2);border-radius:8px;padding:6px 12px;margin:6px 0 0;font-size:.88rem}
 .slogans{margin:6px 0;padding-left:1.4em;font-size:1.15rem;font-weight:800;color:var(--pine-d)}.slogans li{margin:4px 0}
 .opener,.closer{font-size:1.2rem;font-weight:900;color:var(--pine-d);margin:8px 0}.closer{margin-bottom:0}
@@ -500,7 +519,7 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var
 .pcard{padding:8px}.pq{font-size:.8rem;line-height:1.5}.pcard h4{font-size:1rem}
 .pcard.open{grid-template-columns:minmax(0,1fr)}.pcard.open .pf{grid-row:auto}.pcard.open .pf img,.pcard.open .pf-ph{max-width:150px}
 .pcard.open .pbody{grid-column:1;grid-row:auto;padding-top:8px}
-ul.people,.cards,.phs{grid-template-columns:minmax(0,1fr)}.gal{grid-template-columns:repeat(2,minmax(0,1fr))}
+ul.people,.fbgrid,.cards,.phs{grid-template-columns:minmax(0,1fr)}.gal{grid-template-columns:repeat(2,minmax(0,1fr))}
 table.flow th{white-space:normal;width:6.5em}.btn{padding:10px 14px}}
 @media print{.previewbar,.topbar .tools,nav.sticky,.bshare,.fbtns{display:none!important}
 details>*{display:block!important}details.pfull summary,.blk>summary{break-after:avoid}.pcard,.blk{break-inside:avoid-page}.hero{break-after:avoid}body{background:#fff}}
@@ -542,6 +561,7 @@ details>*{display:block!important}details.pfull summary,.blk>summary{break-after
 <details class="blk" id="schedule"><summary><span class="ttl">記者會流程與出席名單</span><span class="cnt">依採訪通知整理</span></summary><div class="inner">
 <table class="flow"><tbody>%%FLOW%%</tbody></table><p class="flowhint">以上為採訪通知預排流程，實際先後與時間以現場為準。</p>
 %%ATT%%</div></details>
+%%FBBLK%%
 <details class="blk" id="slogans"><summary><span class="ttl">口號與合影</span><span class="cnt">5 句口號・2 張合影</span></summary><div class="inner">%%SLOG%%%%PHS%%</div></details>
 <details class="blk" id="gallery"><summary><span class="ttl">現場相簿</span><span class="cnt">精選 8 張</span></summary><div class="inner">
 <p style="margin:12px 0 0;font-size:.92rem">點圖開大圖。</p>%%GAL%%
