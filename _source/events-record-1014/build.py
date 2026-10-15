@@ -94,7 +94,7 @@ M = lambda f: ("mine", f)
 SPEAKERS = [
     (1, "wang-hanyang", "王瀚陽", "國教行動聯盟理事長", "host", "全文（開場與收尾）", P("photo-wang-hanyang.jpg"),
      "國教行動聯盟理事長王瀚陽發言",
-     "理事長提供之發言稿（2026-10-14）。本頁收錄開場與收尾兩段。發言當日預告的結果公布日已更新為 11 月 17 日，以頁首為準。"),
+     "理事長提供之發言稿（2026-10-14）。本頁收錄開場與收尾兩段。發言當日預告的結果公布日已更新為 11 月 13 日，以頁首為準。"),
     (2, "chang-chueh", "張珏", "臺灣心理健康聯盟召集人", "host", "發言要點稿", P("photo-chang-chueh.jpg"),
      "臺灣心理健康聯盟召集人張珏發言",
      "張珏召集人提供之發言要點稿。原稿為要點式，含「(見附件 會後新聞稿)」「(p2)」「(p7-9)」等投影片頁碼註記，照登。"),
@@ -191,8 +191,8 @@ def press_body():
     body = re.sub(r'\s*<figure class="photo portrait">.*?</figure>', "", body, flags=re.S)
     body = re.sub(r'\s*<div class="person-card">.*?</div>', "", body, flags=re.S)
     body = body.replace('<h2 class="section-h">', "<h3>").replace("</h2>", "</h3>")
-    # 暫時：結果公布日 10/15 裁決提前為 11/17；新聞稿頁 v6.3 上線後，以該頁文字為準並刪此行
-    body = body.replace("預定於11月18日公布", "預定於11月17日公布")
+    # 暫時：結果公布日 10/15 理事長再裁改為 11/13（五）；新聞稿頁 v6.4 上線後，以該頁文字為準並刪此行
+    body = body.replace("預定於11月18日公布", "預定於11月13日公布")
     body = body.replace("聯合72個民間團體", '聯合<span data-metric="child_pledge_cosponsor_orgs">72</span>個民間團體')
     return body
 
@@ -525,7 +525,7 @@ details>*{display:block!important}details.pfull summary,.blk>summary{break-after
 <h1>少子化不只中央的事　72團體邀22縣市打造友善城市</h1>
 <p class="sub">兒少十大、全年齡心理健康城市六項承諾同步發布　邀三黨立委協助轉達</p>
 <p class="meta"><time datetime="2026-10-14T10:00:00+08:00">2026 年 10 月 14 日（三）上午 10:00</time>　立法院中興大樓 101 會議室</p>
-<ul class="facts"><li><span data-metric="child_pledge_cosponsor_orgs">72</span> 個民間團體共同發起</li><li>寄送全國 22 縣市長參選人</li><li>11/11 回覆截止・預定 11/17 公布結果</li></ul>
+<ul class="facts"><li><span data-metric="child_pledge_cosponsor_orgs">72</span> 個民間團體共同發起</li><li>寄送全國 22 縣市長參選人</li><li>11/11 回覆截止・預定 11/13 公布結果</li></ul>
 <p class="slogan">孩子的事，縣市的事！</p>
 <div class="btns"><a class="btn p" href="https://aabe.org.tw/act/child-pledge/record/">看各縣市簽署與回覆</a><a class="btn g" href="#documents">下載兩份承諾書</a><a class="tlink" href="#press-release">新聞稿全文</a><a class="tlink" href="%%LIVE%%" target="_blank" rel="noopener">看記者會直播</a></div>
 </div></div>
