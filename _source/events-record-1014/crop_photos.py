@@ -12,7 +12,7 @@ PORTRAITS = [
     ("IMG_8692", "photo-tao-lian-sheng.jpg", (30, 100, 600, 860)),
     ("IMG_8695", "photo-lin-jia-hui.jpg", (360, 170, 930, 930)),
     ("IMG_8698", "photo-jian-xin-bin.jpg", (380, 250, 950, 1010)),
-    ("IMG_8706", "photo-zhen-rui-xing.jpg", (997, 285, 1567, 1045)),
+    ("IMG_8706", "photo-zhen-rui-xing.jpg", (1000, 100, 1551, 835)),
     ("IMG_8709", "photo-cai-pei-hua.jpg", (830, 270, 1400, 1030)),
 ]
 for src, name, box in PORTRAITS:

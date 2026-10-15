@@ -87,7 +87,7 @@ def render_said(block):
     return "\n".join(out)
 
 
-SRC_NEWS = "本人提供之第三人稱書面稿（新聞稿用），非現場逐字稿；文字與新聞稿頁相同。"
+SRC_NEWS = "本人提供之第三人稱書面稿（新聞稿用），非現場逐字稿；全文同新聞稿附件一〈各團體及貴賓書面意見〉，新聞稿頁正文為其摘述。"
 # (序, id, 姓名, 職稱, 群組, 狀態, 照片, alt, 原檔出處)
 P = lambda f: ("press", f)
 M = lambda f: ("mine", f)
@@ -100,7 +100,7 @@ SPEAKERS = [
      "張珏召集人提供之發言要點稿。原稿為要點式，含「(見附件 會後新聞稿)」「(p2)」「(p7-9)」等投影片頁碼註記，照登。"),
     (3, "chen-jing-hui", "陳菁徽", "立法委員", "legis", "全文", P("photo-chen-jing-hui.jpg"),
      "立法委員陳菁徽發言",
-     "出席者提供之談話稿（談參 v2）。原文「我也要特別調」「每天生的環境」疑有漏字，照原文登出。"),
+     "出席者提供之談話稿。原文「我也要特別調」「每天生的環境」疑有漏字，照原文登出。"),
     (4, "wang-cheng-hsu", "王正旭", "立法委員", "legis", "全文", P("photo-wang-cheng-hsu.jpg"),
      "立法委員王正旭發言",
      "出席者提供之致詞稿（2026-10-14）。"),
@@ -113,7 +113,7 @@ SPEAKERS = [
     (7, "tao-lian-sheng", "陶蓮生", "全國家長會長聯盟理事長", "ngo", "依新聞稿", M("photo-tao-lian-sheng.jpg"),
      "全國家長會長聯盟理事長陶蓮生發言", SRC_NEWS),
     (8, "lin-jia-hui", "林嘉慧", "家庭韌性行動聯盟召集人", "ngo", "依新聞稿", M("photo-lin-jia-hui.jpg"),
-     "家庭韌性行動聯盟召集人林嘉慧發言", SRC_NEWS + "原文「任林」照登。"),
+     "家庭韌性行動聯盟召集人林嘉慧發言", SRC_NEWS + "原稿中的「任林」照登。"),
     (9, "jian-xin-bin", "簡信斌", "中華民國中小學校長協會副理事長", "ngo", "依新聞稿", M("photo-jian-xin-bin.jpg"),
      "中華民國中小學校長協會副理事長簡信斌發言", SRC_NEWS + "原稿第一行職稱姓名與「表示」分行，照登。"),
     (10, "lin-ling-hua", "林玲華", "財團法人赤子心教育基金會董事長", "ngo", "依新聞稿", None,
@@ -121,7 +121,8 @@ SPEAKERS = [
     (11, "zhen-rui-xing", "甄瑞興", "台灣青少年神經多樣性行動協會理事長", "ngo", "依新聞稿", M("photo-zhen-rui-xing.jpg"),
      "台灣青少年神經多樣性行動協會理事長甄瑞興發言", SRC_NEWS),
     (12, "cai-pei-hua", "蔡沛華", "中華公民人權協會理事長", "ngo", "依新聞稿", M("photo-cai-pei-hua.jpg"),
-     "中華公民人權協會理事長蔡沛華發言", SRC_NEWS),
+     "中華公民人權協會理事長蔡沛華發言",
+     "本人提供之第三人稱書面稿（新聞稿用）原件，非現場逐字稿；新聞稿附件一〈各團體及貴賓書面意見〉另載經編輯微調、原意不變的版本，文字略有不同。"),
 ]
 GROUPS = [
     ("host", "共同發起團體：主辦方開場與心理健康城市說明", "預排 10:02–10:08"),
@@ -198,7 +199,6 @@ def press_body():
     body = re.sub(r'\s*<figure class="photo portrait">.*?</figure>', "", body, flags=re.S)
     body = re.sub(r'\s*<div class="person-card">.*?</div>', "", body, flags=re.S)
     body = body.replace('<h2 class="section-h">', "<h3>").replace("</h2>", "</h3>")
-    body = body.replace("聯合72個民間團體", '聯合<span data-metric="child_pledge_cosponsor_orgs">72</span>個民間團體')
     return body
 
 
@@ -216,7 +216,7 @@ def photo_src(ph):
 FACE = {"chen-jing-hui": (47, 48, 1.25), "wang-cheng-hsu": (50, 55, 1.25), "fan-yun": (50, 46, 1.25),
         "liu-shu-pin": (47, 53, 1.25), "wang-hanyang": (50, 36, 1.5), "chang-chueh": (45, 30, 1.45),
         "tao-lian-sheng": (48, 45, 1.25), "lin-jia-hui": (48, 42, 1.25), "jian-xin-bin": (50, 20, 1.25),
-        "zhen-rui-xing": (50, 22, 1.25), "cai-pei-hua": (45, 26, 1.25)}
+        "zhen-rui-xing": (47, 48, 1.25), "cai-pei-hua": (45, 26, 1.25)}
 
 
 def face_style(sid):
@@ -242,7 +242,7 @@ def card(sp, said):
         'stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13"/></svg>'
         '<span class="vh">分享</span></button>'
         '<h4>%(name)s</h4><p class="prole">%(role)s</p>'
-        '<blockquote class="pq">「%(q)s」</blockquote>'
+        '<p class="pq">%(q)s</p>'
         '<details class="pfull"><summary>完整發言</summary>'
         '<div class="said">%(said)s</div><p class="srcline"><b>原檔出處：</b>%(src)s</p></details>'
         '<p class="pstat">%(status)s</p>'
@@ -257,7 +257,7 @@ def build(preview=False):
 
     cards = {sid: card(by_id[sid], render_said(speeches[by_id[sid][0]])) for sid in WALL_ORDER}
     wall = (
-        '<h3 class="grp">出席立法委員（4）<small>依採訪通知列名順序，四位同版面、同字級</small></h3>'
+        '<h3 class="grp">出席立法委員（4）<small>依採訪通知列名順序</small></h3>'
         '<p class="legisnote">%s</p><div class="wall">%s</div>'
         '<h3 class="grp">共同發起團體代表（8）<small>依預排發言順序</small></h3><div class="wall">%s</div>'
     ) % (E(LEGIS_NOTE), "".join(cards[s] for s in WALL_ORDER[:4]), "".join(cards[s] for s in WALL_ORDER[4:]))
@@ -266,14 +266,14 @@ def build(preview=False):
     att = (
         "<h4>共同發起民間團體發言代表</h4><ul class=\"people\">"
         + "".join("<li><b>%s</b><span>%s</span></li>" % (E(s[2]), E(s[3])) for s in SPEAKERS if s[4] != "legis")
-        + "</ul><h4>出席立法委員（依採訪通知列名順序，同字級並列）</h4><ul class=\"people\">"
+        + "</ul><h4>出席立法委員（依採訪通知列名順序）</h4><ul class=\"people\">"
         + "".join("<li><b>%s</b><span>立法委員</span></li>" % E(x) for x in LEGIS)
         + "</ul><h4>共同發起團體出席（不發言）</h4><ul class=\"people\">"
         "<li><b>劉倩伃</b><span>中華民國兒童健康聯盟執行秘書</span></li>"
         "<li><b>莊凱仲</b><span>中華公民人權協會榮譽理事長</span></li></ul>"
     )
     slog = ('<p class="opener">孩子的事，縣市的事！</p><ol class="slogans">%s</ol>'
-            '<p class="closer">候選人請回應！簽署要公開，承諾要追蹤！</p>'
+            '<p class="closer">候選人請回應！簽署要公開，承諾要追蹤！<small style="font-weight:500;font-size:.8rem;color:var(--ink-2)">（現場齊喊原句）</small></p>'
             % "".join("<li>%s</li>" % E(s) for s in SLOGANS))
     phs = ('<div class="phs"><figure><img src="images/live-8711.jpg" width="1200" height="800" loading="lazy" '
            'alt="出席者手持手舉板、部分人舉起手合影（一）"><figcaption>現場出席者手持手舉板合影（一）</figcaption></figure>'
@@ -334,7 +334,7 @@ def build(preview=False):
 
     page = TEMPLATE
     rep = {
-        "%%PREVIEW_BAR%%": ('<div class="previewbar">本機預覽（未上線）｜不代表正式版。</div>' if preview else ""),
+        "%%PREVIEW_BAR%%": ('<div class="previewbar" style="background:#B91C1C;color:#fff;text-align:center;font-size:.85rem;padding:6px 12px;font-weight:700">本機預覽（未上線）｜不代表正式版。</div>' if preview else ""),
         "%%WALL%%": wall, "%%FLOW%%": flow, "%%ATT%%": att, "%%SLOG%%": slog, "%%PHS%%": phs,
         "%%GAL%%": gal, "%%PRESS%%": body, "%%FBBLK%%": fb_blk, "%%MEDIA%%": media_blk, "%%NOTE%%": E(CANDIDATE_NOTE),
         "%%GALN%%": str(len(GALLERY) + 2),
@@ -419,7 +419,6 @@ TEMPLATE = r"""<!DOCTYPE html>
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:56px}
 body{margin:0;font-family:-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:var(--paper);line-height:1.75;overflow-wrap:anywhere}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.previewbar{background:#B91C1C;color:#fff;text-align:center;font-size:.85rem;padding:6px 12px;font-weight:700}
 .topbar{background:linear-gradient(135deg,#1B4D3E,#123B30);color:#fff;border-bottom:3px solid var(--gold)}
 .topbar-inner{max-width:920px;margin:0 auto;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 .org{font-weight:800;font-size:.95rem}.org a{color:inherit;text-decoration:none}.org-en{font-size:.7rem;opacity:.85}
@@ -519,7 +518,7 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var
 .pcard.open .pbody{grid-column:1;grid-row:auto;padding-top:8px}
 ul.people,.fbgrid,.cards,.phs{grid-template-columns:minmax(0,1fr)}.gal{grid-template-columns:repeat(2,minmax(0,1fr))}
 table.flow th{white-space:normal;width:6.5em}.btn{padding:10px 14px}}
-@media print{.previewbar,.topbar .tools,nav.sticky,.bshare,.fbtns{display:none!important}
+@media print{.topbar .tools,nav.sticky,.bshare,.fbtns{display:none!important}
 details>*{display:block!important}details.pfull summary,.blk>summary{break-after:avoid}.pcard,.blk{break-inside:avoid-page}.hero{break-after:avoid}body{background:#fff}}
 </style>
 <script type="application/ld+json">
@@ -553,7 +552,7 @@ details>*{display:block!important}details.pfull summary,.blk>summary{break-after
 %%WALL%%
 
 <h2 class="sec" id="more">更多記錄</h2>
-<details class="blk" id="press-release"><summary><span class="ttl">新聞稿全文</span><span class="cnt">v6.2 官網版</span></summary><div class="inner presstext">
+<details class="blk" id="press-release"><summary><span class="ttl">新聞稿全文</span><span class="cnt">與新聞稿頁同一正文</span></summary><div class="inner presstext">
 <p style="margin:12px 0"><a class="btn d" href="%%PRESS_REL%%attachments/07_press-release.pdf">下載新聞稿 PDF</a>　<a class="btn o" href="%%PRESS_URL%%">回新聞稿頁</a></p>
 %%PRESS%%</div></details>
 <details class="blk" id="schedule"><summary><span class="ttl">記者會流程與出席名單</span><span class="cnt">依採訪通知整理</span></summary><div class="inner">

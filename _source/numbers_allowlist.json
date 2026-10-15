@@ -51,8 +51,8 @@
       "lines_20260906": [
         8,
         526,
-        769,
-        770
+        779,
+        780
       ],
       "contexts": [
         "45e332b3f9",
@@ -323,15 +323,17 @@
     {
       "id": "child_pledge_cosponsor_orgs",
       "file": "events/2026-10-14-child-pledge-launch/index.html",
-      "count": 4,
+      "count": 5,
       "lines_20260906": [
         15,
-        136,
+        135,
         198,
-        205
+        205,
+        261
       ],
       "contexts": [
         "035f51462a",
+        "a50177d25b",
         "b756048a41",
         "de6cfa09cc",
         "e0bd5bd2cf"
@@ -372,8 +374,8 @@
       "count": 3,
       "lines_20260906": [
         15,
-        265,
-        267
+        267,
+        269
       ],
       "contexts": [
         "035f51462a",
