@@ -776,6 +776,22 @@
       primary = primary.slice(0, 20);
       var need = Math.max(0, 20 - primary.length);
       var merged = primary.concat(fallback.slice(0, need)).slice(0, 20);
+      /* 題名優先（2026-10-18，官網第二輪；Codex 健檢第 2 件）：本站與政策站是兩個
+         獨立索引，Pagefind 的分數尺度彼此不可比（實測同一查詢本站首筆 10.9、政策站
+         首筆 3.8；有些查詢差到 150 vs 4），單看分數時政策專題幾乎一定排在本站新聞稿
+         之後。補一條不依賴分數的規則：題名完整包含查詢字串（≥4 字，短詞分數已夠用）
+         的結果，穩定地移到最前面，其餘維持原順序。只重排、不增減——結果集合與
+         修法前完全相同，不影響上面的 top-20 契約與 fallback 規則。 */
+      var qn = query.replace(/\s+/g, '').toLowerCase();
+      if (qn.length >= 4) {
+        var hit = [];
+        var rest = [];
+        merged.forEach(function (d) {
+          var title = ((d.meta && d.meta.title) || '').replace(/\s+/g, '').toLowerCase();
+          (title.indexOf(qn) !== -1 ? hit : rest).push(d);
+        });
+        merged = hit.concat(rest);
+      }
       renderResults(query, merged);
     }).catch(function (err) {
       statusEl.hidden = false;

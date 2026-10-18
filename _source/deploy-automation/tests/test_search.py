@@ -277,7 +277,7 @@ CROSSCHECK_QUERIES = [
 ]
 
 
-def _search_result_hrefs(pg, site, query):
+def _search_result_hrefs(pg, site, query, with_titles=False):
     pg.goto(site + "/press/all/")
     pg.fill("#siteSearchInput", query)
     pg.click("#siteSearchForm button[type=submit]")
@@ -287,7 +287,21 @@ def _search_result_hrefs(pg, site, query):
         timeout=10000,
     )
     links = pg.locator("#searchResults .article-card h3 a")
-    return [links.nth(i).get_attribute("href") for i in range(links.count())]
+    hrefs = [links.nth(i).get_attribute("href") for i in range(links.count())]
+    if with_titles:
+        return [(links.nth(i).get_attribute("href"), links.nth(i).inner_text()) for i in range(links.count())]
+    return hrefs
+
+
+def _title_first_expected(pairs, query):
+    """鏡射 press/all 的「題名優先」規則（2026-10-18）：查詢去空白≥4 字且題名
+    （去空白、小寫）完整包含查詢者，穩定移到最前面；只重排不增減。"""
+    qn = "".join(query.split()).lower()
+    if len(qn) < 4:
+        return [h for h, _ in pairs]
+    hit = [h for h, ti in pairs if qn in "".join(ti.split()).lower()]
+    rest = [h for h, ti in pairs if qn not in "".join(ti.split()).lower()]
+    return hit + rest
 
 
 @pytest.mark.parametrize("query", CROSSCHECK_QUERIES)
@@ -310,7 +324,8 @@ def test_search_branch_results_superset_of_main_ordered(
     main_ctx = browser.new_context()
     main_page = main_ctx.new_page()
     try:
-        main_hrefs = _search_result_hrefs(main_page, local_site_main, query)
+        main_pairs = _search_result_hrefs(main_page, local_site_main, query, with_titles=True)
+        main_hrefs = [h for h, _ in main_pairs]
     finally:
         main_ctx.close()
 
@@ -343,9 +358,12 @@ def test_search_branch_results_superset_of_main_ordered(
     )
 
     n = len(main_hrefs)
-    assert branch_hrefs[:n] == main_hrefs, (
-        f"「{query}」分支版前 {n} 筆順序與 main 版不一致：\n"
-        f"main={main_hrefs!r}\nbranch={branch_hrefs[:n]!r}"
+    # 2026-10-18：分支版多了「題名優先」穩定重排（只重排、不增減），所以基準順序
+    # 不是 main 的原順序，而是 main 順序套同一條規則後的順序。
+    expected = _title_first_expected(main_pairs, query)
+    assert branch_hrefs[:n] == expected, (
+        f"「{query}」分支版前 {n} 筆順序與 main 版（套題名優先規則後）不一致：\n"
+        f"expected={expected!r}\nbranch={branch_hrefs[:n]!r}"
     )
 
 
@@ -365,3 +383,17 @@ def test_search_bullying_includes_policy_site_result(page, local_site, public_di
     hrefs = [links.nth(i).get_attribute("href") for i in range(links.count())]
     policy_hrefs = [h for h in hrefs if h and h.startswith("https://policy.aabe.org.tw/")]
     assert policy_hrefs, f"「霸凌」合併結果沒有任何 policy.aabe.org.tw 連結：{hrefs!r}"
+
+
+def test_search_school_affairs_title_query_finds_position_page_in_top3(page, local_site, public_dir: Path):
+    """2026-10-18 Codex 官網健檢第 2 件：搜尋「校事會議改了」第一筆是首頁、對應專題
+    不在前 20 筆。根因兩個：①政策站索引只收分類資料夾第一層 *.html，專題頁
+    teacher-affairs/school-affairs-meeting-position/index.html 完全不在索引
+    （build_policy_search_staging.py 已改收巢狀專題頁）；②兩個索引分數尺度不可比，
+    政策站結果永遠排在本站之後（press/all 加「題名優先」穩定重排）。
+    驗收：完整題名查詢，專題頁必須在前 3 筆。"""
+    if not (public_dir / "pagefind-policy" / "pagefind.js").exists():
+        pytest.skip("public/pagefind-policy/ 索引未建置")
+    hrefs = _search_result_hrefs(page, local_site, "校事會議改了")
+    target = "https://policy.aabe.org.tw/teacher-affairs/school-affairs-meeting-position/"
+    assert target in hrefs[:3], f"專題頁不在前 3 筆：{hrefs[:5]!r}"
