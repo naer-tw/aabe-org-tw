@@ -84,8 +84,10 @@
       margin: 0 auto 32px;
       max-width: 1080px;
     }
+    .urgent-card-col { min-width: 0; }
     .urgent-card-col h3 { font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.28em; color: var(--brand-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
-    .urgent-card-col .big { font-family: 'Inter', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.02em; }
+    .urgent-card-col .big { font-family: 'Inter', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.02em; overflow-wrap: anywhere; }
+    .urgent-card-col .small { overflow-wrap: anywhere; }
     .urgent-card-col .big a { color: #fff; border-bottom: 1px solid rgba(255,255,255,0.3); }
     .urgent-card-col .big a:hover { color: var(--brand-orange); border-color: var(--brand-orange); }
     .urgent-card-col .small { font-size: 0.92rem; color: #b8bcc3; margin-top: 8px; line-height: 1.6; }
@@ -106,7 +108,7 @@
       text-align: left;
     }
     .quick-stat:last-child { border-right: 0; }
-    .quick-stat .qs-num { font-family: 'Inter', sans-serif; font-size: 2.4rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+    .quick-stat .qs-num { font-family: 'Inter', sans-serif; font-size: 2.4rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
     .quick-stat .qs-num .plus { color: var(--brand-orange); }
     .quick-stat .qs-label { font-size: 0.85rem; color: var(--ink-2); margin-top: 8px; font-weight: 600; }
     .quick-stat .qs-note { font-size: 0.72rem; color: var(--ink-3); margin-top: 4px; }
@@ -114,12 +116,19 @@
       .quick-stats { grid-template-columns: repeat(2, 1fr); }
       .quick-stat:nth-child(2) { border-right: 0; }
       .quick-stat:nth-child(1), .quick-stat:nth-child(2) { border-bottom: 1px solid var(--line); }
+      .quick-stat { padding: 24px 14px; }
+      .quick-stat .qs-num { font-size: 2rem; }
+    }
+    @media (max-width: 420px) {
+      .quick-stat .qs-num { font-size: 1.6rem; }
+      .cite-block { padding: 24px 16px; }
+      .urgent-card-col .big { font-size: 1.05rem; letter-spacing: 0; }
     }
 
     /* Spokesperson cards */
     .spokespersons {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
       gap: 20px;
       margin: 24px 0;
     }
@@ -132,7 +141,7 @@
     .sp-card .sp-role { font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; color: var(--brand-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
     .sp-card .sp-name { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
     .sp-card .sp-topics { font-size: 0.92rem; color: var(--ink-2); line-height: 1.7; margin-bottom: 12px; }
-    .sp-card .sp-quote { font-style: italic; font-size: 0.92rem; color: var(--ink-3); line-height: 1.65; border-left: 3px solid var(--brand-orange); padding-left: 12px; margin-top: 12px; }
+    .sp-card .sp-quote { overflow-wrap: anywhere; font-style: italic; font-size: 0.92rem; color: var(--ink-3); line-height: 1.65; border-left: 3px solid var(--brand-orange); padding-left: 12px; margin-top: 12px; }
 
     /* Cite block */
     .cite-block {
@@ -143,7 +152,7 @@
       margin: 24px 0;
     }
     .cite-block h3 { font-size: 1rem; margin-bottom: 12px; }
-    .cite-block pre { background: #fff; padding: 16px; border-radius: 4px; font-size: 0.85rem; line-height: 1.7; white-space: pre-wrap; color: var(--ink); border: 1px solid var(--line); font-family: 'Inter', monospace; }
+    .cite-block pre { background: #fff; padding: 16px; border-radius: 4px; font-size: 0.85rem; line-height: 1.7; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--ink); border: 1px solid var(--line); font-family: 'Inter', monospace; }
     .cite-block .label { font-size: 0.72rem; letter-spacing: 0.18em; color: var(--ink-3); text-transform: uppercase; margin-bottom: 6px; font-weight: 700; }
 
     /* Downloads */
@@ -237,7 +246,7 @@
     <h2>最新新聞稿 · Latest Releases</h2>
     <span class="section-hint">主站全文 · 媒體可直接引用</span>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:18px;margin-top:24px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:18px;margin-top:24px;">
 
       <!-- AABE:LATEST -->
       <a href="/press/2026-10-14-child-pledge-launch/" data-date="2026-10-14" style="display:block;padding:28px 28px 24px;background:#fff;border:1px solid var(--line);border-left:5px solid #c8385a;border-radius:4px;text-decoration:none;color:inherit;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.06)';this.style.borderColor='var(--ink)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='var(--line)';this.style.borderLeftColor='#c8385a'">
