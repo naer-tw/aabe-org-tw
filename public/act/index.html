@@ -65,7 +65,7 @@
     .section h2 { font-family: 'Noto Serif TC', serif; font-size: 1.8rem; font-weight: 900; margin-bottom: 8px; }
     .section .section-hint { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 24px; display: block; }
 
-    /* Action cards — 5 種身份 5 種行動 */
+    /* Action cards — 6 種身份 6 種行動（2026-10-18 依實際入口數校正；test_act_page 比對卡片數） */
     .actions {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -403,9 +403,9 @@
     </div>
   </div>
 
-  <!-- ════════ 五種身份 五種行動 ════════ -->
+  <!-- ════════ 六種身份 六種行動 ════════ -->
   <section class="section">
-    <h2>5 種身份 · 5 種行動</h2>
+    <h2>6 種身份 · 6 種行動</h2>
     <span class="section-hint">找到你的參與路徑</span>
 
     <div class="actions">
@@ -454,22 +454,32 @@
   </section>
 
   <!-- ════════ 最新活動 Latest Activity ════════ -->
+  <!-- 2026-10-18 第二輪：依日期新→舊（由 _source/events.json 管徽章與按鈕，test_act_page 驗順序）；
+       原 7/10 論壇卡已移入 /events/ 歷史區，不再當「最新」。 -->
   <section class="section">
     <h2>最新活動</h2>
     <span class="section-hint">Latest · 最新動態</span>
 
     <div style="display:grid;gap:16px;margin:24px 0;">
-      <div data-event-id="2026-07-10-cfa-missing-pieces-forum" style="padding:24px 28px;border-left:5px solid #9ca3af;background:#fff;border-radius:6px;">
-        <div data-event-field="badge" style="font-family:'Inter',sans-serif;font-size:0.66rem;letter-spacing:0.22em;color:#9ca3af;font-weight:700;text-transform:uppercase;margin-bottom:8px;">已結束 · Concluded</div>
-        <h3 style="font-family:'Noto Serif TC',serif;font-size:1.2rem;font-weight:900;margin-bottom:8px;">「兒家署缺少的拼圖？」論壇──重建從家庭出發的兒童支持系統</h3>
-        <div style="color:var(--ink-2);font-size:0.92rem;line-height:1.7;margin-bottom:8px;">7/10（五）已於國立臺灣大學公共衛生學院舉行，國教盟共同主辦。就家庭、教育、預算、司法、醫療五大制度缺口提出民間版補強建議，理事長王瀚陽主講「教育拼圖」。</div>
-        <a href="/events/2026-07-10-cfa-missing-pieces-forum/notes/" data-event-field="cta" style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;color:var(--ink);border-bottom:2px solid #9ca3af;padding-bottom:2px;">看會議全紀錄 →</a>
+      <div data-event-id="2026-10-14-child-pledge-launch" style="border-left:5px solid #9ca3af;background:#fff;border-radius:6px;padding:24px 28px;">
+        <div data-event-field="badge" style="font-family:'Inter',sans-serif;font-size:0.66rem;letter-spacing:0.22em;color:#6b7280;font-weight:700;text-transform:uppercase;margin-bottom:8px;">10 月 14 日 · 已舉行 · 完整記錄</div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:1.2rem;font-weight:900;margin-bottom:8px;">兒少十大承諾起跑記者會・完整記錄</h3>
+        <div style="color:var(--ink-2);font-size:0.92rem;line-height:1.7;margin-bottom:8px;">國教行動聯盟與臺灣心理健康聯盟同場發布「兒少十大承諾書」與「心理健康城市六項承諾書」，四位立法委員出席並接受文件，邀請 22 縣市長參選人逐項回應。</div>
+        <a href="/events/2026-10-14-child-pledge-launch/" data-event-field="cta" style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;color:var(--ink);border-bottom:2px solid #9ca3af;padding-bottom:2px;">看記者會完整記錄 →</a>
       </div>
 
-      <div style="padding:20px 28px;border-left:5px solid var(--brand-orange);background:#fff;border-radius:6px;">
-        <div style="font-family:'Inter',sans-serif;font-size:0.66rem;letter-spacing:0.22em;color:var(--brand-orange);font-weight:700;text-transform:uppercase;margin-bottom:8px;">追蹤中 · Ongoing</div>
-        <h3 style="font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:900;margin-bottom:8px;">兒少權法 15 年大修 · 六大制度缺口</h3>
-        <div style="color:var(--ink-2);font-size:0.92rem;line-height:1.7;">衛福部 4/21 預告兒少權法修正草案 165 條，國教盟發表六大制度缺口分析；五場公聽會中，本盟於 5 月 22 日北區場出席並登記發言，提交書面修法意見，其餘場次未出席。</div>
+      <div data-event-id="2026-10-02-mental-health-city-forum" style="border-left:5px solid #9ca3af;background:#fff;border-radius:6px;padding:24px 28px;">
+        <div data-event-field="badge" style="font-family:'Inter',sans-serif;font-size:0.66rem;letter-spacing:0.22em;color:#6b7280;font-weight:700;text-transform:uppercase;margin-bottom:8px;">10 月 2 日 · 已結束 · 會後記錄</div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:1.2rem;font-weight:900;margin-bottom:8px;">從健康邁向幸福：心理健康城市網絡論壇</h3>
+        <div style="color:var(--ink-2);font-size:0.92rem;line-height:1.7;margin-bottom:8px;">響應 2026 世界心理健康日，中華心理衛生協會與臺灣心理健康聯盟合辦。上午於立法院進行政策會談並發布「心理健康城市共同宣言」；下午分桌討論心理健康城市在地行動。本盟為臺灣心理健康聯盟盟友，深度參與籌備。</div>
+        <a href="/events/2026-10-02-mental-health-city-forum/#register" data-event-field="cta" style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;color:var(--ink);border-bottom:2px solid #9ca3af;padding-bottom:2px;">看會後記錄 →</a>
+      </div>
+
+      <div data-event-id="2026-09-12-neurodiversity-conference" style="border-left:5px solid #9ca3af;background:#fff;border-radius:6px;padding:24px 28px;">
+        <div data-event-field="badge" style="font-family:'Inter',sans-serif;font-size:0.66rem;letter-spacing:0.22em;color:#6b7280;font-weight:700;text-transform:uppercase;margin-bottom:8px;">已結束 · 國教盟主辦</div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:1.2rem;font-weight:900;margin-bottom:8px;">台灣兒童青少年神經多樣性第三屆國際研討會</h3>
+        <div style="color:var(--ink-2);font-size:0.92rem;line-height:1.7;margin-bottom:8px;">新北市政府社會局、亞東紀念醫院、台灣青少年神經多樣性行動協會與國教行動聯盟共同主辦，於亞東紀念醫院國際會議廳舉行。聚焦家庭理解、臨床照護、社區心理、生活技能與成人轉銜；會議全紀錄已上線。</div>
+        <a href="/events/2026-09-12-neurodiversity-conference/records/" data-event-field="cta" style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;color:var(--ink);border-bottom:2px solid #9ca3af;padding-bottom:2px;">看會議全紀錄 →</a>
       </div>
     </div>
 
@@ -477,18 +487,44 @@
   </section>
 
   <!-- ════════ 目前最關鍵議題 ════════ -->
+  <!-- 2026-10-18 第二輪：原優先追蹤標籤停在年初、只剩免費午餐一則，改列目前進行中的行動；
+       文字一律沿用站上既有頁面字句（承諾書專頁、10/7 新聞稿、兒少權法專頁、8/28 新聞稿），不新增主張。
+       菸防法與第 6 會期追蹤：站上尚無對應頁面／稿件，待新聞稿上架後再補。 -->
   <section class="section">
     <h2>現在最關鍵的議題</h2>
-    <span class="section-hint">2026 上半年優先追蹤</span>
+    <span class="section-hint">進行中的行動 · 最後確認 2026-10-18</span>
 
-    <div style="background:var(--bg-soft);padding:32px;border-left:5px solid var(--brand-orange);border-radius:4px;line-height:1.85;">
-      <p style="font-size:1.05rem;margin-bottom:16px;">
-        <strong>財劃法修法後，免費營養午餐改由地方統籌。</strong>
-        22 個縣市能否落實？需要每位公民一起守住。
-      </p>
-      <p style="color:var(--ink-2);font-size:0.95rem;">
-        我們持續追蹤各縣市配套進度，並發布議題快訊。請加入 LINE 公民監督社群，即時取得修法落實的進度更新。
-      </p>
+    <div style="display:grid;gap:16px;margin:24px 0;">
+      <div class="priority-card" style="padding:24px 28px;border-left:5px solid var(--brand-orange);background:var(--bg-soft);border-radius:6px;">
+        <div style="font-family:'Inter',sans-serif;font-size:0.66rem;letter-spacing:0.22em;color:var(--brand-orange-text);font-weight:700;text-transform:uppercase;margin-bottom:8px;">候選人簽署中 · Pledge</div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:1.15rem;font-weight:900;margin-bottom:8px;">兒少十大承諾</h3>
+        <div style="color:var(--ink-2);font-size:0.92rem;line-height:1.7;margin-bottom:10px;">民間團體共同發起「兒少十大承諾」：邀請 2026 年全國 22 縣市縣市長參選人公開簽署，任期內公開追蹤。召集人：國教行動聯盟（AABE）。</div>
+        <a href="/act/child-pledge/" style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;color:var(--ink);border-bottom:2px solid var(--brand-orange);padding-bottom:2px;">看承諾與共同發起名單 →</a>
+      </div>
+      <div class="priority-card" style="padding:24px 28px;border-left:5px solid var(--brand-orange);background:var(--bg-soft);border-radius:6px;">
+        <div style="font-family:'Inter',sans-serif;font-size:0.66rem;letter-spacing:0.22em;color:var(--brand-orange-text);font-weight:700;text-transform:uppercase;margin-bottom:8px;">候選人簽署中 · Pledge</div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:1.15rem;font-weight:900;margin-bottom:8px;">心理健康城市六項承諾書</h3>
+        <div style="color:var(--ink-2);font-size:0.92rem;line-height:1.7;margin-bottom:10px;">臺灣心理健康聯盟發起、國教行動聯盟協力，邀請 2026 年 22 縣市長參選人逐項勾選簽署；收到的回覆依縣市原文照登，不評分、不排名、不推薦。</div>
+        <a href="/act/mental-health-city/" style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;color:var(--ink);border-bottom:2px solid var(--brand-orange);padding-bottom:2px;">看承諾書與回覆 →</a>
+      </div>
+      <div class="priority-card" style="padding:24px 28px;border-left:5px solid var(--brand-orange);background:var(--bg-soft);border-radius:6px;">
+        <div style="font-family:'Inter',sans-serif;font-size:0.66rem;letter-spacing:0.22em;color:var(--brand-orange-text);font-weight:700;text-transform:uppercase;margin-bottom:8px;">修法追蹤 · Law Reform</div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:1.15rem;font-weight:900;margin-bottom:8px;">校事會議修正</h3>
+        <div style="color:var(--ink-2);font-size:0.92rem;line-height:1.7;margin-bottom:10px;">國教盟肯定這次修正是案件分流而非取消校事會議，並建議新制實施半年至一年後公開前端結案、案件分流、處理時間及陳情結果等資料。</div>
+        <a href="/press/2026-10-07-school-affairs-meeting-revision-response/" style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;color:var(--ink);border-bottom:2px solid var(--brand-orange);padding-bottom:2px;">看 10/7 新聞稿 →</a> &nbsp; <a href="https://policy.aabe.org.tw/teacher-affairs/school-affairs-meeting-position/" style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;color:var(--ink);border-bottom:2px solid var(--brand-orange);padding-bottom:2px;">校事會議改了，還有三個問題沒答案 →</a>
+      </div>
+      <div class="priority-card" style="padding:24px 28px;border-left:5px solid var(--brand-orange);background:var(--bg-soft);border-radius:6px;">
+        <div style="font-family:'Inter',sans-serif;font-size:0.66rem;letter-spacing:0.22em;color:var(--brand-orange-text);font-weight:700;text-transform:uppercase;margin-bottom:8px;">修法追蹤 · Law Reform</div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:1.15rem;font-weight:900;margin-bottom:8px;">兒少權法 15 年大修</h3>
+        <div style="color:var(--ink-2);font-size:0.92rem;line-height:1.7;margin-bottom:10px;">兒少權法 15 年來最大幅度全文修正（118→165 條）。國教行動聯盟發布書面意見書，主張修正第 2 條與第 3 條「雙條同修」、升格中央主管機關為兒童家庭部。</div>
+        <a href="/act/cwa-reform/" style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;color:var(--ink);border-bottom:2px solid var(--brand-orange);padding-bottom:2px;">看修法主張 →</a>
+      </div>
+      <div class="priority-card" style="padding:24px 28px;border-left:5px solid var(--brand-orange);background:var(--bg-soft);border-radius:6px;">
+        <div style="font-family:'Inter',sans-serif;font-size:0.66rem;letter-spacing:0.22em;color:var(--brand-orange-text);font-weight:700;text-transform:uppercase;margin-bottom:8px;">落實追蹤 · Implementation</div>
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:1.15rem;font-weight:900;margin-bottom:8px;">免費營養午餐</h3>
+        <div style="color:var(--ink-2);font-size:0.92rem;line-height:1.7;margin-bottom:10px;">財劃法修法後，免費營養午餐改由地方統籌。22 個縣市能否落實？我們持續追蹤各縣市配套進度，並發布議題快訊；請加入 LINE 公民監督社群，即時取得進度更新。</div>
+        <a href="/press/2026-08-28-school-lunch-100day-check/" style="font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;color:var(--ink);border-bottom:2px solid var(--brand-orange);padding-bottom:2px;">看 8/28 新聞稿 →</a>
+      </div>
     </div>
   </section>
 

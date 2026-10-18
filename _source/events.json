@@ -125,10 +125,9 @@
       },
       "pages": [
         "/events/",
-        "/act/",
         "/events/2026-07-10-cfa-missing-pieces-forum/"
       ],
-      "note": "2026-09-15 複驗：首頁「最新倡議」卡目前無此活動（僅顯示最新 6 則會輪替），pages[] 移除「/」"
+      "note": "2026-09-15 複驗：首頁「最新倡議」卡目前無此活動（僅顯示最新 6 則會輪替），pages[] 移除「/」；2026-10-18 /act/ 最新活動改依日期只列最新三場，本場卡移除，pages[] 移除「/act/」"
     },
     {
       "id": "2026-08-21-tobacco-warning-survey",
@@ -169,9 +168,10 @@
       "pages": [
         "/events/",
         "/",
-        "/events/2026-09-12-neurodiversity-conference/"
+        "/events/2026-09-12-neurodiversity-conference/",
+        "/act/"
       ],
-      "note": "2026-09-15 複驗：/act/ 目前無此活動卡片，pages[] 移除「/act/」"
+      "note": "2026-09-15 複驗：/act/ 目前無此活動卡片，pages[] 移除「/act/」；2026-10-18 /act/ 最新活動改依日期列此卡，pages[] 補「/act/」"
     },
     {
       "id": "2026-10-02-mental-health-city-forum",
@@ -191,9 +191,10 @@
       "pages": [
         "/",
         "/events/",
-        "/events/2026-10-02-mental-health-city-forum/"
+        "/events/2026-10-02-mental-health-city-forum/",
+        "/act/"
       ],
-      "note": "2026-09-17 新增：中華心理衛生協會×臺灣心理健康聯盟合辦，本盟為盟友深度參與；2026-10-03 論壇結束，已改 status=ended、CTA 改指會後記錄專區；2026-10-03 補 record_url"
+      "note": "2026-09-17 新增：中華心理衛生協會×臺灣心理健康聯盟合辦，本盟為盟友深度參與；2026-10-03 論壇結束，已改 status=ended、CTA 改指會後記錄專區；2026-10-03 補 record_url；2026-10-18 /act/ 最新活動改依日期列此卡，pages[] 補「/act/」"
     },
     {
       "id": "2026-child-pledge-signup",
@@ -253,9 +254,10 @@
         "url": "/events/2026-10-14-child-pledge-launch/"
       },
       "pages": [
-        "/events/"
+        "/events/",
+        "/act/"
       ],
-      "note": "2026-10-14 新增：72 團體兒少十大承諾起跑記者會，活動當日已舉行；完整記錄專頁 10/15 上線（記者會完整記錄專頁線，理事長核可上線前不推）。"
+      "note": "2026-10-14 新增：72 團體兒少十大承諾起跑記者會，活動當日已舉行；完整記錄專頁 10/15 上線（記者會完整記錄專頁線，理事長核可上線前不推）。；2026-10-18 /act/ 最新活動改依日期列此卡，pages[] 補「/act/」"
     }
   ]
 }
