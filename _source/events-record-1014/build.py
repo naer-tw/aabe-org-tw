@@ -169,7 +169,16 @@ FB_LINKS = {"陳菁徽": "https://www.facebook.com/share/p/1DYZiZ25Wi/",
             "范雲": "https://www.facebook.com/share/v/1C7YxzTpN9/",
             "劉書彬": "https://www.facebook.com/share/p/1HrGX6Uv5q/"}
 FB_ALLOW_PARTIAL = True  # 理事長 10/15：王正旭沒有更新貼文，先放已發布的三位（只列有貼文者，不點名缺的人）
-MEDIA = []  # 10/15–16 聲量盤點後補：[(媒體, 標題, 連結, 日期)]
+MEDIA = [  # 2026-10-18 聲量盤點（原創報導，轉載不列）；清單與驗證見 縣市長政見監督平台 docs/2026-10-14_起跑記者會/_媒體補件_20261018/
+    ("公視新聞網", "72民團提兒少十大承諾書 盼各縣市長參選人納施政核心", "https://news.pts.org.tw/article/831279", "10/14"),
+    ("聯合新聞網", "72團體推兒少10大承諾 邀三黨立委轉達全國縣市長參選人回應", "https://udn.com/news/story/6656/9813983", "10/14"),
+    ("聯合新聞網", "民團拋兒少承諾書要參選人簽署 朝野立委挺：地方政府別開空頭支票", "https://udn.com/vote2026/story/124652/9813982", "10/14"),
+    ("自由時報", "少子化不只中央的事！72民團遞雙考題 促22縣市長參選人表態", "https://news.ltn.com.tw/news/politics/breakingnews/5606115", "10/14"),
+    ("Rti 中央廣播電臺", "72民團提兒少及心理健康承諾書 邀22縣市長參選人回應", "https://www.rti.org.tw/news?uid=3&pid=237536", "10/14"),
+    ("大紀元", "民團拋兒少承諾書 籲參選人簽署", "https://www.epochtimes.com/b5/26/10/14/n14869720.htm", "10/14"),
+]
+MEDIA_CHECKED_AT = "2026 年 10 月 18 日"
+MEDIA_CHECKED_SOURCES = ""  # MEDIA 為空時必填，列查過的來源
 
 # ---------------------------------------------------------------- 新聞稿正文（複用官網頁）
 
@@ -301,14 +310,14 @@ def build(preview=False):
     if MEDIA:
         media = "".join('<li>%s｜<a href="%s" target="_blank" rel="noopener">%s</a>（%s）</li>' % (E(m), E(u), E(t), E(d))
                         for m, t, u, d in MEDIA)
-        media_blk = ('<details class="blk" id="media"><summary><span class="ttl">媒體報導</span><span class="cnt">%d</span></summary>'
+        media_blk = ('<details class="blk" id="media"><summary><span class="ttl">媒體報導</span><span class="cnt">%d 則</span></summary>'
                      '<div class="inner"><ul class="plain">%s</ul></div></details>' % (len(MEDIA), media))
-    elif preview:
-        media_blk = ('<details class="blk" id="media"><summary><span class="ttl">媒體報導</span><span class="cnt">上線後補</span></summary>'
-                     '<div class="inner"><p class="pending">（預覽專用）10/15–16 聲量盤點後補，正式版沒有資料就整段不放。</p></div></details>')
     else:
-        media_blk = ('<details class="blk" id="media"><summary><span class="ttl">媒體報導</span><span class="cnt">10/15–16 補</span></summary>'
-                     '<div class="inner"><p class="pending">各媒體報導的連結與標題，10 月 15 至 16 日整理後補上。</p></div></details>')
+        if not MEDIA_CHECKED_SOURCES:
+            raise SystemExit("MEDIA 為空時 MEDIA_CHECKED_SOURCES 必填（不准再輸出占位）")
+        media_blk = ('<details class="blk" id="media"><summary><span class="ttl">媒體報導</span><span class="cnt">查無</span></summary>'
+                     '<div class="inner"><p style="margin:12px 0 0;font-size:.92rem">截至 %s 查無媒體報導（查過：%s）。</p></div></details>'
+                     % (E(MEDIA_CHECKED_AT), E(MEDIA_CHECKED_SOURCES)))
 
     ld_event = """{
   "@context": "https://schema.org",
@@ -551,7 +560,7 @@ details>*{display:block!important}details.pfull summary,.blk>summary{break-after
 <h1>少子化不只中央的事　72團體邀22縣市打造友善城市</h1>
 <p class="sub">兒少十大、全年齡心理健康城市六項承諾同步發布　邀三黨立委協助轉達</p>
 <p class="meta"><time datetime="2026-10-14T10:00:00+08:00">2026 年 10 月 14 日（三）上午 10:00</time>　立法院中興大樓 101 會議室</p>
-<ul class="facts"><li><span data-metric="child_pledge_cosponsor_orgs">72</span> 個民間團體共同發起</li><li>寄送全國 22 縣市長參選人</li><li>11/11 回覆截止・預定 11/13 公布結果</li></ul>
+<ul class="facts"><li><span data-metric="child_pledge_cosponsor_orgs">72</span> 個民間團體共同發起</li><li>承諾書寄送 22 縣市參選人（寄送中，各人狀態見公開平台）</li><li>11/11 回覆截止・預定 11/13 公布結果</li></ul>
 <p class="slogan">孩子的事，縣市的事！</p>
 <div class="btns"><a class="btn p" href="https://aabe.org.tw/act/child-pledge/record/">看各縣市簽署與回覆</a><a class="btn g" href="#documents">下載兩份承諾書</a><a class="tlink" href="#press-release">新聞稿全文</a><a class="tlink" href="%%LIVE%%" target="_blank" rel="noopener">看記者會直播</a></div>
 </div></div>
