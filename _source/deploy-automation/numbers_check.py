@@ -430,6 +430,10 @@ def scan_file(path: Path, rel: str, metrics: dict, lists: dict | None = None,
     # 已標記處（含清單型）挖空：標記裡的數字有真源可比，不該再被黑數掃描抓一次
     text, offsets = condense(src, [(mk.start, mk.end) for mk in marked + listed])
     for mid, metric in metrics.items():
+        if metric.get("scan_prose") is False:
+            # 單位數／兩位數的小計數（例：分類卡「7 篇」）散文掃描全是誤報（約7、近15…）；
+            # 這類指標只靠 data-metric 標記比對，並由專屬測試核對總和（2026-10-18）。
+            continue
         units = metric_units(metric)
         hits = []
         for pattern, need_unit, why in alias_patterns(metric):

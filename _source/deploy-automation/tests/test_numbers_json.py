@@ -34,9 +34,10 @@ APPROVED_WEAK_SOURCE = {
 # 2026-10-15 記者會完整記錄專頁新增「現場照片張數」（指揮部 10/14 Drive 核，source_status internal）。
 APPROVED_OWN_ROSTER = ["child_pledge_cosponsor_orgs", "child_pledge_launch_photos"]
 
-# 2026-10-18 政策站首頁數字互打修補新增「主題分類數」：值為指揮部依實際 5 張分類卡數得，
-# 尚待理事長核（status provisional、on_site false——只上 policy.aabe.org.tw，主站無標記）。
-PROVISIONAL_PENDING = ["policy_topic_areas"]
+# 2026-10-18 政策站首頁數字互打修補：「主題分類數」與五張分類卡篇數（理事長 10/18 核可，指揮部轉達）。
+# on_site false——只上 policy.aabe.org.tw（_policy-deploy），主站無標記；對應檢查見 test_policy_home_numbers.py。
+POLICY_HOME_IDS = ["policy_topic_areas", "policy_cat_campus_safety", "policy_cat_child_protection",
+                   "policy_cat_youth_health", "policy_cat_education_reform", "policy_cat_teacher_affairs"]
 
 # SOP 第一節「首批 id（2026-09-06）」
 FIRST_BATCH = ["valid_surveys", "single_reach", "partners",
@@ -187,11 +188,12 @@ def test_status_is_declared_and_valid(metrics):
     for mid in APPROVED_OWN_ROSTER:
         assert metrics[mid]["status"] == "approved", mid
         assert metrics[mid]["source_status"] == "internal", mid
-    for mid in PROVISIONAL_PENDING:
-        assert metrics[mid]["status"] == "provisional", mid
+    for mid in POLICY_HOME_IDS:
+        assert metrics[mid]["status"] == "approved", mid
         assert metrics[mid]["on_site"] is False, mid
+        assert metrics[mid]["approved_at"] == "2026-10-18", mid
     assert (set(APPROVED) | set(APPROVED_WEAK_SOURCE) | set(APPROVED_OWN_ROSTER)
-            | set(PROVISIONAL_PENDING)) == set(metrics)
+            | set(POLICY_HOME_IDS)) == set(metrics)
 
 
 def test_changed_values_keep_previous_values(metrics):
