@@ -560,7 +560,7 @@ details>*{display:block!important}details.pfull summary,.blk>summary{break-after
 <h1>少子化不只中央的事　72團體邀22縣市打造友善城市</h1>
 <p class="sub">兒少十大、全年齡心理健康城市六項承諾同步發布　邀三黨立委協助轉達</p>
 <p class="meta"><time datetime="2026-10-14T10:00:00+08:00">2026 年 10 月 14 日（三）上午 10:00</time>　立法院中興大樓 101 會議室</p>
-<ul class="facts"><li><span data-metric="child_pledge_cosponsor_orgs">72</span> 個民間團體共同發起</li><li>承諾書寄送 22 縣市參選人（寄送中，各人狀態見公開平台）</li><li>11/11 回覆截止・預定 11/13 公布結果</li></ul>
+<ul class="facts"><li><span data-metric="child_pledge_cosponsor_orgs">72</span> 個民間團體共同發起</li><li>承諾書寄送 22 縣市 81 位參選人，各人寄送與回覆狀態以公開平台為準</li><li>11/11 回覆截止・預定 11/13 公布結果</li></ul>
 <p class="slogan">孩子的事，縣市的事！</p>
 <div class="btns"><a class="btn p" href="https://aabe.org.tw/act/child-pledge/record/">看各縣市簽署與回覆</a><a class="btn g" href="#documents">下載兩份承諾書</a><a class="tlink" href="#press-release">新聞稿全文</a><a class="tlink" href="%%LIVE%%" target="_blank" rel="noopener">看記者會直播</a></div>
 </div></div>
