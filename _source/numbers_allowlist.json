@@ -157,9 +157,9 @@
       "file": "press/index.html",
       "count": 3,
       "lines_20260906": [
-        585,
-        636,
-        704
+        594,
+        645,
+        713
       ],
       "contexts": [
         "013d90156c",
@@ -303,12 +303,12 @@
       "file": "press/index.html",
       "count": 6,
       "lines_20260906": [
-        543,
-        585,
-        610,
-        681,
-        698,
-        704
+        552,
+        594,
+        619,
+        690,
+        707,
+        713
       ],
       "contexts": [
         "013d90156c",
@@ -329,7 +329,7 @@
         135,
         198,
         205,
-        261
+        262
       ],
       "contexts": [
         "035f51462a",
@@ -359,7 +359,7 @@
       "lines_20260906": [
         55,
         97,
-        487
+        486
       ],
       "contexts": [
         "1d716b92c9",
@@ -483,7 +483,7 @@
       "file": "press/index.html",
       "count": 1,
       "lines_20260906": [
-        550
+        559
       ],
       "contexts": [
         "fefafd7ba6"
@@ -500,7 +500,7 @@
         117,
         200,
         231,
-        475
+        474
       ],
       "contexts": [
         "085f8be33c",
@@ -667,10 +667,10 @@
       "file": "press/index.html",
       "count": 4,
       "lines_20260906": [
-        528,
-        610,
-        636,
-        698
+        537,
+        619,
+        645,
+        707
       ],
       "contexts": [
         "1b13ee22a9",
@@ -815,12 +815,36 @@
       "file": "press/index.html",
       "count": 1,
       "lines_20260906": [
-        595
+        604
       ],
       "contexts": [
         "2bbe64096d"
       ],
       "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "policy_topic_areas",
+      "file": "index.html",
+      "count": 1,
+      "lines_20260906": [
+        1151
+      ],
+      "contexts": [
+        "61d8ef79a7"
+      ],
+      "reason": "主站首頁「51 篇政策深度分析專題…5 大主軸」文案：與政策站主題分類數（policy_topic_areas）同口徑；改值時須人工一併更新"
+    },
+    {
+      "id": "policy_topic_areas",
+      "file": "press/2026-07-28-teacher-dismissal-rules-returned/index.html",
+      "count": 1,
+      "lines_20260906": [
+        577
+      ],
+      "contexts": [
+        "19e0f39bd9"
+      ],
+      "reason": "誤報登記：此處是引用自由時報報導標題「半年減近5成」（教師檢舉案降幅），與政策站主題分類數無關；單位數指標的近似前綴掃描（近5）無法排除"
     },
     {
       "id": "press_coverage",
@@ -989,11 +1013,11 @@
       "file": "press/index.html",
       "count": 5,
       "lines_20260906": [
-        515,
-        533,
-        585,
-        636,
-        704
+        524,
+        542,
+        594,
+        645,
+        713
       ],
       "contexts": [
         "013d90156c",

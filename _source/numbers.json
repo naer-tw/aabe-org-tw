@@ -195,6 +195,27 @@
       ]
     },
     {
+      "id": "policy_topic_areas",
+      "value": 5,
+      "display": "5",
+      "unit": "個分類",
+      "label": "政策站主題分類（主軸）數",
+      "period": "現況（2026-10-18 核實）",
+      "method": "數 policy.aabe.org.tw 首頁（_policy-deploy/index.html）「主題分類」區 .cats 底下 a.cat 的張數＝5 張（校園安全／兒少保護／青少年身心健康／教育政策與改革／教師與校務）；與同頁 ItemList 的 8 個分類目錄依「主軸（目錄）」括號歸併為 5 軸一致，與 llms.txt「五大主軸」同。各卡標示篇數目前未對齊（卡上加總 29、實際依分類索引頁歸併為 51），屬另案待裁，不影響本欄。",
+      "source": "_policy-deploy/index.html:693-697（section-hint）、:699-735（5 張 a.cat）、:67-82（ItemList 8 項）；_policy-deploy/llms.txt:9",
+      "last_verified": "2026-10-18",
+      "cadence": "event",
+      "owner": "指揮部",
+      "status": "provisional",
+      "on_site": false,
+      "source_status": "downstream_only",
+      "notes": "待理事長核（pending_approval）。10/18 Codex 官網健檢發現政策站首頁 hero 寫 6、「主題分類」寫 5 TOPICS、meta／og／twitter／WebSite 寫「六大」、Dataset 寫「5 大」「6 主軸」互打；依實際 5 張分類卡統一為 5。本指標只上 policy.aabe.org.tw（_policy-deploy），主站 public/ 沒有標記，故 on_site=false。落點：hero stat-num 與 section-hint 以 data-metric 掛標記（apply_numbers --root _policy-deploy 套用）；meta／og／twitter／JSON-LD 描述與 variableMeasured 為人工文案，無自動閘（lint counter 只管篇數）。",
+      "scan_patterns": [
+        "5 大主軸",
+        "5 個分類"
+      ]
+    },
+    {
       "id": "buzz_3y",
       "value": 7917,
       "display": "7,917+",
