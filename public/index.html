@@ -575,6 +575,7 @@
     .lq-search-input { flex: 1; min-width: 0; padding: 11px 18px; border: 1px solid var(--line); border-radius: 24px; font-size: 0.95rem; font-family: inherit; color: var(--ink); background: #fff; }
     .lq-search-input:focus-visible { outline: 2px solid var(--brand-teal); outline-offset: 2px; }
     .lq-search-btn { flex-shrink: 0; padding: 11px 22px; border-radius: 24px; border: 1px solid var(--ink); background: var(--ink); color: #fff; font-weight: 700; font-size: 0.9rem; cursor: pointer; }
+    .hero-search { margin-top: 28px; }
     .lq-search-btn:hover { background: var(--brand-teal); border-color: var(--brand-teal); }
     .lq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .lq-card { background: var(--bg-soft); border-radius: 6px; padding: 26px 24px; border-top: 4px solid var(--brand-teal); display: flex; flex-direction: column; }
@@ -694,6 +695,13 @@
         <a href="/impact/" class="btn btn-primary">查看倡議成果 →</a>
         <a href="#join" class="btn btn-secondary">參與公民監督 →</a>
       </div>
+      <!-- 首屏搜尋入口（2026-10-18 第二輪，Codex 健檢第 4 件）：原搜尋欄在第 5 章、手機 y≈6992px；
+           沿用 .lq-search-form 樣式與 /press/all/?q= 搜尋頁，不另做元件。 -->
+      <form action="/press/all/" method="get" class="lq-search-form hero-search" role="search" aria-label="站內搜尋（首屏）">
+        <label for="heroSearchInput" class="sr-only">搜尋文章</label>
+        <input type="search" id="heroSearchInput" name="q" class="lq-search-input" placeholder="搜尋：校事會議、營養午餐、特教" aria-label="搜尋文章">
+        <button type="submit" class="lq-search-btn">搜尋</button>
+      </form>
     </section>
 
     <!-- CH 02 — 精選成果（block②，2026-09-14 第二批樣稿；六張卡文案 v2） -->
@@ -1104,7 +1112,7 @@
           <p>台灣兒童青少年神經多樣性第三屆國際研討會於2026年9月12日在亞東紀念醫院南棟14樓國際會議廳登場，由亞東紀念醫院、新北市政府社會局等六個單位共同主辦（國教行動聯盟為其一），台美日專家齊聚探討神經多樣性兒少的日常支持。</p>
         </article>
         <article class="article-card" data-date="2026-09-12" data-event-id="2026-09-12-neurodiversity-conference" style="border-left:4px solid #EB9B31;padding-left:14px;">
-          <div class="date" style="color:var(--brand-orange-text);font-weight:700;">2026.09.12 · 活動</div>
+          <div class="date" style="color:#EB9B31;font-weight:700;">2026.09.12 · 活動</div>
           <h3><a href="https://aabe.org.tw/events/2026-09-12-neurodiversity-conference/">台灣兒童青少年神經多樣性第三屆國際研討會</a></h3>
           <p>9/12（六）08:30–17:30 亞東紀念醫院南棟14樓國際會議廳。新北市政府社會局、亞東紀念醫院、台灣青少年神經多樣性行動協會、國教行動聯盟共同主辦，聚焦家庭理解、臨床照護、社區心理、生活技能與成人轉銜，美日專家分享「生活陪跑師」經驗。活動已於當日舉行。</p>
         </article>
