@@ -1,16 +1,24 @@
 # ─────────────────────────────────────────────────────────
 # robots.txt — 國教行動聯盟（AABE）
 # https://aabe.org.tw/
-# 明確歡迎 AI bots 引用本站政策論述內容
+# 歡迎 AI 搜尋與引用本站政策論述；不授權 AI 模型訓練（見 Content-Signal）
 # ─────────────────────────────────────────────────────────
 
 # ─── Content Signals (contentsignals.org / IETF draft-romm-aipref) ───
 # 本站內容：允許 AI 搜尋與引用，不授權 AI 訓練（CC-BY-4.0 保留標示權）
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 
-# ═══ AI Search & Reasoning Bots ═══
+# ═══ AI 訓練型爬蟲：不授權（與 Content-Signal: ai-train=no 一致）═══
+# GPTBot（OpenAI）與 ClaudeBot（Anthropic）官方文件皆說明用於蒐集可能供模型訓練的網頁內容，
+# 因此封鎖；這不影響被 ChatGPT／Claude 的搜尋與即時引用查到（那是下面另立名稱的 OAI-SearchBot、
+# ChatGPT-User、Claude-SearchBot、Claude-User）。本站 AI 政策決定於 2026-10-21。
 User-agent: GPTBot
-Allow: /
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+# ═══ AI 搜尋與使用者代理：放行（被 AI 查到、引用）═══
 
 User-agent: OAI-SearchBot
 Allow: /
@@ -18,7 +26,11 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: ClaudeBot
+# Anthropic：Claude-SearchBot 管搜尋索引、Claude-User 管使用者提問時的即時讀取（皆非訓練）
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
 Allow: /
 
 User-agent: Claude-Web
@@ -27,6 +39,9 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
+# Google-Extended 同時管 Gemini 的訓練與即時引用（grounding），官方文件說明它不影響 Google 搜尋收錄；
+# 兩者無法分開設定。本站為了讓 Gemini 能引用我們的頁面而保留放行，這是對 ai-train=no 的已知例外
+# （2026-10-21 決定：保留放行並於此註明取捨）。若日後要完全不授權訓練，改成 Disallow: / 即可。
 User-agent: Google-Extended
 Allow: /
 
