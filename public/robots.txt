@@ -18,6 +18,19 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
+# 其他以蒐集訓練資料為主要用途的代理，同樣不授權：
+# anthropic-ai（Anthropic 舊稱，一般視為訓練用；官方支援頁未列）、
+# Applebot-Extended（Apple 官方說明為「是否用於訓練 Apple 基礎模型」的開關）、
+# CCBot（Common Crawl，公開訓練資料集的來源）。
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
 # ═══ AI 搜尋與使用者代理：放行（被 AI 查到、引用）═══
 
 User-agent: OAI-SearchBot
@@ -34,9 +47,6 @@ User-agent: Claude-User
 Allow: /
 
 User-agent: Claude-Web
-Allow: /
-
-User-agent: anthropic-ai
 Allow: /
 
 # Google-Extended 同時管 Gemini 的訓練與即時引用（grounding），官方文件說明它不影響 Google 搜尋收錄；
@@ -64,9 +74,6 @@ User-agent: FacebookBot
 Allow: /
 
 User-agent: cohere-ai
-Allow: /
-
-User-agent: Applebot-Extended
 Allow: /
 
 User-agent: MistralAI-User
