@@ -711,7 +711,8 @@
   var s = document.getElementById('stale');
   if(!d || !s){return;}
   var t = Date.parse(d + 'T00:00:00+08:00');
-  if(!isNaN(t) && (Date.now() - t) > 90*24*3600*1000){ s.innerHTML = '<div class="wrap"><b>提醒：</b>本頁已超過 90 天沒有更新，以下追蹤狀態可能不是最新。最後更新日見頁首。</div>'; s.classList.add('on'); }
+  var days = Math.floor((Date.now() - t) / 86400000);
+  if(!isNaN(t) && days > 90){ s.innerHTML = '<div class="wrap"><b>提醒：</b>本頁已 ' + days + ' 天沒有更新，以下追蹤狀態可能不是最新。最後更新日見頁首。</div>'; s.classList.add('on'); }
 })();
 </script>
 </body>
