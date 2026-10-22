@@ -232,6 +232,18 @@ section{padding:40px 0}
 .slip .note-tag{position:absolute;top:5px;right:4px;font-size:14px;font-weight:800;line-height:21.75px;color:var(--gr);white-space:nowrap}
 .slip .note-tag.note-row{position:static;padding-left:21px}
 .grid-foot{margin-top:14px;font-size:14px;color:var(--mute);line-height:1.7}
+/* 2026-10-22 理事長裁：已簽署者反白（名字卡淡綠底＋深綠左條＋深綠粗字）、全國現況下方加已簽署靜態看板（不用跑馬燈：可讀性、WCAG 2.2.2、選戰期觀感） */
+.slip.s-signed{background:#E4F1EE;border-color:var(--tealBtn);box-shadow:inset 4px 0 0 var(--tealBtn)}
+.slip.s-signed .st{color:var(--tealBtn);font-weight:900}
+.p-card[data-st="signed"]{background:#E4F1EE;border-color:var(--tealBtn);box-shadow:inset 5px 0 0 var(--tealBtn)}
+.p-card[data-st="signed"] .txt{color:var(--tealBtn);font-weight:900}
+.signed-board{margin:22px 0 6px;border:2px solid var(--tealBtn);border-radius:4px;background:var(--white)}
+.signed-board h3{margin:0;padding:10px 14px;background:var(--tealBtn);color:#fff;font-family:var(--serif);font-weight:900;font-size:18px;letter-spacing:.04em}
+.signed-board ul{list-style:none;margin:0;padding:12px 14px;display:flex;flex-wrap:wrap;gap:8px}
+.signed-board a{display:inline-flex;flex-wrap:wrap;align-items:center;column-gap:6px;max-width:100%;min-height:44px;padding:4px 14px;background:#E4F1EE;border:1px solid var(--tealBtn);border-radius:999px;color:var(--ink);text-decoration:none;font-weight:900;font-size:16px}
+.signed-board a:hover{background:#fff}
+.signed-board small{font-weight:800;font-size:14px;color:var(--gr)}
+.signed-board p{margin:0;padding:0 14px 12px;font-size:14px;color:var(--gr);line-height:1.7}
 
 /* ── 縣市頁全卡 ── */
 .p-cards{display:grid;grid-template-columns:1fr;gap:10px}
