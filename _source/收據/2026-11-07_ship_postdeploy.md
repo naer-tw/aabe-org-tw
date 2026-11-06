@@ -1,0 +1,59 @@
+# 部署後索引收據 2026-11-07
+
+- commit：edb6f05
+- 基底：https://aabe.org.tw
+- content_live：done
+- indexnow：done
+- sitemap_lastmod：pending（改動頁與 sitemap_index.xml 由 numbers_check／pytest 擋，部署後請確認線上 sitemap 已更新）
+- gsc_request_index：pending（首頁或方法頁有改動時，到 Search Console 請求索引一次，回填請求時間）
+- board_status：pending（~/Desktop/國教盟指揮看板/議題_官網影響力數據/_狀態.md 最新交付行改 2026-11-07）
+- board_log：pending（當天日誌加一列：部署時間、main commit edb6f05、驗證結果）
+- list_checkbox：pending（清單檔「已上官網」欄勾 2026-11-07）
+- kb_caveat：pending（數字若源自知識庫卡片，卡片 caveat 加「已上官網 2026-11-07」）
+- sop_experience：pending（本次踩到的坑寫進 SOP 第七節「經驗紀錄」）
+
+## ship 補記
+
+- 推送授權（原話）：理事長 2026-11-07 回覆「改成今天 你幫我推」（edb6f05：紀錄頁最近檢視日期改 2026-11-07）
+- 推送：822c6aa → edb6f05（分支 ship/2026-11-07）
+- 線上生效檔（40 個，80 秒）：
+  - https://aabe.org.tw/act/child-pledge/record/changhua/
+  - https://aabe.org.tw/act/child-pledge/record/chiayi-city/
+  - https://aabe.org.tw/act/child-pledge/record/chiayi-county/
+  - https://aabe.org.tw/act/child-pledge/record/download/
+  - https://aabe.org.tw/act/child-pledge/record/how-to-return/
+  - https://aabe.org.tw/act/child-pledge/record/hsinchu-city/
+  - https://aabe.org.tw/act/child-pledge/record/hsinchu-county/
+  - https://aabe.org.tw/act/child-pledge/record/hualien/
+  - https://aabe.org.tw/act/child-pledge/record/
+  - https://aabe.org.tw/act/child-pledge/record/kaohsiung/
+  - https://aabe.org.tw/act/child-pledge/record/keelung/
+  - https://aabe.org.tw/act/child-pledge/record/kinmen/
+  - https://aabe.org.tw/act/child-pledge/record/lienchiang/
+  - https://aabe.org.tw/act/child-pledge/record/miaoli/
+  - https://aabe.org.tw/act/child-pledge/record/nantou/
+  - https://aabe.org.tw/act/child-pledge/record/new-taipei/
+  - https://aabe.org.tw/act/child-pledge/record/p/2026-hsinchu-city-03/
+  - https://aabe.org.tw/act/child-pledge/record/p/2026-kaohsiung-02/
+  - https://aabe.org.tw/act/child-pledge/record/p/2026-keelung-02/
+  - https://aabe.org.tw/act/child-pledge/record/p/2026-lienchiang-01/
+  - https://aabe.org.tw/act/child-pledge/record/p/2026-miaoli-02/
+  - https://aabe.org.tw/act/child-pledge/record/p/2026-nantou-02/
+  - https://aabe.org.tw/act/child-pledge/record/p/2026-new-taipei-02/
+  - https://aabe.org.tw/act/child-pledge/record/p/2026-tainan-01/
+  - https://aabe.org.tw/act/child-pledge/record/p/2026-tainan-04/
+  - https://aabe.org.tw/act/child-pledge/record/p/2026-taipei-01/
+  - https://aabe.org.tw/act/child-pledge/record/p/2026-taipei-05/
+  - https://aabe.org.tw/act/child-pledge/record/p/2026-taitung-02/
+  - https://aabe.org.tw/act/child-pledge/record/penghu/
+  - https://aabe.org.tw/act/child-pledge/record/pingtung/
+  - https://aabe.org.tw/act/child-pledge/record/taichung/
+  - https://aabe.org.tw/act/child-pledge/record/tainan/
+  - https://aabe.org.tw/act/child-pledge/record/taipei/
+  - https://aabe.org.tw/act/child-pledge/record/taitung/
+  - https://aabe.org.tw/act/child-pledge/record/taoyuan/
+  - https://aabe.org.tw/act/child-pledge/record/yilan/
+  - https://aabe.org.tw/act/child-pledge/record/yunlin/
+  - https://aabe.org.tw/act/mental-health-city/
+  - https://aabe.org.tw/sitemap.xml
+  - https://aabe.org.tw/sitemap_index.xml
