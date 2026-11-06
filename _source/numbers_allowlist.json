@@ -101,7 +101,7 @@
         139,
         162,
         206,
-        1186
+        1191
       ],
       "contexts": [
         "0c4a8bb7ec",
@@ -157,9 +157,9 @@
       "file": "press/index.html",
       "count": 3,
       "lines_20260906": [
-        638,
-        689,
-        757
+        649,
+        700,
+        768
       ],
       "contexts": [
         "013d90156c",
@@ -242,7 +242,7 @@
         139,
         162,
         206,
-        1186
+        1191
       ],
       "contexts": [
         "0c4a8bb7ec",
@@ -303,12 +303,12 @@
       "file": "press/index.html",
       "count": 6,
       "lines_20260906": [
-        596,
-        638,
-        663,
-        734,
-        751,
-        757
+        607,
+        649,
+        674,
+        745,
+        762,
+        768
       ],
       "contexts": [
         "013d90156c",
@@ -385,6 +385,20 @@
       "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
     },
     {
+      "id": "child_pledge_cosponsor_orgs",
+      "file": "press/2026-11-04-child-pledge-22-cities-call/index.html",
+      "count": 2,
+      "lines_20260906": [
+        248,
+        258
+      ],
+      "contexts": [
+        "0cb8f56477",
+        "4e6f56e861"
+      ],
+      "reason": "2026-11-04 新聞稿（理事長核可逐字稿）兩處時點引用：「2026年10月14日聯合72個民間團體」「召集72個民間團體共同發起」，指兒少十大承諾共同發起團體數（連署 9/30 截止）。有日期的新聞稿不加 data-metric，數字日後改動不回改本稿；2026-11-06 逐處覆核語意與單位後登記。"
+    },
+    {
       "id": "family_resilience_orgs",
       "file": "press/2026-10-14-child-pledge-launch/attachments/index.html",
       "count": 3,
@@ -399,6 +413,18 @@
         "cf620a0321"
       ],
       "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "family_resilience_orgs",
+      "file": "press/2026-11-04-child-pledge-22-cities-call/index.html",
+      "count": 1,
+      "lines_20260906": [
+        306
+      ],
+      "contexts": [
+        "edd492e02d"
+      ],
+      "reason": "2026-11-04 新聞稿附錄「共同發起團體（72 個）」名冊列名「家庭韌性行動聯盟（成立時集結逾 33 個組織團體與社會影響者）」，為團體列名原文（照兒少十大承諾專頁 11/3 查閱值），非本稿新宣稱。有日期的新聞稿不加 data-metric，數字日後改動不回改本稿；2026-11-06 覆核後登記。"
     },
     {
       "id": "legislators",
@@ -483,7 +509,7 @@
       "file": "press/index.html",
       "count": 1,
       "lines_20260906": [
-        603
+        614
       ],
       "contexts": [
         "fefafd7ba6"
@@ -511,6 +537,20 @@
         "fdddb2e0e3"
       ],
       "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "mental_health_alliance_orgs",
+      "file": "press/2026-11-04-child-pledge-22-cities-call/index.html",
+      "count": 2,
+      "lines_20260906": [
+        258,
+        319
+      ],
+      "contexts": [
+        "3e79f2a7ba",
+        "b262732419"
+      ],
+      "reason": "2026-11-04 新聞稿兩處：內文「臺灣心理健康聯盟依其公開會員名冊有77個團體與單位」與附錄名冊列名「臺灣心理健康聯盟（77 個團體與單位）」，指該聯盟成員數。有日期的新聞稿不加 data-metric，數字日後改動不回改本稿；2026-11-06 逐處覆核語意與單位後登記。"
     },
     {
       "id": "partners",
@@ -602,7 +642,7 @@
         162,
         206,
         694,
-        1186
+        1191
       ],
       "contexts": [
         "04d00010a9",
@@ -667,10 +707,10 @@
       "file": "press/index.html",
       "count": 4,
       "lines_20260906": [
-        581,
-        663,
-        689,
-        751
+        592,
+        674,
+        700,
+        762
       ],
       "contexts": [
         "1b13ee22a9",
@@ -752,7 +792,7 @@
         10,
         139,
         152,
-        1180
+        1185
       ],
       "contexts": [
         "61d8ef79a7",
@@ -815,7 +855,7 @@
       "file": "press/index.html",
       "count": 1,
       "lines_20260906": [
-        648
+        659
       ],
       "contexts": [
         "2bbe64096d"
@@ -827,8 +867,8 @@
       "file": "index.html",
       "count": 2,
       "lines_20260906": [
-        1052,
-        1180
+        1057,
+        1185
       ],
       "contexts": [
         "61d8ef79a7",
@@ -891,7 +931,7 @@
       "file": "press/index.html",
       "count": 1,
       "lines_20260906": [
-        256
+        267
       ],
       "contexts": [
         "7a36a240a0"
@@ -1006,7 +1046,7 @@
         139,
         162,
         206,
-        1186
+        1191
       ],
       "contexts": [
         "0c4a8bb7ec",
@@ -1065,11 +1105,11 @@
       "file": "press/index.html",
       "count": 5,
       "lines_20260906": [
-        568,
-        586,
-        638,
-        689,
-        757
+        579,
+        597,
+        649,
+        700,
+        768
       ],
       "contexts": [
         "013d90156c",
