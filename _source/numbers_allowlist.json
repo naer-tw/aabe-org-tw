@@ -879,13 +879,11 @@
     {
       "id": "policy_topic_areas",
       "file": "media/index.html",
-      "count": 2,
+      "count": 1,
       "lines_20260906": [
-        166,
         183
       ],
       "contexts": [
-        "bdc0c5c002",
         "fc8be507b7"
       ],
       "reason": "媒體露出頁引用本盟 10/29 新聞稿標題「去年近5萬名孩子因父母離婚涉及親權安排」（/press/2026-10-29-divorce-hearing-children-arrangements/）：「5」是 114 年 48,830 名未成年子女親權登記的約數，不是政策主軸數；同標題在 press/ 頁已登記；2026-11-01 W44 媒體週更逐處覆核"
