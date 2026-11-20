@@ -101,7 +101,7 @@
         139,
         162,
         206,
-        1191
+        1201
       ],
       "contexts": [
         "0c4a8bb7ec",
@@ -157,9 +157,9 @@
       "file": "press/index.html",
       "count": 3,
       "lines_20260906": [
-        649,
-        700,
-        768
+        671,
+        722,
+        790
       ],
       "contexts": [
         "013d90156c",
@@ -242,7 +242,7 @@
         139,
         162,
         206,
-        1191
+        1201
       ],
       "contexts": [
         "0c4a8bb7ec",
@@ -303,12 +303,12 @@
       "file": "press/index.html",
       "count": 6,
       "lines_20260906": [
-        607,
-        649,
-        674,
-        745,
-        762,
-        768
+        629,
+        671,
+        696,
+        767,
+        784,
+        790
       ],
       "contexts": [
         "013d90156c",
@@ -339,6 +339,18 @@
         "e0bd5bd2cf"
       ],
       "reason": "文案、meta 描述或 JSON-LD 中的引用；數字改動時須人工一併更新"
+    },
+    {
+      "id": "child_pledge_cosponsor_orgs",
+      "file": "index.html",
+      "count": 1,
+      "lines_20260906": [
+        1053
+      ],
+      "contexts": [
+        "f7c76ff670"
+      ],
+      "reason": "首頁最新消息卡引用 2026-11-20 新聞稿摘要「由國教盟召集72個民間團體共同發起的《兒少十大承諾書》」，指兒少十大承諾共同發起團體數。摘要照新聞稿導言，數字日後改動時須人工一併檢視；2026-11-20 逐處覆核語意與單位後登記。"
     },
     {
       "id": "child_pledge_cosponsor_orgs",
@@ -397,6 +409,38 @@
         "4e6f56e861"
       ],
       "reason": "2026-11-04 新聞稿（理事長核可逐字稿）兩處時點引用：「2026年10月14日聯合72個民間團體」「召集72個民間團體共同發起」，指兒少十大承諾共同發起團體數（連署 9/30 截止）。有日期的新聞稿不加 data-metric，數字日後改動不回改本稿；2026-11-06 逐處覆核語意與單位後登記。"
+    },
+    {
+      "id": "child_pledge_cosponsor_orgs",
+      "file": "press/2026-11-20-child-pledge-children-have-a-say/index.html",
+      "count": 5,
+      "lines_20260906": [
+        9,
+        15,
+        29,
+        137,
+        223
+      ],
+      "contexts": [
+        "7af7dd4818",
+        "f2ba0cde43",
+        "f7c76ff670",
+        "f7c76ff670",
+        "f7c76ff670"
+      ],
+      "reason": "2026-11-20 新聞稿（理事長親筆改寫並核定）五處同一句「由國教盟召集72個民間團體共同發起的《兒少十大承諾書》」：meta description、og:description、twitter:description、JSON-LD description、導言，指兒少十大承諾共同發起團體數。有日期的新聞稿不加 data-metric，數字日後改動不回改本稿（比照 10/14、11/04 新聞稿前例）；2026-11-20 逐處覆核語意與單位後登記。"
+    },
+    {
+      "id": "child_pledge_cosponsor_orgs",
+      "file": "press/index.html",
+      "count": 1,
+      "lines_20260906": [
+        257
+      ],
+      "contexts": [
+        "f7c76ff670"
+      ],
+      "reason": "新聞稿列表卡引用 2026-11-20 新聞稿摘要「由國教盟召集72個民間團體共同發起的《兒少十大承諾書》」，指兒少十大承諾共同發起團體數。摘要照新聞稿導言，數字日後改動時須人工一併檢視；2026-11-20 逐處覆核語意與單位後登記。"
     },
     {
       "id": "family_resilience_orgs",
@@ -509,7 +553,7 @@
       "file": "press/index.html",
       "count": 1,
       "lines_20260906": [
-        614
+        636
       ],
       "contexts": [
         "fefafd7ba6"
@@ -642,7 +686,7 @@
         162,
         206,
         694,
-        1191
+        1201
       ],
       "contexts": [
         "04d00010a9",
@@ -707,10 +751,10 @@
       "file": "press/index.html",
       "count": 4,
       "lines_20260906": [
-        592,
-        674,
-        700,
-        762
+        614,
+        696,
+        722,
+        784
       ],
       "contexts": [
         "1b13ee22a9",
@@ -792,7 +836,7 @@
         10,
         139,
         152,
-        1185
+        1195
       ],
       "contexts": [
         "61d8ef79a7",
@@ -855,7 +899,7 @@
       "file": "press/index.html",
       "count": 1,
       "lines_20260906": [
-        659
+        681
       ],
       "contexts": [
         "2bbe64096d"
@@ -867,8 +911,8 @@
       "file": "index.html",
       "count": 2,
       "lines_20260906": [
-        1057,
-        1185
+        1067,
+        1195
       ],
       "contexts": [
         "61d8ef79a7",
@@ -881,7 +925,7 @@
       "file": "media/index.html",
       "count": 1,
       "lines_20260906": [
-        183
+        271
       ],
       "contexts": [
         "fc8be507b7"
@@ -929,7 +973,7 @@
       "file": "press/index.html",
       "count": 1,
       "lines_20260906": [
-        267
+        289
       ],
       "contexts": [
         "7a36a240a0"
@@ -1044,7 +1088,7 @@
         139,
         162,
         206,
-        1191
+        1201
       ],
       "contexts": [
         "0c4a8bb7ec",
@@ -1103,11 +1147,11 @@
       "file": "press/index.html",
       "count": 5,
       "lines_20260906": [
-        579,
-        597,
-        649,
-        700,
-        768
+        601,
+        619,
+        671,
+        722,
+        790
       ],
       "contexts": [
         "013d90156c",
